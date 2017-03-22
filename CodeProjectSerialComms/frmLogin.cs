@@ -15,7 +15,6 @@ namespace CodeProjectSerialComms
     public partial class frmLogin : Form
     {
         public HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
-        private Bitmap MyImage;
         public frmLogin()
         {
             InitializeComponent();

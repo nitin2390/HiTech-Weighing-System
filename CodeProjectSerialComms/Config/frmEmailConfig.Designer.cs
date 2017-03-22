@@ -47,9 +47,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errProviderEmailID = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errProviderPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errProviderEmailSubject = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errProviderEmailBody = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errProviderRecipient = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errProviderSMTPServer = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errProviderSMTPServerPort = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderEmailID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderEmailSubject)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderEmailBody)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderRecipient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderSMTPServer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderSMTPServerPort)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEmailId
@@ -58,7 +70,8 @@
             this.txtEmailId.Name = "txtEmailId";
             this.txtEmailId.Size = new System.Drawing.Size(163, 22);
             this.txtEmailId.TabIndex = 0;
-            this.txtEmailId.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmailId_Validating);
+            this.txtEmailId.Text = "nitin230790@gmail.com";
+
             // 
             // txtPassword
             // 
@@ -67,6 +80,8 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(163, 22);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "1723Mind@1234";
+            
             // 
             // txtEmailServerPort
             // 
@@ -88,7 +103,7 @@
             this.chkIsActive.Location = new System.Drawing.Point(161, 286);
             this.chkIsActive.Name = "chkIsActive";
             this.chkIsActive.Size = new System.Drawing.Size(68, 21);
-            this.chkIsActive.TabIndex = 4;
+            this.chkIsActive.TabIndex = 7;
             this.chkIsActive.Text = "Active";
             this.chkIsActive.UseVisualStyleBackColor = true;
             // 
@@ -97,7 +112,7 @@
             this.btnSave.Location = new System.Drawing.Point(206, 378);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(118, 30);
-            this.btnSave.TabIndex = 5;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -107,7 +122,7 @@
             this.btnExit.Location = new System.Drawing.Point(359, 378);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(109, 30);
-            this.btnExit.TabIndex = 7;
+            this.btnExit.TabIndex = 9;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -143,7 +158,8 @@
             this.txtEmailRecipient.Location = new System.Drawing.Point(497, 130);
             this.txtEmailRecipient.Name = "txtEmailRecipient";
             this.txtEmailRecipient.Size = new System.Drawing.Size(163, 22);
-            this.txtEmailRecipient.TabIndex = 25;
+            this.txtEmailRecipient.TabIndex = 5;
+
             // 
             // lblEmailRecipient
             // 
@@ -177,7 +193,8 @@
             this.txtEmailSubject.Location = new System.Drawing.Point(161, 127);
             this.txtEmailSubject.Name = "txtEmailSubject";
             this.txtEmailSubject.Size = new System.Drawing.Size(163, 22);
-            this.txtEmailSubject.TabIndex = 12;
+            this.txtEmailSubject.TabIndex = 4;
+
             // 
             // txtEmailBody
             // 
@@ -185,7 +202,8 @@
             this.txtEmailBody.Multiline = true;
             this.txtEmailBody.Name = "txtEmailBody";
             this.txtEmailBody.Size = new System.Drawing.Size(163, 87);
-            this.txtEmailBody.TabIndex = 13;
+            this.txtEmailBody.TabIndex = 6;
+
             // 
             // label4
             // 
@@ -194,7 +212,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 17);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Smpt Server";
+            this.label4.Text = "Smtp Server";
             // 
             // label3
             // 
@@ -223,9 +241,33 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Email ID";
             // 
-            // errProvider
+            // errProviderEmailID
             // 
-            this.errProvider.ContainerControl = this;
+            this.errProviderEmailID.ContainerControl = this;
+            // 
+            // errProviderPassword
+            // 
+            this.errProviderPassword.ContainerControl = this;
+            // 
+            // errProviderEmailSubject
+            // 
+            this.errProviderEmailSubject.ContainerControl = this;
+            // 
+            // errProviderEmailBody
+            // 
+            this.errProviderEmailBody.ContainerControl = this;
+            // 
+            // errProviderRecipient
+            // 
+            this.errProviderRecipient.ContainerControl = this;
+            // 
+            // errProviderSMTPServer
+            // 
+            this.errProviderSMTPServer.ContainerControl = this;
+            // 
+            // errProviderSMTPServerPort
+            // 
+            this.errProviderSMTPServerPort.ContainerControl = this;
             // 
             // frmEmailConfig
             // 
@@ -237,7 +279,13 @@
             this.Text = "frmEmailConfig";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderEmailID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderEmailSubject)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderEmailBody)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderRecipient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderSMTPServer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderSMTPServerPort)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,6 +310,12 @@
         private System.Windows.Forms.TextBox txtEmailBody;
         private System.Windows.Forms.TextBox txtEmailRecipient;
         private System.Windows.Forms.Label lblEmailRecipient;
-        private System.Windows.Forms.ErrorProvider errProvider;
+        private System.Windows.Forms.ErrorProvider errProviderEmailID;
+        private System.Windows.Forms.ErrorProvider errProviderPassword;
+        private System.Windows.Forms.ErrorProvider errProviderEmailSubject;
+        private System.Windows.Forms.ErrorProvider errProviderEmailBody;
+        private System.Windows.Forms.ErrorProvider errProviderRecipient;
+        private System.Windows.Forms.ErrorProvider errProviderSMTPServer;
+        private System.Windows.Forms.ErrorProvider errProviderSMTPServerPort;
     }
 }
