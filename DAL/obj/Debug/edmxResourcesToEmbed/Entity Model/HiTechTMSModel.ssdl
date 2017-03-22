@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HitechTruckMngtSystmDataBaseFileModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="EmailConfigs">
+    <Key>
+      <PropertyRef Name="EmailID" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmailServerPort" Type="int" Nullable="false" />
+    <Property Name="EmailSmtpServer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="EmailSubject" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmailBody" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmailRecipient" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="EmailMaster">
+    <Key>
+      <PropertyRef Name="EmailID" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserRoleType" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRoleType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__UserRole__UserRo__07C12930">
+    <End Role="UserRoleType" Type="Self.UserRoleType" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRoleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserRoleType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HitechTruckMngtSystmDataBaseFileModelStoreContainer">
+    <EntitySet Name="EmailConfigs" EntityType="Self.EmailConfigs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailMaster" EntityType="Self.EmailMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__UserRole__UserRo__07C12930" Association="Self.FK__UserRole__UserRo__07C12930">
+      <End Role="UserRoleType" EntitySet="UserRoleType" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

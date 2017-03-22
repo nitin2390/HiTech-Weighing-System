@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4a7aa0853d1e48c0893a43744f5703ad" Name="Diagram1" ShowGrid="true">
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.Product" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.UserRoleType" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.UserRole" Width="1.5" PointX="0.75" PointY="3.75" />
+        <AssociationConnector Association="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__07C12930" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailMaster" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailConfig" Width="1.5" PointX="3.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

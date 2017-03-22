@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HitechTruckMngtSystmDataBaseFileModelStoreContainer" CdmEntityContainer="HitechTruckMngtSystmDataBaseFileEntities">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
