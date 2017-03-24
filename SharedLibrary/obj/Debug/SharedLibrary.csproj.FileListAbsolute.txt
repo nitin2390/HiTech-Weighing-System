@@ -17,3 +17,4 @@ C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\SharedLi
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\SharedLibrary\obj\Debug\SharedLibrary.dll
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\SharedLibrary\obj\Debug\SharedLibrary.pdb
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\SharedLibrary\obj\Debug\SharedLibrary.csproj.ResolveComReference.cache
+C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
