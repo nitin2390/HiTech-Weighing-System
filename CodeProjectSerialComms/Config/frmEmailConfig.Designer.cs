@@ -1,4 +1,4 @@
-﻿namespace CodeProjectSerialComms.MasterForms
+﻿namespace HitechTMS.MasterForms
 {
     partial class frmEmailConfig
     {
@@ -71,7 +71,6 @@
             this.txtEmailId.Size = new System.Drawing.Size(163, 22);
             this.txtEmailId.TabIndex = 0;
             this.txtEmailId.Text = "nitin230790@gmail.com";
-
             // 
             // txtPassword
             // 
@@ -81,7 +80,6 @@
             this.txtPassword.Size = new System.Drawing.Size(163, 22);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "1723Mind@1234";
-            
             // 
             // txtEmailServerPort
             // 
@@ -159,7 +157,6 @@
             this.txtEmailRecipient.Name = "txtEmailRecipient";
             this.txtEmailRecipient.Size = new System.Drawing.Size(163, 22);
             this.txtEmailRecipient.TabIndex = 5;
-
             // 
             // lblEmailRecipient
             // 
@@ -194,7 +191,6 @@
             this.txtEmailSubject.Name = "txtEmailSubject";
             this.txtEmailSubject.Size = new System.Drawing.Size(163, 22);
             this.txtEmailSubject.TabIndex = 4;
-
             // 
             // txtEmailBody
             // 
@@ -203,7 +199,6 @@
             this.txtEmailBody.Name = "txtEmailBody";
             this.txtEmailBody.Size = new System.Drawing.Size(163, 87);
             this.txtEmailBody.TabIndex = 6;
-
             // 
             // label4
             // 
@@ -277,6 +272,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmEmailConfig";
             this.Text = "frmEmailConfig";
+            this.Load += new System.EventHandler(this.frmEmailConfig_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errProviderEmailID)).EndInit();

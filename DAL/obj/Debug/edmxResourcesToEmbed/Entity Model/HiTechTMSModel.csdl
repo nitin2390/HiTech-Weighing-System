@@ -59,7 +59,7 @@
   </EntityType>
   <EntityType Name="EmailConfig">
     <Key>
-      <PropertyRef Name="EmailID" />
+      <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Guid" Nullable="false" />
     <Property Name="EmailID" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />

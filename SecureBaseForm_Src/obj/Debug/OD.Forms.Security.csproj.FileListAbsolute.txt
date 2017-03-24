@@ -10,4 +10,3 @@ C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\SecureBa
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\SecureBaseForm_Src\obj\Debug\OD.Forms.Security.csproj.GenerateResource.Cache
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\SecureBaseForm_Src\obj\Debug\OD.Forms.Security.dll
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\SecureBaseForm_Src\obj\Debug\OD.Forms.Security.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\SecureBaseForm_Src\obj\Debug\OD.Forms.Security.csprojResolveAssemblyReference.cache

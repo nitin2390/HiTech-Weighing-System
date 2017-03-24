@@ -8,7 +8,7 @@
     <ProjectGuid>{EF2E2AEC-A45B-41A4-AA11-54DD81C307CA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CodeProjectSerialComms</RootNamespace>
+    <RootNamespace>HitechTMS</RootNamespace>
     <AssemblyName>CodeProjectSerialComms</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CreateExcelAndSendEmail.cs" />
+    <Compile Include="Classes\GetResourceCaption.cs" />
     <Compile Include="frmAccessMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +143,11 @@
     <Compile Include="Reports\rptCommon.Designer.cs">
       <DependentUpon>rptCommon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resource\Res.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Res.en.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAccessMaster.resx">
       <DependentUpon>frmAccessMaster.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +180,10 @@
     </Compile>
     <EmbeddedResource Include="Reports\rptCommon.resx">
       <DependentUpon>rptCommon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Res.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Res.en.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="HitechTruckMngtSystmDataBaseFileDataSet.xsc">

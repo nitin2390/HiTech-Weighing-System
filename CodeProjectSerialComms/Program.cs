@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace CodeProjectSerialComms
+namespace HitechTMS
 {
     static class Program
     {

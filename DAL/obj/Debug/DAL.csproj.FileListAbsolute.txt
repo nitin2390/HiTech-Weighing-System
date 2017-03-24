@@ -18,10 +18,10 @@ C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\Debug\DAL.pdb
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\Debug\EntityFramework.dll
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\Debug\EntityFramework.xml
-C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.dll
-C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\Debug\SharedLibrary.dll
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\Debug\SharedLibrary.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\Debug\EntityFramework.xml
+C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.dll
+C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.pdb

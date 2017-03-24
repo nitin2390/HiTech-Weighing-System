@@ -4,9 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using DAL.Entity_Model;
-using CodeProjectSerialComms.Classes;
+using HitechTMS.Classes;
 
-namespace CodeProjectSerialComms
+namespace HitechTMS
 {
     public partial class frmProduct : Form
     {
@@ -17,9 +17,11 @@ namespace CodeProjectSerialComms
         }
 
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
+        private GetResourceCaption dbGetResourceCaption;
         public frmProduct()
         {
             InitializeComponent();
+            dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
             this.ControlBox = false;
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
@@ -106,13 +108,13 @@ namespace CodeProjectSerialComms
                         dbObj.Products.Add(objProd);
                         if (dbObj.SaveChanges() ==1)
                         {
-                            MessageBox.Show("Data saved!");
+                            MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_SAVE"));
                             ResetCntrl();
                         }                       
                     }
                     else
                     {
-                        MessageBox.Show("Entered data is duplicate!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(dbGetResourceCaption.GetStringValue("DUPLICATE_DATA"), dbGetResourceCaption.GetStringValue("ALERT"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
@@ -144,12 +146,12 @@ namespace CodeProjectSerialComms
                 }
                 else
                 {
-                    MessageBox.Show("Records not found!");
+                    MessageBox.Show(dbGetResourceCaption.GetStringValue("RECORDS_NOT_FOUND"));
                 }
             }
             else
             {
-                errProductCode.SetError(txtProductCode, "Product code can't be blank");
+                errProductCode.SetError(txtProductCode, dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
             }
 
             
@@ -163,7 +165,7 @@ namespace CodeProjectSerialComms
             Product prod = new Product();
             if (gridProduct.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("Are you sure you want to delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(dbGetResourceCaption.GetStringValue("DELTE_POPUP"), dbGetResourceCaption.GetStringValue("CONFIRMATION"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     foreach (DataGridViewRow row in gridProduct.SelectedRows)
                     {
@@ -194,11 +196,11 @@ namespace CodeProjectSerialComms
             {
                 if (obj.CreateExcelAndSendEmailToList(HitechEnums.FrmName.ProductDetail))
                 {
-                    MessageBox.Show("Email Sent", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(dbGetResourceCaption.GetStringValue("EMAIL_SENT"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Error in email sending", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(dbGetResourceCaption.GetStringValue("ERR_EMAIL_CHK_CONFIG"), dbGetResourceCaption.GetStringValue("ERROR") , MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -210,7 +212,7 @@ namespace CodeProjectSerialComms
         {
             if (txtProductCode.Text == "")
             {
-                errProductCode.SetError(txtProductCode, "Product code can't be blank");
+                errProductCode.SetError(txtProductCode, dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
             }
             else
             {
@@ -219,7 +221,7 @@ namespace CodeProjectSerialComms
 
             if (txtProductName.Text == "")
             {
-                errProductName.SetError(txtProductName, "Product name can't be blank");
+                errProductName.SetError(txtProductName, dbGetResourceCaption.GetStringValue("PRD_NM_CAN_NOT_BLANK"));
             }
             else
             {
@@ -230,7 +232,7 @@ namespace CodeProjectSerialComms
         {
             if (txtProductCode.Text == "")
             {
-                errProductCode.SetError(txtProductCode, "Product code can't be blank");
+                errProductCode.SetError(txtProductCode, dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
             }
             else
             {
@@ -239,7 +241,7 @@ namespace CodeProjectSerialComms
 
             if (txtProductName.Text == "")
             {
-                errProductName.SetError(txtProductName, "Product name can't be blank");
+                errProductName.SetError(txtProductName, dbGetResourceCaption.GetStringValue("PRD_NM_CAN_NOT_BLANK"));
             }
             else
             {
@@ -248,15 +250,6 @@ namespace CodeProjectSerialComms
         }
         #endregion
 
-        private void gridProduct_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
-        {
-            DialogResult response = MessageBox.Show("Are you sure you want to delete this row?", "Delete row?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-            if ((response == DialogResult.No))
-            {
-                e.Cancel = true;
-            }
-        }
         private void txtlblProductCode_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

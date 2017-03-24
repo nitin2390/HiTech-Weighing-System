@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CodeProjectSerialComms {
+namespace HitechTMS {
     
     
     /// <summary>
@@ -619,7 +619,7 @@ namespace CodeProjectSerialComms {
         }
     }
 }
-namespace CodeProjectSerialComms.HitechTruckMngtSystmDataBaseFileDataSetTableAdapters {
+namespace HitechTMS.HitechTruckMngtSystmDataBaseFileDataSetTableAdapters {
     
     
     /// <summary>
@@ -776,7 +776,7 @@ namespace CodeProjectSerialComms.HitechTruckMngtSystmDataBaseFileDataSetTableAda
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CodeProjectSerialComms.Properties.Settings.Default.HitechTruckMngtSystmDataBaseFileConnectionString;
+            this._connection.ConnectionString = global::HitechTMS.Properties.Settings.Default.HitechTruckMngtSystmDataBaseFileConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

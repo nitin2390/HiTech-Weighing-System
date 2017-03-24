@@ -7,7 +7,7 @@ using System;
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
 
-namespace CodeProjectSerialComms.Classes
+namespace HitechTMS.Classes
 {
     public class CreateExcelAndSendEmail : IDisposable
     {
@@ -44,7 +44,9 @@ namespace CodeProjectSerialComms.Classes
                     this.WorkSheetName = "Details";
                 }
                 EncryptionAndDecryption objEncryptionAndDecryption = new EncryptionAndDecryption();
-                var objEmailConfig = dbObj.EmailConfigs.Select(x => new { x.EmailID, x.EmailServerPort, x.EmailSmtpServer, x.Password,x.EmailBody,x.EmailSubject,x.EmailRecipient }).ToList();
+                var objEmailConfig = dbObj.EmailConfigs.Select(x => new { x.EmailID,
+                                        x.EmailServerPort, x.EmailSmtpServer, x.Password,x.EmailBody,
+                                        x.EmailSubject,x.EmailRecipient,x.IsActive }).Where(x => x.IsActive == "1").ToList();
                 MailAddress mytoAddress = new MailAddress(objEmailConfig[0].EmailRecipient.ToString(),"HiTech Weighing");
                 SendEmail objSendEmail = new SendEmail(dt, objEmailConfig[0].EmailID.ToString(), mytoAddress, objEncryptionAndDecryption.Decrypt(objEmailConfig[0].Password).ToString(), objEmailConfig[0].EmailSubject.ToString(), objEmailConfig[0].EmailBody.ToString(), 587, objEmailConfig[0].EmailSmtpServer.ToString(), this.FileName, this.WorkSheetName);
                 if(objSendEmail.SendEmailTo()==true)

@@ -1,4 +1,4 @@
-﻿namespace CodeProjectSerialComms
+﻿namespace HitechTMS
 {
     partial class frmAccessMaster
     {

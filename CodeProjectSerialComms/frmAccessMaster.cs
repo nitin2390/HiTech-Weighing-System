@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CodeProjectSerialComms
+namespace HitechTMS
 {
     public partial class frmAccessMaster : Form
     {

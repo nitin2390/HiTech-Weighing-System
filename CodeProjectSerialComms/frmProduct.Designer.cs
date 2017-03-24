@@ -1,4 +1,4 @@
-﻿namespace CodeProjectSerialComms
+﻿namespace HitechTMS
 {
     partial class frmProduct
     {
@@ -168,7 +168,6 @@
             this.gridProduct.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gridProduct.Size = new System.Drawing.Size(531, 311);
             this.gridProduct.TabIndex = 5;
-            this.gridProduct.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.gridProduct_UserDeletingRow);
             // 
             // lblProductName
             // 

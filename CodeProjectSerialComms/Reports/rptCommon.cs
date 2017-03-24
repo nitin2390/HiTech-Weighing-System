@@ -2,7 +2,7 @@
 using CrystalDecisions.CrystalReports.Engine;
 using System.Collections;
 
-namespace CodeProjectSerialComms
+namespace HitechTMS
 {
     public partial class rptCommon : Form
     {

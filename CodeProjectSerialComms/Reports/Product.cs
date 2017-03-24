@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CodeProjectSerialComms.Reports {
+namespace HitechTMS.Reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace CodeProjectSerialComms.Reports {
         
         public override string FullResourceName {
             get {
-                return "CodeProjectSerialComms.Reports.Product.rpt";
+                return "HitechTMS.Reports.Product.rpt";
             }
             set {
                 // Do nothing

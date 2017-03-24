@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Security.Principal;
 using System.Windows.Forms;
 using DAL.Entity_Model;
+using HitechTMS.Classes;
 
-
-
-namespace CodeProjectSerialComms
+namespace HitechTMS
 {
     public partial class frmLogin : Form
     {
         public HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
+        private GetResourceCaption dbGetResourceCaption;
         public frmLogin()
         {
             InitializeComponent();
+            dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
             this.ControlBox = false;
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
@@ -46,7 +44,7 @@ namespace CodeProjectSerialComms
             }
             else
             {
-                MessageBox.Show("User name and Password doesn't match!");
+                MessageBox.Show(dbGetResourceCaption.GetStringValue("USER_NAME_PASSWORD_MISTMATCH"));
             }
             
         }

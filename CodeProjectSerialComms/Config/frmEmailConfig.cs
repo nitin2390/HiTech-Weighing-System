@@ -6,17 +6,22 @@ using DAL.Entity_Model;
 using SharedLibrary;
 using System.Data.Entity.Migrations;
 using System.Text.RegularExpressions;
+using HitechTMS.Classes;
 
-namespace CodeProjectSerialComms.MasterForms
+namespace HitechTMS.MasterForms
 {
     public partial class frmEmailConfig : Form
     {
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
+        private GetResourceCaption dbGetResourceCaption;
+        public Guid ID { get; set; }
         EncryptionAndDecryption objEncryptionAndDecryption;
         EmailConfig objEmailConfig;
+        // declare Resource manager to access to specific cultureinfo
         public frmEmailConfig()
         {
             InitializeComponent();
+            dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
             this.ControlBox = false;
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
@@ -42,6 +47,7 @@ namespace CodeProjectSerialComms.MasterForms
                 }).ToList();
             if (emailConfigData.Count > 0)
             {
+                ID = emailConfigData[0].Id == Guid.Empty ? Guid.NewGuid() : emailConfigData[0].Id;
                 txtEmailId.Text = emailConfigData[0].EmailID == null ? "" : emailConfigData[0].EmailID.ToString();
                 txtPassword.Text = emailConfigData[0].Password == null ? "" : objEncryptionAndDecryption.Decrypt(emailConfigData[0].Password).ToString();
                 txtEmailServerPort.Text = emailConfigData[0].EmailServerPort.ToString();
@@ -183,7 +189,7 @@ namespace CodeProjectSerialComms.MasterForms
                 }
                 #endregion
             }
-            objEmailConfig.Id = Guid.NewGuid();
+            objEmailConfig.Id = ID;
             objEmailConfig.EmailID = txtEmailId.Text.ToString();
             objEmailConfig.Password = objEncryptionAndDecryption.Encrypt(txtPassword.Text.ToString());
             objEmailConfig.EmailServerPort = Convert.ToInt32(txtEmailServerPort.Text);
@@ -195,12 +201,17 @@ namespace CodeProjectSerialComms.MasterForms
             dbObj.EmailConfigs.AddOrUpdate(objEmailConfig);
             if (dbObj.SaveChanges() == 1)
             {
-                MessageBox.Show("Data Saved!");
+                MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_SAVE"));
             }
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmEmailConfig_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -4,26 +4,23 @@ using DAL;
 using DAL.Entity_Model;
 using System.Security.Principal;
 using OD.Forms.Security;
-using SharedLibrary;
-using CodeProjectSerialComms.MasterForms;
-using System.Linq;
-using System.Data;
-using System.IO;
-using System.Net.Mail;
-using CodeProjectSerialComms.Classes;
+using HitechTMS.MasterForms;
+using HitechTMS.Classes;
 
-namespace CodeProjectSerialComms
+namespace HitechTMS
 {
     public partial class frmMain : SecureBaseForm
     {
         public HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         private IPrincipal _nextFormPrincipal;
+        private GetResourceCaption dbGetResourceCaption;
         string str;
 
         public frmMain(IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.Admin.ToString() }, userPrincipal)
         {
             _nextFormPrincipal = userPrincipal;
             InitializeComponent();
+            GetResourceCaption dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
             this.ControlBox = false;
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
@@ -61,8 +58,7 @@ namespace CodeProjectSerialComms
                 }
                 else
                 {
-
-                    rsltReadSerialPort = MessageBox.Show(str, "System Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand);
+                    rsltReadSerialPort = MessageBox.Show(str, dbGetResourceCaption.GetStringValue("SYS_ERR"), MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand);
                     if (rsltReadSerialPort == DialogResult.Retry)
                     {
                         ReadSerialPortCommunication();
