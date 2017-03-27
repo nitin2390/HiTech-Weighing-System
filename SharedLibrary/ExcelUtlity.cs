@@ -120,7 +120,7 @@ namespace SharedLibrary
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //MessageBox.Show(ex.Message);
                 return false;
@@ -143,7 +143,7 @@ namespace SharedLibrary
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
                 obj = null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 obj = null;
             }

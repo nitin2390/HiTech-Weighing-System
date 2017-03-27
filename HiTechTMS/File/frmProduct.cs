@@ -23,6 +23,8 @@ namespace HitechTMS.File
             InitializeComponent();
             dbGetResourceCaption = new GetResourceCaption();
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
+            this.MinimizeBox = this.MaximizeBox = false;
+            this.MaximumSize = this.MinimumSize = this.Size;
             BindGrid();
             DesignGrid();
 

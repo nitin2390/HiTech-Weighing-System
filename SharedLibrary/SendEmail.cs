@@ -50,7 +50,8 @@ namespace SharedLibrary
                     Attachment attachment;
                     MailMessage mail = new MailMessage();
                     SmtpClient SmtpServer = new SmtpClient(EmailSmtpServer);
-                    attachment = new Attachment(Path.GetFullPath(@"..\..\ExcelOutput\") + FileName);
+                    //attachment = new Attachment(Path.GetFullPath(@"..\..\ExcelOutput\") + FileName);
+                    attachment = new Attachment(Environment.CurrentDirectory + FileName);
                     mail.From = new MailAddress(EmailFrom);
                     mail.To.Add(EmailTo);
                     mail.Subject = EmailSubject;
@@ -86,7 +87,7 @@ namespace SharedLibrary
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
                 obj = null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 obj = null;
             }
@@ -101,14 +102,13 @@ namespace SharedLibrary
             ExcelUtlity obj = new ExcelUtlity();
             try
             {
-                string ExcelFolderPath = Path.GetFullPath(@"..\..\ExcelOutput\") + FileName;
-
-                if (File.Exists(ExcelFolderPath))
-                {
-                    File.Delete(ExcelFolderPath);
-                }
-                obj.WriteDataTableToExcel(dt, "Product Details", ExcelFolderPath, WorkSheetName);
-                return true;
+                string ExcelFolderPath = Environment.CurrentDirectory + FileName;
+                    if (File.Exists(ExcelFolderPath))
+                    {
+                        File.Delete(ExcelFolderPath);
+                    }
+                    obj.WriteDataTableToExcel(dt, "Product Details", ExcelFolderPath, WorkSheetName);
+                    return true;
             }
             catch (Exception)
             {

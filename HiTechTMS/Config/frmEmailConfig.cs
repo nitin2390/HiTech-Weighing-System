@@ -23,7 +23,8 @@ namespace HitechTMS.MasterForms
             InitializeComponent();
             dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
-            this.ControlBox = false;
+            this.MinimizeBox = this.MaximizeBox = false;
+            //this.ControlBox = false;
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
             objEncryptionAndDecryption = new EncryptionAndDecryption();
             objEmailConfig = new EmailConfig();

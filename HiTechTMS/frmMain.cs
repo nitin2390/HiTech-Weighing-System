@@ -21,9 +21,10 @@ namespace HitechTMS
         {
             _nextFormPrincipal = userPrincipal;
             InitializeComponent();
-            GetResourceCaption dbGetResourceCaption = new GetResourceCaption();
+            dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
-            this.ControlBox = false;
+            this.MinimizeBox = this.MaximizeBox = false;
+            //this.ControlBox = false;
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
         }
 

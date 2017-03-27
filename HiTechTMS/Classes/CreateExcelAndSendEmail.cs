@@ -33,14 +33,14 @@ namespace HitechTMS.Classes
                 {
                     var query = dbObj.Products.Select(x => new { x.Code, x.Name });
                     dt = obj.ConvertToDataTable(query.ToList());
-                    this.FileName = "ProductDetails.xls";
+                    this.FileName = @"\ProductDetails.xls";
                     this.WorkSheetName = "Details";
                 }
                 else if (objEnums == HitechEnums.FrmName.ProductDetail)
                 {
                     var query = dbObj.Products.Select(x => new { x.Code, x.Name });
                     dt = obj.ConvertToDataTable(query.ToList());
-                    this.FileName = "ProductDetails.xls";
+                    this.FileName = @"\ProductDetails.xls";
                     this.WorkSheetName = "Details";
                 }
                 EncryptionAndDecryption objEncryptionAndDecryption = new EncryptionAndDecryption();
