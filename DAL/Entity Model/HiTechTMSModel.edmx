@@ -27,6 +27,20 @@
           <Property Name="EmailID" Type="nvarchar" MaxLength="400" Nullable="false" />
           <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
+        <EntityType Name="mstSupplier">
+          <Key>
+            <PropertyRef Name="SupplierCode" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SupplierCode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="SupplierName" Type="varchar" MaxLength="25" />
+          <Property Name="Address1" Type="varchar" MaxLength="25" />
+          <Property Name="Address2" Type="varchar" MaxLength="25" />
+          <Property Name="Address3" Type="varchar" MaxLength="25" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="Fax" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="40" />
+        </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="Code" />
@@ -66,6 +80,7 @@
         <EntityContainer Name="HitechTruckMngtSystmDataBaseFileModelStoreContainer">
           <EntitySet Name="EmailConfigs" EntityType="Self.EmailConfigs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmailMaster" EntityType="Self.EmailMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mstSupplier" EntityType="Self.mstSupplier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
@@ -88,6 +103,7 @@
           </AssociationSet>
           <EntitySet Name="EmailMasters" EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailMaster" />
           <EntitySet Name="EmailConfigs" EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailConfig" />
+          <EntitySet Name="mstSupplier" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstSupplier" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -149,6 +165,20 @@
           <Property Name="EmailBody" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="EmailRecipient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="mstSupplier">
+          <Key>
+            <PropertyRef Name="SupplierCode" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SupplierCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="SupplierName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Address3" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -202,6 +232,21 @@
                 <ScalarProperty Name="EmailServerPort" ColumnName="EmailServerPort" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mstSupplier">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstSupplier">
+              <MappingFragment StoreEntitySet="mstSupplier">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -103,10 +103,6 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\CodeProjectSeria
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\CodeProjectSerialComms\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\CodeProjectSerialComms\bin\Debug\en\HtmlReportControl.resources.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\CodeProjectSerialComms\obj\Debug\en\CodeProjectSerialComms.resources.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\App_Data\HitechTruckMngtSystmDataBaseFile_log.ldf
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTruckMngtSystmDataBaseFile.mdf
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTruckMngtSystmDataBaseFile_log.ldf
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\App_Data\HitechTruckMngtSystmDataBaseFile.mdf
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.exe.config
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.exe
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.pdb
@@ -156,3 +152,7 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\De
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.csproj.GenerateResource.Cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.exe
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Licensee\Licensee.txt
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\db\HitechTruckMngtSystmDataBaseFile_log.ldf
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\db\HitechTruckMngtSystmDataBaseFile.mdf
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.File.frmSupplierFile.resources

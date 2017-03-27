@@ -52,11 +52,11 @@
             this.perifeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peripheralDiagnosticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emailConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.databaseBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabMode.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -193,7 +193,7 @@
             this.transporterFileToolStripMenuItem,
             this.storedTToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // productFileToolStripMenuItem
@@ -208,6 +208,7 @@
             this.supplierFileToolStripMenuItem.Name = "supplierFileToolStripMenuItem";
             this.supplierFileToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.supplierFileToolStripMenuItem.Text = "2 Supplier File";
+            this.supplierFileToolStripMenuItem.Click += new System.EventHandler(this.supplierFileToolStripMenuItem_Click);
             // 
             // transporterFileToolStripMenuItem
             // 
@@ -224,7 +225,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -277,6 +278,13 @@
             this.utilityToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.utilityToolStripMenuItem.Text = "&Utility";
             // 
+            // databaseBackupToolStripMenuItem
+            // 
+            this.databaseBackupToolStripMenuItem.Name = "databaseBackupToolStripMenuItem";
+            this.databaseBackupToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.databaseBackupToolStripMenuItem.Text = "Database Backup";
+            this.databaseBackupToolStripMenuItem.Click += new System.EventHandler(this.databaseBackupToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
@@ -308,13 +316,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // databaseBackupToolStripMenuItem
-            // 
-            this.databaseBackupToolStripMenuItem.Name = "databaseBackupToolStripMenuItem";
-            this.databaseBackupToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
-            this.databaseBackupToolStripMenuItem.Text = "Database Backup";
-            this.databaseBackupToolStripMenuItem.Click += new System.EventHandler(this.databaseBackupToolStripMenuItem_Click);
             // 
             // frmMain
             // 

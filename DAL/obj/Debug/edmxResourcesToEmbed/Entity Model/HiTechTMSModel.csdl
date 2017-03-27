@@ -10,6 +10,7 @@
     </AssociationSet>
     <EntitySet Name="EmailMasters" EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailMaster" />
     <EntitySet Name="EmailConfigs" EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailConfig" />
+    <EntitySet Name="mstSupplier" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstSupplier" />
   </EntityContainer>
   <EntityType Name="UserRoleType">
     <Key>
@@ -70,5 +71,19 @@
     <Property Name="EmailSubject" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="EmailBody" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="EmailRecipient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mstSupplier">
+    <Key>
+      <PropertyRef Name="SupplierCode" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="SupplierCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="SupplierName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Address3" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

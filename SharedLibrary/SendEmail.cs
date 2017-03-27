@@ -50,7 +50,6 @@ namespace SharedLibrary
                     Attachment attachment;
                     MailMessage mail = new MailMessage();
                     SmtpClient SmtpServer = new SmtpClient(EmailSmtpServer);
-                    //attachment = new Attachment(Path.GetFullPath(@"..\..\ExcelOutput\") + FileName);
                     attachment = new Attachment(Environment.CurrentDirectory + FileName);
                     mail.From = new MailAddress(EmailFrom);
                     mail.To.Add(EmailTo);

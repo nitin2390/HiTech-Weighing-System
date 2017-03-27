@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\nitingupta\Desktop\software\Nitin\HitechTMS\DAL\Entity Model\HiTechTMSModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\Entity Model\HiTechTMSModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -1,5 +1,6 @@
 ﻿using DAL.Entity_Model;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -21,7 +22,7 @@ namespace HitechTMS
 
             SaveFileDialog SaveFD = new SaveFileDialog();
             string FileName = "";
-            SaveFD.FileName = "Test";
+            SaveFD.FileName = "";
             SaveFD.Title = "Backup ";
             SaveFD.Filter = "Database files (*.mdf)|*.mdf";
             SaveFD.FilterIndex = 1;
@@ -29,12 +30,33 @@ namespace HitechTMS
             SaveFD.RestoreDirectory = true;
             if (SaveFD.ShowDialog() == DialogResult.OK)
             {
+                //dbObj.Database.Connection.Close();
                 FileName = SaveFD.FileName;
-                string sourcePath = Application.StartupPath.ToString() + "\\HitechTruckMngtSystmDataBaseFile.mdf";
-                AppDomain.CurrentDomain.SetData("DataDirectory", sourcePath);
-                //string src = sourcePath + "\\Test.mdf";
+                string sourcePath = Environment.CurrentDirectory +  "\\db\\HitechTruckMngtSystmDataBaseFile.mdf";
+                string src = sourcePath + "\\Test.mdf";
                 string dst = @"C:\Bill";
                 System.IO.File.Copy(sourcePath, dst, true);
+                //dbObj.Database.Connection.Open();
+
+                //ProcessStartInfo startInfo = new ProcessStartInfo();
+                //startInfo.CreateNoWindow = false;
+                //startInfo.UseShellExecute = false;
+                ////Give the name as Xcopy
+                //startInfo.FileName = "xcopy";
+                //startInfo.Arguments = "\"" + sourcePath + "\"" + " " + "\"" + dst + "\"" + @" /e /y /I";
+                //try
+                //{
+                //    // Start the process with the info we specified.
+                //    // Call WaitForExit and then the using statement will close.
+                //    using (Process exeProcess = Process.Start(startInfo))
+                //    {
+                //        exeProcess.WaitForExit();
+                //    }
+                //}
+                //catch (Exception exp)
+                //{
+                //    throw exp;
+                //}
             }
         }
     }

@@ -30,5 +30,6 @@ namespace DAL.Entity_Model
         public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<EmailMaster> EmailMasters { get; set; }
         public virtual DbSet<EmailConfig> EmailConfigs { get; set; }
+        public virtual DbSet<mstSupplier> mstSupplier { get; set; }
     }
 }

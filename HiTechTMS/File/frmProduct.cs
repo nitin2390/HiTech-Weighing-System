@@ -5,16 +5,12 @@ using System.Linq;
 using System.Windows.Forms;
 using DAL.Entity_Model;
 using HitechTMS.Classes;
+using static HitechTMS.HitechEnums;
 
 namespace HitechTMS.File
 {
     public partial class frmProduct : Form
     {
-        enum eProduct
-        {
-            Code = 0,
-            Name = 1
-        }
 
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         private GetResourceCaption dbGetResourceCaption;
@@ -37,8 +33,8 @@ namespace HitechTMS.File
             try
             {
                 //gridProduct.DefaultCellStyle.Font.Style = 
-                gridProduct.Columns[(int)eProduct.Code].Width = 239;
-                gridProduct.Columns[(int)eProduct.Name].Width = 239;
+                gridProduct.Columns[(int)enumProduct.Code].Width = 239;
+                gridProduct.Columns[(int)enumProduct.Name].Width = 239;
                 
                 gridProduct.ColumnHeadersHeight = 250;
                 gridProduct.AllowUserToResizeColumns = false;
@@ -267,6 +263,11 @@ namespace HitechTMS.File
             {
                 txtProductName.Focus();
             }
+        }
+
+        private void grpboxProduct_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

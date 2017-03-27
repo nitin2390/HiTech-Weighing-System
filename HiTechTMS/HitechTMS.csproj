@@ -49,7 +49,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\dll\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -134,7 +134,7 @@
     <Compile Include="File\frmProduct.Designer.cs">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="HitechEnums.cs" />
+    <Compile Include="Enum\HitechEnums.cs" />
     <Compile Include="HitechTruckMngtSystmDataBaseFileDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,6 +162,9 @@
     </Compile>
     <EmbeddedResource Include="db\HitechTruckMngtSystmDataBaseFile.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="File\frmSupplierFile.resx">
+      <DependentUpon>frmSupplierFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource\Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>

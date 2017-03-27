@@ -113,5 +113,12 @@ namespace HitechTMS
             objEmailConfig.StartPosition = FormStartPosition.CenterParent;
             objEmailConfig.ShowDialog();
         }
+
+        private void supplierFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSupplierFile objfrmSupplierFile = new frmSupplierFile();
+            objfrmSupplierFile.StartPosition = FormStartPosition.CenterParent;
+            objfrmSupplierFile.ShowDialog();
+        }
     }
 }

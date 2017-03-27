@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpboxProduct = new System.Windows.Forms.GroupBox();
+            this.lblRecCount = new System.Windows.Forms.Label();
+            this.lblRecordsCount = new System.Windows.Forms.Label();
             this.btnEmailExcel = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -46,7 +49,6 @@
             this.txtProductCode = new System.Windows.Forms.TextBox();
             this.errProductCode = new System.Windows.Forms.ErrorProvider(this.components);
             this.errProductName = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblRecordsCount = new System.Windows.Forms.Label();
             this.grpboxProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errProductCode)).BeginInit();
@@ -55,6 +57,7 @@
             // 
             // grpboxProduct
             // 
+            this.grpboxProduct.Controls.Add(this.lblRecCount);
             this.grpboxProduct.Controls.Add(this.lblRecordsCount);
             this.grpboxProduct.Controls.Add(this.btnEmailExcel);
             this.grpboxProduct.Controls.Add(this.btnReport);
@@ -68,18 +71,43 @@
             this.grpboxProduct.Controls.Add(this.lblProductCode);
             this.grpboxProduct.Controls.Add(this.txtProductName);
             this.grpboxProduct.Controls.Add(this.txtProductCode);
-            this.grpboxProduct.Location = new System.Drawing.Point(13, 13);
+            this.grpboxProduct.Location = new System.Drawing.Point(23, 21);
             this.grpboxProduct.Name = "grpboxProduct";
-            this.grpboxProduct.Size = new System.Drawing.Size(759, 550);
+            this.grpboxProduct.Size = new System.Drawing.Size(759, 569);
             this.grpboxProduct.TabIndex = 0;
             this.grpboxProduct.TabStop = false;
             this.grpboxProduct.Text = "Add/Edit Product";
+            this.grpboxProduct.Enter += new System.EventHandler(this.grpboxProduct_Enter);
+            // 
+            // lblRecCount
+            // 
+            this.lblRecCount.AutoSize = true;
+            this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecCount.Location = new System.Drawing.Point(522, 534);
+            this.lblRecCount.Name = "lblRecCount";
+            this.lblRecCount.Size = new System.Drawing.Size(136, 22);
+            this.lblRecCount.TabIndex = 21;
+            this.lblRecCount.Text = "Records Count";
+            // 
+            // lblRecordsCount
+            // 
+            this.lblRecordsCount.AutoSize = true;
+            this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecordsCount.Location = new System.Drawing.Point(678, 534);
+            this.lblRecordsCount.Name = "lblRecordsCount";
+            this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
+            this.lblRecordsCount.TabIndex = 20;
+            this.lblRecordsCount.Text = "Count";
             // 
             // btnEmailExcel
             // 
-            this.btnEmailExcel.Location = new System.Drawing.Point(464, 483);
+            this.btnEmailExcel.Location = new System.Drawing.Point(461, 167);
             this.btnEmailExcel.Name = "btnEmailExcel";
-            this.btnEmailExcel.Size = new System.Drawing.Size(115, 35);
+            this.btnEmailExcel.Size = new System.Drawing.Size(115, 27);
             this.btnEmailExcel.TabIndex = 10;
             this.btnEmailExcel.Text = "E&mail As Excel";
             this.btnEmailExcel.UseVisualStyleBackColor = true;
@@ -87,9 +115,9 @@
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(346, 483);
+            this.btnReport.Location = new System.Drawing.Point(339, 167);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(100, 35);
+            this.btnReport.Size = new System.Drawing.Size(100, 27);
             this.btnReport.TabIndex = 9;
             this.btnReport.Text = "&Report";
             this.btnReport.UseVisualStyleBackColor = true;
@@ -97,9 +125,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(218, 483);
+            this.btnDelete.Location = new System.Drawing.Point(210, 167);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 35);
+            this.btnDelete.Size = new System.Drawing.Size(100, 27);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -127,9 +155,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(597, 483);
+            this.btnExit.Location = new System.Drawing.Point(598, 167);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 35);
+            this.btnExit.Size = new System.Drawing.Size(100, 27);
             this.btnExit.TabIndex = 8;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -137,9 +165,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(84, 483);
+            this.btnSave.Location = new System.Drawing.Point(85, 167);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 35);
+            this.btnSave.Size = new System.Drawing.Size(100, 27);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -147,25 +175,33 @@
             // 
             // gridProduct
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gridProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridProduct.DefaultCellStyle = dataGridViewCellStyle5;
+            this.gridProduct.Location = new System.Drawing.Point(124, 219);
+            this.gridProduct.Name = "gridProduct";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridProduct.DefaultCellStyle = dataGridViewCellStyle6;
-            this.gridProduct.Location = new System.Drawing.Point(124, 152);
-            this.gridProduct.Name = "gridProduct";
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridProduct.RowTemplate.Height = 24;
             this.gridProduct.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gridProduct.Size = new System.Drawing.Size(531, 311);
@@ -215,23 +251,11 @@
             // 
             this.errProductName.ContainerControl = this;
             // 
-            // lblRecordsCount
-            // 
-            this.lblRecordsCount.AutoSize = true;
-            this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsCount.Location = new System.Drawing.Point(661, 429);
-            this.lblRecordsCount.Name = "lblRecordsCount";
-            this.lblRecordsCount.Size = new System.Drawing.Size(72, 27);
-            this.lblRecordsCount.TabIndex = 11;
-            this.lblRecordsCount.Text = "Count";
-            // 
             // frmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 575);
+            this.ClientSize = new System.Drawing.Size(804, 605);
             this.Controls.Add(this.grpboxProduct);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmProduct";
@@ -251,7 +275,6 @@
         private System.Windows.Forms.GroupBox grpboxProduct;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridView gridProduct;
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Label lblProductCode;
         private System.Windows.Forms.TextBox txtProductName;
@@ -263,6 +286,8 @@
         private System.Windows.Forms.ErrorProvider errProductName;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnEmailExcel;
+        private System.Windows.Forms.DataGridView gridProduct;
+        private System.Windows.Forms.Label lblRecCount;
         private System.Windows.Forms.Label lblRecordsCount;
     }
 }

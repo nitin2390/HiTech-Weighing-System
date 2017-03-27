@@ -42,7 +42,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\dll\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -88,6 +88,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HiTechTMSModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entity Model\mstSupplier.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\Product.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
@@ -113,7 +116,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HiTechTMSModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DB\HitechTruckMngtSystem.db" />
     <None Include="Entity Model\HiTechTMSModel.edmx.diagram">
       <DependentUpon>HiTechTMSModel.edmx</DependentUpon>
     </None>

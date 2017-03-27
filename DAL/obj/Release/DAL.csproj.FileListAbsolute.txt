@@ -7,15 +7,6 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\SharedLibrary.pdb
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\EntityFramework.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\EntityFramework.SqlServer.xml
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\dll\DAL.dll.config
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\dll\DAL.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\dll\DAL.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\dll\EntityFramework.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\dll\EntityFramework.SqlServer.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\dll\SharedLibrary.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\dll\SharedLibrary.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\dll\EntityFramework.xml
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\dll\EntityFramework.SqlServer.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Release\DAL.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Release\DAL.pdb
