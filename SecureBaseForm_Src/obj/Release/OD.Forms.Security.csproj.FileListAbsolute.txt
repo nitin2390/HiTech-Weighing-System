@@ -1,5 +1,7 @@
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\bin\Release\OD.Forms.Security.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\bin\Release\OD.Forms.Security.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\bin\Release\dll\OD.Forms.Security.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\bin\Release\dll\OD.Forms.Security.pdb
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\obj\Release\OD.Forms.Security.SecureBaseForm.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\obj\Release\OD.Forms.Security.csproj.GenerateResource.Cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\obj\Release\OD.Forms.Security.dll

@@ -49,7 +49,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\Release\dll\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -160,6 +160,9 @@
     <Compile Include="Reports\rptCommon.Designer.cs">
       <DependentUpon>rptCommon.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="db\HitechTruckMngtSystmDataBaseFile.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resource\Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
@@ -252,21 +255,15 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Licensee\Licensee.txt" />
-    <EmbeddedResource Include="App_Data\HitechTruckMngtSystmDataBaseFile.mdf">
+    <Content Include="db\HitechTruckMngtSystmDataBaseFile_log.ldf">
+      <DependentUpon>HitechTruckMngtSystmDataBaseFile.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Licensee\Licensee.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <Content Include="App_Data\HitechTruckMngtSystmDataBaseFile_log.ldf">
-      <DependentUpon>HitechTruckMngtSystmDataBaseFile.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="HitechTruckMngtSystmDataBaseFile.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="HitechTruckMngtSystmDataBaseFile_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>HitechTruckMngtSystmDataBaseFile.mdf</DependentUpon>
-    </Content>
+    <Content Include="Ico\HiTech.ico" />
+    <Content Include="Ico\HiTechLogo.ico" />
     <Content Include="image\Logo.png" />
   </ItemGroup>
   <ItemGroup>

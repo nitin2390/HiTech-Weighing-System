@@ -33,14 +33,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2ECE192BF4D68E655499FE501AA86E84"
+        "MsmKey" = "8:_1269ED1ED164FD526E2C2A89149052ED"
         "OwnerKey" = "8:_F11DC5FCD81F4BBCA92BE6742AF727FE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_29CCF8D9CEA64D2AB1A31C1E45FC869C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_38D5C1D01D23C047C878688ACDE032CD"
-        "OwnerKey" = "8:_2ECE192BF4D68E655499FE501AA86E84"
+        "OwnerKey" = "8:_1269ED1ED164FD526E2C2A89149052ED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -63,7 +69,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_45670E8B381EB4F9A2C66CEDBDAFA1ED"
+        "MsmKey" = "8:_3EF2669006680F18DF67E26F05ACBCEA"
         "OwnerKey" = "8:_F11DC5FCD81F4BBCA92BE6742AF727FE"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -81,7 +87,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_71C521695E41431FAC96F0211A47320E"
+        "MsmKey" = "8:_72C718FA690785AF84FA84985D66DB3E"
+        "OwnerKey" = "8:_F11DC5FCD81F4BBCA92BE6742AF727FE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_74025EE987654FF588F5AF6FC729C097"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -105,26 +117,26 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8E12C9E690504EB38BA7DD1A0174D134"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9745C63823688525DD913F30100311B5"
+        "OwnerKey" = "8:_F11DC5FCD81F4BBCA92BE6742AF727FE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_AD5AD3E150DC4DF798A0AC5F96F58AD5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B0CDE474C21FFD7E57EB2226AC868682"
-        "OwnerKey" = "8:_F11DC5FCD81F4BBCA92BE6742AF727FE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BA729B3BF25B4929A4112803977D9066"
+        "MsmKey" = "8:_E77E78E5E8B54DB1B2E34C8CCC1171D8"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DE2420224D2534AB6D785AD8E12287AB"
-        "OwnerKey" = "8:_F11DC5FCD81F4BBCA92BE6742AF727FE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -148,19 +160,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_72C718FA690785AF84FA84985D66DB3E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3EF2669006680F18DF67E26F05ACBCEA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1269ED1ED164FD526E2C2A89149052ED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9745C63823688525DD913F30100311B5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_F11DC5FCD81F4BBCA92BE6742AF727FE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_45670E8B381EB4F9A2C66CEDBDAFA1ED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DE2420224D2534AB6D785AD8E12287AB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -178,19 +202,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2ECE192BF4D68E655499FE501AA86E84"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_38D5C1D01D23C047C878688ACDE032CD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B0CDE474C21FFD7E57EB2226AC868682"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -374,14 +386,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2ECE192BF4D68E655499FE501AA86E84"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1269ED1ED164FD526E2C2A89149052ED"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2ECE192BF4D68E655499FE501AA86E84"
+                    "_1269ED1ED164FD526E2C2A89149052ED"
                     {
                     "Name" = "8:DAL.dll"
                     "Attributes" = "3:512"
@@ -403,6 +415,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_29CCF8D9CEA64D2AB1A31C1E45FC869C"
+            {
+            "SourcePath" = "8:..\\..\\HiTechTMS\\db\\HitechTruckMngtSystmDataBaseFile.mdf"
+            "TargetName" = "8:HitechTruckMngtSystmDataBaseFile.mdf"
+            "Tag" = "8:"
+            "Folder" = "8:_154399CC750145E5AE5E783E3F255BE0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_38D5C1D01D23C047C878688ACDE032CD"
@@ -467,20 +499,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_45670E8B381EB4F9A2C66CEDBDAFA1ED"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3EF2669006680F18DF67E26F05ACBCEA"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SharedLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:OD.Forms.Security, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_45670E8B381EB4F9A2C66CEDBDAFA1ED"
+                    "_3EF2669006680F18DF67E26F05ACBCEA"
                     {
-                    "Name" = "8:SharedLibrary.dll"
+                    "Name" = "8:OD.Forms.Security.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:SharedLibrary.dll"
+            "SourcePath" = "8:OD.Forms.Security.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3A68356F04864F33BCB97EE2DF69393C"
@@ -560,12 +592,43 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_71C521695E41431FAC96F0211A47320E"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_72C718FA690785AF84FA84985D66DB3E"
             {
-            "SourcePath" = "8:..\\..\\HiTechTMS\\App_Data\\HitechTruckMngtSystmDataBaseFile.mdf"
-            "TargetName" = "8:HitechTruckMngtSystmDataBaseFile.mdf"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SharedLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_72C718FA690785AF84FA84985D66DB3E"
+                    {
+                    "Name" = "8:SharedLibrary.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:SharedLibrary.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3A68356F04864F33BCB97EE2DF69393C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_74025EE987654FF588F5AF6FC729C097"
+            {
+            "SourcePath" = "8:..\\..\\HiTechTMS\\Ico\\HiTechLogo.ico"
+            "TargetName" = "8:HiTechLogo.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_F9ADC08AE9494BFE87B6FFD5BC7EBA42"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -631,12 +694,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AD5AD3E150DC4DF798A0AC5F96F58AD5"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8E12C9E690504EB38BA7DD1A0174D134"
             {
-            "SourcePath" = "8:..\\..\\HiTechTMS\\Licensee\\Licensee.txt"
-            "TargetName" = "8:Licensee.txt"
+            "SourcePath" = "8:..\\..\\HiTechTMS\\db\\HitechTruckMngtSystmDataBaseFile_log.ldf"
+            "TargetName" = "8:HitechTruckMngtSystmDataBaseFile_log.ldf"
             "Tag" = "8:"
-            "Folder" = "8:_8FBA17231AAC4A88BDDF6D812DF2EEC4"
+            "Folder" = "8:_154399CC750145E5AE5E783E3F255BE0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -651,14 +714,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B0CDE474C21FFD7E57EB2226AC868682"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9745C63823688525DD913F30100311B5"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Business, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B0CDE474C21FFD7E57EB2226AC868682"
+                    "_9745C63823688525DD913F30100311B5"
                     {
                     "Name" = "8:Business.dll"
                     "Attributes" = "3:512"
@@ -682,12 +745,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BA729B3BF25B4929A4112803977D9066"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AD5AD3E150DC4DF798A0AC5F96F58AD5"
             {
-            "SourcePath" = "8:..\\..\\HiTechTMS\\App_Data\\HitechTruckMngtSystmDataBaseFile_log.ldf"
-            "TargetName" = "8:HitechTruckMngtSystmDataBaseFile_log.ldf"
+            "SourcePath" = "8:..\\..\\HiTechTMS\\Licensee\\Licensee.txt"
+            "TargetName" = "8:Licensee.txt"
             "Tag" = "8:"
-            "Folder" = "8:_3A68356F04864F33BCB97EE2DF69393C"
+            "Folder" = "8:_8FBA17231AAC4A88BDDF6D812DF2EEC4"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -702,23 +765,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DE2420224D2534AB6D785AD8E12287AB"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E77E78E5E8B54DB1B2E34C8CCC1171D8"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:OD.Forms.Security, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_DE2420224D2534AB6D785AD8E12287AB"
-                    {
-                    "Name" = "8:OD.Forms.Security.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:OD.Forms.Security.dll"
-            "TargetName" = "8:"
+            "SourcePath" = "8:..\\..\\HiTechTMS\\Ico\\HiTech.ico"
+            "TargetName" = "8:HiTech.ico"
             "Tag" = "8:"
-            "Folder" = "8:_3A68356F04864F33BCB97EE2DF69393C"
+            "Folder" = "8:_F9ADC08AE9494BFE87B6FFD5BC7EBA42"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -730,7 +782,7 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E81B72B3516981785FF6F090A9FD5F06"
@@ -780,6 +832,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_154399CC750145E5AE5E783E3F255BE0"
+                    {
+                    "Name" = "8:db"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_7B5B4F0D28134221A48F29C8CF05B914"
+                        "Folders"
+                        {
+                        }
+                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_8FBA17231AAC4A88BDDF6D812DF2EEC4"
                     {
                     "Name" = "8:Licensee"
@@ -787,6 +850,17 @@
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_2E6031EA1EA14FFE8BEEFE566F55E7ED"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F9ADC08AE9494BFE87B6FFD5BC7EBA42"
+                    {
+                    "Name" = "8:ico"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_9D8F44FAB0EB47B1AB386041B32B9D3D"
                         "Folders"
                         {
                         }
@@ -832,7 +906,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:HiTech Truck Management"
         "ProductCode" = "8:{7F4E54A4-79FE-464D-8085-C6B43BFEB591}"
-        "PackageCode" = "8:{B76928FB-5C12-454B-811B-35AF1EAFBBC1}"
+        "PackageCode" = "8:{BBE6E34B-06A8-4559-B615-40126D39EB84}"
         "UpgradeCode" = "8:{E732EB9A-D76D-49B9-ACD5-DD6B59BD1799}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -954,7 +1028,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3FDD1048D57F449DBC1FB5646E845E6C"
             {
-            "Name" = "8:HiTechTMS (Active)"
+            "Name" = "8:HiTechTMS"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -963,7 +1037,7 @@
             "Target" = "8:_F11DC5FCD81F4BBCA92BE6742AF727FE"
             "Folder" = "8:_F9C42C9F28984B66AD58BA83AF03FE80"
             "WorkingFolder" = "8:_3A68356F04864F33BCB97EE2DF69393C"
-            "Icon" = "8:"
+            "Icon" = "8:_E77E78E5E8B54DB1B2E34C8CCC1171D8"
             "Feature" = "8:"
             }
         }
