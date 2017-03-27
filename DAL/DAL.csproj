@@ -113,6 +113,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HiTechTMSModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DB\HitechTruckMngtSystem.db" />
     <None Include="Entity Model\HiTechTMSModel.edmx.diagram">
       <DependentUpon>HiTechTMSModel.edmx</DependentUpon>
     </None>
@@ -138,6 +139,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DB\dbo.Product.sql" />
     <Content Include="Entity Model\HiTechTMSModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HiTechTMSModel.edmx</DependentUpon>

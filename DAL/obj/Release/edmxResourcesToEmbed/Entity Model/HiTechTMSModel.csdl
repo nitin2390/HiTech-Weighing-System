@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HitechTruckMngtSystmDataBaseFileModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HitechTruckMngtSystmDataBaseFileEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserRoleTypes" EntityType="HitechTruckMngtSystmDataBaseFileModel.UserRoleType" />
+    <EntitySet Name="Products" EntityType="HitechTruckMngtSystmDataBaseFileModel.Product" />
+    <EntitySet Name="UserRoles" EntityType="HitechTruckMngtSystmDataBaseFileModel.UserRole" />
+    <AssociationSet Name="FK__UserRole__UserRo__07C12930" Association="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__07C12930">
+      <End Role="UserRoleType" EntitySet="UserRoleTypes" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <EntitySet Name="EmailMasters" EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailMaster" />
+    <EntitySet Name="EmailConfigs" EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailConfig" />
+  </EntityContainer>
+  <EntityType Name="UserRoleType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserRoles" Relationship="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__07C12930" FromRole="UserRoleType" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserRoleType" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="UserRoleType1" Relationship="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__07C12930" FromRole="UserRole" ToRole="UserRoleType" />
+  </EntityType>
+  <Association Name="FK__UserRole__UserRo__07C12930">
+    <End Type="HitechTruckMngtSystmDataBaseFileModel.UserRoleType" Role="UserRoleType" Multiplicity="1" />
+    <End Type="HitechTruckMngtSystmDataBaseFileModel.UserRole" Role="UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRoleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserRoleType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EmailMaster">
+    <Key>
+      <PropertyRef Name="EmailID" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="EmailID" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EmailConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="EmailID" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailServerPort" Type="Int32" Nullable="false" />
+    <Property Name="EmailSmtpServer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EmailSubject" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmailBody" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmailRecipient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

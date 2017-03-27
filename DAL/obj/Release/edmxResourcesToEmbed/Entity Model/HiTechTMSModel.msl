@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HitechTruckMngtSystmDataBaseFileModelStoreContainer" CdmEntityContainer="HitechTruckMngtSystmDataBaseFileEntities">
+    <EntitySetMapping Name="UserRoleTypes">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.UserRoleType">
+        <MappingFragment StoreEntitySet="UserRoleType">
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="UserRoleType" ColumnName="UserRoleType" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailMasters">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.EmailMaster">
+        <MappingFragment StoreEntitySet="EmailMaster">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailConfigs">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.EmailConfig">
+        <MappingFragment StoreEntitySet="EmailConfigs">
+          <ScalarProperty Name="EmailRecipient" ColumnName="EmailRecipient" />
+          <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
+          <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmailSmtpServer" ColumnName="EmailSmtpServer" />
+          <ScalarProperty Name="EmailServerPort" ColumnName="EmailServerPort" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

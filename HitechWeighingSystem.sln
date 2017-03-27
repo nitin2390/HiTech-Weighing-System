@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HitechTMS", "CodeProjectSerialComms\HitechTMS.csproj", "{EF2E2AEC-A45B-41A4-AA11-54DD81C307CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HitechTMS", "HiTechTMS\HitechTMS.csproj", "{EF2E2AEC-A45B-41A4-AA11-54DD81C307CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{37FB5E20-0970-4190-9589-E487810F877B}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{E8D24DE5-5067-4CD4-8E23-57F3FDB5B162}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OD.Forms.Security", "SecureBaseForm_Src\OD.Forms.Security.csproj", "{5C9ADA8B-7F93-4968-B6C3-B6B9627C2B0F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HiTechSetup", "HiTechSetup\HiTechSetup\HiTechSetup.vdproj", "{E3890BFA-5DE8-4CC6-A9AA-8E8DF3A82C12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,8 @@ Global
 		{5C9ADA8B-7F93-4968-B6C3-B6B9627C2B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C9ADA8B-7F93-4968-B6C3-B6B9627C2B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C9ADA8B-7F93-4968-B6C3-B6B9627C2B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3890BFA-5DE8-4CC6-A9AA-8E8DF3A82C12}.Debug|Any CPU.ActiveCfg = Debug
+		{E3890BFA-5DE8-4CC6-A9AA-8E8DF3A82C12}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
