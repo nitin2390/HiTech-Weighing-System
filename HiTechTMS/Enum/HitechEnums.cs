@@ -10,7 +10,9 @@
 
         public enum FrmName
         {
-            ProductDetail =1
+            ProductDetail =1,
+            Supplier = 2,
+            Transport = 3
         }
 
         public enum enumProduct
@@ -30,5 +32,17 @@
             email = 7
         }
 
+        public enum enumSupplierTransportfrm
+        {
+            Id = 0,
+            SupplierTransportCode = 1,
+            SupplierTransportName = 2,
+            Address1 = 3,
+            Address2 = 4,
+            Address3 = 5,
+            Phone = 6,
+            Fax = 7,
+            Email = 8
+        }
     }
 }

@@ -45,6 +45,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -93,11 +94,17 @@
   <ItemGroup>
     <Compile Include="Classes\CreateExcelAndSendEmail.cs" />
     <Compile Include="Classes\GetResourceCaption.cs" />
-    <Compile Include="File\frmSupplierFile.cs">
+    <Compile Include="File\frmSupplierTrasnportFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="File\frmSupplierFile.Designer.cs">
-      <DependentUpon>frmSupplierFile.cs</DependentUpon>
+    <Compile Include="File\frmSupplierTrasnportFile.Designer.cs">
+      <DependentUpon>frmSupplierTrasnportFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SupplierTransport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierTransport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Resource\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -135,11 +142,6 @@
       <DependentUpon>frmProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Enum\HitechEnums.cs" />
-    <Compile Include="HitechTruckMngtSystmDataBaseFileDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HitechTruckMngtSystmDataBaseFileDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Config\frmEmailConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,10 +163,14 @@
       <DependentUpon>rptCommon.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="db\HitechTruckMngtSystmDataBaseFile.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="File\frmSupplierFile.resx">
-      <DependentUpon>frmSupplierFile.cs</DependentUpon>
+    <EmbeddedResource Include="File\frmSupplierTrasnportFile.resx">
+      <DependentUpon>frmSupplierTrasnportFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SupplierTransport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SupplierTransport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource\Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -207,17 +213,6 @@
       <DependentUpon>rptCommon.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="HitechTruckMngtSystmDataBaseFileDataSet.xsc">
-      <DependentUpon>HitechTruckMngtSystmDataBaseFileDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="HitechTruckMngtSystmDataBaseFileDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HitechTruckMngtSystmDataBaseFileDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HitechTruckMngtSystmDataBaseFileDataSet.xss">
-      <DependentUpon>HitechTruckMngtSystmDataBaseFileDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -260,7 +255,7 @@
   <ItemGroup>
     <Content Include="db\HitechTruckMngtSystmDataBaseFile_log.ldf">
       <DependentUpon>HitechTruckMngtSystmDataBaseFile.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Licensee\Licensee.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

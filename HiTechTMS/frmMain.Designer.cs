@@ -215,6 +215,7 @@
             this.transporterFileToolStripMenuItem.Name = "transporterFileToolStripMenuItem";
             this.transporterFileToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.transporterFileToolStripMenuItem.Text = "3 Transporter File";
+            this.transporterFileToolStripMenuItem.Click += new System.EventHandler(this.transporterFileToolStripMenuItem_Click);
             // 
             // storedTToolStripMenuItem
             // 

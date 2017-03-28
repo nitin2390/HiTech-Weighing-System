@@ -7,6 +7,7 @@ using OD.Forms.Security;
 using HitechTMS.MasterForms;
 using HitechTMS.Classes;
 using HitechTMS.File;
+using static HitechTMS.HitechEnums;
 
 namespace HitechTMS
 {
@@ -86,18 +87,22 @@ namespace HitechTMS
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Dispose();
+            this.Close();
         }
 
         private void productFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmProduct productForm = new frmProduct();
+            frmProduct productForm = new frmProduct(FrmName.ProductDetail);
+            productForm.StartPosition = FormStartPosition.CenterParent;
             productForm.ShowDialog();
         }
 
         public void button1_Click(object sender, EventArgs e)
         {
-            
+            frmSupplierTrasnportFile objfrmSupplierFile = new frmSupplierTrasnportFile(FrmName.Transport);
+            objfrmSupplierFile.StartPosition = FormStartPosition.CenterParent;
+            objfrmSupplierFile.ShowDialog();
         }
 
         private void emailConfigToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,9 +121,18 @@ namespace HitechTMS
 
         private void supplierFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSupplierFile objfrmSupplierFile = new frmSupplierFile();
+            frmSupplierTrasnportFile objfrmSupplierFile = new frmSupplierTrasnportFile(FrmName.Supplier);
+            objfrmSupplierFile.Text = "Supplier File";
             objfrmSupplierFile.StartPosition = FormStartPosition.CenterParent;
             objfrmSupplierFile.ShowDialog();
+        }
+
+        private void transporterFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSupplierTrasnportFile objfrmTrasnportFile = new frmSupplierTrasnportFile(FrmName.Transport);
+            objfrmTrasnportFile.Text = "Trasnport File";
+            objfrmTrasnportFile.StartPosition = FormStartPosition.CenterParent;
+            objfrmTrasnportFile.ShowDialog();
         }
     }
 }

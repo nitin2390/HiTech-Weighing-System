@@ -27,9 +27,10 @@
           <Property Name="EmailID" Type="nvarchar" MaxLength="400" Nullable="false" />
           <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="mstSupplier">
+        <EntityType Name="mstSupplierTransporter">
           <Key>
             <PropertyRef Name="SupplierCode" />
+            <PropertyRef Name="IsSuplier" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="SupplierCode" Type="varchar" MaxLength="5" Nullable="false" />
@@ -40,6 +41,7 @@
           <Property Name="Phone" Type="varchar" MaxLength="20" />
           <Property Name="Fax" Type="varchar" MaxLength="20" />
           <Property Name="Email" Type="varchar" MaxLength="40" />
+          <Property Name="IsSuplier" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -80,7 +82,7 @@
         <EntityContainer Name="HitechTruckMngtSystmDataBaseFileModelStoreContainer">
           <EntitySet Name="EmailConfigs" EntityType="Self.EmailConfigs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmailMaster" EntityType="Self.EmailMaster" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="mstSupplier" EntityType="Self.mstSupplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
@@ -103,7 +105,7 @@
           </AssociationSet>
           <EntitySet Name="EmailMasters" EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailMaster" />
           <EntitySet Name="EmailConfigs" EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailConfig" />
-          <EntitySet Name="mstSupplier" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstSupplier" />
+          <EntitySet Name="mstSupplierTransporter" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstSupplierTransporter" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -165,9 +167,10 @@
           <Property Name="EmailBody" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="EmailRecipient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="mstSupplier">
+        <EntityType Name="mstSupplierTransporter">
           <Key>
             <PropertyRef Name="SupplierCode" />
+            <PropertyRef Name="IsSuplier" />
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="SupplierCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
@@ -178,6 +181,7 @@
           <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="IsSuplier" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -236,9 +240,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="mstSupplier">
-            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstSupplier">
-              <MappingFragment StoreEntitySet="mstSupplier">
+          <EntitySetMapping Name="mstSupplierTransporter">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstSupplierTransporter">
+              <MappingFragment StoreEntitySet="mstSupplierTransporter">
+                <ScalarProperty Name="IsSuplier" ColumnName="IsSuplier" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Fax" ColumnName="Fax" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />

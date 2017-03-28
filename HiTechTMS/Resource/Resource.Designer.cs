@@ -88,6 +88,15 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data update successfully!.
+        /// </summary>
+        internal static string DATA_UPDATE {
+            get {
+                return ResourceManager.GetString("DATA_UPDATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to delete?.
         /// </summary>
         internal static string DELTE_POPUP {

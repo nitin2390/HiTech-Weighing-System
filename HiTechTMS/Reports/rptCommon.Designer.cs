@@ -50,6 +50,7 @@
             this.Controls.Add(this.cryRepViewCommon);
             this.Name = "rptCommon";
             this.Text = "rptCommon";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.rptCommon_FormClosing);
             this.ResumeLayout(false);
 
         }

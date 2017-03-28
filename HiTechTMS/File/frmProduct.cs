@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using DAL.Entity_Model;
 using HitechTMS.Classes;
 using static HitechTMS.HitechEnums;
+using System.Data.Entity.Migrations;
 
 namespace HitechTMS.File
 {
@@ -14,9 +15,11 @@ namespace HitechTMS.File
 
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         private GetResourceCaption dbGetResourceCaption;
-        public frmProduct()
+        private FrmName _frmName { get; set; }
+        public frmProduct(FrmName frmName)
         {
             InitializeComponent();
+            this._frmName = frmName;
             dbGetResourceCaption = new GetResourceCaption();
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
             this.MinimizeBox = this.MaximizeBox = false;
@@ -96,24 +99,29 @@ namespace HitechTMS.File
                     var existProdCode = (from prod in dbObj.Products
                                          where prod.Code == txtProductCode.Text
                                          select prod.Code).ToList();
+                    Product objProd = new Product();
+                    objProd.Code = txtProductCode.Text;
+                    objProd.Name = txtProductName.Text;
 
                     if (existProdCode.Count == 0)
                     {
-                        Product objProd = new Product();
-                        objProd.Code = txtProductCode.Text;
-                        objProd.Name = txtProductName.Text;
                         dbObj.Products.Add(objProd);
                         if (dbObj.SaveChanges() ==1)
                         {
                             ResetCntrl();
-                            MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_SAVE"));
+                            MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_SAVE"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }                       
                     }
                     else
                     {
-                        MessageBox.Show(dbGetResourceCaption.GetStringValue("DUPLICATE_DATA"), dbGetResourceCaption.GetStringValue("ALERT"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
 
+                        dbObj.Products.AddOrUpdate(objProd);
+                        if (dbObj.SaveChanges() == 1)
+                        {
+                            ResetCntrl();
+                            MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_UPDATE"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
             }
             catch (Exception err)
@@ -136,10 +144,10 @@ namespace HitechTMS.File
                 var ProdQuery = from prod in dbObj.Products
                                 where prod.Code == txtProductCode.Text
                                 select prod;
-                List<Product> objEmp = ProdQuery.ToList();
-                if (objEmp.Count > 0)
+                List<Product> objProd = ProdQuery.ToList();
+                if (objProd.Count > 0)
                 {
-                    gridProduct.DataSource = objEmp;
+                    gridProduct.DataSource = objProd;
                 }
                 else
                 {
@@ -184,7 +192,7 @@ namespace HitechTMS.File
         private void btnReport_Click(object sender, EventArgs e)
         {
             var RepData = dbObj.Products.Select(x => new { x.Code, x.Name });
-            rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable());
+            rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(),_frmName);
             rptCmn.ShowDialog();
         }
         private void btnEmailExcel_Click(object sender, EventArgs e)
@@ -264,10 +272,44 @@ namespace HitechTMS.File
                 txtProductName.Focus();
             }
         }
-
-        private void grpboxProduct_Enter(object sender, EventArgs e)
+        private void fillFormInputs(int rowIndex)
         {
+            DataGridViewRow row = gridProduct.Rows[rowIndex];
+            txtProductCode.Text = row.Cells[(int)enumProduct.Code].Value.ToString();
+            txtProductName.Text = row.Cells[(int)enumProduct.Name].Value.ToString();
+        }
 
+        private void gridProduct_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                fillFormInputs(e.RowIndex);
+            }
+        }
+
+        private void searchGridData()
+        {
+            if (txtProductCode.Text != "")
+            {
+                var ProdQuery = from prod in dbObj.Products
+                                where prod.Code == txtProductCode.Text
+                                select prod;
+                List<Product> objProd = ProdQuery.ToList();
+                if (objProd.Count > 0)
+                {
+                    gridProduct.DataSource = objProd;
+                    txtProductName.Text = objProd[0].Name.ToString();
+                }
+                else
+                {
+                    txtProductName.Text = "";
+                }
+            }
+        }
+
+        private void txtProductCode_Leave(object sender, EventArgs e)
+        {
+            searchGridData();
         }
     }
 }

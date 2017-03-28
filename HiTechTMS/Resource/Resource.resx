@@ -126,6 +126,9 @@
   <data name="DATA_SAVE" xml:space="preserve">
     <value>Data saved successfully!</value>
   </data>
+  <data name="DATA_UPDATE" xml:space="preserve">
+    <value>Data update successfully!</value>
+  </data>
   <data name="DELTE_POPUP" xml:space="preserve">
     <value>Are you sure you want to delete?</value>
   </data>
