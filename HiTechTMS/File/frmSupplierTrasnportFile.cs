@@ -8,6 +8,7 @@ using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static HitechTMS.HitechEnums;
@@ -43,6 +44,7 @@ namespace HitechTMS.File
                 gridSupplierTransporter.RowHeadersVisible = true;
                 gridSupplierTransporter.RowHeadersWidth = 30;
                 gridSupplierTransporter.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                gridSupplierTransporter.ReadOnly = true;
             }
             catch (Exception err)
             {
@@ -103,11 +105,86 @@ namespace HitechTMS.File
                 throw;
             }
         }
-
+        public IEnumerable<Control> GetAllControllType(Control control, Type type)
+        {
+            var controls = control.Controls.Cast<Control>();
+            return controls.SelectMany(ctrl => GetAllControllType(ctrl, type))
+                                      .Concat(controls)
+                                      .Where(c => c.GetType() == type);
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
+                var TextControl = GetAllControllType(this, typeof(TextBox));
+
+                foreach (Control control in TextControl)
+                {
+                    control.Focus();
+                    #region "Validation"
+
+                    if (control.Name == "txtSupplierCode")
+                    {
+                        if (txtSupplierCode.Text == "")
+                        {
+                            DialogResult = DialogResult.None;
+                            errProviderCode.SetError(txtSupplierCode, "Code required!");
+                            return;
+                        }
+                        else
+                        {
+                            errProviderCode.SetError(txtSupplierCode, null);
+                        }
+                    }
+
+                    if (control.Name == "txtPhone" && control.Text !="")
+                    {
+                        if (!Regex.IsMatch(txtPhone.Text, @"^[789]\d{9}$", RegexOptions.IgnoreCase))
+                        {
+                            DialogResult = DialogResult.None;
+                            errProviderPhone.SetError(txtPhone, "Phone number invalid!");
+                            return;
+                        }
+                        else
+                        {
+                            errProviderPhone.SetError(txtPhone, null);
+                        }
+                    }
+
+
+                    if (control.Name == "txtFax" && control.Text != "")
+                    {
+                        if (!Regex.IsMatch(txtFax.Text, @"^[789]\d{9}$", RegexOptions.IgnoreCase))
+                        {
+                            DialogResult = DialogResult.None;
+                            errProviderFax.SetError(txtFax, "Phone number invalid!");
+                            return;
+                        }
+                        else
+                        {
+                            errProviderFax.SetError(txtFax, null);
+                        }
+                    }
+
+                    if (control.Name == "txtEmail" && control.Text != "")
+                    {
+                        if (!Regex.IsMatch(txtEmail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
+                        {
+                            DialogResult = DialogResult.None;
+                            errProviderEmail.SetError(txtEmail, "Email ID invalid!");
+                            return;
+                        }
+                        else
+                        {
+                            errProviderEmail.SetError(txtEmail, null);
+                        }
+                    }                    
+                    #endregion
+
+                }
+
+
+
                 if (txtSupplierCode.Text != "")
                 {
 
@@ -147,8 +224,9 @@ namespace HitechTMS.File
                             ResetCntrl();
                             MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_UPDATE"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        
+
                     }
+
 
                 }
             }
@@ -234,12 +312,24 @@ namespace HitechTMS.File
                 if (objProd.Count > 0)
                 {
                     gridSupplierTransporter.DataSource = objProd;
-                    txtSupplierName.Text = objProd[0].SupplierName.ToString();
                     _supplierTransporterID = objProd[0].Id;
+                    txtSupplierName.Text = objProd[0].SupplierName.ToString();
+                    txtAddressLine1.Text = objProd[0].Address1.ToString();
+                    txtAddressLine2.Text = objProd[0].Address2.ToString();
+                    txtAddressLine3.Text = objProd[0].Address3.ToString();
+                    txtPhone.Text = objProd[0].Phone.ToString();
+                    txtFax.Text = objProd[0].Fax.ToString();
+                    txtEmail.Text = objProd[0].Email.ToString();
                 }
                 else
                 {
                     txtSupplierName.Text = "";
+                    txtAddressLine1.Text = "";
+                    txtAddressLine2.Text = "";
+                    txtAddressLine3.Text = "";
+                    txtPhone.Text = "";
+                    txtFax.Text = "";
+                    txtEmail.Text = "";
                     _supplierTransporterID = Guid.Empty;
                 }
 
@@ -252,6 +342,18 @@ namespace HitechTMS.File
             {
                 fillFormInputs(e.RowIndex);
             }
+            else
+            {
+                _supplierTransporterID = Guid.Empty;
+                txtSupplierCode.Text = "";
+                txtSupplierName.Text = "";
+                txtAddressLine1.Text = "";
+                txtAddressLine2.Text = "";
+                txtAddressLine3.Text = "";
+                txtPhone.Text = "";
+                txtFax.Text = "";
+                txtEmail.Text = "";
+            }
         }
 
         private void fillFormInputs(int rowIndex)
@@ -260,6 +362,121 @@ namespace HitechTMS.File
             _supplierTransporterID = (Guid)row.Cells[(int)enumSupplierTransportfrm.Id].Value;
             txtSupplierCode.Text = row.Cells[(int)enumSupplierTransportfrm.SupplierTransportCode].Value.ToString();
             txtSupplierName.Text = row.Cells[(int)enumSupplierTransportfrm.SupplierTransportName].Value.ToString();
+            txtAddressLine1.Text = row.Cells[(int)enumSupplierTransportfrm.Address1].Value.ToString();
+            txtAddressLine2.Text = row.Cells[(int)enumSupplierTransportfrm.Address2].Value.ToString();
+            txtAddressLine3.Text = row.Cells[(int)enumSupplierTransportfrm.Address3].Value.ToString();
+            txtPhone.Text = row.Cells[(int)enumSupplierTransportfrm.Phone].Value.ToString();
+            txtFax.Text = row.Cells[(int)enumSupplierTransportfrm.Fax].Value.ToString();
+            txtEmail.Text = row.Cells[(int)enumSupplierTransportfrm.Email].Value.ToString();
+
+        }
+
+        private void btnEmailExcel_Click(object sender, EventArgs e)
+        {
+            using (CreateExcelAndSendEmail obj = new CreateExcelAndSendEmail())
+            {
+                if (obj.CreateExcelAndSendEmailToList(_frmType))
+                {
+                    MessageBox.Show(dbGetResourceCaption.GetStringValue("EMAIL_SENT"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(dbGetResourceCaption.GetStringValue("ERR_EMAIL_CHK_CONFIG"), dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '+'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '+') && ((sender as TextBox).Text.IndexOf('+') >= 0))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtFax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '+'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '+') && ((sender as TextBox).Text.IndexOf('+') >= 0))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            {
+                btnSave_Click((object)sender, (EventArgs)e);
+                txtSupplierCode.Focus();
+            }
+        }
+
+        private void txtSupplierCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            {
+                txtSupplierName.Focus();
+            }
+        }
+
+        private void txtSupplierName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            {
+                txtAddressLine1.Focus();
+            }
+        }
+
+        private void txtAddressLine1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            {
+                txtAddressLine2.Focus();
+            }
+        }
+
+        private void txtAddressLine2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            {
+                txtAddressLine3.Focus();
+            }
+        }
+
+        private void txtAddressLine3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            {
+                txtPhone.Focus();
+            }
+        }
+
+        private void txtPhone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            {
+                txtFax.Focus();
+            }
+        }
+
+        private void txtFax_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            {
+                txtEmail.Focus();
+            }
         }
     }
 }

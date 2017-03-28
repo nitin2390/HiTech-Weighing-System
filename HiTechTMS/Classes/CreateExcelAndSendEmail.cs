@@ -36,13 +36,27 @@ namespace HitechTMS.Classes
                     this.FileName = @"\ProductDetails.xls";
                     this.WorkSheetName = "Details";
                 }
-                else if (objEnums == HitechEnums.FrmName.ProductDetail)
+                else if (objEnums == HitechEnums.FrmName.Supplier)
                 {
-                    var query = dbObj.Products.Select(x => new { x.Code, x.Name });
+                    var query = dbObj.mstSupplierTransporter
+                        .Where(x => x.IsSuplier == ((int)HitechEnums.FrmName.Supplier).ToString())
+                        .Select(x => new { x.SupplierCode, x.SupplierName, x.Address1, x.Address2, x.Address3, x.Phone, x.Fax, x.Email, x.IsSuplier });
+                        
                     dt = obj.ConvertToDataTable(query.ToList());
-                    this.FileName = @"\ProductDetails.xls";
+                    this.FileName = @"\SupplierFile.xls";
                     this.WorkSheetName = "Details";
                 }
+
+                else if (objEnums == HitechEnums.FrmName.Transport)
+                {
+                    var query = dbObj.mstSupplierTransporter
+                        .Where(x => x.IsSuplier == ((int)HitechEnums.FrmName.Transport).ToString())
+                        .Select(x => new { x.SupplierCode, x.SupplierName, x.Address1, x.Address2, x.Address3, x.Phone, x.Fax, x.Email });
+                    dt = obj.ConvertToDataTable(query.ToList());
+                    this.FileName = @"\TransportFile.xls";
+                    this.WorkSheetName = "Details";
+                }
+
                 EncryptionAndDecryption objEncryptionAndDecryption = new EncryptionAndDecryption();
                 var objEmailConfig = dbObj.EmailConfigs.Select(x => new { x.EmailID,
                                         x.EmailServerPort, x.EmailSmtpServer, x.Password,x.EmailBody,

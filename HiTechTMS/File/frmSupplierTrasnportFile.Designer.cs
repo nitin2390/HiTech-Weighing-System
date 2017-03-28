@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSupplierTrasnportFile));
             this.grpboxSupplierFile = new System.Windows.Forms.GroupBox();
             this.lblRecCount = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
@@ -55,10 +57,18 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblSupplierCode = new System.Windows.Forms.Label();
             this.lblSupplierName = new System.Windows.Forms.Label();
+            this.errProviderEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errProviderPhone = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errProviderCode = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errProviderFax = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpboxSupplierFile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).BeginInit();
             this.grpboxSupplimantaryDetails.SuspendLayout();
             this.grpboxMainDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderPhone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderFax)).BeginInit();
             this.SuspendLayout();
             // 
             // grpboxSupplierFile
@@ -139,6 +149,7 @@
             this.btnEmailExcel.TabIndex = 22;
             this.btnEmailExcel.Text = "E&mail As Excel";
             this.btnEmailExcel.UseVisualStyleBackColor = true;
+            this.btnEmailExcel.Click += new System.EventHandler(this.btnEmailExcel_Click);
             // 
             // btnReport
             // 
@@ -201,6 +212,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(146, 22);
             this.txtEmail.TabIndex = 18;
+            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmail_KeyDown);
             // 
             // lblPhone
             // 
@@ -217,6 +229,9 @@
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(146, 22);
             this.txtFax.TabIndex = 17;
+            this.txtFax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFax.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFax_KeyDown);
+            this.txtFax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFax_KeyPress);
             // 
             // lblbFax
             // 
@@ -233,6 +248,9 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(146, 22);
             this.txtPhone.TabIndex = 16;
+            this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPhone_KeyDown);
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // lblEmail
             // 
@@ -266,6 +284,7 @@
             this.txtAddressLine3.Name = "txtAddressLine3";
             this.txtAddressLine3.Size = new System.Drawing.Size(146, 22);
             this.txtAddressLine3.TabIndex = 15;
+            this.txtAddressLine3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAddressLine3_KeyDown);
             // 
             // txtAddressLine2
             // 
@@ -273,6 +292,7 @@
             this.txtAddressLine2.Name = "txtAddressLine2";
             this.txtAddressLine2.Size = new System.Drawing.Size(146, 22);
             this.txtAddressLine2.TabIndex = 14;
+            this.txtAddressLine2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAddressLine2_KeyDown);
             // 
             // txtAddressLine1
             // 
@@ -280,6 +300,7 @@
             this.txtAddressLine1.Name = "txtAddressLine1";
             this.txtAddressLine1.Size = new System.Drawing.Size(146, 22);
             this.txtAddressLine1.TabIndex = 13;
+            this.txtAddressLine1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAddressLine1_KeyDown);
             // 
             // txtSupplierName
             // 
@@ -287,6 +308,7 @@
             this.txtSupplierName.Name = "txtSupplierName";
             this.txtSupplierName.Size = new System.Drawing.Size(146, 22);
             this.txtSupplierName.TabIndex = 12;
+            this.txtSupplierName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSupplierName_KeyDown);
             // 
             // txtSupplierCode
             // 
@@ -294,6 +316,7 @@
             this.txtSupplierCode.Name = "txtSupplierCode";
             this.txtSupplierCode.Size = new System.Drawing.Size(146, 22);
             this.txtSupplierCode.TabIndex = 11;
+            this.txtSupplierCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSupplierCode_KeyDown);
             this.txtSupplierCode.Leave += new System.EventHandler(this.txtSupplierCode_Leave);
             // 
             // lblAddress
@@ -323,12 +346,29 @@
             this.lblSupplierName.TabIndex = 9;
             this.lblSupplierName.Text = "Supplier Name";
             // 
+            // errProviderEmail
+            // 
+            this.errProviderEmail.ContainerControl = this;
+            // 
+            // errProviderPhone
+            // 
+            this.errProviderPhone.ContainerControl = this;
+            // 
+            // errProviderCode
+            // 
+            this.errProviderCode.ContainerControl = this;
+            // 
+            // errProviderFax
+            // 
+            this.errProviderFax.ContainerControl = this;
+            // 
             // frmSupplierTrasnportFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 606);
             this.Controls.Add(this.grpboxSupplierFile);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSupplierTrasnportFile";
             this.Text = "SupplierFile";
             this.grpboxSupplierFile.ResumeLayout(false);
@@ -338,6 +378,10 @@
             this.grpboxSupplimantaryDetails.PerformLayout();
             this.grpboxMainDetails.ResumeLayout(false);
             this.grpboxMainDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderPhone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderFax)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,5 +413,9 @@
         private System.Windows.Forms.Label lblRecordsCount;
         private System.Windows.Forms.DataGridView gridSupplierTransporter;
         private System.Windows.Forms.Label lblRecCount;
+        private System.Windows.Forms.ErrorProvider errProviderEmail;
+        private System.Windows.Forms.ErrorProvider errProviderPhone;
+        private System.Windows.Forms.ErrorProvider errProviderCode;
+        private System.Windows.Forms.ErrorProvider errProviderFax;
     }
 }

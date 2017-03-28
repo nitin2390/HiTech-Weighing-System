@@ -29,4 +29,3 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\ob
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\obj\Debug\SharedLibrary.csproj.GenerateResource.Cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\obj\Debug\SharedLibrary.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\obj\Debug\SharedLibrary.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache

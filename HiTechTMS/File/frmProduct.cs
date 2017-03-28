@@ -45,6 +45,7 @@ namespace HitechTMS.File
                 gridProduct.RowHeadersVisible = true;
                 gridProduct.RowHeadersWidth = 30;
                 gridProduct.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                gridProduct.ReadOnly = true;
 
 
             }
