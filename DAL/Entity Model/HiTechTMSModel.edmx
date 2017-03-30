@@ -52,11 +52,12 @@
         </EntityType>
         <EntityType Name="UserRole">
           <Key>
+            <PropertyRef Name="Id" />
             <PropertyRef Name="Code" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Code" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="UserRoleType" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
@@ -67,7 +68,7 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <Association Name="FK__UserRole__UserRo__07C12930">
+        <Association Name="FK__UserRole__UserRo__1B9317B3">
           <End Role="UserRoleType" Type="Self.UserRoleType" Multiplicity="1" />
           <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
           <ReferentialConstraint>
@@ -86,7 +87,7 @@
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__UserRole__UserRo__07C12930" Association="Self.FK__UserRole__UserRo__07C12930">
+          <AssociationSet Name="FK__UserRole__UserRo__1B9317B3" Association="Self.FK__UserRole__UserRo__1B9317B3">
             <End Role="UserRoleType" EntitySet="UserRoleType" />
             <End Role="UserRole" EntitySet="UserRole" />
           </AssociationSet>
@@ -98,14 +99,14 @@
         <EntityContainer Name="HitechTruckMngtSystmDataBaseFileEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UserRoleTypes" EntityType="HitechTruckMngtSystmDataBaseFileModel.UserRoleType" />
           <EntitySet Name="Products" EntityType="HitechTruckMngtSystmDataBaseFileModel.Product" />
-          <EntitySet Name="UserRoles" EntityType="HitechTruckMngtSystmDataBaseFileModel.UserRole" />
-          <AssociationSet Name="FK__UserRole__UserRo__07C12930" Association="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__07C12930">
-            <End Role="UserRoleType" EntitySet="UserRoleTypes" />
-            <End Role="UserRole" EntitySet="UserRoles" />
-          </AssociationSet>
           <EntitySet Name="EmailMasters" EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailMaster" />
           <EntitySet Name="EmailConfigs" EntityType="HitechTruckMngtSystmDataBaseFileModel.EmailConfig" />
           <EntitySet Name="mstSupplierTransporter" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstSupplierTransporter" />
+          <EntitySet Name="UserRole" EntityType="HitechTruckMngtSystmDataBaseFileModel.UserRole" />
+          <AssociationSet Name="FK__UserRole__UserRo__1B9317B3" Association="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__1B9317B3">
+            <End Role="UserRoleType" EntitySet="UserRoleTypes" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -113,7 +114,7 @@
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="RoleName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="UserRoles" Relationship="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__07C12930" FromRole="UserRoleType" ToRole="UserRole" />
+          <NavigationProperty Name="UserRole" Relationship="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__1B9317B3" FromRole="UserRoleType" ToRole="UserRole" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -122,29 +123,6 @@
           <Property Name="Code" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="UserRole">
-          <Key>
-            <PropertyRef Name="Code" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="Code" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="UserRoleType" Type="Guid" Nullable="false" />
-          <NavigationProperty Name="UserRoleType1" Relationship="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__07C12930" FromRole="UserRole" ToRole="UserRoleType" />
-        </EntityType>
-        <Association Name="FK__UserRole__UserRo__07C12930">
-          <End Type="HitechTruckMngtSystmDataBaseFileModel.UserRoleType" Role="UserRoleType" Multiplicity="1" />
-          <End Type="HitechTruckMngtSystmDataBaseFileModel.UserRole" Role="UserRole" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserRoleType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="UserRole">
-              <PropertyRef Name="UserRoleType" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="EmailMaster">
           <Key>
             <PropertyRef Name="EmailID" />
@@ -183,6 +161,30 @@
           <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="IsSuplier" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserRoleType" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="UserRoleType1" Relationship="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__1B9317B3" FromRole="UserRole" ToRole="UserRoleType" />
+        </EntityType>
+        <Association Name="FK__UserRole__UserRo__1B9317B3">
+          <End Type="HitechTruckMngtSystmDataBaseFileModel.UserRoleType" Role="UserRoleType" Multiplicity="1" />
+          <End Type="HitechTruckMngtSystmDataBaseFileModel.UserRole" Role="UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRoleType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserRoleType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -202,17 +204,6 @@
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="UserRoles">
-            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.UserRole">
-              <MappingFragment StoreEntitySet="UserRole">
-                <ScalarProperty Name="UserRoleType" ColumnName="UserRoleType" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -252,6 +243,17 @@
                 <ScalarProperty Name="Address1" ColumnName="Address1" />
                 <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
                 <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRole">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="UserRoleType" ColumnName="UserRoleType" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -27,9 +27,9 @@ namespace DAL.Entity_Model
     
         public virtual DbSet<UserRoleType> UserRoleTypes { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<EmailMaster> EmailMasters { get; set; }
         public virtual DbSet<EmailConfig> EmailConfigs { get; set; }
         public virtual DbSet<mstSupplierTransporter> mstSupplierTransporter { get; set; }
+        public virtual DbSet<UserRole> UserRole { get; set; }
     }
 }

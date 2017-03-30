@@ -26,11 +26,23 @@ namespace HitechTMS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\db\\HitechTruc" +
-            "kMngtSystmDataBaseFile.mdf;Integrated Security=True;Connect Timeout=30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\nitingupta\\Desktop\\s" +
+            "oftware\\Nitin\\HitechWeighingSystem\\HiTechTMS\\db\\HitechTruckMngtSystmDataBaseFile" +
+            ".mdf;Integrated Security=True;Connect Timeout=30")]
         public string HitechTruckMngtSystmDataBaseFileConnectionString {
             get {
                 return ((string)(this["HitechTruckMngtSystmDataBaseFileConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\db\\HitechTruc" +
+            "kMngtSystmDataBaseFile.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string HitechTruckMngtSystmDataBaseFileConnectionString1 {
+            get {
+                return ((string)(this["HitechTruckMngtSystmDataBaseFileConnectionString1"]));
             }
         }
     }

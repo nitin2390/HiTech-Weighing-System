@@ -58,6 +58,7 @@
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emailConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabMode.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -296,7 +297,8 @@
             // configurationToolStripMenuItem
             // 
             this.configurationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.emailConfigToolStripMenuItem});
+            this.emailConfigToolStripMenuItem,
+            this.addUserToolStripMenuItem});
             this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
             this.configurationToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.configurationToolStripMenuItem.Text = "Configuration";
@@ -304,7 +306,7 @@
             // emailConfigToolStripMenuItem
             // 
             this.emailConfigToolStripMenuItem.Name = "emailConfigToolStripMenuItem";
-            this.emailConfigToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.emailConfigToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.emailConfigToolStripMenuItem.Text = "Email Config";
             this.emailConfigToolStripMenuItem.Click += new System.EventHandler(this.emailConfigToolStripMenuItem_Click);
             // 
@@ -318,6 +320,13 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // addUserToolStripMenuItem
+            // 
+            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.addUserToolStripMenuItem.Text = "Add User";
+            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -373,6 +382,7 @@
         private System.Windows.Forms.ToolStripMenuItem configurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emailConfigToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem databaseBackupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
     }
 }
 

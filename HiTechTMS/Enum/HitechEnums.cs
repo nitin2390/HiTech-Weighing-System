@@ -12,24 +12,16 @@
         {
             ProductDetail =1,
             Supplier = 2,
-            Transport = 3
+            Transport = 3,
+
+            //Config
+            AddEditUser = 30
         }
 
         public enum enumProduct
         {
             Code = 0,
             Name = 1
-        }
-        public enum enumSupplier
-        {
-            SupplierCode = 0,
-            SupplierName = 1,
-            Address1 = 2,
-            Address2 = 3,
-            Address3 = 4,
-            Phone = 5,
-            Fax = 6,
-            email = 7
         }
 
         public enum enumSupplierTransportfrm
@@ -43,6 +35,14 @@
             Phone = 6,
             Fax = 7,
             Email = 8
+        }
+
+        public enum AddUser
+        {
+            RoleId = 0,
+            UserName = 1,
+            Password = 2,
+            RoleType = 3
         }
     }
 }

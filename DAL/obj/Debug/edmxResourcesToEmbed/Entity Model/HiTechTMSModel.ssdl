@@ -47,11 +47,12 @@
   </EntityType>
   <EntityType Name="UserRole">
     <Key>
+      <PropertyRef Name="Id" />
       <PropertyRef Name="Code" />
     </Key>
     <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Code" Type="int" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="UserRoleType" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
@@ -62,7 +63,7 @@
     <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <Association Name="FK__UserRole__UserRo__07C12930">
+  <Association Name="FK__UserRole__UserRo__1B9317B3">
     <End Role="UserRoleType" Type="Self.UserRoleType" Multiplicity="1" />
     <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
     <ReferentialConstraint>
@@ -81,7 +82,7 @@
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__UserRole__UserRo__07C12930" Association="Self.FK__UserRole__UserRo__07C12930">
+    <AssociationSet Name="FK__UserRole__UserRo__1B9317B3" Association="Self.FK__UserRole__UserRo__1B9317B3">
       <End Role="UserRoleType" EntitySet="UserRoleType" />
       <End Role="UserRole" EntitySet="UserRole" />
     </AssociationSet>

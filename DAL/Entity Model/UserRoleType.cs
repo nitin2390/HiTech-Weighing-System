@@ -17,13 +17,13 @@ namespace DAL.Entity_Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UserRoleType()
         {
-            this.UserRoles = new HashSet<UserRole>();
+            this.UserRole = new HashSet<UserRole>();
         }
     
         public System.Guid Id { get; set; }
         public string RoleName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserRole> UserRoles { get; set; }
+        public virtual ICollection<UserRole> UserRole { get; set; }
     }
 }

@@ -106,6 +106,15 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Permission denied!.
+        /// </summary>
+        internal static string DENIED {
+            get {
+                return ResourceManager.GetString("DENIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Duplicate data!.
         /// </summary>
         internal static string DUPLICATE_DATA {

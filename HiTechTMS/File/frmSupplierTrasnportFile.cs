@@ -37,7 +37,7 @@ namespace HitechTMS.File
         {
             try
             {
-                SetCaqption();
+                SetCaption();
                 gridSupplierTransporter.ColumnHeadersHeight = 250;
                 gridSupplierTransporter.AllowUserToResizeColumns = false;
                 gridSupplierTransporter.AllowUserToResizeRows = false;
@@ -55,7 +55,7 @@ namespace HitechTMS.File
 
         }
 
-        private void SetCaqption()
+        private void SetCaption()
         {
             try
             {

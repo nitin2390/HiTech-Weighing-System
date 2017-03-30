@@ -57,6 +57,14 @@ namespace HitechTMS.Classes
                     this.WorkSheetName = "Details";
                 }
 
+                else if (objEnums == HitechEnums.FrmName.AddEditUser)
+                {
+                    var query = dbObj.UserRoleTypes.Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Name,x.RoleName }).Select(x => x);
+                    dt = obj.ConvertToDataTable(query.ToList());
+                    this.FileName = @"\User.xls";
+                    this.WorkSheetName = "Details";
+                }
+
                 EncryptionAndDecryption objEncryptionAndDecryption = new EncryptionAndDecryption();
                 var objEmailConfig = dbObj.EmailConfigs.Select(x => new { x.EmailID,
                                         x.EmailServerPort, x.EmailSmtpServer, x.Password,x.EmailBody,

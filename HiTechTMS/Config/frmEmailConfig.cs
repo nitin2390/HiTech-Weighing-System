@@ -7,10 +7,12 @@ using SharedLibrary;
 using System.Data.Entity.Migrations;
 using System.Text.RegularExpressions;
 using HitechTMS.Classes;
+using System.Security.Principal;
+using OD.Forms.Security;
 
 namespace HitechTMS.MasterForms
 {
-    public partial class frmEmailConfig : Form
+    public partial class frmEmailConfig : SecureBaseForm
     {
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         private GetResourceCaption dbGetResourceCaption;
@@ -18,7 +20,7 @@ namespace HitechTMS.MasterForms
         EncryptionAndDecryption objEncryptionAndDecryption;
         EmailConfig objEmailConfig;
         // declare Resource manager to access to specific cultureinfo
-        public frmEmailConfig()
+        public frmEmailConfig(IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.Admin.ToString() }, userPrincipal)
         {
             InitializeComponent();
             dbGetResourceCaption = new GetResourceCaption();
@@ -46,6 +48,7 @@ namespace HitechTMS.MasterForms
                     x.EmailSubject,
                     x.EmailRecipient
                 }).ToList();
+
             if (emailConfigData.Count > 0)
             {
                 ID = emailConfigData[0].Id == Guid.Empty ? Guid.NewGuid() : emailConfigData[0].Id;

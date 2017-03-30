@@ -132,6 +132,9 @@
   <data name="DELTE_POPUP" xml:space="preserve">
     <value>Are you sure you want to delete?</value>
   </data>
+  <data name="DENIED" xml:space="preserve">
+    <value>Permission denied!</value>
+  </data>
   <data name="DUPLICATE_DATA" xml:space="preserve">
     <value>Duplicate data!</value>
   </data>

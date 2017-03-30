@@ -17,17 +17,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="UserRoles">
-      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.UserRole">
-        <MappingFragment StoreEntitySet="UserRole">
-          <ScalarProperty Name="UserRoleType" ColumnName="UserRoleType" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Code" ColumnName="Code" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="EmailMasters">
       <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.EmailMaster">
         <MappingFragment StoreEntitySet="EmailMaster">
@@ -64,6 +53,17 @@
           <ScalarProperty Name="Address1" ColumnName="Address1" />
           <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
           <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRole">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="UserRoleType" ColumnName="UserRoleType" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

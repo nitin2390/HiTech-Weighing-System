@@ -19,7 +19,6 @@ namespace DAL.Entity_Model
         public string Name { get; set; }
         public string Password { get; set; }
         public System.Guid UserRoleType { get; set; }
-    
         public virtual UserRoleType UserRoleType1 { get; set; }
     }
 }

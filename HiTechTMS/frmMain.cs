@@ -8,6 +8,7 @@ using HitechTMS.MasterForms;
 using HitechTMS.Classes;
 using HitechTMS.File;
 using static HitechTMS.HitechEnums;
+using HitechTMS.Config;
 
 namespace HitechTMS
 {
@@ -18,14 +19,13 @@ namespace HitechTMS
         private GetResourceCaption dbGetResourceCaption;
         string str;
 
-        public frmMain(IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.Admin.ToString() }, userPrincipal)
+        public frmMain(IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
         {
             _nextFormPrincipal = userPrincipal;
             InitializeComponent();
             dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
             this.MinimizeBox = this.MaximizeBox = false;
-            //this.ControlBox = false;
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
         }
 
@@ -88,7 +88,7 @@ namespace HitechTMS
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            this.Close();
+            Close();
         }
 
         private void productFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,23 +100,29 @@ namespace HitechTMS
 
         public void button1_Click(object sender, EventArgs e)
         {
-            frmSupplierTrasnportFile objfrmSupplierFile = new frmSupplierTrasnportFile(FrmName.Transport);
-            objfrmSupplierFile.StartPosition = FormStartPosition.CenterParent;
-            objfrmSupplierFile.ShowDialog();
+
         }
 
         private void emailConfigToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmEmailConfig objEmailConfig = new frmEmailConfig();
-            objEmailConfig.StartPosition = FormStartPosition.CenterParent;
-            objEmailConfig.ShowDialog();
+            frmEmailConfig objEmailConfig = new frmEmailConfig(_nextFormPrincipal);
+            if (objEmailConfig.UserCanOpenForm == false)
+            {
+                MessageBox.Show(dbGetResourceCaption.GetStringValue("DENIED"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                objEmailConfig.StartPosition = FormStartPosition.CenterParent;
+                objEmailConfig.ShowDialog();
+            }
+
         }
 
         private void databaseBackupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDatabaseBackup objEmailConfig = new frmDatabaseBackup();
-            objEmailConfig.StartPosition = FormStartPosition.CenterParent;
-            objEmailConfig.ShowDialog();
+            frmDatabaseBackup objDatabaseBackup = new frmDatabaseBackup();
+            objDatabaseBackup.StartPosition = FormStartPosition.CenterParent;
+            objDatabaseBackup.ShowDialog();
         }
 
         private void supplierFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,6 +139,21 @@ namespace HitechTMS
             objfrmTrasnportFile.Text = "Trasnport File";
             objfrmTrasnportFile.StartPosition = FormStartPosition.CenterParent;
             objfrmTrasnportFile.ShowDialog();
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUser objfrmTrasnportFile = new frmAddUser(FrmName.AddEditUser,_nextFormPrincipal);
+            if (objfrmTrasnportFile.UserCanOpenForm == false)
+            {
+                MessageBox.Show(dbGetResourceCaption.GetStringValue("DENIED"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                objfrmTrasnportFile.Text = @"Add\Edit user";
+                objfrmTrasnportFile.StartPosition = FormStartPosition.CenterParent;
+                objfrmTrasnportFile.ShowDialog();
+            }
         }
     }
 }
