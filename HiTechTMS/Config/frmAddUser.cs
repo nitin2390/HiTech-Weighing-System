@@ -332,5 +332,41 @@ namespace HitechTMS.Config
         {
             this.Close();
         }
+
+        private void txtUserName_Leave(object sender, EventArgs e)
+        {
+            searchGridData();
+        }
+
+        private void searchGridData()
+        {
+            if (txtUserName.Text != "")
+            {
+                var userRoleQuery = dbObj.UserRoleTypes
+                        .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Id,s.Name, s.Password, x.RoleName })
+                        .Where( x => x.Id == _userRoleID || x.Name == txtUserName.Text )
+                        .Select(x => x);
+
+                var objUser = userRoleQuery.ToList();
+
+                if (objUser.Count > 0)
+                {
+                    gridUser.DataSource = objUser;
+                    _userRoleID = objUser[0].Id;
+                    cmbRoleType.SelectedIndex = cmbRoleType.FindString(objUser[0].RoleName);
+                }
+                else
+                {
+                    txtPassword.Text = "";
+                    cmbRoleType.SelectedIndex =0;
+                   _userRoleID = Guid.Empty;
+                }
+
+            }
+            else
+            {
+                BindGrid();
+            }
+        }
     }
 }

@@ -235,6 +235,7 @@
             this.txtUserName.Size = new System.Drawing.Size(133, 22);
             this.txtUserName.TabIndex = 0;
             this.txtUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserName_KeyDown);
+            this.txtUserName.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
             // errProviderUserName
             // 

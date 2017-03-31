@@ -334,6 +334,10 @@ namespace HitechTMS.File
                 }
 
             }
+            else
+            {
+                BindGrid();
+            }
         }
 
         private void gridSupplierTransporter_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

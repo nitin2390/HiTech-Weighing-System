@@ -10,9 +10,11 @@
 
         public enum FrmName
         {
+            //File
             ProductDetail =1,
             Supplier = 2,
             Transport = 3,
+            StoredTareFile = 4,
 
             //Config
             AddEditUser = 30
@@ -43,6 +45,25 @@
             UserName = 1,
             Password = 2,
             RoleType = 3
+        }
+
+
+        public enum enumStoredTareFilefrm
+        {
+            Id = 0,
+            Truck = 1,
+            TruckType = 2,
+            TrasnportCode = 3,
+            TareWeight = 4,
+            DateIn = 5,
+            TimeIn = 6
+        }
+
+
+        public enum enumStoredTareFileMode
+        {
+            Manual = 0,
+            Auto =1
         }
     }
 }

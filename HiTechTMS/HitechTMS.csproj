@@ -159,6 +159,12 @@
     <Compile Include="File\frmSupplierTrasnportFile.Designer.cs">
       <DependentUpon>frmSupplierTrasnportFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="File\frmStoredTareFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="File\frmStoredTareFile.Designer.cs">
+      <DependentUpon>frmStoredTareFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\SupplierTransport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="db\HitechTruckMngtSystmDataBaseFile.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="File\frmStoredTareFile.resx">
+      <DependentUpon>frmStoredTareFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="File\frmSupplierTrasnportFile.resx">
       <DependentUpon>frmSupplierTrasnportFile.cs</DependentUpon>

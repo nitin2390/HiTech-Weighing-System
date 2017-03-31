@@ -100,7 +100,10 @@ namespace HitechTMS
 
         public void button1_Click(object sender, EventArgs e)
         {
-
+            frmStoredTareFile objfrmTrasnportFile = new frmStoredTareFile(FrmName.AddEditUser, _nextFormPrincipal);
+            objfrmTrasnportFile.Text = @"Stored Tare File";
+            objfrmTrasnportFile.StartPosition = FormStartPosition.CenterParent;
+            objfrmTrasnportFile.ShowDialog();
         }
 
         private void emailConfigToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,6 +157,23 @@ namespace HitechTMS
                 objfrmTrasnportFile.StartPosition = FormStartPosition.CenterParent;
                 objfrmTrasnportFile.ShowDialog();
             }
+        }
+
+        private void storedTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStoredTareFile objfrmTrasnportFile = new frmStoredTareFile(FrmName.AddEditUser, _nextFormPrincipal);
+
+            if (objfrmTrasnportFile.UserCanOpenForm == false)
+            {
+                MessageBox.Show(dbGetResourceCaption.GetStringValue("DENIED"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                objfrmTrasnportFile.Text = @"Stored Tare File";
+                objfrmTrasnportFile.StartPosition = FormStartPosition.CenterParent;
+                objfrmTrasnportFile.ShowDialog();
+            }
+
         }
     }
 }

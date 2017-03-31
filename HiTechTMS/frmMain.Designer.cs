@@ -57,8 +57,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emailConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabMode.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -195,7 +195,7 @@
             this.transporterFileToolStripMenuItem,
             this.storedTToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // productFileToolStripMenuItem
@@ -224,11 +224,12 @@
             this.storedTToolStripMenuItem.Name = "storedTToolStripMenuItem";
             this.storedTToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.storedTToolStripMenuItem.Text = "4 Stored Tare File";
+            this.storedTToolStripMenuItem.Click += new System.EventHandler(this.storedTToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -306,9 +307,16 @@
             // emailConfigToolStripMenuItem
             // 
             this.emailConfigToolStripMenuItem.Name = "emailConfigToolStripMenuItem";
-            this.emailConfigToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.emailConfigToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.emailConfigToolStripMenuItem.Text = "Email Config";
             this.emailConfigToolStripMenuItem.Click += new System.EventHandler(this.emailConfigToolStripMenuItem_Click);
+            // 
+            // addUserToolStripMenuItem
+            // 
+            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.addUserToolStripMenuItem.Text = "Add User";
+            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -320,13 +328,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // addUserToolStripMenuItem
-            // 
-            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.addUserToolStripMenuItem.Text = "Add User";
-            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // frmMain
             // 
