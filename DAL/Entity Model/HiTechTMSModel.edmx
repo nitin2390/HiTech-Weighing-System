@@ -27,6 +27,19 @@
           <Property Name="EmailID" Type="nvarchar" MaxLength="400" Nullable="false" />
           <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
+        <EntityType Name="mstStoredTareRecords">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Mode" Type="tinyint" Nullable="false" />
+          <Property Name="Truck" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="TruckType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="mstSupplierTransporterID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TareWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DateIn" Type="date" Nullable="false" />
+          <Property Name="TimeIn" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
         <EntityType Name="mstSupplierTransporter">
           <Key>
             <PropertyRef Name="SupplierCode" />
@@ -83,6 +96,7 @@
         <EntityContainer Name="HitechTruckMngtSystmDataBaseFileModelStoreContainer">
           <EntitySet Name="EmailConfigs" EntityType="Self.EmailConfigs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmailMaster" EntityType="Self.EmailMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mstStoredTareRecords" EntityType="Self.mstStoredTareRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
@@ -107,6 +121,7 @@
             <End Role="UserRoleType" EntitySet="UserRoleTypes" />
             <End Role="UserRole" EntitySet="UserRole" />
           </AssociationSet>
+          <EntitySet Name="mstStoredTareRecords" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -185,6 +200,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="mstStoredTareRecords">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Mode" Type="Byte" Nullable="false" />
+          <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="TruckType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="mstSupplierTransporterID" Type="Guid" Nullable="false" />
+          <Property Name="TareWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TimeIn" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -254,6 +282,20 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mstStoredTareRecords">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords">
+              <MappingFragment StoreEntitySet="mstStoredTareRecords">
+                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+                <ScalarProperty Name="mstSupplierTransporterID" ColumnName="mstSupplierTransporterID" />
+                <ScalarProperty Name="TruckType" ColumnName="TruckType" />
+                <ScalarProperty Name="Truck" ColumnName="Truck" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

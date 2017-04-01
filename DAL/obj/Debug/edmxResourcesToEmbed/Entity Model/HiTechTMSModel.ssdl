@@ -22,6 +22,19 @@
     <Property Name="EmailID" Type="nvarchar" MaxLength="400" Nullable="false" />
     <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
   </EntityType>
+  <EntityType Name="mstStoredTareRecords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Mode" Type="tinyint" Nullable="false" />
+    <Property Name="Truck" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="TruckType" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="mstSupplierTransporterID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TareWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DateIn" Type="date" Nullable="false" />
+    <Property Name="TimeIn" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
   <EntityType Name="mstSupplierTransporter">
     <Key>
       <PropertyRef Name="SupplierCode" />
@@ -78,6 +91,7 @@
   <EntityContainer Name="HitechTruckMngtSystmDataBaseFileModelStoreContainer">
     <EntitySet Name="EmailConfigs" EntityType="Self.EmailConfigs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EmailMaster" EntityType="Self.EmailMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mstStoredTareRecords" EntityType="Self.mstStoredTareRecords" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />

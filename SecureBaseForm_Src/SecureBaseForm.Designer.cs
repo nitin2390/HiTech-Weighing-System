@@ -28,17 +28,19 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.SuspendLayout();
-			// 
-			// SecureBaseForm
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(292, 273);
-			this.Name = "SecureBaseForm";
-			this.Text = "SecureBaseForm";
-			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SecureBaseForm_FormClosed);
-			this.ResumeLayout(false);
+            this.SuspendLayout();
+            // 
+            // SecureBaseForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(389, 336);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "SecureBaseForm";
+            this.Text = "SecureBaseForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SecureBaseForm_FormClosed);
+            this.Load += new System.EventHandler(this.SecureBaseForm_Load);
+            this.ResumeLayout(false);
 
 		}
 

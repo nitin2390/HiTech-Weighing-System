@@ -110,8 +110,7 @@ namespace HitechTMS.Config
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
-                throw;
+                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -367,6 +366,11 @@ namespace HitechTMS.Config
             {
                 BindGrid();
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

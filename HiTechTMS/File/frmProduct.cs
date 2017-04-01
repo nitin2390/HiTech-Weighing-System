@@ -64,10 +64,9 @@ namespace HitechTMS.File
                 txtProductName.Text = "";
                 BindGrid();
             }
-            catch (Exception err)
+            catch (Exception ex)
             {
-                string errorMsg = err.Message;
-                throw;
+                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void BindGrid()
@@ -81,10 +80,10 @@ namespace HitechTMS.File
                 gridProduct.DataSource = prodList;
                 lblRecordsCount.Text = prodList.Count().ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion

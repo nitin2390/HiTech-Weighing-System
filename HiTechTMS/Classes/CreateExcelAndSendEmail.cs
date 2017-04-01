@@ -59,9 +59,31 @@ namespace HitechTMS.Classes
 
                 else if (objEnums == HitechEnums.FrmName.AddEditUser)
                 {
-                    var query = dbObj.UserRoleTypes.Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Name,x.RoleName }).Select(x => x);
+                    var query = dbObj.UserRoleTypes.Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Name, x.RoleName }).Select(x => x);
                     dt = obj.ConvertToDataTable(query.ToList());
                     this.FileName = @"\User.xls";
+                    this.WorkSheetName = "Details";
+                }
+
+                else if (objEnums == HitechEnums.FrmName.StoredTareFile)
+                {
+                    var query = from StoredTareRecords in dbObj.mstStoredTareRecords.AsEnumerable()
+                                join s in dbObj.mstSupplierTransporter.AsEnumerable() on StoredTareRecords.mstSupplierTransporterID equals s.Id into joinedmm
+                                from pm in joinedmm.DefaultIfEmpty()
+                                orderby StoredTareRecords.Truck
+                                select new
+                                {
+                                    //StoredTareRecords.Id,
+                                    StoredTareRecords.Truck,
+                                    StoredTareRecords.TruckType,
+                                    pm.SupplierCode,
+                                    pm.SupplierName,
+                                    DateIn = Convert.ToDateTime(StoredTareRecords.DateIn).ToString("dd/MM/yyyy"),
+                                    StoredTareRecords.TimeIn,
+                                    StoredTareRecords.TareWeight
+                                };
+                    dt = obj.ConvertToDataTable(query.ToList());
+                    this.FileName = @"\Stored Tare File.xls";
                     this.WorkSheetName = "Details";
                 }
 

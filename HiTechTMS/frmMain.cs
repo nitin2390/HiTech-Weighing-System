@@ -69,10 +69,10 @@ namespace HitechTMS
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnClose_Click(object sender, EventArgs e)
@@ -100,10 +100,10 @@ namespace HitechTMS
 
         public void button1_Click(object sender, EventArgs e)
         {
-            frmStoredTareFile objfrmTrasnportFile = new frmStoredTareFile(FrmName.AddEditUser, _nextFormPrincipal);
-            objfrmTrasnportFile.Text = @"Stored Tare File";
-            objfrmTrasnportFile.StartPosition = FormStartPosition.CenterParent;
-            objfrmTrasnportFile.ShowDialog();
+            frmStoredTareFile objfrmTransportFile = new frmStoredTareFile(FrmName.StoredTareFile, _nextFormPrincipal);
+            objfrmTransportFile.Text = @"Stored Tare File";
+            objfrmTransportFile.StartPosition = FormStartPosition.CenterParent;
+            objfrmTransportFile.ShowDialog();
         }
 
         private void emailConfigToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,7 +130,7 @@ namespace HitechTMS
 
         private void supplierFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSupplierTrasnportFile objfrmSupplierFile = new frmSupplierTrasnportFile(FrmName.Supplier);
+            frmSupplierTransportFile objfrmSupplierFile = new frmSupplierTransportFile(FrmName.Supplier);
             objfrmSupplierFile.Text = "Supplier File";
             objfrmSupplierFile.StartPosition = FormStartPosition.CenterParent;
             objfrmSupplierFile.ShowDialog();
@@ -138,40 +138,40 @@ namespace HitechTMS
 
         private void transporterFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSupplierTrasnportFile objfrmTrasnportFile = new frmSupplierTrasnportFile(FrmName.Transport);
-            objfrmTrasnportFile.Text = "Trasnport File";
-            objfrmTrasnportFile.StartPosition = FormStartPosition.CenterParent;
-            objfrmTrasnportFile.ShowDialog();
+            frmSupplierTransportFile objfrmTransportFile = new frmSupplierTransportFile(FrmName.Transport);
+            objfrmTransportFile.Text = "Transport File";
+            objfrmTransportFile.StartPosition = FormStartPosition.CenterParent;
+            objfrmTransportFile.ShowDialog();
         }
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddUser objfrmTrasnportFile = new frmAddUser(FrmName.AddEditUser,_nextFormPrincipal);
-            if (objfrmTrasnportFile.UserCanOpenForm == false)
+            frmAddUser objfrmTransportFile = new frmAddUser(FrmName.AddEditUser,_nextFormPrincipal);
+            if (objfrmTransportFile.UserCanOpenForm == false)
             {
                 MessageBox.Show(dbGetResourceCaption.GetStringValue("DENIED"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                objfrmTrasnportFile.Text = @"Add\Edit user";
-                objfrmTrasnportFile.StartPosition = FormStartPosition.CenterParent;
-                objfrmTrasnportFile.ShowDialog();
+                objfrmTransportFile.Text = @"Add\Edit user";
+                objfrmTransportFile.StartPosition = FormStartPosition.CenterParent;
+                objfrmTransportFile.ShowDialog();
             }
         }
 
         private void storedTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmStoredTareFile objfrmTrasnportFile = new frmStoredTareFile(FrmName.AddEditUser, _nextFormPrincipal);
+            frmStoredTareFile objfrmTransportFile = new frmStoredTareFile(FrmName.StoredTareFile, _nextFormPrincipal);
 
-            if (objfrmTrasnportFile.UserCanOpenForm == false)
+            if (objfrmTransportFile.UserCanOpenForm == false)
             {
                 MessageBox.Show(dbGetResourceCaption.GetStringValue("DENIED"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                objfrmTrasnportFile.Text = @"Stored Tare File";
-                objfrmTrasnportFile.StartPosition = FormStartPosition.CenterParent;
-                objfrmTrasnportFile.ShowDialog();
+                objfrmTransportFile.Text = @"Stored Tare File";
+                objfrmTransportFile.StartPosition = FormStartPosition.CenterParent;
+                objfrmTransportFile.ShowDialog();
             }
 
         }

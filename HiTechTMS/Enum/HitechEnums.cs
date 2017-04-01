@@ -53,10 +53,11 @@
             Id = 0,
             Truck = 1,
             TruckType = 2,
-            TrasnportCode = 3,
-            TareWeight = 4,
+            TransportCode = 3,
+            TransportName = 4,
             DateIn = 5,
-            TimeIn = 6
+            TimeIn = 6,
+            TareWeight = 7
         }
 
 

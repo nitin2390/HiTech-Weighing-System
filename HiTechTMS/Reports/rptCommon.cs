@@ -33,6 +33,13 @@ namespace HitechTMS
                 this.Text = "Users";
             }
 
+            else if (_frmName == FrmName.StoredTareFile)
+            {
+                cryRpt.Load(Environment.CurrentDirectory + @"\Reports\StoredTareFile.rpt");
+                cryRpt.SummaryInfo.ReportTitle = "Stored Tare File";
+                this.Text = "Stored Tare File";
+            }
+
             cryRpt.SetDataSource(dataSrc);
             cryRepViewCommon.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             cryRepViewCommon.ReportSource = cryRpt;

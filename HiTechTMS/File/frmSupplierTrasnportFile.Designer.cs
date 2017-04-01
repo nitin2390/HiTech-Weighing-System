@@ -1,6 +1,6 @@
 ﻿namespace HitechTMS.File
 {
-    partial class frmSupplierTrasnportFile
+    partial class frmSupplierTransportFile
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSupplierTrasnportFile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSupplierTransportFile));
             this.grpboxSupplierFile = new System.Windows.Forms.GroupBox();
             this.lblRecCount = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
@@ -362,14 +362,14 @@
             // 
             this.errProviderFax.ContainerControl = this;
             // 
-            // frmSupplierTrasnportFile
+            // frmSupplierTransportFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 606);
             this.Controls.Add(this.grpboxSupplierFile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmSupplierTrasnportFile";
+            this.Name = "frmSupplierTransportFile";
             this.Text = "SupplierFile";
             this.grpboxSupplierFile.ResumeLayout(false);
             this.grpboxSupplierFile.PerformLayout();

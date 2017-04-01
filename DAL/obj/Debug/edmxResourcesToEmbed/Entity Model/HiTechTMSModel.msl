@@ -68,5 +68,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="mstStoredTareRecords">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords">
+        <MappingFragment StoreEntitySet="mstStoredTareRecords">
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+          <ScalarProperty Name="mstSupplierTransporterID" ColumnName="mstSupplierTransporterID" />
+          <ScalarProperty Name="TruckType" ColumnName="TruckType" />
+          <ScalarProperty Name="Truck" ColumnName="Truck" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

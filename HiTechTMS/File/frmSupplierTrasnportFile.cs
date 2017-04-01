@@ -15,13 +15,13 @@ using static HitechTMS.HitechEnums;
 
 namespace HitechTMS.File
 {
-    public partial class frmSupplierTrasnportFile : Form
+    public partial class frmSupplierTransportFile : Form
     {
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         private GetResourceCaption dbGetResourceCaption;
         private Guid _supplierTransporterID { get; set; }
         public FrmName _frmType { get; set; }
-        public frmSupplierTrasnportFile(FrmName intfrmtype)
+        public frmSupplierTransportFile(FrmName intfrmtype)
         {
             InitializeComponent();
             dbGetResourceCaption = new GetResourceCaption();
@@ -99,10 +99,10 @@ namespace HitechTMS.File
 
                 lblRecordsCount.Text = gridSupplierTransporter.RowCount.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public IEnumerable<Control> GetAllControllType(Control control, Type type)

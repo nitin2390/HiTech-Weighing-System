@@ -16,3 +16,4 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_S
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\obj\Debug\OD.Forms.Security.csproj.GenerateResource.Cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\obj\Debug\OD.Forms.Security.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\obj\Debug\OD.Forms.Security.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\obj\Debug\OD.Forms.Security.csprojResolveAssemblyReference.cache

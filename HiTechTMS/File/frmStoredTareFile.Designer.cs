@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpboxCreateEditStoredTareRecords = new System.Windows.Forms.GroupBox();
             this.lblRecCount = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
-            this.gridSupplierTransporter = new System.Windows.Forms.DataGridView();
+            this.gridStoredTare = new System.Windows.Forms.DataGridView();
             this.btnEmailExcel = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -56,14 +56,14 @@
             this.lblTruck = new System.Windows.Forms.Label();
             this.lblMode = new System.Windows.Forms.Label();
             this.grpboxCreateEditStoredTareRecords.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridStoredTare)).BeginInit();
             this.SuspendLayout();
             // 
             // grpboxCreateEditStoredTareRecords
             // 
             this.grpboxCreateEditStoredTareRecords.Controls.Add(this.lblRecCount);
             this.grpboxCreateEditStoredTareRecords.Controls.Add(this.lblRecordsCount);
-            this.grpboxCreateEditStoredTareRecords.Controls.Add(this.gridSupplierTransporter);
+            this.grpboxCreateEditStoredTareRecords.Controls.Add(this.gridStoredTare);
             this.grpboxCreateEditStoredTareRecords.Controls.Add(this.btnEmailExcel);
             this.grpboxCreateEditStoredTareRecords.Controls.Add(this.btnReport);
             this.grpboxCreateEditStoredTareRecords.Controls.Add(this.btnDelete);
@@ -116,74 +116,79 @@
             this.lblRecordsCount.TabIndex = 25;
             this.lblRecordsCount.Text = "Count";
             // 
-            // gridSupplierTransporter
+            // gridStoredTare
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSupplierTransporter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gridSupplierTransporter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridSupplierTransporter.DefaultCellStyle = dataGridViewCellStyle6;
-            this.gridSupplierTransporter.Location = new System.Drawing.Point(32, 344);
-            this.gridSupplierTransporter.Name = "gridSupplierTransporter";
-            this.gridSupplierTransporter.RowTemplate.Height = 24;
-            this.gridSupplierTransporter.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gridSupplierTransporter.Size = new System.Drawing.Size(833, 243);
-            this.gridSupplierTransporter.TabIndex = 32;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridStoredTare.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.gridStoredTare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridStoredTare.DefaultCellStyle = dataGridViewCellStyle10;
+            this.gridStoredTare.Location = new System.Drawing.Point(32, 344);
+            this.gridStoredTare.Name = "gridStoredTare";
+            this.gridStoredTare.RowTemplate.Height = 24;
+            this.gridStoredTare.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gridStoredTare.Size = new System.Drawing.Size(833, 243);
+            this.gridStoredTare.TabIndex = 10;
+            this.gridStoredTare.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridStoredTare_CellMouseClick);
             // 
             // btnEmailExcel
             // 
             this.btnEmailExcel.Location = new System.Drawing.Point(516, 305);
             this.btnEmailExcel.Name = "btnEmailExcel";
             this.btnEmailExcel.Size = new System.Drawing.Size(115, 27);
-            this.btnEmailExcel.TabIndex = 30;
+            this.btnEmailExcel.TabIndex = 8;
             this.btnEmailExcel.Text = "E&mail As Excel";
             this.btnEmailExcel.UseVisualStyleBackColor = true;
+            this.btnEmailExcel.Click += new System.EventHandler(this.btnEmailExcel_Click);
             // 
             // btnReport
             // 
             this.btnReport.Location = new System.Drawing.Point(398, 305);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(100, 27);
-            this.btnReport.TabIndex = 29;
+            this.btnReport.TabIndex = 7;
             this.btnReport.Text = "&Report";
             this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(270, 305);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 27);
-            this.btnDelete.TabIndex = 28;
+            this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(649, 305);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 27);
-            this.btnExit.TabIndex = 31;
+            this.btnExit.TabIndex = 9;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(136, 305);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 27);
-            this.btnSave.TabIndex = 27;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -193,8 +198,9 @@
             this.txtTareWeight.Location = new System.Drawing.Point(455, 239);
             this.txtTareWeight.Name = "txtTareWeight";
             this.txtTareWeight.Size = new System.Drawing.Size(135, 22);
-            this.txtTareWeight.TabIndex = 17;
+            this.txtTareWeight.TabIndex = 4;
             this.txtTareWeight.TextChanged += new System.EventHandler(this.txtTareWeight_TextChanged);
+            this.txtTareWeight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTareWeight_KeyDown);
             this.txtTareWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTareWeight_KeyPress);
             // 
             // lblTareWeight
@@ -213,6 +219,7 @@
             this.txtTimeIn.ReadOnly = true;
             this.txtTimeIn.Size = new System.Drawing.Size(135, 22);
             this.txtTimeIn.TabIndex = 15;
+            this.txtTimeIn.TabStop = false;
             // 
             // lblTimeIn
             // 
@@ -230,6 +237,7 @@
             this.txtDateIn.ReadOnly = true;
             this.txtDateIn.Size = new System.Drawing.Size(135, 22);
             this.txtDateIn.TabIndex = 13;
+            this.txtDateIn.TabStop = false;
             // 
             // lblDateIn
             // 
@@ -247,6 +255,7 @@
             this.txtMode.ReadOnly = true;
             this.txtMode.Size = new System.Drawing.Size(77, 22);
             this.txtMode.TabIndex = 11;
+            this.txtMode.TabStop = false;
             // 
             // txtTransportName
             // 
@@ -255,20 +264,24 @@
             this.txtTransportName.ReadOnly = true;
             this.txtTransportName.Size = new System.Drawing.Size(135, 22);
             this.txtTransportName.TabIndex = 10;
+            this.txtTransportName.TabStop = false;
             // 
             // txtTruckType
             // 
             this.txtTruckType.Location = new System.Drawing.Point(238, 136);
             this.txtTruckType.Name = "txtTruckType";
             this.txtTruckType.Size = new System.Drawing.Size(159, 22);
-            this.txtTruckType.TabIndex = 9;
+            this.txtTruckType.TabIndex = 2;
+            this.txtTruckType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTruckType_KeyDown);
             // 
             // txtTruck
             // 
             this.txtTruck.Location = new System.Drawing.Point(238, 77);
             this.txtTruck.Name = "txtTruck";
             this.txtTruck.Size = new System.Drawing.Size(159, 22);
-            this.txtTruck.TabIndex = 8;
+            this.txtTruck.TabIndex = 1;
+            this.txtTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTruck_KeyDown);
+            this.txtTruck.Leave += new System.EventHandler(this.txtTruck_Leave);
             // 
             // cmbTransportCode
             // 
@@ -278,8 +291,9 @@
             this.cmbTransportCode.Location = new System.Drawing.Point(659, 79);
             this.cmbTransportCode.Name = "cmbTransportCode";
             this.cmbTransportCode.Size = new System.Drawing.Size(121, 24);
-            this.cmbTransportCode.TabIndex = 7;
+            this.cmbTransportCode.TabIndex = 3;
             this.cmbTransportCode.SelectedIndexChanged += new System.EventHandler(this.cmbTransportCode_SelectedIndexChanged);
+            this.cmbTransportCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTransportCode_KeyDown);
             // 
             // lblTransportName
             // 
@@ -336,7 +350,7 @@
             this.Text = "StoredTareFile";
             this.grpboxCreateEditStoredTareRecords.ResumeLayout(false);
             this.grpboxCreateEditStoredTareRecords.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridStoredTare)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,7 +376,7 @@
         private System.Windows.Forms.Label lblTareWeight;
         private System.Windows.Forms.Label lblRecCount;
         private System.Windows.Forms.Label lblRecordsCount;
-        private System.Windows.Forms.DataGridView gridSupplierTransporter;
+        private System.Windows.Forms.DataGridView gridStoredTare;
         private System.Windows.Forms.Button btnEmailExcel;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnDelete;

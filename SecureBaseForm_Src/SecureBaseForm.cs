@@ -280,5 +280,10 @@ namespace OD.Forms.Security
 			if (this.IsMainWindow)
 				Application.Exit();
 		}
-	}
+
+        private void SecureBaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -165,6 +165,153 @@
     <Compile Include="File\frmStoredTareFile.Designer.cs">
       <DependentUpon>frmStoredTareFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\old\challanreportproduct.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>challanreportproduct.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\challanreportsupplier.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>challanreportsupplier.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\challanreporttran.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>challanreporttran.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\datewisetran.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datewisetran.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\deletedtran.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>deletedtran.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\deletepending.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>deletepending.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\detaildatewisetran.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>detaildatewisetran.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\detaildeletedtran.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>detaildeletedtran.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\detaildeletepending.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>detaildeletepending.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\detailnormal_pending.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>detailnormal_pending.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\detailpendingmulti.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>detailpendingmulti.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\errorreport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>errorreport.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\normal_pending.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>normal_pending.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\pendingmulti.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pendingmulti.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\product_details.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>product_details.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\publicpending.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>publicpending.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\stored_tare.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stored_tare.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\summarysupplier.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>summarysupplier.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\summarytransporter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>summarytransporter.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\supplier_details.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>supplier_details.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\ticket.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ticket.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\ticketmulti.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ticketmulti.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\ticketpendingmulti.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ticketpendingmulti.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\ticketpendingnormal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ticketpendingnormal.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\ticketpendingpublic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ticketpendingpublic.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\ticketpublic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ticketpublic.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\old\transporter_details.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>transporter_details.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StoredTareFile.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoredTareFile.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StoredTareFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoredTareFile.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Reports\SupplierTransport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -248,6 +395,119 @@
     <EmbeddedResource Include="File\frmSupplierTrasnportFile.resx">
       <DependentUpon>frmSupplierTrasnportFile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\challanreportproduct.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>challanreportproduct.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\challanreportsupplier.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>challanreportsupplier.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\challanreporttran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>challanreporttran.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\datewisetran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>datewisetran.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\deletedtran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>deletedtran.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\deletepending.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>deletepending.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\detaildatewisetran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>detaildatewisetran.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\detaildeletedtran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>detaildeletedtran.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\detaildeletepending.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>detaildeletepending.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\detailnormal_pending.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>detailnormal_pending.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\detailpendingmulti.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>detailpendingmulti.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\errorreport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>errorreport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\normal_pending.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>normal_pending.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\pendingmulti.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>pendingmulti.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\product_details.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>product_details.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\publicpending.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>publicpending.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\stored_tare.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>stored_tare.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\summarysupplier.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>summarysupplier.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\summarytransporter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>summarytransporter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\supplier_details.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>supplier_details.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\ticket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ticket.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\ticketmulti.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ticketmulti.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\ticketpendingmulti.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ticketpendingmulti.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\ticketpendingnormal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ticketpendingnormal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\ticketpendingpublic.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ticketpendingpublic.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\ticketpublic.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ticketpublic.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\old\transporter_details.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>transporter_details.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StoredTareFile.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StoredTareFile.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\SupplierTransport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>SupplierTransport.cs</LastGenOutput>
@@ -311,6 +571,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reports\StoredTareFile.xsc">
+      <DependentUpon>StoredTareFile.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\StoredTareFile.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StoredTareFile.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\StoredTareFile.xss">
+      <DependentUpon>StoredTareFile.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

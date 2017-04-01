@@ -88,6 +88,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HiTechTMSModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entity Model\mstStoredTareRecords.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\mstSupplierTransporter.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>

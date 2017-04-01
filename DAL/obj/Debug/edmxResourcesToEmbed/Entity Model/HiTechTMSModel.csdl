@@ -11,6 +11,7 @@
       <End Role="UserRoleType" EntitySet="UserRoleTypes" />
       <End Role="UserRole" EntitySet="UserRole" />
     </AssociationSet>
+    <EntitySet Name="mstStoredTareRecords" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords" />
   </EntityContainer>
   <EntityType Name="UserRoleType">
     <Key>
@@ -89,4 +90,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="mstStoredTareRecords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Mode" Type="Byte" Nullable="false" />
+    <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="TruckType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="mstSupplierTransporterID" Type="Guid" Nullable="false" />
+    <Property Name="TareWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TimeIn" Type="Time" Nullable="false" Precision="7" />
+  </EntityType>
 </Schema>
