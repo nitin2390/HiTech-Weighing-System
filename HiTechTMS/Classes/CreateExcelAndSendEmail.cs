@@ -17,8 +17,6 @@ namespace HitechTMS.Classes
         public string FileName { get; set; }
         public string WorkSheetName { get; set; }
 
-        //public string EmailSubject { get; set; }
-        //public string EmailBody { get; set; }
         public CreateExcelAndSendEmail()
         {
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
@@ -73,7 +71,6 @@ namespace HitechTMS.Classes
                                 orderby StoredTareRecords.Truck
                                 select new
                                 {
-                                    //StoredTareRecords.Id,
                                     StoredTareRecords.Truck,
                                     StoredTareRecords.TruckType,
                                     pm.SupplierCode,

@@ -113,20 +113,13 @@ namespace HitechTMS.Config
                 MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        public IEnumerable<Control> GetAllControllType(Control control, Type type)
-        {
-            var controls = control.Controls.Cast<Control>();
-            return controls.SelectMany(ctrl => GetAllControllType(ctrl, type))
-                                      .Concat(controls)
-                                      .Where(c => c.GetType() == type);
-        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
                 #region "Validation"
-                var TextControl = GetAllControllType(this, typeof(TextBox));
+                GetAllControlByType objGetAllControlByType = new GetAllControlByType();
+                var TextControl = objGetAllControlByType.GetAllControllType(this, typeof(TextBox));
                 foreach (Control control in TextControl)
                 {
                     control.Focus();

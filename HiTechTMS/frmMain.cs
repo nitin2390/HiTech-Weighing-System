@@ -7,8 +7,12 @@ using OD.Forms.Security;
 using HitechTMS.MasterForms;
 using HitechTMS.Classes;
 using HitechTMS.File;
+using HitechTMS.Weighing;
 using static HitechTMS.HitechEnums;
 using HitechTMS.Config;
+using SharedLibrary;
+using System.Collections.Generic;
+
 
 namespace HitechTMS
 {
@@ -17,6 +21,7 @@ namespace HitechTMS
         public HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         private IPrincipal _nextFormPrincipal;
         private GetResourceCaption dbGetResourceCaption;
+        public enumProductNormalPublicMulti _enumProductInOut { get; set; }
         string str;
 
         public frmMain(IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
@@ -37,12 +42,6 @@ namespace HitechTMS
             ReadSerialPortCommunication();
 
         }
-
-        private void frmMain_UserIsAllowed(object sender, EventArgs e)
-        {
-            button1.Enabled = this.ValidatedUserRoles.Contains("Admin");
-        }
-
         private void ReadSerialPortCommunication()
         {
             try
@@ -75,6 +74,12 @@ namespace HitechTMS
                 MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void frmMain_UserIsAllowed(object sender, EventArgs e)
+        {
+            button1.Enabled = this.ValidatedUserRoles.Contains("Admin");
+        }
+
+        
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -100,10 +105,10 @@ namespace HitechTMS
 
         public void button1_Click(object sender, EventArgs e)
         {
-            frmStoredTareFile objfrmTransportFile = new frmStoredTareFile(FrmName.StoredTareFile, _nextFormPrincipal);
-            objfrmTransportFile.Text = @"Stored Tare File";
-            objfrmTransportFile.StartPosition = FormStartPosition.CenterParent;
-            objfrmTransportFile.ShowDialog();
+            //frmStoredTareFile objfrmTransportFile = new frmStoredTareFile(FrmName.StoredTareFile, _nextFormPrincipal);
+            //objfrmTransportFile.Text = @"Stored Tare File";
+            //objfrmTransportFile.StartPosition = FormStartPosition.CenterParent;
+            //objfrmTransportFile.ShowDialog();
         }
 
         private void emailConfigToolStripMenuItem_Click(object sender, EventArgs e)
@@ -161,7 +166,9 @@ namespace HitechTMS
 
         private void storedTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmStoredTareFile objfrmTransportFile = new frmStoredTareFile(FrmName.StoredTareFile, _nextFormPrincipal);
+            enumStoredTareFileMode Mode = enumStoredTareFileMode.Manual;
+
+            frmStoredTareFile objfrmTransportFile = new frmStoredTareFile(FrmName.StoredTareFile, _nextFormPrincipal, Mode);
 
             if (objfrmTransportFile.UserCanOpenForm == false)
             {
@@ -173,6 +180,47 @@ namespace HitechTMS
                 objfrmTransportFile.StartPosition = FormStartPosition.CenterParent;
                 objfrmTransportFile.ShowDialog();
             }
+
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            List<ToolStripMenuItem> allItems = new List<ToolStripMenuItem>();
+            foreach (ToolStripMenuItem item in menuStrip1.Items)
+            {
+                // For each of the top menu items, get all sub items recursively
+                allItems.AddRange(GetItems(item));
+            }
+
+        }
+        private IEnumerable<ToolStripMenuItem> GetItems(ToolStripMenuItem item)
+        {
+            foreach (ToolStripMenuItem dropDownItem in item.DropDownItems)
+            {
+                if (dropDownItem.HasDropDownItems)
+                {
+                    foreach (ToolStripMenuItem subItem in GetItems(dropDownItem))
+                        yield return subItem;
+                }
+                yield return dropDownItem;
+            }
+        }
+
+        private void publicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void normalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _enumProductInOut = enumProductNormalPublicMulti.Normal;
+            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductInOut);
+            objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
+            objfrmProductInOut.ShowDialog();
+        }
+
+        private void multiWeighingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }

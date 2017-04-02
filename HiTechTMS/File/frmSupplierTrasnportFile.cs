@@ -2,23 +2,22 @@
 using HitechTMS.Classes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Migrations;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static HitechTMS.HitechEnums;
+using SharedLibrary;
 
 namespace HitechTMS.File
 {
     public partial class frmSupplierTransportFile : Form
     {
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
+        private Common _comm { get; set; }
         private GetResourceCaption dbGetResourceCaption;
+        public Boolean _saveClick { get; set; }
         private Guid _supplierTransporterID { get; set; }
         public FrmName _frmType { get; set; }
         public frmSupplierTransportFile(FrmName intfrmtype)
@@ -26,9 +25,12 @@ namespace HitechTMS.File
             InitializeComponent();
             dbGetResourceCaption = new GetResourceCaption();
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
+            _comm = new Common();
             this.MinimizeBox = this.MaximizeBox = false;
             this.MaximumSize = this.MinimumSize = this.Size;
             _frmType = intfrmtype;
+            _saveClick = false;
+            
             BindGrid();
             DesignGrid();
         }
@@ -105,18 +107,14 @@ namespace HitechTMS.File
                 MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public IEnumerable<Control> GetAllControllType(Control control, Type type)
-        {
-            var controls = control.Controls.Cast<Control>();
-            return controls.SelectMany(ctrl => GetAllControllType(ctrl, type))
-                                      .Concat(controls)
-                                      .Where(c => c.GetType() == type);
-        }
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                var TextControl = GetAllControllType(this, typeof(TextBox));
+                _saveClick = true;
+                GetAllControlByType objGetAllControlByType = new GetAllControlByType();
+                var TextControl = objGetAllControlByType.GetAllControllType(this, typeof(TextBox));
 
                 foreach (Control control in TextControl)
                 {
@@ -137,50 +135,59 @@ namespace HitechTMS.File
                         }
                     }
 
-                    if (control.Name == "txtPhone" && control.Text !="")
+                    if (control.Name == "txtPhone")
                     {
-                        if (!Regex.IsMatch(txtPhone.Text, @"^[789]\d{9}$", RegexOptions.IgnoreCase))
+                        if(control.Text != "")
                         {
-                            DialogResult = DialogResult.None;
-                            errProviderPhone.SetError(txtPhone, "Phone number invalid!");
-                            return;
-                        }
-                        else
-                        {
-                            errProviderPhone.SetError(txtPhone, null);
+                            if (!Regex.IsMatch(txtPhone.Text, @"^[789]\d{9}$", RegexOptions.IgnoreCase))
+                            {
+                                DialogResult = DialogResult.None;
+                                errProviderPhone.SetError(txtPhone, "Phone number invalid! {XXXXXXXXXX}");
+                                return;
+                            }
+                            else
+                            {
+                                errProviderPhone.SetError(txtPhone, null);
+                            }
                         }
                     }
 
 
-                    if (control.Name == "txtFax" && control.Text != "")
+                    if (control.Name == "txtFax" )
                     {
-                        if (!Regex.IsMatch(txtFax.Text, @"^[789]\d{9}$", RegexOptions.IgnoreCase))
+                        if (control.Text != "")
                         {
-                            DialogResult = DialogResult.None;
-                            errProviderFax.SetError(txtFax, "Phone number invalid!");
-                            return;
-                        }
-                        else
-                        {
-                            errProviderFax.SetError(txtFax, null);
+                            if (!Regex.IsMatch(txtFax.Text, @"^[789]\d{9}$", RegexOptions.IgnoreCase))
+                            {
+                                DialogResult = DialogResult.None;
+                                errProviderFax.SetError(txtFax, "Fax number invalid! {XXXXXXXXXX}");
+                                return;
+                            }
+                            else
+                            {
+                                errProviderFax.SetError(txtFax, null);
+                            }
                         }
                     }
 
-                    if (control.Name == "txtEmail" && control.Text != "")
+                    if (control.Name == "txtEmail")
                     {
-                        if (!Regex.IsMatch(txtEmail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
+                        if (control.Text != "")
                         {
-                            DialogResult = DialogResult.None;
-                            errProviderEmail.SetError(txtEmail, "Email ID invalid!");
-                            return;
+                            if (!Regex.IsMatch(txtEmail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
+                            {
+                                DialogResult = DialogResult.None;
+                                errProviderEmail.SetError(txtEmail, "Email ID invalid!");
+                                return;
+                            }
+                            else
+                            {
+                                errProviderEmail.SetError(txtEmail, null);
+                            }
                         }
-                        else
-                        {
-                            errProviderEmail.SetError(txtEmail, null);
-                        }
+
                     }                    
                     #endregion
-
                 }
 
 
@@ -239,6 +246,7 @@ namespace HitechTMS.File
 
         private void ResetCntrl()
         {
+            _saveClick = false;
             txtSupplierCode.Text = "";
             txtSupplierName.Text = "";
             txtAddressLine1.Text = "";
@@ -248,6 +256,7 @@ namespace HitechTMS.File
             txtFax.Text = "";
             txtEmail.Text = "";
             BindGrid();
+            txtSupplierCode.Focus();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -298,7 +307,11 @@ namespace HitechTMS.File
 
         private void txtSupplierCode_Leave(object sender, EventArgs e)
         {
-            searchGridData();
+            if (!_saveClick)
+            {
+                searchGridData();
+
+            }
         }
 
         private void searchGridData()
@@ -323,14 +336,15 @@ namespace HitechTMS.File
                 }
                 else
                 {
-                    txtSupplierName.Text = "";
-                    txtAddressLine1.Text = "";
-                    txtAddressLine2.Text = "";
-                    txtAddressLine3.Text = "";
-                    txtPhone.Text = "";
-                    txtFax.Text = "";
-                    txtEmail.Text = "";
+                    //txtSupplierName.Text = "";
+                    //txtAddressLine1.Text = "";
+                    //txtAddressLine2.Text = "";
+                    //txtAddressLine3.Text = "";
+                    //txtPhone.Text = "";
+                    //txtFax.Text = "";
+                    //txtEmail.Text = "";
                     _supplierTransporterID = Guid.Empty;
+                    BindGrid();
                 }
 
             }
@@ -423,7 +437,7 @@ namespace HitechTMS.File
             if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
             {
                 btnSave_Click((object)sender, (EventArgs)e);
-                txtSupplierCode.Focus();
+                //txtSupplierCode.Focus();
             }
         }
 
@@ -481,6 +495,20 @@ namespace HitechTMS.File
             {
                 txtEmail.Focus();
             }
+        }
+
+        private void txtSupplierCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBox(e);
+        }
+
+
+
+
+        private void txtSupplierName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            e = _comm.RestirctTextBox(e);
         }
     }
 }

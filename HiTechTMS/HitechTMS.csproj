@@ -383,6 +383,24 @@
     <Compile Include="Reports\rptCommon.Designer.cs">
       <DependentUpon>rptCommon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Weighing\frmNormalWeighing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Weighing\frmNormalWeighing.Designer.cs">
+      <DependentUpon>frmNormalWeighing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Weighing\frmProductInOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Weighing\frmProductInOut.Designer.cs">
+      <DependentUpon>frmProductInOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Weighing\PublicWeighing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Weighing\PublicWeighing.Designer.cs">
+      <DependentUpon>PublicWeighing.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Config\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -558,6 +576,15 @@
     </Compile>
     <EmbeddedResource Include="Reports\rptCommon.resx">
       <DependentUpon>rptCommon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Weighing\frmNormalWeighing.resx">
+      <DependentUpon>frmNormalWeighing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Weighing\frmProductInOut.resx">
+      <DependentUpon>frmProductInOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Weighing\PublicWeighing.resx">
+      <DependentUpon>PublicWeighing.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="HitechTMS_TemporaryKey.pfx" />

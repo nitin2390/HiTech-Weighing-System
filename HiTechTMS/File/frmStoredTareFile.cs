@@ -22,8 +22,10 @@ namespace HitechTMS.File
         private EncryptionAndDecryption objEncryptionAndDecryption;
         private EmailConfig objEmailConfig;
         private Boolean _editGrid { get; set; }
+        public Boolean _saveClick { get; set; }
         public FrmName _frmName { get; set; }
-        public frmStoredTareFile(FrmName intfrmtype, IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
+        public enumStoredTareFileMode _mode { get; set; }
+        public frmStoredTareFile(FrmName intfrmtype, IPrincipal userPrincipal, enumStoredTareFileMode Mode) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
         {
             try
             {
@@ -32,13 +34,40 @@ namespace HitechTMS.File
                 this.MaximumSize = this.MinimumSize = this.Size;
                 this.MinimizeBox = this.MaximizeBox = false;
                 this._frmName = intfrmtype;
+                this._mode = Mode;
                 dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
                 objEncryptionAndDecryption = new EncryptionAndDecryption();
                 objEmailConfig = new EmailConfig();
                 BindTransportCode();
                 BindGrid();
-                txtMode.Text = "Manual";
+                SetFrmMode();
                 _editGrid = false;
+                _saveClick = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SetFrmMode()
+        {
+            try
+            {
+                txtMode.Text = _mode.ToString();
+
+                if (_mode == enumStoredTareFileMode.Auto)
+                {
+                    txtTareWeight.ReadOnly = true;
+                    btnWeight.Visible = true;
+                }
+                else
+                {
+                    txtTareWeight.ReadOnly = false;
+                    btnWeight.Visible = false;
+                }
+
             }
             catch (Exception ex)
             {
@@ -66,31 +95,65 @@ namespace HitechTMS.File
             }
         }
 
-        public IEnumerable<Control> GetAllControllType(Control control, Type type)
-        {
-            try
-            {
-
-            var controls = control.Controls.Cast<Control>();
-            return controls.SelectMany(ctrl => GetAllControllType(ctrl, type))
-                                      .Concat(controls)
-                                      .Where(c => c.GetType() == type);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
 
             {
                 try
                 {
+                    _saveClick = true;
 
-                    if (txtTruck.Text != "" && txtTruckType.Text != "" && txtTareWeight.Text != "" && cmbTransportCode.Text != "Select")
+                    #region "validation"
+                    GetAllControlByType objGetAllControlByType = new GetAllControlByType();
+                    var TextControl = objGetAllControlByType.GetAllControllType(this, typeof(TextBox));
+                    foreach (Control control in TextControl)
+                    {
+                        control.Focus();
+
+                        if (control.Name == "txtTruck")
+                        {
+                            if (txtTruck.Text.Trim() == "")
+                            {
+                                DialogResult = DialogResult.None;
+                                errTruck.SetError(txtTruck, "Truck required!");
+                                return;
+                            }
+                            else
+                            {
+                                errTruck.SetError(txtTruck, null);
+                            }
+                        }
+
+                        if (control.Name == "txtTareWeight")
+                        {
+                            if (txtTareWeight.Text == "")
+                            {
+                                DialogResult = DialogResult.None;
+                                errTareWeight.SetError(txtTareWeight, "Tare Weight required!");
+                                return;
+                            }
+                            else
+                            {
+                                errTareWeight.SetError(txtTareWeight, null);
+                            }
+                        }
+                    }
+                    
+                        if (cmbTransportCode.SelectedIndex == 0)
+                        {
+                            DialogResult = DialogResult.None;
+                            errTransportCode.SetError(cmbTransportCode, "Tare Weight required!");
+                            cmbTransportCode.Focus();
+                            return;
+                        }
+                        else
+                        {
+                            errTransportCode.SetError(cmbTransportCode, null);
+                        }
+
+                    #endregion
+                    
+                    if (txtTruck.Text != "" && txtTareWeight.Text != "" && cmbTransportCode.SelectedIndex != 0)
                     {
 
 
@@ -179,7 +242,9 @@ namespace HitechTMS.File
         {
             try
             {
-                var TextControl = GetAllControllType(this, typeof(TextBox));
+                _saveClick = false;
+                GetAllControlByType objGetAllControlByType = new GetAllControlByType();
+                var TextControl = objGetAllControlByType.GetAllControllType(this, typeof(TextBox));
                 foreach (Control control in TextControl)
                 {
                     if(control.Name != "txtMode")
@@ -261,7 +326,7 @@ namespace HitechTMS.File
             //txtMode.Text = row.Cells[(int)enumStoredTareFilefrm.].Value.ToString();
             txtTruck.Text = row.Cells[(int)enumStoredTareFilefrm.Truck].Value.ToString();
             txtTruckType.Text = row.Cells[(int)enumStoredTareFilefrm.TruckType].Value.ToString();
-            cmbTransportCode.SelectedIndex = cmbTransportCode.FindString(row.Cells[(int)enumStoredTareFilefrm.TransportCode].Value.ToString());
+            cmbTransportCode.SelectedIndex = cmbTransportCode.FindString(row.Cells[(int)enumStoredTareFilefrm.TransportCode].Value == null  ? "Select" : row.Cells[(int)enumStoredTareFilefrm.TransportCode].Value.ToString());
             //txtTransportName.Text = row.Cells[(int)enumStoredTareFilefrm.TruckType].Value.ToString();
             txtDateIn.Text = DateTime.Parse(row.Cells[(int)enumStoredTareFilefrm.DateIn].Value.ToString()).ToString("dd/MM/yyyy");
             txtTimeIn.Text = row.Cells[(int)enumStoredTareFilefrm.TimeIn].Value.ToString();
@@ -374,7 +439,94 @@ namespace HitechTMS.File
 
         private void txtTruck_Leave(object sender, EventArgs e)
         {
-
+            if (!_saveClick)
+            {
+                searchGridData();
+            }
         }
+
+        private void txtTruck_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void searchGridData()
+        {
+
+            {
+                if (txtTruck.Text != "")
+                {
+                    var storedTareRecordsQuery = from storedTareRecords in dbObj.mstStoredTareRecords
+                                                   where storedTareRecords.Truck == txtTruck.Text
+                                                   select storedTareRecords;
+                    List<mstStoredTareRecords> objstoredTareRecords = storedTareRecordsQuery.ToList();
+                    if (objstoredTareRecords.Count > 0)
+                    {
+                        gridStoredTare.DataSource = objstoredTareRecords;
+                        _StoredTareRecordsID = objstoredTareRecords[0].Id;
+                        txtTruck.Text = objstoredTareRecords[0].Truck.ToString();
+                        txtTruckType.Text = objstoredTareRecords[0].TruckType.ToString();
+                        cmbTransportCode.SelectedIndex = cmbTransportCode.FindString(objstoredTareRecords[0].mstSupplierTransporterID.ToString()); ;
+                        txtTareWeight.Text = objstoredTareRecords[0].TareWeight.ToString();
+                        txtDateIn.Text = objstoredTareRecords[0].DateIn.ToString();
+                        txtTimeIn.Text = objstoredTareRecords[0].TimeIn.ToString();
+                    }
+                    else
+                    {
+                        //txtTruckType.Text = "";
+                        //cmbTransportCode.SelectedIndex = 0;
+                        //txtTareWeight.Text = "";
+                        //txtDateIn.Text = "";
+                        //txtTimeIn.Text = "";
+                        _StoredTareRecordsID = Guid.Empty;
+                        BindGrid();
+                    }
+
+                }
+                else
+                {
+                    BindGrid();
+                }
+            }
+        }
+
+        private void btnWeight_Click(object sender, EventArgs e)
+        {
+            txtTareWeight.Text = btnWeight.Text = ReadSerialPortCommunication().ToString();
+        }
+
+        private double ReadSerialPortCommunication()
+        {
+            double ReadSerialPortValue = 0.00;
+            try
+            {
+                string str;
+                //ht.Connect();
+                //str = ht.ReadSerialPort().Replace("\u0002", "").Replace("\u0003", "").Replace("\r", "");
+                str = "123456";
+                DialogResult rsltReadSerialPort;
+
+                if (double.TryParse(str, out ReadSerialPortValue))
+                {
+                    ReadSerialPortValue = Convert.ToDouble(str);
+                }
+                else
+                {
+                    rsltReadSerialPort = MessageBox.Show(str, dbGetResourceCaption.GetStringValue("SYS_ERR"), MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand);
+                    if (rsltReadSerialPort == DialogResult.Retry)
+                    {
+                        ReadSerialPortCommunication();
+                    }
+                }
+
+                return ReadSerialPortValue;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return ReadSerialPortValue;
+            }
+        }
+
     }
 }

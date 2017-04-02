@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStoredTareFile));
             this.grpboxCreateEditStoredTareRecords = new System.Windows.Forms.GroupBox();
+            this.btnWeight = new System.Windows.Forms.Button();
             this.lblRecCount = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.gridStoredTare = new System.Windows.Forms.DataGridView();
@@ -55,12 +58,19 @@
             this.lblTruckType = new System.Windows.Forms.Label();
             this.lblTruck = new System.Windows.Forms.Label();
             this.lblMode = new System.Windows.Forms.Label();
+            this.errTruck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errTransportCode = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errTareWeight = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpboxCreateEditStoredTareRecords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridStoredTare)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errTruck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errTransportCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errTareWeight)).BeginInit();
             this.SuspendLayout();
             // 
             // grpboxCreateEditStoredTareRecords
             // 
+            this.grpboxCreateEditStoredTareRecords.Controls.Add(this.btnWeight);
             this.grpboxCreateEditStoredTareRecords.Controls.Add(this.lblRecCount);
             this.grpboxCreateEditStoredTareRecords.Controls.Add(this.lblRecordsCount);
             this.grpboxCreateEditStoredTareRecords.Controls.Add(this.gridStoredTare);
@@ -92,6 +102,15 @@
             this.grpboxCreateEditStoredTareRecords.TabStop = false;
             this.grpboxCreateEditStoredTareRecords.Text = "Create/Edit Stored Tare Records";
             // 
+            // btnWeight
+            // 
+            this.btnWeight.Location = new System.Drawing.Point(659, 205);
+            this.btnWeight.Name = "btnWeight";
+            this.btnWeight.Size = new System.Drawing.Size(136, 71);
+            this.btnWeight.TabIndex = 27;
+            this.btnWeight.UseVisualStyleBackColor = true;
+            this.btnWeight.Click += new System.EventHandler(this.btnWeight_Click);
+            // 
             // lblRecCount
             // 
             this.lblRecCount.AutoSize = true;
@@ -118,23 +137,23 @@
             // 
             // gridStoredTare
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridStoredTare.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridStoredTare.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridStoredTare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridStoredTare.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridStoredTare.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridStoredTare.Location = new System.Drawing.Point(32, 344);
             this.gridStoredTare.Name = "gridStoredTare";
             this.gridStoredTare.RowTemplate.Height = 24;
@@ -196,6 +215,7 @@
             // txtTareWeight
             // 
             this.txtTareWeight.Location = new System.Drawing.Point(455, 239);
+            this.txtTareWeight.MaxLength = 4;
             this.txtTareWeight.Name = "txtTareWeight";
             this.txtTareWeight.Size = new System.Drawing.Size(135, 22);
             this.txtTareWeight.TabIndex = 4;
@@ -269,6 +289,7 @@
             // txtTruckType
             // 
             this.txtTruckType.Location = new System.Drawing.Point(238, 136);
+            this.txtTruckType.MaxLength = 20;
             this.txtTruckType.Name = "txtTruckType";
             this.txtTruckType.Size = new System.Drawing.Size(159, 22);
             this.txtTruckType.TabIndex = 2;
@@ -277,9 +298,11 @@
             // txtTruck
             // 
             this.txtTruck.Location = new System.Drawing.Point(238, 77);
+            this.txtTruck.MaxLength = 12;
             this.txtTruck.Name = "txtTruck";
             this.txtTruck.Size = new System.Drawing.Size(159, 22);
             this.txtTruck.TabIndex = 1;
+            this.txtTruck.TextChanged += new System.EventHandler(this.txtTruck_TextChanged);
             this.txtTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTruck_KeyDown);
             this.txtTruck.Leave += new System.EventHandler(this.txtTruck_Leave);
             // 
@@ -340,17 +363,33 @@
             this.lblMode.TabIndex = 0;
             this.lblMode.Text = "Mode";
             // 
+            // errTruck
+            // 
+            this.errTruck.ContainerControl = this;
+            // 
+            // errTransportCode
+            // 
+            this.errTransportCode.ContainerControl = this;
+            // 
+            // errTareWeight
+            // 
+            this.errTareWeight.ContainerControl = this;
+            // 
             // frmStoredTareFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 661);
             this.Controls.Add(this.grpboxCreateEditStoredTareRecords);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmStoredTareFile";
             this.Text = "StoredTareFile";
             this.grpboxCreateEditStoredTareRecords.ResumeLayout(false);
             this.grpboxCreateEditStoredTareRecords.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridStoredTare)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errTruck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errTransportCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errTareWeight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,5 +421,9 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ErrorProvider errTruck;
+        private System.Windows.Forms.ErrorProvider errTransportCode;
+        private System.Windows.Forms.ErrorProvider errTareWeight;
+        private System.Windows.Forms.Button btnWeight;
     }
 }

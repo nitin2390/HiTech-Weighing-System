@@ -204,6 +204,7 @@
             this.gridProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridProduct.RowTemplate.Height = 24;
             this.gridProduct.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gridProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridProduct.Size = new System.Drawing.Size(531, 311);
             this.gridProduct.TabIndex = 5;
             this.gridProduct.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridProduct_CellMouseClick);
@@ -229,19 +230,23 @@
             // txtProductName
             // 
             this.txtProductName.Location = new System.Drawing.Point(241, 90);
+            this.txtProductName.MaxLength = 25;
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(162, 22);
             this.txtProductName.TabIndex = 2;
             this.txtProductName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtlblProductName_KeyDown);
+            this.txtProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
             this.txtProductName.Validating += new System.ComponentModel.CancelEventHandler(this.txtProductName_Validating);
             // 
             // txtProductCode
             // 
             this.txtProductCode.Location = new System.Drawing.Point(241, 42);
+            this.txtProductCode.MaxLength = 5;
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(162, 22);
             this.txtProductCode.TabIndex = 1;
             this.txtProductCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtlblProductCode_KeyDown);
+            this.txtProductCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductCode_KeyPress);
             this.txtProductCode.Leave += new System.EventHandler(this.txtProductCode_Leave);
             this.txtProductCode.Validating += new System.ComponentModel.CancelEventHandler(this.txtProductCode_Validating);
             // 

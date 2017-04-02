@@ -7,6 +7,8 @@ using DAL.Entity_Model;
 using HitechTMS.Classes;
 using static HitechTMS.HitechEnums;
 using System.Data.Entity.Migrations;
+using System.Text.RegularExpressions;
+using SharedLibrary;
 
 namespace HitechTMS.File
 {
@@ -15,6 +17,7 @@ namespace HitechTMS.File
 
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         private GetResourceCaption dbGetResourceCaption;
+        private Common _comm { get; set; }
         private FrmName _frmName { get; set; }
         public frmProduct(FrmName frmName)
         {
@@ -22,6 +25,7 @@ namespace HitechTMS.File
             this._frmName = frmName;
             dbGetResourceCaption = new GetResourceCaption();
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
+            _comm = new Common();
             this.MinimizeBox = this.MaximizeBox = false;
             this.MaximumSize = this.MinimumSize = this.Size;
             BindGrid();
@@ -302,14 +306,28 @@ namespace HitechTMS.File
                 }
                 else
                 {
-                    txtProductName.Text = "";
+                    BindGrid();
                 }
+            }
+            else
+            {
+                BindGrid();
             }
         }
 
         private void txtProductCode_Leave(object sender, EventArgs e)
         {
             searchGridData();
+        }
+
+        private void txtProductCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBox(e);
+        }
+
+        private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBox(e);
         }
     }
 }

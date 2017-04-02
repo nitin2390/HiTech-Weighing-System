@@ -44,6 +44,11 @@
             this.supplierFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transporterFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.storedTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transactionPendingFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transactionFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pendingFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletePendingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.weighingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,6 +64,9 @@
             this.emailConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.publicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.multiWeighingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabMode.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -193,43 +201,79 @@
             this.productFileToolStripMenuItem,
             this.supplierFileToolStripMenuItem,
             this.transporterFileToolStripMenuItem,
-            this.storedTToolStripMenuItem});
+            this.storedTToolStripMenuItem,
+            this.transactionPendingFileToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // productFileToolStripMenuItem
             // 
             this.productFileToolStripMenuItem.Name = "productFileToolStripMenuItem";
-            this.productFileToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.productFileToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.productFileToolStripMenuItem.Text = "1 Product File";
             this.productFileToolStripMenuItem.Click += new System.EventHandler(this.productFileToolStripMenuItem_Click);
             // 
             // supplierFileToolStripMenuItem
             // 
             this.supplierFileToolStripMenuItem.Name = "supplierFileToolStripMenuItem";
-            this.supplierFileToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.supplierFileToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.supplierFileToolStripMenuItem.Text = "2 Supplier File";
             this.supplierFileToolStripMenuItem.Click += new System.EventHandler(this.supplierFileToolStripMenuItem_Click);
             // 
             // transporterFileToolStripMenuItem
             // 
             this.transporterFileToolStripMenuItem.Name = "transporterFileToolStripMenuItem";
-            this.transporterFileToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.transporterFileToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.transporterFileToolStripMenuItem.Text = "3 Transporter File";
             this.transporterFileToolStripMenuItem.Click += new System.EventHandler(this.transporterFileToolStripMenuItem_Click);
             // 
             // storedTToolStripMenuItem
             // 
             this.storedTToolStripMenuItem.Name = "storedTToolStripMenuItem";
-            this.storedTToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.storedTToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.storedTToolStripMenuItem.Text = "4 Stored Tare File";
             this.storedTToolStripMenuItem.Click += new System.EventHandler(this.storedTToolStripMenuItem_Click);
+            // 
+            // transactionPendingFileToolStripMenuItem
+            // 
+            this.transactionPendingFileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.transactionFileToolStripMenuItem,
+            this.pendingFileToolStripMenuItem,
+            this.deletePendingToolStripMenuItem,
+            this.deleteTransactionToolStripMenuItem});
+            this.transactionPendingFileToolStripMenuItem.Name = "transactionPendingFileToolStripMenuItem";
+            this.transactionPendingFileToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.transactionPendingFileToolStripMenuItem.Text = "Transaction / Pending File";
+            // 
+            // transactionFileToolStripMenuItem
+            // 
+            this.transactionFileToolStripMenuItem.Name = "transactionFileToolStripMenuItem";
+            this.transactionFileToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.transactionFileToolStripMenuItem.Text = "Transaction File";
+            // 
+            // pendingFileToolStripMenuItem
+            // 
+            this.pendingFileToolStripMenuItem.Name = "pendingFileToolStripMenuItem";
+            this.pendingFileToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.pendingFileToolStripMenuItem.Text = "Pending File";
+            // 
+            // deletePendingToolStripMenuItem
+            // 
+            this.deletePendingToolStripMenuItem.Name = "deletePendingToolStripMenuItem";
+            this.deletePendingToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.deletePendingToolStripMenuItem.Text = "Delete Pending";
+            // 
+            // deleteTransactionToolStripMenuItem
+            // 
+            this.deleteTransactionToolStripMenuItem.Name = "deleteTransactionToolStripMenuItem";
+            this.deleteTransactionToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.deleteTransactionToolStripMenuItem.Text = "Delete Transaction";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -241,6 +285,10 @@
             // 
             // weighingToolStripMenuItem
             // 
+            this.weighingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.normalToolStripMenuItem,
+            this.publicToolStripMenuItem,
+            this.multiWeighingToolStripMenuItem});
             this.weighingToolStripMenuItem.Name = "weighingToolStripMenuItem";
             this.weighingToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.weighingToolStripMenuItem.Text = "&Weighing";
@@ -329,6 +377,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // normalToolStripMenuItem
+            // 
+            this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
+            this.normalToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.normalToolStripMenuItem.Text = "1 Normal Weighing";
+            this.normalToolStripMenuItem.Click += new System.EventHandler(this.normalToolStripMenuItem_Click);
+            // 
+            // publicToolStripMenuItem
+            // 
+            this.publicToolStripMenuItem.Name = "publicToolStripMenuItem";
+            this.publicToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.publicToolStripMenuItem.Text = "2 Public Weighing";
+            this.publicToolStripMenuItem.Click += new System.EventHandler(this.publicToolStripMenuItem_Click);
+            // 
+            // multiWeighingToolStripMenuItem
+            // 
+            this.multiWeighingToolStripMenuItem.Name = "multiWeighingToolStripMenuItem";
+            this.multiWeighingToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.multiWeighingToolStripMenuItem.Text = "3 Multi Weighing";
+            this.multiWeighingToolStripMenuItem.Click += new System.EventHandler(this.multiWeighingToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -344,6 +413,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "HiTech Weighing System";
             this.UserIsAllowed += new System.EventHandler(this.frmMain_UserIsAllowed);
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabMode.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
@@ -384,6 +454,14 @@
         private System.Windows.Forms.ToolStripMenuItem emailConfigToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem databaseBackupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transactionPendingFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transactionFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pendingFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deletePendingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteTransactionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem publicToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem multiWeighingToolStripMenuItem;
     }
 }
 

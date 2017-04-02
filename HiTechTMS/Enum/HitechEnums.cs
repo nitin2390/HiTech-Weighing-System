@@ -26,6 +26,19 @@
             Name = 1
         }
 
+        public enum enumProductNormalPublicMulti
+        {
+            Normal = 0,
+            Public = 1 ,
+            Multi = 2
+        }
+
+        public enum enumProductInOut
+        {
+            In =0,
+            Out =1
+        }
+
         public enum enumSupplierTransportfrm
         {
             Id = 0,

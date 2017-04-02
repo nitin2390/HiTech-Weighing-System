@@ -209,6 +209,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(180, 107);
+            this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(146, 22);
             this.txtEmail.TabIndex = 18;
@@ -226,6 +227,7 @@
             // txtFax
             // 
             this.txtFax.Location = new System.Drawing.Point(180, 64);
+            this.txtFax.MaxLength = 20;
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(146, 22);
             this.txtFax.TabIndex = 17;
@@ -245,6 +247,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(180, 28);
+            this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(146, 22);
             this.txtPhone.TabIndex = 16;
@@ -281,6 +284,7 @@
             // txtAddressLine3
             // 
             this.txtAddressLine3.Location = new System.Drawing.Point(189, 184);
+            this.txtAddressLine3.MaxLength = 25;
             this.txtAddressLine3.Name = "txtAddressLine3";
             this.txtAddressLine3.Size = new System.Drawing.Size(146, 22);
             this.txtAddressLine3.TabIndex = 15;
@@ -289,6 +293,7 @@
             // txtAddressLine2
             // 
             this.txtAddressLine2.Location = new System.Drawing.Point(189, 149);
+            this.txtAddressLine2.MaxLength = 25;
             this.txtAddressLine2.Name = "txtAddressLine2";
             this.txtAddressLine2.Size = new System.Drawing.Size(146, 22);
             this.txtAddressLine2.TabIndex = 14;
@@ -297,6 +302,7 @@
             // txtAddressLine1
             // 
             this.txtAddressLine1.Location = new System.Drawing.Point(189, 110);
+            this.txtAddressLine1.MaxLength = 25;
             this.txtAddressLine1.Name = "txtAddressLine1";
             this.txtAddressLine1.Size = new System.Drawing.Size(146, 22);
             this.txtAddressLine1.TabIndex = 13;
@@ -305,18 +311,22 @@
             // txtSupplierName
             // 
             this.txtSupplierName.Location = new System.Drawing.Point(189, 67);
+            this.txtSupplierName.MaxLength = 25;
             this.txtSupplierName.Name = "txtSupplierName";
             this.txtSupplierName.Size = new System.Drawing.Size(146, 22);
             this.txtSupplierName.TabIndex = 12;
             this.txtSupplierName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSupplierName_KeyDown);
+            this.txtSupplierName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSupplierName_KeyPress);
             // 
             // txtSupplierCode
             // 
             this.txtSupplierCode.Location = new System.Drawing.Point(189, 31);
+            this.txtSupplierCode.MaxLength = 5;
             this.txtSupplierCode.Name = "txtSupplierCode";
             this.txtSupplierCode.Size = new System.Drawing.Size(146, 22);
             this.txtSupplierCode.TabIndex = 11;
             this.txtSupplierCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSupplierCode_KeyDown);
+            this.txtSupplierCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSupplierCode_KeyPress);
             this.txtSupplierCode.Leave += new System.EventHandler(this.txtSupplierCode_Leave);
             // 
             // lblAddress
