@@ -184,3 +184,4 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\De
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\StoredTareFile.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.Weighing.frmProductInOut.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.Weighing.frmNormalWeighing.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.Weighing.PublicWeighing.resources

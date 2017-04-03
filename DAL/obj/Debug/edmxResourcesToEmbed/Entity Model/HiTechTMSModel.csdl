@@ -12,6 +12,11 @@
       <End Role="UserRole" EntitySet="UserRole" />
     </AssociationSet>
     <EntitySet Name="mstStoredTareRecords" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords" />
+    <EntitySet Name="transNormalWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" />
+    <AssociationSet Name="FK__transNorm__Produ__1881A0DE" Association="HitechTruckMngtSystmDataBaseFileModel.FK__transNorm__Produ__1881A0DE">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="transNormalWeight" EntitySet="transNormalWeight" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="UserRoleType">
     <Key>
@@ -25,8 +30,9 @@
     <Key>
       <PropertyRef Name="Code" />
     </Key>
-    <Property Name="Code" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="transNormalWeight" Relationship="HitechTruckMngtSystmDataBaseFileModel.FK__transNorm__Produ__1881A0DE" FromRole="Product" ToRole="transNormalWeight" />
   </EntityType>
   <EntityType Name="EmailMaster">
     <Key>
@@ -103,4 +109,44 @@
     <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="TimeIn" Type="Time" Nullable="false" Precision="7" />
   </EntityType>
+  <EntityType Name="transNormalWeight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Mode" Type="Byte" Nullable="false" />
+    <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierCode" Type="Guid" Nullable="false" />
+    <Property Name="TransporterCode" Type="Guid" Nullable="false" />
+    <Property Name="ChallanNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ChallanDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ChallanWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Miscellaneous" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryNoteN" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateOut" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TimeIn" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="TimeOut" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="TareWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="GrossWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="NetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ProdInOut" Type="Byte" Nullable="false" />
+    <Property Name="TransComplete" Type="Byte" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="HitechTruckMngtSystmDataBaseFileModel.FK__transNorm__Produ__1881A0DE" FromRole="transNormalWeight" ToRole="Product" />
+    <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__transNorm__Produ__1881A0DE">
+    <End Type="HitechTruckMngtSystmDataBaseFileModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" Role="transNormalWeight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="transNormalWeight">
+        <PropertyRef Name="ProductCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

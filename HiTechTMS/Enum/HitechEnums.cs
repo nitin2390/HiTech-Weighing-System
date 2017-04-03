@@ -74,10 +74,11 @@
         }
 
 
-        public enum enumStoredTareFileMode
+        public enum enumWeightMode
         {
             Manual = 0,
-            Auto =1
+            Auto =1,
+            Semi = 2
         }
     }
 }

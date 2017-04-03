@@ -24,8 +24,8 @@ namespace HitechTMS.File
         private Boolean _editGrid { get; set; }
         public Boolean _saveClick { get; set; }
         public FrmName _frmName { get; set; }
-        public enumStoredTareFileMode _mode { get; set; }
-        public frmStoredTareFile(FrmName intfrmtype, IPrincipal userPrincipal, enumStoredTareFileMode Mode) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
+        public enumWeightMode _mode { get; set; }
+        public frmStoredTareFile(FrmName intfrmtype, IPrincipal userPrincipal, enumWeightMode Mode) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace HitechTMS.File
             {
                 txtMode.Text = _mode.ToString();
 
-                if (_mode == enumStoredTareFileMode.Auto)
+                if (_mode == enumWeightMode.Auto)
                 {
                     txtTareWeight.ReadOnly = true;
                     btnWeight.Visible = true;
@@ -158,7 +158,7 @@ namespace HitechTMS.File
 
 
                         mstStoredTareRecords objStoredTareRecords = new mstStoredTareRecords();
-                        objStoredTareRecords.Mode = (int)enumStoredTareFileMode.Manual;
+                        objStoredTareRecords.Mode = (int)enumWeightMode.Manual;
                         objStoredTareRecords.Truck = txtTruck.Text;
                         objStoredTareRecords.TruckType = txtTruckType.Text;
                         objStoredTareRecords.mstSupplierTransporterID = ((mstSupplierTransporter)cmbTransportCode.SelectedItem).Id;

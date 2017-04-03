@@ -28,483 +28,491 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.grpboxNormalWeighing = new System.Windows.Forms.GroupBox();
+            this.grpboxWeightInfo = new System.Windows.Forms.GroupBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtTranspotername = new System.Windows.Forms.TextBox();
-            this.txtCustomername = new System.Windows.Forms.TextBox();
-            this.txtProductname = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblCustomercode = new System.Windows.Forms.Label();
+            this.lblTonneNetWeight = new System.Windows.Forms.Label();
+            this.lblTonneGrossWeight = new System.Windows.Forms.Label();
+            this.lblTonneTareWeight = new System.Windows.Forms.Label();
+            this.lblNetWeight = new System.Windows.Forms.Label();
+            this.lblGrossWeight = new System.Windows.Forms.Label();
+            this.lblTareWeight = new System.Windows.Forms.Label();
+            this.lblTimeOut = new System.Windows.Forms.Label();
+            this.lblDateOut = new System.Windows.Forms.Label();
+            this.lblTimeIn = new System.Windows.Forms.Label();
+            this.lblDateIn = new System.Windows.Forms.Label();
+            this.txtNetWeight = new System.Windows.Forms.TextBox();
+            this.txtGrossWeight = new System.Windows.Forms.TextBox();
+            this.txtTareWeight = new System.Windows.Forms.TextBox();
+            this.txtTimeOut = new System.Windows.Forms.TextBox();
+            this.txtDateOut = new System.Windows.Forms.TextBox();
+            this.txtTimeIn = new System.Windows.Forms.TextBox();
+            this.txtDateIn = new System.Windows.Forms.TextBox();
+            this.grpboxChallanInfo = new System.Windows.Forms.GroupBox();
+            this.txtChallanWeight = new System.Windows.Forms.TextBox();
+            this.lblDeliveryNoteN = new System.Windows.Forms.Label();
+            this.lblMiscellaneous = new System.Windows.Forms.Label();
+            this.txtDeliveryNoteN = new System.Windows.Forms.TextBox();
+            this.txtMiscellaneous1 = new System.Windows.Forms.TextBox();
+            this.txtMiscellaneous = new System.Windows.Forms.TextBox();
+            this.cmbChallanWeight = new System.Windows.Forms.ComboBox();
+            this.lblChallanWeight = new System.Windows.Forms.Label();
+            this.txtChallanDate = new System.Windows.Forms.TextBox();
+            this.txtChallanNumber = new System.Windows.Forms.TextBox();
+            this.lblChallanDate = new System.Windows.Forms.Label();
+            this.lblChallanNumber = new System.Windows.Forms.Label();
+            this.grpboxOperation = new System.Windows.Forms.GroupBox();
+            this.btnTicket = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnSendEmail = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAddNew = new System.Windows.Forms.Button();
+            this.txtTranspoterName = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.lblTransporterCode = new System.Windows.Forms.Label();
+            this.lblCustomerCode = new System.Windows.Forms.Label();
             this.lblProductCode = new System.Windows.Forms.Label();
-            this.cmdTranspotercode = new System.Windows.Forms.ComboBox();
-            this.cmdCustomerCode = new System.Windows.Forms.ComboBox();
-            this.cmdProductCode = new System.Windows.Forms.ComboBox();
+            this.cmbTranspoterCode = new System.Windows.Forms.ComboBox();
+            this.cmbCustomerCode = new System.Windows.Forms.ComboBox();
+            this.cmbProductCode = new System.Windows.Forms.ComboBox();
             this.txtTruck = new System.Windows.Forms.TextBox();
             this.lblTruck = new System.Windows.Forms.Label();
-            this.txtManual = new System.Windows.Forms.Label();
+            this.txtMode = new System.Windows.Forms.Label();
             this.lblMode = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grpboxNormalWeighing.SuspendLayout();
+            this.grpboxWeightInfo.SuspendLayout();
+            this.grpboxChallanInfo.SuspendLayout();
+            this.grpboxOperation.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grpboxNormalWeighing
             // 
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.txtTranspotername);
-            this.groupBox1.Controls.Add(this.txtCustomername);
-            this.groupBox1.Controls.Add(this.txtProductname);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.lblCustomercode);
-            this.groupBox1.Controls.Add(this.lblProductCode);
-            this.groupBox1.Controls.Add(this.cmdTranspotercode);
-            this.groupBox1.Controls.Add(this.cmdCustomerCode);
-            this.groupBox1.Controls.Add(this.cmdProductCode);
-            this.groupBox1.Controls.Add(this.txtTruck);
-            this.groupBox1.Controls.Add(this.lblTruck);
-            this.groupBox1.Controls.Add(this.txtManual);
-            this.groupBox1.Controls.Add(this.lblMode);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1204, 718);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.grpboxNormalWeighing.Controls.Add(this.grpboxWeightInfo);
+            this.grpboxNormalWeighing.Controls.Add(this.grpboxChallanInfo);
+            this.grpboxNormalWeighing.Controls.Add(this.grpboxOperation);
+            this.grpboxNormalWeighing.Controls.Add(this.txtTranspoterName);
+            this.grpboxNormalWeighing.Controls.Add(this.txtCustomerName);
+            this.grpboxNormalWeighing.Controls.Add(this.txtProductName);
+            this.grpboxNormalWeighing.Controls.Add(this.lblTransporterCode);
+            this.grpboxNormalWeighing.Controls.Add(this.lblCustomerCode);
+            this.grpboxNormalWeighing.Controls.Add(this.lblProductCode);
+            this.grpboxNormalWeighing.Controls.Add(this.cmbTranspoterCode);
+            this.grpboxNormalWeighing.Controls.Add(this.cmbCustomerCode);
+            this.grpboxNormalWeighing.Controls.Add(this.cmbProductCode);
+            this.grpboxNormalWeighing.Controls.Add(this.txtTruck);
+            this.grpboxNormalWeighing.Controls.Add(this.lblTruck);
+            this.grpboxNormalWeighing.Controls.Add(this.txtMode);
+            this.grpboxNormalWeighing.Controls.Add(this.lblMode);
+            this.grpboxNormalWeighing.Location = new System.Drawing.Point(13, 13);
+            this.grpboxNormalWeighing.Name = "grpboxNormalWeighing";
+            this.grpboxNormalWeighing.Size = new System.Drawing.Size(1204, 718);
+            this.grpboxNormalWeighing.TabIndex = 0;
+            this.grpboxNormalWeighing.TabStop = false;
+            this.grpboxNormalWeighing.Text = "Normal Weighing";
             // 
-            // groupBox4
+            // grpboxWeightInfo
             // 
-            this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Controls.Add(this.label22);
-            this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.label18);
-            this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.textBox16);
-            this.groupBox4.Controls.Add(this.textBox15);
-            this.groupBox4.Controls.Add(this.textBox14);
-            this.groupBox4.Controls.Add(this.textBox13);
-            this.groupBox4.Controls.Add(this.textBox12);
-            this.groupBox4.Controls.Add(this.textBox11);
-            this.groupBox4.Controls.Add(this.textBox10);
-            this.groupBox4.Location = new System.Drawing.Point(23, 455);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(819, 263);
-            this.groupBox4.TabIndex = 18;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.grpboxWeightInfo.Controls.Add(this.label23);
+            this.grpboxWeightInfo.Controls.Add(this.label22);
+            this.grpboxWeightInfo.Controls.Add(this.lblTonneNetWeight);
+            this.grpboxWeightInfo.Controls.Add(this.lblTonneGrossWeight);
+            this.grpboxWeightInfo.Controls.Add(this.lblTonneTareWeight);
+            this.grpboxWeightInfo.Controls.Add(this.lblNetWeight);
+            this.grpboxWeightInfo.Controls.Add(this.lblGrossWeight);
+            this.grpboxWeightInfo.Controls.Add(this.lblTareWeight);
+            this.grpboxWeightInfo.Controls.Add(this.lblTimeOut);
+            this.grpboxWeightInfo.Controls.Add(this.lblDateOut);
+            this.grpboxWeightInfo.Controls.Add(this.lblTimeIn);
+            this.grpboxWeightInfo.Controls.Add(this.lblDateIn);
+            this.grpboxWeightInfo.Controls.Add(this.txtNetWeight);
+            this.grpboxWeightInfo.Controls.Add(this.txtGrossWeight);
+            this.grpboxWeightInfo.Controls.Add(this.txtTareWeight);
+            this.grpboxWeightInfo.Controls.Add(this.txtTimeOut);
+            this.grpboxWeightInfo.Controls.Add(this.txtDateOut);
+            this.grpboxWeightInfo.Controls.Add(this.txtTimeIn);
+            this.grpboxWeightInfo.Controls.Add(this.txtDateIn);
+            this.grpboxWeightInfo.Location = new System.Drawing.Point(23, 455);
+            this.grpboxWeightInfo.Name = "grpboxWeightInfo";
+            this.grpboxWeightInfo.Size = new System.Drawing.Size(819, 263);
+            this.grpboxWeightInfo.TabIndex = 18;
+            this.grpboxWeightInfo.TabStop = false;
+            this.grpboxWeightInfo.Text = "Weight Info";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(738, 127);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(54, 17);
+            this.label23.Size = new System.Drawing.Size(31, 17);
             this.label23.TabIndex = 38;
-            this.label23.Text = "label23";
+            this.label23.Text = "kbd";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(738, 58);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(54, 17);
+            this.label22.Size = new System.Drawing.Size(31, 17);
             this.label22.TabIndex = 37;
-            this.label22.Text = "label22";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(669, 191);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(54, 17);
-            this.label21.TabIndex = 36;
-            this.label21.Text = "label21";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(669, 127);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(54, 17);
-            this.label20.TabIndex = 35;
-            this.label20.Text = "label20";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(669, 60);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(54, 17);
-            this.label19.TabIndex = 34;
-            this.label19.Text = "label19";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(420, 191);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(54, 17);
-            this.label18.TabIndex = 33;
-            this.label18.Text = "label18";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(511, 104);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(54, 17);
-            this.label17.TabIndex = 32;
-            this.label17.Text = "label17";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(511, 35);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(54, 17);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "label16";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(277, 104);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 17);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "label15";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(277, 35);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 17);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "label14";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(14, 104);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 17);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "label13";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 35);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 17);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "label12";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(515, 191);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(148, 22);
-            this.textBox16.TabIndex = 25;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(515, 124);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(148, 22);
-            this.textBox15.TabIndex = 24;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(515, 55);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(148, 22);
-            this.textBox14.TabIndex = 23;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(280, 124);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(148, 22);
-            this.textBox13.TabIndex = 22;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(280, 55);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(148, 22);
-            this.textBox12.TabIndex = 21;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(17, 124);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(148, 22);
-            this.textBox11.TabIndex = 20;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(17, 55);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(148, 22);
-            this.textBox10.TabIndex = 19;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.textBox8);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.comboBox4);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(23, 185);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(819, 263);
-            this.groupBox3.TabIndex = 18;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(315, 186);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 17);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "label11";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(315, 35);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 17);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "label10";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(318, 224);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(247, 22);
-            this.textBox9.TabIndex = 24;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(318, 106);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(247, 22);
-            this.textBox8.TabIndex = 23;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(318, 70);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(247, 22);
-            this.textBox7.TabIndex = 22;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(17, 222);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(169, 24);
-            this.comboBox4.TabIndex = 19;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 186);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 17);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "label9";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(17, 144);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(148, 22);
-            this.textBox6.TabIndex = 20;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(17, 70);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(148, 22);
-            this.textBox5.TabIndex = 19;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 111);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 17);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "label8";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 35);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 17);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "label7";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(848, 185);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(335, 375);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(114, 246);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 58);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(196, 47);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 58);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "button2";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(24, 154);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 58);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "button2";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(196, 154);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 58);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(24, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 58);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // txtTranspotername
-            // 
-            this.txtTranspotername.Location = new System.Drawing.Point(623, 138);
-            this.txtTranspotername.Name = "txtTranspotername";
-            this.txtTranspotername.Size = new System.Drawing.Size(247, 22);
-            this.txtTranspotername.TabIndex = 12;
-            // 
-            // txtCustomername
-            // 
-            this.txtCustomername.Location = new System.Drawing.Point(623, 81);
-            this.txtCustomername.Name = "txtCustomername";
-            this.txtCustomername.Size = new System.Drawing.Size(247, 22);
-            this.txtCustomername.TabIndex = 11;
-            // 
-            // txtProductname
-            // 
-            this.txtProductname.Location = new System.Drawing.Point(623, 33);
-            this.txtProductname.Name = "txtProductname";
-            this.txtProductname.Size = new System.Drawing.Size(247, 22);
-            this.txtProductname.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(258, 138);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 17);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Transpoter Code";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // lblCustomercode
-            // 
-            this.lblCustomercode.AutoSize = true;
-            this.lblCustomercode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomercode.Location = new System.Drawing.Point(270, 89);
-            this.lblCustomercode.Name = "lblCustomercode";
-            this.lblCustomercode.Size = new System.Drawing.Size(118, 17);
-            this.lblCustomercode.TabIndex = 8;
-            this.lblCustomercode.Text = "Customer Code";
-            this.lblCustomercode.Click += new System.EventHandler(this.label5_Click);
+            this.label22.Text = "kbd";
+            // 
+            // lblTonneNetWeight
+            // 
+            this.lblTonneNetWeight.AutoSize = true;
+            this.lblTonneNetWeight.Location = new System.Drawing.Point(669, 191);
+            this.lblTonneNetWeight.Name = "lblTonneNetWeight";
+            this.lblTonneNetWeight.Size = new System.Drawing.Size(44, 17);
+            this.lblTonneNetWeight.TabIndex = 36;
+            this.lblTonneNetWeight.Text = "tonne";
+            // 
+            // lblTonneGrossWeight
+            // 
+            this.lblTonneGrossWeight.AutoSize = true;
+            this.lblTonneGrossWeight.Location = new System.Drawing.Point(669, 127);
+            this.lblTonneGrossWeight.Name = "lblTonneGrossWeight";
+            this.lblTonneGrossWeight.Size = new System.Drawing.Size(44, 17);
+            this.lblTonneGrossWeight.TabIndex = 35;
+            this.lblTonneGrossWeight.Text = "tonne";
+            // 
+            // lblTonneTareWeight
+            // 
+            this.lblTonneTareWeight.AutoSize = true;
+            this.lblTonneTareWeight.Location = new System.Drawing.Point(669, 60);
+            this.lblTonneTareWeight.Name = "lblTonneTareWeight";
+            this.lblTonneTareWeight.Size = new System.Drawing.Size(44, 17);
+            this.lblTonneTareWeight.TabIndex = 34;
+            this.lblTonneTareWeight.Text = "tonne";
+            // 
+            // lblNetWeight
+            // 
+            this.lblNetWeight.AutoSize = true;
+            this.lblNetWeight.Location = new System.Drawing.Point(420, 191);
+            this.lblNetWeight.Name = "lblNetWeight";
+            this.lblNetWeight.Size = new System.Drawing.Size(78, 17);
+            this.lblNetWeight.TabIndex = 33;
+            this.lblNetWeight.Text = "Net Weight";
+            // 
+            // lblGrossWeight
+            // 
+            this.lblGrossWeight.AutoSize = true;
+            this.lblGrossWeight.Location = new System.Drawing.Point(511, 104);
+            this.lblGrossWeight.Name = "lblGrossWeight";
+            this.lblGrossWeight.Size = new System.Drawing.Size(94, 17);
+            this.lblGrossWeight.TabIndex = 32;
+            this.lblGrossWeight.Text = "Gross Weight";
+            // 
+            // lblTareWeight
+            // 
+            this.lblTareWeight.AutoSize = true;
+            this.lblTareWeight.Location = new System.Drawing.Point(511, 35);
+            this.lblTareWeight.Name = "lblTareWeight";
+            this.lblTareWeight.Size = new System.Drawing.Size(86, 17);
+            this.lblTareWeight.TabIndex = 31;
+            this.lblTareWeight.Text = "Tare Weight";
+            // 
+            // lblTimeOut
+            // 
+            this.lblTimeOut.AutoSize = true;
+            this.lblTimeOut.Location = new System.Drawing.Point(277, 104);
+            this.lblTimeOut.Name = "lblTimeOut";
+            this.lblTimeOut.Size = new System.Drawing.Size(66, 17);
+            this.lblTimeOut.TabIndex = 30;
+            this.lblTimeOut.Text = "Time Out";
+            // 
+            // lblDateOut
+            // 
+            this.lblDateOut.AutoSize = true;
+            this.lblDateOut.Location = new System.Drawing.Point(14, 104);
+            this.lblDateOut.Name = "lblDateOut";
+            this.lblDateOut.Size = new System.Drawing.Size(65, 17);
+            this.lblDateOut.TabIndex = 29;
+            this.lblDateOut.Text = "Date Out";
+            // 
+            // lblTimeIn
+            // 
+            this.lblTimeIn.AutoSize = true;
+            this.lblTimeIn.Location = new System.Drawing.Point(277, 35);
+            this.lblTimeIn.Name = "lblTimeIn";
+            this.lblTimeIn.Size = new System.Drawing.Size(54, 17);
+            this.lblTimeIn.TabIndex = 28;
+            this.lblTimeIn.Text = "Time In";
+            // 
+            // lblDateIn
+            // 
+            this.lblDateIn.AutoSize = true;
+            this.lblDateIn.Location = new System.Drawing.Point(14, 35);
+            this.lblDateIn.Name = "lblDateIn";
+            this.lblDateIn.Size = new System.Drawing.Size(53, 17);
+            this.lblDateIn.TabIndex = 27;
+            this.lblDateIn.Text = "Date In";
+            // 
+            // txtNetWeight
+            // 
+            this.txtNetWeight.Location = new System.Drawing.Point(515, 191);
+            this.txtNetWeight.Name = "txtNetWeight";
+            this.txtNetWeight.Size = new System.Drawing.Size(148, 22);
+            this.txtNetWeight.TabIndex = 25;
+            // 
+            // txtGrossWeight
+            // 
+            this.txtGrossWeight.Location = new System.Drawing.Point(515, 124);
+            this.txtGrossWeight.Name = "txtGrossWeight";
+            this.txtGrossWeight.Size = new System.Drawing.Size(148, 22);
+            this.txtGrossWeight.TabIndex = 24;
+            // 
+            // txtTareWeight
+            // 
+            this.txtTareWeight.Location = new System.Drawing.Point(515, 55);
+            this.txtTareWeight.Name = "txtTareWeight";
+            this.txtTareWeight.Size = new System.Drawing.Size(148, 22);
+            this.txtTareWeight.TabIndex = 23;
+            // 
+            // txtTimeOut
+            // 
+            this.txtTimeOut.Location = new System.Drawing.Point(280, 124);
+            this.txtTimeOut.Name = "txtTimeOut";
+            this.txtTimeOut.Size = new System.Drawing.Size(148, 22);
+            this.txtTimeOut.TabIndex = 22;
+            // 
+            // txtDateOut
+            // 
+            this.txtDateOut.Location = new System.Drawing.Point(17, 124);
+            this.txtDateOut.Name = "txtDateOut";
+            this.txtDateOut.Size = new System.Drawing.Size(148, 22);
+            this.txtDateOut.TabIndex = 21;
+            // 
+            // txtTimeIn
+            // 
+            this.txtTimeIn.Location = new System.Drawing.Point(280, 55);
+            this.txtTimeIn.Name = "txtTimeIn";
+            this.txtTimeIn.Size = new System.Drawing.Size(148, 22);
+            this.txtTimeIn.TabIndex = 20;
+            // 
+            // txtDateIn
+            // 
+            this.txtDateIn.Location = new System.Drawing.Point(17, 55);
+            this.txtDateIn.Name = "txtDateIn";
+            this.txtDateIn.Size = new System.Drawing.Size(148, 22);
+            this.txtDateIn.TabIndex = 19;
+            // 
+            // grpboxChallanInfo
+            // 
+            this.grpboxChallanInfo.Controls.Add(this.txtChallanWeight);
+            this.grpboxChallanInfo.Controls.Add(this.lblDeliveryNoteN);
+            this.grpboxChallanInfo.Controls.Add(this.lblMiscellaneous);
+            this.grpboxChallanInfo.Controls.Add(this.txtDeliveryNoteN);
+            this.grpboxChallanInfo.Controls.Add(this.txtMiscellaneous1);
+            this.grpboxChallanInfo.Controls.Add(this.txtMiscellaneous);
+            this.grpboxChallanInfo.Controls.Add(this.cmbChallanWeight);
+            this.grpboxChallanInfo.Controls.Add(this.lblChallanWeight);
+            this.grpboxChallanInfo.Controls.Add(this.txtChallanDate);
+            this.grpboxChallanInfo.Controls.Add(this.txtChallanNumber);
+            this.grpboxChallanInfo.Controls.Add(this.lblChallanDate);
+            this.grpboxChallanInfo.Controls.Add(this.lblChallanNumber);
+            this.grpboxChallanInfo.Location = new System.Drawing.Point(23, 185);
+            this.grpboxChallanInfo.Name = "grpboxChallanInfo";
+            this.grpboxChallanInfo.Size = new System.Drawing.Size(819, 263);
+            this.grpboxChallanInfo.TabIndex = 18;
+            this.grpboxChallanInfo.TabStop = false;
+            this.grpboxChallanInfo.Text = "Challan Info";
+            // 
+            // txtChallanWeight
+            // 
+            this.txtChallanWeight.Location = new System.Drawing.Point(17, 222);
+            this.txtChallanWeight.Name = "txtChallanWeight";
+            this.txtChallanWeight.Size = new System.Drawing.Size(148, 22);
+            this.txtChallanWeight.TabIndex = 27;
+            // 
+            // lblDeliveryNoteN
+            // 
+            this.lblDeliveryNoteN.AutoSize = true;
+            this.lblDeliveryNoteN.Location = new System.Drawing.Point(315, 186);
+            this.lblDeliveryNoteN.Name = "lblDeliveryNoteN";
+            this.lblDeliveryNoteN.Size = new System.Drawing.Size(107, 17);
+            this.lblDeliveryNoteN.TabIndex = 26;
+            this.lblDeliveryNoteN.Text = "Delivery Note N";
+            // 
+            // lblMiscellaneous
+            // 
+            this.lblMiscellaneous.AutoSize = true;
+            this.lblMiscellaneous.Location = new System.Drawing.Point(315, 35);
+            this.lblMiscellaneous.Name = "lblMiscellaneous";
+            this.lblMiscellaneous.Size = new System.Drawing.Size(97, 17);
+            this.lblMiscellaneous.TabIndex = 25;
+            this.lblMiscellaneous.Text = "Miscellaneous";
+            // 
+            // txtDeliveryNoteN
+            // 
+            this.txtDeliveryNoteN.Location = new System.Drawing.Point(318, 224);
+            this.txtDeliveryNoteN.Name = "txtDeliveryNoteN";
+            this.txtDeliveryNoteN.Size = new System.Drawing.Size(247, 22);
+            this.txtDeliveryNoteN.TabIndex = 24;
+            // 
+            // txtMiscellaneous1
+            // 
+            this.txtMiscellaneous1.Location = new System.Drawing.Point(318, 106);
+            this.txtMiscellaneous1.Name = "txtMiscellaneous1";
+            this.txtMiscellaneous1.Size = new System.Drawing.Size(247, 22);
+            this.txtMiscellaneous1.TabIndex = 23;
+            // 
+            // txtMiscellaneous
+            // 
+            this.txtMiscellaneous.Location = new System.Drawing.Point(318, 70);
+            this.txtMiscellaneous.Name = "txtMiscellaneous";
+            this.txtMiscellaneous.Size = new System.Drawing.Size(247, 22);
+            this.txtMiscellaneous.TabIndex = 22;
+            // 
+            // cmbChallanWeight
+            // 
+            this.cmbChallanWeight.FormattingEnabled = true;
+            this.cmbChallanWeight.Location = new System.Drawing.Point(171, 222);
+            this.cmbChallanWeight.Name = "cmbChallanWeight";
+            this.cmbChallanWeight.Size = new System.Drawing.Size(45, 24);
+            this.cmbChallanWeight.TabIndex = 19;
+            // 
+            // lblChallanWeight
+            // 
+            this.lblChallanWeight.AutoSize = true;
+            this.lblChallanWeight.Location = new System.Drawing.Point(14, 186);
+            this.lblChallanWeight.Name = "lblChallanWeight";
+            this.lblChallanWeight.Size = new System.Drawing.Size(103, 17);
+            this.lblChallanWeight.TabIndex = 21;
+            this.lblChallanWeight.Text = "Challan Weight";
+            // 
+            // txtChallanDate
+            // 
+            this.txtChallanDate.Location = new System.Drawing.Point(17, 144);
+            this.txtChallanDate.Name = "txtChallanDate";
+            this.txtChallanDate.Size = new System.Drawing.Size(148, 22);
+            this.txtChallanDate.TabIndex = 20;
+            // 
+            // txtChallanNumber
+            // 
+            this.txtChallanNumber.Location = new System.Drawing.Point(17, 70);
+            this.txtChallanNumber.Name = "txtChallanNumber";
+            this.txtChallanNumber.Size = new System.Drawing.Size(148, 22);
+            this.txtChallanNumber.TabIndex = 19;
+            // 
+            // lblChallanDate
+            // 
+            this.lblChallanDate.AutoSize = true;
+            this.lblChallanDate.Location = new System.Drawing.Point(14, 111);
+            this.lblChallanDate.Name = "lblChallanDate";
+            this.lblChallanDate.Size = new System.Drawing.Size(89, 17);
+            this.lblChallanDate.TabIndex = 18;
+            this.lblChallanDate.Text = "Challan Date";
+            // 
+            // lblChallanNumber
+            // 
+            this.lblChallanNumber.AutoSize = true;
+            this.lblChallanNumber.Location = new System.Drawing.Point(14, 35);
+            this.lblChallanNumber.Name = "lblChallanNumber";
+            this.lblChallanNumber.Size = new System.Drawing.Size(109, 17);
+            this.lblChallanNumber.TabIndex = 17;
+            this.lblChallanNumber.Text = "Challan Number";
+            // 
+            // grpboxOperation
+            // 
+            this.grpboxOperation.Controls.Add(this.btnTicket);
+            this.grpboxOperation.Controls.Add(this.btnSave);
+            this.grpboxOperation.Controls.Add(this.btnSendEmail);
+            this.grpboxOperation.Controls.Add(this.btnCancel);
+            this.grpboxOperation.Controls.Add(this.btnAddNew);
+            this.grpboxOperation.Location = new System.Drawing.Point(848, 185);
+            this.grpboxOperation.Name = "grpboxOperation";
+            this.grpboxOperation.Size = new System.Drawing.Size(335, 375);
+            this.grpboxOperation.TabIndex = 17;
+            this.grpboxOperation.TabStop = false;
+            this.grpboxOperation.Text = "Operation";
+            // 
+            // btnTicket
+            // 
+            this.btnTicket.Location = new System.Drawing.Point(114, 246);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(106, 58);
+            this.btnTicket.TabIndex = 2;
+            this.btnTicket.Text = "&Ticket";
+            this.btnTicket.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(196, 47);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(106, 58);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "&Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnSendEmail
+            // 
+            this.btnSendEmail.Location = new System.Drawing.Point(24, 154);
+            this.btnSendEmail.Name = "btnSendEmail";
+            this.btnSendEmail.Size = new System.Drawing.Size(106, 58);
+            this.btnSendEmail.TabIndex = 1;
+            this.btnSendEmail.Text = "Send Email";
+            this.btnSendEmail.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(196, 154);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(106, 58);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnAddNew
+            // 
+            this.btnAddNew.Location = new System.Drawing.Point(24, 47);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(106, 58);
+            this.btnAddNew.TabIndex = 0;
+            this.btnAddNew.Text = "&Add New";
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            // 
+            // txtTranspoterName
+            // 
+            this.txtTranspoterName.Location = new System.Drawing.Point(623, 138);
+            this.txtTranspoterName.Name = "txtTranspoterName";
+            this.txtTranspoterName.Size = new System.Drawing.Size(247, 22);
+            this.txtTranspoterName.TabIndex = 12;
+            // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.Location = new System.Drawing.Point(623, 81);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(247, 22);
+            this.txtCustomerName.TabIndex = 11;
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(623, 33);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(247, 22);
+            this.txtProductName.TabIndex = 10;
+            // 
+            // lblTransporterCode
+            // 
+            this.lblTransporterCode.AutoSize = true;
+            this.lblTransporterCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransporterCode.Location = new System.Drawing.Point(258, 138);
+            this.lblTransporterCode.Name = "lblTransporterCode";
+            this.lblTransporterCode.Size = new System.Drawing.Size(130, 17);
+            this.lblTransporterCode.TabIndex = 9;
+            this.lblTransporterCode.Text = "Transpoter Code";
+            // 
+            // lblCustomerCode
+            // 
+            this.lblCustomerCode.AutoSize = true;
+            this.lblCustomerCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerCode.Location = new System.Drawing.Point(270, 89);
+            this.lblCustomerCode.Name = "lblCustomerCode";
+            this.lblCustomerCode.Size = new System.Drawing.Size(118, 17);
+            this.lblCustomerCode.TabIndex = 8;
+            this.lblCustomerCode.Text = "Customer Code";
             // 
             // lblProductCode
             // 
@@ -515,31 +523,30 @@
             this.lblProductCode.Size = new System.Drawing.Size(106, 17);
             this.lblProductCode.TabIndex = 7;
             this.lblProductCode.Text = "Product Code";
-            this.lblProductCode.Click += new System.EventHandler(this.label4_Click);
             // 
-            // cmdTranspotercode
+            // cmbTranspoterCode
             // 
-            this.cmdTranspotercode.FormattingEnabled = true;
-            this.cmdTranspotercode.Location = new System.Drawing.Point(389, 135);
-            this.cmdTranspotercode.Name = "cmdTranspotercode";
-            this.cmdTranspotercode.Size = new System.Drawing.Size(169, 24);
-            this.cmdTranspotercode.TabIndex = 6;
+            this.cmbTranspoterCode.FormattingEnabled = true;
+            this.cmbTranspoterCode.Location = new System.Drawing.Point(404, 135);
+            this.cmbTranspoterCode.Name = "cmbTranspoterCode";
+            this.cmbTranspoterCode.Size = new System.Drawing.Size(169, 24);
+            this.cmbTranspoterCode.TabIndex = 6;
             // 
-            // cmdCustomerCode
+            // cmbCustomerCode
             // 
-            this.cmdCustomerCode.FormattingEnabled = true;
-            this.cmdCustomerCode.Location = new System.Drawing.Point(389, 86);
-            this.cmdCustomerCode.Name = "cmdCustomerCode";
-            this.cmdCustomerCode.Size = new System.Drawing.Size(169, 24);
-            this.cmdCustomerCode.TabIndex = 5;
+            this.cmbCustomerCode.FormattingEnabled = true;
+            this.cmbCustomerCode.Location = new System.Drawing.Point(404, 86);
+            this.cmbCustomerCode.Name = "cmbCustomerCode";
+            this.cmbCustomerCode.Size = new System.Drawing.Size(169, 24);
+            this.cmbCustomerCode.TabIndex = 5;
             // 
-            // cmdProductCode
+            // cmbProductCode
             // 
-            this.cmdProductCode.FormattingEnabled = true;
-            this.cmdProductCode.Location = new System.Drawing.Point(389, 30);
-            this.cmdProductCode.Name = "cmdProductCode";
-            this.cmdProductCode.Size = new System.Drawing.Size(169, 24);
-            this.cmdProductCode.TabIndex = 4;
+            this.cmbProductCode.FormattingEnabled = true;
+            this.cmbProductCode.Location = new System.Drawing.Point(404, 30);
+            this.cmbProductCode.Name = "cmbProductCode";
+            this.cmbProductCode.Size = new System.Drawing.Size(169, 24);
+            this.cmbProductCode.TabIndex = 4;
             // 
             // txtTruck
             // 
@@ -547,7 +554,7 @@
             this.txtTruck.Name = "txtTruck";
             this.txtTruck.Size = new System.Drawing.Size(148, 22);
             this.txtTruck.TabIndex = 3;
-            this.txtTruck.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+
             // 
             // lblTruck
             // 
@@ -559,15 +566,15 @@
             this.lblTruck.TabIndex = 2;
             this.lblTruck.Text = "Truck";
             // 
-            // txtManual
+            // txtMode
             // 
-            this.txtManual.AutoSize = true;
-            this.txtManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtManual.Location = new System.Drawing.Point(98, 39);
-            this.txtManual.Name = "txtManual";
-            this.txtManual.Size = new System.Drawing.Size(60, 17);
-            this.txtManual.TabIndex = 1;
-            this.txtManual.Text = "Manual";
+            this.txtMode.AutoSize = true;
+            this.txtMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMode.Location = new System.Drawing.Point(98, 39);
+            this.txtMode.Name = "txtMode";
+            this.txtMode.Size = new System.Drawing.Size(47, 17);
+            this.txtMode.TabIndex = 1;
+            this.txtMode.Text = "Mode";
             // 
             // lblMode
             // 
@@ -584,73 +591,74 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1229, 743);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpboxNormalWeighing);
             this.Name = "frmNormalWeighing";
             this.Text = "frmNormalWeighing";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.grpboxNormalWeighing.ResumeLayout(false);
+            this.grpboxNormalWeighing.PerformLayout();
+            this.grpboxWeightInfo.ResumeLayout(false);
+            this.grpboxWeightInfo.PerformLayout();
+            this.grpboxChallanInfo.ResumeLayout(false);
+            this.grpboxChallanInfo.PerformLayout();
+            this.grpboxOperation.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTranspotername;
-        private System.Windows.Forms.TextBox txtCustomername;
-        private System.Windows.Forms.TextBox txtProductname;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblCustomercode;
+        private System.Windows.Forms.GroupBox grpboxNormalWeighing;
+        private System.Windows.Forms.TextBox txtTranspoterName;
+        private System.Windows.Forms.TextBox txtCustomerName;
+        private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.Label lblTransporterCode;
+        private System.Windows.Forms.Label lblCustomerCode;
         private System.Windows.Forms.Label lblProductCode;
-        private System.Windows.Forms.ComboBox cmdTranspotercode;
-        private System.Windows.Forms.ComboBox cmdCustomerCode;
-        private System.Windows.Forms.ComboBox cmdProductCode;
+        private System.Windows.Forms.ComboBox cmbTranspoterCode;
+        private System.Windows.Forms.ComboBox cmbCustomerCode;
+        private System.Windows.Forms.ComboBox cmbProductCode;
         private System.Windows.Forms.TextBox txtTruck;
         private System.Windows.Forms.Label lblTruck;
-        private System.Windows.Forms.Label txtManual;
+        private System.Windows.Forms.Label txtMode;
         private System.Windows.Forms.Label lblMode;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox grpboxChallanInfo;
+        private System.Windows.Forms.ComboBox cmbChallanWeight;
+        private System.Windows.Forms.Label lblChallanWeight;
+        private System.Windows.Forms.TextBox txtChallanDate;
+        private System.Windows.Forms.TextBox txtChallanNumber;
+        private System.Windows.Forms.Label lblChallanDate;
+        private System.Windows.Forms.Label lblChallanNumber;
+        private System.Windows.Forms.GroupBox grpboxOperation;
+        private System.Windows.Forms.Label lblDeliveryNoteN;
+        private System.Windows.Forms.Label lblMiscellaneous;
+        private System.Windows.Forms.TextBox txtDeliveryNoteN;
+        private System.Windows.Forms.TextBox txtMiscellaneous1;
+        private System.Windows.Forms.TextBox txtMiscellaneous;
+        private System.Windows.Forms.GroupBox grpboxWeightInfo;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblTonneNetWeight;
+        private System.Windows.Forms.Label lblTonneGrossWeight;
+        private System.Windows.Forms.Label lblTonneTareWeight;
+        private System.Windows.Forms.Label lblNetWeight;
+        private System.Windows.Forms.Label lblGrossWeight;
+        private System.Windows.Forms.Label lblTareWeight;
+        private System.Windows.Forms.Label lblTimeOut;
+        private System.Windows.Forms.Label lblDateOut;
+        private System.Windows.Forms.Label lblTimeIn;
+        private System.Windows.Forms.Label lblDateIn;
+        private System.Windows.Forms.TextBox txtNetWeight;
+        private System.Windows.Forms.TextBox txtGrossWeight;
+        private System.Windows.Forms.TextBox txtTareWeight;
+        private System.Windows.Forms.TextBox txtTimeOut;
+        private System.Windows.Forms.TextBox txtDateOut;
+        private System.Windows.Forms.TextBox txtTimeIn;
+        private System.Windows.Forms.TextBox txtDateIn;
+        private System.Windows.Forms.Button btnTicket;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSendEmail;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAddNew;
+        private System.Windows.Forms.TextBox txtChallanWeight;
     }
 }

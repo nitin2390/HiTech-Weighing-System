@@ -23,11 +23,12 @@ namespace HitechTMS
         private GetResourceCaption dbGetResourceCaption;
         public enumProductNormalPublicMulti _enumProductInOut { get; set; }
         string str;
-
+        enumWeightMode _mode;
         public frmMain(IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
         {
             _nextFormPrincipal = userPrincipal;
             InitializeComponent();
+            _mode = enumWeightMode.Manual;
             dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
             this.MinimizeBox = this.MaximizeBox = false;
@@ -166,9 +167,8 @@ namespace HitechTMS
 
         private void storedTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            enumStoredTareFileMode Mode = enumStoredTareFileMode.Manual;
 
-            frmStoredTareFile objfrmTransportFile = new frmStoredTareFile(FrmName.StoredTareFile, _nextFormPrincipal, Mode);
+            frmStoredTareFile objfrmTransportFile = new frmStoredTareFile(FrmName.StoredTareFile, _nextFormPrincipal, _mode);
 
             if (objfrmTransportFile.UserCanOpenForm == false)
             {
@@ -214,7 +214,7 @@ namespace HitechTMS
         private void normalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _enumProductInOut = enumProductNormalPublicMulti.Normal;
-            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductInOut);
+            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductInOut, _mode);
             objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
             objfrmProductInOut.ShowDialog();
         }

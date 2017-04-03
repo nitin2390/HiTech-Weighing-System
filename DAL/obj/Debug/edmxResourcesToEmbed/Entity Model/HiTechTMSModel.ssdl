@@ -55,8 +55,35 @@
     <Key>
       <PropertyRef Name="Code" />
     </Key>
-    <Property Name="Code" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="transNormalWeight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Mode" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Truck" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="SupplierCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransporterCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ChallanNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="ChallanDate" Type="date" Nullable="false" />
+    <Property Name="ChallanWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="DateIn" Type="date" Nullable="false" />
+    <Property Name="DateOut" Type="date" Nullable="false" />
+    <Property Name="TimeIn" Type="time" Precision="7" Nullable="false" />
+    <Property Name="TimeOut" Type="time" Precision="7" Nullable="false" />
+    <Property Name="TareWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="GrossWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="NetWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ProdInOut" Type="tinyint" Nullable="false" />
+    <Property Name="TransComplete" Type="tinyint" Nullable="false" />
+    <Property Name="AddedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="UserRole">
     <Key>
@@ -76,6 +103,18 @@
     <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
+  <Association Name="FK__transNorm__Produ__2116E6DF">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="transNormalWeight" Type="Self.transNormalWeight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="transNormalWeight">
+        <PropertyRef Name="ProductCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__UserRole__UserRo__1B9317B3">
     <End Role="UserRoleType" Type="Self.UserRoleType" Multiplicity="1" />
     <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
@@ -94,8 +133,13 @@
     <EntitySet Name="mstStoredTareRecords" EntityType="Self.mstStoredTareRecords" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transNormalWeight" EntityType="Self.transNormalWeight" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__transNorm__Produ__2116E6DF" Association="Self.FK__transNorm__Produ__2116E6DF">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="transNormalWeight" EntitySet="transNormalWeight" />
+    </AssociationSet>
     <AssociationSet Name="FK__UserRole__UserRo__1B9317B3" Association="Self.FK__UserRole__UserRo__1B9317B3">
       <End Role="UserRoleType" EntitySet="UserRoleType" />
       <End Role="UserRole" EntitySet="UserRole" />
