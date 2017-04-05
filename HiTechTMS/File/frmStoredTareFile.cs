@@ -98,7 +98,7 @@ namespace HitechTMS.File
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            {
+            
                 try
                 {
                     _saveClick = true;
@@ -202,7 +202,7 @@ namespace HitechTMS.File
                     MessageBox.Show(err.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-            }
+            
         }
         private void BindGrid()
         {

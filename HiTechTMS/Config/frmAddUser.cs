@@ -18,6 +18,7 @@ namespace HitechTMS.Config
         private GetResourceCaption dbGetResourceCaption;
         EncryptionAndDecryption objEncryptionAndDecryption;
         private FrmName _frmName { get; set; }
+        public Boolean _saveClick { get; set; }
         public Guid _userRoleID { get; private set; }
 
         public frmAddUser(FrmName frmName,IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.Admin.ToString() }, userPrincipal)
@@ -32,6 +33,7 @@ namespace HitechTMS.Config
             BindGrid();
             BindDropDown();
             DesignGrid();
+            _saveClick = false;
         }
 
         private void BindDropDown()
@@ -117,6 +119,7 @@ namespace HitechTMS.Config
         {
             try
             {
+                _saveClick = true;
                 #region "Validation"
                 GetAllControlByType objGetAllControlByType = new GetAllControlByType();
                 var TextControl = objGetAllControlByType.GetAllControllType(this, typeof(TextBox));
@@ -157,7 +160,7 @@ namespace HitechTMS.Config
                 if(cmbRoleType.SelectedIndex ==0)
                 {
                     DialogResult = DialogResult.None;
-                    errProviderPassword.SetError(cmbRoleType, "Select Role!");
+                    errProviderRole.SetError(cmbRoleType, "Select Role!");
                     cmbRoleType.Focus();
                     return;
                 }
@@ -198,7 +201,7 @@ namespace HitechTMS.Config
                             existUserRoleCode.Password = objEncryptionAndDecryption.Encrypt(txtPassword.Text);
                             existUserRoleCode.UserRoleType = (Guid)cmbRoleType.SelectedValue;
 
-                            if (dbObj.SaveChanges() == 1)
+                            if (dbObj.SaveChanges() > 0 )
                             {
                                 ResetCntrl();
                                 MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_UPDATE"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -332,33 +335,37 @@ namespace HitechTMS.Config
 
         private void searchGridData()
         {
-            if (txtUserName.Text != "")
+            if(!_saveClick)
             {
-                var userRoleQuery = dbObj.UserRoleTypes
-                        .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Id,s.Name, s.Password, x.RoleName })
-                        .Where( x => x.Id == _userRoleID || x.Name == txtUserName.Text )
-                        .Select(x => x);
-
-                var objUser = userRoleQuery.ToList();
-
-                if (objUser.Count > 0)
+                if (txtUserName.Text != "")
                 {
-                    gridUser.DataSource = objUser;
-                    _userRoleID = objUser[0].Id;
-                    cmbRoleType.SelectedIndex = cmbRoleType.FindString(objUser[0].RoleName);
+                    var userRoleQuery = dbObj.UserRoleTypes
+                            .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Id, s.Name, s.Password, x.RoleName })
+                            .Where(x => x.Id == _userRoleID || x.Name == txtUserName.Text)
+                            .Select(x => x);
+
+                    var objUser = userRoleQuery.ToList();
+
+                    if (objUser.Count > 0)
+                    {
+                        gridUser.DataSource = objUser;
+                        _userRoleID = objUser[0].Id;
+                        cmbRoleType.SelectedIndex = cmbRoleType.FindString(objUser[0].RoleName);
+                    }
+                    else
+                    {
+                        //txtPassword.Text = "";
+                        //cmbRoleType.SelectedIndex =0;
+                        _userRoleID = Guid.Empty;
+                    }
+
                 }
                 else
                 {
-                    txtPassword.Text = "";
-                    cmbRoleType.SelectedIndex =0;
-                   _userRoleID = Guid.Empty;
+                    BindGrid();
                 }
+            }
 
-            }
-            else
-            {
-                BindGrid();
-            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grpboxNormalWeighing = new System.Windows.Forms.GroupBox();
+            this.lstTruck = new System.Windows.Forms.ListBox();
             this.grpboxWeightInfo = new System.Windows.Forms.GroupBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -89,6 +90,7 @@
             // 
             // grpboxNormalWeighing
             // 
+            this.grpboxNormalWeighing.Controls.Add(this.lstTruck);
             this.grpboxNormalWeighing.Controls.Add(this.grpboxWeightInfo);
             this.grpboxNormalWeighing.Controls.Add(this.grpboxChallanInfo);
             this.grpboxNormalWeighing.Controls.Add(this.grpboxOperation);
@@ -111,6 +113,18 @@
             this.grpboxNormalWeighing.TabIndex = 0;
             this.grpboxNormalWeighing.TabStop = false;
             this.grpboxNormalWeighing.Text = "Normal Weighing";
+            // 
+            // lstTruck
+            // 
+            this.lstTruck.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstTruck.FormattingEnabled = true;
+            this.lstTruck.ItemHeight = 16;
+            this.lstTruck.Location = new System.Drawing.Point(35, 133);
+            this.lstTruck.Name = "lstTruck";
+            this.lstTruck.Size = new System.Drawing.Size(193, 50);
+            this.lstTruck.TabIndex = 2;
+            this.lstTruck.DoubleClick += new System.EventHandler(this.lstTruck_DoubleClick);
+            this.lstTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstTruck_KeyDown);
             // 
             // grpboxWeightInfo
             // 
@@ -136,7 +150,7 @@
             this.grpboxWeightInfo.Location = new System.Drawing.Point(23, 455);
             this.grpboxWeightInfo.Name = "grpboxWeightInfo";
             this.grpboxWeightInfo.Size = new System.Drawing.Size(819, 263);
-            this.grpboxWeightInfo.TabIndex = 18;
+            this.grpboxWeightInfo.TabIndex = 12;
             this.grpboxWeightInfo.TabStop = false;
             this.grpboxWeightInfo.Text = "Weight Info";
             // 
@@ -260,14 +274,16 @@
             this.txtGrossWeight.Location = new System.Drawing.Point(515, 124);
             this.txtGrossWeight.Name = "txtGrossWeight";
             this.txtGrossWeight.Size = new System.Drawing.Size(148, 22);
-            this.txtGrossWeight.TabIndex = 24;
+            this.txtGrossWeight.TabIndex = 14;
+            this.txtGrossWeight.TextChanged += new System.EventHandler(this.txtGrossWeight_TextChanged);
             // 
             // txtTareWeight
             // 
             this.txtTareWeight.Location = new System.Drawing.Point(515, 55);
             this.txtTareWeight.Name = "txtTareWeight";
             this.txtTareWeight.Size = new System.Drawing.Size(148, 22);
-            this.txtTareWeight.TabIndex = 23;
+            this.txtTareWeight.TabIndex = 13;
+            this.txtTareWeight.TextChanged += new System.EventHandler(this.txtTareWeight_TextChanged);
             // 
             // txtTimeOut
             // 
@@ -275,6 +291,7 @@
             this.txtTimeOut.Name = "txtTimeOut";
             this.txtTimeOut.Size = new System.Drawing.Size(148, 22);
             this.txtTimeOut.TabIndex = 22;
+            this.txtTimeOut.TabStop = false;
             // 
             // txtDateOut
             // 
@@ -282,6 +299,7 @@
             this.txtDateOut.Name = "txtDateOut";
             this.txtDateOut.Size = new System.Drawing.Size(148, 22);
             this.txtDateOut.TabIndex = 21;
+            this.txtDateOut.TabStop = false;
             // 
             // txtTimeIn
             // 
@@ -289,6 +307,7 @@
             this.txtTimeIn.Name = "txtTimeIn";
             this.txtTimeIn.Size = new System.Drawing.Size(148, 22);
             this.txtTimeIn.TabIndex = 20;
+            this.txtTimeIn.TabStop = false;
             // 
             // txtDateIn
             // 
@@ -296,6 +315,7 @@
             this.txtDateIn.Name = "txtDateIn";
             this.txtDateIn.Size = new System.Drawing.Size(148, 22);
             this.txtDateIn.TabIndex = 19;
+            this.txtDateIn.TabStop = false;
             // 
             // grpboxChallanInfo
             // 
@@ -314,7 +334,7 @@
             this.grpboxChallanInfo.Location = new System.Drawing.Point(23, 185);
             this.grpboxChallanInfo.Name = "grpboxChallanInfo";
             this.grpboxChallanInfo.Size = new System.Drawing.Size(819, 263);
-            this.grpboxChallanInfo.TabIndex = 18;
+            this.grpboxChallanInfo.TabIndex = 5;
             this.grpboxChallanInfo.TabStop = false;
             this.grpboxChallanInfo.Text = "Challan Info";
             // 
@@ -323,7 +343,7 @@
             this.txtChallanWeight.Location = new System.Drawing.Point(17, 222);
             this.txtChallanWeight.Name = "txtChallanWeight";
             this.txtChallanWeight.Size = new System.Drawing.Size(148, 22);
-            this.txtChallanWeight.TabIndex = 27;
+            this.txtChallanWeight.TabIndex = 7;
             // 
             // lblDeliveryNoteN
             // 
@@ -348,29 +368,32 @@
             this.txtDeliveryNoteN.Location = new System.Drawing.Point(318, 224);
             this.txtDeliveryNoteN.Name = "txtDeliveryNoteN";
             this.txtDeliveryNoteN.Size = new System.Drawing.Size(247, 22);
-            this.txtDeliveryNoteN.TabIndex = 24;
+            this.txtDeliveryNoteN.TabIndex = 11;
             // 
             // txtMiscellaneous1
             // 
             this.txtMiscellaneous1.Location = new System.Drawing.Point(318, 106);
             this.txtMiscellaneous1.Name = "txtMiscellaneous1";
             this.txtMiscellaneous1.Size = new System.Drawing.Size(247, 22);
-            this.txtMiscellaneous1.TabIndex = 23;
+            this.txtMiscellaneous1.TabIndex = 10;
             // 
             // txtMiscellaneous
             // 
             this.txtMiscellaneous.Location = new System.Drawing.Point(318, 70);
             this.txtMiscellaneous.Name = "txtMiscellaneous";
             this.txtMiscellaneous.Size = new System.Drawing.Size(247, 22);
-            this.txtMiscellaneous.TabIndex = 22;
+            this.txtMiscellaneous.TabIndex = 9;
             // 
             // cmbChallanWeight
             // 
             this.cmbChallanWeight.FormattingEnabled = true;
+            this.cmbChallanWeight.Items.AddRange(new object[] {
+            "t",
+            "Kg"});
             this.cmbChallanWeight.Location = new System.Drawing.Point(171, 222);
             this.cmbChallanWeight.Name = "cmbChallanWeight";
             this.cmbChallanWeight.Size = new System.Drawing.Size(45, 24);
-            this.cmbChallanWeight.TabIndex = 19;
+            this.cmbChallanWeight.TabIndex = 8;
             // 
             // lblChallanWeight
             // 
@@ -386,14 +409,14 @@
             this.txtChallanDate.Location = new System.Drawing.Point(17, 144);
             this.txtChallanDate.Name = "txtChallanDate";
             this.txtChallanDate.Size = new System.Drawing.Size(148, 22);
-            this.txtChallanDate.TabIndex = 20;
+            this.txtChallanDate.TabIndex = 6;
             // 
             // txtChallanNumber
             // 
             this.txtChallanNumber.Location = new System.Drawing.Point(17, 70);
             this.txtChallanNumber.Name = "txtChallanNumber";
             this.txtChallanNumber.Size = new System.Drawing.Size(148, 22);
-            this.txtChallanNumber.TabIndex = 19;
+            this.txtChallanNumber.TabIndex = 5;
             // 
             // lblChallanDate
             // 
@@ -423,7 +446,7 @@
             this.grpboxOperation.Location = new System.Drawing.Point(848, 185);
             this.grpboxOperation.Name = "grpboxOperation";
             this.grpboxOperation.Size = new System.Drawing.Size(335, 375);
-            this.grpboxOperation.TabIndex = 17;
+            this.grpboxOperation.TabIndex = 15;
             this.grpboxOperation.TabStop = false;
             this.grpboxOperation.Text = "Operation";
             // 
@@ -432,7 +455,7 @@
             this.btnTicket.Location = new System.Drawing.Point(114, 246);
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.Size = new System.Drawing.Size(106, 58);
-            this.btnTicket.TabIndex = 2;
+            this.btnTicket.TabIndex = 20;
             this.btnTicket.Text = "&Ticket";
             this.btnTicket.UseVisualStyleBackColor = true;
             // 
@@ -441,7 +464,7 @@
             this.btnSave.Location = new System.Drawing.Point(196, 47);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 58);
-            this.btnSave.TabIndex = 1;
+            this.btnSave.TabIndex = 17;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -451,7 +474,7 @@
             this.btnSendEmail.Location = new System.Drawing.Point(24, 154);
             this.btnSendEmail.Name = "btnSendEmail";
             this.btnSendEmail.Size = new System.Drawing.Size(106, 58);
-            this.btnSendEmail.TabIndex = 1;
+            this.btnSendEmail.TabIndex = 18;
             this.btnSendEmail.Text = "Send Email";
             this.btnSendEmail.UseVisualStyleBackColor = true;
             // 
@@ -460,7 +483,7 @@
             this.btnCancel.Location = new System.Drawing.Point(196, 154);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 58);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -469,7 +492,7 @@
             this.btnAddNew.Location = new System.Drawing.Point(24, 47);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(106, 58);
-            this.btnAddNew.TabIndex = 0;
+            this.btnAddNew.TabIndex = 16;
             this.btnAddNew.Text = "&Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
             // 
@@ -479,6 +502,7 @@
             this.txtTranspoterName.Name = "txtTranspoterName";
             this.txtTranspoterName.Size = new System.Drawing.Size(247, 22);
             this.txtTranspoterName.TabIndex = 12;
+            this.txtTranspoterName.TabStop = false;
             // 
             // txtCustomerName
             // 
@@ -486,6 +510,7 @@
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(247, 22);
             this.txtCustomerName.TabIndex = 11;
+            this.txtCustomerName.TabStop = false;
             // 
             // txtProductName
             // 
@@ -493,6 +518,7 @@
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(247, 22);
             this.txtProductName.TabIndex = 10;
+            this.txtProductName.TabStop = false;
             // 
             // lblTransporterCode
             // 
@@ -530,7 +556,8 @@
             this.cmbTranspoterCode.Location = new System.Drawing.Point(404, 135);
             this.cmbTranspoterCode.Name = "cmbTranspoterCode";
             this.cmbTranspoterCode.Size = new System.Drawing.Size(169, 24);
-            this.cmbTranspoterCode.TabIndex = 6;
+            this.cmbTranspoterCode.TabIndex = 4;
+            this.cmbTranspoterCode.SelectedIndexChanged += new System.EventHandler(this.cmbTranspoterCode_SelectedIndexChanged);
             // 
             // cmbCustomerCode
             // 
@@ -538,7 +565,8 @@
             this.cmbCustomerCode.Location = new System.Drawing.Point(404, 86);
             this.cmbCustomerCode.Name = "cmbCustomerCode";
             this.cmbCustomerCode.Size = new System.Drawing.Size(169, 24);
-            this.cmbCustomerCode.TabIndex = 5;
+            this.cmbCustomerCode.TabIndex = 3;
+            this.cmbCustomerCode.SelectedIndexChanged += new System.EventHandler(this.cmbCustomerCode_SelectedIndexChanged);
             // 
             // cmbProductCode
             // 
@@ -546,21 +574,23 @@
             this.cmbProductCode.Location = new System.Drawing.Point(404, 30);
             this.cmbProductCode.Name = "cmbProductCode";
             this.cmbProductCode.Size = new System.Drawing.Size(169, 24);
-            this.cmbProductCode.TabIndex = 4;
+            this.cmbProductCode.TabIndex = 2;
+            this.cmbProductCode.SelectedIndexChanged += new System.EventHandler(this.cmbProductCode_SelectedIndexChanged);
             // 
             // txtTruck
             // 
-            this.txtTruck.Location = new System.Drawing.Point(35, 119);
+            this.txtTruck.Location = new System.Drawing.Point(35, 112);
             this.txtTruck.Name = "txtTruck";
-            this.txtTruck.Size = new System.Drawing.Size(148, 22);
-            this.txtTruck.TabIndex = 3;
-
+            this.txtTruck.Size = new System.Drawing.Size(193, 22);
+            this.txtTruck.TabIndex = 1;
+            this.txtTruck.TextChanged += new System.EventHandler(this.txtTruck_TextChanged);
+            this.txtTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTruck_KeyDown);
             // 
             // lblTruck
             // 
             this.lblTruck.AutoSize = true;
             this.lblTruck.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTruck.Location = new System.Drawing.Point(56, 77);
+            this.lblTruck.Location = new System.Drawing.Point(77, 81);
             this.lblTruck.Name = "lblTruck";
             this.lblTruck.Size = new System.Drawing.Size(49, 17);
             this.lblTruck.TabIndex = 2;
@@ -570,7 +600,7 @@
             // 
             this.txtMode.AutoSize = true;
             this.txtMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMode.Location = new System.Drawing.Point(98, 39);
+            this.txtMode.Location = new System.Drawing.Point(124, 39);
             this.txtMode.Name = "txtMode";
             this.txtMode.Size = new System.Drawing.Size(47, 17);
             this.txtMode.TabIndex = 1;
@@ -580,7 +610,7 @@
             // 
             this.lblMode.AutoSize = true;
             this.lblMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMode.Location = new System.Drawing.Point(20, 39);
+            this.lblMode.Location = new System.Drawing.Point(32, 39);
             this.lblMode.Name = "lblMode";
             this.lblMode.Size = new System.Drawing.Size(47, 17);
             this.lblMode.TabIndex = 0;
@@ -660,5 +690,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.TextBox txtChallanWeight;
+        private System.Windows.Forms.ListBox lstTruck;
     }
 }

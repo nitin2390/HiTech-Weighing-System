@@ -28,10 +28,12 @@ namespace HitechTMS.Weighing
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            this.Hide();
             _enumProductInOut = rdbProductIn.Checked == true ? enumProductInOut.In : enumProductInOut.Out;
             frmNormalWeighing objfrmNormalWeighing = new frmNormalWeighing(_enumProductInOut, _weightMode);
             objfrmNormalWeighing.StartPosition = FormStartPosition.CenterParent;
             objfrmNormalWeighing.ShowDialog();
+            this.Close();
 
         }
 

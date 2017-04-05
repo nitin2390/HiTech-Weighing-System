@@ -63,7 +63,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Mode" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Mode" Type="tinyint" Nullable="false" />
     <Property Name="Truck" Type="nvarchar" MaxLength="12" Nullable="false" />
     <Property Name="ProductCode" Type="nvarchar" MaxLength="5" Nullable="false" />
     <Property Name="SupplierCode" Type="uniqueidentifier" Nullable="false" />
@@ -71,6 +71,7 @@
     <Property Name="ChallanNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
     <Property Name="ChallanDate" Type="date" Nullable="false" />
     <Property Name="ChallanWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ChallanWeightUnit" Type="tinyint" Nullable="false" />
     <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" Nullable="false" />
     <Property Name="DateIn" Type="date" Nullable="false" />
@@ -81,6 +82,7 @@
     <Property Name="GrossWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="NetWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="ProdInOut" Type="tinyint" Nullable="false" />
+    <Property Name="IsPending" Type="tinyint" Nullable="false" />
     <Property Name="TransComplete" Type="tinyint" Nullable="false" />
     <Property Name="AddedDate" Type="datetime" Nullable="false" />
     <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
@@ -103,7 +105,7 @@
     <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <Association Name="FK__transNorm__Produ__2116E6DF">
+  <Association Name="FK__transNorm__Produ__473C8FC7">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
     <End Role="transNormalWeight" Type="Self.transNormalWeight" Multiplicity="*" />
     <ReferentialConstraint>
@@ -136,7 +138,7 @@
     <EntitySet Name="transNormalWeight" EntityType="Self.transNormalWeight" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__transNorm__Produ__2116E6DF" Association="Self.FK__transNorm__Produ__2116E6DF">
+    <AssociationSet Name="FK__transNorm__Produ__473C8FC7" Association="Self.FK__transNorm__Produ__473C8FC7">
       <End Role="Product" EntitySet="Product" />
       <End Role="transNormalWeight" EntitySet="transNormalWeight" />
     </AssociationSet>

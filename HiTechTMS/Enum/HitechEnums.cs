@@ -80,5 +80,11 @@
             Auto =1,
             Semi = 2
         }
+
+        public enum enumWeightUnit
+        {
+            t = 0,
+            kg =1
+        }
     }
 }

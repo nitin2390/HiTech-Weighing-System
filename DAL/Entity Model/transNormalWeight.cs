@@ -16,12 +16,14 @@ namespace DAL.Entity_Model
     {
         public System.Guid ID { get; set; }
         public byte Mode { get; set; }
+        public string Truck { get; set; }
         public string ProductCode { get; set; }
         public System.Guid SupplierCode { get; set; }
         public System.Guid TransporterCode { get; set; }
         public string ChallanNumber { get; set; }
         public System.DateTime ChallanDate { get; set; }
         public decimal ChallanWeight { get; set; }
+        public byte ChallanWeightUnit { get; set; }
         public string Miscellaneous { get; set; }
         public string DeliveryNoteN { get; set; }
         public System.DateTime DateIn { get; set; }
@@ -32,10 +34,10 @@ namespace DAL.Entity_Model
         public decimal GrossWeight { get; set; }
         public decimal NetWeight { get; set; }
         public byte ProdInOut { get; set; }
+        public byte IsPending { get; set; }
         public byte TransComplete { get; set; }
         public System.DateTime AddedDate { get; set; }
         public System.DateTime UpdatedDate { get; set; }
-        public string Truck { get; set; }
     
         public virtual Product Product { get; set; }
     }

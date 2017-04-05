@@ -13,8 +13,8 @@
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.UserRole" Width="1.5" PointX="2.125" PointY="0.5" />
         <AssociationConnector Association="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__1B9317B3" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords" Width="1.5" PointX="3.75" PointY="2.375" />
-        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" Width="1.5" PointX="5.5" PointY="0.5" />
-        <AssociationConnector Association="HitechTruckMngtSystmDataBaseFileModel.FK__transNorm__Produ__1881A0DE" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" Width="1.5" PointX="5.375" PointY="0.5" />
+        <AssociationConnector Association="HitechTruckMngtSystmDataBaseFileModel.FK__transNorm__Produ__473C8FC7" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
