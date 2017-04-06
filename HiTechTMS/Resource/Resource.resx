@@ -150,6 +150,9 @@
   <data name="INFORMATION" xml:space="preserve">
     <value>Information!</value>
   </data>
+  <data name="MAX_WEIGHT" xml:space="preserve">
+    <value>Max weight not more than 150 tonne.</value>
+  </data>
   <data name="PRD_CD_CAN_NOT_BLANK" xml:space="preserve">
     <value>Product code can't be blank</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="SYS_ERR" xml:space="preserve">
     <value>System error!</value>
+  </data>
+  <data name="TARE_WEIGHT_CAN_NOT_BE_GREATER_THAN_GROSS_WEIGHT" xml:space="preserve">
+    <value>Tare weight can not be greater than Gross weight!</value>
   </data>
   <data name="USER_NAME_PASSWORD_MISTMATCH" xml:space="preserve">
     <value>User name and Password doesn't match!</value>

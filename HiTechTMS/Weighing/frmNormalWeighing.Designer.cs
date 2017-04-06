@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grpboxNormalWeighing = new System.Windows.Forms.GroupBox();
             this.lstTruck = new System.Windows.Forms.ListBox();
             this.grpboxWeightInfo = new System.Windows.Forms.GroupBox();
@@ -51,6 +52,7 @@
             this.txtTimeIn = new System.Windows.Forms.TextBox();
             this.txtDateIn = new System.Windows.Forms.TextBox();
             this.grpboxChallanInfo = new System.Windows.Forms.GroupBox();
+            this.txtChallanDate = new System.Windows.Forms.TextBox();
             this.txtChallanWeight = new System.Windows.Forms.TextBox();
             this.lblDeliveryNoteN = new System.Windows.Forms.Label();
             this.lblMiscellaneous = new System.Windows.Forms.Label();
@@ -59,10 +61,10 @@
             this.txtMiscellaneous = new System.Windows.Forms.TextBox();
             this.cmbChallanWeight = new System.Windows.Forms.ComboBox();
             this.lblChallanWeight = new System.Windows.Forms.Label();
-            this.txtChallanDate = new System.Windows.Forms.TextBox();
             this.txtChallanNumber = new System.Windows.Forms.TextBox();
             this.lblChallanDate = new System.Windows.Forms.Label();
             this.lblChallanNumber = new System.Windows.Forms.Label();
+            this.dtPickChallanDate = new System.Windows.Forms.DateTimePicker();
             this.grpboxOperation = new System.Windows.Forms.GroupBox();
             this.btnTicket = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -82,10 +84,12 @@
             this.lblTruck = new System.Windows.Forms.Label();
             this.txtMode = new System.Windows.Forms.Label();
             this.lblMode = new System.Windows.Forms.Label();
+            this.errProvChallanWeight = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpboxNormalWeighing.SuspendLayout();
             this.grpboxWeightInfo.SuspendLayout();
             this.grpboxChallanInfo.SuspendLayout();
             this.grpboxOperation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvChallanWeight)).BeginInit();
             this.SuspendLayout();
             // 
             // grpboxNormalWeighing
@@ -125,6 +129,9 @@
             this.lstTruck.TabIndex = 2;
             this.lstTruck.DoubleClick += new System.EventHandler(this.lstTruck_DoubleClick);
             this.lstTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstTruck_KeyDown);
+            this.lstTruck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lstTruck_KeyPress);
+            this.lstTruck.Leave += new System.EventHandler(this.lstTruck_Leave);
+            this.lstTruck.Validating += new System.ComponentModel.CancelEventHandler(this.lstTruck_Validating);
             // 
             // grpboxWeightInfo
             // 
@@ -276,6 +283,7 @@
             this.txtGrossWeight.Size = new System.Drawing.Size(148, 22);
             this.txtGrossWeight.TabIndex = 14;
             this.txtGrossWeight.TextChanged += new System.EventHandler(this.txtGrossWeight_TextChanged);
+            this.txtGrossWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txtGrossWeight_Validating);
             // 
             // txtTareWeight
             // 
@@ -319,6 +327,7 @@
             // 
             // grpboxChallanInfo
             // 
+            this.grpboxChallanInfo.Controls.Add(this.txtChallanDate);
             this.grpboxChallanInfo.Controls.Add(this.txtChallanWeight);
             this.grpboxChallanInfo.Controls.Add(this.lblDeliveryNoteN);
             this.grpboxChallanInfo.Controls.Add(this.lblMiscellaneous);
@@ -327,10 +336,10 @@
             this.grpboxChallanInfo.Controls.Add(this.txtMiscellaneous);
             this.grpboxChallanInfo.Controls.Add(this.cmbChallanWeight);
             this.grpboxChallanInfo.Controls.Add(this.lblChallanWeight);
-            this.grpboxChallanInfo.Controls.Add(this.txtChallanDate);
             this.grpboxChallanInfo.Controls.Add(this.txtChallanNumber);
             this.grpboxChallanInfo.Controls.Add(this.lblChallanDate);
             this.grpboxChallanInfo.Controls.Add(this.lblChallanNumber);
+            this.grpboxChallanInfo.Controls.Add(this.dtPickChallanDate);
             this.grpboxChallanInfo.Location = new System.Drawing.Point(23, 185);
             this.grpboxChallanInfo.Name = "grpboxChallanInfo";
             this.grpboxChallanInfo.Size = new System.Drawing.Size(819, 263);
@@ -338,12 +347,23 @@
             this.grpboxChallanInfo.TabStop = false;
             this.grpboxChallanInfo.Text = "Challan Info";
             // 
+            // txtChallanDate
+            // 
+            this.txtChallanDate.Location = new System.Drawing.Point(17, 144);
+            this.txtChallanDate.Name = "txtChallanDate";
+            this.txtChallanDate.Size = new System.Drawing.Size(148, 22);
+            this.txtChallanDate.TabIndex = 6;
+            this.txtChallanDate.TabStop = false;
+            // 
             // txtChallanWeight
             // 
             this.txtChallanWeight.Location = new System.Drawing.Point(17, 222);
             this.txtChallanWeight.Name = "txtChallanWeight";
             this.txtChallanWeight.Size = new System.Drawing.Size(148, 22);
             this.txtChallanWeight.TabIndex = 7;
+            this.txtChallanWeight.TextChanged += new System.EventHandler(this.txtChallanWeight_TextChanged);
+            this.txtChallanWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChallanWeight_KeyPress);
+            this.txtChallanWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txtChallanWeight_Validating);
             // 
             // lblDeliveryNoteN
             // 
@@ -390,7 +410,7 @@
             this.cmbChallanWeight.Items.AddRange(new object[] {
             "t",
             "Kg"});
-            this.cmbChallanWeight.Location = new System.Drawing.Point(171, 222);
+            this.cmbChallanWeight.Location = new System.Drawing.Point(192, 222);
             this.cmbChallanWeight.Name = "cmbChallanWeight";
             this.cmbChallanWeight.Size = new System.Drawing.Size(45, 24);
             this.cmbChallanWeight.TabIndex = 8;
@@ -403,13 +423,6 @@
             this.lblChallanWeight.Size = new System.Drawing.Size(103, 17);
             this.lblChallanWeight.TabIndex = 21;
             this.lblChallanWeight.Text = "Challan Weight";
-            // 
-            // txtChallanDate
-            // 
-            this.txtChallanDate.Location = new System.Drawing.Point(17, 144);
-            this.txtChallanDate.Name = "txtChallanDate";
-            this.txtChallanDate.Size = new System.Drawing.Size(148, 22);
-            this.txtChallanDate.TabIndex = 6;
             // 
             // txtChallanNumber
             // 
@@ -435,6 +448,15 @@
             this.lblChallanNumber.Size = new System.Drawing.Size(109, 17);
             this.lblChallanNumber.TabIndex = 17;
             this.lblChallanNumber.Text = "Challan Number";
+            // 
+            // dtPickChallanDate
+            // 
+            this.dtPickChallanDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtPickChallanDate.Location = new System.Drawing.Point(163, 144);
+            this.dtPickChallanDate.Name = "dtPickChallanDate";
+            this.dtPickChallanDate.Size = new System.Drawing.Size(20, 22);
+            this.dtPickChallanDate.TabIndex = 6;
+            this.dtPickChallanDate.ValueChanged += new System.EventHandler(this.dtPickChallanDate_ValueChanged);
             // 
             // grpboxOperation
             // 
@@ -585,6 +607,8 @@
             this.txtTruck.TabIndex = 1;
             this.txtTruck.TextChanged += new System.EventHandler(this.txtTruck_TextChanged);
             this.txtTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTruck_KeyDown);
+            this.txtTruck.Leave += new System.EventHandler(this.txtTruck_Leave);
+            this.txtTruck.Validating += new System.ComponentModel.CancelEventHandler(this.txtTruck_Validating);
             // 
             // lblTruck
             // 
@@ -616,6 +640,10 @@
             this.lblMode.TabIndex = 0;
             this.lblMode.Text = "Mode";
             // 
+            // errProvChallanWeight
+            // 
+            this.errProvChallanWeight.ContainerControl = this;
+            // 
             // frmNormalWeighing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -631,6 +659,7 @@
             this.grpboxChallanInfo.ResumeLayout(false);
             this.grpboxChallanInfo.PerformLayout();
             this.grpboxOperation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errProvChallanWeight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -691,5 +720,7 @@
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.TextBox txtChallanWeight;
         private System.Windows.Forms.ListBox lstTruck;
+        private System.Windows.Forms.DateTimePicker dtPickChallanDate;
+        private System.Windows.Forms.ErrorProvider errProvChallanWeight;
     }
 }

@@ -160,6 +160,15 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Max weight not more than 150 tonne..
+        /// </summary>
+        internal static string MAX_WEIGHT {
+            get {
+                return ResourceManager.GetString("MAX_WEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product code can&apos;t be blank.
         /// </summary>
         internal static string PRD_CD_CAN_NOT_BLANK {
@@ -192,6 +201,15 @@ namespace HitechTMS.Resource {
         internal static string SYS_ERR {
             get {
                 return ResourceManager.GetString("SYS_ERR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tare weight can not be greater than Gross weight!.
+        /// </summary>
+        internal static string TARE_WEIGHT_CAN_NOT_BE_GREATER_THAN_GROSS_WEIGHT {
+            get {
+                return ResourceManager.GetString("TARE_WEIGHT_CAN_NOT_BE_GREATER_THAN_GROSS_WEIGHT", resourceCulture);
             }
         }
         

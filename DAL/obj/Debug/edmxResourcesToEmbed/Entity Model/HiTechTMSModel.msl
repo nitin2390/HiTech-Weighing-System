@@ -87,7 +87,6 @@
         <MappingFragment StoreEntitySet="transNormalWeight">
           <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
           <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
-          <ScalarProperty Name="TransComplete" ColumnName="TransComplete" />
           <ScalarProperty Name="IsPending" ColumnName="IsPending" />
           <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
           <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
