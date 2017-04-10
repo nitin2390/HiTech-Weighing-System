@@ -147,6 +147,7 @@
   <ItemGroup>
     <Compile Include="Classes\CreateExcelAndSendEmail.cs" />
     <Compile Include="Classes\GetResourceCaption.cs" />
+    <Compile Include="Classes\ReadSerialPortData.cs" />
     <Compile Include="Config\frmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>

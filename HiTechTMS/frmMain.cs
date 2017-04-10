@@ -28,7 +28,7 @@ namespace HitechTMS
         {
             _nextFormPrincipal = userPrincipal;
             InitializeComponent();
-            _mode = enumWeightMode.Manual;
+            _mode = enumWeightMode.Auto;
             dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
             this.MinimizeBox = this.MaximizeBox = false;

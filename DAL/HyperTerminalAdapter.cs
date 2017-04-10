@@ -127,10 +127,10 @@ namespace DAL
                 oSerialPort.Close();
                 return (this.DataReceived);                
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-
-                return e.Message;
+                throw ex;
+                //return e.Message;
             }
         }
 

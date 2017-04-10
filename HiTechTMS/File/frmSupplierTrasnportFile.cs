@@ -499,7 +499,7 @@ namespace HitechTMS.File
 
         private void txtSupplierCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e = _comm.RestirctTextBox(e);
+            e = _comm.RestirctTextBoxAndUpperCase(e);
         }
 
 
@@ -508,7 +508,7 @@ namespace HitechTMS.File
         private void txtSupplierName_KeyPress(object sender, KeyPressEventArgs e)
         {
             
-            e = _comm.RestirctTextBox(e);
+            e = _comm.RestirctTextBoxAndUpperCase(e);
         }
     }
 }

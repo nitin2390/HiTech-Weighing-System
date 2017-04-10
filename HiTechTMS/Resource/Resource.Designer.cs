@@ -61,6 +61,15 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to add new record ? Because edited data will be loss on adding new record!.
+        /// </summary>
+        internal static string ADD_NEW {
+            get {
+                return ResourceManager.GetString("ADD_NEW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alert!.
         /// </summary>
         internal static string ALERT {
@@ -151,6 +160,24 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gross Weight.
+        /// </summary>
+        internal static string GROSS_WEIGHT {
+            get {
+                return ResourceManager.GetString("GROSS_WEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gross weight can not be less than Tare weight!.
+        /// </summary>
+        internal static string GROSS_WEIGHT_CAN_NOT_BE_LESS_THAN_TARE_WEIGHT {
+            get {
+                return ResourceManager.GetString("GROSS_WEIGHT_CAN_NOT_BE_LESS_THAN_TARE_WEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Information!.
         /// </summary>
         internal static string INFORMATION {
@@ -160,7 +187,7 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Max weight not more than 150 tonne..
+        ///   Looks up a localized string similar to Weight can not be more than machine weighing limit !.
         /// </summary>
         internal static string MAX_WEIGHT {
             get {
@@ -201,6 +228,15 @@ namespace HitechTMS.Resource {
         internal static string SYS_ERR {
             get {
                 return ResourceManager.GetString("SYS_ERR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tare Weight.
+        /// </summary>
+        internal static string TARE_WEIGHT {
+            get {
+                return ResourceManager.GetString("TARE_WEIGHT", resourceCulture);
             }
         }
         

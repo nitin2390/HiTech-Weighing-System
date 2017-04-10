@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpboxNormalWeighing = new System.Windows.Forms.GroupBox();
+            this.grpboxAutoWeight = new System.Windows.Forms.GroupBox();
+            this.btnWeight = new System.Windows.Forms.Button();
             this.lstTruck = new System.Windows.Forms.ListBox();
             this.grpboxWeightInfo = new System.Windows.Forms.GroupBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -68,8 +70,7 @@
             this.grpboxOperation = new System.Windows.Forms.GroupBox();
             this.btnTicket = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnSendEmail = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.txtTranspoterName = new System.Windows.Forms.TextBox();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
@@ -84,16 +85,18 @@
             this.lblTruck = new System.Windows.Forms.Label();
             this.txtMode = new System.Windows.Forms.Label();
             this.lblMode = new System.Windows.Forms.Label();
-            this.errProvChallanWeight = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errProvWeight = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpboxNormalWeighing.SuspendLayout();
+            this.grpboxAutoWeight.SuspendLayout();
             this.grpboxWeightInfo.SuspendLayout();
             this.grpboxChallanInfo.SuspendLayout();
             this.grpboxOperation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errProvChallanWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvWeight)).BeginInit();
             this.SuspendLayout();
             // 
             // grpboxNormalWeighing
             // 
+            this.grpboxNormalWeighing.Controls.Add(this.grpboxAutoWeight);
             this.grpboxNormalWeighing.Controls.Add(this.lstTruck);
             this.grpboxNormalWeighing.Controls.Add(this.grpboxWeightInfo);
             this.grpboxNormalWeighing.Controls.Add(this.grpboxChallanInfo);
@@ -113,10 +116,30 @@
             this.grpboxNormalWeighing.Controls.Add(this.lblMode);
             this.grpboxNormalWeighing.Location = new System.Drawing.Point(13, 13);
             this.grpboxNormalWeighing.Name = "grpboxNormalWeighing";
-            this.grpboxNormalWeighing.Size = new System.Drawing.Size(1204, 718);
+            this.grpboxNormalWeighing.Size = new System.Drawing.Size(1060, 718);
             this.grpboxNormalWeighing.TabIndex = 0;
             this.grpboxNormalWeighing.TabStop = false;
             this.grpboxNormalWeighing.Text = "Normal Weighing";
+            // 
+            // grpboxAutoWeight
+            // 
+            this.grpboxAutoWeight.Controls.Add(this.btnWeight);
+            this.grpboxAutoWeight.Location = new System.Drawing.Point(848, 598);
+            this.grpboxAutoWeight.Name = "grpboxAutoWeight";
+            this.grpboxAutoWeight.Size = new System.Drawing.Size(200, 120);
+            this.grpboxAutoWeight.TabIndex = 16;
+            this.grpboxAutoWeight.TabStop = false;
+            this.grpboxAutoWeight.Text = "Auto Mode";
+            // 
+            // btnWeight
+            // 
+            this.btnWeight.CausesValidation = false;
+            this.btnWeight.Location = new System.Drawing.Point(32, 25);
+            this.btnWeight.Name = "btnWeight";
+            this.btnWeight.Size = new System.Drawing.Size(136, 71);
+            this.btnWeight.TabIndex = 28;
+            this.btnWeight.UseVisualStyleBackColor = true;
+            this.btnWeight.Click += new System.EventHandler(this.btnWeight_Click);
             // 
             // lstTruck
             // 
@@ -283,6 +306,7 @@
             this.txtGrossWeight.Size = new System.Drawing.Size(148, 22);
             this.txtGrossWeight.TabIndex = 14;
             this.txtGrossWeight.TextChanged += new System.EventHandler(this.txtGrossWeight_TextChanged);
+            this.txtGrossWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGrossWeight_KeyPress);
             this.txtGrossWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txtGrossWeight_Validating);
             // 
             // txtTareWeight
@@ -292,6 +316,8 @@
             this.txtTareWeight.Size = new System.Drawing.Size(148, 22);
             this.txtTareWeight.TabIndex = 13;
             this.txtTareWeight.TextChanged += new System.EventHandler(this.txtTareWeight_TextChanged);
+            this.txtTareWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTareWeight_KeyPress);
+            this.txtTareWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txtTareWeight_Validating);
             // 
             // txtTimeOut
             // 
@@ -386,23 +412,29 @@
             // txtDeliveryNoteN
             // 
             this.txtDeliveryNoteN.Location = new System.Drawing.Point(318, 224);
+            this.txtDeliveryNoteN.MaxLength = 25;
             this.txtDeliveryNoteN.Name = "txtDeliveryNoteN";
-            this.txtDeliveryNoteN.Size = new System.Drawing.Size(247, 22);
+            this.txtDeliveryNoteN.Size = new System.Drawing.Size(395, 22);
             this.txtDeliveryNoteN.TabIndex = 11;
+            this.txtDeliveryNoteN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDeliveryNoteN_KeyPress);
             // 
             // txtMiscellaneous1
             // 
             this.txtMiscellaneous1.Location = new System.Drawing.Point(318, 106);
+            this.txtMiscellaneous1.MaxLength = 25;
             this.txtMiscellaneous1.Name = "txtMiscellaneous1";
-            this.txtMiscellaneous1.Size = new System.Drawing.Size(247, 22);
+            this.txtMiscellaneous1.Size = new System.Drawing.Size(395, 22);
             this.txtMiscellaneous1.TabIndex = 10;
+            this.txtMiscellaneous1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiscellaneous1_KeyPress);
             // 
             // txtMiscellaneous
             // 
             this.txtMiscellaneous.Location = new System.Drawing.Point(318, 70);
+            this.txtMiscellaneous.MaxLength = 25;
             this.txtMiscellaneous.Name = "txtMiscellaneous";
-            this.txtMiscellaneous.Size = new System.Drawing.Size(247, 22);
+            this.txtMiscellaneous.Size = new System.Drawing.Size(395, 22);
             this.txtMiscellaneous.TabIndex = 9;
+            this.txtMiscellaneous.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiscellaneous_KeyPress);
             // 
             // cmbChallanWeight
             // 
@@ -427,9 +459,11 @@
             // txtChallanNumber
             // 
             this.txtChallanNumber.Location = new System.Drawing.Point(17, 70);
+            this.txtChallanNumber.MaxLength = 25;
             this.txtChallanNumber.Name = "txtChallanNumber";
             this.txtChallanNumber.Size = new System.Drawing.Size(148, 22);
             this.txtChallanNumber.TabIndex = 5;
+            this.txtChallanNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChallanNumber_KeyPress);
             // 
             // lblChallanDate
             // 
@@ -462,61 +496,52 @@
             // 
             this.grpboxOperation.Controls.Add(this.btnTicket);
             this.grpboxOperation.Controls.Add(this.btnSave);
-            this.grpboxOperation.Controls.Add(this.btnSendEmail);
-            this.grpboxOperation.Controls.Add(this.btnCancel);
+            this.grpboxOperation.Controls.Add(this.btnExit);
             this.grpboxOperation.Controls.Add(this.btnAddNew);
             this.grpboxOperation.Location = new System.Drawing.Point(848, 185);
             this.grpboxOperation.Name = "grpboxOperation";
-            this.grpboxOperation.Size = new System.Drawing.Size(335, 375);
+            this.grpboxOperation.Size = new System.Drawing.Size(197, 401);
             this.grpboxOperation.TabIndex = 15;
             this.grpboxOperation.TabStop = false;
             this.grpboxOperation.Text = "Operation";
             // 
             // btnTicket
             // 
-            this.btnTicket.Location = new System.Drawing.Point(114, 246);
+            this.btnTicket.Location = new System.Drawing.Point(15, 224);
             this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Size = new System.Drawing.Size(106, 58);
+            this.btnTicket.Size = new System.Drawing.Size(167, 58);
             this.btnTicket.TabIndex = 20;
             this.btnTicket.Text = "&Ticket";
             this.btnTicket.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(196, 47);
+            this.btnSave.Location = new System.Drawing.Point(15, 133);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(106, 58);
+            this.btnSave.Size = new System.Drawing.Size(167, 58);
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnSendEmail
+            // btnExit
             // 
-            this.btnSendEmail.Location = new System.Drawing.Point(24, 154);
-            this.btnSendEmail.Name = "btnSendEmail";
-            this.btnSendEmail.Size = new System.Drawing.Size(106, 58);
-            this.btnSendEmail.TabIndex = 18;
-            this.btnSendEmail.Text = "Send Email";
-            this.btnSendEmail.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(196, 154);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(106, 58);
-            this.btnCancel.TabIndex = 19;
-            this.btnCancel.Text = "&Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnExit.Location = new System.Drawing.Point(15, 317);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(167, 58);
+            this.btnExit.TabIndex = 19;
+            this.btnExit.Text = "&Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(24, 47);
+            this.btnAddNew.Location = new System.Drawing.Point(15, 41);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(106, 58);
+            this.btnAddNew.Size = new System.Drawing.Size(167, 58);
             this.btnAddNew.TabIndex = 16;
             this.btnAddNew.Text = "&Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // txtTranspoterName
             // 
@@ -602,11 +627,13 @@
             // txtTruck
             // 
             this.txtTruck.Location = new System.Drawing.Point(35, 112);
+            this.txtTruck.MaxLength = 12;
             this.txtTruck.Name = "txtTruck";
             this.txtTruck.Size = new System.Drawing.Size(193, 22);
             this.txtTruck.TabIndex = 1;
             this.txtTruck.TextChanged += new System.EventHandler(this.txtTruck_TextChanged);
             this.txtTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTruck_KeyDown);
+            this.txtTruck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTruck_KeyPress);
             this.txtTruck.Leave += new System.EventHandler(this.txtTruck_Leave);
             this.txtTruck.Validating += new System.ComponentModel.CancelEventHandler(this.txtTruck_Validating);
             // 
@@ -640,26 +667,27 @@
             this.lblMode.TabIndex = 0;
             this.lblMode.Text = "Mode";
             // 
-            // errProvChallanWeight
+            // errProvWeight
             // 
-            this.errProvChallanWeight.ContainerControl = this;
+            this.errProvWeight.ContainerControl = this;
             // 
             // frmNormalWeighing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 743);
+            this.ClientSize = new System.Drawing.Size(1087, 743);
             this.Controls.Add(this.grpboxNormalWeighing);
             this.Name = "frmNormalWeighing";
             this.Text = "frmNormalWeighing";
             this.grpboxNormalWeighing.ResumeLayout(false);
             this.grpboxNormalWeighing.PerformLayout();
+            this.grpboxAutoWeight.ResumeLayout(false);
             this.grpboxWeightInfo.ResumeLayout(false);
             this.grpboxWeightInfo.PerformLayout();
             this.grpboxChallanInfo.ResumeLayout(false);
             this.grpboxChallanInfo.PerformLayout();
             this.grpboxOperation.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errProvChallanWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvWeight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -715,12 +743,13 @@
         private System.Windows.Forms.TextBox txtDateIn;
         private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnSendEmail;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.TextBox txtChallanWeight;
         private System.Windows.Forms.ListBox lstTruck;
         private System.Windows.Forms.DateTimePicker dtPickChallanDate;
-        private System.Windows.Forms.ErrorProvider errProvChallanWeight;
+        private System.Windows.Forms.ErrorProvider errProvWeight;
+        private System.Windows.Forms.GroupBox grpboxAutoWeight;
+        private System.Windows.Forms.Button btnWeight;
     }
 }

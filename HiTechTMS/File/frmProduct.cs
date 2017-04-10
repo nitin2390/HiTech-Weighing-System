@@ -219,6 +219,8 @@ namespace HitechTMS.File
         #region "Validating"
         private void txtProductCode_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            txtProductCode.Text = txtProductCode.Text.ToUpper();
+
             if (txtProductCode.Text == "")
             {
                 errProductCode.SetError(txtProductCode, dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
@@ -322,12 +324,12 @@ namespace HitechTMS.File
 
         private void txtProductCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e = _comm.RestirctTextBox(e);
+            e = _comm.RestirctTextBoxAndUpperCase(e);
         }
 
         private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e = _comm.RestirctTextBox(e);
+            e = _comm.RestirctTextBoxAndUpperCase(e);
         }
     }
 }

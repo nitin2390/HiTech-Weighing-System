@@ -11,18 +11,19 @@ using System.Linq;
 using System.Security.Principal;
 using System.Windows.Forms;
 using static HitechTMS.HitechEnums;
-
 namespace HitechTMS.File
 {
     public partial class frmStoredTareFile : SecureBaseForm
     {
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         private GetResourceCaption dbGetResourceCaption;
+        HitechTMS.Classes.ReadSerialPortData _readSerialPortData;
         public Guid _StoredTareRecordsID { get; set; }
         private EncryptionAndDecryption objEncryptionAndDecryption;
         private EmailConfig objEmailConfig;
         private Boolean _editGrid { get; set; }
         public Boolean _saveClick { get; set; }
+
         public FrmName _frmName { get; set; }
         public enumWeightMode _mode { get; set; }
         public frmStoredTareFile(FrmName intfrmtype, IPrincipal userPrincipal, enumWeightMode Mode) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
@@ -37,6 +38,7 @@ namespace HitechTMS.File
                 this._mode = Mode;
                 dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
                 objEncryptionAndDecryption = new EncryptionAndDecryption();
+                _readSerialPortData = new ReadSerialPortData();
                 objEmailConfig = new EmailConfig();
                 BindTransportCode();
                 BindGrid();
@@ -491,42 +493,17 @@ namespace HitechTMS.File
 
         private void btnWeight_Click(object sender, EventArgs e)
         {
-            txtTareWeight.Text = btnWeight.Text = ReadSerialPortCommunication().ToString();
-        }
-
-        private double ReadSerialPortCommunication()
-        {
-            double ReadSerialPortValue = 0.00;
             try
             {
-                string str;
-                //ht.Connect();
-                //str = ht.ReadSerialPort().Replace("\u0002", "").Replace("\u0003", "").Replace("\r", "");
-                str = "123456";
-                DialogResult rsltReadSerialPort;
-
-                if (double.TryParse(str, out ReadSerialPortValue))
-                {
-                    ReadSerialPortValue = Convert.ToDouble(str);
-                }
-                else
-                {
-                    rsltReadSerialPort = MessageBox.Show(str, dbGetResourceCaption.GetStringValue("SYS_ERR"), MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand);
-                    if (rsltReadSerialPort == DialogResult.Retry)
-                    {
-                        ReadSerialPortCommunication();
-                    }
-                }
-
-                return ReadSerialPortValue;
-
+                txtTareWeight.Text = btnWeight.Text = _readSerialPortData.ReadSerialPortCommunication().ToString();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return ReadSerialPortValue;
+
+                MessageBox.Show(ex.Message);
             }
         }
+
 
     }
 }

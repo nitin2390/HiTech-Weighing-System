@@ -52,23 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaptionResource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CaptionResource.resx</DependentUpon>
-    </Compile>
     <Compile Include="EncryptionAndDecryption.cs" />
     <Compile Include="ExcelUtlity.cs" />
     <Compile Include="GetAllControlByType.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendEmail.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CaptionResource.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>CaptionResource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

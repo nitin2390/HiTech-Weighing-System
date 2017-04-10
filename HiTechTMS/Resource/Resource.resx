@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ADD_NEW" xml:space="preserve">
+    <value>Are you sure you want to add new record ? Because edited data will be loss on adding new record!</value>
+  </data>
   <data name="ALERT" xml:space="preserve">
     <value>Alert!</value>
   </data>
@@ -147,11 +150,17 @@
   <data name="ERR_EMAIL_CHK_CONFIG" xml:space="preserve">
     <value>Error in email sending. Please check email configuration settings!</value>
   </data>
+  <data name="GROSS_WEIGHT" xml:space="preserve">
+    <value>Gross Weight</value>
+  </data>
+  <data name="GROSS_WEIGHT_CAN_NOT_BE_LESS_THAN_TARE_WEIGHT" xml:space="preserve">
+    <value>Gross weight can not be less than Tare weight!</value>
+  </data>
   <data name="INFORMATION" xml:space="preserve">
     <value>Information!</value>
   </data>
   <data name="MAX_WEIGHT" xml:space="preserve">
-    <value>Max weight not more than 150 tonne.</value>
+    <value>Weight can not be more than machine weighing limit !</value>
   </data>
   <data name="PRD_CD_CAN_NOT_BLANK" xml:space="preserve">
     <value>Product code can't be blank</value>
@@ -164,6 +173,9 @@
   </data>
   <data name="SYS_ERR" xml:space="preserve">
     <value>System error!</value>
+  </data>
+  <data name="TARE_WEIGHT" xml:space="preserve">
+    <value>Tare Weight</value>
   </data>
   <data name="TARE_WEIGHT_CAN_NOT_BE_GREATER_THAN_GROSS_WEIGHT" xml:space="preserve">
     <value>Tare weight can not be greater than Gross weight!</value>

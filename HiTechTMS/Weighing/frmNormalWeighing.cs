@@ -17,7 +17,10 @@ namespace HitechTMS.Weighing
     public partial class frmNormalWeighing : Form
     {
         public enumProductInOut _enumProductInOut { get; set; }
+        private Boolean _isTareWeight { get; set; }
         private HitechTruckMngtSystmDataBaseFileEntities _dbObj { get; }
+        HitechTMS.Classes.ReadSerialPortData _readSerialPortData;
+
         private GetResourceCaption _dbGetResourceCaption;
         CalculateNetWeight _objCalculateNetWeight;
         public enumWeightMode _weightMode { get; set; }
@@ -26,11 +29,14 @@ namespace HitechTMS.Weighing
         public Guid _transNormalWeightID { get; set; }
         private Common _comm { get; set; }
         private FrmName _frmName { get; set; }
+
+        readonly double _MaxWeight;
         public frmNormalWeighing(enumProductInOut EnumProductNormalPublicMulti, enumWeightMode Mode)
         {
             InitializeComponent();
-
+            _MaxWeight = 150;
             _dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
+            _readSerialPortData = new ReadSerialPortData();
             _weightMode = Mode;
             _objCalculateNetWeight = new CalculateNetWeight();
             _dbGetResourceCaption = new GetResourceCaption();
@@ -43,6 +49,7 @@ namespace HitechTMS.Weighing
             Text = "Normal Weighing (Product " + _enumProductInOut.ToString() + ")";
             bindComboBox();
             setEnableDisable();
+            _isTareWeight = true;
         }
 
         private void setEnableDisable()
@@ -53,32 +60,32 @@ namespace HitechTMS.Weighing
                 txtProductName.ReadOnly = txtCustomerName.ReadOnly = txtTranspoterName.ReadOnly = true;
                 txtDateIn.ReadOnly = txtDateOut.ReadOnly = true;
                 txtTimeIn.ReadOnly = txtTimeOut.ReadOnly = true;
-                txtTareWeight.ReadOnly = false;
-                txtGrossWeight.ReadOnly = true;
-                txtNetWeight.ReadOnly = true;
+
                 lstTruck.Visible = false;
                 txtChallanDate.ReadOnly = true;
 
-
                 if(_enumProductInOut == enumProductInOut.In)
                 {
-                    // Gross :  txt : 515, 124 lbl : 511, 104
-                    //Tare : txt : 515, 55 lbl : 511, 35
-
-                    //txtGrossWeight.Location = new Point(515,55);
-                    //lblGrossWeight.Location = new Point(511,35);
-
-                    //txtTareWeight.Location = new Point(515,124);
-                    //lblTareWeight.Location = new Point(511,104);
-
-                    
-                    lblGrossWeight.Text = "Tare Weight";
-                    lblTareWeight.Text = "Gross Weight";
-
+                   
+                    lblGrossWeight.Text = _dbGetResourceCaption.GetStringValue("Tare Weight");
+                    lblTareWeight.Text = _dbGetResourceCaption.GetStringValue("GROSS_WEIGHT");
                     txtGrossWeight.ReadOnly = true;
                 }
 
+                if(_weightMode == enumWeightMode.Auto)
+                {
+                    grpboxAutoWeight.Visible = true;
+                    txtTareWeight.ReadOnly = true;
+                    txtGrossWeight.ReadOnly = true;
+                }
+                else if(_weightMode == enumWeightMode.Manual)
+                {
+                    grpboxAutoWeight.Visible = false;
+                    txtTareWeight.ReadOnly = false;
+                    txtGrossWeight.ReadOnly = true;
+                }
 
+                txtNetWeight.ReadOnly = true;
             }
             catch (Exception ex)
             {
@@ -130,7 +137,10 @@ namespace HitechTMS.Weighing
         {
             try
             {
-
+                if(txtTruck.Text.Trim().Length < 1)
+                {
+                    return;
+                }
                 List<transNormalWeight> existsQuery = new List<transNormalWeight>();
                 _saveClick = true;
                 existsQuery = _dbObj.transNormalWeight.Select(x => x).Where(x => x.ID == _transNormalWeightID && x.ProdInOut == (byte)_enumProductInOut && x.IsPending == 0).ToList();
@@ -172,8 +182,8 @@ namespace HitechTMS.Weighing
                     _dbObj.transNormalWeight.AddOrUpdate(objtransNormalWeight);
                     if (_dbObj.SaveChanges() > 0)
                     {
+                        _isTareWeight = true;
                         ResetCntrl();
-                        //BindGrid();
                         MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -186,7 +196,6 @@ namespace HitechTMS.Weighing
                     if (_dbObj.SaveChanges() == 1)
                     {
                         ResetCntrl();
-                        //BindGrid();
                         MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -225,7 +234,10 @@ namespace HitechTMS.Weighing
                 txtGrossWeight.Text = "";
                 txtNetWeight.Text = "";
                 _transNormalWeightID = Guid.Empty;
+                btnWeight.Text = "";
+                errProvWeight.Clear();
                 setEnableDisable();
+
             }
             catch (Exception ex)
             {
@@ -455,8 +467,17 @@ namespace HitechTMS.Weighing
                 }
                 if(lsttransNormalWeight[0].GrossWeight > 0 || lsttransNormalWeight[0].TareWeight > 0)
                 {
-                    txtTareWeight.ReadOnly = true;
-                    txtGrossWeight.ReadOnly = false;
+                    if (_weightMode == enumWeightMode.Auto)
+                    {
+                        _isTareWeight = false;
+                        txtTareWeight.ReadOnly = true;
+                        txtGrossWeight.ReadOnly = true;
+                    }
+                    else
+                    {
+                        txtTareWeight.ReadOnly = true;
+                        txtGrossWeight.ReadOnly = false;
+                    }
                 }
 
 
@@ -484,6 +505,13 @@ namespace HitechTMS.Weighing
             {
                 FillTrucAndSetEditId();
             }
+
+            if(e.KeyCode == Keys.Escape)
+            {
+                lstTruck.SelectedIndex = -1;
+                lstTruck.Visible = false;
+                txtTruck.Focus();
+            }
         }
 
         private void txtTruck_KeyDown(object sender, KeyEventArgs e)
@@ -492,6 +520,13 @@ namespace HitechTMS.Weighing
             {
                 lstTruck.Focus();
             }
+
+            if(e.KeyCode == Keys.Escape)
+            {
+                lstTruck.SelectedItem = -1;
+                lstTruck.Visible = false;
+            }
+
         }
 
         private void txtTruck_Leave(object sender, EventArgs e)
@@ -509,13 +544,7 @@ namespace HitechTMS.Weighing
 
         private void txtChallanWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e = _comm.OnlyNumericValue(e);
-            
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            e = _comm.OnlyNumericValue(sender,e);
         }
 
         private void txtChallanWeight_TextChanged(object sender, EventArgs e)
@@ -529,16 +558,16 @@ namespace HitechTMS.Weighing
                 double input = 0;
                 bool isNum = Double.TryParse(txtChallanWeight.Text, out input);
 
-                if (!isNum || input < 0 || input > 150)
+                if (!isNum || input < 0 || input > _MaxWeight)
                 {
                     // Cancel the event and select the text to be corrected by the user.
                     e.Cancel = true;
                     txtChallanWeight.Select(0, txtChallanWeight.Text.Length);
-                    errProvChallanWeight.SetError(txtChallanWeight, _dbGetResourceCaption.GetStringValue("MAX_WEIGHT"));
+                    errProvWeight.SetError(txtChallanWeight, _dbGetResourceCaption.GetStringValue("MAX_WEIGHT"));
                 }
                 else
                 {
-                    errProvChallanWeight.Clear();
+                    errProvWeight.Clear();
                 }
             }
         }
@@ -563,41 +592,169 @@ namespace HitechTMS.Weighing
 
         private void txtTruck_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            //FillTrucAndSetEditId();
+            txtTruck.Text = txtTruck.Text.ToUpper();
         }
 
         private void txtGrossWeight_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
+            {
             //Check for -ve Weight
 
-            if (_enumProductInOut == enumProductInOut.In)
-            {
+
                 if (txtGrossWeight.Text != "")
                 {
 
                     double TareWeight = 0;
                     double GrossWeight = 0;
-                    bool isTareWeight = Double.TryParse(txtTareWeight.Text, out TareWeight);
-                    bool isGrossWeight = Double.TryParse(txtGrossWeight.Text, out GrossWeight);
+                    bool isTareWeight = false;
+                    bool isGrossWeight = false;
 
-                    if (isGrossWeight && isTareWeight &&  TareWeight < GrossWeight)
+                    if (_enumProductInOut == enumProductInOut.Out)
+                    {
+                        isTareWeight = Double.TryParse(txtTareWeight.Text, out TareWeight);
+                        isGrossWeight = Double.TryParse(txtGrossWeight.Text, out GrossWeight);
+                    }
+                    else if(_enumProductInOut == enumProductInOut.In)
+                    {
+                        isGrossWeight  = Double.TryParse(txtTareWeight.Text, out GrossWeight );
+                        isTareWeight  = Double.TryParse(txtGrossWeight.Text, out TareWeight );
+                    }
+
+                    if (isGrossWeight && isTareWeight &&  TareWeight > GrossWeight)
                     {
                         // Cancel the event and select the text to be corrected by the user.
                         e.Cancel = true;
                         txtGrossWeight.Select(0, txtGrossWeight.Text.Length);
-                        errProvChallanWeight.SetError(txtGrossWeight, _dbGetResourceCaption.GetStringValue("TARE_WEIGHT_CAN_NOT_BE_GREATER_THAN_GROSS_WEIGHT"));
+                        errProvWeight.SetError(txtGrossWeight, _enumProductInOut == enumProductInOut.Out ? _dbGetResourceCaption.GetStringValue("GROSS_WEIGHT_CAN_NOT_BE_LESS_THAN_TARE_WEIGHT") : _dbGetResourceCaption.GetStringValue("TARE_WEIGHT_CAN_NOT_BE_GREATER_THAN_GROSS_WEIGHT"));
                     }
                     else
                     {
-                        errProvChallanWeight.Clear();
+                        errProvWeight.Clear();
                     }
                 }
-            }
             else
             {
-
+                errProvWeight.Clear();
             }
 
+
+        }
+
+        private void txtTareWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.OnlyNumericValue(sender, e);
+        }
+
+        private void txtGrossWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.OnlyNumericValue(sender, e);
+        }
+
+        private void txtTareWeight_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (txtTareWeight.Text != "")
+            {
+                double input = 0;
+                bool isNum = Double.TryParse(txtTareWeight.Text, out input);
+
+                if (!isNum || input < 0 || input > _MaxWeight)
+                {
+                    // Cancel the event and select the text to be corrected by the user.
+                    e.Cancel = true;
+                    txtTareWeight.Select(0, txtTareWeight.Text.Length);
+                    errProvWeight.SetError(txtTareWeight, _dbGetResourceCaption.GetStringValue("MAX_WEIGHT"));
+                }
+                else
+                {
+                    errProvWeight.Clear();
+                }
+            }
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            if(
+                txtTruck.Text.Trim() != "" ||
+                txtChallanNumber.Text.Trim() != "" ||
+                txtChallanDate.Text.Trim() != "" ||
+                txtChallanWeight.Text.Trim() !="" ||
+                txtMiscellaneous.Text.Trim() !="" ||
+                txtMiscellaneous1.Text.Trim() !="" ||
+                txtDeliveryNoteN.Text.Trim() != "" ||
+                txtTareWeight.Text.Trim() != "" ||
+                txtGrossWeight.Text.Trim() !="" ||
+                cmbProductCode.SelectedIndex > 0 ||
+                cmbCustomerCode.SelectedIndex > 0 ||
+                cmbTranspoterCode.SelectedIndex > 0
+                )
+            {
+                if(MessageBox.Show(_dbGetResourceCaption.GetStringValue("ADD_NEW"), _dbGetResourceCaption.GetStringValue("INFORMATION"),MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    ResetCntrl();
+                }
+            }
+            
+        }
+
+        private void txtTruck_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBoxAndUpperCase(e);
+        }
+
+        private void txtMiscellaneous_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBox(e);
+        }
+
+        private void txtMiscellaneous1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBox(e);
+        }
+
+        private void txtDeliveryNoteN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBox(e);
+        }
+
+        private void txtChallanNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBox(e);
+        }
+
+        private void btnWeight_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //_MaxWeight
+                double weight = _readSerialPortData.ReadSerialPortCommunication();
+
+                if(weight > _MaxWeight)
+                {
+                    errProvWeight.SetError(btnWeight, _dbGetResourceCaption.GetStringValue("MAX_WEIGHT"));
+                    btnWeight.Text = weight.ToString();
+                    return;
+                }
+                else
+                {
+                    errProvWeight.Clear();
+                }
+
+                if (_isTareWeight)
+                {
+                    txtTareWeight.Text = btnWeight.Text = weight.ToString();
+                    txtTareWeight.Focus();
+                }
+                else
+                {
+                    txtGrossWeight.Text = btnWeight.Text = weight.ToString();
+                    txtGrossWeight.Focus();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
