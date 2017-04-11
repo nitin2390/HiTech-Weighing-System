@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HitechTMS.Weighing
 {
-    public partial class PublicWeighing : Form
+    public partial class frmMultiWeighing : Form
     {
-        public PublicWeighing()
+        public frmMultiWeighing()
         {
             InitializeComponent();
         }

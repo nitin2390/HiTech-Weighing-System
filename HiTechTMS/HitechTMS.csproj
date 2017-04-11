@@ -384,6 +384,12 @@
     <Compile Include="Reports\rptCommon.Designer.cs">
       <DependentUpon>rptCommon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Weighing\frmMultiWeighing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Weighing\frmMultiWeighing.Designer.cs">
+      <DependentUpon>frmMultiWeighing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Weighing\frmNormalWeighing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,11 +402,11 @@
     <Compile Include="Weighing\frmProductInOut.Designer.cs">
       <DependentUpon>frmProductInOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="Weighing\PublicWeighing.cs">
+    <Compile Include="Weighing\frmPublicWeighing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Weighing\PublicWeighing.Designer.cs">
-      <DependentUpon>PublicWeighing.cs</DependentUpon>
+    <Compile Include="Weighing\frmPublicWeighing.Designer.cs">
+      <DependentUpon>frmPublicWeighing.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Config\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
@@ -578,14 +584,17 @@
     <EmbeddedResource Include="Reports\rptCommon.resx">
       <DependentUpon>rptCommon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Weighing\frmMultiWeighing.resx">
+      <DependentUpon>frmMultiWeighing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Weighing\frmNormalWeighing.resx">
       <DependentUpon>frmNormalWeighing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Weighing\frmProductInOut.resx">
       <DependentUpon>frmProductInOut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Weighing\PublicWeighing.resx">
-      <DependentUpon>PublicWeighing.cs</DependentUpon>
+    <EmbeddedResource Include="Weighing\frmPublicWeighing.resx">
+      <DependentUpon>frmPublicWeighing.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="HitechTMS_TemporaryKey.pfx" />
