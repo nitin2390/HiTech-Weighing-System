@@ -13,6 +13,7 @@
     </AssociationSet>
     <EntitySet Name="mstStoredTareRecords" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords" />
     <EntitySet Name="transNormalWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" />
+    <EntitySet Name="transPublicWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transPublicWeight" />
   </EntityContainer>
   <EntityType Name="UserRoleType">
     <Key>
@@ -120,6 +121,26 @@
     <Property Name="ChallanWeightUnit" Type="Byte" />
     <Property Name="Miscellaneous" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DeliveryNoteN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DateIn" Type="DateTime" Precision="0" />
+    <Property Name="DateOut" Type="DateTime" Precision="0" />
+    <Property Name="TimeIn" Type="Time" Precision="7" />
+    <Property Name="TimeOut" Type="Time" Precision="7" />
+    <Property Name="TareWeight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="GrossWeight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NetWeight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ProdInOut" Type="Byte" Nullable="false" />
+    <Property Name="IsPending" Type="Byte" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="transPublicWeight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Mode" Type="Byte" Nullable="false" />
+    <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Miscellaneous" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DateIn" Type="DateTime" Precision="0" />
     <Property Name="DateOut" Type="DateTime" Precision="0" />
     <Property Name="TimeIn" Type="Time" Precision="7" />

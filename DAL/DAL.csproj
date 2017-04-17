@@ -100,6 +100,9 @@
     <Compile Include="Entity Model\transNormalWeight.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Model\transPublicWeight.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\UserRole.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>

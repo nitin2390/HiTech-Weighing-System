@@ -132,6 +132,12 @@
   <data name="DATA_UPDATE" xml:space="preserve">
     <value>Data update successfully!</value>
   </data>
+  <data name="DATEIN" xml:space="preserve">
+    <value>Date In</value>
+  </data>
+  <data name="DATEOUT" xml:space="preserve">
+    <value>Date Out</value>
+  </data>
   <data name="DELTE_POPUP" xml:space="preserve">
     <value>Are you sure you want to delete?</value>
   </data>
@@ -150,6 +156,9 @@
   <data name="ERR_EMAIL_CHK_CONFIG" xml:space="preserve">
     <value>Error in email sending. Please check email configuration settings!</value>
   </data>
+  <data name="GROSSWEIGHT" xml:space="preserve">
+    <value>Gross Weight</value>
+  </data>
   <data name="GROSS_WEIGHT" xml:space="preserve">
     <value>Gross Weight</value>
   </data>
@@ -161,6 +170,12 @@
   </data>
   <data name="MAX_WEIGHT" xml:space="preserve">
     <value>Weight can not be more than machine weighing limit !</value>
+  </data>
+  <data name="MISCELLANEOUS" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="NETWEIGHT" xml:space="preserve">
+    <value>Net Weight</value>
   </data>
   <data name="PRD_CD_CAN_NOT_BLANK" xml:space="preserve">
     <value>Product code can't be blank</value>
@@ -174,11 +189,23 @@
   <data name="SYS_ERR" xml:space="preserve">
     <value>System error!</value>
   </data>
+  <data name="TAREWEIGHT" xml:space="preserve">
+    <value>Tare Weight</value>
+  </data>
   <data name="TARE_WEIGHT" xml:space="preserve">
     <value>Tare Weight</value>
   </data>
   <data name="TARE_WEIGHT_CAN_NOT_BE_GREATER_THAN_GROSS_WEIGHT" xml:space="preserve">
     <value>Tare weight can not be greater than Gross weight!</value>
+  </data>
+  <data name="TIMEIN" xml:space="preserve">
+    <value>Time In</value>
+  </data>
+  <data name="TIMEOUT" xml:space="preserve">
+    <value>Time Out</value>
+  </data>
+  <data name="TRUCK" xml:space="preserve">
+    <value>Truck</value>
   </data>
   <data name="USER_NAME_PASSWORD_MISTMATCH" xml:space="preserve">
     <value>User name and Password doesn't match!</value>

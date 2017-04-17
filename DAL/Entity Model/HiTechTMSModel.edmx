@@ -91,6 +91,26 @@
           <Property Name="AddedDate" Type="datetime" Nullable="false" />
           <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="transPublicWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Mode" Type="tinyint" Nullable="false" />
+          <Property Name="Truck" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateIn" Type="date" />
+          <Property Name="DateOut" Type="date" />
+          <Property Name="TimeIn" Type="time" Precision="7" />
+          <Property Name="TimeOut" Type="time" Precision="7" />
+          <Property Name="TareWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="GrossWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="NetWeight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ProdInOut" Type="tinyint" Nullable="false" />
+          <Property Name="IsPending" Type="tinyint" Nullable="false" />
+          <Property Name="AddedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="UserRole">
           <Key>
             <PropertyRef Name="Id" />
@@ -128,6 +148,7 @@
           <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="transNormalWeight" EntityType="Self.transNormalWeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transPublicWeight" EntityType="Self.transPublicWeight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__UserRole__UserRo__1B9317B3" Association="Self.FK__UserRole__UserRo__1B9317B3">
@@ -152,6 +173,7 @@
           </AssociationSet>
           <EntitySet Name="mstStoredTareRecords" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords" />
           <EntitySet Name="transNormalWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" />
+          <EntitySet Name="transPublicWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transPublicWeight" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -259,6 +281,26 @@
           <Property Name="ChallanWeightUnit" Type="Byte" />
           <Property Name="Miscellaneous" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DeliveryNoteN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="DateIn" Type="DateTime" Precision="0" />
+          <Property Name="DateOut" Type="DateTime" Precision="0" />
+          <Property Name="TimeIn" Type="Time" Precision="7" />
+          <Property Name="TimeOut" Type="Time" Precision="7" />
+          <Property Name="TareWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="GrossWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="NetWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ProdInOut" Type="Byte" Nullable="false" />
+          <Property Name="IsPending" Type="Byte" Nullable="false" />
+          <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="transPublicWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Mode" Type="Byte" Nullable="false" />
+          <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Miscellaneous" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DateIn" Type="DateTime" Precision="0" />
           <Property Name="DateOut" Type="DateTime" Precision="0" />
           <Property Name="TimeIn" Type="Time" Precision="7" />
@@ -381,6 +423,27 @@
                 <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
                 <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="Truck" ColumnName="Truck" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transPublicWeight">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.transPublicWeight">
+              <MappingFragment StoreEntitySet="transPublicWeight">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="IsPending" ColumnName="IsPending" />
+                <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+                <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+                <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
                 <ScalarProperty Name="Truck" ColumnName="Truck" />
                 <ScalarProperty Name="Mode" ColumnName="Mode" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

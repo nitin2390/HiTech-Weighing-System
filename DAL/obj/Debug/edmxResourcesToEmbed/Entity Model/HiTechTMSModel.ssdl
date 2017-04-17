@@ -86,6 +86,26 @@
     <Property Name="AddedDate" Type="datetime" Nullable="false" />
     <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
+  <EntityType Name="transPublicWeight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Mode" Type="tinyint" Nullable="false" />
+    <Property Name="Truck" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateIn" Type="date" />
+    <Property Name="DateOut" Type="date" />
+    <Property Name="TimeIn" Type="time" Precision="7" />
+    <Property Name="TimeOut" Type="time" Precision="7" />
+    <Property Name="TareWeight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="GrossWeight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="NetWeight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ProdInOut" Type="tinyint" Nullable="false" />
+    <Property Name="IsPending" Type="tinyint" Nullable="false" />
+    <Property Name="AddedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="UserRole">
     <Key>
       <PropertyRef Name="Id" />
@@ -123,6 +143,7 @@
     <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="transNormalWeight" EntityType="Self.transNormalWeight" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transPublicWeight" EntityType="Self.transPublicWeight" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__UserRole__UserRo__1B9317B3" Association="Self.FK__UserRole__UserRo__1B9317B3">

@@ -106,6 +106,24 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date In.
+        /// </summary>
+        internal static string DATEIN {
+            get {
+                return ResourceManager.GetString("DATEIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date Out.
+        /// </summary>
+        internal static string DATEOUT {
+            get {
+                return ResourceManager.GetString("DATEOUT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to delete?.
         /// </summary>
         internal static string DELTE_POPUP {
@@ -178,6 +196,15 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gross Weight.
+        /// </summary>
+        internal static string GROSSWEIGHT {
+            get {
+                return ResourceManager.GetString("GROSSWEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Information!.
         /// </summary>
         internal static string INFORMATION {
@@ -192,6 +219,24 @@ namespace HitechTMS.Resource {
         internal static string MAX_WEIGHT {
             get {
                 return ResourceManager.GetString("MAX_WEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miscellaneous.
+        /// </summary>
+        internal static string MISCELLANEOUS {
+            get {
+                return ResourceManager.GetString("MISCELLANEOUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Net Weight.
+        /// </summary>
+        internal static string NETWEIGHT {
+            get {
+                return ResourceManager.GetString("NETWEIGHT", resourceCulture);
             }
         }
         
@@ -246,6 +291,42 @@ namespace HitechTMS.Resource {
         internal static string TARE_WEIGHT_CAN_NOT_BE_GREATER_THAN_GROSS_WEIGHT {
             get {
                 return ResourceManager.GetString("TARE_WEIGHT_CAN_NOT_BE_GREATER_THAN_GROSS_WEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tare Weight.
+        /// </summary>
+        internal static string TAREWEIGHT {
+            get {
+                return ResourceManager.GetString("TAREWEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time In.
+        /// </summary>
+        internal static string TIMEIN {
+            get {
+                return ResourceManager.GetString("TIMEIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Out.
+        /// </summary>
+        internal static string TIMEOUT {
+            get {
+                return ResourceManager.GetString("TIMEOUT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Truck.
+        /// </summary>
+        internal static string TRUCK {
+            get {
+                return ResourceManager.GetString("TRUCK", resourceCulture);
             }
         }
         

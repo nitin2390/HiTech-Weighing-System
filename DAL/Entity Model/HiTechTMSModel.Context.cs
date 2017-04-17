@@ -33,5 +33,6 @@ namespace DAL.Entity_Model
         public virtual DbSet<UserRole> UserRole { get; set; }
         public virtual DbSet<mstStoredTareRecords> mstStoredTareRecords { get; set; }
         public virtual DbSet<transNormalWeight> transNormalWeight { get; set; }
+        public virtual DbSet<transPublicWeight> transPublicWeight { get; set; }
     }
 }

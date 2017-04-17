@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpboxPublicWeighing = new System.Windows.Forms.GroupBox();
+            this.grpboxAutoWeight = new System.Windows.Forms.GroupBox();
+            this.btnWeight = new System.Windows.Forms.Button();
+            this.lblRecCount = new System.Windows.Forms.Label();
+            this.lblRecordsCount = new System.Windows.Forms.Label();
+            this.gridSupplierTransporter = new System.Windows.Forms.DataGridView();
             this.lblTruck = new System.Windows.Forms.Label();
             this.txtMode = new System.Windows.Forms.Label();
             this.lblMode = new System.Windows.Forms.Label();
@@ -63,17 +69,18 @@
             this.txtDateOut = new System.Windows.Forms.TextBox();
             this.txtTimeIn = new System.Windows.Forms.TextBox();
             this.txtDateIn = new System.Windows.Forms.TextBox();
-            this.lblRecCount = new System.Windows.Forms.Label();
-            this.lblRecordsCount = new System.Windows.Forms.Label();
-            this.gridSupplierTransporter = new System.Windows.Forms.DataGridView();
+            this.errProvWeight = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpboxPublicWeighing.SuspendLayout();
+            this.grpboxAutoWeight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).BeginInit();
             this.grpboxOperation.SuspendLayout();
             this.grpboxWeightInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvWeight)).BeginInit();
             this.SuspendLayout();
             // 
             // grpboxPublicWeighing
             // 
+            this.grpboxPublicWeighing.Controls.Add(this.grpboxAutoWeight);
             this.grpboxPublicWeighing.Controls.Add(this.lblRecCount);
             this.grpboxPublicWeighing.Controls.Add(this.lblRecordsCount);
             this.grpboxPublicWeighing.Controls.Add(this.gridSupplierTransporter);
@@ -92,6 +99,76 @@
             this.grpboxPublicWeighing.TabIndex = 47;
             this.grpboxPublicWeighing.TabStop = false;
             this.grpboxPublicWeighing.Text = "Public Weighing";
+            // 
+            // grpboxAutoWeight
+            // 
+            this.grpboxAutoWeight.Controls.Add(this.btnWeight);
+            this.grpboxAutoWeight.Location = new System.Drawing.Point(632, 24);
+            this.grpboxAutoWeight.Name = "grpboxAutoWeight";
+            this.grpboxAutoWeight.Size = new System.Drawing.Size(200, 120);
+            this.grpboxAutoWeight.TabIndex = 59;
+            this.grpboxAutoWeight.TabStop = false;
+            this.grpboxAutoWeight.Text = "Auto Mode";
+            // 
+            // btnWeight
+            // 
+            this.btnWeight.CausesValidation = false;
+            this.btnWeight.Location = new System.Drawing.Point(32, 25);
+            this.btnWeight.Name = "btnWeight";
+            this.btnWeight.Size = new System.Drawing.Size(136, 71);
+            this.btnWeight.TabIndex = 28;
+            this.btnWeight.UseVisualStyleBackColor = true;
+            this.btnWeight.Click += new System.EventHandler(this.btnWeight_Click);
+            // 
+            // lblRecCount
+            // 
+            this.lblRecCount.AutoSize = true;
+            this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecCount.Location = new System.Drawing.Point(932, 679);
+            this.lblRecCount.Name = "lblRecCount";
+            this.lblRecCount.Size = new System.Drawing.Size(136, 22);
+            this.lblRecCount.TabIndex = 57;
+            this.lblRecCount.Text = "Records Count";
+            // 
+            // lblRecordsCount
+            // 
+            this.lblRecordsCount.AutoSize = true;
+            this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecordsCount.Location = new System.Drawing.Point(1088, 679);
+            this.lblRecordsCount.Name = "lblRecordsCount";
+            this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
+            this.lblRecordsCount.TabIndex = 56;
+            this.lblRecordsCount.Text = "Count";
+            // 
+            // gridSupplierTransporter
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridSupplierTransporter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.gridSupplierTransporter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridSupplierTransporter.DefaultCellStyle = dataGridViewCellStyle4;
+            this.gridSupplierTransporter.Location = new System.Drawing.Point(22, 431);
+            this.gridSupplierTransporter.Name = "gridSupplierTransporter";
+            this.gridSupplierTransporter.RowTemplate.Height = 24;
+            this.gridSupplierTransporter.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gridSupplierTransporter.Size = new System.Drawing.Size(1112, 243);
+            this.gridSupplierTransporter.TabIndex = 58;
             // 
             // lblTruck
             // 
@@ -178,6 +255,7 @@
             this.btnTicket.TabIndex = 20;
             this.btnTicket.Text = "&Ticket";
             this.btnTicket.UseVisualStyleBackColor = true;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
             // btnSave
             // 
@@ -187,6 +265,7 @@
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnExit
             // 
@@ -196,6 +275,7 @@
             this.btnExit.TabIndex = 19;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAddNew
             // 
@@ -205,6 +285,7 @@
             this.btnAddNew.TabIndex = 16;
             this.btnAddNew.Text = "&Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // grpboxWeightInfo
             // 
@@ -355,6 +436,7 @@
             this.txtGrossWeight.Name = "txtGrossWeight";
             this.txtGrossWeight.Size = new System.Drawing.Size(148, 22);
             this.txtGrossWeight.TabIndex = 14;
+            this.txtGrossWeight.TextChanged += new System.EventHandler(this.txtGrossWeight_TextChanged);
             // 
             // txtTareWeight
             // 
@@ -362,6 +444,8 @@
             this.txtTareWeight.Name = "txtTareWeight";
             this.txtTareWeight.Size = new System.Drawing.Size(148, 22);
             this.txtTareWeight.TabIndex = 13;
+            this.txtTareWeight.TextChanged += new System.EventHandler(this.txtTareWeight_TextChanged);
+            this.txtTareWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txtTareWeight_Validating);
             // 
             // txtTimeOut
             // 
@@ -395,70 +479,26 @@
             this.txtDateIn.TabIndex = 19;
             this.txtDateIn.TabStop = false;
             // 
-            // lblRecCount
+            // errProvWeight
             // 
-            this.lblRecCount.AutoSize = true;
-            this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecCount.Location = new System.Drawing.Point(932, 679);
-            this.lblRecCount.Name = "lblRecCount";
-            this.lblRecCount.Size = new System.Drawing.Size(136, 22);
-            this.lblRecCount.TabIndex = 57;
-            this.lblRecCount.Text = "Records Count";
+            this.errProvWeight.ContainerControl = this;
             // 
-            // lblRecordsCount
-            // 
-            this.lblRecordsCount.AutoSize = true;
-            this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsCount.Location = new System.Drawing.Point(1088, 679);
-            this.lblRecordsCount.Name = "lblRecordsCount";
-            this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
-            this.lblRecordsCount.TabIndex = 56;
-            this.lblRecordsCount.Text = "Count";
-            // 
-            // gridSupplierTransporter
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSupplierTransporter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridSupplierTransporter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridSupplierTransporter.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridSupplierTransporter.Location = new System.Drawing.Point(22, 431);
-            this.gridSupplierTransporter.Name = "gridSupplierTransporter";
-            this.gridSupplierTransporter.RowTemplate.Height = 24;
-            this.gridSupplierTransporter.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gridSupplierTransporter.Size = new System.Drawing.Size(1112, 243);
-            this.gridSupplierTransporter.TabIndex = 58;
-            // 
-            // PublicWeighing
+            // frmPublicWeighing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 734);
             this.Controls.Add(this.grpboxPublicWeighing);
-            this.Name = "PublicWeighing";
+            this.Name = "frmPublicWeighing";
             this.Text = "PublicWeighing";
             this.grpboxPublicWeighing.ResumeLayout(false);
             this.grpboxPublicWeighing.PerformLayout();
+            this.grpboxAutoWeight.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).EndInit();
             this.grpboxOperation.ResumeLayout(false);
             this.grpboxWeightInfo.ResumeLayout(false);
             this.grpboxWeightInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvWeight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,5 +541,8 @@
         private System.Windows.Forms.Label lblRecCount;
         private System.Windows.Forms.Label lblRecordsCount;
         private System.Windows.Forms.DataGridView gridSupplierTransporter;
+        private System.Windows.Forms.ErrorProvider errProvWeight;
+        private System.Windows.Forms.GroupBox grpboxAutoWeight;
+        private System.Windows.Forms.Button btnWeight;
     }
 }

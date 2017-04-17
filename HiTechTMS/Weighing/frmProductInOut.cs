@@ -30,11 +30,21 @@ namespace HitechTMS.Weighing
         {
             this.Hide();
             _enumProductInOut = rdbProductIn.Checked == true ? enumProductInOut.In : enumProductInOut.Out;
-            frmNormalWeighing objfrmNormalWeighing = new frmNormalWeighing(_enumProductInOut, _weightMode);
-            objfrmNormalWeighing.StartPosition = FormStartPosition.CenterParent;
-            objfrmNormalWeighing.ShowDialog();
-            this.Close();
 
+            if(_enumProductNormalPublicMulti == enumProductNormalPublicMulti.Normal)
+            {
+                frmNormalWeighing objfrmNormalWeighing = new frmNormalWeighing(_enumProductInOut, _weightMode);
+                objfrmNormalWeighing.StartPosition = FormStartPosition.CenterParent;
+                objfrmNormalWeighing.ShowDialog();
+            }
+            else if(_enumProductNormalPublicMulti == enumProductNormalPublicMulti.Public)
+            {
+                frmPublicWeighing objfrmPublicWeighing = new frmPublicWeighing(_enumProductInOut, _weightMode);
+                objfrmPublicWeighing.StartPosition = FormStartPosition.CenterParent;
+                objfrmPublicWeighing.ShowDialog();
+            }
+
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

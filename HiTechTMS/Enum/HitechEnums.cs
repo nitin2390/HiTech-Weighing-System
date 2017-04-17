@@ -52,6 +52,26 @@
             Email = 8
         }
 
+        public enum enumTransPublicWeight
+        {
+            Id = 0,
+            Mode,
+            Truck,
+            Miscellaneous,
+            DateIn,
+            DateOut,
+            TimeIn,
+            TimeOut,
+            TareWeight,
+            GrossWeight,
+            NetWeight,
+            ProdInOut,
+            IsPending,
+            AddedDate,
+            UpdatedDate
+        }
+        
+
         public enum AddUser
         {
             RoleId = 0,
@@ -80,6 +100,7 @@
             Auto =1,
             Semi = 2
         }
+
 
         public enum enumWeightUnit
         {

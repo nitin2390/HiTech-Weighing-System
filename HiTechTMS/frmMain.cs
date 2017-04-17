@@ -21,14 +21,14 @@ namespace HitechTMS
         public HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         private IPrincipal _nextFormPrincipal;
         private GetResourceCaption dbGetResourceCaption;
-        public enumProductNormalPublicMulti _enumProductInOut { get; set; }
+        public enumProductNormalPublicMulti _enumProductNormalPublicMulti { get; set; }
         string str;
         enumWeightMode _mode;
         public frmMain(IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
         {
             _nextFormPrincipal = userPrincipal;
             InitializeComponent();
-            _mode = enumWeightMode.Auto;
+            _mode = enumWeightMode.Manual;
             dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
             this.MinimizeBox = this.MaximizeBox = false;
@@ -208,13 +208,16 @@ namespace HitechTMS
 
         private void publicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            _enumProductNormalPublicMulti = enumProductNormalPublicMulti.Public;
+            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode);
+            objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
+            objfrmProductInOut.ShowDialog();
         }
 
         private void normalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _enumProductInOut = enumProductNormalPublicMulti.Normal;
-            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductInOut, _mode);
+            _enumProductNormalPublicMulti = enumProductNormalPublicMulti.Normal;
+            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode);
             objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
             objfrmProductInOut.ShowDialog();
         }
