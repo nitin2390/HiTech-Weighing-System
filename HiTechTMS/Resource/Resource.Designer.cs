@@ -196,15 +196,6 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gross Weight.
-        /// </summary>
-        internal static string GROSSWEIGHT {
-            get {
-                return ResourceManager.GetString("GROSSWEIGHT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Information!.
         /// </summary>
         internal static string INFORMATION {
@@ -214,7 +205,7 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Weight can not be more than machine weighing limit !.
+        ///   Looks up a localized string similar to Weight can not be more than max weight {0} !.
         /// </summary>
         internal static string MAX_WEIGHT {
             get {
@@ -234,9 +225,9 @@ namespace HitechTMS.Resource {
         /// <summary>
         ///   Looks up a localized string similar to Net Weight.
         /// </summary>
-        internal static string NETWEIGHT {
+        internal static string NET_WEIGHT {
             get {
-                return ResourceManager.GetString("NETWEIGHT", resourceCulture);
+                return ResourceManager.GetString("NET_WEIGHT", resourceCulture);
             }
         }
         
@@ -268,6 +259,15 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gross weight and Tare weight can not be same!.
+        /// </summary>
+        internal static string SAME_GROSS_AND_TARE_WEIGHT {
+            get {
+                return ResourceManager.GetString("SAME_GROSS_AND_TARE_WEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to System error!.
         /// </summary>
         internal static string SYS_ERR {
@@ -295,15 +295,6 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tare Weight.
-        /// </summary>
-        internal static string TAREWEIGHT {
-            get {
-                return ResourceManager.GetString("TAREWEIGHT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Time In.
         /// </summary>
         internal static string TIMEIN {
@@ -327,6 +318,15 @@ namespace HitechTMS.Resource {
         internal static string TRUCK {
             get {
                 return ResourceManager.GetString("TRUCK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Truck can not be blank!.
+        /// </summary>
+        internal static string TRUCK_CAN_NOT_BLANK {
+            get {
+                return ResourceManager.GetString("TRUCK_CAN_NOT_BLANK", resourceCulture);
             }
         }
         

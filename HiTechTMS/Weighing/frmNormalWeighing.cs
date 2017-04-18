@@ -139,6 +139,7 @@ namespace HitechTMS.Weighing
             {
                 if(txtTruck.Text.Trim().Length < 1)
                 {
+                    errProvWeight.SetError(txtTruck,_dbGetResourceCaption.GetStringValue("TRUCK_CAN_NOT_BLANK"));
                     return;
                 }
                 List<transNormalWeight> existsQuery = new List<transNormalWeight>();
@@ -729,7 +730,7 @@ namespace HitechTMS.Weighing
 
                 if(weight > _MaxWeight)
                 {
-                    errProvWeight.SetError(btnWeight, _dbGetResourceCaption.GetStringValue("MAX_WEIGHT"));
+                    errProvWeight.SetError(btnWeight, string.Format(_dbGetResourceCaption.GetStringValue("MAX_WEIGHT"),_MaxWeight));
                     btnWeight.Text = weight.ToString();
                     return;
                 }

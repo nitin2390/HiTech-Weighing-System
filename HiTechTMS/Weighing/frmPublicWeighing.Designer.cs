@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpboxPublicWeighing = new System.Windows.Forms.GroupBox();
             this.grpboxAutoWeight = new System.Windows.Forms.GroupBox();
             this.btnWeight = new System.Windows.Forms.Button();
@@ -116,7 +116,7 @@
             this.btnWeight.Location = new System.Drawing.Point(32, 25);
             this.btnWeight.Name = "btnWeight";
             this.btnWeight.Size = new System.Drawing.Size(136, 71);
-            this.btnWeight.TabIndex = 28;
+            this.btnWeight.TabIndex = 4;
             this.btnWeight.UseVisualStyleBackColor = true;
             this.btnWeight.Click += new System.EventHandler(this.btnWeight_Click);
             // 
@@ -146,29 +146,30 @@
             // 
             // gridSupplierTransporter
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSupplierTransporter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridSupplierTransporter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gridSupplierTransporter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridSupplierTransporter.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridSupplierTransporter.DefaultCellStyle = dataGridViewCellStyle8;
             this.gridSupplierTransporter.Location = new System.Drawing.Point(22, 431);
             this.gridSupplierTransporter.Name = "gridSupplierTransporter";
             this.gridSupplierTransporter.RowTemplate.Height = 24;
             this.gridSupplierTransporter.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gridSupplierTransporter.Size = new System.Drawing.Size(1112, 243);
             this.gridSupplierTransporter.TabIndex = 58;
+            this.gridSupplierTransporter.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridSupplierTransporter_CellMouseClick);
             // 
             // lblTruck
             // 
@@ -206,7 +207,9 @@
             this.txtTruck.MaxLength = 12;
             this.txtTruck.Name = "txtTruck";
             this.txtTruck.Size = new System.Drawing.Size(193, 22);
-            this.txtTruck.TabIndex = 49;
+            this.txtTruck.TabIndex = 1;
+            this.txtTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTruck_KeyDown);
+            this.txtTruck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTruck_KeyPress);
             // 
             // lblMiscellaneous
             // 
@@ -224,7 +227,8 @@
             this.txtMiscellaneous1.MaxLength = 25;
             this.txtMiscellaneous1.Name = "txtMiscellaneous1";
             this.txtMiscellaneous1.Size = new System.Drawing.Size(395, 22);
-            this.txtMiscellaneous1.TabIndex = 51;
+            this.txtMiscellaneous1.TabIndex = 3;
+            this.txtMiscellaneous1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMiscellaneous1_KeyDown);
             // 
             // txtMiscellaneous
             // 
@@ -232,7 +236,8 @@
             this.txtMiscellaneous.MaxLength = 25;
             this.txtMiscellaneous.Name = "txtMiscellaneous";
             this.txtMiscellaneous.Size = new System.Drawing.Size(395, 22);
-            this.txtMiscellaneous.TabIndex = 50;
+            this.txtMiscellaneous.TabIndex = 2;
+            this.txtMiscellaneous.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMiscellaneous_KeyDown);
             // 
             // grpboxOperation
             // 
@@ -252,7 +257,7 @@
             this.btnTicket.Location = new System.Drawing.Point(15, 147);
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.Size = new System.Drawing.Size(112, 52);
-            this.btnTicket.TabIndex = 20;
+            this.btnTicket.TabIndex = 8;
             this.btnTicket.Text = "&Ticket";
             this.btnTicket.UseVisualStyleBackColor = true;
             this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
@@ -262,7 +267,7 @@
             this.btnSave.Location = new System.Drawing.Point(151, 55);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(112, 52);
-            this.btnSave.TabIndex = 17;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -272,7 +277,7 @@
             this.btnExit.Location = new System.Drawing.Point(151, 147);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(112, 52);
-            this.btnExit.TabIndex = 19;
+            this.btnExit.TabIndex = 9;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -282,7 +287,7 @@
             this.btnAddNew.Location = new System.Drawing.Point(15, 56);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(112, 52);
-            this.btnAddNew.TabIndex = 16;
+            this.btnAddNew.TabIndex = 6;
             this.btnAddNew.Text = "&Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
@@ -435,15 +440,16 @@
             this.txtGrossWeight.Location = new System.Drawing.Point(515, 124);
             this.txtGrossWeight.Name = "txtGrossWeight";
             this.txtGrossWeight.Size = new System.Drawing.Size(148, 22);
-            this.txtGrossWeight.TabIndex = 14;
+            this.txtGrossWeight.TabIndex = 5;
             this.txtGrossWeight.TextChanged += new System.EventHandler(this.txtGrossWeight_TextChanged);
+            this.txtGrossWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txtGrossWeight_Validating);
             // 
             // txtTareWeight
             // 
             this.txtTareWeight.Location = new System.Drawing.Point(515, 55);
             this.txtTareWeight.Name = "txtTareWeight";
             this.txtTareWeight.Size = new System.Drawing.Size(148, 22);
-            this.txtTareWeight.TabIndex = 13;
+            this.txtTareWeight.TabIndex = 4;
             this.txtTareWeight.TextChanged += new System.EventHandler(this.txtTareWeight_TextChanged);
             this.txtTareWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txtTareWeight_Validating);
             // 

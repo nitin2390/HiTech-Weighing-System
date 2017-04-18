@@ -23,7 +23,7 @@ namespace HitechTMS.Classes
                 str = ht.ReadSerialPort().Replace("\u0002", "").Replace("\u0003", "").Replace("\r", "");
                 */
 
-                str = "123456";
+                str = "110";
 
                 if (double.TryParse(str, out ReadSerialPortValue))
                     return ReadSerialPortValue;

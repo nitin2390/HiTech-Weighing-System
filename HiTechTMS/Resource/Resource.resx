@@ -156,9 +156,6 @@
   <data name="ERR_EMAIL_CHK_CONFIG" xml:space="preserve">
     <value>Error in email sending. Please check email configuration settings!</value>
   </data>
-  <data name="GROSSWEIGHT" xml:space="preserve">
-    <value>Gross Weight</value>
-  </data>
   <data name="GROSS_WEIGHT" xml:space="preserve">
     <value>Gross Weight</value>
   </data>
@@ -169,12 +166,12 @@
     <value>Information!</value>
   </data>
   <data name="MAX_WEIGHT" xml:space="preserve">
-    <value>Weight can not be more than machine weighing limit !</value>
+    <value>Weight can not be more than max weight {0} !</value>
   </data>
   <data name="MISCELLANEOUS" xml:space="preserve">
     <value>Miscellaneous</value>
   </data>
-  <data name="NETWEIGHT" xml:space="preserve">
+  <data name="NET_WEIGHT" xml:space="preserve">
     <value>Net Weight</value>
   </data>
   <data name="PRD_CD_CAN_NOT_BLANK" xml:space="preserve">
@@ -186,11 +183,11 @@
   <data name="RECORDS_NOT_FOUND" xml:space="preserve">
     <value>Records not found!</value>
   </data>
+  <data name="SAME_GROSS_AND_TARE_WEIGHT" xml:space="preserve">
+    <value>Gross weight and Tare weight can not be same!</value>
+  </data>
   <data name="SYS_ERR" xml:space="preserve">
     <value>System error!</value>
-  </data>
-  <data name="TAREWEIGHT" xml:space="preserve">
-    <value>Tare Weight</value>
   </data>
   <data name="TARE_WEIGHT" xml:space="preserve">
     <value>Tare Weight</value>
@@ -206,6 +203,9 @@
   </data>
   <data name="TRUCK" xml:space="preserve">
     <value>Truck</value>
+  </data>
+  <data name="TRUCK_CAN_NOT_BLANK" xml:space="preserve">
+    <value>Truck can not be blank!</value>
   </data>
   <data name="USER_NAME_PASSWORD_MISTMATCH" xml:space="preserve">
     <value>User name and Password doesn't match!</value>
