@@ -297,5 +297,13 @@ namespace HitechTMS
         {
 
         }
+
+        private void pendingFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPendingFile objfrmSupplierFile = new frmPendingFile(FrmName.Supplier, _nextFormPrincipal);
+            objfrmSupplierFile.Text = "Pending File";
+            objfrmSupplierFile.StartPosition = FormStartPosition.CenterParent;
+            objfrmSupplierFile.ShowDialog();
+        }
     }
 }

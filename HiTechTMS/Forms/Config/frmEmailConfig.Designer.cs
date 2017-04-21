@@ -271,6 +271,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEmailConfig";
+            this.Tag = "EmailConfig";
             this.Text = "frmEmailConfig";
             this.Load += new System.EventHandler(this.frmEmailConfig_Load);
             this.groupBox1.ResumeLayout(false);

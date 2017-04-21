@@ -678,6 +678,7 @@
             this.ClientSize = new System.Drawing.Size(1087, 743);
             this.Controls.Add(this.grpboxNormalWeighing);
             this.Name = "frmNormalWeighing";
+            this.Tag = "NormalWeighing";
             this.Text = "frmNormalWeighing";
             this.grpboxNormalWeighing.ResumeLayout(false);
             this.grpboxNormalWeighing.PerformLayout();

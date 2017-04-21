@@ -171,14 +171,23 @@
   <data name="MISCELLANEOUS" xml:space="preserve">
     <value>Miscellaneous</value>
   </data>
+  <data name="MULTI_WEIGHING" xml:space="preserve">
+    <value>Multi Weighing</value>
+  </data>
   <data name="NET_WEIGHT" xml:space="preserve">
     <value>Net Weight</value>
+  </data>
+  <data name="NORMAL_WEIGHING" xml:space="preserve">
+    <value>Normal Weighing</value>
   </data>
   <data name="PRD_CD_CAN_NOT_BLANK" xml:space="preserve">
     <value>Product code can't be blank</value>
   </data>
   <data name="PRD_NM_CAN_NOT_BLANK" xml:space="preserve">
     <value>Product name can't be blank</value>
+  </data>
+  <data name="PUBLIC_WEIGHING" xml:space="preserve">
+    <value>Public Weighing</value>
   </data>
   <data name="RECORDS_NOT_FOUND" xml:space="preserve">
     <value>Records not found!</value>

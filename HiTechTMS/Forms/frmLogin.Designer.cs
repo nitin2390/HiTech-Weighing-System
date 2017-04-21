@@ -113,7 +113,7 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 35);
             this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "LogIn";
+            this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -134,6 +134,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "Login";
             this.Text = "HiTech Truck Management System";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

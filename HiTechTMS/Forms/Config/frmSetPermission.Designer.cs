@@ -31,16 +31,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblRecCount = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.gridUser = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblFrmName = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUser)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,26 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add/Edit User";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(144, 102);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.TabIndex = 33;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(143, 48);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 32;
             // 
             // lblRecCount
             // 
@@ -141,25 +161,6 @@
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(39, 51);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(77, 17);
-            this.lblUserName.TabIndex = 1;
-            this.lblUserName.Text = "User name";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(143, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 32;
-            // 
             // lblFrmName
             // 
             this.lblFrmName.AutoSize = true;
@@ -169,15 +170,14 @@
             this.lblFrmName.TabIndex = 3;
             this.lblFrmName.Text = "From Name";
             // 
-            // comboBox2
+            // lblUserName
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(144, 102);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 33;
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Location = new System.Drawing.Point(39, 51);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(77, 17);
+            this.lblUserName.TabIndex = 1;
+            this.lblUserName.Text = "User name";
             // 
             // frmSetPermission
             // 
@@ -186,6 +186,7 @@
             this.ClientSize = new System.Drawing.Size(823, 535);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmSetPermission";
+            this.Tag = "SetPermission";
             this.Text = "frmSetPermission";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

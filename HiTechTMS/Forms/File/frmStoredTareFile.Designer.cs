@@ -383,7 +383,8 @@
             this.Controls.Add(this.grpboxCreateEditStoredTareRecords);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmStoredTareFile";
-            this.Text = "StoredTareFile";
+            this.Tag = "StoredTareFile";
+            this.Text = "frmStoredTareFile";
             this.grpboxCreateEditStoredTareRecords.ResumeLayout(false);
             this.grpboxCreateEditStoredTareRecords.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridStoredTare)).EndInit();

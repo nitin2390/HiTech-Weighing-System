@@ -380,7 +380,8 @@
             this.Controls.Add(this.grpboxSupplierFile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSupplierTransportFile";
-            this.Text = "SupplierFile";
+            this.Tag = "SupplierFile";
+            this.Text = "frmSupplierFile";
             this.grpboxSupplierFile.ResumeLayout(false);
             this.grpboxSupplierFile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).EndInit();

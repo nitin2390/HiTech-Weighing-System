@@ -239,10 +239,10 @@ namespace HitechTMS.Weighing
                 List<transPublicWeight> transPublicWeightQuery = new List<transPublicWeight>();
                 _saveClick = true;
                 transPublicWeightQuery = _dbObj.transPublicWeight.Where(x => x.ProdInOut == (byte)_enumProductInOut && x.IsPending == 0).ToList();
-                gridSupplierTransporter.DataSource = transPublicWeightQuery;
+                gridPublicWeghing.DataSource = transPublicWeightQuery;
                 setHeaderAndEnableDisable();
-                lblRecordsCount.Text = gridSupplierTransporter.RowCount.ToString();
-                gridSupplierTransporter.Update();
+                lblRecordsCount.Text = gridPublicWeghing.RowCount.ToString();
+                gridPublicWeghing.Update();
             }
             catch (Exception ex)
             {
@@ -255,27 +255,27 @@ namespace HitechTMS.Weighing
             try
             {
 
-                if (gridSupplierTransporter.ColumnCount > 0)
+                if (gridPublicWeghing.ColumnCount > 0)
                 {
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.Truck].DisplayIndex = 0;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.Truck].Width = 100;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.Truck].HeaderText = _dbGetResourceCaption.GetStringValue("TRUCK");
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.Truck].DisplayIndex = 0;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.Truck].Width = 100;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.Truck].HeaderText = _dbGetResourceCaption.GetStringValue("TRUCK");
 
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.Miscellaneous].DisplayIndex = 1;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.Miscellaneous].Width = 162;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.Miscellaneous].HeaderText = _dbGetResourceCaption.GetStringValue("MISCELLANEOUS");
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.Miscellaneous].DisplayIndex = 1;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.Miscellaneous].Width = 162;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.Miscellaneous].HeaderText = _dbGetResourceCaption.GetStringValue("MISCELLANEOUS");
 
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.TareWeight].DisplayIndex = 2;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.TareWeight].Width = 135;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.TareWeight].HeaderText = _dbGetResourceCaption.GetStringValue("TARE_WEIGHT");
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.TareWeight].DisplayIndex = 2;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.TareWeight].Width = 135;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.TareWeight].HeaderText = _dbGetResourceCaption.GetStringValue("TARE_WEIGHT");
 
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.GrossWeight].DisplayIndex = 3;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.GrossWeight].Width = 135;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.GrossWeight].HeaderText = _dbGetResourceCaption.GetStringValue("GROSS_WEIGHT");
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.GrossWeight].DisplayIndex = 3;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.GrossWeight].Width = 135;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.GrossWeight].HeaderText = _dbGetResourceCaption.GetStringValue("GROSS_WEIGHT");
 
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.NetWeight].DisplayIndex = 4;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.NetWeight].Width = 135;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.NetWeight].HeaderText = _dbGetResourceCaption.GetStringValue("NET_WEIGHT");
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.NetWeight].DisplayIndex = 4;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.NetWeight].Width = 135;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.NetWeight].HeaderText = _dbGetResourceCaption.GetStringValue("NET_WEIGHT");
 
                     //gridSupplierTransporter.Columns[(int)enumTransPublicWeight.DateIn].DisplayIndex = 5;
                     //gridSupplierTransporter.Columns[(int)enumTransPublicWeight.DateIn].HeaderText = _dbGetResourceCaption.GetStringValue("DATEIN");
@@ -289,21 +289,21 @@ namespace HitechTMS.Weighing
                     //gridSupplierTransporter.Columns[(int)enumTransPublicWeight.TimeOut].DisplayIndex = 8;
                     //gridSupplierTransporter.Columns[(int)enumTransPublicWeight.TimeOut].HeaderText = _dbGetResourceCaption.GetStringValue("TIMEOUT");
 
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.Id].Visible = false;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.Mode].Visible = false;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.AddedDate].Visible = false;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.UpdatedDate].Visible = false;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.IsPending].Visible = false;
-                    gridSupplierTransporter.Columns[(int)enumTransPublicWeight.ProdInOut].Visible = false;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.Id].Visible = false;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.Mode].Visible = false;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.AddedDate].Visible = false;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.UpdatedDate].Visible = false;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.IsPending].Visible = false;
+                    gridPublicWeghing.Columns[(int)enumTransPublicWeight.ProdInOut].Visible = false;
                 }
 
 
-                gridSupplierTransporter.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                gridPublicWeghing.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 
-                gridSupplierTransporter.AllowUserToResizeColumns = false;
-                gridSupplierTransporter.AllowUserToResizeRows = false;
+                gridPublicWeghing.AllowUserToResizeColumns = false;
+                gridPublicWeghing.AllowUserToResizeRows = false;
 
-                gridSupplierTransporter.ReadOnly = true;
+                gridPublicWeghing.ReadOnly = true;
             }
             catch (Exception ex)
             {
@@ -469,7 +469,7 @@ namespace HitechTMS.Weighing
         {
             try
             {
-                DataGridViewRow row = gridSupplierTransporter.Rows[rowIndex];
+                DataGridViewRow row = gridPublicWeghing.Rows[rowIndex];
                 _transPublicWeightID = (Guid)row.Cells[(int)enumTransPublicWeight.Id].Value;
 
                 var varMiscellaneous = row.Cells[(int)enumTransPublicWeight.Miscellaneous].Value.ToString().Split(';');

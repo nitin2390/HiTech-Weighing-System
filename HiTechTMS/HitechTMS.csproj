@@ -160,6 +160,12 @@
     <Compile Include="Forms\Config\frmSetPermission.Designer.cs">
       <DependentUpon>frmSetPermission.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\File\frmPendingFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\File\frmPendingFile.Designer.cs">
+      <DependentUpon>frmPendingFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\File\frmSupplierTrasnportFile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,12 @@
     </Compile>
     <Compile Include="Forms\File\frmStoredTareFile.Designer.cs">
       <DependentUpon>frmStoredTareFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\File\frmTransactionFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\File\frmTransactionFile.Designer.cs">
+      <DependentUpon>frmTransactionFile.cs</DependentUpon>
     </Compile>
     <Compile Include="keys\ProductKeys.cs" />
     <Compile Include="Reports\old\challanreportproduct.cs">
@@ -418,11 +430,17 @@
     <EmbeddedResource Include="Forms\Config\frmSetPermission.resx">
       <DependentUpon>frmSetPermission.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\File\frmPendingFile.resx">
+      <DependentUpon>frmPendingFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\File\frmStoredTareFile.resx">
       <DependentUpon>frmStoredTareFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\File\frmSupplierTrasnportFile.resx">
       <DependentUpon>frmSupplierTrasnportFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\File\frmTransactionFile.resx">
+      <DependentUpon>frmTransactionFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\old\challanreportproduct.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

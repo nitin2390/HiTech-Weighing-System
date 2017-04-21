@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpboxPublicWeighing = new System.Windows.Forms.GroupBox();
             this.grpboxAutoWeight = new System.Windows.Forms.GroupBox();
             this.btnWeight = new System.Windows.Forms.Button();
             this.lblRecCount = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
-            this.gridSupplierTransporter = new System.Windows.Forms.DataGridView();
+            this.gridPublicWeghing = new System.Windows.Forms.DataGridView();
             this.lblTruck = new System.Windows.Forms.Label();
             this.txtMode = new System.Windows.Forms.Label();
             this.lblMode = new System.Windows.Forms.Label();
@@ -70,12 +70,14 @@
             this.txtTimeIn = new System.Windows.Forms.TextBox();
             this.txtDateIn = new System.Windows.Forms.TextBox();
             this.errProvWeight = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.grpboxPublicWeighing.SuspendLayout();
             this.grpboxAutoWeight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPublicWeghing)).BeginInit();
             this.grpboxOperation.SuspendLayout();
             this.grpboxWeightInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errProvWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpboxPublicWeighing
@@ -83,7 +85,7 @@
             this.grpboxPublicWeighing.Controls.Add(this.grpboxAutoWeight);
             this.grpboxPublicWeighing.Controls.Add(this.lblRecCount);
             this.grpboxPublicWeighing.Controls.Add(this.lblRecordsCount);
-            this.grpboxPublicWeighing.Controls.Add(this.gridSupplierTransporter);
+            this.grpboxPublicWeighing.Controls.Add(this.gridPublicWeghing);
             this.grpboxPublicWeighing.Controls.Add(this.lblTruck);
             this.grpboxPublicWeighing.Controls.Add(this.txtMode);
             this.grpboxPublicWeighing.Controls.Add(this.lblMode);
@@ -144,32 +146,32 @@
             this.lblRecordsCount.TabIndex = 56;
             this.lblRecordsCount.Text = "Count";
             // 
-            // gridSupplierTransporter
+            // gridPublicWeghing
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSupplierTransporter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.gridSupplierTransporter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridSupplierTransporter.DefaultCellStyle = dataGridViewCellStyle8;
-            this.gridSupplierTransporter.Location = new System.Drawing.Point(22, 431);
-            this.gridSupplierTransporter.Name = "gridSupplierTransporter";
-            this.gridSupplierTransporter.RowTemplate.Height = 24;
-            this.gridSupplierTransporter.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gridSupplierTransporter.Size = new System.Drawing.Size(1112, 243);
-            this.gridSupplierTransporter.TabIndex = 58;
-            this.gridSupplierTransporter.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridSupplierTransporter_CellMouseClick);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPublicWeghing.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridPublicWeghing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridPublicWeghing.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gridPublicWeghing.Location = new System.Drawing.Point(22, 431);
+            this.gridPublicWeghing.Name = "gridPublicWeghing";
+            this.gridPublicWeghing.RowTemplate.Height = 24;
+            this.gridPublicWeghing.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gridPublicWeghing.Size = new System.Drawing.Size(1112, 243);
+            this.gridPublicWeghing.TabIndex = 58;
+            this.gridPublicWeghing.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridSupplierTransporter_CellMouseClick);
             // 
             // lblTruck
             // 
@@ -496,15 +498,17 @@
             this.ClientSize = new System.Drawing.Size(1178, 734);
             this.Controls.Add(this.grpboxPublicWeighing);
             this.Name = "frmPublicWeighing";
-            this.Text = "PublicWeighing";
+            this.Tag = "PublicWeighing";
+            this.Text = "frmPublicWeighing";
             this.grpboxPublicWeighing.ResumeLayout(false);
             this.grpboxPublicWeighing.PerformLayout();
             this.grpboxAutoWeight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPublicWeghing)).EndInit();
             this.grpboxOperation.ResumeLayout(false);
             this.grpboxWeightInfo.ResumeLayout(false);
             this.grpboxWeightInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errProvWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -546,9 +550,10 @@
         private System.Windows.Forms.TextBox txtDateIn;
         private System.Windows.Forms.Label lblRecCount;
         private System.Windows.Forms.Label lblRecordsCount;
-        private System.Windows.Forms.DataGridView gridSupplierTransporter;
+        private System.Windows.Forms.DataGridView gridPublicWeghing;
         private System.Windows.Forms.ErrorProvider errProvWeight;
         private System.Windows.Forms.GroupBox grpboxAutoWeight;
         private System.Windows.Forms.Button btnWeight;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

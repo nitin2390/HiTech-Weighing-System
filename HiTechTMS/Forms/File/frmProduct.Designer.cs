@@ -268,7 +268,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Product";
+            this.Tag = "Product";
+            this.Text = "frmProduct";
             this.grpboxProduct.ResumeLayout(false);
             this.grpboxProduct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduct)).EndInit();

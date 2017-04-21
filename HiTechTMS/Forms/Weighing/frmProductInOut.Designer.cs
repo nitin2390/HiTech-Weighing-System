@@ -115,6 +115,7 @@
             this.Controls.Add(this.grpBoxProductInOut);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProductInOut";
+            this.Tag = "ProductInOut";
             this.Text = "frmProductInOut";
             this.grpBoxProductInOut.ResumeLayout(false);
             this.grpBoxProductInOut.PerformLayout();

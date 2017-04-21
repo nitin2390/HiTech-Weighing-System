@@ -147,7 +147,7 @@
             this.tabMode.Margin = new System.Windows.Forms.Padding(4);
             this.tabMode.Name = "tabMode";
             this.tabMode.Padding = new System.Windows.Forms.Padding(4);
-            this.tabMode.Size = new System.Drawing.Size(908, 334);
+            this.tabMode.Size = new System.Drawing.Size(929, 509);
             this.tabMode.TabIndex = 0;
             this.tabMode.Text = "Mode";
             this.tabMode.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             this.tabWeighing.Margin = new System.Windows.Forms.Padding(4);
             this.tabWeighing.Name = "tabWeighing";
             this.tabWeighing.Padding = new System.Windows.Forms.Padding(4);
-            this.tabWeighing.Size = new System.Drawing.Size(908, 334);
+            this.tabWeighing.Size = new System.Drawing.Size(929, 509);
             this.tabWeighing.TabIndex = 1;
             this.tabWeighing.Text = "Weighing";
             this.tabWeighing.UseVisualStyleBackColor = true;
@@ -257,6 +257,7 @@
             this.pendingFileToolStripMenuItem.Name = "pendingFileToolStripMenuItem";
             this.pendingFileToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.pendingFileToolStripMenuItem.Text = "Pending File";
+            this.pendingFileToolStripMenuItem.Click += new System.EventHandler(this.pendingFileToolStripMenuItem_Click);
             // 
             // deletePendingToolStripMenuItem
             // 
@@ -376,14 +377,14 @@
             // emailConfigToolStripMenuItem
             // 
             this.emailConfigToolStripMenuItem.Name = "emailConfigToolStripMenuItem";
-            this.emailConfigToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.emailConfigToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.emailConfigToolStripMenuItem.Text = "Email Config";
             this.emailConfigToolStripMenuItem.Click += new System.EventHandler(this.emailConfigToolStripMenuItem_Click);
             // 
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.addUserToolStripMenuItem.Text = "Add User";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
@@ -399,6 +400,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Tag = "main";
             this.Text = "HiTech Weighing System";
             this.UserIsAllowed += new System.EventHandler(this.frmMain_UserIsAllowed);
             this.Load += new System.EventHandler(this.frmMain_Load);

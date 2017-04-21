@@ -188,3 +188,5 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\De
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMSSecurity.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMSSecurity.pdb
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.Forms.Config.frmSetPermission.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.Forms.File.frmTransactionFile.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.File.frmPendingFile.resources

@@ -48,7 +48,8 @@
             this.ClientSize = new System.Drawing.Size(277, 134);
             this.Controls.Add(this.btnBackup);
             this.Name = "frmDatabaseBackup";
-            this.Text = "DatabaseBackup";
+            this.Tag = "DatabaseBackup";
+            this.Text = "frmDatabaseBackup";
             this.ResumeLayout(false);
 
         }

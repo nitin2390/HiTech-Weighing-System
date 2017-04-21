@@ -223,11 +223,29 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Multi Weighing.
+        /// </summary>
+        internal static string MULTI_WEIGHING {
+            get {
+                return ResourceManager.GetString("MULTI_WEIGHING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Net Weight.
         /// </summary>
         internal static string NET_WEIGHT {
             get {
                 return ResourceManager.GetString("NET_WEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal Weighing.
+        /// </summary>
+        internal static string NORMAL_WEIGHING {
+            get {
+                return ResourceManager.GetString("NORMAL_WEIGHING", resourceCulture);
             }
         }
         
@@ -246,6 +264,15 @@ namespace HitechTMS.Resource {
         internal static string PRD_NM_CAN_NOT_BLANK {
             get {
                 return ResourceManager.GetString("PRD_NM_CAN_NOT_BLANK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Public Weighing.
+        /// </summary>
+        internal static string PUBLIC_WEIGHING {
+            get {
+                return ResourceManager.GetString("PUBLIC_WEIGHING", resourceCulture);
             }
         }
         
