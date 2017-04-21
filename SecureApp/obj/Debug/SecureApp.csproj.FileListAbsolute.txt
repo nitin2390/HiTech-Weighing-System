@@ -1,0 +1,27 @@
+G:\New_CSharp\SecureApp\SecureApp\obj\Debug\ResolveAssemblyReference.cache
+G:\New_CSharp\SecureApp\SecureApp\obj\Debug\SecureApp.Form1.resources
+G:\New_CSharp\SecureApp\SecureApp\obj\Debug\GenerateResource-ResGen.read.1.tlog
+G:\New_CSharp\SecureApp\SecureApp\obj\Debug\GenerateResource-ResGen.write.1.tlog
+G:\New_CSharp\SecureApp\SecureApp\bin\Debug\SecureApp.dll
+G:\New_CSharp\SecureApp\SecureApp\bin\Debug\SecureApp.pdb
+G:\New_CSharp\SecureApp\SecureApp\obj\Debug\SecureApp.dll
+G:\New_CSharp\SecureApp\SecureApp\obj\Debug\SecureApp.pdb
+G:\New_CSharp\SecureApp\SecureApp\obj\Debug\SecureApp.Properties.Resources.resources
+G:\New_CSharp\SecureApp\SecureApp\obj\Debug\GenerateResource-ResGen.read.4.tlog
+C:\Users\nitingupta\Downloads\Trial\2\Make Your Application with Trial Version\SecureApp\SecureApp\bin\Debug\SecureApp.dll
+C:\Users\nitingupta\Downloads\Trial\2\Make Your Application with Trial Version\SecureApp\SecureApp\bin\Debug\SecureApp.pdb
+C:\Users\nitingupta\Downloads\Trial\2\Make Your Application with Trial Version\SecureApp\SecureApp\obj\Debug\SecureApp.Form1.resources
+C:\Users\nitingupta\Downloads\Trial\2\Make Your Application with Trial Version\SecureApp\SecureApp\obj\Debug\SecureApp.Properties.Resources.resources
+C:\Users\nitingupta\Downloads\Trial\2\Make Your Application with Trial Version\SecureApp\SecureApp\obj\Debug\SecureApp.csproj.GenerateResource.Cache
+C:\Users\nitingupta\Downloads\Trial\2\Make Your Application with Trial Version\SecureApp\SecureApp\obj\Debug\SecureApp.dll
+C:\Users\nitingupta\Downloads\Trial\2\Make Your Application with Trial Version\SecureApp\SecureApp\obj\Debug\SecureApp.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\bin\Debug\SecureApp.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\bin\Debug\SecureApp.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Debug\SecureApp.csprojResolveAssemblyReference.cache
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Debug\SecureApp.Form1.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Debug\SecureApp.Properties.Resources.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Debug\SecureApp.csproj.GenerateResource.Cache
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Debug\SecureApp.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Debug\SecureApp.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\bin\Debug\SharedLibrary.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\bin\Debug\SharedLibrary.pdb

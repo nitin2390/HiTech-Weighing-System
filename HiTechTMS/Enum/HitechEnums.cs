@@ -5,7 +5,9 @@
         public enum AppRole
         {
             Admin = 0,
-            ApplicationUser = 1 
+            ApplicationUser = 1,
+            SuperAdmin =2,
+            Supervisor =3 
         }
 
         public enum FrmName

@@ -7,9 +7,14 @@ namespace SharedLibrary
 {
     public class EncryptionAndDecryption
     {
+        public EncryptionAndDecryption()
+        {
+            EncryptionKey = "MAKV2SPBNI99212";
+        }
+        public string EncryptionKey { get; set; }
         public string Encrypt(string clearText)
         {
-            string EncryptionKey = "MAKV2SPBNI99212";
+             
             byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
             using (Aes encryptor = Aes.Create())
             {
@@ -30,7 +35,10 @@ namespace SharedLibrary
         }
         public string Decrypt(string cipherText)
         {
-            string EncryptionKey = "MAKV2SPBNI99212";
+            if(cipherText ==null)
+            {
+                return null;
+            }
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
             using (Aes encryptor = Aes.Create())
             {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Security.Principal;
 
-namespace OD.Forms.Security
+namespace HitechTMSSecurity
 {
 	/// <summary>
 	/// 

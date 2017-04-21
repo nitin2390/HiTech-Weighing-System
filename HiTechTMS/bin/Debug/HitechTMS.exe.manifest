@@ -55,7 +55,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BaQduCNs1RybSa9aQX3Gh5syKSloYrj+/0nUU3NJAdk=</dsig:DigestValue>
+        <dsig:DigestValue>sBQxaZ9BCbVJo736B5eQbjtO1qkM0R899FqP/NH+nh0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -259,7 +259,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pGdZk1w8jVrTheIuJorjZghsEG5Ccyoipnmh1gb9bCE=</dsig:DigestValue>
+        <dsig:DigestValue>UZ2hZ3XigOfKpiI79jYU2sLUxCnP32HgLsdiXCPIEb0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -300,14 +300,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HitechTMS.exe" size="10910160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HitechTMS.exe" size="10916304">
       <assemblyIdentity name="HitechTMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wtaxbv8Y3uq9i1dVwKc6gBMutLqhOhhjcAs5bv/+RjQ=</dsig:DigestValue>
+        <dsig:DigestValue>38nHW46dxhaw5fHf9ACCI1WplqcDBHgqJEc7hbT7SV4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HitechTMSActivation.dll" size="25088">
+      <assemblyIdentity name="HitechTMSActivation" version="1.0.0.5" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>x4BiIh9qxI8/ZIu0qJrfwsSFXCd79QhU6oecpm7miMw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HitechTMSSecurity.dll" size="8192">
+      <assemblyIdentity name="HitechTMSSecurity" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>OaE1jRe/diWvIQk5R5T2bASoFT3MmwPX56c0pVf1+8Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -384,18 +408,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OD.Forms.Security.dll" size="8192">
-      <assemblyIdentity name="OD.Forms.Security" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>H1aPx3mEF/bX4NpOEaI0WitnI8+Mpcu8vsOZAZ4hoHg=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SharedLibrary.dll" size="22528">
       <assemblyIdentity name="SharedLibrary" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -403,7 +415,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>a+uTm90wcjaVuFSmrT1TNyD/imzUPTK9QTcnKkMym+Q=</dsig:DigestValue>
+        <dsig:DigestValue>NyiPMNsWh0lw0qCvO5B2jvalD2dm11mUafvN+q2fh+o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -461,7 +473,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>O+nHVfhYfs4WrhlgLlbN7VS+PA3y0STtmKadasuIHmw=</dsig:DigestValue>
+      <dsig:DigestValue>dKjNbXLdQEMI8zPPtBVzuo7Wtxw+Co0ECY4HaQ+p36s=</dsig:DigestValue>
     </hash>
   </file>
   <file name="HitechTMS.exe.config" size="2689">

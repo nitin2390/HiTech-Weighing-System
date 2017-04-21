@@ -16,7 +16,7 @@ namespace HitechTMS.Classes
             try
             {
                 string str;
-
+                
                 /* Uncomment After developement complete 
                 HyperTerminalAdapter ht = new HyperTerminalAdapter();
                 ht.Connect();

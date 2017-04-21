@@ -57,7 +57,10 @@ namespace HitechTMS.Classes
 
                 else if (objEnums == HitechEnums.FrmName.AddEditUser)
                 {
-                    var query = dbObj.UserRoleTypes.Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Name, x.RoleName }).Select(x => x);
+                    var query = dbObj.UserRoleTypes
+                        .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Name, x.RoleName })
+                        .Where(x => x.RoleName != HitechEnums.AppRole.SuperAdmin.ToString())
+                        .Select(x => x);
                     dt = obj.ConvertToDataTable(query.ToList());
                     this.FileName = @"\User.xls";
                     this.WorkSheetName = "Details";
