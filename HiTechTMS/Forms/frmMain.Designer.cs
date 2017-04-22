@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.Check = new System.Windows.Forms.Button();
-            this.lstSerialPortCommunication = new System.Windows.Forms.ListBox();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnClearList = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabFile = new System.Windows.Forms.TabPage();
-            this.tabMode = new System.Windows.Forms.TabPage();
-            this.tabWeighing = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +41,7 @@
             this.pendingFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deletePendingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.switchUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.weighingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,102 +59,8 @@
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emailConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1.SuspendLayout();
-            this.tabMode.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Check
-            // 
-            this.Check.Location = new System.Drawing.Point(8, 18);
-            this.Check.Margin = new System.Windows.Forms.Padding(4);
-            this.Check.Name = "Check";
-            this.Check.Size = new System.Drawing.Size(100, 28);
-            this.Check.TabIndex = 18;
-            this.Check.Text = "Check";
-            this.Check.UseVisualStyleBackColor = true;
-            this.Check.Click += new System.EventHandler(this.Check_Click);
-            // 
-            // lstSerialPortCommunication
-            // 
-            this.lstSerialPortCommunication.FormattingEnabled = true;
-            this.lstSerialPortCommunication.ItemHeight = 16;
-            this.lstSerialPortCommunication.Location = new System.Drawing.Point(11, 90);
-            this.lstSerialPortCommunication.Margin = new System.Windows.Forms.Padding(4);
-            this.lstSerialPortCommunication.Name = "lstSerialPortCommunication";
-            this.lstSerialPortCommunication.Size = new System.Drawing.Size(485, 292);
-            this.lstSerialPortCommunication.TabIndex = 19;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(397, 18);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 28);
-            this.btnClose.TabIndex = 20;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnClearList
-            // 
-            this.btnClearList.Location = new System.Drawing.Point(181, 18);
-            this.btnClearList.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClearList.Name = "btnClearList";
-            this.btnClearList.Size = new System.Drawing.Size(100, 28);
-            this.btnClearList.TabIndex = 21;
-            this.btnClearList.Text = "Clear";
-            this.btnClearList.UseVisualStyleBackColor = true;
-            this.btnClearList.Click += new System.EventHandler(this.btnClearList_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabFile);
-            this.tabControl1.Controls.Add(this.tabMode);
-            this.tabControl1.Controls.Add(this.tabWeighing);
-            this.tabControl1.Location = new System.Drawing.Point(9, 44);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.Padding = new System.Drawing.Point(0, 0);
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(937, 538);
-            this.tabControl1.TabIndex = 22;
-            // 
-            // tabFile
-            // 
-            this.tabFile.Location = new System.Drawing.Point(4, 25);
-            this.tabFile.Margin = new System.Windows.Forms.Padding(4);
-            this.tabFile.Name = "tabFile";
-            this.tabFile.Size = new System.Drawing.Size(929, 509);
-            this.tabFile.TabIndex = 2;
-            this.tabFile.Text = "File";
-            this.tabFile.UseVisualStyleBackColor = true;
-            // 
-            // tabMode
-            // 
-            this.tabMode.Controls.Add(this.Check);
-            this.tabMode.Controls.Add(this.lstSerialPortCommunication);
-            this.tabMode.Controls.Add(this.btnClose);
-            this.tabMode.Controls.Add(this.btnClearList);
-            this.tabMode.Location = new System.Drawing.Point(4, 25);
-            this.tabMode.Margin = new System.Windows.Forms.Padding(4);
-            this.tabMode.Name = "tabMode";
-            this.tabMode.Padding = new System.Windows.Forms.Padding(4);
-            this.tabMode.Size = new System.Drawing.Size(929, 509);
-            this.tabMode.TabIndex = 0;
-            this.tabMode.Text = "Mode";
-            this.tabMode.UseVisualStyleBackColor = true;
-            // 
-            // tabWeighing
-            // 
-            this.tabWeighing.Location = new System.Drawing.Point(4, 25);
-            this.tabWeighing.Margin = new System.Windows.Forms.Padding(4);
-            this.tabWeighing.Name = "tabWeighing";
-            this.tabWeighing.Padding = new System.Windows.Forms.Padding(4);
-            this.tabWeighing.Size = new System.Drawing.Size(929, 509);
-            this.tabWeighing.TabIndex = 1;
-            this.tabWeighing.Text = "Weighing";
-            this.tabWeighing.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -190,6 +89,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
+            this.switchUserToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
@@ -204,7 +104,7 @@
             this.storedTToolStripMenuItem,
             this.transactionPendingFileToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // productFileToolStripMenuItem
@@ -271,10 +171,17 @@
             this.deleteTransactionToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.deleteTransactionToolStripMenuItem.Text = "Delete Transaction";
             // 
+            // switchUserToolStripMenuItem
+            // 
+            this.switchUserToolStripMenuItem.Name = "switchUserToolStripMenuItem";
+            this.switchUserToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.switchUserToolStripMenuItem.Text = "&Switch user";
+            this.switchUserToolStripMenuItem.Click += new System.EventHandler(this.switchUserToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -393,7 +300,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(955, 591);
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -404,8 +310,6 @@
             this.Text = "HiTech Weighing System";
             this.UserIsAllowed += new System.EventHandler(this.frmMain_UserIsAllowed);
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabMode.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -414,14 +318,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button Check;
-        private System.Windows.Forms.ListBox lstSerialPortCommunication;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnClearList;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabFile;
-        private System.Windows.Forms.TabPage tabMode;
-        private System.Windows.Forms.TabPage tabWeighing;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modeToolStripMenuItem;
@@ -451,6 +347,7 @@
         private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem publicToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem multiWeighingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem switchUserToolStripMenuItem;
     }
 }
 

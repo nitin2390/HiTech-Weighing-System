@@ -68,7 +68,7 @@
             this.rdbMultiWeight.Size = new System.Drawing.Size(149, 24);
             this.rdbMultiWeight.TabIndex = 2;
             this.rdbMultiWeight.TabStop = true;
-            this.rdbMultiWeight.Text = "Multi Weghing";
+            this.rdbMultiWeight.Text = "&Multi Weghing";
             this.rdbMultiWeight.UseVisualStyleBackColor = true;
             this.rdbMultiWeight.CheckedChanged += new System.EventHandler(this.rdbMultiWeight_CheckedChanged);
             // 
@@ -81,7 +81,7 @@
             this.rdbPublicWeight.Size = new System.Drawing.Size(160, 24);
             this.rdbPublicWeight.TabIndex = 1;
             this.rdbPublicWeight.TabStop = true;
-            this.rdbPublicWeight.Text = "Public Weghing";
+            this.rdbPublicWeight.Text = "&Public Weghing";
             this.rdbPublicWeight.UseVisualStyleBackColor = true;
             this.rdbPublicWeight.CheckedChanged += new System.EventHandler(this.rdbPublicWeight_CheckedChanged);
             // 
@@ -94,7 +94,7 @@
             this.rdbNormalWeight.Size = new System.Drawing.Size(168, 24);
             this.rdbNormalWeight.TabIndex = 0;
             this.rdbNormalWeight.TabStop = true;
-            this.rdbNormalWeight.Text = "Normal Weghing";
+            this.rdbNormalWeight.Text = "&Normal Weghing";
             this.rdbNormalWeight.UseVisualStyleBackColor = true;
             this.rdbNormalWeight.CheckedChanged += new System.EventHandler(this.rdbNormalWeight_CheckedChanged);
             // 

@@ -35,8 +35,32 @@ namespace HitechTMS.File
             {
                 if (rdbNormalWeight.Checked == true)
                 {
-                   var QueryNormalWeight = _dbObj.transNormalWeight.Where(x => x.IsPending == 0).ToList();
+                    //var query = dbObj.UserRoleTypes
+                    //    .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Name, x.RoleName })
+                    //    .Where(x => x.RoleName != HitechEnums.AppRole.SuperAdmin.ToString())
+                    //    .Select(x => x);
+
+                    var QueryNormalWeight = _dbObj.transNormalWeight
+                        //.Join(_dbObj.Products, pro => pro.)
+                        .Where(x => x.IsPending == 0)
+                        .Select( x => new {
+                            x.Truck,x.ProductCode,
+                            x.SupplierCode,
+                            x.TransporterCode,
+                            x.ChallanNumber, x.ChallanDate,x.ChallanWeight,
+                            x.Miscellaneous,
+                            x.DeliveryNoteN,
+                            x.ProdInOut,
+                            x.TareWeight,
+                            x.GrossWeight,
+                            x.NetWeight,
+                            x.DateIn,
+                            x.DateOut,
+                            x.TimeIn,
+                            x.TimeOut
+                        }).ToList();
                     gridPendingFile.DataSource = QueryNormalWeight;
+                    HideColumns(HitechEnums.FrmName.NormalWeighing);
                 }
                 else if(rdbPublicWeight.Checked == true)
                 {
@@ -45,6 +69,23 @@ namespace HitechTMS.File
                 }
                 else if(rdbMultiWeight.Checked == true)
                 {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void HideColumns(HitechEnums.FrmName frmName)
+        {
+            try
+            {
+                if(gridPendingFile.ColumnCount > 0)
+                {
+                    if (gridPendingFile.Columns.Contains("ID") == true)
+                        gridPendingFile.Columns["ID"].Visible = false;
 
                 }
             }

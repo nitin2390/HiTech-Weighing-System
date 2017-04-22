@@ -18,6 +18,11 @@
             Transport = 3,
             StoredTareFile = 4,
 
+            //Weighing 
+            NormalWeighing =21,
+            PublicWeighing =22,
+            MultiWeghing = 23,
+
             //Config
             AddEditUser = 30
         }

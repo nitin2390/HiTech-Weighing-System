@@ -300,14 +300,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HitechTMS.exe" size="10921424">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HitechTMS.exe" size="10926544">
       <assemblyIdentity name="HitechTMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XYD5KEAzkCHt6WvYMBym/qgKSCtRvb1T7Lm/Cc2hCF0=</dsig:DigestValue>
+        <dsig:DigestValue>bismXMR1gd+1oUZ0jcg1fDC5iO6I69+Jo3jsJJjl/kU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

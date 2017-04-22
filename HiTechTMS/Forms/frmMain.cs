@@ -65,7 +65,6 @@ namespace HitechTMS
         }
         // if we have a MenuStrip named ts.
 
-
         private void SetToolStripItems(ToolStripItemCollection dropDownItems )
         {
             try
@@ -109,59 +108,11 @@ namespace HitechTMS
             }
         }
 
-        private void Check_Click(object sender, EventArgs e)
-        {
-            ReadSerialPortCommunication();
-
-        }
-        private void ReadSerialPortCommunication()
-        {
-            try
-            {
-                int ReadSerialPortValue = 0;
-
-                //ht.Connect();
-                //str = ht.ReadSerialPort().Replace("\u0002", "").Replace("\u0003", "").Replace("\r", "");
-                str = "123456";
-                DialogResult rsltReadSerialPort;
-
-                if (int.TryParse(str, out ReadSerialPortValue))
-                {
-                    lstSerialPortCommunication.Items.Add(ReadSerialPortValue);
-                    str = "";
-                }
-                else
-                {
-                    rsltReadSerialPort = MessageBox.Show(str, dbGetResourceCaption.GetStringValue("SYS_ERR"), MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand);
-                    if (rsltReadSerialPort == DialogResult.Retry)
-                    {
-                        ReadSerialPortCommunication();
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private void frmMain_UserIsAllowed(object sender, EventArgs e)
         {
             
         }
-
         
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnClearList_Click(object sender, EventArgs e)
-        {
-            lstSerialPortCommunication.Items.Clear();
-        }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -173,14 +124,6 @@ namespace HitechTMS
             frmProduct productForm = new frmProduct(FrmName.ProductDetail, _nextFormPrincipal);
             productForm.StartPosition = FormStartPosition.CenterParent;
             productForm.ShowDialog();
-        }
-
-        public void button1_Click(object sender, EventArgs e)
-        {
-            //frmStoredTareFile objfrmTransportFile = new frmStoredTareFile(FrmName.StoredTareFile, _nextFormPrincipal);
-            //objfrmTransportFile.Text = @"Stored Tare File";
-            //objfrmTransportFile.StartPosition = FormStartPosition.CenterParent;
-            //objfrmTransportFile.ShowDialog();
         }
 
         private void emailConfigToolStripMenuItem_Click(object sender, EventArgs e)
@@ -304,6 +247,13 @@ namespace HitechTMS
             objfrmSupplierFile.Text = "Pending File";
             objfrmSupplierFile.StartPosition = FormStartPosition.CenterParent;
             objfrmSupplierFile.ShowDialog();
+        }
+
+        private void switchUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogin objfrmLogin = new frmLogin();
+            objfrmLogin.StartPosition = FormStartPosition.CenterParent;
+            objfrmLogin.ShowDialog();
         }
     }
 }
