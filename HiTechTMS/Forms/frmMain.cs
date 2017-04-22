@@ -251,9 +251,11 @@ namespace HitechTMS
 
         private void switchUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmLogin objfrmLogin = new frmLogin();
             objfrmLogin.StartPosition = FormStartPosition.CenterParent;
             objfrmLogin.ShowDialog();
+            this.Close();
         }
     }
 }

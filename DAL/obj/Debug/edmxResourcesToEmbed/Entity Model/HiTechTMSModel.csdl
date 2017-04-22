@@ -14,6 +14,9 @@
     <EntitySet Name="mstStoredTareRecords" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords" />
     <EntitySet Name="transNormalWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" />
     <EntitySet Name="transPublicWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transPublicWeight" />
+    <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
+    <EntitySet Name="mstFormName" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstFormName" />
+    <EntitySet Name="mstPermission" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstPermission" />
   </EntityContainer>
   <EntityType Name="UserRoleType">
     <Key>
@@ -152,5 +155,65 @@
     <Property Name="IsPending" Type="Byte" Nullable="false" />
     <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="viewNormalPendingFile">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Mode" />
+      <PropertyRef Name="Truck" />
+      <PropertyRef Name="ProductCode" />
+      <PropertyRef Name="SupplierName" />
+      <PropertyRef Name="TransporterCode" />
+      <PropertyRef Name="ChallanNumber" />
+      <PropertyRef Name="ChallanDate" />
+      <PropertyRef Name="ChallanWeight" />
+      <PropertyRef Name="ChallanWeightUnit" />
+      <PropertyRef Name="Miscellaneous" />
+      <PropertyRef Name="DeliveryNoteN" />
+      <PropertyRef Name="DateIn" />
+      <PropertyRef Name="DateOut" />
+      <PropertyRef Name="TimeIn" />
+      <PropertyRef Name="TimeOut" />
+      <PropertyRef Name="TareWeight" />
+      <PropertyRef Name="GrossWeight" />
+      <PropertyRef Name="NetWeight" />
+      <PropertyRef Name="ProdInOut" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Mode" Type="Byte" Nullable="false" />
+    <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="TransporterCode" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ChallanNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ChallanDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ChallanWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ChallanWeightUnit" Type="Byte" Nullable="false" />
+    <Property Name="Miscellaneous" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryNoteN" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateOut" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TimeIn" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="TimeOut" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="TareWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="GrossWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="NetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ProdInOut" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mstFormName">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="FormName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mstPermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="UserRoleID" Type="Guid" Nullable="false" />
+    <Property Name="FormNameID" Type="Guid" Nullable="false" />
+    <Property Name="IsGrant" Type="Boolean" Nullable="false" />
   </EntityType>
 </Schema>

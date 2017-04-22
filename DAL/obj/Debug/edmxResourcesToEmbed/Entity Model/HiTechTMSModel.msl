@@ -132,5 +132,49 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="viewNormalPendingFile">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile">
+        <MappingFragment StoreEntitySet="viewNormalPendingFile">
+          <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
+          <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
+          <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
+          <ScalarProperty Name="ChallanWeightUnit" ColumnName="ChallanWeightUnit" />
+          <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
+          <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
+          <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
+          <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Truck" ColumnName="Truck" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mstFormName">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstFormName">
+        <MappingFragment StoreEntitySet="mstFormName">
+          <ScalarProperty Name="FormName" ColumnName="FormName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mstPermission">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstPermission">
+        <MappingFragment StoreEntitySet="mstPermission">
+          <ScalarProperty Name="IsGrant" ColumnName="IsGrant" />
+          <ScalarProperty Name="FormNameID" ColumnName="FormNameID" />
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

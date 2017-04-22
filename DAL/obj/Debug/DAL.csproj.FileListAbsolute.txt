@@ -37,3 +37,21 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\En
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\HiTechTMSModel.Context.tt
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\HiTechTMSModel.tt
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\EmailConfig.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\EmailMaster.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\HiTechTMSModel.Context.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\HiTechTMSModel.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\HiTechTMSModel.Designer.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\mstFormName.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\mstPermission.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\mstStoredTareRecords.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\mstSupplierTransporter.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\Product.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\transNormalWeight.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\transPublicWeight.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\UserRole.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\UserRoleType.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\viewNormalPendingFile.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\HiTechTMSModel.edmx.diagram

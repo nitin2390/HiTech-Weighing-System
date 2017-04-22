@@ -91,6 +91,7 @@
             this.cmbCustomerCode = new System.Windows.Forms.ComboBox();
             this.txtTruck = new System.Windows.Forms.TextBox();
             this.lblTruck = new System.Windows.Forms.Label();
+            this.btnUnloadComplete = new System.Windows.Forms.Button();
             this.grpboxNormalWeighing.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).BeginInit();
             this.grpboxAutoWeight.SuspendLayout();
@@ -125,6 +126,7 @@
             this.grpboxNormalWeighing.TabIndex = 1;
             this.grpboxNormalWeighing.TabStop = false;
             this.grpboxNormalWeighing.Text = "Normal Weighing";
+            this.grpboxNormalWeighing.Enter += new System.EventHandler(this.grpboxNormalWeighing_Enter);
             // 
             // lblRecCount
             // 
@@ -227,6 +229,7 @@
             // 
             // grpboxWeightInfo
             // 
+            this.grpboxWeightInfo.Controls.Add(this.btnUnloadComplete);
             this.grpboxWeightInfo.Controls.Add(this.lblProductWeight);
             this.grpboxWeightInfo.Controls.Add(this.txtProductWeight);
             this.grpboxWeightInfo.Controls.Add(this.txtUnloadedProductName);
@@ -625,6 +628,7 @@
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnExit
             // 
@@ -714,6 +718,15 @@
             this.lblTruck.TabIndex = 2;
             this.lblTruck.Text = "Truck";
             // 
+            // btnUnloadComplete
+            // 
+            this.btnUnloadComplete.Location = new System.Drawing.Point(19, 258);
+            this.btnUnloadComplete.Name = "btnUnloadComplete";
+            this.btnUnloadComplete.Size = new System.Drawing.Size(167, 58);
+            this.btnUnloadComplete.TabIndex = 44;
+            this.btnUnloadComplete.Text = "&Unload Complete";
+            this.btnUnloadComplete.UseVisualStyleBackColor = true;
+            // 
             // frmMultiWeighing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -799,5 +812,6 @@
         private System.Windows.Forms.Label lblRecCount;
         private System.Windows.Forms.Label lblRecordsCount;
         private System.Windows.Forms.DataGridView gridSupplierTransporter;
+        private System.Windows.Forms.Button btnUnloadComplete;
     }
 }

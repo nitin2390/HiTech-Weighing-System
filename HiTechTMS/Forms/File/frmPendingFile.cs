@@ -40,25 +40,7 @@ namespace HitechTMS.File
                     //    .Where(x => x.RoleName != HitechEnums.AppRole.SuperAdmin.ToString())
                     //    .Select(x => x);
 
-                    var QueryNormalWeight = _dbObj.transNormalWeight
-                        //.Join(_dbObj.Products, pro => pro.)
-                        .Where(x => x.IsPending == 0)
-                        .Select( x => new {
-                            x.Truck,x.ProductCode,
-                            x.SupplierCode,
-                            x.TransporterCode,
-                            x.ChallanNumber, x.ChallanDate,x.ChallanWeight,
-                            x.Miscellaneous,
-                            x.DeliveryNoteN,
-                            x.ProdInOut,
-                            x.TareWeight,
-                            x.GrossWeight,
-                            x.NetWeight,
-                            x.DateIn,
-                            x.DateOut,
-                            x.TimeIn,
-                            x.TimeOut
-                        }).ToList();
+                    var QueryNormalWeight = _dbObj.viewNormalPendingFile.ToList();
                     gridPendingFile.DataSource = QueryNormalWeight;
                     HideColumns(HitechEnums.FrmName.NormalWeighing);
                 }

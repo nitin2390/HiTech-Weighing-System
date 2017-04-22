@@ -27,6 +27,22 @@
           <Property Name="EmailID" Type="nvarchar" MaxLength="400" Nullable="false" />
           <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
+        <EntityType Name="mstFormName">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FormName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mstPermission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserRoleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FormNameID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsGrant" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="mstStoredTareRecords">
           <Key>
             <PropertyRef Name="Id" />
@@ -129,6 +145,52 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.viewNormalPendingFile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="viewNormalPendingFile">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Mode" />
+            <PropertyRef Name="Truck" />
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="TransporterCode" />
+            <PropertyRef Name="ChallanNumber" />
+            <PropertyRef Name="ChallanDate" />
+            <PropertyRef Name="ChallanWeight" />
+            <PropertyRef Name="ChallanWeightUnit" />
+            <PropertyRef Name="Miscellaneous" />
+            <PropertyRef Name="DeliveryNoteN" />
+            <PropertyRef Name="DateIn" />
+            <PropertyRef Name="DateOut" />
+            <PropertyRef Name="TimeIn" />
+            <PropertyRef Name="TimeOut" />
+            <PropertyRef Name="TareWeight" />
+            <PropertyRef Name="GrossWeight" />
+            <PropertyRef Name="NetWeight" />
+            <PropertyRef Name="ProdInOut" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Mode" Type="tinyint" Nullable="false" />
+          <Property Name="Truck" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="SupplierName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="TransporterCode" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ChallanNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="ChallanDate" Type="date" Nullable="false" />
+          <Property Name="ChallanWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ChallanWeightUnit" Type="tinyint" Nullable="false" />
+          <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="DateIn" Type="date" Nullable="false" />
+          <Property Name="DateOut" Type="date" Nullable="false" />
+          <Property Name="TimeIn" Type="time" Precision="7" Nullable="false" />
+          <Property Name="TimeOut" Type="time" Precision="7" Nullable="false" />
+          <Property Name="TareWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="GrossWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="NetWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ProdInOut" Type="varchar" MaxLength="11" Nullable="false" />
+        </EntityType>
         <Association Name="FK__UserRole__UserRo__1B9317B3">
           <End Role="UserRoleType" Type="Self.UserRoleType" Multiplicity="1" />
           <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
@@ -144,6 +206,8 @@
         <EntityContainer Name="HitechTruckMngtSystmDataBaseFileModelStoreContainer">
           <EntitySet Name="EmailConfigs" EntityType="Self.EmailConfigs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmailMaster" EntityType="Self.EmailMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mstFormName" EntityType="Self.mstFormName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mstPermission" EntityType="Self.mstPermission" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstStoredTareRecords" EntityType="Self.mstStoredTareRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
@@ -151,6 +215,30 @@
           <EntitySet Name="transPublicWeight" EntityType="Self.transPublicWeight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="viewNormalPendingFile" EntityType="Self.viewNormalPendingFile" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [viewNormalPendingFile].[ID] AS [ID], 
+    [viewNormalPendingFile].[Mode] AS [Mode], 
+    [viewNormalPendingFile].[Truck] AS [Truck], 
+    [viewNormalPendingFile].[ProductCode] AS [ProductCode], 
+    [viewNormalPendingFile].[SupplierName] AS [SupplierName], 
+    [viewNormalPendingFile].[TransporterCode] AS [TransporterCode], 
+    [viewNormalPendingFile].[ChallanNumber] AS [ChallanNumber], 
+    [viewNormalPendingFile].[ChallanDate] AS [ChallanDate], 
+    [viewNormalPendingFile].[ChallanWeight] AS [ChallanWeight], 
+    [viewNormalPendingFile].[ChallanWeightUnit] AS [ChallanWeightUnit], 
+    [viewNormalPendingFile].[Miscellaneous] AS [Miscellaneous], 
+    [viewNormalPendingFile].[DeliveryNoteN] AS [DeliveryNoteN], 
+    [viewNormalPendingFile].[DateIn] AS [DateIn], 
+    [viewNormalPendingFile].[DateOut] AS [DateOut], 
+    [viewNormalPendingFile].[TimeIn] AS [TimeIn], 
+    [viewNormalPendingFile].[TimeOut] AS [TimeOut], 
+    [viewNormalPendingFile].[TareWeight] AS [TareWeight], 
+    [viewNormalPendingFile].[GrossWeight] AS [GrossWeight], 
+    [viewNormalPendingFile].[NetWeight] AS [NetWeight], 
+    [viewNormalPendingFile].[ProdInOut] AS [ProdInOut]
+    FROM [dbo].[viewNormalPendingFile] AS [viewNormalPendingFile]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__UserRole__UserRo__1B9317B3" Association="Self.FK__UserRole__UserRo__1B9317B3">
             <End Role="UserRoleType" EntitySet="UserRoleType" />
             <End Role="UserRole" EntitySet="UserRole" />
@@ -174,6 +262,9 @@
           <EntitySet Name="mstStoredTareRecords" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords" />
           <EntitySet Name="transNormalWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" />
           <EntitySet Name="transPublicWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transPublicWeight" />
+          <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
+          <EntitySet Name="mstFormName" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstFormName" />
+          <EntitySet Name="mstPermission" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstPermission" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -313,6 +404,66 @@
           <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityType Name="viewNormalPendingFile">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Mode" />
+            <PropertyRef Name="Truck" />
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="TransporterCode" />
+            <PropertyRef Name="ChallanNumber" />
+            <PropertyRef Name="ChallanDate" />
+            <PropertyRef Name="ChallanWeight" />
+            <PropertyRef Name="ChallanWeightUnit" />
+            <PropertyRef Name="Miscellaneous" />
+            <PropertyRef Name="DeliveryNoteN" />
+            <PropertyRef Name="DateIn" />
+            <PropertyRef Name="DateOut" />
+            <PropertyRef Name="TimeIn" />
+            <PropertyRef Name="TimeOut" />
+            <PropertyRef Name="TareWeight" />
+            <PropertyRef Name="GrossWeight" />
+            <PropertyRef Name="NetWeight" />
+            <PropertyRef Name="ProdInOut" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Mode" Type="Byte" Nullable="false" />
+          <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TransporterCode" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ChallanNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ChallanDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ChallanWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ChallanWeightUnit" Type="Byte" Nullable="false" />
+          <Property Name="Miscellaneous" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryNoteN" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOut" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TimeIn" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="TimeOut" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="TareWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="GrossWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="NetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ProdInOut" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="mstFormName">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="FormName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="mstPermission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="UserRoleID" Type="Guid" Nullable="false" />
+          <Property Name="FormNameID" Type="Guid" Nullable="false" />
+          <Property Name="IsGrant" Type="Boolean" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -447,6 +598,50 @@
                 <ScalarProperty Name="Truck" ColumnName="Truck" />
                 <ScalarProperty Name="Mode" ColumnName="Mode" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="viewNormalPendingFile">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile">
+              <MappingFragment StoreEntitySet="viewNormalPendingFile">
+                <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+                <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+                <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
+                <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
+                <ScalarProperty Name="ChallanWeightUnit" ColumnName="ChallanWeightUnit" />
+                <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
+                <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
+                <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
+                <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="Truck" ColumnName="Truck" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mstFormName">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstFormName">
+              <MappingFragment StoreEntitySet="mstFormName">
+                <ScalarProperty Name="FormName" ColumnName="FormName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mstPermission">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstPermission">
+              <MappingFragment StoreEntitySet="mstPermission">
+                <ScalarProperty Name="IsGrant" ColumnName="IsGrant" />
+                <ScalarProperty Name="FormNameID" ColumnName="FormNameID" />
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

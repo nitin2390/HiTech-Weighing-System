@@ -445,19 +445,22 @@ namespace HitechTMS.Weighing
                     txtMiscellaneous1.Text = lsttransNormalWeight[0].Miscellaneous.Split(';')[1];
                     txtDeliveryNoteN.Text = lsttransNormalWeight[0].DeliveryNoteN;
 
-                    //txtDateIn.Text = lsttransNormalWeight[0].DateIn.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : "";
-                    //txtDateOut.Text = lsttransNormalWeight[0].DateOut.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : "";
+                    if (_enumProductInOut == enumProductInOut.Out)
+                    {
+                        txtDateIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateOut.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : "" : lsttransNormalWeight[0].DateIn.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : "";
+                        txtDateOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateIn.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : "" : lsttransNormalWeight[0].DateOut.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : "";
+                        txtTimeIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeOut.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : "" : lsttransNormalWeight[0].TimeIn.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : "";
+                        txtTimeOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeIn.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : "" : lsttransNormalWeight[0].TimeOut.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : "";
+                    }
+                    else
+                    {
+                        txtDateOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateOut.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : "" : lsttransNormalWeight[0].DateIn.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : "";
+                        txtDateIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateIn.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : "" : lsttransNormalWeight[0].DateOut.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : "";
+                        txtTimeOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeOut.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : "" : lsttransNormalWeight[0].TimeIn.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : "";
+                        txtTimeIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeIn.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : "" : lsttransNormalWeight[0].TimeOut.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : "";
+                    }
 
-
-                    txtDateIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateOut.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : "" : lsttransNormalWeight[0].DateIn.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : "";
-                    txtDateOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateIn.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : "" : lsttransNormalWeight[0].DateOut.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : "";
-
-
-                    //txtTimeIn.Text = lsttransNormalWeight[0].TimeIn.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : "";
-                    //txtTimeOut.Text = lsttransNormalWeight[0].TimeOut.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : "";
-
-                    txtTimeIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeOut.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : "" : lsttransNormalWeight[0].TimeIn.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : "";
-                    txtTimeOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeIn.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : "" : lsttransNormalWeight[0].TimeOut.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : "";
+                    
 
 
                     txtTareWeight.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].GrossWeight.ToString() != "" ? lsttransNormalWeight[0].GrossWeight.ToString() : "" : lsttransNormalWeight[0].TareWeight.ToString() != "" ? lsttransNormalWeight[0].TareWeight.ToString() : "";
@@ -741,11 +744,13 @@ namespace HitechTMS.Weighing
 
                 if (_isTareWeight)
                 {
+                    _dbReturn = false;
                     txtTareWeight.Text = btnWeight.Text = weight.ToString();
                     txtTareWeight.Focus();
                 }
                 else
                 {
+                    _dbReturn = false;
                     txtGrossWeight.Text = btnWeight.Text = weight.ToString();
                     txtGrossWeight.Focus();
 
@@ -756,6 +761,11 @@ namespace HitechTMS.Weighing
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

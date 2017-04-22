@@ -69,45 +69,69 @@
   <ItemGroup>
     <Compile Include="Entity Model\EmailConfig.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\EmailMaster.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\HiTechTMSModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HiTechTMSModel.Context.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\HiTechTMSModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\HiTechTMSModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HiTechTMSModel.edmx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Entity Model\mstFormName.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Entity Model\mstPermission.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\mstStoredTareRecords.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\mstSupplierTransporter.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\Product.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\transNormalWeight.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\transPublicWeight.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\UserRole.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\UserRoleType.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Entity Model\viewNormalPendingFile.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="HyperTerminalAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,9 +148,11 @@
     <EntityDeploy Include="Entity Model\HiTechTMSModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HiTechTMSModel.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EntityDeploy>
     <None Include="Entity Model\HiTechTMSModel.edmx.diagram">
       <DependentUpon>HiTechTMSModel.edmx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -155,11 +181,13 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HiTechTMSModel.edmx</DependentUpon>
       <LastGenOutput>HiTechTMSModel.Context.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Entity Model\HiTechTMSModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HiTechTMSModel.edmx</DependentUpon>
       <LastGenOutput>HiTechTMSModel.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SQL Scripts\Script.SQL" />
   </ItemGroup>
