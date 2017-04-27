@@ -17,6 +17,7 @@ namespace HitechTMS.File
     public partial class frmPendingFile : HitechTMSSecurity.SecureBaseForm
     {
         private GetResourceCaption _dbGetResourceCaption;
+        public int _chkCompleteFile { get; set; }
         private HitechTruckMngtSystmDataBaseFileEntities _dbObj { get; }
         public FrmName _frmName { get; set; }
         public frmPendingFile(FrmName FrmName,IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Supervisor.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
@@ -27,6 +28,7 @@ namespace HitechTMS.File
             _dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
             LoadCaption();
             LoadGridData();
+            _chkCompleteFile = 0;
         }
 
         private void LoadGridData()
@@ -35,23 +37,22 @@ namespace HitechTMS.File
             {
                 if (rdbNormalWeight.Checked == true)
                 {
-                    //var query = dbObj.UserRoleTypes
-                    //    .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Name, x.RoleName })
-                    //    .Where(x => x.RoleName != HitechEnums.AppRole.SuperAdmin.ToString())
-                    //    .Select(x => x);
-
-                    var QueryNormalWeight = _dbObj.viewNormalPendingFile.ToList();
+                    var QueryNormalWeight = _dbObj.viewNormalPendingFile.Where(x => x.IsPending == _chkCompleteFile).ToList();
                     gridPendingFile.DataSource = QueryNormalWeight;
+                    lblRecordsCount.Text = QueryNormalWeight.Count().ToString();
                     HideColumns(HitechEnums.FrmName.NormalWeighing);
                 }
                 else if(rdbPublicWeight.Checked == true)
                 {
-                    var QueryPublicWeight = _dbObj.transPublicWeight.Where(x => x.IsPending == 0).ToList();
+                    var QueryPublicWeight = _dbObj.transPublicWeight.Where(x => x.IsPending == _chkCompleteFile).ToList();
                     gridPendingFile.DataSource = QueryPublicWeight;
+                    lblRecordsCount.Text = QueryPublicWeight.Count().ToString();
                 }
                 else if(rdbMultiWeight.Checked == true)
                 {
-
+                    var QueryMultiWeight = _dbObj.transMultiWeight.Where(x => x.IsPending == _chkCompleteFile).ToList();
+                    gridPendingFile.DataSource = QueryMultiWeight;
+                    lblRecordsCount.Text = QueryMultiWeight.Count().ToString();
                 }
             }
             catch (Exception ex)
@@ -104,6 +105,17 @@ namespace HitechTMS.File
         private void rdbMultiWeight_CheckedChanged(object sender, EventArgs e)
         {
             LoadGridData();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkCompleteFile_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadGridData();
+            _chkCompleteFile = chkCompleteFile.Checked == true ? 1 : 0;
         }
     }
 }

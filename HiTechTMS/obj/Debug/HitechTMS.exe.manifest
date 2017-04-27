@@ -55,7 +55,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hRFlT9T2aIxANLYl3I9f93jK1HAIxkBkaWV5Dr2pPxY=</dsig:DigestValue>
+        <dsig:DigestValue>f0PvVDucF2Nb2WTmle9j/P9lAoC936N6L2YxU46oz+A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -252,14 +252,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL.dll" size="61952">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL.dll" size="78336">
       <assemblyIdentity name="DAL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qWoVwhBulm95Mo+IYKxHS0nkYccdZbLsCq7NL2wOksk=</dsig:DigestValue>
+        <dsig:DigestValue>iaQbGRlMxH/0HIFjK4j1Y6uKKpnKJpmOwOCFyS9plHw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -300,14 +300,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HitechTMS.exe" size="10920912">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HitechTMS.exe" size="10941392">
       <assemblyIdentity name="HitechTMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dAW9GsnztN3WdTvd26cTqG8SpL9plpaaOa6hGVkjz04=</dsig:DigestValue>
+        <dsig:DigestValue>Ss8kcGtmcRli+lr3C6GEJigswTMp8VYRsyQQCCtrcPU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -319,7 +319,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>k5gsPdFgdmkm76UPo1H16ptuUwiRChxEqPyebrP4nL8=</dsig:DigestValue>
+        <dsig:DigestValue>1kSEs0r3uuGkC7GVkmAsIcnu6Wt/PV/ydRAbnkVC1Vc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -331,7 +331,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vFJYD514MWpJzaN93Re/8+wk1kSFeoAENYyng1ItZ+M=</dsig:DigestValue>
+        <dsig:DigestValue>giWjIOrlXMvrhTmv0u9EC/6ki0K/XwEgHBKUFjZQv9k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -415,7 +415,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uYBpNZ8ttZAXNdQa66qM6Lrep8JBnnIVpyKX7UCSy0E=</dsig:DigestValue>
+        <dsig:DigestValue>ihibKaVXrjSwL6FKLKPu05FLtdn/7mLpB/6hTqU8FPo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -473,7 +473,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kR6s/dB0h2IvLDO6hRXqnxFZihTmoLhTmfT+vxioFQ0=</dsig:DigestValue>
+      <dsig:DigestValue>npMEPBr48r7DAk4KveAT8dyy05KDKJLFUFxEYro4jHs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="HitechTMS.exe.config" size="2689">

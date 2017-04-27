@@ -25,18 +25,6 @@ C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.dll
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\DAL.dll.config
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\DAL.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\DAL.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\SharedLibrary.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\SharedLibrary.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.xml
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.pdb
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\HiTechTMSModel.Context.tt
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\HiTechTMSModel.tt
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\EmailConfig.cs
@@ -55,3 +43,15 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\En
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\UserRoleType.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\viewNormalPendingFile.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\Entity Model\HiTechTMSModel.edmx.diagram
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\DAL.dll.config
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\DAL.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\DAL.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\SharedLibrary.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\SharedLibrary.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.xml
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.pdb

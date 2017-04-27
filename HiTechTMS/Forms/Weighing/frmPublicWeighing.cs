@@ -10,6 +10,7 @@ using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +18,7 @@ using static HitechTMS.HitechEnums;
 
 namespace HitechTMS.Weighing
 {
-    public partial class frmPublicWeighing : Form
+    public partial class frmPublicWeighing : HitechTMSSecurity.SecureBaseForm
     {
         public enumProductInOut _enumProductInOut { get; set; }
         private Boolean _isTareWeight { get; set; }
@@ -35,10 +36,9 @@ namespace HitechTMS.Weighing
         private FrmName _frmName { get; set; }
 
         readonly double _MaxWeight;
-        public frmPublicWeighing(enumProductInOut EnumProductNormalPublicMulti, enumWeightMode Mode)
+        public frmPublicWeighing(enumProductInOut EnumProductNormalPublicMulti, enumWeightMode Mode, IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString(), HitechEnums.AppRole.Supervisor.ToString() }, userPrincipal)
         {
-            InitializeComponent();
-
+             InitializeComponent();
             _dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
             _readSerialPortData = new ReadSerialPortData();
             _objCalculateNetWeight = new CalculateNetWeight();

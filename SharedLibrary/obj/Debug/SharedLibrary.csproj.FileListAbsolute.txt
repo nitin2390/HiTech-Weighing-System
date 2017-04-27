@@ -27,3 +27,4 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\bi
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\obj\Debug\SharedLibrary.csproj.ResolveComReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\obj\Debug\SharedLibrary.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\obj\Debug\SharedLibrary.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache

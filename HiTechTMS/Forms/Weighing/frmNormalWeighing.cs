@@ -11,10 +11,11 @@ using Business;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Drawing;
+using System.Security.Principal;
 
 namespace HitechTMS.Weighing
 {
-    public partial class frmNormalWeighing : Form
+    public partial class frmNormalWeighing :HitechTMSSecurity.SecureBaseForm
     {
         public enumProductInOut _enumProductInOut { get; set; }
         private Boolean _isTareWeight { get; set; }
@@ -31,7 +32,7 @@ namespace HitechTMS.Weighing
         private FrmName _frmName { get; set; }
 
         readonly double _MaxWeight;
-        public frmNormalWeighing(enumProductInOut EnumProductNormalPublicMulti, enumWeightMode Mode)
+        public frmNormalWeighing(enumProductInOut EnumProductNormalPublicMulti, enumWeightMode Mode, IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString(), HitechEnums.AppRole.Supervisor.ToString() }, userPrincipal)
         {
             InitializeComponent();
             _MaxWeight = 150;

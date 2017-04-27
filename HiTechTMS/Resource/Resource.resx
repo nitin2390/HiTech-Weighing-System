@@ -186,6 +186,12 @@
   <data name="PRD_NM_CAN_NOT_BLANK" xml:space="preserve">
     <value>Product name can't be blank</value>
   </data>
+  <data name="PRODUCT_CODE" xml:space="preserve">
+    <value>Product code</value>
+  </data>
+  <data name="PRODUCT_NAME" xml:space="preserve">
+    <value>Product name</value>
+  </data>
   <data name="PUBLIC_WEIGHING" xml:space="preserve">
     <value>Public Weighing</value>
   </data>

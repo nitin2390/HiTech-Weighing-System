@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.grpboxNormalWeighing = new System.Windows.Forms.GroupBox();
+            this.grpboxMultiWeghing = new System.Windows.Forms.GroupBox();
             this.lblRecCount = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
-            this.gridSupplierTransporter = new System.Windows.Forms.DataGridView();
+            this.gridMultiWeghing = new System.Windows.Forms.DataGridView();
             this.txtMode = new System.Windows.Forms.Label();
             this.lblMode = new System.Windows.Forms.Label();
             this.grpboxAutoWeight = new System.Windows.Forms.GroupBox();
             this.btnWeight = new System.Windows.Forms.Button();
             this.lstTruck = new System.Windows.Forms.ListBox();
             this.grpboxWeightInfo = new System.Windows.Forms.GroupBox();
+            this.btnUnloadComplete = new System.Windows.Forms.Button();
             this.lblProductWeight = new System.Windows.Forms.Label();
             this.txtProductWeight = new System.Windows.Forms.TextBox();
             this.txtUnloadedProductName = new System.Windows.Forms.TextBox();
@@ -91,42 +93,42 @@
             this.cmbCustomerCode = new System.Windows.Forms.ComboBox();
             this.txtTruck = new System.Windows.Forms.TextBox();
             this.lblTruck = new System.Windows.Forms.Label();
-            this.btnUnloadComplete = new System.Windows.Forms.Button();
-            this.grpboxNormalWeighing.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).BeginInit();
+            this.errProvWeight = new System.Windows.Forms.ErrorProvider(this.components);
+            this.grpboxMultiWeghing.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMultiWeghing)).BeginInit();
             this.grpboxAutoWeight.SuspendLayout();
             this.grpboxWeightInfo.SuspendLayout();
             this.grpboxChallanInfo.SuspendLayout();
             this.grpboxOperation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvWeight)).BeginInit();
             this.SuspendLayout();
             // 
-            // grpboxNormalWeighing
+            // grpboxMultiWeghing
             // 
-            this.grpboxNormalWeighing.Controls.Add(this.lblRecCount);
-            this.grpboxNormalWeighing.Controls.Add(this.lblRecordsCount);
-            this.grpboxNormalWeighing.Controls.Add(this.gridSupplierTransporter);
-            this.grpboxNormalWeighing.Controls.Add(this.txtMode);
-            this.grpboxNormalWeighing.Controls.Add(this.lblMode);
-            this.grpboxNormalWeighing.Controls.Add(this.grpboxAutoWeight);
-            this.grpboxNormalWeighing.Controls.Add(this.lstTruck);
-            this.grpboxNormalWeighing.Controls.Add(this.grpboxWeightInfo);
-            this.grpboxNormalWeighing.Controls.Add(this.grpboxChallanInfo);
-            this.grpboxNormalWeighing.Controls.Add(this.grpboxOperation);
-            this.grpboxNormalWeighing.Controls.Add(this.txtTranspoterName);
-            this.grpboxNormalWeighing.Controls.Add(this.txtCustomerName);
-            this.grpboxNormalWeighing.Controls.Add(this.lblTransporterCode);
-            this.grpboxNormalWeighing.Controls.Add(this.lblCustomerCode);
-            this.grpboxNormalWeighing.Controls.Add(this.cmbTranspoterCode);
-            this.grpboxNormalWeighing.Controls.Add(this.cmbCustomerCode);
-            this.grpboxNormalWeighing.Controls.Add(this.txtTruck);
-            this.grpboxNormalWeighing.Controls.Add(this.lblTruck);
-            this.grpboxNormalWeighing.Location = new System.Drawing.Point(12, 5);
-            this.grpboxNormalWeighing.Name = "grpboxNormalWeighing";
-            this.grpboxNormalWeighing.Size = new System.Drawing.Size(1148, 735);
-            this.grpboxNormalWeighing.TabIndex = 1;
-            this.grpboxNormalWeighing.TabStop = false;
-            this.grpboxNormalWeighing.Text = "Normal Weighing";
-            this.grpboxNormalWeighing.Enter += new System.EventHandler(this.grpboxNormalWeighing_Enter);
+            this.grpboxMultiWeghing.Controls.Add(this.lblRecCount);
+            this.grpboxMultiWeghing.Controls.Add(this.lblRecordsCount);
+            this.grpboxMultiWeghing.Controls.Add(this.gridMultiWeghing);
+            this.grpboxMultiWeghing.Controls.Add(this.txtMode);
+            this.grpboxMultiWeghing.Controls.Add(this.lblMode);
+            this.grpboxMultiWeghing.Controls.Add(this.grpboxAutoWeight);
+            this.grpboxMultiWeghing.Controls.Add(this.lstTruck);
+            this.grpboxMultiWeghing.Controls.Add(this.grpboxWeightInfo);
+            this.grpboxMultiWeghing.Controls.Add(this.grpboxChallanInfo);
+            this.grpboxMultiWeghing.Controls.Add(this.grpboxOperation);
+            this.grpboxMultiWeghing.Controls.Add(this.txtTranspoterName);
+            this.grpboxMultiWeghing.Controls.Add(this.txtCustomerName);
+            this.grpboxMultiWeghing.Controls.Add(this.lblTransporterCode);
+            this.grpboxMultiWeghing.Controls.Add(this.lblCustomerCode);
+            this.grpboxMultiWeghing.Controls.Add(this.cmbTranspoterCode);
+            this.grpboxMultiWeghing.Controls.Add(this.cmbCustomerCode);
+            this.grpboxMultiWeghing.Controls.Add(this.txtTruck);
+            this.grpboxMultiWeghing.Controls.Add(this.lblTruck);
+            this.grpboxMultiWeghing.Location = new System.Drawing.Point(12, 5);
+            this.grpboxMultiWeghing.Name = "grpboxMultiWeghing";
+            this.grpboxMultiWeghing.Size = new System.Drawing.Size(1148, 735);
+            this.grpboxMultiWeghing.TabIndex = 1;
+            this.grpboxMultiWeghing.TabStop = false;
+            this.grpboxMultiWeghing.Text = "Multi Weighing";
             // 
             // lblRecCount
             // 
@@ -152,7 +154,7 @@
             this.lblRecordsCount.TabIndex = 25;
             this.lblRecordsCount.Text = "Count";
             // 
-            // gridSupplierTransporter
+            // gridMultiWeghing
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -161,8 +163,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSupplierTransporter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridSupplierTransporter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridMultiWeghing.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridMultiWeghing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,13 +172,13 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridSupplierTransporter.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridSupplierTransporter.Location = new System.Drawing.Point(602, 138);
-            this.gridSupplierTransporter.Name = "gridSupplierTransporter";
-            this.gridSupplierTransporter.RowTemplate.Height = 24;
-            this.gridSupplierTransporter.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gridSupplierTransporter.Size = new System.Drawing.Size(534, 226);
-            this.gridSupplierTransporter.TabIndex = 27;
+            this.gridMultiWeghing.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gridMultiWeghing.Location = new System.Drawing.Point(602, 138);
+            this.gridMultiWeghing.Name = "gridMultiWeghing";
+            this.gridMultiWeghing.RowTemplate.Height = 24;
+            this.gridMultiWeghing.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gridMultiWeghing.Size = new System.Drawing.Size(534, 226);
+            this.gridMultiWeghing.TabIndex = 27;
             // 
             // txtMode
             // 
@@ -216,6 +218,7 @@
             this.btnWeight.Size = new System.Drawing.Size(167, 71);
             this.btnWeight.TabIndex = 28;
             this.btnWeight.UseVisualStyleBackColor = true;
+            this.btnWeight.Click += new System.EventHandler(this.btnWeight_Click);
             // 
             // lstTruck
             // 
@@ -226,6 +229,9 @@
             this.lstTruck.Name = "lstTruck";
             this.lstTruck.Size = new System.Drawing.Size(193, 50);
             this.lstTruck.TabIndex = 2;
+            this.lstTruck.DoubleClick += new System.EventHandler(this.lstTruck_DoubleClick);
+            this.lstTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstTruck_KeyDown);
+            this.lstTruck.Validating += new System.ComponentModel.CancelEventHandler(this.lstTruck_Validating);
             // 
             // grpboxWeightInfo
             // 
@@ -261,6 +267,16 @@
             this.grpboxWeightInfo.TabStop = false;
             this.grpboxWeightInfo.Text = "Weight Info";
             // 
+            // btnUnloadComplete
+            // 
+            this.btnUnloadComplete.Location = new System.Drawing.Point(19, 258);
+            this.btnUnloadComplete.Name = "btnUnloadComplete";
+            this.btnUnloadComplete.Size = new System.Drawing.Size(167, 58);
+            this.btnUnloadComplete.TabIndex = 44;
+            this.btnUnloadComplete.Text = "&Unload Complete";
+            this.btnUnloadComplete.UseVisualStyleBackColor = true;
+            this.btnUnloadComplete.Click += new System.EventHandler(this.btnUnloadComplete_Click);
+            // 
             // lblProductWeight
             // 
             this.lblProductWeight.AutoSize = true;
@@ -277,6 +293,7 @@
             this.txtProductWeight.Name = "txtProductWeight";
             this.txtProductWeight.Size = new System.Drawing.Size(148, 22);
             this.txtProductWeight.TabIndex = 42;
+            this.txtProductWeight.TextChanged += new System.EventHandler(this.txtProductWeight_TextChanged);
             // 
             // txtUnloadedProductName
             // 
@@ -303,6 +320,7 @@
             this.cmbUnloadedProductCode.Name = "cmbUnloadedProductCode";
             this.cmbUnloadedProductCode.Size = new System.Drawing.Size(148, 24);
             this.cmbUnloadedProductCode.TabIndex = 39;
+            this.cmbUnloadedProductCode.SelectedIndexChanged += new System.EventHandler(this.cmbUnloadedProductCode_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -425,6 +443,7 @@
             this.txtGrossWeight.Name = "txtGrossWeight";
             this.txtGrossWeight.Size = new System.Drawing.Size(148, 22);
             this.txtGrossWeight.TabIndex = 14;
+            this.txtGrossWeight.TextChanged += new System.EventHandler(this.txtGrossWeight_TextChanged);
             // 
             // txtTareWeight
             // 
@@ -432,6 +451,7 @@
             this.txtTareWeight.Name = "txtTareWeight";
             this.txtTareWeight.Size = new System.Drawing.Size(148, 22);
             this.txtTareWeight.TabIndex = 13;
+            this.txtTareWeight.TextChanged += new System.EventHandler(this.txtTareWeight_TextChanged);
             // 
             // txtTimeOut
             // 
@@ -501,6 +521,8 @@
             this.txtChallanWeight.Name = "txtChallanWeight";
             this.txtChallanWeight.Size = new System.Drawing.Size(148, 22);
             this.txtChallanWeight.TabIndex = 7;
+            this.txtChallanWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChallanWeight_KeyPress);
+            this.txtChallanWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txtChallanWeight_Validating);
             // 
             // lblDeliveryNoteN
             // 
@@ -527,6 +549,7 @@
             this.txtDeliveryNoteN.Name = "txtDeliveryNoteN";
             this.txtDeliveryNoteN.Size = new System.Drawing.Size(297, 22);
             this.txtDeliveryNoteN.TabIndex = 11;
+            this.txtDeliveryNoteN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDeliveryNoteN_KeyPress);
             // 
             // txtMiscellaneous1
             // 
@@ -535,6 +558,7 @@
             this.txtMiscellaneous1.Name = "txtMiscellaneous1";
             this.txtMiscellaneous1.Size = new System.Drawing.Size(297, 22);
             this.txtMiscellaneous1.TabIndex = 10;
+            this.txtMiscellaneous1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiscellaneous1_KeyPress);
             // 
             // txtMiscellaneous
             // 
@@ -543,6 +567,7 @@
             this.txtMiscellaneous.Name = "txtMiscellaneous";
             this.txtMiscellaneous.Size = new System.Drawing.Size(297, 22);
             this.txtMiscellaneous.TabIndex = 9;
+            this.txtMiscellaneous.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiscellaneous_KeyPress);
             // 
             // cmbChallanWeight
             // 
@@ -571,6 +596,7 @@
             this.txtChallanNumber.Name = "txtChallanNumber";
             this.txtChallanNumber.Size = new System.Drawing.Size(148, 22);
             this.txtChallanNumber.TabIndex = 5;
+            this.txtChallanNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChallanNumber_KeyPress);
             // 
             // lblChallanDate
             // 
@@ -619,6 +645,7 @@
             this.btnTicket.TabIndex = 20;
             this.btnTicket.Text = "&Ticket";
             this.btnTicket.UseVisualStyleBackColor = true;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
             // btnSave
             // 
@@ -638,6 +665,7 @@
             this.btnExit.TabIndex = 19;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAddNew
             // 
@@ -647,6 +675,7 @@
             this.btnAddNew.TabIndex = 16;
             this.btnAddNew.Text = "&Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // txtTranspoterName
             // 
@@ -691,6 +720,7 @@
             this.cmbTranspoterCode.Name = "cmbTranspoterCode";
             this.cmbTranspoterCode.Size = new System.Drawing.Size(169, 24);
             this.cmbTranspoterCode.TabIndex = 4;
+            this.cmbTranspoterCode.SelectedIndexChanged += new System.EventHandler(this.cmbTranspoterCode_SelectedIndexChanged);
             // 
             // cmbCustomerCode
             // 
@@ -699,6 +729,7 @@
             this.cmbCustomerCode.Name = "cmbCustomerCode";
             this.cmbCustomerCode.Size = new System.Drawing.Size(169, 24);
             this.cmbCustomerCode.TabIndex = 3;
+            this.cmbCustomerCode.SelectedIndexChanged += new System.EventHandler(this.cmbCustomerCode_SelectedIndexChanged);
             // 
             // txtTruck
             // 
@@ -707,6 +738,10 @@
             this.txtTruck.Name = "txtTruck";
             this.txtTruck.Size = new System.Drawing.Size(193, 22);
             this.txtTruck.TabIndex = 1;
+            this.txtTruck.TextChanged += new System.EventHandler(this.txtTruck_TextChanged);
+            this.txtTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTruck_KeyDown);
+            this.txtTruck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTruck_KeyPress);
+            this.txtTruck.Validating += new System.ComponentModel.CancelEventHandler(this.txtTruck_Validating);
             // 
             // lblTruck
             // 
@@ -718,40 +753,36 @@
             this.lblTruck.TabIndex = 2;
             this.lblTruck.Text = "Truck";
             // 
-            // btnUnloadComplete
+            // errProvWeight
             // 
-            this.btnUnloadComplete.Location = new System.Drawing.Point(19, 258);
-            this.btnUnloadComplete.Name = "btnUnloadComplete";
-            this.btnUnloadComplete.Size = new System.Drawing.Size(167, 58);
-            this.btnUnloadComplete.TabIndex = 44;
-            this.btnUnloadComplete.Text = "&Unload Complete";
-            this.btnUnloadComplete.UseVisualStyleBackColor = true;
+            this.errProvWeight.ContainerControl = this;
             // 
             // frmMultiWeighing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 752);
-            this.Controls.Add(this.grpboxNormalWeighing);
+            this.Controls.Add(this.grpboxMultiWeghing);
             this.Name = "frmMultiWeighing";
             this.Tag = "MultiWeighing";
             this.Text = "frmMultiWeighing";
-            this.grpboxNormalWeighing.ResumeLayout(false);
-            this.grpboxNormalWeighing.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSupplierTransporter)).EndInit();
+            this.grpboxMultiWeghing.ResumeLayout(false);
+            this.grpboxMultiWeghing.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMultiWeghing)).EndInit();
             this.grpboxAutoWeight.ResumeLayout(false);
             this.grpboxWeightInfo.ResumeLayout(false);
             this.grpboxWeightInfo.PerformLayout();
             this.grpboxChallanInfo.ResumeLayout(false);
             this.grpboxChallanInfo.PerformLayout();
             this.grpboxOperation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errProvWeight)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpboxNormalWeighing;
+        private System.Windows.Forms.GroupBox grpboxMultiWeghing;
         private System.Windows.Forms.Label txtMode;
         private System.Windows.Forms.Label lblMode;
         private System.Windows.Forms.GroupBox grpboxAutoWeight;
@@ -764,7 +795,6 @@
         private System.Windows.Forms.Label lblTonneGrossWeight;
         private System.Windows.Forms.Label lblTonneTareWeight;
         private System.Windows.Forms.Label lblCommulativeNetWeight;
-        private System.Windows.Forms.Label lblGrossWeight;
         private System.Windows.Forms.Label lblTareWeight;
         private System.Windows.Forms.Label lblTimeOut;
         private System.Windows.Forms.Label lblDateOut;
@@ -811,7 +841,9 @@
         private System.Windows.Forms.ComboBox cmbUnloadedProductCode;
         private System.Windows.Forms.Label lblRecCount;
         private System.Windows.Forms.Label lblRecordsCount;
-        private System.Windows.Forms.DataGridView gridSupplierTransporter;
+        private System.Windows.Forms.DataGridView gridMultiWeghing;
         private System.Windows.Forms.Button btnUnloadComplete;
+        private System.Windows.Forms.ErrorProvider errProvWeight;
+        private System.Windows.Forms.Label lblGrossWeight;
     }
 }

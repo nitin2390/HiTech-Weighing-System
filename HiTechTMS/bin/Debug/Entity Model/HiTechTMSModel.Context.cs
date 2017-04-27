@@ -34,8 +34,11 @@ namespace DAL.Entity_Model
         public virtual DbSet<mstStoredTareRecords> mstStoredTareRecords { get; set; }
         public virtual DbSet<transNormalWeight> transNormalWeight { get; set; }
         public virtual DbSet<transPublicWeight> transPublicWeight { get; set; }
-        public virtual DbSet<viewNormalPendingFile> viewNormalPendingFile { get; set; }
         public virtual DbSet<mstFormName> mstFormName { get; set; }
         public virtual DbSet<mstPermission> mstPermission { get; set; }
+        public virtual DbSet<MultiPrdWeight> MultiPrdWeight { get; set; }
+        public virtual DbSet<transMultiWeight> transMultiWeight { get; set; }
+        public virtual DbSet<ViewMultiProduct> ViewMultiProduct { get; set; }
+        public virtual DbSet<viewNormalPendingFile> viewNormalPendingFile { get; set; }
     }
 }

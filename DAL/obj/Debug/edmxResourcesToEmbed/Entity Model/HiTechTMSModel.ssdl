@@ -67,12 +67,48 @@
     <Property Name="Email" Type="varchar" MaxLength="40" />
     <Property Name="IsSuplier" Type="char" MaxLength="1" Nullable="false" />
   </EntityType>
+  <EntityType Name="MultiPrdWeight">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TruckID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UnloadedPrdCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="UnloadedPrdWeight" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="Code" />
     </Key>
     <Property Name="Code" Type="nvarchar" MaxLength="5" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="transMultiWeight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Mode" Type="tinyint" Nullable="false" />
+    <Property Name="Truck" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="SupplierCode" Type="uniqueidentifier" />
+    <Property Name="TransporterCode" Type="uniqueidentifier" />
+    <Property Name="ChallanNumber" Type="nvarchar" MaxLength="25" />
+    <Property Name="ChallanDate" Type="date" />
+    <Property Name="ChallanWeight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ChallanWeightUnit" Type="tinyint" />
+    <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" />
+    <Property Name="DateIn" Type="date" />
+    <Property Name="DateOut" Type="date" />
+    <Property Name="TimeIn" Type="time" Precision="7" />
+    <Property Name="TimeOut" Type="time" Precision="7" />
+    <Property Name="TareWeight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="GrossWeight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="NetWeight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ProdInOut" Type="tinyint" Nullable="false" />
+    <Property Name="IsPending" Type="tinyint" Nullable="false" />
+    <Property Name="AddedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="transNormalWeight">
     <Key>
@@ -141,6 +177,19 @@
     <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.ViewMultiProduct' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewMultiProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="TruckID" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TruckID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="25" />
+    <Property Name="Weight" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.viewNormalPendingFile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="viewNormalPendingFile">
     <Key>
@@ -162,6 +211,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
       <PropertyRef Name="TimeOut" />
       <PropertyRef Name="TareWeight" />
       <PropertyRef Name="GrossWeight" />
+      <PropertyRef Name="IsPending" />
       <PropertyRef Name="NetWeight" />
       <PropertyRef Name="ProdInOut" />
     </Key>
@@ -183,9 +233,22 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="TimeOut" Type="time" Precision="7" Nullable="false" />
     <Property Name="TareWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="GrossWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IsPending" Type="tinyint" Nullable="false" />
     <Property Name="NetWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="ProdInOut" Type="varchar" MaxLength="11" Nullable="false" />
   </EntityType>
+  <Association Name="FK__MultiPrdW__Truck__5FD33367">
+    <End Role="transMultiWeight" Type="Self.transMultiWeight" Multiplicity="1" />
+    <End Role="MultiPrdWeight" Type="Self.MultiPrdWeight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="transMultiWeight">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MultiPrdWeight">
+        <PropertyRef Name="TruckID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__UserRole__UserRo__1B9317B3">
     <End Role="UserRoleType" Type="Self.UserRoleType" Multiplicity="1" />
     <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
@@ -205,11 +268,22 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <EntitySet Name="mstPermission" EntityType="Self.mstPermission" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mstStoredTareRecords" EntityType="Self.mstStoredTareRecords" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MultiPrdWeight" EntityType="Self.MultiPrdWeight" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transMultiWeight" EntityType="Self.transMultiWeight" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="transNormalWeight" EntityType="Self.transNormalWeight" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="transPublicWeight" EntityType="Self.transPublicWeight" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ViewMultiProduct" EntityType="Self.ViewMultiProduct" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewMultiProduct].[Id] AS [Id], 
+    [ViewMultiProduct].[TruckID] AS [TruckID], 
+    [ViewMultiProduct].[ProductCode] AS [ProductCode], 
+    [ViewMultiProduct].[ProductName] AS [ProductName], 
+    [ViewMultiProduct].[Weight] AS [Weight]
+    FROM [dbo].[ViewMultiProduct] AS [ViewMultiProduct]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="viewNormalPendingFile" EntityType="Self.viewNormalPendingFile" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [viewNormalPendingFile].[ID] AS [ID], 
@@ -230,10 +304,15 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     [viewNormalPendingFile].[TimeOut] AS [TimeOut], 
     [viewNormalPendingFile].[TareWeight] AS [TareWeight], 
     [viewNormalPendingFile].[GrossWeight] AS [GrossWeight], 
+    [viewNormalPendingFile].[IsPending] AS [IsPending], 
     [viewNormalPendingFile].[NetWeight] AS [NetWeight], 
     [viewNormalPendingFile].[ProdInOut] AS [ProdInOut]
     FROM [dbo].[viewNormalPendingFile] AS [viewNormalPendingFile]</DefiningQuery>
     </EntitySet>
+    <AssociationSet Name="FK__MultiPrdW__Truck__5FD33367" Association="Self.FK__MultiPrdW__Truck__5FD33367">
+      <End Role="transMultiWeight" EntitySet="transMultiWeight" />
+      <End Role="MultiPrdWeight" EntitySet="MultiPrdWeight" />
+    </AssociationSet>
     <AssociationSet Name="FK__UserRole__UserRo__1B9317B3" Association="Self.FK__UserRole__UserRo__1B9317B3">
       <End Role="UserRoleType" EntitySet="UserRoleType" />
       <End Role="UserRole" EntitySet="UserRole" />

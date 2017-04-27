@@ -268,6 +268,24 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Product code.
+        /// </summary>
+        internal static string PRODUCT_CODE {
+            get {
+                return ResourceManager.GetString("PRODUCT_CODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product name.
+        /// </summary>
+        internal static string PRODUCT_NAME {
+            get {
+                return ResourceManager.GetString("PRODUCT_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Public Weighing.
         /// </summary>
         internal static string PUBLIC_WEIGHING {

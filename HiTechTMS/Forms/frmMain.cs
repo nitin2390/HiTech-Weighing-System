@@ -223,7 +223,7 @@ namespace HitechTMS
         private void publicToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _enumProductNormalPublicMulti = enumProductNormalPublicMulti.Public;
-            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode);
+            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode,_nextFormPrincipal);
             objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
             objfrmProductInOut.ShowDialog();
         }
@@ -231,14 +231,17 @@ namespace HitechTMS
         private void normalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _enumProductNormalPublicMulti = enumProductNormalPublicMulti.Normal;
-            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode);
+            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode ,_nextFormPrincipal);
             objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
             objfrmProductInOut.ShowDialog();
         }
 
         private void multiWeighingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            _enumProductNormalPublicMulti = enumProductNormalPublicMulti.Multi;
+            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode ,_nextFormPrincipal);
+            objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
+            objfrmProductInOut.ShowDialog();
         }
 
         private void pendingFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -256,6 +259,14 @@ namespace HitechTMS
             objfrmLogin.StartPosition = FormStartPosition.CenterParent;
             objfrmLogin.ShowDialog();
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _enumProductNormalPublicMulti = enumProductNormalPublicMulti.Multi;
+            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
+            objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
+            objfrmProductInOut.ShowDialog();
         }
     }
 }

@@ -103,6 +103,24 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\CodeProjectSeria
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\CodeProjectSerialComms\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\CodeProjectSerialComms\bin\Debug\en\HtmlReportControl.resources.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\CodeProjectSerialComms\obj\Debug\en\CodeProjectSerialComms.resources.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.Context.tt
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.tt
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\EmailConfig.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\EmailMaster.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.Context.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.Designer.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\mstFormName.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\mstPermission.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\mstStoredTareRecords.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\mstSupplierTransporter.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\Product.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\transNormalWeight.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\transPublicWeight.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\UserRole.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\UserRoleType.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\viewNormalPendingFile.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.edmx.diagram
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\db\HitechTruckMngtSystmDataBaseFile_log.ldf
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\db\HitechTruckMngtSystmDataBaseFile.mdf
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\StoredTareFile.rpt
@@ -114,6 +132,11 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\De
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\SupplierTransport.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\User.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\Product.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.exe.config
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.exe.manifest
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.application
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.exe
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.pdb
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Business.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\CrystalDecisions.ReportSource.dll
@@ -185,26 +208,3 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\De
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.application
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.exe
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.Context.tt
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.tt
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\EmailConfig.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\EmailMaster.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.Context.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.Designer.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\mstFormName.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\mstPermission.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\mstStoredTareRecords.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\mstSupplierTransporter.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\Product.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\transNormalWeight.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\transPublicWeight.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\UserRole.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\UserRoleType.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\viewNormalPendingFile.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.edmx.diagram
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.exe.config
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.exe.manifest
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.application
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.exe
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\HitechTMS.pdb

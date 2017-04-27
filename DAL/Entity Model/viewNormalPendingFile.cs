@@ -32,6 +32,7 @@ namespace DAL.Entity_Model
         public System.TimeSpan TimeOut { get; set; }
         public decimal TareWeight { get; set; }
         public decimal GrossWeight { get; set; }
+        public byte IsPending { get; set; }
         public decimal NetWeight { get; set; }
         public string ProdInOut { get; set; }
     }
