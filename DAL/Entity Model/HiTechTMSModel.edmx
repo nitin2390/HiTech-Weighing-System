@@ -182,6 +182,54 @@
           <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.rptNormalTicket' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="rptNormalTicket">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Truck" />
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="SupplierCode" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="TransporterCode" />
+            <PropertyRef Name="TarnsPorterName" />
+            <PropertyRef Name="ChallanNumber" />
+            <PropertyRef Name="Miscellaneous" />
+            <PropertyRef Name="DeliveryNoteN" />
+            <PropertyRef Name="ChallanWeight" />
+            <PropertyRef Name="ChallanDate" />
+            <PropertyRef Name="DateIn" />
+            <PropertyRef Name="TimeIn" />
+            <PropertyRef Name="DateOut" />
+            <PropertyRef Name="TimeOut" />
+            <PropertyRef Name="TareWeight" />
+            <PropertyRef Name="NetWeight" />
+            <PropertyRef Name="GrossWeight" />
+            <PropertyRef Name="ProdInOut" />
+          </Key>
+          <Property Name="ID" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Truck" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="SupplierCode" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SupplierName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="TransporterCode" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TarnsPorterName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ChallanNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="ChallanWeight" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ChallanDate" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateIn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TimeIn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateOut" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TimeOut" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TareWeight" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NetWeight" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GrossWeight" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProdInOut" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.ViewMultiProduct' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ViewMultiProduct">
           <Key>
@@ -280,6 +328,31 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="transPublicWeight" EntityType="Self.transPublicWeight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRoleType" EntityType="Self.UserRoleType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rptNormalTicket" EntityType="Self.rptNormalTicket" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [rptNormalTicket].[ID] AS [ID], 
+    [rptNormalTicket].[Truck] AS [Truck], 
+    [rptNormalTicket].[ProductCode] AS [ProductCode], 
+    [rptNormalTicket].[Name] AS [Name], 
+    [rptNormalTicket].[SupplierCode] AS [SupplierCode], 
+    [rptNormalTicket].[SupplierName] AS [SupplierName], 
+    [rptNormalTicket].[TransporterCode] AS [TransporterCode], 
+    [rptNormalTicket].[TarnsPorterName] AS [TarnsPorterName], 
+    [rptNormalTicket].[ChallanNumber] AS [ChallanNumber], 
+    [rptNormalTicket].[Miscellaneous] AS [Miscellaneous], 
+    [rptNormalTicket].[DeliveryNoteN] AS [DeliveryNoteN], 
+    [rptNormalTicket].[ChallanWeight] AS [ChallanWeight], 
+    [rptNormalTicket].[ChallanDate] AS [ChallanDate], 
+    [rptNormalTicket].[DateIn] AS [DateIn], 
+    [rptNormalTicket].[TimeIn] AS [TimeIn], 
+    [rptNormalTicket].[DateOut] AS [DateOut], 
+    [rptNormalTicket].[TimeOut] AS [TimeOut], 
+    [rptNormalTicket].[TareWeight] AS [TareWeight], 
+    [rptNormalTicket].[NetWeight] AS [NetWeight], 
+    [rptNormalTicket].[GrossWeight] AS [GrossWeight], 
+    [rptNormalTicket].[ProdInOut] AS [ProdInOut]
+    FROM [dbo].[rptNormalTicket] AS [rptNormalTicket]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="ViewMultiProduct" EntityType="Self.ViewMultiProduct" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [ViewMultiProduct].[Id] AS [Id], 
@@ -351,6 +424,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           </AssociationSet>
           <EntitySet Name="ViewMultiProduct" EntityType="HitechTruckMngtSystmDataBaseFileModel.ViewMultiProduct" />
           <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
+          <EntitySet Name="rptNormalTicket" EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -613,6 +687,52 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="NetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="ProdInOut" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="rptNormalTicket">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Truck" />
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="SupplierCode" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="TransporterCode" />
+            <PropertyRef Name="TarnsPorterName" />
+            <PropertyRef Name="ChallanNumber" />
+            <PropertyRef Name="Miscellaneous" />
+            <PropertyRef Name="DeliveryNoteN" />
+            <PropertyRef Name="ChallanWeight" />
+            <PropertyRef Name="ChallanDate" />
+            <PropertyRef Name="DateIn" />
+            <PropertyRef Name="TimeIn" />
+            <PropertyRef Name="DateOut" />
+            <PropertyRef Name="TimeOut" />
+            <PropertyRef Name="TareWeight" />
+            <PropertyRef Name="NetWeight" />
+            <PropertyRef Name="GrossWeight" />
+            <PropertyRef Name="ProdInOut" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierCode" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TransporterCode" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TarnsPorterName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ChallanNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Miscellaneous" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryNoteN" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ChallanWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChallanDate" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateIn" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TimeIn" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateOut" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TimeOut" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TareWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NetWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GrossWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProdInOut" Type="Byte" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -840,6 +960,33 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
                 <ScalarProperty Name="Truck" ColumnName="Truck" />
                 <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rptNormalTicket">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket">
+              <MappingFragment StoreEntitySet="rptNormalTicket">
+                <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+                <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+                <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
+                <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
+                <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
+                <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
+                <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
+                <ScalarProperty Name="TarnsPorterName" ColumnName="TarnsPorterName" />
+                <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="Truck" ColumnName="Truck" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

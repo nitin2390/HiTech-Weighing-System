@@ -138,7 +138,7 @@ namespace HitechTMS.Weighing
                     {
                         _isTareWeight = true;
                         SaveProductInfo();
-                        LoadGridWithPendingData();
+                        //LoadGridWithPendingData();
                         ResetCntrl();
                         MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

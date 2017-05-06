@@ -313,10 +313,13 @@ namespace HitechTMS.Config
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            var RepData = dbObj.UserRoleTypes.Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Id, s.Code, s.Name, s.Password, s.UserRoleType , x.RoleName }).Select(x => x);
+            var RepData = dbObj.UserRoleTypes
+                .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Id, s.Code, s.Name, s.Password, s.UserRoleType , x.RoleName })
+                .Where(x => x.RoleName != HitechEnums.AppRole.SuperAdmin.ToString())
+                .Select(x => x);
             if (RepData.ToList().Count > 0)
             {
-                rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), _frmName);
+                rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), _frmName,enumProductInOut.Other);
                 rptCmn.ShowDialog();
             }
             else

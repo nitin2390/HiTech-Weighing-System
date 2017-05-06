@@ -533,6 +533,7 @@
             this.btnTicket.TabIndex = 20;
             this.btnTicket.Text = "&Ticket";
             this.btnTicket.UseVisualStyleBackColor = true;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
             // btnSave
             // 
@@ -681,6 +682,7 @@
             this.Name = "frmNormalWeighing";
             this.Tag = "NormalWeighing";
             this.Text = "frmNormalWeighing";
+            this.Load += new System.EventHandler(this.frmNormalWeighing_Load);
             this.grpboxNormalWeighing.ResumeLayout(false);
             this.grpboxNormalWeighing.PerformLayout();
             this.grpboxAutoWeight.ResumeLayout(false);

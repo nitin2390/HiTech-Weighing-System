@@ -226,5 +226,32 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="rptNormalTicket">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket">
+        <MappingFragment StoreEntitySet="rptNormalTicket">
+          <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+          <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
+          <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
+          <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
+          <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
+          <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
+          <ScalarProperty Name="TarnsPorterName" ColumnName="TarnsPorterName" />
+          <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Truck" ColumnName="Truck" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

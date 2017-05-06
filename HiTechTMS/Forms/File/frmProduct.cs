@@ -196,7 +196,7 @@ namespace HitechTMS.File
         private void btnReport_Click(object sender, EventArgs e)
         {
             var RepData = dbObj.Products.Select(x => new { x.Code, x.Name });
-            rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(),_frmName);
+            rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(),_frmName,enumProductInOut.Other);
             rptCmn.ShowDialog();
         }
         private void btnEmailExcel_Click(object sender, EventArgs e)

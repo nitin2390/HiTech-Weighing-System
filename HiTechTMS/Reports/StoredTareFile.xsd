@@ -2,9 +2,50 @@
 <xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-        <Connections />
-        <Tables />
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HitechTruckMngtSystmDataBaseFileConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HitechTruckMngtSystmDataBaseFileConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HitechTMS.Properties.Settings.GlobalReference.Default.HitechTruckMngtSystmDataBaseFileConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="rptNormalTicketTableAdapter" GeneratorDataComponentClassName="rptNormalTicketTableAdapter" Name="rptNormalTicket" UserDataComponentName="rptNormalTicketTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HitechTruckMngtSystmDataBaseFileConnectionString (Settings)" DbObjectName="dbo.rptNormalTicket" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID, Truck, ProductCode, Name, SupplierName, SupplierCode, TransporterCode, TarnsPorterName, ChallanNumber, Miscellaneous, DeliveryNoteN, ChallanWeight, 
+                  ChallanDate, DateIn, TimeIn, DateOut, TimeOut, TareWeight, NetWeight, GrossWeight, ProdInOut
+FROM     rptNormalTicket</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Truck" DataSetColumn="Truck" />
+              <Mapping SourceColumn="ProductCode" DataSetColumn="ProductCode" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="SupplierName" DataSetColumn="SupplierName" />
+              <Mapping SourceColumn="SupplierCode" DataSetColumn="SupplierCode" />
+              <Mapping SourceColumn="TransporterCode" DataSetColumn="TransporterCode" />
+              <Mapping SourceColumn="TarnsPorterName" DataSetColumn="TarnsPorterName" />
+              <Mapping SourceColumn="ChallanNumber" DataSetColumn="ChallanNumber" />
+              <Mapping SourceColumn="Miscellaneous" DataSetColumn="Miscellaneous" />
+              <Mapping SourceColumn="DeliveryNoteN" DataSetColumn="DeliveryNoteN" />
+              <Mapping SourceColumn="ChallanWeight" DataSetColumn="ChallanWeight" />
+              <Mapping SourceColumn="ChallanDate" DataSetColumn="ChallanDate" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="TimeIn" DataSetColumn="TimeIn" />
+              <Mapping SourceColumn="DateOut" DataSetColumn="DateOut" />
+              <Mapping SourceColumn="TimeOut" DataSetColumn="TimeOut" />
+              <Mapping SourceColumn="TareWeight" DataSetColumn="TareWeight" />
+              <Mapping SourceColumn="NetWeight" DataSetColumn="NetWeight" />
+              <Mapping SourceColumn="GrossWeight" DataSetColumn="GrossWeight" />
+              <Mapping SourceColumn="ProdInOut" DataSetColumn="ProdInOut" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
@@ -22,6 +63,153 @@
               <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:string" minOccurs="0" />
               <xs:element name="TimeIn" msprop:Generator_ColumnVarNameInTable="columnTimeIn" msprop:Generator_ColumnPropNameInRow="TimeIn" msprop:Generator_ColumnPropNameInTable="TimeInColumn" msprop:Generator_UserColumnName="TimeIn" type="xs:string" minOccurs="0" />
               <xs:element name="TareWeight" msprop:Generator_ColumnVarNameInTable="columnTareWeight" msprop:Generator_ColumnPropNameInRow="TareWeight" msprop:Generator_ColumnPropNameInTable="TareWeightColumn" msprop:Generator_UserColumnName="TareWeight" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="rptNormalTicket" msprop:Generator_TableClassName="rptNormalTicketDataTable" msprop:Generator_TableVarName="tablerptNormalTicket" msprop:Generator_RowChangedName="rptNormalTicketRowChanged" msprop:Generator_TablePropName="rptNormalTicket" msprop:Generator_RowDeletingName="rptNormalTicketRowDeleting" msprop:Generator_RowChangingName="rptNormalTicketRowChanging" msprop:Generator_RowEvHandlerName="rptNormalTicketRowChangeEventHandler" msprop:Generator_RowDeletedName="rptNormalTicketRowDeleted" msprop:Generator_RowClassName="rptNormalTicketRow" msprop:Generator_UserTableName="rptNormalTicket" msprop:Generator_RowEvArgName="rptNormalTicketRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Truck" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTruck" msprop:Generator_ColumnPropNameInRow="Truck" msprop:Generator_ColumnPropNameInTable="TruckColumn" msprop:Generator_UserColumnName="Truck" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProductCode" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnProductCode" msprop:Generator_ColumnPropNameInRow="ProductCode" msprop:Generator_ColumnPropNameInTable="ProductCodeColumn" msprop:Generator_UserColumnName="ProductCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SupplierName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSupplierName" msprop:Generator_ColumnPropNameInRow="SupplierName" msprop:Generator_ColumnPropNameInTable="SupplierNameColumn" msprop:Generator_UserColumnName="SupplierName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SupplierCode" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSupplierCode" msprop:Generator_ColumnPropNameInRow="SupplierCode" msprop:Generator_ColumnPropNameInTable="SupplierCodeColumn" msprop:Generator_UserColumnName="SupplierCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransporterCode" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTransporterCode" msprop:Generator_ColumnPropNameInRow="TransporterCode" msprop:Generator_ColumnPropNameInTable="TransporterCodeColumn" msprop:Generator_UserColumnName="TransporterCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TarnsPorterName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTarnsPorterName" msprop:Generator_ColumnPropNameInRow="TarnsPorterName" msprop:Generator_ColumnPropNameInTable="TarnsPorterNameColumn" msprop:Generator_UserColumnName="TarnsPorterName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChallanNumber" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnChallanNumber" msprop:Generator_ColumnPropNameInRow="ChallanNumber" msprop:Generator_ColumnPropNameInTable="ChallanNumberColumn" msprop:Generator_UserColumnName="ChallanNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Miscellaneous" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMiscellaneous" msprop:Generator_ColumnPropNameInRow="Miscellaneous" msprop:Generator_ColumnPropNameInTable="MiscellaneousColumn" msprop:Generator_UserColumnName="Miscellaneous" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNoteN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDeliveryNoteN" msprop:Generator_ColumnPropNameInRow="DeliveryNoteN" msprop:Generator_ColumnPropNameInTable="DeliveryNoteNColumn" msprop:Generator_UserColumnName="DeliveryNoteN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChallanWeight" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnChallanWeight" msprop:Generator_ColumnPropNameInRow="ChallanWeight" msprop:Generator_ColumnPropNameInTable="ChallanWeightColumn" msprop:Generator_UserColumnName="ChallanWeight" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChallanDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnChallanDate" msprop:Generator_ColumnPropNameInRow="ChallanDate" msprop:Generator_ColumnPropNameInTable="ChallanDateColumn" msprop:Generator_UserColumnName="ChallanDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateIn" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TimeIn" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTimeIn" msprop:Generator_ColumnPropNameInRow="TimeIn" msprop:Generator_ColumnPropNameInTable="TimeInColumn" msprop:Generator_UserColumnName="TimeIn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateOut" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDateOut" msprop:Generator_ColumnPropNameInRow="DateOut" msprop:Generator_ColumnPropNameInTable="DateOutColumn" msprop:Generator_UserColumnName="DateOut" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TimeOut" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTimeOut" msprop:Generator_ColumnPropNameInRow="TimeOut" msprop:Generator_ColumnPropNameInTable="TimeOutColumn" msprop:Generator_UserColumnName="TimeOut" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TareWeight" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTareWeight" msprop:Generator_ColumnPropNameInRow="TareWeight" msprop:Generator_ColumnPropNameInTable="TareWeightColumn" msprop:Generator_UserColumnName="TareWeight" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NetWeight" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNetWeight" msprop:Generator_ColumnPropNameInRow="NetWeight" msprop:Generator_ColumnPropNameInTable="NetWeightColumn" msprop:Generator_UserColumnName="NetWeight" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GrossWeight" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGrossWeight" msprop:Generator_ColumnPropNameInRow="GrossWeight" msprop:Generator_ColumnPropNameInTable="GrossWeightColumn" msprop:Generator_UserColumnName="GrossWeight" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProdInOut" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnProdInOut" msprop:Generator_ColumnPropNameInRow="ProdInOut" msprop:Generator_ColumnPropNameInTable="ProdInOutColumn" msprop:Generator_UserColumnName="ProdInOut" type="xs:unsignedByte" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

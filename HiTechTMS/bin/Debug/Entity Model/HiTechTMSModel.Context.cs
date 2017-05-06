@@ -40,5 +40,6 @@ namespace DAL.Entity_Model
         public virtual DbSet<transMultiWeight> transMultiWeight { get; set; }
         public virtual DbSet<ViewMultiProduct> ViewMultiProduct { get; set; }
         public virtual DbSet<viewNormalPendingFile> viewNormalPendingFile { get; set; }
+        public virtual DbSet<rptNormalTicket> rptNormalTicket { get; set; }
     }
 }

@@ -296,7 +296,7 @@ namespace HitechTMS.File
                 .Where(x => x.IsSuplier == (_frmType == FrmName.Supplier ? "2" : "3"));
             if (RepData.ToList().Count > 0)
             {
-                rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), _frmType);
+                rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), _frmType,enumProductInOut.Other);
                 rptCmn.ShowDialog();
             }
             else

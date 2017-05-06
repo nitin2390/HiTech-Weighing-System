@@ -30,9 +30,10 @@ namespace HitechTMS.Weighing
         public Guid _transNormalWeightID { get; set; }
         private Common _comm { get; set; }
         private FrmName _frmName { get; set; }
+        private Guid transNormalWeightID;
 
         readonly double _MaxWeight;
-        public frmNormalWeighing(enumProductInOut EnumProductNormalPublicMulti, enumWeightMode Mode, IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString(), HitechEnums.AppRole.Supervisor.ToString() }, userPrincipal)
+        public frmNormalWeighing(enumProductInOut enumProductInOut, enumWeightMode Mode, IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString(), HitechEnums.AppRole.Supervisor.ToString() }, userPrincipal)
         {
             InitializeComponent();
             _MaxWeight = 150;
@@ -46,7 +47,7 @@ namespace HitechTMS.Weighing
             this.MinimizeBox = this.MaximizeBox = false;
             _dbReturn = false;
             _saveClick = false;
-            _enumProductInOut = EnumProductNormalPublicMulti;
+            _enumProductInOut = enumProductInOut;
             Text = "Normal Weighing (Product " + _enumProductInOut.ToString() + ")";
             bindComboBox();
             setEnableDisable();
@@ -184,8 +185,9 @@ namespace HitechTMS.Weighing
                     _dbObj.transNormalWeight.AddOrUpdate(objtransNormalWeight);
                     if (_dbObj.SaveChanges() > 0)
                     {
-                        _isTareWeight = true;
-                        ResetCntrl();
+                        transNormalWeightID = _transNormalWeightID;
+                        DisableAllExceptTicket();
+                        //ResetCntrl();
                         MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -215,7 +217,7 @@ namespace HitechTMS.Weighing
             {
                 _dbReturn = false;
                 _saveClick = false;
-
+                _isTareWeight = true;
                 cmbProductCode.SelectedIndex = 0;
                 cmbCustomerCode.SelectedIndex = 0;
                 cmbTranspoterCode.SelectedIndex = 0;
@@ -239,6 +241,7 @@ namespace HitechTMS.Weighing
                 btnWeight.Text = "";
                 errProvWeight.Clear();
                 setEnableDisable();
+                EnableAllExceptTicket();
 
             }
             catch (Exception ex)
@@ -767,6 +770,80 @@ namespace HitechTMS.Weighing
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnTicket_Click(object sender, EventArgs e)
+        {
+            var RepData = _dbObj.rptNormalTicket
+                .Where(x => x.ID == transNormalWeightID.ToString())
+                .Select(x => new { ID = x.ID ?? "" ,
+                                    Truck = x.Truck ?? "",
+                                    ProductCode = x.ProductCode ?? "",
+                                    Name = x.Name,
+                                    SupplierCode = x.SupplierCode,
+                                    SupplierName = x.SupplierName,
+                                    TransporterCode = x.TransporterCode ?? "",
+                                    TarnsPorterName = x.TarnsPorterName ?? "",
+                                    ChallanNumber = x.ChallanNumber ?? "",
+                                    Miscellaneous = x.Miscellaneous ?? "" ,
+                                    DeliveryNoteN = x.DeliveryNoteN ?? "",
+                                    ChallanWeight = x.ChallanWeight ?? "",
+                                    ChallanDate = x.ChallanDate ?? "" ,
+                                    DateIn = x.DateIn ?? "",
+                                    TimeIn = x.TimeIn ?? "",
+                                    DateOut = x.DateOut ?? "",
+                                    TimeOut = x.TimeOut ?? "",
+                                    TareWeight = x.TareWeight ?? "",
+                                    GrossWeight = x.GrossWeight ?? "",
+                                    NetWeight = x.NetWeight ?? "",
+                                    ProdInOut =x.ProdInOut
+                });
+            rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), FrmName.NormalWeighing, _enumProductInOut);
+            rptCmn.ShowDialog();
+        }
+
+        private void frmNormalWeighing_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void DisableAllExceptTicket()
+        {
+            txtTruck.Enabled = false;
+            lstTruck.Visible = false;
+            cmbProductCode.Enabled = false;
+            cmbCustomerCode.Enabled = false;
+            cmbTranspoterCode.Enabled = false;
+            cmbChallanWeight.Enabled = false;
+            txtChallanNumber.Enabled = false;
+            txtChallanDate.Enabled = false;
+            dtPickChallanDate.Enabled = false;
+            txtChallanWeight.Enabled = false;
+            txtMiscellaneous.Enabled = false;
+            txtMiscellaneous1.Enabled = false;
+            txtDeliveryNoteN.Enabled = false;
+            btnSave.Enabled = false;
+            btnWeight.Enabled = false;
+            btnTicket.Enabled = true;
+        }
+
+        public void EnableAllExceptTicket()
+        {
+            txtTruck.Enabled = true;
+            cmbProductCode.Enabled = true;
+            cmbCustomerCode.Enabled = true;
+            cmbTranspoterCode.Enabled = true;
+            cmbChallanWeight.Enabled = true;
+            txtChallanNumber.Enabled = true;
+            txtChallanDate.Enabled = true;
+            dtPickChallanDate.Enabled = true;
+            txtChallanWeight.Enabled = true;
+            txtMiscellaneous.Enabled = true;
+            txtMiscellaneous1.Enabled = true;
+            txtDeliveryNoteN.Enabled = true;
+            btnSave.Enabled = true;
+            btnWeight.Enabled = true;
+            btnTicket.Enabled = false;
         }
     }
 }

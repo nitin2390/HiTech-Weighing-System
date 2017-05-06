@@ -116,6 +116,9 @@
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Entity Model\rptNormalTicket.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\transMultiWeight.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>

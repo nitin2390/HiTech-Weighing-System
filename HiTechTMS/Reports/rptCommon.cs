@@ -9,7 +9,7 @@ namespace HitechTMS
     public partial class rptCommon : Form
     {
         public FrmName _frmName { get; set; }
-        public rptCommon(IEnumerable dataSrc, FrmName enumfrmName)
+        public rptCommon(IEnumerable dataSrc, FrmName enumfrmName, enumProductInOut _enumProductInOut)
         {
             InitializeComponent();
             this._frmName = enumfrmName;
@@ -38,6 +38,14 @@ namespace HitechTMS
                 cryRpt.Load(Environment.CurrentDirectory + @"\Reports\StoredTareFile.rpt");
                 cryRpt.SummaryInfo.ReportTitle = "Stored Tare File";
                 this.Text = "Stored Tare File";
+            }
+
+            else if (_frmName == FrmName.NormalWeighing)
+            {
+                cryRpt.Load(Environment.CurrentDirectory + @"\Reports\normalTicket.rpt");
+                cryRpt.SummaryInfo.ReportTitle = "Normal Weighing";
+                //cryRpt.SetParameterValue("enumProductInOut", _enumProductInOut.ToString());
+                this.Text = "Normal Weighing";
             }
 
             cryRpt.SetDataSource(dataSrc);

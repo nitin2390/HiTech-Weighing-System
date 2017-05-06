@@ -22,6 +22,7 @@
         <AssociationConnector Association="HitechTruckMngtSystmDataBaseFileModel.FK__MultiPrdW__Truck__5FD33367" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.ViewMultiProduct" Width="1.5" PointX="2.375" PointY="10.375" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" Width="1.5" PointX="4.375" PointY="7.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" Width="1.5" PointX="6.375" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

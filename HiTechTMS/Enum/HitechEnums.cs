@@ -43,7 +43,8 @@
         public enum enumProductInOut
         {
             In =0,
-            Out =1
+            Out =1,
+            Other =2
         }
 
         public enum enumSupplierTransportfrm

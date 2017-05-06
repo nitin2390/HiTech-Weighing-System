@@ -378,7 +378,7 @@ namespace HitechTMS.File
                           };
             if (RepData.ToList().Count > 0)
             {
-                rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), _frmName);
+                rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), _frmName,enumProductInOut.Other);
                 rptCmn.ShowDialog();
             }
             else
