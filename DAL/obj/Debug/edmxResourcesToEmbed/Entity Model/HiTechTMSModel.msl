@@ -253,5 +253,41 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="mstHyoerTerminalData">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstHyoerTerminalData">
+        <MappingFragment StoreEntitySet="mstHyoerTerminalData">
+          <ScalarProperty Name="iStopBits" ColumnName="iStopBits" />
+          <ScalarProperty Name="sParity" ColumnName="sParity" />
+          <ScalarProperty Name="DataReceived" ColumnName="DataReceived" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Handshake" ColumnName="Handshake" />
+          <ScalarProperty Name="PortName" ColumnName="PortName" />
+          <ScalarProperty Name="WriteTimeout" ColumnName="WriteTimeout" />
+          <ScalarProperty Name="ReadTimeout" ColumnName="ReadTimeout" />
+          <ScalarProperty Name="DataBits" ColumnName="DataBits" />
+          <ScalarProperty Name="BaudRate" ColumnName="BaudRate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mstGeneralSettings">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings">
+        <MappingFragment StoreEntitySet="mstGeneralSettings">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="FooterBlankLine" ColumnName="FooterBlankLine" />
+          <ScalarProperty Name="HeaderBlankLine" ColumnName="HeaderBlankLine" />
+          <ScalarProperty Name="TktRepPrintingMode" ColumnName="TktRepPrintingMode" />
+          <ScalarProperty Name="ReportFormat" ColumnName="ReportFormat" />
+          <ScalarProperty Name="TicketFormat" ColumnName="TicketFormat" />
+          <ScalarProperty Name="FirstWeightTkt" ColumnName="FirstWeightTkt" />
+          <ScalarProperty Name="StoreTare" ColumnName="StoreTare" />
+          <ScalarProperty Name="MiniNetWeight" ColumnName="MiniNetWeight" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

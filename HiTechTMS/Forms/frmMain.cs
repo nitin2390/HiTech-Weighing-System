@@ -263,10 +263,14 @@ namespace HitechTMS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _enumProductNormalPublicMulti = enumProductNormalPublicMulti.Multi;
-            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
-            objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
-            objfrmProductInOut.ShowDialog();
+            //_enumProductNormalPublicMulti = enumProductNormalPublicMulti.Multi;
+            //frmHyperTerminalConfiguration objfrmHyperTerminalConfiguration = new frmHyperTerminalConfiguration(FrmName.HyperTerminalConfiguration, _nextFormPrincipal);// _enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
+            //objfrmHyperTerminalConfiguration.StartPosition = FormStartPosition.CenterParent;
+            //objfrmHyperTerminalConfiguration.ShowDialog();
+
+            frmGeneralSetting objfrmGeneralSetting = new frmGeneralSetting(FrmName.GenralSetting, _nextFormPrincipal);// _enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
+            objfrmGeneralSetting.StartPosition = FormStartPosition.CenterParent;
+            objfrmGeneralSetting.ShowDialog();
         }
     }
 }

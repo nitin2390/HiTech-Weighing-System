@@ -29,6 +29,40 @@
     <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="FormName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="mstGeneralSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionNo" Type="int" Nullable="false" />
+    <Property Name="Mode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="MiniNetWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="StoreTare" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FirstWeightTkt" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="TicketFormat" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="ReportFormat" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="TktRepPrintingMode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="HeaderBlankLine" Type="int" Nullable="false" />
+    <Property Name="FooterBlankLine" Type="int" Nullable="false" />
+    <Property Name="AddedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mstHyoerTerminalData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BaudRate" Type="int" Nullable="false" />
+    <Property Name="DataBits" Type="int" Nullable="false" />
+    <Property Name="ReadTimeout" Type="int" Nullable="false" />
+    <Property Name="WriteTimeout" Type="int" Nullable="false" />
+    <Property Name="PortName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Handshake" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DataReceived" Type="nvarchar" MaxLength="50" />
+    <Property Name="sParity" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="iStopBits" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="mstPermission">
     <Key>
       <PropertyRef Name="Id" />
@@ -313,6 +347,8 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <EntitySet Name="EmailConfigs" EntityType="Self.EmailConfigs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EmailMaster" EntityType="Self.EmailMaster" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mstFormName" EntityType="Self.mstFormName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mstGeneralSettings" EntityType="Self.mstGeneralSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mstHyoerTerminalData" EntityType="Self.mstHyoerTerminalData" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mstPermission" EntityType="Self.mstPermission" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mstStoredTareRecords" EntityType="Self.mstStoredTareRecords" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />

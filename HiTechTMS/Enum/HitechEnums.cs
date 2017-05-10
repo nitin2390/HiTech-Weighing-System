@@ -23,8 +23,19 @@
             PublicWeighing =22,
             MultiWeghing = 23,
 
+            NormalPendingFile = 24,
+            PublicPendingFile = 25,
+            MultiPendingFile = 26,
+
+            NormalCompleteFile = 27,
+            PublicCompleteFile = 28,
+            MultiCompleteFile = 29,
+
             //Config
-            AddEditUser = 30
+            AddEditUser = 30,
+            EmailConfig = 31,
+            HyperTerminalConfiguration = 32,
+            GenralSetting =33
         }
 
         public enum enumProduct

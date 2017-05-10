@@ -148,11 +148,25 @@
     <Compile Include="Classes\CreateExcelAndSendEmail.cs" />
     <Compile Include="Classes\GetResourceCaption.cs" />
     <Compile Include="Classes\ReadSerialPortData.cs" />
+    <Compile Include="Classes\SerialPortManager.cs" />
+    <Compile Include="Classes\SerialSettings.cs" />
     <Compile Include="Forms\Config\frmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Config\frmAddUser.Designer.cs">
       <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\frmGeneralSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\frmGeneralSetting.Designer.cs">
+      <DependentUpon>frmGeneralSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\frmHyperTerminalConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\frmHyperTerminalConfiguration.Designer.cs">
+      <DependentUpon>frmHyperTerminalConfiguration.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Config\frmSetPermission.cs">
       <SubType>Form</SubType>
@@ -337,7 +351,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StoredTareFile.rpt</DependentUpon>
       <SubType>Component</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Reports\SupplierTransport.cs">
       <AutoGen>True</AutoGen>
@@ -433,6 +447,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="db\HitechTruckMngtSystmDataBaseFile.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\frmGeneralSetting.resx">
+      <DependentUpon>frmGeneralSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\frmHyperTerminalConfiguration.resx">
+      <DependentUpon>frmHyperTerminalConfiguration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Config\frmSetPermission.resx">
       <DependentUpon>frmSetPermission.cs</DependentUpon>
@@ -565,7 +585,7 @@
     <EmbeddedResource Include="Reports\StoredTareFile.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>StoredTareFile.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\SupplierTransport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

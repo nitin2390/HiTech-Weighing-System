@@ -1,0 +1,10 @@
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\bin\Release\HitechTMSActivation.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\bin\Release\HitechTMSActivation.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\bin\Release\SharedLibrary.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\bin\Release\SharedLibrary.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Release\HitechTMSActivation.csprojResolveAssemblyReference.cache
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Release\HitechTMSActivation.Form1.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Release\HitechTMSActivation.Properties.Resources.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Release\HitechTMSActivation.csproj.GenerateResource.Cache
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Release\HitechTMSActivation.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureApp\obj\Release\HitechTMSActivation.pdb

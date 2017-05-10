@@ -23,6 +23,8 @@
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.ViewMultiProduct" Width="1.5" PointX="2.375" PointY="10.375" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" Width="1.5" PointX="4.375" PointY="7.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" Width="1.5" PointX="6.375" PointY="9.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyoerTerminalData" Width="1.5" PointX="9.375" PointY="7.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings" Width="1.5" PointX="11.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

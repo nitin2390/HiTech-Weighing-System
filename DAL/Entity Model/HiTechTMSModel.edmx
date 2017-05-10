@@ -34,6 +34,40 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="FormName" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <EntityType Name="mstGeneralSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TransactionNo" Type="int" Nullable="false" />
+          <Property Name="Mode" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="MiniNetWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="StoreTare" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FirstWeightTkt" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="TicketFormat" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="ReportFormat" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="TktRepPrintingMode" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="HeaderBlankLine" Type="int" Nullable="false" />
+          <Property Name="FooterBlankLine" Type="int" Nullable="false" />
+          <Property Name="AddedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mstHyoerTerminalData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BaudRate" Type="int" Nullable="false" />
+          <Property Name="DataBits" Type="int" Nullable="false" />
+          <Property Name="ReadTimeout" Type="int" Nullable="false" />
+          <Property Name="WriteTimeout" Type="int" Nullable="false" />
+          <Property Name="PortName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Handshake" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DataReceived" Type="nvarchar" MaxLength="50" />
+          <Property Name="sParity" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="iStopBits" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="mstPermission">
           <Key>
             <PropertyRef Name="Id" />
@@ -318,6 +352,8 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="EmailConfigs" EntityType="Self.EmailConfigs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmailMaster" EntityType="Self.EmailMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstFormName" EntityType="Self.mstFormName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mstGeneralSettings" EntityType="Self.mstGeneralSettings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mstHyoerTerminalData" EntityType="Self.mstHyoerTerminalData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstPermission" EntityType="Self.mstPermission" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstStoredTareRecords" EntityType="Self.mstStoredTareRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />
@@ -425,6 +461,8 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="ViewMultiProduct" EntityType="HitechTruckMngtSystmDataBaseFileModel.ViewMultiProduct" />
           <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
           <EntitySet Name="rptNormalTicket" EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" />
+          <EntitySet Name="mstHyoerTerminalData" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyoerTerminalData" />
+          <EntitySet Name="mstGeneralSettings" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -733,6 +771,40 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="GrossWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ProdInOut" Type="Byte" Nullable="false" />
         </EntityType>
+        <EntityType Name="mstHyoerTerminalData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="BaudRate" Type="Int32" Nullable="false" />
+          <Property Name="DataBits" Type="Int32" Nullable="false" />
+          <Property Name="ReadTimeout" Type="Int32" Nullable="false" />
+          <Property Name="WriteTimeout" Type="Int32" Nullable="false" />
+          <Property Name="PortName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Handshake" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DataReceived" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sParity" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="iStopBits" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mstGeneralSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TransactionNo" Type="Int32" Nullable="false" />
+          <Property Name="Mode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="MiniNetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="StoreTare" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FirstWeightTkt" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="TicketFormat" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ReportFormat" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="TktRepPrintingMode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="HeaderBlankLine" Type="Int32" Nullable="false" />
+          <Property Name="FooterBlankLine" Type="Int32" Nullable="false" />
+          <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -988,6 +1060,42 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
                 <ScalarProperty Name="Truck" ColumnName="Truck" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mstHyoerTerminalData">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstHyoerTerminalData">
+              <MappingFragment StoreEntitySet="mstHyoerTerminalData">
+                <ScalarProperty Name="iStopBits" ColumnName="iStopBits" />
+                <ScalarProperty Name="sParity" ColumnName="sParity" />
+                <ScalarProperty Name="DataReceived" ColumnName="DataReceived" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Handshake" ColumnName="Handshake" />
+                <ScalarProperty Name="PortName" ColumnName="PortName" />
+                <ScalarProperty Name="WriteTimeout" ColumnName="WriteTimeout" />
+                <ScalarProperty Name="ReadTimeout" ColumnName="ReadTimeout" />
+                <ScalarProperty Name="DataBits" ColumnName="DataBits" />
+                <ScalarProperty Name="BaudRate" ColumnName="BaudRate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mstGeneralSettings">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings">
+              <MappingFragment StoreEntitySet="mstGeneralSettings">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="FooterBlankLine" ColumnName="FooterBlankLine" />
+                <ScalarProperty Name="HeaderBlankLine" ColumnName="HeaderBlankLine" />
+                <ScalarProperty Name="TktRepPrintingMode" ColumnName="TktRepPrintingMode" />
+                <ScalarProperty Name="ReportFormat" ColumnName="ReportFormat" />
+                <ScalarProperty Name="TicketFormat" ColumnName="TicketFormat" />
+                <ScalarProperty Name="FirstWeightTkt" ColumnName="FirstWeightTkt" />
+                <ScalarProperty Name="StoreTare" ColumnName="StoreTare" />
+                <ScalarProperty Name="MiniNetWeight" ColumnName="MiniNetWeight" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

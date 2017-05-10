@@ -27,13 +27,53 @@ namespace HitechTMS.Classes
             {
                 ExcelUtlity obj = new ExcelUtlity();
                 DataTable dt = new DataTable();
+
                 if (objEnums == HitechEnums.FrmName.ProductDetail)
                 {
                     var query = dbObj.Products.Select(x => new { x.Code, x.Name });
                     dt = obj.ConvertToDataTable(query.ToList());
+                    dt.Columns.Remove("ID");
                     this.FileName = @"\ProductDetails.xls";
                     this.WorkSheetName = "Details";
                 }
+                else if(objEnums == HitechEnums.FrmName.NormalPendingFile)
+                {
+                    var query = dbObj.viewNormalPendingFile.Where(x => x.IsPending == 0).ToList();
+                    dt = obj.ConvertToDataTable(query.ToList());
+                    dt.Columns.Remove("ID");
+                    this.FileName = @"\Normal Pending Weight.xls";
+                    this.WorkSheetName = "Details";
+                }
+                else if (objEnums == HitechEnums.FrmName.PublicPendingFile)
+                {
+                    //var query = dbObj.viewNormalPendingFile.Where(x => x.IsPending == 0).ToList();
+                    //dt = obj.ConvertToDataTable(query.ToList());
+                    //this.FileName = @"\Normal Pending Weight.xls";
+                    //this.WorkSheetName = "Details";
+                }
+                else if (objEnums == HitechEnums.FrmName.MultiPendingFile)
+                {
+
+                }
+                else if (objEnums == HitechEnums.FrmName.NormalCompleteFile)
+                {
+                    var query = dbObj.viewNormalPendingFile.Where(x => x.IsPending == 1).ToList();
+                    dt = obj.ConvertToDataTable(query.ToList());
+                    dt.Columns.Remove("ID");
+                    this.FileName = @"\Normal Complete Weight.xls";
+                    this.WorkSheetName = "Details";
+                }
+                else if (objEnums == HitechEnums.FrmName.PublicCompleteFile)
+                {
+
+                }
+                else if (objEnums == HitechEnums.FrmName.MultiCompleteFile)
+                {
+
+                }
+
+
+
                 else if (objEnums == HitechEnums.FrmName.Supplier)
                 {
                     var query = dbObj.mstSupplierTransporter

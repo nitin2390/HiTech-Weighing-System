@@ -1,28 +1,54 @@
-﻿using System;
+﻿using DAL.Entity_Model;
+using System;
+using System.Collections.Generic;
 using System.IO.Ports;
+using System.Linq;
 
 namespace DAL
 {
     public class HyperTerminalAdapter
     {
         SerialPort oSerialPort = new SerialPort();
+        HitechTruckMngtSystmDataBaseFileEntities dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
 
         // Allow the user to set the appropriate properties. 
-        public int BaudRate = 2400;
-        public int DataBits = 8;
-        public int ReadTimeout = 2000;
-        public int WriteTimeout = 2000;
-        public string PortName = "COM4";
-        public string Handshake = "";
-        public string Name = "user";
-        public string DataReceived = "";
-        public string sParity = "none";
-        public int iStopBits = 1;
+        //public int BaudRate = 2400;
+        //public int DataBits = 8;
+        //public int ReadTimeout = 2000;
+        //public int WriteTimeout = 2000;
+        //public string PortName = "COM4";
+        //public string Handshake = "";
+        //public string Name = "user";
+        //public string DataReceived = "";
+        //public string sParity = "none";
+        //public int iStopBits = 1;
 
+        private int BaudRate { get; set; }
+        public int DataBits { get; set; }
+        private int ReadTimeout { get; set; }
+        private int WriteTimeout { get; set; }
+        private string PortName { get; set; }
+        private string Handshake { get; set; }
+        private string Name { get; set; }
+        private string DataReceived { get; set; }
+        private string sParity { get; set; }
+        private int iStopBits { get; set; }
 
 
         public HyperTerminalAdapter()
         {
+            List<mstHyoerTerminalData> objmstHyoerTerminalData = new List<mstHyoerTerminalData>();
+            objmstHyoerTerminalData = dbObj.mstHyoerTerminalData.ToList();
+            this.BaudRate = objmstHyoerTerminalData[0].BaudRate;
+            this.DataBits = objmstHyoerTerminalData[0].DataBits;
+            this.ReadTimeout = objmstHyoerTerminalData[0].ReadTimeout;
+            this.WriteTimeout = objmstHyoerTerminalData[0].WriteTimeout;
+            this.PortName = objmstHyoerTerminalData[0].PortName;
+            this.Handshake = objmstHyoerTerminalData[0].Handshake;
+            this.Name = objmstHyoerTerminalData[0].Name;
+            this.DataReceived = objmstHyoerTerminalData[0].DataReceived;
+            this.sParity = objmstHyoerTerminalData[0].sParity;
+            this.iStopBits = objmstHyoerTerminalData[0].iStopBits;
             this.Configure();
         }
 

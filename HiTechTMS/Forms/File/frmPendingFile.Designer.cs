@@ -29,20 +29,22 @@
         private void InitializeComponent()
         {
             this.grpboxPendingFile = new System.Windows.Forms.GroupBox();
+            this.lblRecCount = new System.Windows.Forms.Label();
+            this.lblRecordsCount = new System.Windows.Forms.Label();
+            this.chkCompleteFile = new System.Windows.Forms.CheckBox();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.gridPendingFile = new System.Windows.Forms.DataGridView();
             this.rdbMultiWeight = new System.Windows.Forms.RadioButton();
             this.rdbPublicWeight = new System.Windows.Forms.RadioButton();
             this.rdbNormalWeight = new System.Windows.Forms.RadioButton();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.chkCompleteFile = new System.Windows.Forms.CheckBox();
-            this.lblRecCount = new System.Windows.Forms.Label();
-            this.lblRecordsCount = new System.Windows.Forms.Label();
+            this.btnEmailAsExcel = new System.Windows.Forms.Button();
             this.grpboxPendingFile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPendingFile)).BeginInit();
             this.SuspendLayout();
             // 
             // grpboxPendingFile
             // 
+            this.grpboxPendingFile.Controls.Add(this.btnEmailAsExcel);
             this.grpboxPendingFile.Controls.Add(this.lblRecCount);
             this.grpboxPendingFile.Controls.Add(this.lblRecordsCount);
             this.grpboxPendingFile.Controls.Add(this.chkCompleteFile);
@@ -57,6 +59,52 @@
             this.grpboxPendingFile.TabIndex = 0;
             this.grpboxPendingFile.TabStop = false;
             this.grpboxPendingFile.Text = "Pending File";
+            // 
+            // lblRecCount
+            // 
+            this.lblRecCount.AutoSize = true;
+            this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecCount.Location = new System.Drawing.Point(989, 637);
+            this.lblRecCount.Name = "lblRecCount";
+            this.lblRecCount.Size = new System.Drawing.Size(136, 22);
+            this.lblRecCount.TabIndex = 28;
+            this.lblRecCount.Text = "Records Count";
+            // 
+            // lblRecordsCount
+            // 
+            this.lblRecordsCount.AutoSize = true;
+            this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecordsCount.Location = new System.Drawing.Point(1145, 637);
+            this.lblRecordsCount.Name = "lblRecordsCount";
+            this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
+            this.lblRecordsCount.TabIndex = 27;
+            this.lblRecordsCount.Text = "Count";
+            // 
+            // chkCompleteFile
+            // 
+            this.chkCompleteFile.AutoSize = true;
+            this.chkCompleteFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCompleteFile.Location = new System.Drawing.Point(18, 42);
+            this.chkCompleteFile.Name = "chkCompleteFile";
+            this.chkCompleteFile.Size = new System.Drawing.Size(157, 24);
+            this.chkCompleteFile.TabIndex = 5;
+            this.chkCompleteFile.Text = "Complete Files";
+            this.chkCompleteFile.UseVisualStyleBackColor = true;
+            this.chkCompleteFile.CheckedChanged += new System.EventHandler(this.chkCompleteFile_CheckedChanged);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(18, 637);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(121, 56);
+            this.btnPrint.TabIndex = 4;
+            this.btnPrint.Text = "&Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // gridPendingFile
             // 
@@ -106,51 +154,15 @@
             this.rdbNormalWeight.UseVisualStyleBackColor = true;
             this.rdbNormalWeight.CheckedChanged += new System.EventHandler(this.rdbNormalWeight_CheckedChanged);
             // 
-            // btnPrint
+            // btnEmailAsExcel
             // 
-            this.btnPrint.Location = new System.Drawing.Point(18, 637);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(121, 56);
-            this.btnPrint.TabIndex = 4;
-            this.btnPrint.Text = "&Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // chkCompleteFile
-            // 
-            this.chkCompleteFile.AutoSize = true;
-            this.chkCompleteFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCompleteFile.Location = new System.Drawing.Point(18, 42);
-            this.chkCompleteFile.Name = "chkCompleteFile";
-            this.chkCompleteFile.Size = new System.Drawing.Size(157, 24);
-            this.chkCompleteFile.TabIndex = 5;
-            this.chkCompleteFile.Text = "Complete Files";
-            this.chkCompleteFile.UseVisualStyleBackColor = true;
-            this.chkCompleteFile.CheckedChanged += new System.EventHandler(this.chkCompleteFile_CheckedChanged);
-            // 
-            // lblRecCount
-            // 
-            this.lblRecCount.AutoSize = true;
-            this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecCount.Location = new System.Drawing.Point(989, 637);
-            this.lblRecCount.Name = "lblRecCount";
-            this.lblRecCount.Size = new System.Drawing.Size(136, 22);
-            this.lblRecCount.TabIndex = 28;
-            this.lblRecCount.Text = "Records Count";
-            // 
-            // lblRecordsCount
-            // 
-            this.lblRecordsCount.AutoSize = true;
-            this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsCount.Location = new System.Drawing.Point(1145, 637);
-            this.lblRecordsCount.Name = "lblRecordsCount";
-            this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
-            this.lblRecordsCount.TabIndex = 27;
-            this.lblRecordsCount.Text = "Count";
+            this.btnEmailAsExcel.Location = new System.Drawing.Point(158, 637);
+            this.btnEmailAsExcel.Name = "btnEmailAsExcel";
+            this.btnEmailAsExcel.Size = new System.Drawing.Size(121, 56);
+            this.btnEmailAsExcel.TabIndex = 29;
+            this.btnEmailAsExcel.Text = "&Email as Excel";
+            this.btnEmailAsExcel.UseVisualStyleBackColor = true;
+            this.btnEmailAsExcel.Click += new System.EventHandler(this.btnEmailAsExcel_Click);
             // 
             // frmPendingFile
             // 
@@ -178,5 +190,6 @@
         private System.Windows.Forms.CheckBox chkCompleteFile;
         private System.Windows.Forms.Label lblRecCount;
         private System.Windows.Forms.Label lblRecordsCount;
+        private System.Windows.Forms.Button btnEmailAsExcel;
     }
 }

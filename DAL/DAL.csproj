@@ -97,6 +97,12 @@
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Entity Model\mstGeneralSettings.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Model\mstHyoerTerminalData.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\mstPermission.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

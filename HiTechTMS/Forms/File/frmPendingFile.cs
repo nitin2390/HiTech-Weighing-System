@@ -35,6 +35,7 @@ namespace HitechTMS.File
         {
             try
             {
+
                 if (rdbNormalWeight.Checked == true)
                 {
                     var QueryNormalWeight = _dbObj.viewNormalPendingFile.Where(x => x.IsPending == _chkCompleteFile).ToList();
@@ -50,10 +51,11 @@ namespace HitechTMS.File
                 }
                 else if(rdbMultiWeight.Checked == true)
                 {
-                    var QueryMultiWeight = _dbObj.transMultiWeight.Where(x => x.IsPending == _chkCompleteFile).ToList();
+                    var QueryMultiWeight = _dbObj.viewNormalPendingFile.Where(x => x.IsPending == _chkCompleteFile).ToList();
                     gridPendingFile.DataSource = QueryMultiWeight;
                     lblRecordsCount.Text = QueryMultiWeight.Count().ToString();
                 }
+
             }
             catch (Exception ex)
             {
@@ -94,16 +96,19 @@ namespace HitechTMS.File
 
         private void rdbNormalWeight_CheckedChanged(object sender, EventArgs e)
         {
+            _chkCompleteFile = Convert.ToInt16(chkCompleteFile.Checked);
             LoadGridData();
         }
 
         private void rdbPublicWeight_CheckedChanged(object sender, EventArgs e)
         {
+            _chkCompleteFile = Convert.ToInt16(chkCompleteFile.Checked);
             LoadGridData();
         }
 
         private void rdbMultiWeight_CheckedChanged(object sender, EventArgs e)
         {
+            _chkCompleteFile = Convert.ToInt16(chkCompleteFile.Checked);
             LoadGridData();
         }
 
@@ -114,8 +119,57 @@ namespace HitechTMS.File
 
         private void chkCompleteFile_CheckedChanged(object sender, EventArgs e)
         {
+            _chkCompleteFile = Convert.ToInt16(chkCompleteFile.Checked);
             LoadGridData();
-            _chkCompleteFile = chkCompleteFile.Checked == true ? 1 : 0;
+        }
+
+        private void btnEmailAsExcel_Click(object sender, EventArgs e)
+        {
+            HitechEnums.FrmName _frmNameCombination = HitechEnums.FrmName.NormalPendingFile;
+            using (CreateExcelAndSendEmail obj = new CreateExcelAndSendEmail())
+            {
+                if(_chkCompleteFile == 0)
+                {
+                   
+                    if(rdbNormalWeight.Checked == true)
+                    {
+                        _frmNameCombination = HitechEnums.FrmName.NormalPendingFile;
+                    }
+                    else if(rdbPublicWeight.Checked == true)
+                    {
+                        _frmNameCombination = HitechEnums.FrmName.PublicPendingFile;
+                    }
+                    else if(rdbMultiWeight.Checked == true)
+                    {
+                        _frmNameCombination = HitechEnums.FrmName.MultiPendingFile;
+                    }
+                }
+                else
+                {
+                    if (rdbNormalWeight.Checked == true)
+                    {
+                        _frmNameCombination = HitechEnums.FrmName.NormalCompleteFile;
+                    }
+                    else if (rdbPublicWeight.Checked == true)
+                    {
+                        _frmNameCombination = HitechEnums.FrmName.PublicCompleteFile;
+                    }
+                    else if (rdbMultiWeight.Checked == true)
+                    {
+                        _frmNameCombination = HitechEnums.FrmName.MultiCompleteFile;
+                    }
+                }
+
+                if (obj.CreateExcelAndSendEmailToList(_frmNameCombination))
+                {
+                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("EMAIL_SENT"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("ERR_EMAIL_CHK_CONFIG"), _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
     }
 }
