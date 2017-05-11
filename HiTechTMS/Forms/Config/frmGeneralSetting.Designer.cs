@@ -146,6 +146,7 @@
             // 
             // txtMinimumNetWtLimit
             // 
+            this.txtMinimumNetWtLimit.AcceptsReturn = true;
             this.txtMinimumNetWtLimit.Location = new System.Drawing.Point(323, 128);
             this.txtMinimumNetWtLimit.Name = "txtMinimumNetWtLimit";
             this.txtMinimumNetWtLimit.Size = new System.Drawing.Size(179, 22);

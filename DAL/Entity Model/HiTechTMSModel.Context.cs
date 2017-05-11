@@ -12,6 +12,8 @@ namespace DAL.Entity_Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class HitechTruckMngtSystmDataBaseFileEntities : DbContext
     {
@@ -43,5 +45,19 @@ namespace DAL.Entity_Model
         public virtual DbSet<rptNormalTicket> rptNormalTicket { get; set; }
         public virtual DbSet<mstHyoerTerminalData> mstHyoerTerminalData { get; set; }
         public virtual DbSet<mstGeneralSettings> mstGeneralSettings { get; set; }
+        public virtual DbSet<viewMultiPendingFile> viewMultiPendingFile { get; set; }
+    
+        public virtual ObjectResult<Procedure_Result> Procedure(Nullable<int> param1, Nullable<int> param2)
+        {
+            var param1Parameter = param1.HasValue ?
+                new ObjectParameter("param1", param1) :
+                new ObjectParameter("param1", typeof(int));
+    
+            var param2Parameter = param2.HasValue ?
+                new ObjectParameter("param2", param2) :
+                new ObjectParameter("param2", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Procedure_Result>("Procedure", param1Parameter, param2Parameter);
+        }
     }
 }

@@ -25,6 +25,7 @@
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" Width="1.5" PointX="6.375" PointY="9.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyoerTerminalData" Width="1.5" PointX="9.375" PointY="7.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.viewMultiPendingFile" Width="1.5" PointX="11.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

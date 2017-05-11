@@ -713,6 +713,25 @@
       <DependentUpon>HitechTruckMngtSystmDataBaseFile.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="SQL Scripts\dbo.EmailConfigs.data.sql" />
+    <Content Include="SQL Scripts\dbo.EmailMaster.data.sql" />
+    <Content Include="SQL Scripts\dbo.mstFormName.data.sql" />
+    <Content Include="SQL Scripts\dbo.mstGeneralSettings.data.sql" />
+    <Content Include="SQL Scripts\dbo.mstHyoerTerminalData.data.sql" />
+    <Content Include="SQL Scripts\dbo.mstPermission.data.sql" />
+    <Content Include="SQL Scripts\dbo.mstStoredTareRecords.data.sql" />
+    <Content Include="SQL Scripts\dbo.mstSupplierTransporter.data.sql" />
+    <Content Include="SQL Scripts\dbo.MultiPrdWeight.data.sql" />
+    <Content Include="SQL Scripts\dbo.Product.data.sql" />
+    <Content Include="SQL Scripts\dbo.rptNormalTickert.sql" />
+    <Content Include="SQL Scripts\dbo.transMultiWeight.data.sql" />
+    <Content Include="SQL Scripts\dbo.transNormalWeight.data.sql" />
+    <Content Include="SQL Scripts\dbo.transPublicWeight.data.sql" />
+    <Content Include="SQL Scripts\dbo.UserRole.data.sql" />
+    <Content Include="SQL Scripts\dbo.UserRoleType.data.sql" />
+    <Content Include="SQL Scripts\dbo.viewMultiPendingFile.sql" />
+    <Content Include="SQL Scripts\dbo.ViewMultiProduct.sql" />
+    <Content Include="SQL Scripts\dbo.viewNormalPendingFile.sql" />
     <EmbeddedResource Include="Licensee\Licensee.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

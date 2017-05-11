@@ -118,6 +118,9 @@
     <Compile Include="Entity Model\MultiPrdWeight.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Model\Procedure_Result.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\Product.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -143,6 +146,9 @@
     <Compile Include="Entity Model\UserRoleType.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Entity Model\viewMultiPendingFile.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Model\ViewMultiProduct.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>

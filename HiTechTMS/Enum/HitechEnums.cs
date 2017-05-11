@@ -126,5 +126,23 @@
             t = 0,
             kg =1
         }
+
+        public enum enumYesNo
+        {
+            No = 0,
+            Yes = 1
+        }
+
+        public enum enumTicket
+        {
+            HalfTicket = 0,
+            FullTicket = 1
+        }
+
+        public enum enumReportFormat
+        {
+            Compressed = 0,
+            Details = 0
+        }
     }
 }

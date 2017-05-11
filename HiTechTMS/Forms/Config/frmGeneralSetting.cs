@@ -34,7 +34,7 @@ namespace HitechTMS.MasterForms
             objEncryptionAndDecryption = new EncryptionAndDecryption();
             objEmailConfig = new EmailConfig();
             LoadData();
-            //btnExit.CausesValidation = false;
+          //  btnExit.CausesValidation = false;
         }
 
         private void LoadData()
@@ -61,12 +61,17 @@ namespace HitechTMS.MasterForms
             {
                 ID = generalSettingData[0].Id == Guid.Empty ? Guid.NewGuid() : generalSettingData[0].Id;
                 txtTransactionNo.Text = generalSettingData[0].TransactionNo.ToString();
-                cmbMode.SelectedText = generalSettingData[0].Mode.ToString();
+                cmbMode.SelectedIndex = cmbMode.FindString(generalSettingData[0].Mode.ToString()=="0"? enumWeightMode.Manual.ToString():enumWeightMode.Auto.ToString());
+                txtMinimumNetWtLimit.Text = generalSettingData[0].MiniNetWeight.ToString();
+                cmbStoredTare.SelectedIndex = cmbStoredTare.FindString(generalSettingData[0].MiniNetWeight.ToString() == "0" ? enumYesNo.No.ToString() : enumYesNo.Yes.ToString());
+                cmbFirstWeightTicket.SelectedIndex= cmbFirstWeightTicket.FindString(generalSettingData[0].FirstWeightTkt.ToString() == "0" ? enumYesNo.No.ToString() : enumYesNo.Yes.ToString());
+                cmbTicketFormat.SelectedIndex= cmbTicketFormat.FindString(generalSettingData[0].TicketFormat.ToString() == "0" ? enumTicket.HalfTicket.ToString() : enumTicket.FullTicket.ToString());
+
+
             }
         }
         private void btnOk_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
