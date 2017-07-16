@@ -128,6 +128,9 @@
     <Compile Include="Entity Model\rptNormalTicket.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Model\ShiftAllocationInfo.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\transMultiWeight.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>

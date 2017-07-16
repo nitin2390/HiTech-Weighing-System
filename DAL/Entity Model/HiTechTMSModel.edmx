@@ -122,6 +122,15 @@
           <Property Name="Code" Type="nvarchar" MaxLength="5" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
         </EntityType>
+        <EntityType Name="ShiftAllocationInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="NoofShifts" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
         <EntityType Name="transMultiWeight">
           <Key>
             <PropertyRef Name="ID" />
@@ -398,12 +407,10 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      
         <Function Name="Procedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="param1" Type="int" Mode="In" />
           <Parameter Name="param2" Type="int" Mode="In" />
         </Function>
-      
         <EntityContainer Name="HitechTruckMngtSystmDataBaseFileModelStoreContainer">
           <EntitySet Name="EmailConfigs" EntityType="Self.EmailConfigs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmailMaster" EntityType="Self.EmailMaster" Schema="dbo" store:Type="Tables" />
@@ -415,6 +422,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MultiPrdWeight" EntityType="Self.MultiPrdWeight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShiftAllocationInfo" EntityType="Self.ShiftAllocationInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="transMultiWeight" EntityType="Self.transMultiWeight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="transNormalWeight" EntityType="Self.transNormalWeight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="transPublicWeight" EntityType="Self.transPublicWeight" Schema="dbo" store:Type="Tables" />
@@ -544,12 +552,13 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
           <EntitySet Name="rptNormalTicket" EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" />
           <EntitySet Name="mstHyoerTerminalData" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyoerTerminalData" />
-          <EntitySet Name="mstGeneralSettings" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings" />
           <FunctionImport Name="Procedure" ReturnType="Collection(HitechTruckMngtSystmDataBaseFileModel.Procedure_Result)">
             <Parameter Name="param1" Mode="In" Type="Int32" />
             <Parameter Name="param2" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="viewMultiPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewMultiPendingFile" />
+          <EntitySet Name="mstGeneralSettings" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings" />
+          <EntitySet Name="ShiftAllocationInfo" EntityType="HitechTruckMngtSystmDataBaseFileModel.ShiftAllocationInfo" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -874,24 +883,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="sParity" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="iStopBits" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="mstGeneralSettings">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="TransactionNo" Type="Int32" Nullable="false" />
-          <Property Name="Mode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="MiniNetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="StoreTare" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="FirstWeightTkt" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="TicketFormat" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="ReportFormat" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="TktRepPrintingMode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
-          <Property Name="HeaderBlankLine" Type="Int32" Nullable="false" />
-          <Property Name="FooterBlankLine" Type="Int32" Nullable="false" />
-          <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
         <ComplexType Name="Procedure_Result">
           <Property Type="Int32" Name="Column1" Nullable="false" />
           <Property Type="Int32" Name="Column2" Nullable="false" />
@@ -943,6 +934,33 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="IsPending" Type="Byte" Nullable="false" />
           <Property Name="NetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="ProdInOut" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="mstGeneralSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TransactionNo" Type="Int32" Nullable="false" />
+          <Property Name="Mode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="MiniNetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="StoreTare" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FirstWeightTkt" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="TicketFormat" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ReportFormat" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="TktRepPrintingMode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="HeaderBlankLine" Type="Int32" Nullable="false" />
+          <Property Name="FooterBlankLine" Type="Int32" Nullable="false" />
+          <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ShiftAllocationInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="NoofShifts" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1219,25 +1237,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="mstGeneralSettings">
-            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings">
-              <MappingFragment StoreEntitySet="mstGeneralSettings">
-                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
-                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
-                <ScalarProperty Name="FooterBlankLine" ColumnName="FooterBlankLine" />
-                <ScalarProperty Name="HeaderBlankLine" ColumnName="HeaderBlankLine" />
-                <ScalarProperty Name="TktRepPrintingMode" ColumnName="TktRepPrintingMode" />
-                <ScalarProperty Name="ReportFormat" ColumnName="ReportFormat" />
-                <ScalarProperty Name="TicketFormat" ColumnName="TicketFormat" />
-                <ScalarProperty Name="FirstWeightTkt" ColumnName="FirstWeightTkt" />
-                <ScalarProperty Name="StoreTare" ColumnName="StoreTare" />
-                <ScalarProperty Name="MiniNetWeight" ColumnName="MiniNetWeight" />
-                <ScalarProperty Name="Mode" ColumnName="Mode" />
-                <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="Procedure" FunctionName="HitechTruckMngtSystmDataBaseFileModel.Store.Procedure">
             <ResultMapping>
               <ComplexTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.Procedure_Result">
@@ -1271,6 +1270,35 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
                 <ScalarProperty Name="Truck" ColumnName="Truck" />
                 <ScalarProperty Name="Mode" ColumnName="Mode" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mstGeneralSettings">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings">
+              <MappingFragment StoreEntitySet="mstGeneralSettings">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="FooterBlankLine" ColumnName="FooterBlankLine" />
+                <ScalarProperty Name="HeaderBlankLine" ColumnName="HeaderBlankLine" />
+                <ScalarProperty Name="TktRepPrintingMode" ColumnName="TktRepPrintingMode" />
+                <ScalarProperty Name="ReportFormat" ColumnName="ReportFormat" />
+                <ScalarProperty Name="TicketFormat" ColumnName="TicketFormat" />
+                <ScalarProperty Name="FirstWeightTkt" ColumnName="FirstWeightTkt" />
+                <ScalarProperty Name="StoreTare" ColumnName="StoreTare" />
+                <ScalarProperty Name="MiniNetWeight" ColumnName="MiniNetWeight" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShiftAllocationInfo">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.ShiftAllocationInfo">
+              <MappingFragment StoreEntitySet="ShiftAllocationInfo">
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="NoofShifts" ColumnName="NoofShifts" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -44,8 +44,9 @@ namespace DAL.Entity_Model
         public virtual DbSet<viewNormalPendingFile> viewNormalPendingFile { get; set; }
         public virtual DbSet<rptNormalTicket> rptNormalTicket { get; set; }
         public virtual DbSet<mstHyoerTerminalData> mstHyoerTerminalData { get; set; }
-        public virtual DbSet<mstGeneralSettings> mstGeneralSettings { get; set; }
         public virtual DbSet<viewMultiPendingFile> viewMultiPendingFile { get; set; }
+        public virtual DbSet<mstGeneralSettings> mstGeneralSettings { get; set; }
+        public virtual DbSet<ShiftAllocationInfo> ShiftAllocationInfo { get; set; }
     
         public virtual ObjectResult<Procedure_Result> Procedure(Nullable<int> param1, Nullable<int> param2)
         {
