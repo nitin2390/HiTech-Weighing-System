@@ -12,6 +12,9 @@ using static HitechTMS.HitechEnums;
 using HitechTMS.Config;
 using System.Collections.Generic;
 using System.Linq;
+using MsgBox;
+using SharedLibrary;
+using System.Globalization;
 
 namespace HitechTMS
 {
@@ -19,24 +22,74 @@ namespace HitechTMS
     {
         public HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         private IPrincipal _nextFormPrincipal;
-        private GetResourceCaption dbGetResourceCaption;
+        private GetResourceCaption _dbGetResourceCaption;
         public enumProductNormalPublicMulti _enumProductNormalPublicMulti { get; set; }
+
+        private EncryptionAndDecryption objEncryptionAndDecryption;
         public string str;
         public string _role { get; set; }
         HyperTerminalAdapter ht = new HyperTerminalAdapter();
         enumWeightMode _mode;
-
-        public frmMain(IPrincipal userPrincipal,string role) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Supervisor.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
+        public string _usrName { get; set; }
+        public frmMain(string usrName, IPrincipal userPrincipal, string role) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Supervisor.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
         {
+            dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
+            _dbGetResourceCaption = new GetResourceCaption();
+            objEncryptionAndDecryption = new EncryptionAndDecryption();
+
             _nextFormPrincipal = userPrincipal;
+            KeyPreview = true;
             InitializeComponent();
             _role = role;
-            _mode = enumWeightMode.Auto;
-            dbGetResourceCaption = new GetResourceCaption();
-            this.MaximumSize = this.MinimumSize = this.Size;
-            this.MinimizeBox = this.MaximizeBox = false;
-            dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
+            LoadGlobalValues();
+            _mode = GetGeneralSettingValues.Mode != null ? 
+                        (enumWeightMode)Enum.Parse(typeof(enumWeightMode), GetGeneralSettingValues.Mode)
+                        : enumWeightMode.Auto;// (enumWeightMode)Enum.ToObject(typeof(enumWeightMode), GetGeneralSettingValues.Mode);
+
+            WindowState = FormWindowState.Normal;
+            FormBorderStyle = FormBorderStyle.None;
+            Bounds = Screen.PrimaryScreen.Bounds;
+            pnlBottom.Location = new System.Drawing.Point(Bounds.X,Bounds.Height-pnlBottom.Height);
+            pnlBottom.Width = Bounds.Width;
+            MinimizeBox = MaximizeBox = false;
             HideMenuOnBasisOfRole();
+            _usrName = usrName;
+
+            lblCompanyName.Text = "Devloped && Maintained by : HiTech Weighing Enginners";
+            lblCopyright.Text = "Copyright ©1990-2017. All right reserved";
+            lblCompanyName.Location = new System.Drawing.Point(Bounds.X+5, 0);
+            lblCopyright.Location = new System.Drawing.Point(Bounds.Width - (lblCopyright.Width+350),0);
+            lblDateAndTime.Location = new System.Drawing.Point(Bounds.Width - (lblDateAndTime.Width + 85), 0);
+            tmrDateAndTime.Interval = 1000;
+            tmrDateAndTime.Start();
+        }
+
+        private void LoadGlobalValues()
+        {
+            try
+            {                
+                if (dbObj.V_mstGeneralSettings.FirstOrDefault() !=null)
+                {
+                    V_mstGeneralSettings GeneralSettings = dbObj.V_mstGeneralSettings.First();
+                    GetGeneralSettingValues.Transaction_No = GeneralSettings.TransactionNo;
+                    GetGeneralSettingValues.Mode = GeneralSettings.Mode;
+                    GetGeneralSettingValues.Minimun_Net_Weight = GeneralSettings.MiniNetWeight;
+                    GetGeneralSettingValues.Stored_Tare = GeneralSettings.StoreTare;
+                    GetGeneralSettingValues.First_Weight_Ticket = GeneralSettings.FirstWeightTkt;
+                    GetGeneralSettingValues.Ticket_Format = GeneralSettings.TicketFormat;
+                    GetGeneralSettingValues.Report_Format = GeneralSettings.ReportFormat;
+                    GetGeneralSettingValues.Ticket_Report_Printing_Mode = GeneralSettings.ReportFormat;
+                    GetGeneralSettingValues.Header_Blank_Line = GeneralSettings.HeaderBlankLine;
+                    GetGeneralSettingValues.Fotter_Blank_Line = GeneralSettings.FooterBlankLine;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void HideMenuOnBasisOfRole()
@@ -46,11 +99,12 @@ namespace HitechTMS
                 foreach (ToolStripMenuItem mainMenu in menuStrip1.Items)
                 {
                     // Level 1 menu
-                    if(mainMenu.Text == "Configuration" && _role != HitechEnums.AppRole.SuperAdmin.ToString())
+                    if (mainMenu.Text == "Configuration" && _role != HitechEnums.AppRole.SuperAdmin.ToString())
                     {
                         mainMenu.Visible = false;
                     }
 
+                    // Level 2 menu
                     if (!mainMenu.Visible)
                     {
                         SetToolStripItems(mainMenu.DropDownItems);
@@ -60,12 +114,12 @@ namespace HitechTMS
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         // if we have a MenuStrip named ts.
 
-        private void SetToolStripItems(ToolStripItemCollection dropDownItems )
+        private void SetToolStripItems(ToolStripItemCollection dropDownItems)
         {
             try
             {
@@ -82,7 +136,6 @@ namespace HitechTMS
                                 subMenu.Visible = false;
                             }
                         }
-
                         if (subMenu.HasDropDownItems)
                         {
                             SetToolStripItems(subMenu.DropDownItems);
@@ -92,7 +145,7 @@ namespace HitechTMS
                             //Level 3 menu
                             if (subMenu.Text != null)
                             {
-                              if(subMenu.Text == "Transaction / Pending File" && _role != HitechEnums.AppRole.SuperAdmin.ToString())
+                                if (subMenu.Text == "Transaction / Pending File" && _role != HitechEnums.AppRole.SuperAdmin.ToString())
                                 {
                                     subMenu.Visible = false;
                                 }
@@ -110,9 +163,9 @@ namespace HitechTMS
 
         private void frmMain_UserIsAllowed(object sender, EventArgs e)
         {
-            
+
         }
-        
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -131,7 +184,7 @@ namespace HitechTMS
             frmEmailConfig objEmailConfig = new frmEmailConfig(_nextFormPrincipal);
             if (objEmailConfig.UserCanOpenForm == false)
             {
-                MessageBox.Show(dbGetResourceCaption.GetStringValue("DENIED"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DENIED"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -164,21 +217,6 @@ namespace HitechTMS
             objfrmTransportFile.ShowDialog();
         }
 
-        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAddUser objfrmTransportFile = new frmAddUser(FrmName.AddEditUser,_nextFormPrincipal);
-            if (objfrmTransportFile.UserCanOpenForm == false)
-            {
-                MessageBox.Show(dbGetResourceCaption.GetStringValue("DENIED"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                objfrmTransportFile.Text = @"Add\Edit user";
-                objfrmTransportFile.StartPosition = FormStartPosition.CenterParent;
-                objfrmTransportFile.ShowDialog();
-            }
-        }
-
         private void storedTToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -186,7 +224,7 @@ namespace HitechTMS
 
             if (objfrmTransportFile.UserCanOpenForm == false)
             {
-                MessageBox.Show(dbGetResourceCaption.GetStringValue("DENIED"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DENIED"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -223,7 +261,7 @@ namespace HitechTMS
         private void publicToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _enumProductNormalPublicMulti = enumProductNormalPublicMulti.Public;
-            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode,_nextFormPrincipal);
+            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
             objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
             objfrmProductInOut.ShowDialog();
         }
@@ -231,7 +269,7 @@ namespace HitechTMS
         private void normalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _enumProductNormalPublicMulti = enumProductNormalPublicMulti.Normal;
-            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode ,_nextFormPrincipal);
+            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
             objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
             objfrmProductInOut.ShowDialog();
         }
@@ -239,7 +277,7 @@ namespace HitechTMS
         private void multiWeighingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _enumProductNormalPublicMulti = enumProductNormalPublicMulti.Multi;
-            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode ,_nextFormPrincipal);
+            frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
             objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
             objfrmProductInOut.ShowDialog();
         }
@@ -267,10 +305,88 @@ namespace HitechTMS
             //frmHyperTerminalConfiguration objfrmHyperTerminalConfiguration = new frmHyperTerminalConfiguration(FrmName.HyperTerminalConfiguration, _nextFormPrincipal);// _enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
             //objfrmHyperTerminalConfiguration.StartPosition = FormStartPosition.CenterParent;
             //objfrmHyperTerminalConfiguration.ShowDialog();
+        }
 
-            frmGeneralSetting objfrmGeneralSetting = new frmGeneralSetting(FrmName.GenralSetting, _nextFormPrincipal);// _enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                CloseFormValidation();
+            }
+        }
+
+        private void CloseFormValidation()
+        {
+            if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("CLOSE_APPLICATION"), _dbGetResourceCaption.GetStringValue("CONFIRMATION"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                InputBox.SetLanguage(InputBox.Language.English);
+                DialogResult res = InputBox.ShowDialog("Enter password:", _dbGetResourceCaption.GetStringValue("CONFIRMATION"),
+                    InputBox.Icon.Nothing,
+                    InputBox.Buttons.OkCancel,
+                    InputBox.Type.TextBox,
+                    null,
+                    true,
+                    new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold));
+                if (res == System.Windows.Forms.DialogResult.OK || res == System.Windows.Forms.DialogResult.Yes)
+                {
+                    var password = objEncryptionAndDecryption.Encrypt(InputBox.ResultValue);
+                    var result = dbObj.UserRole.Where(x => x.Password == password && x.Name == _usrName).Count();
+                    if (result > 0)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("USER_NAME_PASSWORD_MISTMATCH"));
+                    }
+                }
+            }
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+
+        private void genealSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGeneralSetting objfrmGeneralSetting = new frmGeneralSetting(FrmName.GenralSetting, _nextFormPrincipal);
             objfrmGeneralSetting.StartPosition = FormStartPosition.CenterParent;
             objfrmGeneralSetting.ShowDialog();
+        }
+
+        private void productFileToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUser objfrmTransportFile = new frmAddUser(FrmName.AddEditUser, _nextFormPrincipal);
+            if (objfrmTransportFile.UserCanOpenForm == false)
+            {
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DENIED"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                objfrmTransportFile.Text = @"Add\Edit user";
+                objfrmTransportFile.StartPosition = FormStartPosition.CenterParent;
+                objfrmTransportFile.ShowDialog();
+            }
+        }
+
+        private void tmrDateAndTime_Tick(object sender, EventArgs e)
+        {
+            lblDateAndTime.Text = DateTime.Now.ToString("dd/MM/yyyy [ hh:mm:ss ]");
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmShiftAllocation objfrmShiftAllocation = new frmShiftAllocation(FrmName.ShiftAllocation, _nextFormPrincipal);// _enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
+            objfrmShiftAllocation.StartPosition = FormStartPosition.CenterParent;
+            objfrmShiftAllocation.ShowDialog();
         }
     }
 }

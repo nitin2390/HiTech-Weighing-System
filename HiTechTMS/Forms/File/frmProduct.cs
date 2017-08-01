@@ -16,14 +16,14 @@ namespace HitechTMS.File
     {
 
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
-        private GetResourceCaption dbGetResourceCaption;
+        private GetResourceCaption _dbGetResourceCaption;
         private Common _comm { get; set; }
         private FrmName _frmName { get; set; }
         public frmProduct(FrmName frmName,IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.SuperAdmin.ToString(),HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString(), HitechEnums.AppRole.Supervisor.ToString() }, userPrincipal)
         {
             InitializeComponent();
             this._frmName = frmName;
-            dbGetResourceCaption = new GetResourceCaption();
+            _dbGetResourceCaption = new GetResourceCaption();
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
             _comm = new Common();
             this.MinimizeBox = this.MaximizeBox = false;
@@ -70,7 +70,7 @@ namespace HitechTMS.File
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void BindGrid()
@@ -87,7 +87,7 @@ namespace HitechTMS.File
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
@@ -113,7 +113,7 @@ namespace HitechTMS.File
                         if (dbObj.SaveChanges() ==1)
                         {
                             ResetCntrl();
-                            MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_SAVE"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }                       
                     }
                     else
@@ -123,7 +123,7 @@ namespace HitechTMS.File
                         if (dbObj.SaveChanges() == 1)
                         {
                             ResetCntrl();
-                            MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_UPDATE"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
@@ -155,12 +155,12 @@ namespace HitechTMS.File
                 }
                 else
                 {
-                    MessageBox.Show(dbGetResourceCaption.GetStringValue("RECORDS_NOT_FOUND"));
+                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("RECORDS_NOT_FOUND"));
                 }
             }
             else
             {
-                errProductCode.SetError(txtProductCode, dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
+                errProductCode.SetError(txtProductCode, _dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
             }
 
             
@@ -174,7 +174,7 @@ namespace HitechTMS.File
             Product prod = new Product();
             if (gridProduct.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show(dbGetResourceCaption.GetStringValue("DELTE_POPUP"), dbGetResourceCaption.GetStringValue("CONFIRMATION"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("DELTE_POPUP"), _dbGetResourceCaption.GetStringValue("CONFIRMATION"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     foreach (DataGridViewRow row in gridProduct.SelectedRows)
                     {
@@ -205,11 +205,11 @@ namespace HitechTMS.File
             {
                 if (obj.CreateExcelAndSendEmailToList(HitechEnums.FrmName.ProductDetail))
                 {
-                    MessageBox.Show(dbGetResourceCaption.GetStringValue("EMAIL_SENT"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("EMAIL_SENT"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(dbGetResourceCaption.GetStringValue("ERR_EMAIL_CHK_CONFIG"), dbGetResourceCaption.GetStringValue("ERROR") , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("ERR_EMAIL_CHK_CONFIG"), _dbGetResourceCaption.GetStringValue("ERROR") , MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -223,7 +223,7 @@ namespace HitechTMS.File
 
             if (txtProductCode.Text == "")
             {
-                errProductCode.SetError(txtProductCode, dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
+                errProductCode.SetError(txtProductCode, _dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
             }
             else
             {
@@ -232,7 +232,7 @@ namespace HitechTMS.File
 
             if (txtProductName.Text == "")
             {
-                errProductName.SetError(txtProductName, dbGetResourceCaption.GetStringValue("PRD_NM_CAN_NOT_BLANK"));
+                errProductName.SetError(txtProductName, _dbGetResourceCaption.GetStringValue("PRD_NM_CAN_NOT_BLANK"));
             }
             else
             {
@@ -243,7 +243,7 @@ namespace HitechTMS.File
         {
             if (txtProductCode.Text == "")
             {
-                errProductCode.SetError(txtProductCode, dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
+                errProductCode.SetError(txtProductCode, _dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
             }
             else
             {
@@ -252,7 +252,7 @@ namespace HitechTMS.File
 
             if (txtProductName.Text == "")
             {
-                errProductName.SetError(txtProductName, dbGetResourceCaption.GetStringValue("PRD_NM_CAN_NOT_BLANK"));
+                errProductName.SetError(txtProductName, _dbGetResourceCaption.GetStringValue("PRD_NM_CAN_NOT_BLANK"));
             }
             else
             {

@@ -15,7 +15,7 @@ namespace HitechTMS.MasterForms
     public partial class frmEmailConfig : SecureBaseForm
     {
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
-        private GetResourceCaption dbGetResourceCaption;
+        private GetResourceCaption _dbGetResourceCaption;
         public Guid ID { get; set; }
         EncryptionAndDecryption objEncryptionAndDecryption;
         EmailConfig objEmailConfig;
@@ -23,7 +23,7 @@ namespace HitechTMS.MasterForms
         public frmEmailConfig(IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.Admin.ToString() , HitechEnums.AppRole.SuperAdmin.ToString() }, userPrincipal)
         {
             InitializeComponent();
-            dbGetResourceCaption = new GetResourceCaption();
+            _dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
             this.MinimizeBox = this.MaximizeBox = false;
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
@@ -204,7 +204,7 @@ namespace HitechTMS.MasterForms
             dbObj.EmailConfigs.AddOrUpdate(objEmailConfig);
             if (dbObj.SaveChanges() == 1)
             {
-                MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_SAVE"));
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"));
             }
         }
         private void btnExit_Click(object sender, EventArgs e)

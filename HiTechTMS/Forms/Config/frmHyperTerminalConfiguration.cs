@@ -20,7 +20,7 @@ namespace HitechTMS.Config
     public partial class frmHyperTerminalConfiguration : SecureBaseForm
     {
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
-        private GetResourceCaption dbGetResourceCaption;
+        private GetResourceCaption _dbGetResourceCaption;
         public Guid ID { get; set; }
         EncryptionAndDecryption objEncryptionAndDecryption;
         EmailConfig objEmailConfig;
@@ -28,7 +28,7 @@ namespace HitechTMS.Config
         public frmHyperTerminalConfiguration(FrmName frmName, IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Admin.ToString() }, userPrincipal)
         {
             InitializeComponent();
-            dbGetResourceCaption = new GetResourceCaption();
+            _dbGetResourceCaption = new GetResourceCaption();
             this.MaximumSize = this.MinimumSize = this.Size;
             this.MinimizeBox = this.MaximizeBox = false;
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();

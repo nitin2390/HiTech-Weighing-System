@@ -123,6 +123,9 @@
   <data name="ALERT" xml:space="preserve">
     <value>Alert!</value>
   </data>
+  <data name="CLOSE_APPLICATION" xml:space="preserve">
+    <value>Are you sure you want to close application ?</value>
+  </data>
   <data name="CONFIRMATION" xml:space="preserve">
     <value>Confirmation</value>
   </data>

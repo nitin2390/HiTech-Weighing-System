@@ -35,7 +35,8 @@
             AddEditUser = 30,
             EmailConfig = 31,
             HyperTerminalConfiguration = 32,
-            GenralSetting =33
+            GenralSetting =33,
+            ShiftAllocation=34
         }
 
         public enum enumProduct
@@ -56,6 +57,13 @@
             In =0,
             Out =1,
             Other =2
+        }
+
+        public enum enumShiftAllocation
+        {
+            One = 1,
+            Two = 2,
+            Three = 3
         }
 
         public enum enumSupplierTransportfrm
@@ -142,7 +150,14 @@
         public enum enumReportFormat
         {
             Compressed = 0,
-            Details = 0
+            Details = 1
+        }
+        public enum enumReportPrinting
+        {
+            Draft=0,
+            Graphical=1
         }
     }
+
+
 }

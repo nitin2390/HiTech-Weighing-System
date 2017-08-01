@@ -19,7 +19,7 @@ namespace HitechTMS.Forms.Config
     public partial class frmSetPermission : SecureBaseForm
     {
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
-        //private GetResourceCaption dbGetResourceCaption;
+        //private GetResourceCaption _dbGetResourceCaption;
         //EncryptionAndDecryption objEncryptionAndDecryption;
         private FrmName _frmName { get; set; }
         public Boolean _saveClick { get; set; }

@@ -107,6 +107,12 @@
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Entity Model\mstShiftAllocationInfo.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Model\mstShifts1.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\mstStoredTareRecords.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -126,9 +132,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\rptNormalTicket.cs">
-      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity Model\ShiftAllocationInfo.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Model\transMultiWeight.cs">
@@ -159,6 +162,15 @@
     <Compile Include="Entity Model\viewNormalPendingFile.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Entity Model\V_mstGeneralSettings.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Model\V_T_mstShiftAllocationInfo.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Model\V_T_MSTShifts.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="HyperTerminalAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

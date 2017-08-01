@@ -15,7 +15,7 @@ namespace HitechTMS.Config
     public partial class frmAddUser : SecureBaseForm
     { 
         private HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
-        private GetResourceCaption dbGetResourceCaption;
+        private GetResourceCaption _dbGetResourceCaption;
         EncryptionAndDecryption objEncryptionAndDecryption;
         private FrmName _frmName { get; set; }
         public Boolean _saveClick { get; set; }
@@ -25,7 +25,7 @@ namespace HitechTMS.Config
         {
             InitializeComponent();
             this._frmName = frmName;
-            dbGetResourceCaption = new GetResourceCaption();
+            _dbGetResourceCaption = new GetResourceCaption();
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
             objEncryptionAndDecryption = new EncryptionAndDecryption();
             this.MinimizeBox = this.MaximizeBox = false;
@@ -114,7 +114,7 @@ namespace HitechTMS.Config
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnSave_Click(object sender, EventArgs e)
@@ -193,7 +193,7 @@ namespace HitechTMS.Config
                             {
                                 ResetCntrl();
                                 BindGrid();
-                                MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_SAVE"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                         else
@@ -206,7 +206,7 @@ namespace HitechTMS.Config
                             if (dbObj.SaveChanges() > 0 )
                             {
                                 ResetCntrl();
-                                MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_UPDATE"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }            
@@ -274,7 +274,7 @@ namespace HitechTMS.Config
             UserRole objUserRole = new UserRole();
             if (gridUser.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show(dbGetResourceCaption.GetStringValue("DELTE_POPUP"), dbGetResourceCaption.GetStringValue("CONFIRMATION"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("DELTE_POPUP"), _dbGetResourceCaption.GetStringValue("CONFIRMATION"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     foreach (DataGridViewRow row in gridUser.SelectedRows)
                     {
@@ -302,11 +302,11 @@ namespace HitechTMS.Config
             {
                 if (obj.CreateExcelAndSendEmailToList(_frmName))
                 {
-                    MessageBox.Show(dbGetResourceCaption.GetStringValue("EMAIL_SENT"), dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("EMAIL_SENT"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(dbGetResourceCaption.GetStringValue("ERR_EMAIL_CHK_CONFIG"), dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("ERR_EMAIL_CHK_CONFIG"), _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

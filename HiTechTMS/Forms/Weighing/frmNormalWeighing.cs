@@ -33,7 +33,8 @@ namespace HitechTMS.Weighing
         private Guid transNormalWeightID;
 
         readonly double _MaxWeight;
-        public frmNormalWeighing(enumProductInOut enumProductInOut, enumWeightMode Mode, IPrincipal userPrincipal) : base(new string[] { HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString(), HitechEnums.AppRole.Supervisor.ToString() }, userPrincipal)
+        public frmNormalWeighing(enumProductInOut enumProductInOut, enumWeightMode Mode, IPrincipal userPrincipal) 
+            : base(new string[] { HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString(), HitechEnums.AppRole.Supervisor.ToString() }, userPrincipal)
         {
             InitializeComponent();
             _MaxWeight = 150;

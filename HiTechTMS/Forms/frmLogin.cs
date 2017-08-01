@@ -13,11 +13,11 @@ namespace HitechTMS
     {
         public HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         private EncryptionAndDecryption objEncryptionAndDecryption;
-        private GetResourceCaption dbGetResourceCaption;
+        private GetResourceCaption _dbGetResourceCaption;
         public frmLogin()
         {
             InitializeComponent();
-            dbGetResourceCaption = new GetResourceCaption();
+            _dbGetResourceCaption = new GetResourceCaption();
             objEncryptionAndDecryption = new EncryptionAndDecryption();
             this.MaximumSize = this.MinimumSize = this.Size;
             this.MinimizeBox = this.MaximizeBox = false;
@@ -28,7 +28,8 @@ namespace HitechTMS
         {
 
             txtPassword.Text = objEncryptionAndDecryption.Encrypt(txtPassword.Text);
-            var varUserRole = dbObj.UserRoleTypes.Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { x.RoleName, s.Name, s.Password }).Where(xs => xs.Name == txtUserName.Text && xs.Password == txtPassword.Text).Select(x => x.RoleName).ToList().SingleOrDefault();
+            var varUserRole = dbObj.UserRoleTypes.Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { x.RoleName, s.Name, s.Password })
+                .Where(xs => xs.Name == txtUserName.Text && xs.Password == txtPassword.Text).Select(x => x.RoleName).ToList().SingleOrDefault();
 
             if (varUserRole != null && varUserRole != "")
             {
@@ -36,7 +37,7 @@ namespace HitechTMS
                 IPrincipal userPrincipal = new GenericPrincipal(WindowsIdentity.GetCurrent(),
                     new string[] { varUserRole });
                 //new string[] { "Admin", "User" });
-                frmMain objHiTechWeighingSystem = new frmMain(userPrincipal, varUserRole);
+                frmMain objHiTechWeighingSystem = new frmMain(txtUserName.Text, userPrincipal, varUserRole);
                 // Set form to be main window in order to Exit the application.
                 this.Hide();
                 objHiTechWeighingSystem.IsMainWindow = true;
@@ -45,7 +46,7 @@ namespace HitechTMS
             }
             else
             {
-                MessageBox.Show(dbGetResourceCaption.GetStringValue("USER_NAME_PASSWORD_MISTMATCH"));
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("USER_NAME_PASSWORD_MISTMATCH"));
             }
 
         }

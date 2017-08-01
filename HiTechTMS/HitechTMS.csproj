@@ -111,7 +111,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CreateExcelAndSendEmail.cs" />
+    <Compile Include="Classes\GetGeneralSettingValues.cs" />
     <Compile Include="Classes\GetResourceCaption.cs" />
     <Compile Include="Classes\ReadSerialPortData.cs" />
     <Compile Include="Classes\SerialPortManager.cs" />
@@ -173,6 +174,12 @@
     </Compile>
     <Compile Include="Forms\Config\frmSetPermission.Designer.cs">
       <DependentUpon>frmSetPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\frmShiftAllocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\frmShiftAllocation.Designer.cs">
+      <DependentUpon>frmShiftAllocation.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\File\frmPendingFile.cs">
       <SubType>Form</SubType>
@@ -457,6 +464,9 @@
     <EmbeddedResource Include="Forms\Config\frmSetPermission.resx">
       <DependentUpon>frmSetPermission.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\frmShiftAllocation.resx">
+      <DependentUpon>frmShiftAllocation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\File\frmPendingFile.resx">
       <DependentUpon>frmPendingFile.cs</DependentUpon>
     </EmbeddedResource>
@@ -692,6 +702,10 @@
       <Project>{4d300646-0b9c-4f74-96d9-318e6d65a23f}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\InputBox\MsgBox.csproj">
+      <Project>{9b4ab36e-1ae8-4f63-b4f8-23291e7577d7}</Project>
+      <Name>MsgBox</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SecureApp\HitechTMSActivation.csproj">
       <Project>{567dab27-241c-4e6c-b2fa-66d9d64081fb}</Project>
       <Name>HitechTMSActivation</Name>
@@ -732,6 +746,10 @@
     <Content Include="SQL Scripts\dbo.viewMultiPendingFile.sql" />
     <Content Include="SQL Scripts\dbo.ViewMultiProduct.sql" />
     <Content Include="SQL Scripts\dbo.viewNormalPendingFile.sql" />
+    <Content Include="SQL Scripts\mstShiftAllocationInfo.sql" />
+    <Content Include="SQL Scripts\mstShifts.sql" />
+    <Content Include="SQL Scripts\V_T_mstShiftAllocationInfo.sql" />
+    <Content Include="SQL Scripts\V_T_MSTShifts.sql" />
     <EmbeddedResource Include="Licensee\Licensee.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

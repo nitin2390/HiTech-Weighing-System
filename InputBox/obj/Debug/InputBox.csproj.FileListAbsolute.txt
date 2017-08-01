@@ -1,0 +1,6 @@
+c:\users\jan.kouba\documents\visual studio 2012\Projects\InputBox\InputBox\obj\Debug\InputBox.csprojResolveAssemblyReference.cache
+c:\users\jan.kouba\documents\visual studio 2012\Projects\InputBox\InputBox\bin\Debug\InputBox.dll
+c:\users\jan.kouba\documents\visual studio 2012\Projects\InputBox\InputBox\bin\Debug\InputBox.pdb
+c:\users\jan.kouba\documents\visual studio 2012\Projects\InputBox\InputBox\obj\Debug\InputBox.dll
+c:\users\jan.kouba\documents\visual studio 2012\Projects\InputBox\InputBox\obj\Debug\InputBox.pdb
+c:\users\jan.kouba\documents\visual studio 2012\Projects\InputBox\InputBox\bin\Debug\Properties\error.png

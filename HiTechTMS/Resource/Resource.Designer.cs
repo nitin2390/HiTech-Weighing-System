@@ -79,6 +79,15 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to close application ?.
+        /// </summary>
+        internal static string CLOSE_APPLICATION {
+            get {
+                return ResourceManager.GetString("CLOSE_APPLICATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirmation.
         /// </summary>
         internal static string CONFIRMATION {
