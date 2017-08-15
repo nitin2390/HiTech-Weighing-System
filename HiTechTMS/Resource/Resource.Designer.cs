@@ -106,6 +106,15 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kindly login again to see saved changes!.
+        /// </summary>
+        internal static string DATA_SAVE_RESTART_FOR_IMPACT {
+            get {
+                return ResourceManager.GetString("DATA_SAVE_RESTART_FOR_IMPACT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data update successfully!.
         /// </summary>
         internal static string DATA_UPDATE {

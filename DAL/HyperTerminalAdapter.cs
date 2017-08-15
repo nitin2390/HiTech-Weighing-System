@@ -23,42 +23,46 @@ namespace DAL
         //public string sParity = "none";
         //public int iStopBits = 1;
 
-        private int BaudRate { get; set; }
-        public int DataBits { get; set; }
-        private int ReadTimeout { get; set; }
-        private int WriteTimeout { get; set; }
+        private int? BaudRate { get; set; }
+        public int? DataBits { get; set; }
+        private int? ReadTimeout { get; set; }
+        private int? WriteTimeout { get; set; }
         private string PortName { get; set; }
         private string Handshake { get; set; }
         private string Name { get; set; }
         private string DataReceived { get; set; }
         private string sParity { get; set; }
-        private int iStopBits { get; set; }
+        private decimal? iStopBits { get; set; }
 
 
         public HyperTerminalAdapter()
         {
-            List<mstHyoerTerminalData> objmstHyoerTerminalData = new List<mstHyoerTerminalData>();
-            objmstHyoerTerminalData = dbObj.mstHyoerTerminalData.ToList();
-            this.BaudRate = objmstHyoerTerminalData[0].BaudRate;
-            this.DataBits = objmstHyoerTerminalData[0].DataBits;
-            this.ReadTimeout = objmstHyoerTerminalData[0].ReadTimeout;
-            this.WriteTimeout = objmstHyoerTerminalData[0].WriteTimeout;
-            this.PortName = objmstHyoerTerminalData[0].PortName;
-            this.Handshake = objmstHyoerTerminalData[0].Handshake;
-            this.Name = objmstHyoerTerminalData[0].Name;
-            this.DataReceived = objmstHyoerTerminalData[0].DataReceived;
-            this.sParity = objmstHyoerTerminalData[0].sParity;
-            this.iStopBits = objmstHyoerTerminalData[0].iStopBits;
-            this.Configure();
+            List<mstHyperTerminalData> objmstHyperTerminalData = new List<mstHyperTerminalData>();
+            objmstHyperTerminalData = dbObj.mstHyperTerminalData.ToList();
+            if (objmstHyperTerminalData.Count() == 1)
+            {
+                BaudRate = objmstHyperTerminalData[0].BaudRate == null ? 0 : objmstHyperTerminalData[0].BaudRate;
+                DataBits = objmstHyperTerminalData[0].DataBits;
+                ReadTimeout = objmstHyperTerminalData[0].ReadTimeout;
+                WriteTimeout = objmstHyperTerminalData[0].WriteTimeout;
+                PortName = objmstHyperTerminalData[0].PortName;
+                Handshake = objmstHyperTerminalData[0].Handshake;
+                Name = objmstHyperTerminalData[0].Name;
+                DataReceived = objmstHyperTerminalData[0].DataReceived;
+                sParity = objmstHyperTerminalData[0].sParity;
+                iStopBits = objmstHyperTerminalData[0].iStopBits;
+                Configure();
+            }
+
         }
 
         public void Configure()
         {
             oSerialPort.PortName = this.PortName;
-            oSerialPort.BaudRate = this.BaudRate;
-            oSerialPort.DataBits = this.DataBits;
-            oSerialPort.ReadTimeout = this.ReadTimeout;
-            oSerialPort.WriteTimeout = this.WriteTimeout;
+            oSerialPort.BaudRate = BaudRate < 1 ? 1: (int)BaudRate;
+            oSerialPort.DataBits = (int)DataBits;
+            oSerialPort.ReadTimeout = ReadTimeout == null ? 0 : (int)ReadTimeout;
+            oSerialPort.WriteTimeout = WriteTimeout == null ? -1: (int)WriteTimeout;
 
             oSerialPort.Handshake = System.IO.Ports.Handshake.None;
 
@@ -87,7 +91,7 @@ namespace DAL
             {
                 oSerialPort.StopBits = StopBits.None;
             }
-            else if (this.iStopBits == 1.5)
+            else if (this.iStopBits == Convert.ToDecimal(1.5))
             {
                 oSerialPort.StopBits = StopBits.OnePointFive;
             }

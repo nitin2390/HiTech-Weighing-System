@@ -168,7 +168,7 @@
             this.lstTruck.ItemHeight = 16;
             this.lstTruck.Location = new System.Drawing.Point(35, 82);
             this.lstTruck.Name = "lstTruck";
-            this.lstTruck.Size = new System.Drawing.Size(193, 50);
+            this.lstTruck.Size = new System.Drawing.Size(193, 98);
             this.lstTruck.TabIndex = 2;
             this.lstTruck.DoubleClick += new System.EventHandler(this.lstTruck_DoubleClick);
             this.lstTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstTruck_KeyDown);
@@ -322,6 +322,7 @@
             // txtGrossWeight
             // 
             this.txtGrossWeight.Location = new System.Drawing.Point(515, 124);
+            this.txtGrossWeight.MaxLength = 10;
             this.txtGrossWeight.Name = "txtGrossWeight";
             this.txtGrossWeight.Size = new System.Drawing.Size(148, 22);
             this.txtGrossWeight.TabIndex = 14;
@@ -332,6 +333,7 @@
             // txtTareWeight
             // 
             this.txtTareWeight.Location = new System.Drawing.Point(515, 55);
+            this.txtTareWeight.MaxLength = 10;
             this.txtTareWeight.Name = "txtTareWeight";
             this.txtTareWeight.Size = new System.Drawing.Size(148, 22);
             this.txtTareWeight.TabIndex = 13;
@@ -404,6 +406,7 @@
             // txtChallanWeight
             // 
             this.txtChallanWeight.Location = new System.Drawing.Point(17, 222);
+            this.txtChallanWeight.MaxLength = 10;
             this.txtChallanWeight.Name = "txtChallanWeight";
             this.txtChallanWeight.Size = new System.Drawing.Size(148, 22);
             this.txtChallanWeight.TabIndex = 7;
@@ -653,6 +656,7 @@
             this.txtTruck.Name = "txtTruck";
             this.txtTruck.Size = new System.Drawing.Size(193, 22);
             this.txtTruck.TabIndex = 1;
+            this.txtTruck.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtTruck_MouseClick);
             this.txtTruck.TextChanged += new System.EventHandler(this.txtTruck_TextChanged);
             this.txtTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTruck_KeyDown);
             this.txtTruck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTruck_KeyPress);

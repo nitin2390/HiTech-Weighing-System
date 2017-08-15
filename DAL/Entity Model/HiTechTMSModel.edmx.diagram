@@ -23,7 +23,6 @@
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.ViewMultiProduct" Width="1.5" PointX="2.375" PointY="10.375" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" Width="1.5" PointX="4.375" PointY="7.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" Width="1.5" PointX="6.375" PointY="9.75" />
-        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyoerTerminalData" Width="1.5" PointX="9.375" PointY="7.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.viewMultiPendingFile" Width="1.5" PointX="11.375" PointY="5.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings" Width="1.5" PointX="11.375" PointY="0.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_mstGeneralSettings" Width="1.5" PointX="10.375" PointY="11.75" />
@@ -31,6 +30,7 @@
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstShifts1" Width="1.5" PointX="2.75" PointY="13.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_T_mstShiftAllocationInfo" Width="1.5" PointX="12.375" PointY="11.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstShiftAllocationInfo" Width="1.5" PointX="13.375" PointY="3.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyperTerminalData" Width="1.5" PointX="13.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -12,34 +12,48 @@ using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Security.Principal;
+using SerialPortListener.Serial;
+using SerialPortListener;
+using System.Text;
 
 namespace HitechTMS.Weighing
 {
     public partial class frmNormalWeighing :HitechTMSSecurity.SecureBaseForm
     {
-        public enumProductInOut _enumProductInOut { get; set; }
+        #region "Private Variables"
+        private enumProductInOut _enumProductInOut { get; set; }
         private Boolean _isTareWeight { get; set; }
         private HitechTruckMngtSystmDataBaseFileEntities _dbObj { get; }
         HitechTMS.Classes.ReadSerialPortData _readSerialPortData;
-
+        private SerialPortManager _spManager;
         private GetResourceCaption _dbGetResourceCaption;
         CalculateNetWeight _objCalculateNetWeight;
         public enumWeightMode _weightMode { get; set; }
         private Boolean _dbReturn { get; set; }
-        public Boolean _saveClick { get; set; }
+        private Boolean _saveClick { get; set; }
         public Guid _transNormalWeightID { get; set; }
         private Common _comm { get; set; }
         private FrmName _frmName { get; set; }
         private Guid transNormalWeightID;
+        private string _AutoWeight { get; set; } = "0";
+        private bool isPortSettingWorking { get; set; } = false;
+        #endregion
 
         readonly double _MaxWeight;
+
+        /// <summary>
+        /// Constructor for intialise settings
+        /// </summary>
+        /// <param name="enumProductInOut"></param>
+        /// <param name="Mode"></param>
+        /// <param name="userPrincipal"></param>
         public frmNormalWeighing(enumProductInOut enumProductInOut, enumWeightMode Mode, IPrincipal userPrincipal) 
             : base(new string[] { HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.ApplicationUser.ToString(), HitechEnums.AppRole.Supervisor.ToString() }, userPrincipal)
         {
             InitializeComponent();
-            _MaxWeight = 150;
             _dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
             _readSerialPortData = new ReadSerialPortData();
+            _MaxWeight = Convert.ToDouble(_dbObj.V_mstGeneralSettings.Select(x=>x.MiniNetWeight).First());
             _weightMode = Mode;
             _objCalculateNetWeight = new CalculateNetWeight();
             _dbGetResourceCaption = new GetResourceCaption();
@@ -51,10 +65,45 @@ namespace HitechTMS.Weighing
             _enumProductInOut = enumProductInOut;
             Text = "Normal Weighing (Product " + _enumProductInOut.ToString() + ")";
             bindComboBox();
-            setEnableDisable();
             _isTareWeight = true;
+            
+            ///Pass database setting to open a connection
+            _spManager = new SerialPortManager(1);
+
+            setEnableDisable();
+            
+            
         }
 
+        #region "Private methods"
+        private void _spManager_NewSerialDataRecieved(object sender, SerialDataEventArgs e)
+        {
+            lock (this)
+            {
+                if (this.InvokeRequired)
+                {
+                    // Using this.Invoke causes deadlock when closing serial port, and BeginInvoke is good practice anyway.
+                    this.BeginInvoke(new EventHandler<SerialDataEventArgs>(_spManager_NewSerialDataRecieved), new object[] { sender, e });
+                    return;
+                }
+                double weight = Convert.ToDouble(e.Data.Replace("\u0002", "").Replace("\u0003", "").Replace("\r", "")); //_readSerialPortData.ReadSerialPortCommunication();
+                if (weight.ToString() != _AutoWeight)
+                {
+                    _AutoWeight = weight.ToString();
+                    btnWeight_Click(null, null);
+                }
+
+                if (_isTareWeight)
+                {
+                    _AutoWeight = txtTareWeight.Text;
+                }
+                else
+                {
+                    _AutoWeight = txtGrossWeight.Text;
+                }
+            }
+               
+        }
         private void setEnableDisable()
         {
             try
@@ -63,7 +112,7 @@ namespace HitechTMS.Weighing
                 txtProductName.ReadOnly = txtCustomerName.ReadOnly = txtTranspoterName.ReadOnly = true;
                 txtDateIn.ReadOnly = txtDateOut.ReadOnly = true;
                 txtTimeIn.ReadOnly = txtTimeOut.ReadOnly = true;
-
+                btnTicket.Enabled = false;
                 lstTruck.Visible = false;
                 txtChallanDate.ReadOnly = true;
 
@@ -77,9 +126,23 @@ namespace HitechTMS.Weighing
 
                 if(_weightMode == enumWeightMode.Auto)
                 {
+                    
                     grpboxAutoWeight.Visible = true;
                     txtTareWeight.ReadOnly = true;
                     txtGrossWeight.ReadOnly = true;
+                    //btnWeight.Enabled = false;
+
+                    if (_spManager.StartListening() != -1)
+                    {
+                        _spManager.NewSerialDataRecieved += new EventHandler<SerialDataEventArgs>(_spManager_NewSerialDataRecieved);
+                        isPortSettingWorking = true;
+                        btnWeight_Click(null, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Check you Serial port settings!");
+                    }
+                    
                 }
                 else if(_weightMode == enumWeightMode.Manual)
                 {
@@ -95,7 +158,6 @@ namespace HitechTMS.Weighing
                 MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void bindComboBox()
         {
             try
@@ -135,11 +197,15 @@ namespace HitechTMS.Weighing
                 MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
+                if(!isPortSettingWorking && _weightMode == enumWeightMode.Auto )
+                {
+                    MessageBox.Show("Can not save data please check your port settings!");
+                    return;
+                }
                 if(txtTruck.Text.Trim().Length < 1)
                 {
                     errProvWeight.SetError(txtTruck,_dbGetResourceCaption.GetStringValue("TRUCK_CAN_NOT_BLANK"));
@@ -184,7 +250,7 @@ namespace HitechTMS.Weighing
                     objtransNormalWeight.AddedDate = DateTime.ParseExact(DateTime.Now.Date.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     objtransNormalWeight.ID = _transNormalWeightID;
                     _dbObj.transNormalWeight.AddOrUpdate(objtransNormalWeight);
-                    if (_dbObj.SaveChanges() > 0)
+                    if (_dbObj.SaveChanges() > 0 && !_isTareWeight)
                     {
                         transNormalWeightID = _transNormalWeightID;
                         DisableAllExceptTicket();
@@ -211,7 +277,10 @@ namespace HitechTMS.Weighing
                 MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        
+        /// <summary>
+        /// Reset all the controlls
+        /// </summary>
         private void ResetCntrl()
         {
             try
@@ -253,6 +322,11 @@ namespace HitechTMS.Weighing
 
         }
 
+        /// <summary>
+        /// Combo box index change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbProductCode_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbProductCode.SelectedIndex != 0)
@@ -276,7 +350,6 @@ namespace HitechTMS.Weighing
                 txtCustomerName.Text = "";
             }
         }
-
         private void cmbTranspoterCode_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbTranspoterCode.SelectedIndex != 0)
@@ -288,7 +361,6 @@ namespace HitechTMS.Weighing
                 txtTranspoterName.Text = "";
             }
         }
-
         private void txtTareWeight_TextChanged(object sender, EventArgs e)
         {
             if (!_dbReturn)
@@ -307,7 +379,6 @@ namespace HitechTMS.Weighing
             }
             CalNetWeight();
         }
-
         private void txtGrossWeight_TextChanged(object sender, EventArgs e)
         {
             if (!_dbReturn)
@@ -326,7 +397,6 @@ namespace HitechTMS.Weighing
             }
             CalNetWeight();
         }
-
         private void CalNetWeight()
         {
             try
@@ -345,7 +415,6 @@ namespace HitechTMS.Weighing
                 MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void txtTruck_TextChanged(object sender, EventArgs e)
         {
             if (!_saveClick)
@@ -354,7 +423,6 @@ namespace HitechTMS.Weighing
                 //FillTrucAndSetEditId();
             }
         }
-
         private void AutoFill()
         {
             List<transNormalWeight> listNomralWeighing = new List<transNormalWeight>();
@@ -379,7 +447,6 @@ namespace HitechTMS.Weighing
                 _transNormalWeightID = Guid.Empty;
             }
         }
-
         private void FillTrucAndSetEditId()
         {
             if (_dbReturn)
@@ -420,7 +487,6 @@ namespace HitechTMS.Weighing
             }
             
         }
-
         private void FillFormData()
         {
             try
@@ -502,12 +568,10 @@ namespace HitechTMS.Weighing
                 MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void lstTruck_DoubleClick(object sender, EventArgs e)
         {
             FillTrucAndSetEditId();
         }
-
         private void lstTruck_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -522,7 +586,6 @@ namespace HitechTMS.Weighing
                 txtTruck.Focus();
             }
         }
-
         private void txtTruck_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Down)
@@ -537,7 +600,6 @@ namespace HitechTMS.Weighing
             }
 
         }
-
         private void txtTruck_Leave(object sender, EventArgs e)
         {
             //if (!_dbReturn)
@@ -545,21 +607,17 @@ namespace HitechTMS.Weighing
             //    FillTrucAndSetEditId();
             //}
         }
-
         private void dtPickChallanDate_ValueChanged(object sender, EventArgs e)
         {
             txtChallanDate.Text = dtPickChallanDate.Value.ToString("dd/MM/yyyy");
         }
-
         private void txtChallanWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
             e = _comm.OnlyNumericValue(sender,e);
         }
-
         private void txtChallanWeight_TextChanged(object sender, EventArgs e)
         {
         }
-
         private void txtChallanWeight_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if(txtChallanWeight.Text !="")
@@ -580,17 +638,14 @@ namespace HitechTMS.Weighing
                 }
             }
         }
-
         private void lstTruck_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
-
         private void lstTruck_Leave(object sender, EventArgs e)
         {
 
         }
-
         private void lstTruck_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             
@@ -598,12 +653,10 @@ namespace HitechTMS.Weighing
             lstTruck.Visible = false;
             
         }
-
         private void txtTruck_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             txtTruck.Text = txtTruck.Text.ToUpper();
         }
-
         private void txtGrossWeight_Validating(object sender, System.ComponentModel.CancelEventArgs e)
             {
             //Check for -ve Weight
@@ -647,17 +700,14 @@ namespace HitechTMS.Weighing
 
 
         }
-
         private void txtTareWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
             e = _comm.OnlyNumericValue(sender, e);
         }
-
         private void txtGrossWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
             e = _comm.OnlyNumericValue(sender, e);
         }
-
         private void txtTareWeight_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (txtTareWeight.Text != "")
@@ -678,7 +728,6 @@ namespace HitechTMS.Weighing
                 }
             }
         }
-
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             if(
@@ -703,40 +752,36 @@ namespace HitechTMS.Weighing
             }
             
         }
-
         private void txtTruck_KeyPress(object sender, KeyPressEventArgs e)
         {
             e = _comm.RestirctTextBoxAndUpperCase(e);
         }
-
         private void txtMiscellaneous_KeyPress(object sender, KeyPressEventArgs e)
         {
             e = _comm.RestirctTextBox(e);
         }
-
         private void txtMiscellaneous1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e = _comm.RestirctTextBox(e);
         }
-
         private void txtDeliveryNoteN_KeyPress(object sender, KeyPressEventArgs e)
         {
             e = _comm.RestirctTextBox(e);
         }
-
         private void txtChallanNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             e = _comm.RestirctTextBox(e);
         }
-
         private void btnWeight_Click(object sender, EventArgs e)
         {
+                       
             try
             {
-                //_MaxWeight
-                double weight = _readSerialPortData.ReadSerialPortCommunication();
 
-                if(weight > _MaxWeight)
+                //_MaxWeight
+                double weight = Convert.ToDouble(_AutoWeight);
+
+                if (weight > _MaxWeight)
                 {
                     errProvWeight.SetError(btnWeight, string.Format(_dbGetResourceCaption.GetStringValue("MAX_WEIGHT"),_MaxWeight));
                     btnWeight.Text = weight.ToString();
@@ -761,18 +806,35 @@ namespace HitechTMS.Weighing
 
                 }
             }
+            catch (Exception)
+            {
+
+                //MessageBox.Show(ex.Message);
+                _spManager.StopListening();
+            }
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_weightMode == enumWeightMode.Auto)
+                {
+                    if (_spManager.CurrentSerialSettings.PortName.Length > 0)
+                    {
+                        _spManager.StopListening();
+                        _spManager.Dispose();
+                    }
+                }
+                Close();
+            }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+                _spManager.StopListening();
             }
-        }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Close();
         }
-
         private void btnTicket_Click(object sender, EventArgs e)
         {
             var RepData = _dbObj.rptNormalTicket
@@ -802,13 +864,11 @@ namespace HitechTMS.Weighing
             rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), FrmName.NormalWeighing, _enumProductInOut);
             rptCmn.ShowDialog();
         }
-
         private void frmNormalWeighing_Load(object sender, EventArgs e)
         {
 
         }
-
-        public void DisableAllExceptTicket()
+        private void DisableAllExceptTicket()
         {
             txtTruck.Enabled = false;
             lstTruck.Visible = false;
@@ -827,8 +887,7 @@ namespace HitechTMS.Weighing
             btnWeight.Enabled = false;
             btnTicket.Enabled = true;
         }
-
-        public void EnableAllExceptTicket()
+        private void EnableAllExceptTicket()
         {
             txtTruck.Enabled = true;
             cmbProductCode.Enabled = true;
@@ -845,6 +904,16 @@ namespace HitechTMS.Weighing
             btnSave.Enabled = true;
             btnWeight.Enabled = true;
             btnTicket.Enabled = false;
+        }
+        #endregion
+
+        private void txtTruck_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!_saveClick)
+            {
+                AutoFill();
+                //FillTrucAndSetEditId();
+            }
         }
     }
 }

@@ -15,6 +15,7 @@ using System.Linq;
 using MsgBox;
 using SharedLibrary;
 using System.Globalization;
+using SerialPortListener;
 
 namespace HitechTMS
 {
@@ -305,6 +306,11 @@ namespace HitechTMS
             //frmHyperTerminalConfiguration objfrmHyperTerminalConfiguration = new frmHyperTerminalConfiguration(FrmName.HyperTerminalConfiguration, _nextFormPrincipal);// _enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
             //objfrmHyperTerminalConfiguration.StartPosition = FormStartPosition.CenterParent;
             //objfrmHyperTerminalConfiguration.ShowDialog();
+
+            //frmSerialPortSetting obj = new frmSerialPortSetting();
+            //obj.StartPosition = FormStartPosition.CenterParent;
+            //obj.ShowDialog();
+
         }
 
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
@@ -387,6 +393,13 @@ namespace HitechTMS
             frmShiftAllocation objfrmShiftAllocation = new frmShiftAllocation(FrmName.ShiftAllocation, _nextFormPrincipal);// _enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
             objfrmShiftAllocation.StartPosition = FormStartPosition.CenterParent;
             objfrmShiftAllocation.ShowDialog();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            frmSerialPortSetting obj = new frmSerialPortSetting();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.ShowDialog();
         }
     }
 }

@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.IO.Ports;
 using System.ComponentModel;
+using DAL.Entity_Model;
 
 namespace SerialPortListener.Serial
 {
@@ -9,7 +13,28 @@ namespace SerialPortListener.Serial
     /// </summary>
     public class SerialSettings : INotifyPropertyChanged
     {
+
         public event PropertyChangedEventHandler PropertyChanged;
+        private HitechTruckMngtSystmDataBaseFileEntities _dbObj { get; }
+
+        public SerialSettings(int calledfromWeighingforms = 0)
+        {
+            if(calledfromWeighingforms != 0)
+            {
+                _dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
+                var result = _dbObj.mstHyperTerminalData.ToList();
+                if (result.Count() > 0)
+                {
+                    _portName = result[0].PortName;
+                    _baudRate = (int)result[0].BaudRate;
+                    _parity = (Parity)Enum.Parse(typeof(Parity), result[0].sParity, true);
+                    _dataBits = (int)result[0].DataBits;
+                    _stopBits = (StopBits)(result[0].iStopBits);
+                }
+            }
+           
+        }
+
         string _portName = "";
         string[] _portNameCollection;
         int _baudRate = 4800;
@@ -18,6 +43,7 @@ namespace SerialPortListener.Serial
         int _dataBits = 8;
         int[] _dataBitsCollection = new int[] { 5, 6, 7, 8 };
         StopBits _stopBits = StopBits.One;
+
 
         #region Properties
         /// <summary>

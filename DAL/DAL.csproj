@@ -100,7 +100,7 @@
     <Compile Include="Entity Model\mstGeneralSettings.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity Model\mstHyoerTerminalData.cs">
+    <Compile Include="Entity Model\mstHyperTerminalData.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Model\mstPermission.cs">

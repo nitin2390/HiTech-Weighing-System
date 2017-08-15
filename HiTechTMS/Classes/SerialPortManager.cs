@@ -1,16 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.IO.Ports;
 using System.Reflection;
+using System.ComponentModel;
+using System.Threading;
+using System.IO;
 
 namespace SerialPortListener.Serial
 {
+    
     /// <summary>
     /// Manager for serial port data
     /// </summary>
     public class SerialPortManager : IDisposable
     {
-        public SerialPortManager()
+        public static int _calledfromWeighingforms { get; set; }
+        public SerialPortManager(int calledfromWeighingforms = 0)
         {
+            _calledfromWeighingforms = calledfromWeighingforms;
             // Finding installed serial ports on hardware
             _currentSerialSettings.PortNameCollection = SerialPort.GetPortNames();
             _currentSerialSettings.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(_currentSerialSettings_PropertyChanged);
@@ -29,7 +38,7 @@ namespace SerialPortListener.Serial
 
         #region Fields
         private SerialPort _serialPort;
-        private SerialSettings _currentSerialSettings = new SerialSettings();
+        private SerialSettings _currentSerialSettings = new SerialSettings(_calledfromWeighingforms);
         private string _latestRecieved = String.Empty;
         public event EventHandler<SerialDataEventArgs> NewSerialDataRecieved; 
 
@@ -59,15 +68,23 @@ namespace SerialPortListener.Serial
         
         void _serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            int dataLength = _serialPort.BytesToRead;
-            byte[] data = new byte[dataLength];
-            int nbrDataRead = _serialPort.Read(data, 0, dataLength);
-            if (nbrDataRead == 0)
-                return;
-            
-            // Send data to whom ever interested
-            if (NewSerialDataRecieved != null)
-                NewSerialDataRecieved(this, new SerialDataEventArgs(data));
+            try
+            {
+                //System.Threading.Thread.Sleep(100);
+                string nbrDataRead = _serialPort.ReadLine();
+                if (nbrDataRead.Length < 0)
+                    return;
+
+                // Send data to whom ever interested
+                if (NewSerialDataRecieved != null)
+                    NewSerialDataRecieved(this, new SerialDataEventArgs(nbrDataRead));
+            }
+            catch (Exception ex)
+            {
+
+                //throw ex;
+            }
+
         }
 
         #endregion
@@ -77,23 +94,33 @@ namespace SerialPortListener.Serial
         /// <summary>
         /// Connects to a serial port defined through the current settings
         /// </summary>
-        public void StartListening()
+        public int StartListening()
         {
-            // Closing serial port if it is open
-            if (_serialPort != null && _serialPort.IsOpen)
+            try
+            {
+                // Closing serial port if it is open
+                if (_serialPort != null && _serialPort.IsOpen)
                     _serialPort.Close();
 
-            // Setting serial port settings
-            _serialPort = new SerialPort(
-                _currentSerialSettings.PortName,
-                _currentSerialSettings.BaudRate,
-                _currentSerialSettings.Parity,
-                _currentSerialSettings.DataBits,
-                _currentSerialSettings.StopBits);
+                // Setting serial port settings
+                _serialPort = new SerialPort(
+                    _currentSerialSettings.PortName,
+                    _currentSerialSettings.BaudRate,
+                    _currentSerialSettings.Parity,
+                    _currentSerialSettings.DataBits,
+                    _currentSerialSettings.StopBits);
 
-            // Subscribe to event and open serial port for data
-            _serialPort.DataReceived += new SerialDataReceivedEventHandler(_serialPort_DataReceived);
-            _serialPort.Open();
+                // Subscribe to event and open serial port for data
+                _serialPort.DataReceived += new SerialDataReceivedEventHandler(_serialPort_DataReceived);
+                _serialPort.Open();
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                //Silently supress the error
+                return -1;
+            }
+
         }
 
         /// <summary>
@@ -152,7 +179,7 @@ namespace SerialPortListener.Serial
     /// </summary>
     public class SerialDataEventArgs : EventArgs
     {
-        public SerialDataEventArgs(byte[] dataInByteArray)
+        public SerialDataEventArgs(string dataInByteArray)
         {
             Data = dataInByteArray;
         }
@@ -160,6 +187,6 @@ namespace SerialPortListener.Serial
         /// <summary>
         /// Byte array containing data from serial port
         /// </summary>
-        public byte[] Data;
+        public string Data;
     }
 }

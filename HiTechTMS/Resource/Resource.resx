@@ -132,6 +132,9 @@
   <data name="DATA_SAVE" xml:space="preserve">
     <value>Data saved successfully!</value>
   </data>
+  <data name="DATA_SAVE_RESTART_FOR_IMPACT" xml:space="preserve">
+    <value>Kindly login again to see saved changes!</value>
+  </data>
   <data name="DATA_UPDATE" xml:space="preserve">
     <value>Data update successfully!</value>
   </data>

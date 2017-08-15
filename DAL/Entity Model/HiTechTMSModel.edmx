@@ -52,21 +52,21 @@
           <Property Name="AddedDate" Type="datetime" Nullable="false" />
           <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="mstHyoerTerminalData">
+        <EntityType Name="mstHyperTerminalData">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="BaudRate" Type="int" Nullable="false" />
-          <Property Name="DataBits" Type="int" Nullable="false" />
-          <Property Name="ReadTimeout" Type="int" Nullable="false" />
-          <Property Name="WriteTimeout" Type="int" Nullable="false" />
-          <Property Name="PortName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BaudRate" Type="int" />
+          <Property Name="DataBits" Type="int" />
+          <Property Name="ReadTimeout" Type="int" />
+          <Property Name="WriteTimeout" Type="int" />
+          <Property Name="PortName" Type="nvarchar" MaxLength="50" />
           <Property Name="Handshake" Type="nvarchar" MaxLength="50" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="DataReceived" Type="nvarchar" MaxLength="50" />
-          <Property Name="sParity" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="iStopBits" Type="int" Nullable="false" />
+          <Property Name="sParity" Type="nvarchar" MaxLength="50" />
+          <Property Name="iStopBits" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="mstPermission">
           <Key>
@@ -480,7 +480,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="EmailMaster" EntityType="Self.EmailMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstFormName" EntityType="Self.mstFormName" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstGeneralSettings" EntityType="Self.mstGeneralSettings" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="mstHyoerTerminalData" EntityType="Self.mstHyoerTerminalData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mstHyperTerminalData" EntityType="Self.mstHyperTerminalData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstPermission" EntityType="Self.mstPermission" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstShiftAllocationInfo" EntityType="Self.mstShiftAllocationInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstShifts" EntityType="Self.mstShifts" Schema="dbo" store:Type="Tables" />
@@ -648,7 +648,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="ViewMultiProduct" EntityType="HitechTruckMngtSystmDataBaseFileModel.ViewMultiProduct" />
           <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
           <EntitySet Name="rptNormalTicket" EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" />
-          <EntitySet Name="mstHyoerTerminalData" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyoerTerminalData" />
           <FunctionImport Name="Procedure" ReturnType="Collection(HitechTruckMngtSystmDataBaseFileModel.Procedure_Result)">
             <Parameter Name="param1" Mode="In" Type="Int32" />
             <Parameter Name="param2" Mode="In" Type="Int32" />
@@ -660,6 +659,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="mstShifts1Set" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstShifts1" />
           <EntitySet Name="V_T_mstShiftAllocationInfo" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_T_mstShiftAllocationInfo" />
           <EntitySet Name="mstShiftAllocationInfo" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstShiftAllocationInfo" />
+          <EntitySet Name="mstHyperTerminalData" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyperTerminalData" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -968,22 +968,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="GrossWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ProdInOut" Type="Byte" Nullable="false" />
         </EntityType>
-        <EntityType Name="mstHyoerTerminalData">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="BaudRate" Type="Int32" Nullable="false" />
-          <Property Name="DataBits" Type="Int32" Nullable="false" />
-          <Property Name="ReadTimeout" Type="Int32" Nullable="false" />
-          <Property Name="WriteTimeout" Type="Int32" Nullable="false" />
-          <Property Name="PortName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Handshake" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DataReceived" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="sParity" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="iStopBits" Type="Int32" Nullable="false" />
-        </EntityType>
         <ComplexType Name="Procedure_Result">
           <Property Type="Int32" Name="Column1" Nullable="false" />
           <Property Type="Int32" Name="Column2" Nullable="false" />
@@ -1120,6 +1104,22 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="mstShiftsValue" Type="Int32" Nullable="false" />
           <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
           <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="mstHyperTerminalData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="BaudRate" Type="Int32" />
+          <Property Name="DataBits" Type="Int32" />
+          <Property Name="ReadTimeout" Type="Int32" />
+          <Property Name="WriteTimeout" Type="Int32" />
+          <Property Name="PortName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Handshake" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DataReceived" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sParity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="iStopBits" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1379,23 +1379,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="mstHyoerTerminalData">
-            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstHyoerTerminalData">
-              <MappingFragment StoreEntitySet="mstHyoerTerminalData">
-                <ScalarProperty Name="iStopBits" ColumnName="iStopBits" />
-                <ScalarProperty Name="sParity" ColumnName="sParity" />
-                <ScalarProperty Name="DataReceived" ColumnName="DataReceived" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Handshake" ColumnName="Handshake" />
-                <ScalarProperty Name="PortName" ColumnName="PortName" />
-                <ScalarProperty Name="WriteTimeout" ColumnName="WriteTimeout" />
-                <ScalarProperty Name="ReadTimeout" ColumnName="ReadTimeout" />
-                <ScalarProperty Name="DataBits" ColumnName="DataBits" />
-                <ScalarProperty Name="BaudRate" ColumnName="BaudRate" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="Procedure" FunctionName="HitechTruckMngtSystmDataBaseFileModel.Store.Procedure">
             <ResultMapping>
               <ComplexTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.Procedure_Result">
@@ -1504,6 +1487,23 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
                 <ScalarProperty Name="EndTime" ColumnName="EndTime" />
                 <ScalarProperty Name="StartTime" ColumnName="StartTime" />
                 <ScalarProperty Name="mstShiftsValue" ColumnName="mstShiftsValue" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mstHyperTerminalData">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstHyperTerminalData">
+              <MappingFragment StoreEntitySet="mstHyperTerminalData">
+                <ScalarProperty Name="iStopBits" ColumnName="iStopBits" />
+                <ScalarProperty Name="sParity" ColumnName="sParity" />
+                <ScalarProperty Name="DataReceived" ColumnName="DataReceived" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Handshake" ColumnName="Handshake" />
+                <ScalarProperty Name="PortName" ColumnName="PortName" />
+                <ScalarProperty Name="WriteTimeout" ColumnName="WriteTimeout" />
+                <ScalarProperty Name="ReadTimeout" ColumnName="ReadTimeout" />
+                <ScalarProperty Name="DataBits" ColumnName="DataBits" />
+                <ScalarProperty Name="BaudRate" ColumnName="BaudRate" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -171,16 +171,16 @@ namespace HitechTMS.MasterForms
                     mstShift = new mstShiftAllocationInfo();
                     mstShift.Id = Guid.NewGuid();
                     mstShift.mstShiftsValue = (int)enumShiftAllocation.Three;
-                    mstShift.StartTime = dtpStartB.Value.TimeOfDay;
-                    mstShift.EndTime = dtpEndB.Value.TimeOfDay;
+                    mstShift.StartTime = dtpStartC.Value.TimeOfDay;
+                    mstShift.EndTime = dtpEndC.Value.TimeOfDay;
                     mstShiftList.Add(mstShift);
                     goto case 2;
                 case 2:
                     mstShift = new mstShiftAllocationInfo();
                     mstShift.Id = Guid.NewGuid();
                     mstShift.mstShiftsValue = (int)enumShiftAllocation.Two;
-                    mstShift.StartTime = dtpStartC.Value.TimeOfDay;
-                    mstShift.EndTime = dtpEndC.Value.TimeOfDay;
+                    mstShift.StartTime = dtpStartB.Value.TimeOfDay;
+                    mstShift.EndTime = dtpEndB.Value.TimeOfDay;
                     mstShiftList.Add(mstShift);
                     break;
                 default:

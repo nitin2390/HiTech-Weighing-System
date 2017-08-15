@@ -87,6 +87,7 @@
             this.lblCopyright = new System.Windows.Forms.Label();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.tmrDateAndTime = new System.Windows.Forms.Timer(this.components);
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
@@ -364,7 +365,8 @@
             this.changeFieldToolStripMenuItem,
             this.networkConfigurationToolStripMenuItem,
             this.textFileFieldsSettingToolStripMenuItem,
-            this.serviceSetupToolStripMenuItem});
+            this.serviceSetupToolStripMenuItem,
+            this.toolStripMenuItem5});
             this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
             this.configurationToolStripMenuItem.Size = new System.Drawing.Size(145, 32);
             this.configurationToolStripMenuItem.Text = "Configuration";
@@ -536,6 +538,13 @@
             // 
             this.tmrDateAndTime.Tick += new System.EventHandler(this.tmrDateAndTime_Tick);
             // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(307, 32);
+            this.toolStripMenuItem5.Text = "&10 Serial Port Setting";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -622,6 +631,7 @@
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.Label lblDateAndTime;
         private System.Windows.Forms.Timer tmrDateAndTime;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     }
 }
 

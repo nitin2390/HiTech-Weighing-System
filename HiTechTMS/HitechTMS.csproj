@@ -163,11 +163,11 @@
     <Compile Include="Forms\Config\frmGeneralSetting.Designer.cs">
       <DependentUpon>frmGeneralSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Config\frmHyperTerminalConfiguration.cs">
+    <Compile Include="Forms\Config\frmSerialPortSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Config\frmHyperTerminalConfiguration.Designer.cs">
-      <DependentUpon>frmHyperTerminalConfiguration.cs</DependentUpon>
+    <Compile Include="Forms\Config\frmSerialPortSettings.designer.cs">
+      <DependentUpon>frmSerialPortSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Config\frmSetPermission.cs">
       <SubType>Form</SubType>
@@ -458,8 +458,8 @@
     <EmbeddedResource Include="Forms\Config\frmGeneralSetting.resx">
       <DependentUpon>frmGeneralSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Config\frmHyperTerminalConfiguration.resx">
-      <DependentUpon>frmHyperTerminalConfiguration.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Config\frmSerialPortSettings.resx">
+      <DependentUpon>frmSerialPortSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Config\frmSetPermission.resx">
       <DependentUpon>frmSetPermission.cs</DependentUpon>
@@ -758,7 +758,7 @@
     <Content Include="image\Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ExcelOutput\" />
+    <Folder Include="Enum\ExcelOutput\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
