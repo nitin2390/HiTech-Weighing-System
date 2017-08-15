@@ -51,6 +51,7 @@ namespace DAL.Entity_Model
         public virtual DbSet<V_T_mstShiftAllocationInfo> V_T_mstShiftAllocationInfo { get; set; }
         public virtual DbSet<mstShiftAllocationInfo> mstShiftAllocationInfo { get; set; }
         public virtual DbSet<mstHyperTerminalData> mstHyperTerminalData { get; set; }
+        public virtual DbSet<mstWeighBridgeSetup> mstWeighBridgeSetup { get; set; }
     
         public virtual ObjectResult<Procedure_Result> Procedure(Nullable<int> param1, Nullable<int> param2)
         {

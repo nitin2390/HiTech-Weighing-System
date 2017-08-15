@@ -461,6 +461,7 @@
             // 
             // cmbChallanWeight
             // 
+            this.cmbChallanWeight.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChallanWeight.FormattingEnabled = true;
             this.cmbChallanWeight.Items.AddRange(new object[] {
             "t",
@@ -624,6 +625,7 @@
             // 
             // cmbTranspoterCode
             // 
+            this.cmbTranspoterCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTranspoterCode.FormattingEnabled = true;
             this.cmbTranspoterCode.Location = new System.Drawing.Point(404, 135);
             this.cmbTranspoterCode.Name = "cmbTranspoterCode";
@@ -633,6 +635,7 @@
             // 
             // cmbCustomerCode
             // 
+            this.cmbCustomerCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCustomerCode.FormattingEnabled = true;
             this.cmbCustomerCode.Location = new System.Drawing.Point(404, 86);
             this.cmbCustomerCode.Name = "cmbCustomerCode";
@@ -642,6 +645,7 @@
             // 
             // cmbProductCode
             // 
+            this.cmbProductCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductCode.FormattingEnabled = true;
             this.cmbProductCode.Location = new System.Drawing.Point(404, 30);
             this.cmbProductCode.Name = "cmbProductCode";

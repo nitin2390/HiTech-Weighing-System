@@ -310,6 +310,10 @@ namespace HitechTMS
             //frmSerialPortSetting obj = new frmSerialPortSetting();
             //obj.StartPosition = FormStartPosition.CenterParent;
             //obj.ShowDialog();
+            
+            frmWBSetup objfrmWBSetup = new frmWBSetup(FrmName.WeighBridgeSetup, _nextFormPrincipal);
+            objfrmWBSetup.StartPosition = FormStartPosition.CenterParent;
+            objfrmWBSetup.ShowDialog();
 
         }
 
@@ -400,6 +404,13 @@ namespace HitechTMS
             frmSerialPortSetting obj = new frmSerialPortSetting();
             obj.StartPosition = FormStartPosition.CenterParent;
             obj.ShowDialog();
+        }
+
+        private void weighingbridgeSetupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmWBSetup objfrmWBSetup = new frmWBSetup(FrmName.WeighBridgeSetup, _nextFormPrincipal);
+            objfrmWBSetup.StartPosition = FormStartPosition.CenterParent;
+            objfrmWBSetup.ShowDialog();
         }
     }
 }

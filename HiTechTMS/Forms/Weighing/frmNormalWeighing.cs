@@ -53,7 +53,7 @@ namespace HitechTMS.Weighing
             InitializeComponent();
             _dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
             _readSerialPortData = new ReadSerialPortData();
-            _MaxWeight = Convert.ToDouble(_dbObj.V_mstGeneralSettings.Select(x=>x.MiniNetWeight).First());
+            _MaxWeight = Convert.ToDouble(_dbObj.mstWeighBridgeSetup.Select(x=>x.WeighCapacity).First());
             _weightMode = Mode;
             _objCalculateNetWeight = new CalculateNetWeight();
             _dbGetResourceCaption = new GetResourceCaption();

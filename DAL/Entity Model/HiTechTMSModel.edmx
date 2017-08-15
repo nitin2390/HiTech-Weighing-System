@@ -123,6 +123,14 @@
           <Property Name="Email" Type="varchar" MaxLength="40" />
           <Property Name="IsSuplier" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
+        <EntityType Name="mstWeighBridgeSetup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Unit" Type="int" Nullable="false" />
+          <Property Name="WeighCapacity" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="MultiPrdWeight">
           <Key>
             <PropertyRef Name="Id" />
@@ -486,6 +494,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="mstShifts" EntityType="Self.mstShifts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstStoredTareRecords" EntityType="Self.mstStoredTareRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstSupplierTransporter" EntityType="Self.mstSupplierTransporter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mstWeighBridgeSetup" EntityType="Self.mstWeighBridgeSetup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MultiPrdWeight" EntityType="Self.MultiPrdWeight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="transMultiWeight" EntityType="Self.transMultiWeight" Schema="dbo" store:Type="Tables" />
@@ -660,6 +669,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="V_T_mstShiftAllocationInfo" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_T_mstShiftAllocationInfo" />
           <EntitySet Name="mstShiftAllocationInfo" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstShiftAllocationInfo" />
           <EntitySet Name="mstHyperTerminalData" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyperTerminalData" />
+          <EntitySet Name="mstWeighBridgeSetup" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstWeighBridgeSetup" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -1121,6 +1131,14 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="sParity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="iStopBits" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
+        <EntityType Name="mstWeighBridgeSetup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Unit" Type="Int32" Nullable="false" />
+          <Property Name="WeighCapacity" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1504,6 +1522,15 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
                 <ScalarProperty Name="ReadTimeout" ColumnName="ReadTimeout" />
                 <ScalarProperty Name="DataBits" ColumnName="DataBits" />
                 <ScalarProperty Name="BaudRate" ColumnName="BaudRate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mstWeighBridgeSetup">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.mstWeighBridgeSetup">
+              <MappingFragment StoreEntitySet="mstWeighBridgeSetup">
+                <ScalarProperty Name="WeighCapacity" ColumnName="WeighCapacity" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

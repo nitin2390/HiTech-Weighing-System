@@ -6,21 +6,21 @@
         {
             Admin = 0,
             ApplicationUser = 1,
-            SuperAdmin =2,
-            Supervisor =3 
+            SuperAdmin = 2,
+            Supervisor = 3
         }
 
         public enum FrmName
         {
             //File
-            ProductDetail =1,
+            ProductDetail = 1,
             Supplier = 2,
             Transport = 3,
             StoredTareFile = 4,
 
             //Weighing 
-            NormalWeighing =21,
-            PublicWeighing =22,
+            NormalWeighing = 21,
+            PublicWeighing = 22,
             MultiWeghing = 23,
 
             NormalPendingFile = 24,
@@ -35,8 +35,9 @@
             AddEditUser = 30,
             EmailConfig = 31,
             HyperTerminalConfiguration = 32,
-            GenralSetting =33,
-            ShiftAllocation=34
+            GenralSetting = 33,
+            ShiftAllocation = 34,
+            WeighBridgeSetup=35
         }
 
         public enum enumProduct
@@ -48,15 +49,15 @@
         public enum enumProductNormalPublicMulti
         {
             Normal = 0,
-            Public = 1 ,
+            Public = 1,
             Multi = 2
         }
 
         public enum enumProductInOut
         {
-            In =0,
-            Out =1,
-            Other =2
+            In = 0,
+            Out = 1,
+            Other = 2
         }
 
         public enum enumShiftAllocation
@@ -97,7 +98,7 @@
             AddedDate,
             UpdatedDate
         }
-        
+
 
         public enum AddUser
         {
@@ -124,7 +125,7 @@
         public enum enumWeightMode
         {
             Manual = 0,
-            Auto =1,
+            Auto = 1,
             Semi = 2
         }
 
@@ -132,7 +133,7 @@
         public enum enumWeightUnit
         {
             t = 0,
-            kg =1
+            kg = 1
         }
 
         public enum enumYesNo
@@ -154,8 +155,13 @@
         }
         public enum enumReportPrinting
         {
-            Draft=0,
-            Graphical=1
+            Draft = 0,
+            Graphical = 1
+        }
+        public enum enumUnits
+        {
+            kilogram = 0,
+            tonne = 1
         }
     }
 

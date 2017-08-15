@@ -121,6 +121,9 @@
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Entity Model\mstWeighBridgeSetup.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\MultiPrdWeight.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>

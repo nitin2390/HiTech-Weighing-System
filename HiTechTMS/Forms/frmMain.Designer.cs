@@ -81,13 +81,13 @@
             this.weighingModeSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.weighingbridgeSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.communicationDevicesAndSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.lblDateAndTime = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.tmrDateAndTime = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
@@ -473,12 +473,20 @@
             this.weighingbridgeSetupToolStripMenuItem.Name = "weighingbridgeSetupToolStripMenuItem";
             this.weighingbridgeSetupToolStripMenuItem.Size = new System.Drawing.Size(430, 32);
             this.weighingbridgeSetupToolStripMenuItem.Text = "&2 Weighingbridge Setup";
+            this.weighingbridgeSetupToolStripMenuItem.Click += new System.EventHandler(this.weighingbridgeSetupToolStripMenuItem_Click);
             // 
             // communicationDevicesAndSettingsToolStripMenuItem
             // 
             this.communicationDevicesAndSettingsToolStripMenuItem.Name = "communicationDevicesAndSettingsToolStripMenuItem";
             this.communicationDevicesAndSettingsToolStripMenuItem.Size = new System.Drawing.Size(430, 32);
             this.communicationDevicesAndSettingsToolStripMenuItem.Text = "&3 Communication Devices and Settings";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(307, 32);
+            this.toolStripMenuItem5.Text = "&10 Serial Port Setting";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // button1
             // 
@@ -537,13 +545,6 @@
             // tmrDateAndTime
             // 
             this.tmrDateAndTime.Tick += new System.EventHandler(this.tmrDateAndTime_Tick);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(307, 32);
-            this.toolStripMenuItem5.Text = "&10 Serial Port Setting";
-            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // frmMain
             // 
