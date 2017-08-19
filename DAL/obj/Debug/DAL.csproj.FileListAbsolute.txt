@@ -25,3 +25,5 @@ C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\bin\
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.dll
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\DAL\obj\Debug\DAL.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.xml
