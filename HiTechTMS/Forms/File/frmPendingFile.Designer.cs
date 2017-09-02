@@ -168,10 +168,7 @@
             // bgWorkerProcessor
             // 
             this.bgWorkerProcessor.WorkerReportsProgress = true;
-            this.bgWorkerProcessor.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgWorkerProcessor_DoWork);
-            this.bgWorkerProcessor.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerProcessor_ProgressChanged);
-            this.bgWorkerProcessor.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerProcessor_RunWorkerCompleted);
-            // 
+             
             // frmPendingFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

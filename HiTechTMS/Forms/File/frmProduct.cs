@@ -203,14 +203,7 @@ namespace HitechTMS.File
         {
             using (CreateExcelAndSendEmail obj = new CreateExcelAndSendEmail())
             {
-                if (obj.CreateExcelAndSendEmailToList(HitechEnums.FrmName.ProductDetail))
-                {
-                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("EMAIL_SENT"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("ERR_EMAIL_CHK_CONFIG"), _dbGetResourceCaption.GetStringValue("ERROR") , MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                obj.CreateExcelAndSendEmailToList(FrmName.ProductDetail);
             }
 
         }

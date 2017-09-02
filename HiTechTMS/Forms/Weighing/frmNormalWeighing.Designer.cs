@@ -515,6 +515,7 @@
             this.dtPickChallanDate.Size = new System.Drawing.Size(20, 22);
             this.dtPickChallanDate.TabIndex = 6;
             this.dtPickChallanDate.ValueChanged += new System.EventHandler(this.dtPickChallanDate_ValueChanged);
+            this.dtPickChallanDate.MouseLeave += new System.EventHandler(this.dtPickChallanDate_MouseLeave);
             // 
             // grpboxOperation
             // 

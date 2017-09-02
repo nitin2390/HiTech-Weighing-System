@@ -1,4 +1,5 @@
-﻿using DAL.Entity_Model;
+﻿#region "frmNormalWeighing"
+using DAL.Entity_Model;
 using HitechTMS.Classes;
 using SharedLibrary;
 using System;
@@ -10,14 +11,12 @@ using static HitechTMS.HitechEnums;
 using Business;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
-using System.Drawing;
 using System.Security.Principal;
 using SerialPortListener.Serial;
-using SerialPortListener;
-using System.Text;
-
+#region "HitechTMS.Weighing"
 namespace HitechTMS.Weighing
 {
+    #region "frmNormalWeighing Class"
     public partial class frmNormalWeighing :HitechTMSSecurity.SecureBaseForm
     {
         #region "Private Variables"
@@ -39,8 +38,11 @@ namespace HitechTMS.Weighing
         private bool isPortSettingWorking { get; set; } = false;
         #endregion
 
+        #region "readonly variables"
         readonly double _MaxWeight;
+        #endregion
 
+        #region "Constructor"
         /// <summary>
         /// Constructor for intialise settings
         /// </summary>
@@ -81,6 +83,7 @@ namespace HitechTMS.Weighing
             
             
         }
+        #endregion
 
         #region "Private methods"
         private void _spManager_NewSerialDataRecieved(object sender, SerialDataEventArgs e)
@@ -115,6 +118,8 @@ namespace HitechTMS.Weighing
         {
             try
             {
+                txtGrossWeight.Enabled = true;
+                txtTareWeight.Enabled = true;
                 txtMode.Text = _weightMode.ToString();
                 txtProductName.ReadOnly = txtCustomerName.ReadOnly = txtTranspoterName.ReadOnly = true;
                 txtDateIn.ReadOnly = txtDateOut.ReadOnly = true;
@@ -126,7 +131,7 @@ namespace HitechTMS.Weighing
                 if(_enumProductInOut == enumProductInOut.In)
                 {
                    
-                    lblGrossWeight.Text = _dbGetResourceCaption.GetStringValue("Tare Weight");
+                    lblGrossWeight.Text = _dbGetResourceCaption.GetStringValue("TARE_WEIGHT");
                     lblTareWeight.Text = _dbGetResourceCaption.GetStringValue("GROSS_WEIGHT");
                     txtGrossWeight.ReadOnly = true;
                 }
@@ -204,87 +209,6 @@ namespace HitechTMS.Weighing
                 MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if(!isPortSettingWorking && _weightMode == enumWeightMode.Auto )
-                {
-                    MessageBox.Show("Can not save data please check your port settings!");
-                    return;
-                }
-                if(txtTruck.Text.Trim().Length < 1)
-                {
-                    errProvWeight.SetError(txtTruck,_dbGetResourceCaption.GetStringValue("TRUCK_CAN_NOT_BLANK"));
-                    return;
-                }
-                List<transNormalWeight> existsQuery = new List<transNormalWeight>();
-                _saveClick = true;
-                existsQuery = _dbObj.transNormalWeight.Select(x => x).Where(x => x.ID == _transNormalWeightID && x.ProdInOut == (byte)_enumProductInOut && x.IsPending == 0).ToList();
-                transNormalWeight objtransNormalWeight = new transNormalWeight();
-                objtransNormalWeight.Mode = (byte)_weightMode;
-                objtransNormalWeight.Truck = txtTruck.Text;
-                objtransNormalWeight.ProductCode = cmbProductCode.SelectedValue.ToString() !="Select" ? cmbProductCode.SelectedValue.ToString() : null;
-                objtransNormalWeight.SupplierCode = cmbCustomerCode.SelectedIndex !=0 ? (Guid)cmbCustomerCode.SelectedValue : Guid.Empty;
-                objtransNormalWeight.TransporterCode = cmbTranspoterCode.SelectedIndex != 0 ?  (Guid)cmbTranspoterCode.SelectedValue : Guid.Empty;
-                objtransNormalWeight.ChallanNumber = txtChallanNumber.Text;
-                objtransNormalWeight.ChallanDate = (txtChallanDate.Text != "" ? DateTime.ParseExact(txtChallanDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null);
-
-                objtransNormalWeight.ChallanWeight = txtChallanWeight.Text != "" ? Convert.ToDecimal(txtChallanWeight.Text) : (Decimal?)null ;
-
-                objtransNormalWeight.ChallanWeightUnit = cmbChallanWeight.SelectedIndex > -1 ? Convert.ToByte(cmbChallanWeight.SelectedIndex) : (Byte?)null;
-
-                objtransNormalWeight.Miscellaneous = txtMiscellaneous.Text + ";" + txtMiscellaneous1.Text;
-                objtransNormalWeight.DeliveryNoteN = txtDeliveryNoteN.Text;
-
-
-                objtransNormalWeight.DateIn = (txtDateIn.Text != "" ? DateTime.ParseExact(txtDateIn.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null); //DateTime.ParseExact(txtDateIn.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                objtransNormalWeight.TimeIn = txtTimeIn.Text != "" ? TimeSpan.Parse(txtTimeIn.Text): (TimeSpan?)null ;
-
-                objtransNormalWeight.DateOut = (txtDateOut.Text != "" ? DateTime.ParseExact(txtDateOut.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null); //DateTime.ParseExact(txtDateOut.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                objtransNormalWeight.TimeOut = txtTimeOut.Text != "" ? TimeSpan.Parse(txtTimeOut.Text) : (TimeSpan?)null;
-
-                objtransNormalWeight.TareWeight = _enumProductInOut == enumProductInOut.In ? txtGrossWeight.Text != "" ? Convert.ToDecimal(txtGrossWeight.Text) : (Decimal?)null : txtTareWeight.Text != "" ? Convert.ToDecimal(txtTareWeight.Text): (Decimal?)null;
-                objtransNormalWeight.GrossWeight = _enumProductInOut == enumProductInOut.In ? txtTareWeight.Text != "" ? Convert.ToDecimal(txtTareWeight.Text) : (Decimal?)null: txtGrossWeight.Text != "" ?  Convert.ToDecimal(txtGrossWeight.Text) : (Decimal?)null;
-
-                objtransNormalWeight.NetWeight = txtNetWeight.Text != "" ?  Convert.ToDecimal(txtNetWeight.Text) : (Decimal?)null;
-                objtransNormalWeight.UpdatedDate = DateTime.ParseExact(DateTime.Now.Date.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                objtransNormalWeight.IsPending = (byte)(txtNetWeight.Text != "" ? (Convert.ToDecimal(txtNetWeight.Text) > 0 ? 1 : 0) : 0);
-                objtransNormalWeight.ProdInOut = (byte)_enumProductInOut;
-
-                if (existsQuery.Count > 0)
-                {
-                    objtransNormalWeight.AddedDate = DateTime.ParseExact(DateTime.Now.Date.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    objtransNormalWeight.ID = _transNormalWeightID;
-                    _dbObj.transNormalWeight.AddOrUpdate(objtransNormalWeight);
-                    if (_dbObj.SaveChanges() > 0 && !_isTareWeight)
-                    {
-                        transNormalWeightID = _transNormalWeightID;
-                        DisableAllExceptTicket();
-                        //ResetCntrl();
-                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                }
-                else
-                {
-                    objtransNormalWeight.AddedDate = DateTime.ParseExact(DateTime.Now.Date.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    objtransNormalWeight.ID = Guid.NewGuid();
-                    _dbObj.transNormalWeight.Add(objtransNormalWeight);
-                    if (_dbObj.SaveChanges() == 1)
-                    {
-                        ResetCntrl();
-                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        
         /// <summary>
         /// Reset all the controlls
         /// </summary>
@@ -328,82 +252,6 @@ namespace HitechTMS.Weighing
 
 
         }
-
-        /// <summary>
-        /// Combo box index change
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cmbProductCode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbProductCode.SelectedIndex != 0)
-            {
-                txtProductName.Text = ((DAL.Entity_Model.Product)cmbProductCode.SelectedItem).Name;
-            }
-            else
-            {
-                txtProductName.Text = "";
-            }
-        }
-
-        private void cmbCustomerCode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbCustomerCode.SelectedIndex > 0)
-            {
-                txtCustomerName.Text = ((DAL.Entity_Model.mstSupplierTransporter)cmbCustomerCode.SelectedItem).SupplierName;
-            }
-            else
-            {
-                txtCustomerName.Text = "";
-            }
-        }
-        private void cmbTranspoterCode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbTranspoterCode.SelectedIndex != 0)
-            {
-                txtTranspoterName.Text = ((DAL.Entity_Model.mstSupplierTransporter)cmbTranspoterCode.SelectedItem).SupplierName;
-            }
-            else
-            {
-                txtTranspoterName.Text = "";
-            }
-        }
-        private void txtTareWeight_TextChanged(object sender, EventArgs e)
-        {
-            if (!_dbReturn)
-            {
-                if (txtTareWeight.Text.Trim() != "")
-                {
-                    txtDateIn.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
-                    txtTimeIn.Text = DateTime.Now.ToString("HH:mm:ss");
-                }
-                else
-                {
-                    txtDateIn.Text = "";
-                    txtTimeIn.Text = "";
-                }
-                
-            }
-            CalNetWeight();
-        }
-        private void txtGrossWeight_TextChanged(object sender, EventArgs e)
-        {
-            if (!_dbReturn)
-            {
-                if (txtGrossWeight.Text.Trim() != "")
-                {
-                    txtDateOut.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
-                    txtTimeOut.Text = DateTime.Now.ToString("HH:mm:ss");
-                }
-                else
-                {
-                    txtDateOut.Text = "";
-                    txtTimeOut.Text = "";
-                }
-                
-            }
-            CalNetWeight();
-        }
         private void CalNetWeight()
         {
             try
@@ -420,14 +268,6 @@ namespace HitechTMS.Weighing
             {
 
                 MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void txtTruck_TextChanged(object sender, EventArgs e)
-        {
-            if (!_saveClick)
-            {
-                AutoFill();
-                //FillTrucAndSetEditId();
             }
         }
         private void AutoFill()
@@ -551,9 +391,10 @@ namespace HitechTMS.Weighing
                 }
                 if(lsttransNormalWeight[0].GrossWeight > 0 || lsttransNormalWeight[0].TareWeight > 0)
                 {
+                    _isTareWeight = false;
+
                     if (_weightMode == enumWeightMode.Auto)
                     {
-                        _isTareWeight = false;
                         txtTareWeight.ReadOnly = true;
                         txtGrossWeight.ReadOnly = true;
                     }
@@ -577,10 +418,55 @@ namespace HitechTMS.Weighing
                 MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void lstTruck_DoubleClick(object sender, EventArgs e)
+        private void DisableAllExceptTicket(bool _val)
         {
-            FillTrucAndSetEditId();
+            txtTruck.ReadOnly = _val;
+            lstTruck.Visible = !_val;
+            cmbProductCode.Enabled = !_val;
+            cmbCustomerCode.Enabled = !_val;
+            cmbTranspoterCode.Enabled = !_val;
+            cmbChallanWeight.Enabled = !_val;
+            txtChallanNumber.ReadOnly = _val;
+            txtChallanDate.ReadOnly = _val;
+            dtPickChallanDate.Enabled = !_val;
+            txtChallanWeight.ReadOnly = _val;
+            txtMiscellaneous.ReadOnly = _val;
+            txtMiscellaneous1.ReadOnly = _val;
+            txtDeliveryNoteN.ReadOnly = _val;
+            txtTareWeight.ReadOnly = _val;
+            txtGrossWeight.ReadOnly = _val;
+            btnSave.Enabled = !_val;
+            btnWeight.Enabled = !_val;
+            btnTicket.Enabled = _val;
         }
+        private void EnableAllExceptTicket()
+        {
+            txtTruck.Enabled = true;
+            cmbProductCode.Enabled = true;
+            cmbCustomerCode.Enabled = true;
+            cmbTranspoterCode.Enabled = true;
+            cmbChallanWeight.Enabled = true;
+            txtChallanNumber.Enabled = true;
+            txtChallanDate.Enabled = true;
+            dtPickChallanDate.Enabled = true;
+            txtChallanWeight.Enabled = true;
+            txtMiscellaneous.Enabled = true;
+            txtMiscellaneous1.Enabled = true;
+            txtDeliveryNoteN.Enabled = true;
+            btnSave.Enabled = true;
+            btnWeight.Enabled = true;
+            btnTicket.Enabled = false;
+        }
+        #endregion
+
+        #region "ValueChanged"
+        private void dtPickChallanDate_ValueChanged(object sender, EventArgs e)
+        {
+            txtChallanDate.Text = dtPickChallanDate.Value.ToString("dd/MM/yyyy");
+        }
+        #endregion
+
+        #region "KeyDown"
         private void lstTruck_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -588,7 +474,7 @@ namespace HitechTMS.Weighing
                 FillTrucAndSetEditId();
             }
 
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
                 lstTruck.SelectedIndex = -1;
                 lstTruck.Visible = false;
@@ -602,34 +488,81 @@ namespace HitechTMS.Weighing
                 lstTruck.Focus();
             }
 
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
                 lstTruck.SelectedItem = -1;
                 lstTruck.Visible = false;
             }
 
         }
-        private void txtTruck_Leave(object sender, EventArgs e)
-        {
-            //if (!_dbReturn)
-            //{
-            //    FillTrucAndSetEditId();
-            //}
-        }
-        private void dtPickChallanDate_ValueChanged(object sender, EventArgs e)
-        {
-            txtChallanDate.Text = dtPickChallanDate.Value.ToString("dd/MM/yyyy");
-        }
-        private void txtChallanWeight_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e = _comm.OnlyNumericValue(sender,e);
-        }
+        #endregion
+
+        #region "TextChanged"
         private void txtChallanWeight_TextChanged(object sender, EventArgs e)
         {
         }
+        private void txtTruck_TextChanged(object sender, EventArgs e)
+        {
+            if (!_saveClick)
+            {
+                AutoFill();
+                //FillTrucAndSetEditId();
+            }
+        }
+        private void txtGrossWeight_TextChanged(object sender, EventArgs e)
+        {
+            if (!_dbReturn)
+            {
+                if (txtGrossWeight.Text.Trim() != "")
+                {
+                    txtDateOut.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
+                    txtTimeOut.Text = DateTime.Now.ToString("HH:mm:ss");
+                }
+                else
+                {
+                    txtDateOut.Text = "";
+                    txtTimeOut.Text = "";
+                }
+
+            }
+            else
+            {
+                _dbReturn = false;
+            }
+            CalNetWeight();
+        }
+        private void lstTruck_Leave(object sender, EventArgs e)
+        {
+
+        }
+        private void txtTareWeight_TextChanged(object sender, EventArgs e)
+        {
+            if (!_dbReturn)
+            {
+                if (txtTareWeight.Text.Trim() != "")
+                {
+                    txtDateIn.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
+                    txtTimeIn.Text = DateTime.Now.ToString("HH:mm:ss");
+                }
+                else
+                {
+                    txtDateIn.Text = "";
+                    txtTimeIn.Text = "";
+                }
+
+            }
+            else
+            {
+                _dbReturn = false;
+            }
+            CalNetWeight();
+        }
+        #endregion
+
+        #region "Validating"
         private void txtChallanWeight_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if(txtChallanWeight.Text !="")
+            if (txtChallanWeight.Text != "")
             {
                 double input = 0;
                 bool isNum = Double.TryParse(txtChallanWeight.Text, out input);
@@ -639,21 +572,13 @@ namespace HitechTMS.Weighing
                     // Cancel the event and select the text to be corrected by the user.
                     e.Cancel = true;
                     txtChallanWeight.Select(0, txtChallanWeight.Text.Length);
-                    errProvWeight.SetError(txtChallanWeight, _dbGetResourceCaption.GetStringValue("MAX_WEIGHT"));
+                    errProvWeight.SetError(txtChallanWeight, string.Format(_dbGetResourceCaption.GetStringValue("MAX_WEIGHT"), _MaxWeight));
                 }
                 else
                 {
                     errProvWeight.Clear();
                 }
             }
-        }
-        private void lstTruck_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-        private void lstTruck_Leave(object sender, EventArgs e)
-        {
-
         }
         private void lstTruck_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -709,14 +634,6 @@ namespace HitechTMS.Weighing
 
 
         }
-        private void txtTareWeight_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e = _comm.OnlyNumericValue(sender, e);
-        }
-        private void txtGrossWeight_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e = _comm.OnlyNumericValue(sender, e);
-        }
         private void txtTareWeight_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (txtTareWeight.Text != "")
@@ -729,7 +646,7 @@ namespace HitechTMS.Weighing
                     // Cancel the event and select the text to be corrected by the user.
                     e.Cancel = true;
                     txtTareWeight.Select(0, txtTareWeight.Text.Length);
-                    errProvWeight.SetError(txtTareWeight, _dbGetResourceCaption.GetStringValue("MAX_WEIGHT"));
+                    errProvWeight.SetError(txtTareWeight, string.Format(_dbGetResourceCaption.GetStringValue("MAX_WEIGHT"), _MaxWeight));
                 }
                 else
                 {
@@ -737,6 +654,49 @@ namespace HitechTMS.Weighing
                 }
             }
         }
+        #endregion
+
+        #region "KeyPress"
+        private void txtTareWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.OnlyNumericValue(sender, e);
+        }
+        private void txtGrossWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.OnlyNumericValue(sender, e);
+        }
+        private void txtTruck_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBoxAndUpperCase(e);
+        }
+        private void lstTruck_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        private void txtChallanWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.OnlyNumericValue(sender, e);
+        }
+        private void txtMiscellaneous_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBox(e);
+        }
+        private void txtMiscellaneous1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBox(e);
+        }
+        private void txtDeliveryNoteN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBox(e);
+        }
+        private void txtChallanNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e = _comm.RestirctTextBox(e);
+        }
+
+        #endregion
+
+        #region "Click"
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             if(
@@ -756,30 +716,11 @@ namespace HitechTMS.Weighing
             {
                 if(MessageBox.Show(_dbGetResourceCaption.GetStringValue("ADD_NEW"), _dbGetResourceCaption.GetStringValue("INFORMATION"),MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    DisableAllExceptTicket(false);
                     ResetCntrl();
                 }
             }
             
-        }
-        private void txtTruck_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e = _comm.RestirctTextBoxAndUpperCase(e);
-        }
-        private void txtMiscellaneous_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e = _comm.RestirctTextBox(e);
-        }
-        private void txtMiscellaneous1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e = _comm.RestirctTextBox(e);
-        }
-        private void txtDeliveryNoteN_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e = _comm.RestirctTextBox(e);
-        }
-        private void txtChallanNumber_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e = _comm.RestirctTextBox(e);
         }
         private void btnWeight_Click(object sender, EventArgs e)
         {
@@ -873,49 +814,89 @@ namespace HitechTMS.Weighing
             rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), FrmName.NormalWeighing, _enumProductInOut);
             rptCmn.ShowDialog();
         }
-        private void frmNormalWeighing_Load(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (!isPortSettingWorking && _weightMode == enumWeightMode.Auto)
+                {
+                    MessageBox.Show("Can not save data please check your port settings!");
+                    return;
+                }
+                if (txtTruck.Text.Trim().Length < 1)
+                {
+                    errProvWeight.SetError(txtTruck, _dbGetResourceCaption.GetStringValue("TRUCK_CAN_NOT_BLANK"));
+                    return;
+                }
+                List<transNormalWeight> existsQuery = new List<transNormalWeight>();
+                _saveClick = true;
+                existsQuery = _dbObj.transNormalWeight.Select(x => x).Where(x => x.ID == _transNormalWeightID && x.ProdInOut == (byte)_enumProductInOut && x.IsPending == 0).ToList();
+                transNormalWeight objtransNormalWeight = new transNormalWeight();
+                objtransNormalWeight.Mode = (byte)_weightMode;
+                objtransNormalWeight.Truck = txtTruck.Text;
+                objtransNormalWeight.ProductCode = cmbProductCode.SelectedValue.ToString() != "Select" ? cmbProductCode.SelectedValue.ToString() : null;
+                objtransNormalWeight.SupplierCode = cmbCustomerCode.SelectedIndex != 0 ? (Guid)cmbCustomerCode.SelectedValue : Guid.Empty;
+                objtransNormalWeight.TransporterCode = cmbTranspoterCode.SelectedIndex != 0 ? (Guid)cmbTranspoterCode.SelectedValue : Guid.Empty;
+                objtransNormalWeight.ChallanNumber = txtChallanNumber.Text;
+                objtransNormalWeight.ChallanDate = (txtChallanDate.Text != "" ? DateTime.ParseExact(txtChallanDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null);
 
-        }
-        private void DisableAllExceptTicket()
-        {
-            txtTruck.Enabled = false;
-            lstTruck.Visible = false;
-            cmbProductCode.Enabled = false;
-            cmbCustomerCode.Enabled = false;
-            cmbTranspoterCode.Enabled = false;
-            cmbChallanWeight.Enabled = false;
-            txtChallanNumber.Enabled = false;
-            txtChallanDate.Enabled = false;
-            dtPickChallanDate.Enabled = false;
-            txtChallanWeight.Enabled = false;
-            txtMiscellaneous.Enabled = false;
-            txtMiscellaneous1.Enabled = false;
-            txtDeliveryNoteN.Enabled = false;
-            btnSave.Enabled = false;
-            btnWeight.Enabled = false;
-            btnTicket.Enabled = true;
-        }
-        private void EnableAllExceptTicket()
-        {
-            txtTruck.Enabled = true;
-            cmbProductCode.Enabled = true;
-            cmbCustomerCode.Enabled = true;
-            cmbTranspoterCode.Enabled = true;
-            cmbChallanWeight.Enabled = true;
-            txtChallanNumber.Enabled = true;
-            txtChallanDate.Enabled = true;
-            dtPickChallanDate.Enabled = true;
-            txtChallanWeight.Enabled = true;
-            txtMiscellaneous.Enabled = true;
-            txtMiscellaneous1.Enabled = true;
-            txtDeliveryNoteN.Enabled = true;
-            btnSave.Enabled = true;
-            btnWeight.Enabled = true;
-            btnTicket.Enabled = false;
+                objtransNormalWeight.ChallanWeight = txtChallanWeight.Text != "" ? Convert.ToDecimal(txtChallanWeight.Text) : (Decimal?)null;
+
+                objtransNormalWeight.ChallanWeightUnit = cmbChallanWeight.SelectedIndex > -1 ? Convert.ToByte(cmbChallanWeight.SelectedIndex) : (Byte?)null;
+
+                objtransNormalWeight.Miscellaneous = txtMiscellaneous.Text + ";" + txtMiscellaneous1.Text;
+                objtransNormalWeight.DeliveryNoteN = txtDeliveryNoteN.Text;
+
+
+                objtransNormalWeight.DateIn = (txtDateIn.Text != "" ? DateTime.ParseExact(txtDateIn.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null); //DateTime.ParseExact(txtDateIn.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                objtransNormalWeight.TimeIn = txtTimeIn.Text != "" ? TimeSpan.Parse(txtTimeIn.Text) : (TimeSpan?)null;
+
+                objtransNormalWeight.DateOut = (txtDateOut.Text != "" ? DateTime.ParseExact(txtDateOut.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null); //DateTime.ParseExact(txtDateOut.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                objtransNormalWeight.TimeOut = txtTimeOut.Text != "" ? TimeSpan.Parse(txtTimeOut.Text) : (TimeSpan?)null;
+
+                objtransNormalWeight.TareWeight = _enumProductInOut == enumProductInOut.In ? txtGrossWeight.Text != "" ? Convert.ToDecimal(txtGrossWeight.Text) : (Decimal?)null : txtTareWeight.Text != "" ? Convert.ToDecimal(txtTareWeight.Text) : (Decimal?)null;
+                objtransNormalWeight.GrossWeight = _enumProductInOut == enumProductInOut.In ? txtTareWeight.Text != "" ? Convert.ToDecimal(txtTareWeight.Text) : (Decimal?)null : txtGrossWeight.Text != "" ? Convert.ToDecimal(txtGrossWeight.Text) : (Decimal?)null;
+
+                objtransNormalWeight.NetWeight = txtNetWeight.Text != "" ? Convert.ToDecimal(txtNetWeight.Text) : (Decimal?)null;
+                objtransNormalWeight.UpdatedDate = DateTime.ParseExact(DateTime.Now.Date.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                objtransNormalWeight.IsPending = (byte)(txtNetWeight.Text != "" ? (Convert.ToDecimal(txtNetWeight.Text) > 0 ? 1 : 0) : 0);
+                objtransNormalWeight.ProdInOut = (byte)_enumProductInOut;
+
+                if (existsQuery.Count > 0)
+                {
+                    objtransNormalWeight.AddedDate = DateTime.ParseExact(DateTime.Now.Date.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    objtransNormalWeight.ID = _transNormalWeightID;
+                    _dbObj.transNormalWeight.AddOrUpdate(objtransNormalWeight);
+                    if (_dbObj.SaveChanges() > 0 && !_isTareWeight)
+                    {
+                        transNormalWeightID = _transNormalWeightID;
+                        DisableAllExceptTicket(true);
+                        //ResetCntrl();
+                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                else
+                {
+                    objtransNormalWeight.AddedDate = DateTime.ParseExact(DateTime.Now.Date.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    objtransNormalWeight.ID = Guid.NewGuid();
+                    _dbObj.transNormalWeight.Add(objtransNormalWeight);
+                    if (_dbObj.SaveChanges() == 1)
+                    {
+                        ResetCntrl();
+                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         #endregion
 
+        #region "MouseClick"
         private void txtTruck_MouseClick(object sender, MouseEventArgs e)
         {
             if (!_saveClick)
@@ -924,5 +905,83 @@ namespace HitechTMS.Weighing
                 //FillTrucAndSetEditId();
             }
         }
+        #endregion
+
+        #region Load
+        private void frmNormalWeighing_Load(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region "DoubleClick"
+        private void lstTruck_DoubleClick(object sender, EventArgs e)
+        {
+            FillTrucAndSetEditId();
+        }
+        #endregion
+
+        #region "Leave"
+        private void txtTruck_Leave(object sender, EventArgs e)
+        {
+            //if (!_dbReturn)
+            //{
+            //    FillTrucAndSetEditId();
+            //}
+        }
+        #endregion
+
+        #region "SelectedIndexChanged"
+        /// <summary>
+        /// Combo box index change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmbProductCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProductCode.SelectedIndex != 0)
+            {
+                txtProductName.Text = ((DAL.Entity_Model.Product)cmbProductCode.SelectedItem).Name;
+            }
+            else
+            {
+                txtProductName.Text = "";
+            }
+        }
+        private void cmbCustomerCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCustomerCode.SelectedIndex > 0)
+            {
+                txtCustomerName.Text = ((DAL.Entity_Model.mstSupplierTransporter)cmbCustomerCode.SelectedItem).SupplierName;
+            }
+            else
+            {
+                txtCustomerName.Text = "";
+            }
+        }
+        private void cmbTranspoterCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTranspoterCode.SelectedIndex != 0)
+            {
+                txtTranspoterName.Text = ((DAL.Entity_Model.mstSupplierTransporter)cmbTranspoterCode.SelectedItem).SupplierName;
+            }
+            else
+            {
+                txtTranspoterName.Text = "";
+            }
+        }
+
+
+
+        #endregion
+
+        private void dtPickChallanDate_MouseLeave(object sender, EventArgs e)
+        {
+            txtChallanDate.Text = dtPickChallanDate.Value.ToString("dd/MM/yyyy");
+        }
     }
+    #endregion
 }
+#endregion
+
+#endregion
