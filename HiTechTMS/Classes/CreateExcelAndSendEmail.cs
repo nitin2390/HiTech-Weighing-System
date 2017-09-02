@@ -6,13 +6,15 @@ using DAL.Entity_Model;
 using System;
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
+using System.Windows.Forms;
 
 namespace HitechTMS.Classes
 {
-    public class CreateExcelAndSendEmail : IDisposable
+    public class CreateExcelAndSendEmail : Form, IDisposable
     {
         public HitechTruckMngtSystmDataBaseFileEntities dbObj { get; }
         bool disposed = false;
+        private System.ComponentModel.BackgroundWorker bgWorkerProcessor;
         SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
         public string FileName { get; set; }
         public string WorkSheetName { get; set; }
@@ -166,6 +168,24 @@ namespace HitechTMS.Classes
                 handle.Dispose();
             }
             disposed = true;
+        }
+
+        private void InitializeComponent()
+        {
+            this.bgWorkerProcessor = new System.ComponentModel.BackgroundWorker();
+            this.SuspendLayout();
+            // 
+            // bgWorkerProcessor
+            // 
+            this.bgWorkerProcessor.WorkerReportsProgress = true;
+            this.bgWorkerProcessor.WorkerSupportsCancellation = true;
+            // 
+            // CreateExcelAndSendEmail
+            // 
+            this.ClientSize = new System.Drawing.Size(292, 268);
+            this.Name = "CreateExcelAndSendEmail";
+            this.ResumeLayout(false);
+
         }
     }
 }

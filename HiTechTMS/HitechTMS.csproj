@@ -145,7 +145,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\CreateExcelAndSendEmail.cs" />
+    <Compile Include="Classes\CreateExcelAndSendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Classes\GetGeneralSettingValues.cs" />
     <Compile Include="Classes\GetResourceCaption.cs" />
     <Compile Include="Classes\ReadSerialPortData.cs" />
@@ -210,6 +212,12 @@
     </Compile>
     <Compile Include="Forms\File\frmTransactionFile.Designer.cs">
       <DependentUpon>frmTransactionFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProcessingWindow\ProcessingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProcessingWindow\ProcessingForm.Designer.cs">
+      <DependentUpon>ProcessingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="keys\ProductKeys.cs" />
     <Compile Include="Reports\normalTicket.cs">
@@ -455,6 +463,9 @@
     <Compile Include="Forms\Weighing\frmPublicWeighing.Designer.cs">
       <DependentUpon>frmPublicWeighing.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Classes\CreateExcelAndSendEmail.resx">
+      <DependentUpon>CreateExcelAndSendEmail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Config\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -487,6 +498,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\File\frmTransactionFile.resx">
       <DependentUpon>frmTransactionFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProcessingWindow\ProcessingForm.resx">
+      <DependentUpon>ProcessingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\normalTicket.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

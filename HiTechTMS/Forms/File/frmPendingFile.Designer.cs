@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grpboxPendingFile = new System.Windows.Forms.GroupBox();
+            this.btnEmailAsExcel = new System.Windows.Forms.Button();
             this.lblRecCount = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.chkCompleteFile = new System.Windows.Forms.CheckBox();
@@ -37,7 +38,7 @@
             this.rdbMultiWeight = new System.Windows.Forms.RadioButton();
             this.rdbPublicWeight = new System.Windows.Forms.RadioButton();
             this.rdbNormalWeight = new System.Windows.Forms.RadioButton();
-            this.btnEmailAsExcel = new System.Windows.Forms.Button();
+            this.bgWorkerProcessor = new System.ComponentModel.BackgroundWorker();
             this.grpboxPendingFile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPendingFile)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +60,16 @@
             this.grpboxPendingFile.TabIndex = 0;
             this.grpboxPendingFile.TabStop = false;
             this.grpboxPendingFile.Text = "Pending File";
+            // 
+            // btnEmailAsExcel
+            // 
+            this.btnEmailAsExcel.Location = new System.Drawing.Point(158, 637);
+            this.btnEmailAsExcel.Name = "btnEmailAsExcel";
+            this.btnEmailAsExcel.Size = new System.Drawing.Size(121, 56);
+            this.btnEmailAsExcel.TabIndex = 29;
+            this.btnEmailAsExcel.Text = "&Email as Excel";
+            this.btnEmailAsExcel.UseVisualStyleBackColor = true;
+            this.btnEmailAsExcel.Click += new System.EventHandler(this.btnEmailAsExcel_Click);
             // 
             // lblRecCount
             // 
@@ -154,15 +165,12 @@
             this.rdbNormalWeight.UseVisualStyleBackColor = true;
             this.rdbNormalWeight.CheckedChanged += new System.EventHandler(this.rdbNormalWeight_CheckedChanged);
             // 
-            // btnEmailAsExcel
+            // bgWorkerProcessor
             // 
-            this.btnEmailAsExcel.Location = new System.Drawing.Point(158, 637);
-            this.btnEmailAsExcel.Name = "btnEmailAsExcel";
-            this.btnEmailAsExcel.Size = new System.Drawing.Size(121, 56);
-            this.btnEmailAsExcel.TabIndex = 29;
-            this.btnEmailAsExcel.Text = "&Email as Excel";
-            this.btnEmailAsExcel.UseVisualStyleBackColor = true;
-            this.btnEmailAsExcel.Click += new System.EventHandler(this.btnEmailAsExcel_Click);
+            this.bgWorkerProcessor.WorkerReportsProgress = true;
+            this.bgWorkerProcessor.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgWorkerProcessor_DoWork);
+            this.bgWorkerProcessor.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgWorkerProcessor_ProgressChanged);
+            this.bgWorkerProcessor.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerProcessor_RunWorkerCompleted);
             // 
             // frmPendingFile
             // 
@@ -191,5 +199,6 @@
         private System.Windows.Forms.Label lblRecCount;
         private System.Windows.Forms.Label lblRecordsCount;
         private System.Windows.Forms.Button btnEmailAsExcel;
+        private System.ComponentModel.BackgroundWorker bgWorkerProcessor;
     }
 }

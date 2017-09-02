@@ -24,7 +24,7 @@ namespace HitechTMS.Weighing
         private enumProductInOut _enumProductInOut { get; set; }
         private Boolean _isTareWeight { get; set; }
         private HitechTruckMngtSystmDataBaseFileEntities _dbObj { get; }
-        HitechTMS.Classes.ReadSerialPortData _readSerialPortData;
+        //HitechTMS.Classes.ReadSerialPortData _readSerialPortData;
         private SerialPortManager _spManager;
         private GetResourceCaption _dbGetResourceCaption;
         CalculateNetWeight _objCalculateNetWeight;
@@ -52,7 +52,8 @@ namespace HitechTMS.Weighing
         {
             InitializeComponent();
             _dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
-            _readSerialPortData = new ReadSerialPortData();
+
+            //_readSerialPortData = new ReadSerialPortData();
 
             var maxweight = _dbObj.mstWeighBridgeSetup.Select(x => x.WeighCapacity).ToList();
 
@@ -516,7 +517,9 @@ namespace HitechTMS.Weighing
 
 
                     txtChallanNumber.Text = lsttransNormalWeight[0].ChallanNumber;
-                    txtChallanDate.Text = lsttransNormalWeight[0].ChallanDate != null ? DateTime.Parse(lsttransNormalWeight[0].ChallanDate.ToString()).ToString("dd/MM/yyyy") : "";
+                    txtChallanDate.Text = lsttransNormalWeight[0].ChallanDate != null ? 
+                                            DateTime.Parse(lsttransNormalWeight[0].ChallanDate.ToString()).ToString("dd/MM/yyyy") 
+                                                : "";
                     txtChallanWeight.Text = lsttransNormalWeight[0].ChallanWeight.ToString();
                     txtMiscellaneous.Text = lsttransNormalWeight[0].Miscellaneous.Split(';')[0];
                     txtMiscellaneous1.Text = lsttransNormalWeight[0].Miscellaneous.Split(';')[1];

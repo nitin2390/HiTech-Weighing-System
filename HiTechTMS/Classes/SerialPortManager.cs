@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO.Ports;
 using System.Reflection;
-using System.ComponentModel;
 using System.Threading;
-using System.IO;
 
 namespace SerialPortListener.Serial
 {
-    
+
     /// <summary>
     /// Manager for serial port data
     /// </summary>
@@ -70,14 +65,13 @@ namespace SerialPortListener.Serial
         {
             try
             {
-                //System.Threading.Thread.Sleep(100);
+                Thread.Sleep(10);
                 string nbrDataRead = _serialPort.ReadLine();
                 if (nbrDataRead.Length < 0)
                     return;
 
                 // Send data to whom ever interested
-                if (NewSerialDataRecieved != null)
-                    NewSerialDataRecieved(this, new SerialDataEventArgs(nbrDataRead));
+                NewSerialDataRecieved?.Invoke(this, new SerialDataEventArgs(nbrDataRead));
             }
             catch (Exception ex)
             {
@@ -113,8 +107,9 @@ namespace SerialPortListener.Serial
                     _currentSerialSettings.StopBits);
 
                 // Subscribe to event and open serial port for data
-                _serialPort.DataReceived += new SerialDataReceivedEventHandler(_serialPort_DataReceived);
                 _serialPort.Open();
+                _serialPort.DataReceived += new SerialDataReceivedEventHandler(_serialPort_DataReceived);
+                
                 return 0;
             }
             catch (Exception ex)
