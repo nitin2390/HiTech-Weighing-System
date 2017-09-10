@@ -20,7 +20,7 @@ namespace HitechTMS
             string strProtection = @"Software\Microsoft\Windows\CurrentVersion\HomeGroup\{996F503E-A3E2-4DB4-8BC6-6FE72EDB5465}";
             //bool logic = scr.Algorithm("3F469A42-4F69-4F33-BEFA-80ECA1C5737B", strProtection);
             bool logic = scr.Algorithm( objProductKeys.ListProductkeys(), strProtection);
-            if (logic == true)
+            if (logic)
                 Application.Run(new frmLogin());
         }
     }

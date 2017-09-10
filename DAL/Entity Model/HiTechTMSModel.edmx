@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="HitechTruckMngtSystmDataBaseFileModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Captions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="DefaultCaption" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ModifiedCaptioin" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="FormType" Type="int" Nullable="false" />
+          <Property Name="IsCaptionModified" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="EmailConfigs">
           <Key>
             <PropertyRef Name="Id" />
@@ -289,6 +299,22 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="ProdInOut" Type="tinyint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_Captions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_Captions">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="DefaultCaption" />
+            <PropertyRef Name="ModifiedCaptioin" />
+            <PropertyRef Name="FormType" />
+            <PropertyRef Name="IsCaptionModified" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DefaultCaption" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ModifiedCaptioin" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="FormType" Type="int" Nullable="false" />
+          <Property Name="IsCaptionModified" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_mstGeneralSettings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="V_mstGeneralSettings">
           <Key>
@@ -415,8 +441,9 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
             <PropertyRef Name="Mode" />
             <PropertyRef Name="Truck" />
             <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="ProductName" />
             <PropertyRef Name="SupplierName" />
-            <PropertyRef Name="TransporterCode" />
+            <PropertyRef Name="TransporterName" />
             <PropertyRef Name="ChallanNumber" />
             <PropertyRef Name="ChallanDate" />
             <PropertyRef Name="ChallanWeight" />
@@ -437,8 +464,9 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="Mode" Type="tinyint" Nullable="false" />
           <Property Name="Truck" Type="nvarchar" MaxLength="12" Nullable="false" />
           <Property Name="ProductCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="25" Nullable="false" />
           <Property Name="SupplierName" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="TransporterCode" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="TransporterName" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="ChallanNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
           <Property Name="ChallanDate" Type="date" Nullable="false" />
           <Property Name="ChallanWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
@@ -484,6 +512,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Parameter Name="param2" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="HitechTruckMngtSystmDataBaseFileModelStoreContainer">
+          <EntitySet Name="Captions" EntityType="Self.Captions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmailConfigs" EntityType="Self.EmailConfigs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmailMaster" EntityType="Self.EmailMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mstFormName" EntityType="Self.mstFormName" Schema="dbo" store:Type="Tables" />
@@ -526,6 +555,15 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     [rptNormalTicket].[GrossWeight] AS [GrossWeight], 
     [rptNormalTicket].[ProdInOut] AS [ProdInOut]
     FROM [dbo].[rptNormalTicket] AS [rptNormalTicket]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_Captions" EntityType="Self.V_Captions" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_Captions].[ID] AS [ID], 
+    [V_Captions].[DefaultCaption] AS [DefaultCaption], 
+    [V_Captions].[ModifiedCaptioin] AS [ModifiedCaptioin], 
+    [V_Captions].[FormType] AS [FormType], 
+    [V_Captions].[IsCaptionModified] AS [IsCaptionModified]
+    FROM [dbo].[V_Captions] AS [V_Captions]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="V_mstGeneralSettings" EntityType="Self.V_mstGeneralSettings" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -600,8 +638,9 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     [viewNormalPendingFile].[Mode] AS [Mode], 
     [viewNormalPendingFile].[Truck] AS [Truck], 
     [viewNormalPendingFile].[ProductCode] AS [ProductCode], 
+    [viewNormalPendingFile].[ProductName] AS [ProductName], 
     [viewNormalPendingFile].[SupplierName] AS [SupplierName], 
-    [viewNormalPendingFile].[TransporterCode] AS [TransporterCode], 
+    [viewNormalPendingFile].[TransporterName] AS [TransporterName], 
     [viewNormalPendingFile].[ChallanNumber] AS [ChallanNumber], 
     [viewNormalPendingFile].[ChallanDate] AS [ChallanDate], 
     [viewNormalPendingFile].[ChallanWeight] AS [ChallanWeight], 
@@ -655,7 +694,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
             <End Role="MultiPrdWeight" EntitySet="MultiPrdWeight" />
           </AssociationSet>
           <EntitySet Name="ViewMultiProduct" EntityType="HitechTruckMngtSystmDataBaseFileModel.ViewMultiProduct" />
-          <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
           <EntitySet Name="rptNormalTicket" EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" />
           <FunctionImport Name="Procedure" ReturnType="Collection(HitechTruckMngtSystmDataBaseFileModel.Procedure_Result)">
             <Parameter Name="param1" Mode="In" Type="Int32" />
@@ -670,6 +708,9 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="mstShiftAllocationInfo" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstShiftAllocationInfo" />
           <EntitySet Name="mstHyperTerminalData" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyperTerminalData" />
           <EntitySet Name="mstWeighBridgeSetup" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstWeighBridgeSetup" />
+          <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
+          <EntitySet Name="Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.Captions" />
+          <EntitySet Name="V_Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_Captions" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -886,52 +927,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="ProductName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="Weight" Type="Decimal" Precision="18" Scale="0" />
         </EntityType>
-        <EntityType Name="viewNormalPendingFile">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Mode" />
-            <PropertyRef Name="Truck" />
-            <PropertyRef Name="ProductCode" />
-            <PropertyRef Name="SupplierName" />
-            <PropertyRef Name="TransporterCode" />
-            <PropertyRef Name="ChallanNumber" />
-            <PropertyRef Name="ChallanDate" />
-            <PropertyRef Name="ChallanWeight" />
-            <PropertyRef Name="ChallanWeightUnit" />
-            <PropertyRef Name="Miscellaneous" />
-            <PropertyRef Name="DeliveryNoteN" />
-            <PropertyRef Name="DateIn" />
-            <PropertyRef Name="DateOut" />
-            <PropertyRef Name="TimeIn" />
-            <PropertyRef Name="TimeOut" />
-            <PropertyRef Name="TareWeight" />
-            <PropertyRef Name="GrossWeight" />
-            <PropertyRef Name="IsPending" />
-            <PropertyRef Name="NetWeight" />
-            <PropertyRef Name="ProdInOut" />
-          </Key>
-          <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="Mode" Type="Byte" Nullable="false" />
-          <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
-          <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="TransporterCode" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="ChallanNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="ChallanDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ChallanWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="ChallanWeightUnit" Type="Byte" Nullable="false" />
-          <Property Name="Miscellaneous" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DeliveryNoteN" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="DateOut" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="TimeIn" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="TimeOut" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="TareWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="GrossWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="IsPending" Type="Byte" Nullable="false" />
-          <Property Name="NetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="ProdInOut" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="rptNormalTicket">
           <Key>
             <PropertyRef Name="ID" />
@@ -1139,6 +1134,78 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="Unit" Type="Int32" Nullable="false" />
           <Property Name="WeighCapacity" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="viewNormalPendingFile">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Mode" />
+            <PropertyRef Name="Truck" />
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="TransporterName" />
+            <PropertyRef Name="ChallanNumber" />
+            <PropertyRef Name="ChallanDate" />
+            <PropertyRef Name="ChallanWeight" />
+            <PropertyRef Name="ChallanWeightUnit" />
+            <PropertyRef Name="Miscellaneous" />
+            <PropertyRef Name="DeliveryNoteN" />
+            <PropertyRef Name="DateIn" />
+            <PropertyRef Name="DateOut" />
+            <PropertyRef Name="TimeIn" />
+            <PropertyRef Name="TimeOut" />
+            <PropertyRef Name="TareWeight" />
+            <PropertyRef Name="GrossWeight" />
+            <PropertyRef Name="IsPending" />
+            <PropertyRef Name="NetWeight" />
+            <PropertyRef Name="ProdInOut" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Mode" Type="Byte" Nullable="false" />
+          <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TransporterName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ChallanNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ChallanDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ChallanWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ChallanWeightUnit" Type="Byte" Nullable="false" />
+          <Property Name="Miscellaneous" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryNoteN" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOut" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TimeIn" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="TimeOut" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="TareWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="GrossWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="IsPending" Type="Byte" Nullable="false" />
+          <Property Name="NetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ProdInOut" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Captions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="DefaultCaption" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedCaptioin" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FormType" Type="Int32" Nullable="false" />
+          <Property Name="IsCaptionModified" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_Captions">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="DefaultCaption" />
+            <PropertyRef Name="ModifiedCaptioin" />
+            <PropertyRef Name="FormType" />
+            <PropertyRef Name="IsCaptionModified" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DefaultCaption" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedCaptioin" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FormType" Type="Int32" Nullable="false" />
+          <Property Name="IsCaptionModified" Type="Boolean" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1343,33 +1410,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="viewNormalPendingFile">
-            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile">
-              <MappingFragment StoreEntitySet="viewNormalPendingFile">
-                <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
-                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
-                <ScalarProperty Name="IsPending" ColumnName="IsPending" />
-                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
-                <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
-                <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
-                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
-                <ScalarProperty Name="DateOut" ColumnName="DateOut" />
-                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
-                <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
-                <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
-                <ScalarProperty Name="ChallanWeightUnit" ColumnName="ChallanWeightUnit" />
-                <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
-                <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
-                <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
-                <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
-                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
-                <ScalarProperty Name="Truck" ColumnName="Truck" />
-                <ScalarProperty Name="Mode" ColumnName="Mode" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="rptNormalTicket">
             <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket">
               <MappingFragment StoreEntitySet="rptNormalTicket">
@@ -1532,6 +1572,56 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
                 <ScalarProperty Name="WeighCapacity" ColumnName="WeighCapacity" />
                 <ScalarProperty Name="Unit" ColumnName="Unit" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="viewNormalPendingFile">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile">
+              <MappingFragment StoreEntitySet="viewNormalPendingFile">
+                <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="IsPending" ColumnName="IsPending" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+                <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+                <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
+                <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
+                <ScalarProperty Name="ChallanWeightUnit" ColumnName="ChallanWeightUnit" />
+                <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
+                <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
+                <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
+                <ScalarProperty Name="TransporterName" ColumnName="TransporterName" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="Truck" ColumnName="Truck" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Captions">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.Captions">
+              <MappingFragment StoreEntitySet="Captions">
+                <ScalarProperty Name="IsCaptionModified" ColumnName="IsCaptionModified" />
+                <ScalarProperty Name="FormType" ColumnName="FormType" />
+                <ScalarProperty Name="ModifiedCaptioin" ColumnName="ModifiedCaptioin" />
+                <ScalarProperty Name="DefaultCaption" ColumnName="DefaultCaption" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Captions">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_Captions">
+              <MappingFragment StoreEntitySet="V_Captions">
+                <ScalarProperty Name="IsCaptionModified" ColumnName="IsCaptionModified" />
+                <ScalarProperty Name="FormType" ColumnName="FormType" />
+                <ScalarProperty Name="ModifiedCaptioin" ColumnName="ModifiedCaptioin" />
+                <ScalarProperty Name="DefaultCaption" ColumnName="DefaultCaption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

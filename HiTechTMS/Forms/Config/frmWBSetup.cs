@@ -106,8 +106,9 @@ namespace HitechTMS.MasterForms
                     MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_SAVE"));
                 }
             }
-            catch (DbEntityValidationException dbEx)
+            catch (DbEntityValidationException ex)
             {
+                throw ex;
             }
         }
 

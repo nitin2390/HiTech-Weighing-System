@@ -67,6 +67,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity Model\Captions.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\EmailConfig.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -165,6 +168,9 @@
     <Compile Include="Entity Model\viewNormalPendingFile.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Entity Model\V_Captions.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Model\V_mstGeneralSettings.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>

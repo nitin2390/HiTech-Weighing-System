@@ -48,7 +48,7 @@ namespace HitechTMSActivation
             {
                 //if password true then send true			
                 bool value = passwordEntry(getpassword, new Guid(txtProductKey.Text));
-                if (value == true)
+                if (value)
                 {
                     MessageBox.Show("Thank you for activation!", "Activate", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();

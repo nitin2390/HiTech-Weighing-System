@@ -45,7 +45,7 @@ namespace SharedLibrary
             try
 
             {
-                if (CreateExlFile(dt,FileName,WorkSheetName) == true)
+                if (CreateExlFile(dt,FileName,WorkSheetName) )
                 {
                     Attachment attachment;
                     MailMessage mail = new MailMessage();

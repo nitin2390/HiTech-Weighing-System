@@ -18,8 +18,9 @@ namespace DAL.Entity_Model
         public byte Mode { get; set; }
         public string Truck { get; set; }
         public string ProductCode { get; set; }
+        public string ProductName { get; set; }
         public string SupplierName { get; set; }
-        public string TransporterCode { get; set; }
+        public string TransporterName { get; set; }
         public string ChallanNumber { get; set; }
         public System.DateTime ChallanDate { get; set; }
         public decimal ChallanWeight { get; set; }

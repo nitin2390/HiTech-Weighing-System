@@ -14,8 +14,8 @@ using System.Collections.Generic;
 using System.Linq;
 using MsgBox;
 using SharedLibrary;
-using System.Globalization;
 using SerialPortListener;
+using System.Threading.Tasks;
 
 namespace HitechTMS
 {
@@ -34,10 +34,10 @@ namespace HitechTMS
         public string _usrName { get; set; }
         public frmMain(string usrName, IPrincipal userPrincipal, string role) : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.SuperAdmin.ToString(), HitechEnums.AppRole.Supervisor.ToString(), HitechEnums.AppRole.ApplicationUser.ToString() }, userPrincipal)
         {
+
             dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
             _dbGetResourceCaption = new GetResourceCaption();
             objEncryptionAndDecryption = new EncryptionAndDecryption();
-
             _nextFormPrincipal = userPrincipal;
             KeyPreview = true;
             InitializeComponent();
@@ -63,6 +63,16 @@ namespace HitechTMS
             lblDateAndTime.Location = new System.Drawing.Point(Bounds.Width - (lblDateAndTime.Width + 85), 0);
             tmrDateAndTime.Interval = 1000;
             tmrDateAndTime.Start();
+
+            var abc = Task.Run(() => GetModifiedFormsCaption());
+        }
+
+        private void GetModifiedFormsCaption()
+        {
+            var frmNormalPendingFormCaption = 
+                dbObj.V_Captions.Where(x => x.IsCaptionModified).ToList();
+
+            //FormNormalPendingCaptions.Truck
         }
 
         private void LoadGlobalValues()

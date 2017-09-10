@@ -98,6 +98,8 @@
       <HintPath>..\packages\HtmlReportControl.1.1.0.1\lib\net40\HtmlReportControl.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
       <Private>True</Private>
@@ -148,6 +150,7 @@
     <Compile Include="Classes\CreateExcelAndSendEmail.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Classes\FormCaptions.cs" />
     <Compile Include="Classes\GetGeneralSettingValues.cs" />
     <Compile Include="Classes\GetResourceCaption.cs" />
     <Compile Include="Classes\ReadSerialPortData.cs" />
@@ -362,10 +365,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>transporter_details.rpt</DependentUpon>
     </Compile>
-    <Compile Include="Reports\StoredTareFile.Designer.cs">
+    <Compile Include="Reports\ReportDataSource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StoredTareFile.xsd</DependentUpon>
+      <DependentUpon>ReportDataSource.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportTest.Designer.cs">
+      <DependentUpon>ReportTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\StoredTareFile.cs">
       <AutoGen>True</AutoGen>
@@ -615,6 +624,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>transporter_details.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportTest.resx">
+      <DependentUpon>ReportTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\StoredTareFile.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>StoredTareFile.cs</LastGenOutput>
@@ -692,16 +708,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Reports\StoredTareFile.xsc">
-      <DependentUpon>StoredTareFile.xsd</DependentUpon>
+    <None Include="Reports\ReportDataSource.xsc">
+      <DependentUpon>ReportDataSource.xsd</DependentUpon>
     </None>
-    <None Include="Reports\StoredTareFile.xsd">
+    <None Include="Reports\ReportDataSource.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>StoredTareFile.Designer.cs</LastGenOutput>
+      <LastGenOutput>ReportDataSource.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Reports\StoredTareFile.xss">
-      <DependentUpon>StoredTareFile.xsd</DependentUpon>
+    <None Include="Reports\ReportDataSource.xss">
+      <DependentUpon>ReportDataSource.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

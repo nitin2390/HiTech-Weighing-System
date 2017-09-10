@@ -126,7 +126,7 @@ namespace HitechTMS.Weighing
                 objtransMultiWeight.TimeOut = txtTimeOut.Text != "" ? TimeSpan.Parse(txtTimeOut.Text) : (TimeSpan?)null;
                 objtransMultiWeight.GrossWeight = _enumProductInOut == enumProductInOut.In ? txtTareWeight.Text != "" ? Convert.ToDecimal(txtTareWeight.Text) : (Decimal?)null : txtGrossWeight.Text != "" ? Convert.ToDecimal(txtGrossWeight.Text) : (Decimal?)null;
                 objtransMultiWeight.UpdatedDate = DateTime.ParseExact(DateTime.Now.Date.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                objtransMultiWeight.IsPending = _unloadCompleteClick == true ? (byte)1 : (byte)0; //(byte)(txtNetWeight.Text != "" ? (Convert.ToDecimal(txtNetWeight.Text) > 0 ? 1 : 0) : 0);
+                objtransMultiWeight.IsPending = _unloadCompleteClick  ? (byte)1 : (byte)0; //(byte)(txtNetWeight.Text != "" ? (Convert.ToDecimal(txtNetWeight.Text) > 0 ? 1 : 0) : 0);
                 objtransMultiWeight.ProdInOut = (byte)_enumProductInOut;
 
                 if (existsTransMultiWeight.Count() > 0)

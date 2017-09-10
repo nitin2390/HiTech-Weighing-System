@@ -33,25 +33,71 @@ namespace HitechTMS.File
             LoadGridData();
             _chkCompleteFile = 0;
         }
+
         private void LoadGridData()
         {
             try
             {
-
-                if (rdbNormalWeight.Checked == true)
+                if (rdbNormalWeight.Checked)
                 {
-                    var QueryNormalWeight = _dbObj.viewNormalPendingFile.Where(x => x.IsPending == _chkCompleteFile).ToList();
+                    var QueryNormalWeight = _dbObj
+                                            .viewNormalPendingFile
+                                            .Where(x => x.IsPending == _chkCompleteFile)
+                                            .Select(
+                                                x => new {
+                                                x.Truck,
+                                                x.ProductName,
+                                                x.SupplierName,
+                                                x.TransporterName,
+                                                x.ChallanNumber,
+                                                x.ChallanDate,
+                                                x.ChallanWeight,
+                                                x.ChallanWeightUnit,
+                                                x.GrossWeight,
+                                                x.TareWeight,
+                                                x.ProdInOut
+                                            })
+                                            .OrderBy(x=> x.ProdInOut).ThenBy(x=>x.Truck)
+                                            .ToList();
+
                     gridPendingFile.DataSource = QueryNormalWeight;
                     lblRecordsCount.Text = QueryNormalWeight.Count().ToString();
-                    HideColumns(FrmName.NormalWeighing);
+
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.Truck].Width = 150;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ProductName].Width = 150;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.SupplierName].Width = 150;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.TransporterName].Width = 150;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ChallanNumber].Width = 150;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ChallanDate].Width = 150;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ChallanWeight].Width = 150;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ChallanWeightUnit].Width = 50;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.GrossWeight].Width = 150;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.TareWeight].Width = 150;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ProdInOut].Width = 150;
+
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.Truck].HeaderText = FormNormalPendingCaptions.Truck;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ProductName].HeaderText = FormNormalPendingCaptions.ProductName;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.SupplierName].HeaderText = FormNormalPendingCaptions.SupplierName;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.TransporterName].HeaderText = FormNormalPendingCaptions.TransporterName;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ChallanNumber].HeaderText = FormNormalPendingCaptions.ChallanNumber;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ChallanDate].HeaderText = FormNormalPendingCaptions.ChallanDate;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ChallanWeight].HeaderText = FormNormalPendingCaptions.ChallanWeight;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ChallanWeightUnit].HeaderText = FormNormalPendingCaptions.ChallanWeightUnit;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.GrossWeight].HeaderText = FormNormalPendingCaptions.GrossWeight;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.TareWeight].HeaderText = FormNormalPendingCaptions.TareWeight;
+                    gridPendingFile.Columns[(int)enumfrmNormalPendingHeader.ProdInOut].HeaderText = FormNormalPendingCaptions.ProdInOut;
+
+
+                    //gridPendingFile.Columns[1].HeaderText = "Truck Name";
+
                 }
-                else if(rdbPublicWeight.Checked == true)
+                else if(rdbPublicWeight.Checked )
                 {
                     var QueryPublicWeight = _dbObj.transPublicWeight.Where(x => x.IsPending == _chkCompleteFile).ToList();
                     gridPendingFile.DataSource = QueryPublicWeight;
                     lblRecordsCount.Text = QueryPublicWeight.Count().ToString();
                 }
-                else if(rdbMultiWeight.Checked == true)
+                else if(rdbMultiWeight.Checked )
                 {
                     var QueryMultiWeight = _dbObj.viewNormalPendingFile.Where(x => x.IsPending == _chkCompleteFile).ToList();
                     gridPendingFile.DataSource = QueryMultiWeight;
@@ -70,7 +116,7 @@ namespace HitechTMS.File
             {
                 if(gridPendingFile.ColumnCount > 0)
                 {
-                    if (gridPendingFile.Columns.Contains("ID") == true)
+                    if (gridPendingFile.Columns.Contains("ID") )
                         gridPendingFile.Columns["ID"].Visible = false;
 
                 }
@@ -129,36 +175,42 @@ namespace HitechTMS.File
             {
                 if (_chkCompleteFile == 0)
                 {
-                    if (rdbNormalWeight.Checked == true)
+                    if (rdbNormalWeight.Checked )
                     {
                         _frmNameCombination = FrmName.NormalPendingFile;
                     }
-                    else if (rdbPublicWeight.Checked == true)
+                    else if (rdbPublicWeight.Checked )
                     {
                         _frmNameCombination = FrmName.PublicPendingFile;
                     }
-                    else if (rdbMultiWeight.Checked == true)
+                    else if (rdbMultiWeight.Checked )
                     {
                         _frmNameCombination = FrmName.MultiPendingFile;
                     }
                 }
                 else
                 {
-                    if (rdbNormalWeight.Checked == true)
+                    if (rdbNormalWeight.Checked )
                     {
                         _frmNameCombination = FrmName.NormalCompleteFile;
                     }
-                    else if (rdbPublicWeight.Checked == true)
+                    else if (rdbPublicWeight.Checked )
                     {
                         _frmNameCombination = FrmName.PublicCompleteFile;
                     }
-                    else if (rdbMultiWeight.Checked == true)
+                    else if (rdbMultiWeight.Checked )
                     {
                         _frmNameCombination = FrmName.MultiCompleteFile;
                     }
                 }
                 obj.CreateExcelAndSendEmailToList(_frmNameCombination);
             }
+        }
+
+        private void frmPendingFile_Load(object sender, EventArgs e)
+        {
+
+            
         }
     }
 }

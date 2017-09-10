@@ -3,6 +3,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using System.Collections;
 using static HitechTMS.HitechEnums;
 using System;
+using Microsoft.Reporting.WinForms;
 
 namespace HitechTMS
 {
@@ -18,7 +19,17 @@ namespace HitechTMS
             if (_frmName == FrmName.ProductDetail)
             {
                 cryRpt.Load(Environment.CurrentDirectory + @"\Reports\Product.rpt");
-                this.Text = "Product";
+                cryRpt.SummaryInfo.ReportTitle = FrmName.ProductDetail.ToString();
+                this.Text = FrmName.ProductDetail.ToString();
+
+                /* Reports from RDLC
+                rptViewer.LocalReport.ReportPath = Environment.CurrentDirectory + @"\Reports\Product.rdlc";
+                ReportDataSource datasource = new ReportDataSource("rptProductSrc", dataSrc);
+                rptViewer.LocalReport.DataSources.Clear();
+                rptViewer.LocalReport.DataSources.Add(datasource);
+                this.rptViewer.RefreshReport();
+                */
+
             }
             else if (_frmName == FrmName.Supplier || _frmName == FrmName.Transport)
             {
@@ -48,16 +59,28 @@ namespace HitechTMS
                 this.Text = "Normal Weighing";
             }
 
+            //cryRpt.SetDataSource(dataSrc);
+            //cryRepViewCommon.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            //cryRepViewCommon.ReportSource = cryRpt;
+            //cryRepViewCommon.Refresh();
+
             cryRpt.SetDataSource(dataSrc);
             cryRepViewCommon.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             cryRepViewCommon.ReportSource = cryRpt;
             cryRepViewCommon.Refresh();
-
         }
 
         private void rptCommon_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
         }
+
+        private void rptCommon_Load(object sender, EventArgs e)
+        {
+            //this.rptViewer.RefreshReport();
+            //rptViewer.Size = MaximumSize = MinimumSize = Size;
+        }
+
+        
     }
 }

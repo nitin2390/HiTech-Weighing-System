@@ -163,7 +163,7 @@ namespace SharedLibrary
         {
             range.Interior.Color = System.Drawing.ColorTranslator.FromHtml(HTMLcolorCode);
             range.Font.Color = System.Drawing.ColorTranslator.ToOle(fontColor);
-            if (IsFontbool == true)
+            if (IsFontbool )
             {
                 range.Font.Bold = IsFontbool;
             }

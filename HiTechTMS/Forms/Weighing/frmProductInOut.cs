@@ -32,7 +32,7 @@ namespace HitechTMS.Weighing
         private void btnOk_Click(object sender, EventArgs e)
         {
             this.Hide();
-            _enumProductInOut = rdbProductIn.Checked == true ? enumProductInOut.In : enumProductInOut.Out;
+            _enumProductInOut = rdbProductIn.Checked  ? enumProductInOut.In : enumProductInOut.Out;
 
             if(_enumProductNormalPublicMulti == enumProductNormalPublicMulti.Normal)
             {

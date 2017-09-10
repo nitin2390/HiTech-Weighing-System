@@ -167,7 +167,7 @@ namespace HitechTMS.Classes
                 }).Where(x => x.IsActive == "1").ToList();
                 MailAddress mytoAddress = new MailAddress(objEmailConfig[0].EmailRecipient.ToString(), "HiTech Weighing");
                 SendEmail objSendEmail = new SendEmail(dt, objEmailConfig[0].EmailID.ToString(), mytoAddress, objEncryptionAndDecryption.Decrypt(objEmailConfig[0].Password).ToString(), objEmailConfig[0].EmailSubject.ToString(), objEmailConfig[0].EmailBody.ToString(), 587, objEmailConfig[0].EmailSmtpServer.ToString(), this.FileName, this.WorkSheetName);
-                if (objSendEmail.SendEmailTo() == true)
+                if (objSendEmail.SendEmailTo() )
                 {
                     return true;
                 }
@@ -184,12 +184,12 @@ namespace HitechTMS.Classes
             }
         }
 
-        public void Dispose()
+        public new void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-        protected virtual void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             if (disposed)
                 return;
@@ -236,7 +236,7 @@ namespace HitechTMS.Classes
 
             for (int i = 1; i <= 100; i++)
             {
-                if (worker.CancellationPending == true)
+                if (worker.CancellationPending )
                 {
                     e.Cancel = true;
                     break;

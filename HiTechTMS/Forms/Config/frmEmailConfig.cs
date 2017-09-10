@@ -197,7 +197,7 @@ namespace HitechTMS.MasterForms
             objEmailConfig.Password = objEncryptionAndDecryption.Encrypt(txtPassword.Text.ToString());
             objEmailConfig.EmailServerPort = Convert.ToInt32(txtEmailServerPort.Text);
             objEmailConfig.EmailSmtpServer = txtEmailSmtpServer.Text.ToString();
-            objEmailConfig.IsActive = (chkIsActive.Checked == true ? "1" : "0");
+            objEmailConfig.IsActive = (chkIsActive.Checked  ? "1" : "0");
             objEmailConfig.EmailBody = txtEmailBody.Text.ToString();
             objEmailConfig.EmailSubject = txtEmailSubject.Text.ToString();
             objEmailConfig.EmailRecipient = txtEmailRecipient.Text.ToString();

@@ -10,6 +10,21 @@
             Supervisor = 3
         }
 
+        public enum enumfrmNormalPendingHeader
+        {
+            Truck = 0,
+            ProductName = 1,
+            SupplierName = 2,
+            TransporterName = 3,
+            ChallanNumber = 4,
+            ChallanDate = 5,
+            ChallanWeight = 6,
+            ChallanWeightUnit = 7,
+            GrossWeight = 8,
+            TareWeight = 9,
+            ProdInOut = 10
+        }
+
         public enum FrmName
         {
             //File

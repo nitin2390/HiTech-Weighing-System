@@ -168,7 +168,7 @@
             // bgWorkerProcessor
             // 
             this.bgWorkerProcessor.WorkerReportsProgress = true;
-             
+            // 
             // frmPendingFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -177,6 +177,7 @@
             this.Controls.Add(this.grpboxPendingFile);
             this.Name = "frmPendingFile";
             this.Text = "frmPendingFile";
+            this.Load += new System.EventHandler(this.frmPendingFile_Load);
             this.grpboxPendingFile.ResumeLayout(false);
             this.grpboxPendingFile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPendingFile)).EndInit();

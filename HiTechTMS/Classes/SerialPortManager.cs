@@ -73,7 +73,7 @@ namespace SerialPortListener.Serial
                 // Send data to whom ever interested
                 NewSerialDataRecieved?.Invoke(this, new SerialDataEventArgs(nbrDataRead));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 //throw ex;
@@ -112,7 +112,7 @@ namespace SerialPortListener.Serial
                 
                 return 0;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //Silently supress the error
                 return -1;
