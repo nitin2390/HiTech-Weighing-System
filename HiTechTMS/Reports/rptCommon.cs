@@ -21,15 +21,7 @@ namespace HitechTMS
                 cryRpt.Load(Environment.CurrentDirectory + @"\Reports\Product.rpt");
                 cryRpt.SummaryInfo.ReportTitle = FrmName.ProductDetail.ToString();
                 this.Text = FrmName.ProductDetail.ToString();
-
-                /* Reports from RDLC
-                rptViewer.LocalReport.ReportPath = Environment.CurrentDirectory + @"\Reports\Product.rdlc";
-                ReportDataSource datasource = new ReportDataSource("rptProductSrc", dataSrc);
-                rptViewer.LocalReport.DataSources.Clear();
-                rptViewer.LocalReport.DataSources.Add(datasource);
-                this.rptViewer.RefreshReport();
-                */
-
+                
             }
             else if (_frmName == FrmName.Supplier || _frmName == FrmName.Transport)
             {
@@ -55,19 +47,15 @@ namespace HitechTMS
             {
                 cryRpt.Load(Environment.CurrentDirectory + @"\Reports\normalTicket.rpt");
                 cryRpt.SummaryInfo.ReportTitle = "Normal Weighing";
-                //cryRpt.SetParameterValue("enumProductInOut", _enumProductInOut.ToString());
                 this.Text = "Normal Weighing";
             }
 
-            //cryRpt.SetDataSource(dataSrc);
-            //cryRepViewCommon.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            //cryRepViewCommon.ReportSource = cryRpt;
-            //cryRepViewCommon.Refresh();
-
+            cryRepViewCommon.Refresh();
             cryRpt.SetDataSource(dataSrc);
             cryRepViewCommon.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            cryRpt.SetParameterValue(0, "HiTech Weighing System");
             cryRepViewCommon.ReportSource = cryRpt;
-            cryRepViewCommon.Refresh();
+
         }
 
         private void rptCommon_FormClosing(object sender, FormClosingEventArgs e)

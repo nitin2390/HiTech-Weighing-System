@@ -15,6 +15,7 @@ namespace DAL.Entity_Model
     public partial class rptNormalTicket
     {
         public string ID { get; set; }
+        public byte Mode { get; set; }
         public string Truck { get; set; }
         public string ProductCode { get; set; }
         public string Name { get; set; }

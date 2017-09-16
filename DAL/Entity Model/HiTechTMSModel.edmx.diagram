@@ -21,7 +21,6 @@
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.transMultiWeight" Width="1.5" PointX="6.75" PointY="15.625" />
         <AssociationConnector Association="HitechTruckMngtSystmDataBaseFileModel.FK__MultiPrdW__Truck__5FD33367" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.ViewMultiProduct" Width="1.5" PointX="2.375" PointY="10.375" />
-        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" Width="1.5" PointX="6.375" PointY="9.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.viewMultiPendingFile" Width="1.5" PointX="3.875" PointY="4.875" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings" Width="1.5" PointX="10.625" PointY="0.5" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_mstGeneralSettings" Width="1.5" PointX="10.375" PointY="11.75" />
@@ -31,9 +30,10 @@
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstShiftAllocationInfo" Width="1.5" PointX="10.875" PointY="4.25" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyperTerminalData" Width="1.5" PointX="13.375" PointY="6.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstWeighBridgeSetup" Width="1.5" PointX="14.375" PointY="10.75" />
-        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" Width="1.5" PointX="13.375" PointY="0.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.Captions" Width="1.5" PointX="10.375" PointY="6.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_Captions" Width="1.5" PointX="12.375" PointY="14.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" Width="1.5" PointX="14.75" PointY="13.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" Width="1.5" PointX="13.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

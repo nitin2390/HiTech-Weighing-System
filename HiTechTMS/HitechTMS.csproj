@@ -370,12 +370,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportDataSource.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reports\ReportTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports\ReportTest.Designer.cs">
-      <DependentUpon>ReportTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reports\StoredTareFile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -623,13 +617,6 @@
     <EmbeddedResource Include="Reports\old\transporter_details.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>transporter_details.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Product.rdlc">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\ReportTest.resx">
-      <DependentUpon>ReportTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\StoredTareFile.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

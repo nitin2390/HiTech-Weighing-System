@@ -466,7 +466,7 @@
             this.cmbChallanWeight.Items.AddRange(new object[] {
             "t",
             "Kg"});
-            this.cmbChallanWeight.Location = new System.Drawing.Point(163, 222);
+            this.cmbChallanWeight.Location = new System.Drawing.Point(166, 222);
             this.cmbChallanWeight.Name = "cmbChallanWeight";
             this.cmbChallanWeight.Size = new System.Drawing.Size(45, 24);
             this.cmbChallanWeight.TabIndex = 8;

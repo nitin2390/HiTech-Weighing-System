@@ -791,6 +791,7 @@ namespace HitechTMS.Weighing
                 .Where(x => x.ID == transNormalWeightID.ToString())
                 .Select(x => new { ID = x.ID ?? "" ,
                                     Truck = x.Truck ?? "",
+                                    Mode = x.Mode,
                                     ProductCode = x.ProductCode ?? "",
                                     Name = x.Name,
                                     SupplierCode = x.SupplierCode,
@@ -810,6 +811,7 @@ namespace HitechTMS.Weighing
                                     GrossWeight = x.GrossWeight ?? "",
                                     NetWeight = x.NetWeight ?? "",
                                     ProdInOut =x.ProdInOut
+                                    
                 });
             rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), FrmName.NormalWeighing, _enumProductInOut);
             rptCmn.ShowDialog();

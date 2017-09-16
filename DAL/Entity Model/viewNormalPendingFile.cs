@@ -15,7 +15,7 @@ namespace DAL.Entity_Model
     public partial class viewNormalPendingFile
     {
         public System.Guid ID { get; set; }
-        public byte Mode { get; set; }
+        public string Mode { get; set; }
         public string Truck { get; set; }
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
@@ -29,8 +29,8 @@ namespace DAL.Entity_Model
         public string DeliveryNoteN { get; set; }
         public System.DateTime DateIn { get; set; }
         public System.DateTime DateOut { get; set; }
-        public System.TimeSpan TimeIn { get; set; }
-        public System.TimeSpan TimeOut { get; set; }
+        public string TimeIn { get; set; }
+        public string TimeOut { get; set; }
         public decimal TareWeight { get; set; }
         public decimal GrossWeight { get; set; }
         public byte IsPending { get; set; }

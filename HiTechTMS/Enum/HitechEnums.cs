@@ -1,4 +1,6 @@
-﻿namespace HitechTMS
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace HitechTMS
 {
     public class HitechEnums
     {
@@ -175,7 +177,9 @@
         }
         public enum enumUnits
         {
+            [Display(Name = "Kg")]
             kilogram = 0,
+            [Display(Name = "Tonne")]
             tonne = 1
         }
     }

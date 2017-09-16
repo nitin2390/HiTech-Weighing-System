@@ -41,7 +41,6 @@ namespace DAL.Entity_Model
         public virtual DbSet<MultiPrdWeight> MultiPrdWeight { get; set; }
         public virtual DbSet<transMultiWeight> transMultiWeight { get; set; }
         public virtual DbSet<ViewMultiProduct> ViewMultiProduct { get; set; }
-        public virtual DbSet<rptNormalTicket> rptNormalTicket { get; set; }
         public virtual DbSet<viewMultiPendingFile> viewMultiPendingFile { get; set; }
         public virtual DbSet<mstGeneralSettings> mstGeneralSettings { get; set; }
         public virtual DbSet<V_mstGeneralSettings> V_mstGeneralSettings { get; set; }
@@ -51,9 +50,10 @@ namespace DAL.Entity_Model
         public virtual DbSet<mstShiftAllocationInfo> mstShiftAllocationInfo { get; set; }
         public virtual DbSet<mstHyperTerminalData> mstHyperTerminalData { get; set; }
         public virtual DbSet<mstWeighBridgeSetup> mstWeighBridgeSetup { get; set; }
-        public virtual DbSet<viewNormalPendingFile> viewNormalPendingFile { get; set; }
         public virtual DbSet<Captions> Captions { get; set; }
         public virtual DbSet<V_Captions> V_Captions { get; set; }
+        public virtual DbSet<rptNormalTicket> rptNormalTicket { get; set; }
+        public virtual DbSet<viewNormalPendingFile> viewNormalPendingFile { get; set; }
     
         public virtual ObjectResult<Procedure_Result> Procedure(Nullable<int> param1, Nullable<int> param2)
         {

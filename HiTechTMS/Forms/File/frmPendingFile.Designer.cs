@@ -33,37 +33,37 @@
             this.lblRecCount = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.chkCompleteFile = new System.Windows.Forms.CheckBox();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.gridPendingFile = new System.Windows.Forms.DataGridView();
             this.rdbMultiWeight = new System.Windows.Forms.RadioButton();
             this.rdbPublicWeight = new System.Windows.Forms.RadioButton();
             this.rdbNormalWeight = new System.Windows.Forms.RadioButton();
             this.bgWorkerProcessor = new System.ComponentModel.BackgroundWorker();
+            this.btnExit = new System.Windows.Forms.Button();
             this.grpboxPendingFile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPendingFile)).BeginInit();
             this.SuspendLayout();
             // 
             // grpboxPendingFile
             // 
+            this.grpboxPendingFile.Controls.Add(this.btnExit);
             this.grpboxPendingFile.Controls.Add(this.btnEmailAsExcel);
             this.grpboxPendingFile.Controls.Add(this.lblRecCount);
             this.grpboxPendingFile.Controls.Add(this.lblRecordsCount);
             this.grpboxPendingFile.Controls.Add(this.chkCompleteFile);
-            this.grpboxPendingFile.Controls.Add(this.btnPrint);
             this.grpboxPendingFile.Controls.Add(this.gridPendingFile);
             this.grpboxPendingFile.Controls.Add(this.rdbMultiWeight);
             this.grpboxPendingFile.Controls.Add(this.rdbPublicWeight);
             this.grpboxPendingFile.Controls.Add(this.rdbNormalWeight);
             this.grpboxPendingFile.Location = new System.Drawing.Point(12, 12);
             this.grpboxPendingFile.Name = "grpboxPendingFile";
-            this.grpboxPendingFile.Size = new System.Drawing.Size(1228, 699);
+            this.grpboxPendingFile.Size = new System.Drawing.Size(1262, 743);
             this.grpboxPendingFile.TabIndex = 0;
             this.grpboxPendingFile.TabStop = false;
             this.grpboxPendingFile.Text = "Pending File";
             // 
             // btnEmailAsExcel
             // 
-            this.btnEmailAsExcel.Location = new System.Drawing.Point(158, 637);
+            this.btnEmailAsExcel.Location = new System.Drawing.Point(982, 26);
             this.btnEmailAsExcel.Name = "btnEmailAsExcel";
             this.btnEmailAsExcel.Size = new System.Drawing.Size(121, 56);
             this.btnEmailAsExcel.TabIndex = 29;
@@ -77,7 +77,7 @@
             this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecCount.Location = new System.Drawing.Point(989, 637);
+            this.lblRecCount.Location = new System.Drawing.Point(1018, 708);
             this.lblRecCount.Name = "lblRecCount";
             this.lblRecCount.Size = new System.Drawing.Size(136, 22);
             this.lblRecCount.TabIndex = 28;
@@ -89,7 +89,7 @@
             this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsCount.Location = new System.Drawing.Point(1145, 637);
+            this.lblRecordsCount.Location = new System.Drawing.Point(1174, 708);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
             this.lblRecordsCount.TabIndex = 27;
@@ -107,24 +107,15 @@
             this.chkCompleteFile.UseVisualStyleBackColor = true;
             this.chkCompleteFile.CheckedChanged += new System.EventHandler(this.chkCompleteFile_CheckedChanged);
             // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(18, 637);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(121, 56);
-            this.btnPrint.TabIndex = 4;
-            this.btnPrint.Text = "&Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // gridPendingFile
             // 
             this.gridPendingFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridPendingFile.Location = new System.Drawing.Point(18, 100);
             this.gridPendingFile.Name = "gridPendingFile";
             this.gridPendingFile.RowTemplate.Height = 24;
-            this.gridPendingFile.Size = new System.Drawing.Size(1187, 516);
+            this.gridPendingFile.Size = new System.Drawing.Size(1219, 602);
             this.gridPendingFile.TabIndex = 3;
+            this.gridPendingFile.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPendingFile_CellContentClick);
             // 
             // rdbMultiWeight
             // 
@@ -137,6 +128,7 @@
             this.rdbMultiWeight.TabStop = true;
             this.rdbMultiWeight.Text = "&Multi Weghing";
             this.rdbMultiWeight.UseVisualStyleBackColor = true;
+            this.rdbMultiWeight.Visible = false;
             this.rdbMultiWeight.CheckedChanged += new System.EventHandler(this.rdbMultiWeight_CheckedChanged);
             // 
             // rdbPublicWeight
@@ -150,6 +142,7 @@
             this.rdbPublicWeight.TabStop = true;
             this.rdbPublicWeight.Text = "&Public Weghing";
             this.rdbPublicWeight.UseVisualStyleBackColor = true;
+            this.rdbPublicWeight.Visible = false;
             this.rdbPublicWeight.CheckedChanged += new System.EventHandler(this.rdbPublicWeight_CheckedChanged);
             // 
             // rdbNormalWeight
@@ -169,15 +162,24 @@
             // 
             this.bgWorkerProcessor.WorkerReportsProgress = true;
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(1113, 26);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(121, 56);
+            this.btnExit.TabIndex = 30;
+            this.btnExit.Text = "E&xit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmPendingFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 723);
+            this.ClientSize = new System.Drawing.Size(1286, 767);
             this.Controls.Add(this.grpboxPendingFile);
             this.Name = "frmPendingFile";
             this.Text = "frmPendingFile";
-            this.Load += new System.EventHandler(this.frmPendingFile_Load);
             this.grpboxPendingFile.ResumeLayout(false);
             this.grpboxPendingFile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPendingFile)).EndInit();
@@ -192,11 +194,11 @@
         private System.Windows.Forms.RadioButton rdbPublicWeight;
         private System.Windows.Forms.RadioButton rdbNormalWeight;
         private System.Windows.Forms.DataGridView gridPendingFile;
-        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.CheckBox chkCompleteFile;
         private System.Windows.Forms.Label lblRecCount;
         private System.Windows.Forms.Label lblRecordsCount;
         private System.Windows.Forms.Button btnEmailAsExcel;
         private System.ComponentModel.BackgroundWorker bgWorkerProcessor;
+        private System.Windows.Forms.Button btnExit;
     }
 }
