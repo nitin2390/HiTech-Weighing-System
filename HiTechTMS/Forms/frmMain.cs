@@ -16,6 +16,7 @@ using MsgBox;
 using SharedLibrary;
 using SerialPortListener;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace HitechTMS
 {
@@ -56,11 +57,12 @@ namespace HitechTMS
             HideMenuOnBasisOfRole();
             _usrName = usrName;
 
-            lblCompanyName.Text = "Devloped && Maintained by : HiTech Weighing Enginners";
+            lblCompanyName.Text = "Devloped && Maintained by : HiTech Weighing Enginners | ";
             lblCopyright.Text = "Copyright ©1990-2017. All right reserved";
             lblCompanyName.Location = new System.Drawing.Point(Bounds.X+5, 0);
-            lblCopyright.Location = new System.Drawing.Point(Bounds.Width - (lblCopyright.Width+350),0);
-            lblDateAndTime.Location = new System.Drawing.Point(Bounds.Width - (lblDateAndTime.Width + 85), 0);
+            lblCopyright.Location = new System.Drawing.Point(Bounds.Width - (lblCopyright.Width+ (Bounds.Width/3)),0);
+            lblDateAndTime.Location = new System.Drawing.Point(Bounds.Width - (lblDateAndTime.Width + (Bounds.Width / 5)), 0);
+            chartNormalWeight.Location = new System.Drawing.Point(50,60);
             tmrDateAndTime.Interval = 1000;
             tmrDateAndTime.Start();
 
@@ -255,7 +257,58 @@ namespace HitechTMS
                 allItems.AddRange(GetItems(item));
             }
 
+            LoadDashBoard();
+
         }
+
+        private void LoadDashBoard()
+        {
+            LoadNormalWeight();
+            LoadPublicWeight();
+        }
+
+        private void LoadNormalWeight()
+        {
+            try
+            {
+                using (HitechTruckMngtSystmDataBaseFileEntities _dbobject = new HitechTruckMngtSystmDataBaseFileEntities())
+                {
+                    var resultSingleWeight = _dbobject.V_NormalDashBoard.ToList();
+                    chartNormalWeight.DataSource = resultSingleWeight;
+                    chartNormalWeight.Series[0].YValueMembers = "TruckCount";
+                    chartNormalWeight.Series[0].XValueMember = "DateIn";
+                    chartNormalWeight.Series[0].ChartType = SeriesChartType.Pie;
+                    chartNormalWeight.Series[0].IsValueShownAsLabel = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void LoadPublicWeight()
+        {
+            try
+            {
+                using (HitechTruckMngtSystmDataBaseFileEntities _dbobject = new HitechTruckMngtSystmDataBaseFileEntities())
+                {
+                    var resultSingleWeight = _dbobject.V_PublicDashBoard.ToList();
+                    chartPublicWeight.DataSource = resultSingleWeight;
+                    chartPublicWeight.Series[0].YValueMembers = "TruckCount";
+                    chartPublicWeight.Series[0].XValueMember = "DateIn";
+                    chartPublicWeight.Series[0].ChartType = SeriesChartType.Pie;
+                    chartPublicWeight.Series[0].IsValueShownAsLabel = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         private IEnumerable<ToolStripMenuItem> GetItems(ToolStripMenuItem item)
         {
             foreach (ToolStripMenuItem dropDownItem in item.DropDownItems)
@@ -269,12 +322,18 @@ namespace HitechTMS
             }
         }
 
+        #region Weighing Forms
+
         private void publicToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _enumProductNormalPublicMulti = enumProductNormalPublicMulti.Public;
             frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
             objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
             objfrmProductInOut.ShowDialog();
+            if (objfrmProductInOut.DialogResult == DialogResult.Cancel)
+            {
+                LoadPublicWeight();
+            }
         }
 
         private void normalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -283,6 +342,11 @@ namespace HitechTMS
             frmProductInOut objfrmProductInOut = new frmProductInOut(_enumProductNormalPublicMulti, _mode, _nextFormPrincipal);
             objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
             objfrmProductInOut.ShowDialog();
+            if (objfrmProductInOut.DialogResult  == DialogResult.Cancel)
+            {
+                LoadNormalWeight();
+            }    
+            
         }
 
         private void multiWeighingToolStripMenuItem_Click(object sender, EventArgs e)
@@ -292,6 +356,8 @@ namespace HitechTMS
             objfrmProductInOut.StartPosition = FormStartPosition.CenterParent;
             objfrmProductInOut.ShowDialog();
         }
+
+        #endregion
 
         private void pendingFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -348,7 +414,7 @@ namespace HitechTMS
                     null,
                     true,
                     new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold));
-                if (res == System.Windows.Forms.DialogResult.OK || res == System.Windows.Forms.DialogResult.Yes)
+                if (res == DialogResult.OK || res == DialogResult.Yes)
                 {
                     var password = objEncryptionAndDecryption.Encrypt(InputBox.ResultValue);
                     var result = dbObj.UserRole.Where(x => x.Password == password && x.Name == _usrName).Count();
@@ -399,7 +465,8 @@ namespace HitechTMS
 
         private void tmrDateAndTime_Tick(object sender, EventArgs e)
         {
-            lblDateAndTime.Text = DateTime.Now.ToString("dd/MM/yyyy [ hh:mm:ss ]");
+            
+            lblDateAndTime.Text = " | " + DateTime.Now.ToString("F"); //F: Sunday, June 15, 2008 9:15:07 PM
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -421,6 +488,11 @@ namespace HitechTMS
             frmWBSetup objfrmWBSetup = new frmWBSetup(FrmName.WeighBridgeSetup, _nextFormPrincipal);
             objfrmWBSetup.StartPosition = FormStartPosition.CenterParent;
             objfrmWBSetup.ShowDialog();
+        }
+
+        private void grpDashBoard_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

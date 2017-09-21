@@ -53,10 +53,13 @@ namespace HitechTMS.File
 
 
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message.ToString());
+                MessageBox.Show(ex.Message
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
             }
 
         }
@@ -128,10 +131,13 @@ namespace HitechTMS.File
                     }
                 }
             }
-            catch (Exception err)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(err.Message.ToString());
+                MessageBox.Show(ex.Message
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
             }
 
 

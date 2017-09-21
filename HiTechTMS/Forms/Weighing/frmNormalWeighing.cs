@@ -885,7 +885,15 @@ namespace HitechTMS.Weighing
                     _dbObj.transNormalWeight.Add(objtransNormalWeight);
                     if (_dbObj.SaveChanges() == 1)
                     {
-                        ResetCntrl();
+
+                        if(_dbObj.mstGeneralSettings.Any(x=>x.FirstWeightTkt == "1")){
+                            transNormalWeightID = objtransNormalWeight.ID;
+                            DisableAllExceptTicket(true);
+                        }else{
+                            ResetCntrl();
+                        }
+
+
                         MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 

@@ -49,10 +49,13 @@ namespace HitechTMS.File
                 gridSupplierTransporter.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
                 gridSupplierTransporter.ReadOnly = true;
             }
-            catch (Exception err)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(err.Message.ToString());
+                MessageBox.Show(ex.Message
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
             }
 
 
@@ -73,10 +76,13 @@ namespace HitechTMS.File
 
                 gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.Email].Width = 105;
             }
-            catch (Exception err)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(err.Message.ToString());
+                MessageBox.Show(ex.Message
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
             }
 
         }
@@ -238,10 +244,13 @@ namespace HitechTMS.File
 
                 }
             }
-            catch (Exception err)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(err.Message.ToString());
+                MessageBox.Show(ex.Message
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
             }
         }
 

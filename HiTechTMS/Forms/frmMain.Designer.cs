@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,8 +94,12 @@
             this.lblCopyright = new System.Windows.Forms.Label();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.tmrDateAndTime = new System.Windows.Forms.Timer(this.components);
+            this.chartNormalWeight = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartPublicWeight = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1.SuspendLayout();
             this.pnlBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNormalWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPublicWeight)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -180,6 +190,7 @@
             // 
             // transactionFileToolStripMenuItem
             // 
+            this.transactionFileToolStripMenuItem.Enabled = false;
             this.transactionFileToolStripMenuItem.Name = "transactionFileToolStripMenuItem";
             this.transactionFileToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
             this.transactionFileToolStripMenuItem.Text = "&1 Transaction File";
@@ -292,6 +303,7 @@
             // 
             // publicToolStripMenuItem
             // 
+            this.publicToolStripMenuItem.Enabled = false;
             this.publicToolStripMenuItem.Name = "publicToolStripMenuItem";
             this.publicToolStripMenuItem.Size = new System.Drawing.Size(262, 32);
             this.publicToolStripMenuItem.Text = "&2 Public Weighing";
@@ -299,6 +311,7 @@
             // 
             // multiWeighingToolStripMenuItem
             // 
+            this.multiWeighingToolStripMenuItem.Enabled = false;
             this.multiWeighingToolStripMenuItem.Name = "multiWeighingToolStripMenuItem";
             this.multiWeighingToolStripMenuItem.Size = new System.Drawing.Size(262, 32);
             this.multiWeighingToolStripMenuItem.Text = "&3 Multi Weighing";
@@ -306,6 +319,7 @@
             // 
             // ticketsToolStripMenuItem
             // 
+            this.ticketsToolStripMenuItem.Enabled = false;
             this.ticketsToolStripMenuItem.Name = "ticketsToolStripMenuItem";
             this.ticketsToolStripMenuItem.Size = new System.Drawing.Size(83, 32);
             this.ticketsToolStripMenuItem.Text = "&Tickets";
@@ -318,6 +332,7 @@
             // 
             // optionsToolStripMenuItem
             // 
+            this.optionsToolStripMenuItem.Enabled = false;
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
             this.optionsToolStripMenuItem.Text = "&Options";
@@ -329,6 +344,7 @@
             // 
             // peripheralDiagnosticsToolStripMenuItem
             // 
+            this.peripheralDiagnosticsToolStripMenuItem.Enabled = false;
             this.peripheralDiagnosticsToolStripMenuItem.Name = "peripheralDiagnosticsToolStripMenuItem";
             this.peripheralDiagnosticsToolStripMenuItem.Size = new System.Drawing.Size(218, 32);
             this.peripheralDiagnosticsToolStripMenuItem.Text = "&Peripheral Diagnostics";
@@ -337,6 +353,7 @@
             // 
             this.utilityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.databaseBackupToolStripMenuItem});
+            this.utilityToolStripMenuItem.Enabled = false;
             this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
             this.utilityToolStripMenuItem.Size = new System.Drawing.Size(77, 32);
             this.utilityToolStripMenuItem.Text = "&Utility";
@@ -350,6 +367,7 @@
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.Enabled = false;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 32);
             this.helpToolStripMenuItem.Text = "&Help";
@@ -423,6 +441,7 @@
             // 
             // generalTitlesToolStripMenuItem
             // 
+            this.generalTitlesToolStripMenuItem.Enabled = false;
             this.generalTitlesToolStripMenuItem.Name = "generalTitlesToolStripMenuItem";
             this.generalTitlesToolStripMenuItem.Size = new System.Drawing.Size(307, 32);
             this.generalTitlesToolStripMenuItem.Text = "&4 General Titles";
@@ -442,12 +461,14 @@
             // 
             // networkConfigurationToolStripMenuItem
             // 
+            this.networkConfigurationToolStripMenuItem.Enabled = false;
             this.networkConfigurationToolStripMenuItem.Name = "networkConfigurationToolStripMenuItem";
             this.networkConfigurationToolStripMenuItem.Size = new System.Drawing.Size(307, 32);
             this.networkConfigurationToolStripMenuItem.Text = "&7 Network Configuration";
             // 
             // textFileFieldsSettingToolStripMenuItem
             // 
+            this.textFileFieldsSettingToolStripMenuItem.Enabled = false;
             this.textFileFieldsSettingToolStripMenuItem.Name = "textFileFieldsSettingToolStripMenuItem";
             this.textFileFieldsSettingToolStripMenuItem.Size = new System.Drawing.Size(307, 32);
             this.textFileFieldsSettingToolStripMenuItem.Text = "&8 Text File/Fields Setting";
@@ -483,6 +504,7 @@
             // 
             // toolStripMenuItem5
             // 
+            this.toolStripMenuItem5.Enabled = false;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(307, 32);
             this.toolStripMenuItem5.Text = "&10 Serial Port Setting";
@@ -490,7 +512,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(565, 206);
+            this.button1.Location = new System.Drawing.Point(36, 523);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 24;
@@ -546,11 +568,51 @@
             // 
             this.tmrDateAndTime.Tick += new System.EventHandler(this.tmrDateAndTime_Tick);
             // 
+            // chartNormalWeight
+            // 
+            this.chartNormalWeight.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chartNormalWeight.BackSecondaryColor = System.Drawing.Color.White;
+            this.chartNormalWeight.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.Name = "ChartArea1";
+            this.chartNormalWeight.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartNormalWeight.Legends.Add(legend1);
+            this.chartNormalWeight.Location = new System.Drawing.Point(36, 54);
+            this.chartNormalWeight.Name = "chartNormalWeight";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartNormalWeight.Series.Add(series1);
+            this.chartNormalWeight.Size = new System.Drawing.Size(576, 438);
+            this.chartNormalWeight.TabIndex = 27;
+            // 
+            // chartPublicWeight
+            // 
+            this.chartPublicWeight.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chartPublicWeight.BackSecondaryColor = System.Drawing.Color.White;
+            this.chartPublicWeight.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea2.Name = "ChartArea1";
+            this.chartPublicWeight.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartPublicWeight.Legends.Add(legend2);
+            this.chartPublicWeight.Location = new System.Drawing.Point(673, 54);
+            this.chartPublicWeight.Name = "chartPublicWeight";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartPublicWeight.Series.Add(series2);
+            this.chartPublicWeight.Size = new System.Drawing.Size(576, 438);
+            this.chartPublicWeight.TabIndex = 28;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 710);
+            this.Controls.Add(this.chartPublicWeight);
+            this.Controls.Add(this.chartNormalWeight);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
@@ -569,6 +631,8 @@
             this.menuStrip1.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNormalWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPublicWeight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,6 +697,8 @@
         private System.Windows.Forms.Label lblDateAndTime;
         private System.Windows.Forms.Timer tmrDateAndTime;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartNormalWeight;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPublicWeight;
     }
 }
 

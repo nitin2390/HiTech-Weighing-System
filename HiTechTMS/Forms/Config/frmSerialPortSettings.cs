@@ -70,7 +70,11 @@ namespace SerialPortListener
         {
             if (_spManager.StartListening() == -1)
             {
-                MessageBox.Show("Error in settings");
+                string errorMsg = "Error in settings";
+                MessageBox.Show(errorMsg
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
             }
         }
 
@@ -83,7 +87,11 @@ namespace SerialPortListener
             }
             else
             {
-                MessageBox.Show("Port is not openned!");
+                string errorMessage = "Port is not openned!";
+                MessageBox.Show(errorMessage
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
             }
         }
 
@@ -112,7 +120,11 @@ namespace SerialPortListener
             }
             else
             {
-                MessageBox.Show("Error in settings");
+                string errorMessage = "Error in settings";
+                MessageBox.Show(errorMessage
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
             }
 
         }

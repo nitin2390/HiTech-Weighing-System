@@ -179,7 +179,10 @@ namespace HitechTMS.Classes
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show(ex.Message
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
                 return false;
             }
         }

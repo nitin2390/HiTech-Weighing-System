@@ -79,8 +79,10 @@ namespace HitechTMS.Config
             }
             catch (Exception err)
             {
-
-                MessageBox.Show(err.Message.ToString());
+                MessageBox.Show(err.Message
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
             }
         }
 
@@ -214,7 +216,10 @@ namespace HitechTMS.Config
             catch (Exception err)
             {
 
-                MessageBox.Show(err.Message.ToString());
+                MessageBox.Show(err.Message
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
             }
 
         }

@@ -48,6 +48,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.ReportViewer.Common" version="12.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.ReportViewer.DataVisualization" version="12.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.ReportViewer.ProcessingObjectModel" version="12.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.SqlServer.Types" version="12.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Business.dll" size="4096">
       <assemblyIdentity name="Business" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -252,14 +272,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL.dll" size="135168">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL.dll" size="144896">
       <assemblyIdentity name="DAL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5xxYOHNQ4vUCCQNAZlQlt8dix/2W5ll3V2B96bgg5ZE=</dsig:DigestValue>
+        <dsig:DigestValue>5ZIKwWvBIIKCIY8SP5gcF4WutuwE8AUWu5KGoXtvWOo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -300,14 +320,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HitechTMS.exe" size="11036624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HitechTMS.exe" size="11175376">
       <assemblyIdentity name="HitechTMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0zgxzZ50mnZ7kzDSeApIeVcf/tIPj7ucn/JKm1hlLZI=</dsig:DigestValue>
+        <dsig:DigestValue>kKaNL391BVVBJ43Ri3l2/wxmyxuLnv0tpw+DfCrFYms=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -319,7 +339,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Yx+Jo3ozQvwS7xs94jY1yZ8UQWZKeJTT0LxP42Vnmo4=</dsig:DigestValue>
+        <dsig:DigestValue>vTWJY+5q+6qj3OKmS9SDYjgJWbyBf0jmp9N9EE2dD/Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -356,6 +376,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>mLEqfySg7OirwJcPaXvInuOzaGvomLVDeLc+4Z3SS6Q=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.ReportViewer.WinForms.dll" size="563392">
+      <assemblyIdentity name="Microsoft.ReportViewer.WinForms" version="12.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>sQraLWiB7q2Q3DGfeRq9DV1vAo41MrfXZBrd0AGvuTw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -427,7 +459,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hBJLQyQrvCoM11mpKIb9yuqSAl7Rua8apZ4brk5Creg=</dsig:DigestValue>
+        <dsig:DigestValue>u322PMJEGoV6/w4XHzNY2pdff2/KLQT6er8Hr3gvRGE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -479,13 +511,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="db\HitechTruckMngtSystmDataBaseFile_log.ldf" size="8388608" writeableType="applicationData">
+  <file name="db\HitechTruckMngtSystmDataBaseFile_log.ldf" size="786432" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>BK91IDbISYo/8A/wgD+YjsM8emToeYvFUdjdz7w8Ag8=</dsig:DigestValue>
+      <dsig:DigestValue>lJIDBz9UnG4gzA8z47gukoPWkXgVUE8Sfn6aSDdMR5Q=</dsig:DigestValue>
     </hash>
   </file>
   <file name="HitechTMS.exe.config" size="2647">
@@ -515,6 +547,15 @@
       <dsig:DigestValue>jHo7Kmw3gh2SP4ZmmsbjHJhvsznozsUuGqjOUIuAsWo=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="image\Login.jpg" size="90736">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>3+dRCUiWoOf/S05SalZJWEB4uTd5NBdKTxXZClisWBA=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="image\Logo.png" size="4418">
     <hash>
       <dsig:Transforms>
@@ -522,6 +563,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>AafAF1yL2WEVRACiZnKylFiwwD0Lho1EdMzegTmDbzI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="image\weigh-bridge-large.jpg" size="65163">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>E2wM+LpFYGn1dpCc3Ec60eg2KaR+ypET2lI8f/Vjeoc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SQL Scripts\dbo.EmailConfigs.data.sql" size="976">

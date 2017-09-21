@@ -349,6 +349,26 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_NormalDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_NormalDashBoard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DateIn" Type="varchar" MaxLength="30" />
+          <Property Name="TruckCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_PublicDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_PublicDashBoard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DateIn" Type="varchar" MaxLength="30" />
+          <Property Name="TruckCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_T_mstShiftAllocationInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="V_T_mstShiftAllocationInfo">
           <Key>
@@ -583,6 +603,20 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     [V_mstGeneralSettings].[UpdatedDate] AS [UpdatedDate]
     FROM [dbo].[V_mstGeneralSettings] AS [V_mstGeneralSettings]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="V_NormalDashBoard" EntityType="Self.V_NormalDashBoard" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_NormalDashBoard].[ID] AS [ID], 
+    [V_NormalDashBoard].[DateIn] AS [DateIn], 
+    [V_NormalDashBoard].[TruckCount] AS [TruckCount]
+    FROM [dbo].[V_NormalDashBoard] AS [V_NormalDashBoard]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_PublicDashBoard" EntityType="Self.V_PublicDashBoard" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_PublicDashBoard].[ID] AS [ID], 
+    [V_PublicDashBoard].[DateIn] AS [DateIn], 
+    [V_PublicDashBoard].[TruckCount] AS [TruckCount]
+    FROM [dbo].[V_PublicDashBoard] AS [V_PublicDashBoard]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="V_T_mstShiftAllocationInfo" EntityType="Self.V_T_mstShiftAllocationInfo" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [V_T_mstShiftAllocationInfo].[Id] AS [Id], 
@@ -712,6 +746,8 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="V_Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_Captions" />
           <EntitySet Name="rptNormalTicket" EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" />
           <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
+          <EntitySet Name="V_NormalDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalDashBoard" />
+          <EntitySet Name="V_PublicDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_PublicDashBoard" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -1207,6 +1243,22 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="NetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="ProdInOut" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="V_NormalDashBoard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DateIn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TruckCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="V_PublicDashBoard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DateIn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TruckCount" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1627,6 +1679,24 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="V_NormalDashBoard">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_NormalDashBoard">
+              <MappingFragment StoreEntitySet="V_NormalDashBoard">
+                <ScalarProperty Name="TruckCount" ColumnName="TruckCount" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_PublicDashBoard">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_PublicDashBoard">
+              <MappingFragment StoreEntitySet="V_PublicDashBoard">
+                <ScalarProperty Name="TruckCount" ColumnName="TruckCount" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1642,7 +1712,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="False" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

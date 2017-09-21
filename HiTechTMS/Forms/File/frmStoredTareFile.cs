@@ -493,7 +493,10 @@ namespace HitechTMS.File
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message
+                                , _dbGetResourceCaption.GetStringValue("ERROR")
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
             }
         }
 

@@ -39,7 +39,10 @@ namespace HitechTMS.MasterForms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message
+                                , _dbGetResourceCaption.GetStringValue("ERROR")
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
             }
         }
         /// <summary>

@@ -3,6 +3,7 @@ using HitechTMS.Classes;
 using System;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Security.Principal;
 using System.Windows.Forms;
@@ -49,7 +50,7 @@ namespace HitechTMS.File
             catch (Exception ex)
             {
 
-                
+                throw (ex);
             }
         }
         #endregion
@@ -329,7 +330,8 @@ namespace HitechTMS.File
                 {
                     var RepData = _dbObj.rptNormalTicket
                         .Where(x => x.ID == PrintID.ToString())
-                        .Select(x => new {
+                        .Select(x => new
+                        {
                             ID = x.ID ?? "",
                             Truck = x.Truck ?? "",
                             Mode = x.Mode,
@@ -353,9 +355,21 @@ namespace HitechTMS.File
                             NetWeight = x.NetWeight ?? "",
                             ProdInOut = x.ProdInOut
 
-                });
-                rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), FrmName.NormalWeighing, enumProductInOut.Other);
-                rptCmn.ShowDialog();
+                        });
+
+                    if (RepData.Count() > 0)
+                    {
+                        rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), FrmName.NormalWeighing, enumProductInOut.Other);
+                        rptCmn.ShowDialog();
+                    }
+                    else
+                    {
+                        string errorMessage = "No data to print";
+                        MessageBox.Show(errorMessage
+                                        , _dbGetResourceCaption.GetStringValue("ERROR")
+                                        , MessageBoxButtons.OK
+                                        , MessageBoxIcon.Error);
+                    }
                 }
             }
         }
