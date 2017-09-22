@@ -51,14 +51,14 @@ namespace HitechTMS.MasterForms
             if (emailConfigData.Count > 0)
             {
                 ID = emailConfigData[0].Id == Guid.Empty ? Guid.NewGuid() : emailConfigData[0].Id;
-                txtEmailId.Text = emailConfigData[0].EmailID == null ? "" : emailConfigData[0].EmailID.ToString();
-                txtPassword.Text = emailConfigData[0].Password == null ? "" : objEncryptionAndDecryption.Decrypt(emailConfigData[0].Password).ToString();
+                txtEmailId.Text = emailConfigData[0].EmailID == null ? string.Empty : emailConfigData[0].EmailID.ToString();
+                txtPassword.Text = emailConfigData[0].Password == null ? string.Empty : objEncryptionAndDecryption.Decrypt(emailConfigData[0].Password).ToString();
                 txtEmailServerPort.Text = emailConfigData[0].EmailServerPort.ToString();
-                txtEmailSmtpServer.Text = emailConfigData[0].EmailSmtpServer == null ? "" : emailConfigData[0].EmailSmtpServer.ToString();
+                txtEmailSmtpServer.Text = emailConfigData[0].EmailSmtpServer == null ? string.Empty : emailConfigData[0].EmailSmtpServer.ToString();
                 chkIsActive.Checked = emailConfigData[0].IsActive == "1" ? true : false;
-                txtEmailBody.Text = emailConfigData[0].EmailBody == null ? "" : emailConfigData[0].EmailBody.ToString();
-                txtEmailSubject.Text = emailConfigData[0].EmailSubject == null ? "" : emailConfigData[0].EmailSubject.ToString();
-                txtEmailRecipient.Text = emailConfigData[0].EmailRecipient == null ? "" : emailConfigData[0].EmailRecipient.ToString();
+                txtEmailBody.Text = emailConfigData[0].EmailBody == null ? string.Empty : emailConfigData[0].EmailBody.ToString();
+                txtEmailSubject.Text = emailConfigData[0].EmailSubject == null ? string.Empty : emailConfigData[0].EmailSubject.ToString();
+                txtEmailRecipient.Text = emailConfigData[0].EmailRecipient == null ? string.Empty : emailConfigData[0].EmailRecipient.ToString();
             }
 
         }
@@ -204,7 +204,12 @@ namespace HitechTMS.MasterForms
             dbObj.EmailConfigs.AddOrUpdate(objEmailConfig);
             if (dbObj.SaveChanges() == 1)
             {
-                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"));
+                MessageBox.Show(
+                    _dbGetResourceCaption.GetStringValue("DATA_SAVE"),
+                    _dbGetResourceCaption.GetStringValue("INFORMATION"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
             }
         }
         private void btnExit_Click(object sender, EventArgs e)

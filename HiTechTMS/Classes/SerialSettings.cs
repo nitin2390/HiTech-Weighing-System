@@ -35,7 +35,7 @@ namespace SerialPortListener.Serial
            
         }
 
-        string _portName = "";
+        string _portName = string.Empty;
         string[] _portNameCollection;
         int _baudRate = 4800;
         BindingList<int> _baudRateCollection = new BindingList<int>();

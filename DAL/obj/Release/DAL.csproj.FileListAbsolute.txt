@@ -1,0 +1,30 @@
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\HiTechTMSModel.Context.tt
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\HiTechTMSModel.tt
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\EmailConfig.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\EmailMaster.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\HiTechTMSModel.Context.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\HiTechTMSModel.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\HiTechTMSModel.Designer.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\mstFormName.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\mstPermission.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\mstStoredTareRecords.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\mstSupplierTransporter.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\Product.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\transNormalWeight.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\transPublicWeight.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\UserRole.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\UserRoleType.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\viewNormalPendingFile.cs
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\Entity Model\HiTechTMSModel.edmx.diagram
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\DAL.dll.config
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\DAL.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\DAL.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\EntityFramework.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\SharedLibrary.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\SharedLibrary.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\EntityFramework.xml
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Release\DAL.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Release\DAL.pdb

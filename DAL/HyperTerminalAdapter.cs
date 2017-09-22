@@ -17,9 +17,9 @@ namespace DAL
         //public int ReadTimeout = 2000;
         //public int WriteTimeout = 2000;
         //public string PortName = "COM4";
-        //public string Handshake = "";
+        //public string Handshake = string.Empty;
         //public string Name = "user";
-        //public string DataReceived = "";
+        //public string DataReceived = string.Empty;
         //public string sParity = "none";
         //public int iStopBits = 1;
 

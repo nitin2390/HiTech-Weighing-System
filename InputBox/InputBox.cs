@@ -60,7 +60,7 @@ namespace MsgBox
         public static DialogResult ShowDialog(string Message, string Title = "", Icon icon = Icon.Information, Buttons buttons = Buttons.Ok, Type type = Type.Nothing, string[] ListItems = null, bool ShowInTaskBar = false, Font FormFont = null)
         {
             frm.Controls.Clear();
-            ResultValue = "";
+            ResultValue = string.Empty;
 
 
             //Form definition
@@ -119,7 +119,7 @@ namespace MsgBox
                 default:
                     if (DialogRes == DialogResult.OK || DialogRes == DialogResult.Yes)
                     { ResultValue = ctrl.Text; }
-                    else ResultValue = "";
+                    else ResultValue = string.Empty;
                     break;
             }
 

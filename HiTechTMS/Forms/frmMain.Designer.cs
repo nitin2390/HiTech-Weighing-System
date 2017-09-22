@@ -280,6 +280,7 @@
             // 
             // modeToolStripMenuItem
             // 
+            this.modeToolStripMenuItem.Enabled = false;
             this.modeToolStripMenuItem.Name = "modeToolStripMenuItem";
             this.modeToolStripMenuItem.Size = new System.Drawing.Size(76, 32);
             this.modeToolStripMenuItem.Text = "&Mode";
@@ -326,6 +327,7 @@
             // 
             // reportsToolStripMenuItem
             // 
+            this.reportsToolStripMenuItem.Enabled = false;
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(92, 32);
             this.reportsToolStripMenuItem.Text = "&Reports";

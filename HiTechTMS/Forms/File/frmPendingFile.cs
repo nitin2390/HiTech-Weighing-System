@@ -1,9 +1,9 @@
 ﻿using DAL.Entity_Model;
 using HitechTMS.Classes;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Security.Principal;
 using System.Windows.Forms;
@@ -95,13 +95,17 @@ namespace HitechTMS.File
 
 
                     #region "Add Column"
-                    DataGridViewButtonColumn ColPrintTicket = new DataGridViewButtonColumn();
-                    ColPrintTicket.DataPropertyName = "PrintTicket";
+                    DataGridViewCheckBoxColumn ColPrintTicket = new DataGridViewCheckBoxColumn();
+                    //ColPrintTicket.DataPropertyName = "ID";
                     ColPrintTicket.HeaderText = FormNormalPendingCaptions.PrintTicket;
                     ColPrintTicket.Width = colWidth - 20;
-                    ColPrintTicket.Text = FormNormalPendingCaptions.PrintTicket;
-                    ColPrintTicket.UseColumnTextForButtonValue = true;
+                    ColPrintTicket.TrueValue = true;
+                    ColPrintTicket.FalseValue = false;
+                    ColPrintTicket.Width = 100;
+                    //ColPrintTicket.Text = FormNormalPendingCaptions.PrintTicket;
+                    //ColPrintTicket.UseColumnTextForButtonValue = true;
                     gridPendingFile.Columns.Add(ColPrintTicket);
+                    
 
                     DataGridViewColumn ColID = new DataGridViewTextBoxColumn();
                     ColID.DataPropertyName = "ID";
@@ -218,7 +222,10 @@ namespace HitechTMS.File
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message,
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
         private void HideColumns(FrmName frmName)
@@ -234,7 +241,10 @@ namespace HitechTMS.File
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
         private void LoadCaption()
@@ -247,7 +257,10 @@ namespace HitechTMS.File
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -316,14 +329,10 @@ namespace HitechTMS.File
         #endregion
 
         #region PrintTicket
-        private void gridPendingFile_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private bool PrintTicket(Guid PrintID)
         {
-            if(e.ColumnIndex != 0 || e.RowIndex < 0)
-            {
-                return;
-            }
-            var senderGrid = (DataGridView)sender;
-            var PrintID = this.gridPendingFile[gridPendingFile.Columns.IndexOf(gridPendingFile.Columns["ID"]), e.RowIndex].Value;
+            bool TicketPrinted = false;
             if (PrintID != null)
             {
                 if (rdbNormalWeight.Checked)
@@ -332,27 +341,27 @@ namespace HitechTMS.File
                         .Where(x => x.ID == PrintID.ToString())
                         .Select(x => new
                         {
-                            ID = x.ID ?? "",
-                            Truck = x.Truck ?? "",
+                            ID = x.ID ?? string.Empty,
+                            Truck = x.Truck ?? string.Empty,
                             Mode = x.Mode,
-                            ProductCode = x.ProductCode ?? "",
+                            ProductCode = x.ProductCode ?? string.Empty,
                             Name = x.Name,
                             SupplierCode = x.SupplierCode,
                             SupplierName = x.SupplierName,
-                            TransporterCode = x.TransporterCode ?? "",
-                            TarnsPorterName = x.TarnsPorterName ?? "",
-                            ChallanNumber = x.ChallanNumber ?? "",
-                            Miscellaneous = x.Miscellaneous ?? "",
-                            DeliveryNoteN = x.DeliveryNoteN ?? "",
-                            ChallanWeight = x.ChallanWeight ?? "",
-                            ChallanDate = x.ChallanDate ?? "",
-                            DateIn = x.DateIn ?? "",
-                            TimeIn = x.TimeIn ?? "",
-                            DateOut = x.DateOut ?? "",
-                            TimeOut = x.TimeOut ?? "",
-                            TareWeight = x.TareWeight ?? "",
-                            GrossWeight = x.GrossWeight ?? "",
-                            NetWeight = x.NetWeight ?? "",
+                            TransporterCode = x.TransporterCode ?? string.Empty,
+                            TarnsPorterName = x.TarnsPorterName ?? string.Empty,
+                            ChallanNumber = x.ChallanNumber ?? string.Empty,
+                            Miscellaneous = x.Miscellaneous ?? string.Empty,
+                            DeliveryNoteN = x.DeliveryNoteN ?? string.Empty,
+                            ChallanWeight = x.ChallanWeight ?? string.Empty,
+                            ChallanDate = x.ChallanDate ?? string.Empty,
+                            DateIn = x.DateIn ?? string.Empty,
+                            TimeIn = x.TimeIn ?? string.Empty,
+                            DateOut = x.DateOut ?? string.Empty,
+                            TimeOut = x.TimeOut ?? string.Empty,
+                            TareWeight = x.TareWeight ?? string.Empty,
+                            GrossWeight = x.GrossWeight ?? string.Empty,
+                            NetWeight = x.NetWeight ?? string.Empty,
                             ProdInOut = x.ProdInOut
 
                         });
@@ -372,6 +381,17 @@ namespace HitechTMS.File
                     }
                 }
             }
+            return TicketPrinted;
+        }
+        private void gridPendingFile_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if(e.ColumnIndex != 0 || e.RowIndex < 0)
+            //{
+            //    return;
+            //}
+            //var senderGrid = (DataGridView)sender;
+            //Guid PrintID = (Guid)gridPendingFile[gridPendingFile.Columns.IndexOf(gridPendingFile.Columns["ID"]), e.RowIndex].Value;
+            //PrintTicket(PrintID);
         }
         #endregion
 
@@ -382,5 +402,55 @@ namespace HitechTMS.File
         }
         #endregion
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            List<Guid> selectedCheckbox = GetListOfSelectCheckBox();
+            foreach (var item in selectedCheckbox)
+            {
+                PrintTicket(item);
+            }
+            LoadGridData();
+        }
+
+        private List<Guid> GetListOfSelectCheckBox()
+        {
+            try
+            {
+                List<Guid> selectedCheckbox = new List<Guid>();
+                //int id;
+                for (int i = 0; i < gridPendingFile.Rows.Count; i++)
+                {
+                    //Assume that 0th Row of grid named grdDisplayAll contains Checkbox
+                    if (Convert.ToBoolean(gridPendingFile.Rows[i].Cells[0].Value) == true)
+                    {
+                        selectedCheckbox.Add((Guid)gridPendingFile.Rows[i].Cells["Id"].Value);
+                        //You may use columnIndex of column instead of ColumnName (i.e. Here "Id")
+
+                        //Code here to make whatever you want to perform on selected record
+                    }
+                }
+                return selectedCheckbox;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            using(HitechTruckMngtSystmDataBaseFileEntities dbobj = new HitechTruckMngtSystmDataBaseFileEntities())
+            {
+                List<Guid> selectedCheckbox = GetListOfSelectCheckBox();
+                foreach (var item in selectedCheckbox)
+                {
+                    var entity = dbobj.transNormalWeight.Where(x => x.ID == item).Single();
+                    dbobj.transNormalWeight.Remove(entity);
+                    dbobj.SaveChanges();
+                }
+            }
+            LoadGridData();
+        }
     }
 }

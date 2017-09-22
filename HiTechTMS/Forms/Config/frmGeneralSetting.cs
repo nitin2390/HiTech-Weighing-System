@@ -204,7 +204,12 @@ namespace HitechTMS.MasterForms
             {
                 if (dbObj.SaveChanges() == 1)
                 {
-                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE_RESTART_FOR_IMPACT"));
+                    MessageBox.Show(
+                        _dbGetResourceCaption.GetStringValue("DATA_SAVE_RESTART_FOR_IMPACT"), 
+                        _dbGetResourceCaption.GetStringValue("INFORMATION"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                        );
                 }
             }
             catch (DbEntityValidationException dbEx)

@@ -67,13 +67,16 @@ namespace HitechTMS.File
         {
             try
             {
-                txtProductCode.Text = "";
-                txtProductName.Text = "";
+                txtProductCode.Text = string.Empty;
+                txtProductName.Text = string.Empty;
                 BindGrid();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
         private void BindGrid()
@@ -90,7 +93,10 @@ namespace HitechTMS.File
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
         #endregion
@@ -100,7 +106,8 @@ namespace HitechTMS.File
         {
             try
             {
-                if (txtProductCode.Text != "" && txtProductName.Text !="")
+                if (txtProductCode.Text != string.Empty 
+                        && txtProductName.Text != string.Empty)
                 {
 
                     var existProdCode = (from prod in dbObj.Products
@@ -116,7 +123,10 @@ namespace HitechTMS.File
                         if (dbObj.SaveChanges() ==1)
                         {
                             ResetCntrl();
-                            MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), 
+                                _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Information);
                         }                       
                     }
                     else
@@ -148,7 +158,7 @@ namespace HitechTMS.File
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txtProductCode.Text !="")
+            if (txtProductCode.Text != string.Empty)
             {
                 errProductCode.Clear();
                 var ProdQuery = from prod in dbObj.Products
@@ -161,7 +171,12 @@ namespace HitechTMS.File
                 }
                 else
                 {
-                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("RECORDS_NOT_FOUND"));
+                    MessageBox.Show(
+                        _dbGetResourceCaption.GetStringValue("RECORDS_NOT_FOUND"),
+                        _dbGetResourceCaption.GetStringValue("INFORMATION"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                        );
                 }
             }
             else
@@ -180,7 +195,10 @@ namespace HitechTMS.File
             Product prod = new Product();
             if (gridProduct.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("DELTE_POPUP"), _dbGetResourceCaption.GetStringValue("CONFIRMATION"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("DELTE_POPUP"), 
+                        _dbGetResourceCaption.GetStringValue("CONFIRMATION"), 
+                            MessageBoxButtons.YesNo, 
+                                MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     foreach (DataGridViewRow row in gridProduct.SelectedRows)
                     {
@@ -194,7 +212,10 @@ namespace HitechTMS.File
             }
             else
             {
-                MessageBox.Show("Please select records rows to delete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("SELECT_ROW_TO_DELETE"),
+                                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                                    MessageBoxButtons.OK, 
+                                    MessageBoxIcon.Information);
             }
 
 
@@ -220,7 +241,7 @@ namespace HitechTMS.File
         {
             txtProductCode.Text = txtProductCode.Text.ToUpper();
 
-            if (txtProductCode.Text == "")
+            if (txtProductCode.Text == string.Empty)
             {
                 errProductCode.SetError(txtProductCode, _dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
             }
@@ -229,7 +250,7 @@ namespace HitechTMS.File
                 errProductCode.Clear();
             }
 
-            if (txtProductName.Text == "")
+            if (txtProductName.Text == string.Empty)
             {
                 errProductName.SetError(txtProductName, _dbGetResourceCaption.GetStringValue("PRD_NM_CAN_NOT_BLANK"));
             }
@@ -240,7 +261,7 @@ namespace HitechTMS.File
         }
         private void txtProductName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (txtProductCode.Text == "")
+            if (txtProductCode.Text == string.Empty)
             {
                 errProductCode.SetError(txtProductCode, _dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
             }
@@ -249,7 +270,7 @@ namespace HitechTMS.File
                 errProductCode.Clear();
             }
 
-            if (txtProductName.Text == "")
+            if (txtProductName.Text == string.Empty)
             {
                 errProductName.SetError(txtProductName, _dbGetResourceCaption.GetStringValue("PRD_NM_CAN_NOT_BLANK"));
             }
@@ -262,7 +283,7 @@ namespace HitechTMS.File
 
         private void txtlblProductName_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtProductCode.Text != "")
+            if (e.KeyCode == Keys.Enter && txtProductCode.Text != string.Empty)
             {
                 btnSave_Click((object)sender, (EventArgs)e);
                 txtProductCode.Focus();
@@ -272,7 +293,7 @@ namespace HitechTMS.File
         private void txtlblProductCode_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if (e.KeyCode == Keys.Enter && txtProductCode.Text != "")
+            if (e.KeyCode == Keys.Enter && txtProductCode.Text != string.Empty)
             {
                 txtProductName.Focus();
             }
@@ -294,7 +315,7 @@ namespace HitechTMS.File
 
         private void searchGridData()
         {
-            if (txtProductCode.Text != "")
+            if (txtProductCode.Text != string.Empty)
             {
                 var ProdQuery = from prod in dbObj.Products
                                 where prod.Code == txtProductCode.Text

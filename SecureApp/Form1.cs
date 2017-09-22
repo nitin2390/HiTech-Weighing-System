@@ -44,7 +44,7 @@ namespace HitechTMSActivation
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if(txtProductKey.Text.Trim() !="" )
+            if(txtProductKey.Text.Trim() != string.Empty)
             {
                 //if password true then send true			
                 bool value = passwordEntry(getpassword, new Guid(txtProductKey.Text));

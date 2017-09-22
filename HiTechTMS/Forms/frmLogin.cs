@@ -31,7 +31,7 @@ namespace HitechTMS
             var varUserRole = dbObj.UserRoleTypes.Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { x.RoleName, s.Name, s.Password })
                 .Where(xs => xs.Name == txtUserName.Text && xs.Password == txtPassword.Text).Select(x => x.RoleName).ToList().SingleOrDefault();
 
-            if (varUserRole != null && varUserRole != "")
+            if (varUserRole != null && varUserRole != string.Empty)
             {
                 // Initialize a test Principal 
                 IPrincipal userPrincipal = new GenericPrincipal(WindowsIdentity.GetCurrent(),
@@ -46,7 +46,12 @@ namespace HitechTMS
             }
             else
             {
-                MessageBox.Show(_dbGetResourceCaption.GetStringValue("USER_NAME_PASSWORD_MISTMATCH"));
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("USER_NAME_PASSWORD_MISTMATCH"),
+                    _dbGetResourceCaption.GetStringValue("ERROR"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                txtUserName.Text = string.Empty;
+                txtPassword.Text = string.Empty;
             }
 
         }
@@ -71,7 +76,7 @@ namespace HitechTMS
 
         private void txtUserName_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtUserName.Text != "")
+            if (e.KeyCode == Keys.Enter && txtUserName.Text != string.Empty)
             {
                 txtPassword.Focus();
             }

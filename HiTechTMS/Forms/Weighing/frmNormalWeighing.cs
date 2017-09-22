@@ -61,7 +61,10 @@ namespace HitechTMS.Weighing
 
             if (maxweight.Any() && !double.TryParse(maxweight[0].ToString(), out _MaxWeight))
             {
-                MessageBox.Show("Max Weight is not set in General Settings!");
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("MAX_WT_NOT_SET"),
+                            _dbGetResourceCaption.GetStringValue("ERROR"),
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
             }
             _weightMode = Mode;
             _objCalculateNetWeight = new CalculateNetWeight();
@@ -152,7 +155,10 @@ namespace HitechTMS.Weighing
                     }
                     else
                     {
-                        MessageBox.Show("Check you Serial port settings!");
+                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("CHCK_SERL_PRT_SET"),
+                            _dbGetResourceCaption.GetStringValue("ERROR"),
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                     }
                     
                 }
@@ -167,7 +173,10 @@ namespace HitechTMS.Weighing
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
         private void bindComboBox()
@@ -175,7 +184,7 @@ namespace HitechTMS.Weighing
             try
             {
                 var productList = _dbObj.Products.Select(x => x).ToList();
-                productList.Insert(0, new Product() { Code = "Select" , Name =""});
+                productList.Insert(0, new Product() { Code = "Select" , Name = string.Empty });
                 cmbProductCode.DataSource = productList;
                 cmbProductCode.DisplayMember = "Code";
                 cmbProductCode.ValueMember = "Code";
@@ -184,7 +193,7 @@ namespace HitechTMS.Weighing
                 var supplierList = _dbObj.mstSupplierTransporter
                     .Where(x => x.IsSuplier == ((int)FrmName.Supplier).ToString())
                     .Select(x => x).ToList();
-                supplierList.Insert(0, new mstSupplierTransporter() { Id = Guid.NewGuid(), SupplierCode = "Select", SupplierName = "" });
+                supplierList.Insert(0, new mstSupplierTransporter() { Id = Guid.NewGuid(), SupplierCode = "Select", SupplierName = string.Empty });
 
                 cmbCustomerCode.DataSource = supplierList;
                 cmbCustomerCode.DisplayMember = "SupplierCode";
@@ -193,7 +202,7 @@ namespace HitechTMS.Weighing
                 var transporterList = _dbObj.mstSupplierTransporter
                     .Where(x => x.IsSuplier == ((int)FrmName.Transport).ToString())
                     .Select(x => x).ToList();
-                transporterList.Insert(0, new mstSupplierTransporter() { Id= Guid.NewGuid(), SupplierCode = "Select", SupplierName = "" });
+                transporterList.Insert(0, new mstSupplierTransporter() { Id= Guid.NewGuid(), SupplierCode = "Select", SupplierName = string.Empty });
 
                 cmbTranspoterCode.DataSource = transporterList;
                 cmbTranspoterCode.DisplayMember = "SupplierCode";
@@ -206,7 +215,10 @@ namespace HitechTMS.Weighing
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
         /// <summary>
@@ -223,23 +235,23 @@ namespace HitechTMS.Weighing
                 cmbCustomerCode.SelectedIndex = 0;
                 cmbTranspoterCode.SelectedIndex = 0;
                 cmbChallanWeight.SelectedIndex = 0;
-                txtTruck.Text = "";
-                txtChallanNumber.Text = "";
-                txtChallanWeight.Text = "";
-                txtMiscellaneous.Text = "";
-                txtMiscellaneous1.Text = "";
-                txtDeliveryNoteN.Text = "";
-                txtChallanDate.Text = "";
-                txtDateIn.Text = "";
-                txtTimeIn.Text = "";
-                txtDateOut.Text = "";
-                txtTimeOut.Text = "";
-                txtTareWeight.Text = "";
-                txtGrossWeight.Text = "";
-                txtGrossWeight.Text = "";
-                txtNetWeight.Text = "";
+                txtTruck.Text = string.Empty;
+                txtChallanNumber.Text = string.Empty;
+                txtChallanWeight.Text = string.Empty;
+                txtMiscellaneous.Text = string.Empty;
+                txtMiscellaneous1.Text = string.Empty;
+                txtDeliveryNoteN.Text = string.Empty;
+                txtChallanDate.Text = string.Empty;
+                txtDateIn.Text = string.Empty;
+                txtTimeIn.Text = string.Empty;
+                txtDateOut.Text = string.Empty;
+                txtTimeOut.Text = string.Empty;
+                txtTareWeight.Text = string.Empty;
+                txtGrossWeight.Text = string.Empty;
+                txtGrossWeight.Text = string.Empty;
+                txtNetWeight.Text = string.Empty;
                 _transNormalWeightID = Guid.Empty;
-                btnWeight.Text = "";
+                btnWeight.Text = string.Empty;
                 errProvWeight.Clear();
                 setEnableDisable();
                 EnableAllExceptTicket();
@@ -247,7 +259,10 @@ namespace HitechTMS.Weighing
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
 
 
@@ -256,7 +271,8 @@ namespace HitechTMS.Weighing
         {
             try
             {
-                if (txtGrossWeight.Text.Trim() != "" && txtTareWeight.Text.Trim() != "")
+                if (txtGrossWeight.Text.Trim() != string.Empty 
+                        && txtTareWeight.Text.Trim() != string.Empty)
                 {
                     string GrossWeight = _enumProductInOut == enumProductInOut.In ? txtTareWeight.Text : txtGrossWeight.Text;
                     string TareWeight = _enumProductInOut == enumProductInOut.In ? txtGrossWeight.Text : txtTareWeight.Text;
@@ -267,7 +283,10 @@ namespace HitechTMS.Weighing
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
         private void AutoFill()
@@ -302,20 +321,20 @@ namespace HitechTMS.Weighing
                 cmbCustomerCode.SelectedIndex = 0;
                 cmbTranspoterCode.SelectedIndex = 0;
                 cmbChallanWeight.SelectedIndex = 0;
-                txtChallanNumber.Text = "";
-                txtChallanWeight.Text = "";
-                txtMiscellaneous.Text = "";
-                txtMiscellaneous1.Text = "";
-                txtDeliveryNoteN.Text = "";
-                txtChallanDate.Text = "";
-                txtDateIn.Text = "";
-                txtTimeIn.Text = "";
-                txtDateOut.Text = "";
-                txtTimeOut.Text = "";
-                txtTareWeight.Text = "";
-                txtGrossWeight.Text = "";
-                txtGrossWeight.Text = "";
-                txtNetWeight.Text = "";
+                txtChallanNumber.Text = string.Empty;
+                txtChallanWeight.Text = string.Empty;
+                txtMiscellaneous.Text = string.Empty;
+                txtMiscellaneous1.Text = string.Empty;
+                txtDeliveryNoteN.Text = string.Empty;
+                txtChallanDate.Text = string.Empty;
+                txtDateIn.Text = string.Empty;
+                txtTimeIn.Text = string.Empty;
+                txtDateOut.Text = string.Empty;
+                txtTimeOut.Text = string.Empty;
+                txtTareWeight.Text = string.Empty;
+                txtGrossWeight.Text = string.Empty;
+                txtGrossWeight.Text = string.Empty;
+                txtNetWeight.Text = string.Empty;
                 _transNormalWeightID = Guid.Empty;
                 setEnableDisable();
                 //_editGrid = true;
@@ -359,7 +378,7 @@ namespace HitechTMS.Weighing
                     txtChallanNumber.Text = lsttransNormalWeight[0].ChallanNumber;
                     txtChallanDate.Text = lsttransNormalWeight[0].ChallanDate != null ? 
                                             DateTime.Parse(lsttransNormalWeight[0].ChallanDate.ToString()).ToString("dd/MM/yyyy") 
-                                                : "";
+                                                : string.Empty;
                     txtChallanWeight.Text = lsttransNormalWeight[0].ChallanWeight.ToString();
                     txtMiscellaneous.Text = lsttransNormalWeight[0].Miscellaneous.Split(';')[0];
                     txtMiscellaneous1.Text = lsttransNormalWeight[0].Miscellaneous.Split(';')[1];
@@ -367,26 +386,23 @@ namespace HitechTMS.Weighing
 
                     if (_enumProductInOut == enumProductInOut.Out)
                     {
-                        txtDateIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateOut.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : "" : lsttransNormalWeight[0].DateIn.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : "";
-                        txtDateOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateIn.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : "" : lsttransNormalWeight[0].DateOut.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : "";
-                        txtTimeIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeOut.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : "" : lsttransNormalWeight[0].TimeIn.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : "";
-                        txtTimeOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeIn.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : "" : lsttransNormalWeight[0].TimeOut.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : "";
+                        txtDateIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateOut.ToString() != string.Empty ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : string.Empty : lsttransNormalWeight[0].DateIn.ToString() != string.Empty ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : string.Empty;
+                        txtDateOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateIn.ToString() != string.Empty ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : string.Empty : lsttransNormalWeight[0].DateOut.ToString() != string.Empty ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : string.Empty;
+                        txtTimeIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeOut.ToString() != string.Empty ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : string.Empty : lsttransNormalWeight[0].TimeIn.ToString() != string.Empty ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : string.Empty;
+                        txtTimeOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeIn.ToString() != string.Empty ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : string.Empty : lsttransNormalWeight[0].TimeOut.ToString() != string.Empty ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : string.Empty;
                     }
                     else
                     {
-                        txtDateOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateOut.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : "" : lsttransNormalWeight[0].DateIn.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : "";
-                        txtDateIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateIn.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : "" : lsttransNormalWeight[0].DateOut.ToString() != "" ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : "";
-                        txtTimeOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeOut.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : "" : lsttransNormalWeight[0].TimeIn.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : "";
-                        txtTimeIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeIn.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : "" : lsttransNormalWeight[0].TimeOut.ToString() != "" ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : "";
+                        txtDateOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateOut.ToString() != string.Empty ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : string.Empty : lsttransNormalWeight[0].DateIn.ToString() != string.Empty ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : string.Empty;
+                        txtDateIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].DateIn.ToString() != string.Empty ? DateTime.Parse(lsttransNormalWeight[0].DateIn.ToString()).ToString("dd/MM/yyyy") : string.Empty : lsttransNormalWeight[0].DateOut.ToString() != string.Empty ? DateTime.Parse(lsttransNormalWeight[0].DateOut.ToString()).ToString("dd/MM/yyyy") : string.Empty;
+                        txtTimeOut.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeOut.ToString() != string.Empty ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : string.Empty : lsttransNormalWeight[0].TimeIn.ToString() != string.Empty ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : string.Empty;
+                        txtTimeIn.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TimeIn.ToString() != string.Empty ? TimeSpan.Parse(lsttransNormalWeight[0].TimeIn.ToString()).ToString() : string.Empty : lsttransNormalWeight[0].TimeOut.ToString() != string.Empty ? TimeSpan.Parse(lsttransNormalWeight[0].TimeOut.ToString()).ToString() : string.Empty;
                     }
-
                     
+                    txtTareWeight.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].GrossWeight.ToString() != string.Empty ? lsttransNormalWeight[0].GrossWeight.ToString() : string.Empty : lsttransNormalWeight[0].TareWeight.ToString() != string.Empty ? lsttransNormalWeight[0].TareWeight.ToString() : string.Empty;
+                    txtGrossWeight.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TareWeight.ToString() != string.Empty ? lsttransNormalWeight[0].TareWeight.ToString() : string.Empty : lsttransNormalWeight[0].GrossWeight.ToString() != string.Empty ? lsttransNormalWeight[0].GrossWeight.ToString() : string.Empty;
 
-
-                    txtTareWeight.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].GrossWeight.ToString() != "" ? lsttransNormalWeight[0].GrossWeight.ToString() : "" : lsttransNormalWeight[0].TareWeight.ToString() != "" ? lsttransNormalWeight[0].TareWeight.ToString() : "";
-                    txtGrossWeight.Text = _enumProductInOut == enumProductInOut.In ? lsttransNormalWeight[0].TareWeight.ToString() != "" ? lsttransNormalWeight[0].TareWeight.ToString() : "" : lsttransNormalWeight[0].GrossWeight.ToString() != "" ? lsttransNormalWeight[0].GrossWeight.ToString() : "";
-
-                    txtNetWeight.Text = lsttransNormalWeight[0].NetWeight.ToString() != "" ? lsttransNormalWeight[0].NetWeight.ToString() : "";
+                    txtNetWeight.Text = lsttransNormalWeight[0].NetWeight.ToString() != string.Empty ? lsttransNormalWeight[0].NetWeight.ToString() : string.Empty;
                     //_editGrid = false;
                 }
                 if(lsttransNormalWeight[0].GrossWeight > 0 || lsttransNormalWeight[0].TareWeight > 0)
@@ -415,7 +431,10 @@ namespace HitechTMS.Weighing
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"),
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
         private void DisableAllExceptTicket(bool _val)
@@ -513,15 +532,15 @@ namespace HitechTMS.Weighing
         {
             if (!_dbReturn)
             {
-                if (txtGrossWeight.Text.Trim() != "")
+                if (txtGrossWeight.Text.Trim() != string.Empty)
                 {
                     txtDateOut.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
                     txtTimeOut.Text = DateTime.Now.ToString("HH:mm:ss");
                 }
                 else
                 {
-                    txtDateOut.Text = "";
-                    txtTimeOut.Text = "";
+                    txtDateOut.Text = string.Empty;
+                    txtTimeOut.Text = string.Empty;
                 }
 
             }
@@ -539,15 +558,15 @@ namespace HitechTMS.Weighing
         {
             if (!_dbReturn)
             {
-                if (txtTareWeight.Text.Trim() != "")
+                if (txtTareWeight.Text.Trim() != string.Empty)
                 {
                     txtDateIn.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
                     txtTimeIn.Text = DateTime.Now.ToString("HH:mm:ss");
                 }
                 else
                 {
-                    txtDateIn.Text = "";
-                    txtTimeIn.Text = "";
+                    txtDateIn.Text = string.Empty;
+                    txtTimeIn.Text = string.Empty;
                 }
 
             }
@@ -562,7 +581,7 @@ namespace HitechTMS.Weighing
         #region "Validating"
         private void txtChallanWeight_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (txtChallanWeight.Text != "")
+            if (txtChallanWeight.Text != string.Empty)
             {
                 double input = 0;
                 bool isNum = Double.TryParse(txtChallanWeight.Text, out input);
@@ -596,7 +615,7 @@ namespace HitechTMS.Weighing
             //Check for -ve Weight
 
 
-                if (txtGrossWeight.Text != "")
+                if (txtGrossWeight.Text != string.Empty)
                 {
 
                     double TareWeight = 0;
@@ -636,7 +655,7 @@ namespace HitechTMS.Weighing
         }
         private void txtTareWeight_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (txtTareWeight.Text != "")
+            if (txtTareWeight.Text != string.Empty)
             {
                 double input = 0;
                 bool isNum = Double.TryParse(txtTareWeight.Text, out input);
@@ -700,21 +719,24 @@ namespace HitechTMS.Weighing
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             if(
-                txtTruck.Text.Trim() != "" ||
-                txtChallanNumber.Text.Trim() != "" ||
-                txtChallanDate.Text.Trim() != "" ||
-                txtChallanWeight.Text.Trim() !="" ||
-                txtMiscellaneous.Text.Trim() !="" ||
-                txtMiscellaneous1.Text.Trim() !="" ||
-                txtDeliveryNoteN.Text.Trim() != "" ||
-                txtTareWeight.Text.Trim() != "" ||
-                txtGrossWeight.Text.Trim() !="" ||
+                txtTruck.Text.Trim() != string.Empty ||
+                txtChallanNumber.Text.Trim() != string.Empty ||
+                txtChallanDate.Text.Trim() != string.Empty ||
+                txtChallanWeight.Text.Trim() !=string.Empty ||
+                txtMiscellaneous.Text.Trim() !=string.Empty ||
+                txtMiscellaneous1.Text.Trim() !=string.Empty ||
+                txtDeliveryNoteN.Text.Trim() != string.Empty ||
+                txtTareWeight.Text.Trim() != string.Empty ||
+                txtGrossWeight.Text.Trim() !=string.Empty ||
                 cmbProductCode.SelectedIndex > 0 ||
                 cmbCustomerCode.SelectedIndex > 0 ||
                 cmbTranspoterCode.SelectedIndex > 0
                 )
             {
-                if(MessageBox.Show(_dbGetResourceCaption.GetStringValue("ADD_NEW"), _dbGetResourceCaption.GetStringValue("INFORMATION"),MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                if(MessageBox.Show(_dbGetResourceCaption.GetStringValue("ADD_NEW"),
+                    _dbGetResourceCaption.GetStringValue("INFORMATION"),
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     DisableAllExceptTicket(false);
                     ResetCntrl();
@@ -780,7 +802,10 @@ namespace HitechTMS.Weighing
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,
+                   _dbGetResourceCaption.GetStringValue("ERROR"),
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
                 _spManager.StopListening();
             }
 
@@ -789,27 +814,27 @@ namespace HitechTMS.Weighing
         {
             var RepData = _dbObj.rptNormalTicket
                 .Where(x => x.ID == transNormalWeightID.ToString())
-                .Select(x => new { ID = x.ID ?? "" ,
-                                    Truck = x.Truck ?? "",
+                .Select(x => new { ID = x.ID ?? string.Empty ,
+                                    Truck = x.Truck ?? string.Empty,
                                     Mode = x.Mode,
-                                    ProductCode = x.ProductCode ?? "",
+                                    ProductCode = x.ProductCode ?? string.Empty,
                                     Name = x.Name,
                                     SupplierCode = x.SupplierCode,
                                     SupplierName = x.SupplierName,
-                                    TransporterCode = x.TransporterCode ?? "",
-                                    TarnsPorterName = x.TarnsPorterName ?? "",
-                                    ChallanNumber = x.ChallanNumber ?? "",
-                                    Miscellaneous = x.Miscellaneous ?? "" ,
-                                    DeliveryNoteN = x.DeliveryNoteN ?? "",
-                                    ChallanWeight = x.ChallanWeight ?? "",
-                                    ChallanDate = x.ChallanDate ?? "" ,
-                                    DateIn = x.DateIn ?? "",
-                                    TimeIn = x.TimeIn ?? "",
-                                    DateOut = x.DateOut ?? "",
-                                    TimeOut = x.TimeOut ?? "",
-                                    TareWeight = x.TareWeight ?? "",
-                                    GrossWeight = x.GrossWeight ?? "",
-                                    NetWeight = x.NetWeight ?? "",
+                                    TransporterCode = x.TransporterCode ?? string.Empty,
+                                    TarnsPorterName = x.TarnsPorterName ?? string.Empty,
+                                    ChallanNumber = x.ChallanNumber ?? string.Empty,
+                                    Miscellaneous = x.Miscellaneous ?? string.Empty ,
+                                    DeliveryNoteN = x.DeliveryNoteN ?? string.Empty,
+                                    ChallanWeight = x.ChallanWeight ?? string.Empty,
+                                    ChallanDate = x.ChallanDate ?? string.Empty ,
+                                    DateIn = x.DateIn ?? string.Empty,
+                                    TimeIn = x.TimeIn ?? string.Empty,
+                                    DateOut = x.DateOut ?? string.Empty,
+                                    TimeOut = x.TimeOut ?? string.Empty,
+                                    TareWeight = x.TareWeight ?? string.Empty,
+                                    GrossWeight = x.GrossWeight ?? string.Empty,
+                                    NetWeight = x.NetWeight ?? string.Empty,
                                     ProdInOut =x.ProdInOut
                                     
                 });
@@ -822,7 +847,10 @@ namespace HitechTMS.Weighing
             {
                 if (!isPortSettingWorking && _weightMode == enumWeightMode.Auto)
                 {
-                    MessageBox.Show("Can not save data please check your port settings!");
+                    MessageBox.Show(_dbGetResourceCaption.GetStringValue("CANNOT_SAVE_DATA_CHK_PORT_ST"),
+                                        _dbGetResourceCaption.GetStringValue("ERROR"),
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                     return;
                 }
                 if (txtTruck.Text.Trim().Length < 1)
@@ -840,9 +868,9 @@ namespace HitechTMS.Weighing
                 objtransNormalWeight.SupplierCode = cmbCustomerCode.SelectedIndex != 0 ? (Guid)cmbCustomerCode.SelectedValue : Guid.Empty;
                 objtransNormalWeight.TransporterCode = cmbTranspoterCode.SelectedIndex != 0 ? (Guid)cmbTranspoterCode.SelectedValue : Guid.Empty;
                 objtransNormalWeight.ChallanNumber = txtChallanNumber.Text;
-                objtransNormalWeight.ChallanDate = (txtChallanDate.Text != "" ? DateTime.ParseExact(txtChallanDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null);
+                objtransNormalWeight.ChallanDate = (txtChallanDate.Text != string.Empty ? DateTime.ParseExact(txtChallanDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null);
 
-                objtransNormalWeight.ChallanWeight = txtChallanWeight.Text != "" ? Convert.ToDecimal(txtChallanWeight.Text) : (Decimal?)null;
+                objtransNormalWeight.ChallanWeight = txtChallanWeight.Text != string.Empty ? Convert.ToDecimal(txtChallanWeight.Text) : (Decimal?)null;
 
                 objtransNormalWeight.ChallanWeightUnit = cmbChallanWeight.SelectedIndex > -1 ? Convert.ToByte(cmbChallanWeight.SelectedIndex) : (Byte?)null;
 
@@ -850,18 +878,18 @@ namespace HitechTMS.Weighing
                 objtransNormalWeight.DeliveryNoteN = txtDeliveryNoteN.Text;
 
 
-                objtransNormalWeight.DateIn = (txtDateIn.Text != "" ? DateTime.ParseExact(txtDateIn.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null); //DateTime.ParseExact(txtDateIn.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                objtransNormalWeight.TimeIn = txtTimeIn.Text != "" ? TimeSpan.Parse(txtTimeIn.Text) : (TimeSpan?)null;
+                objtransNormalWeight.DateIn = (txtDateIn.Text != string.Empty ? DateTime.ParseExact(txtDateIn.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null); //DateTime.ParseExact(txtDateIn.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                objtransNormalWeight.TimeIn = txtTimeIn.Text != string.Empty ? TimeSpan.Parse(txtTimeIn.Text) : (TimeSpan?)null;
 
-                objtransNormalWeight.DateOut = (txtDateOut.Text != "" ? DateTime.ParseExact(txtDateOut.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null); //DateTime.ParseExact(txtDateOut.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                objtransNormalWeight.TimeOut = txtTimeOut.Text != "" ? TimeSpan.Parse(txtTimeOut.Text) : (TimeSpan?)null;
+                objtransNormalWeight.DateOut = (txtDateOut.Text != string.Empty ? DateTime.ParseExact(txtDateOut.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) : (DateTime?)null); //DateTime.ParseExact(txtDateOut.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                objtransNormalWeight.TimeOut = txtTimeOut.Text != string.Empty ? TimeSpan.Parse(txtTimeOut.Text) : (TimeSpan?)null;
 
-                objtransNormalWeight.TareWeight = _enumProductInOut == enumProductInOut.In ? txtGrossWeight.Text != "" ? Convert.ToDecimal(txtGrossWeight.Text) : (Decimal?)null : txtTareWeight.Text != "" ? Convert.ToDecimal(txtTareWeight.Text) : (Decimal?)null;
-                objtransNormalWeight.GrossWeight = _enumProductInOut == enumProductInOut.In ? txtTareWeight.Text != "" ? Convert.ToDecimal(txtTareWeight.Text) : (Decimal?)null : txtGrossWeight.Text != "" ? Convert.ToDecimal(txtGrossWeight.Text) : (Decimal?)null;
+                objtransNormalWeight.TareWeight = _enumProductInOut == enumProductInOut.In ? txtGrossWeight.Text != string.Empty ? Convert.ToDecimal(txtGrossWeight.Text) : (Decimal?)null : txtTareWeight.Text != string.Empty ? Convert.ToDecimal(txtTareWeight.Text) : (Decimal?)null;
+                objtransNormalWeight.GrossWeight = _enumProductInOut == enumProductInOut.In ? txtTareWeight.Text != string.Empty ? Convert.ToDecimal(txtTareWeight.Text) : (Decimal?)null : txtGrossWeight.Text != string.Empty ? Convert.ToDecimal(txtGrossWeight.Text) : (Decimal?)null;
 
-                objtransNormalWeight.NetWeight = txtNetWeight.Text != "" ? Convert.ToDecimal(txtNetWeight.Text) : (Decimal?)null;
+                objtransNormalWeight.NetWeight = txtNetWeight.Text != string.Empty ? Convert.ToDecimal(txtNetWeight.Text) : (Decimal?)null;
                 objtransNormalWeight.UpdatedDate = DateTime.ParseExact(DateTime.Now.Date.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                objtransNormalWeight.IsPending = (byte)(txtNetWeight.Text != "" ? (Convert.ToDecimal(txtNetWeight.Text) > 0 ? 1 : 0) : 0);
+                objtransNormalWeight.IsPending = (byte)(txtNetWeight.Text != string.Empty ? (Convert.ToDecimal(txtNetWeight.Text) > 0 ? 1 : 0) : 0);
                 objtransNormalWeight.ProdInOut = (byte)_enumProductInOut;
 
                 if (existsQuery.Count > 0)
@@ -874,7 +902,10 @@ namespace HitechTMS.Weighing
                         transNormalWeightID = _transNormalWeightID;
                         DisableAllExceptTicket(true);
                         //ResetCntrl();
-                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"),
+                            _dbGetResourceCaption.GetStringValue("INFORMATION"),
+                            MessageBoxButtons.OK, 
+                            MessageBoxIcon.Information);
                     }
 
                 }
@@ -894,14 +925,20 @@ namespace HitechTMS.Weighing
                         }
 
 
-                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), 
+                            _dbGetResourceCaption.GetStringValue("INFORMATION"),
+                            MessageBoxButtons.OK, 
+                            MessageBoxIcon.Information);
                     }
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
         #endregion
@@ -955,7 +992,7 @@ namespace HitechTMS.Weighing
             }
             else
             {
-                txtProductName.Text = "";
+                txtProductName.Text = string.Empty;
             }
         }
         private void cmbCustomerCode_SelectedIndexChanged(object sender, EventArgs e)
@@ -966,7 +1003,7 @@ namespace HitechTMS.Weighing
             }
             else
             {
-                txtCustomerName.Text = "";
+                txtCustomerName.Text = string.Empty;
             }
         }
         private void cmbTranspoterCode_SelectedIndexChanged(object sender, EventArgs e)
@@ -977,7 +1014,7 @@ namespace HitechTMS.Weighing
             }
             else
             {
-                txtTranspoterName.Text = "";
+                txtTranspoterName.Text = string.Empty;
             }
         }
 

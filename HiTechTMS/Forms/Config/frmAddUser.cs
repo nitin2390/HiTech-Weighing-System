@@ -116,7 +116,10 @@ namespace HitechTMS.Config
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
         private void btnSave_Click(object sender, EventArgs e)
@@ -134,7 +137,7 @@ namespace HitechTMS.Config
 
                     if (control.Name == "txtUserName")
                     {
-                        if (txtUserName.Text == "")
+                        if (txtUserName.Text == string.Empty)
                         {
                             DialogResult = DialogResult.None;
                             errProviderUserName.SetError(txtUserName, "User name required!");
@@ -148,7 +151,7 @@ namespace HitechTMS.Config
 
                     if (control.Name == "txtPassword")
                     {
-                        if (txtPassword.Text == "")
+                        if (txtPassword.Text == string.Empty)
                         {
                             DialogResult = DialogResult.None;
                             errProviderPassword.SetError(txtPassword, "Password required!");
@@ -174,7 +177,9 @@ namespace HitechTMS.Config
                 }
 
                     #endregion
-                    if (txtUserName.Text != "" && txtPassword.Text != "" && cmbRoleType.Text != "Select")
+                    if (txtUserName.Text != string.Empty 
+                            && txtPassword.Text != string.Empty 
+                                && cmbRoleType.Text != "Select")
                     {
 
                         var existUserRoleCode = (from UserRole in dbObj.UserRole
@@ -195,7 +200,10 @@ namespace HitechTMS.Config
                             {
                                 ResetCntrl();
                                 BindGrid();
-                                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"),
+                                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                                    MessageBoxButtons.OK, 
+                                    MessageBoxIcon.Information);
                             }
                         }
                         else
@@ -208,7 +216,10 @@ namespace HitechTMS.Config
                             if (dbObj.SaveChanges() > 0 )
                             {
                                 ResetCntrl();
-                                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), 
+                                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                                    MessageBoxButtons.OK, 
+                                    MessageBoxIcon.Information);
                             }
                         }
                     }            
@@ -226,8 +237,8 @@ namespace HitechTMS.Config
 
         private void ResetCntrl()
         {
-            txtUserName.Text = "";
-            txtPassword.Text = "";
+            txtUserName.Text = string.Empty;
+            txtPassword.Text = string.Empty;
             cmbRoleType.SelectedIndex = 0;
             _userRoleID = Guid.Empty;
             BindGrid();
@@ -241,8 +252,8 @@ namespace HitechTMS.Config
             }
             else
             {
-                txtUserName.Text = "";
-                txtPassword.Text = "";
+                txtUserName.Text = string.Empty;
+                txtPassword.Text = string.Empty;
                 cmbRoleType.SelectedIndex = 0;
             }
         }
@@ -250,7 +261,7 @@ namespace HitechTMS.Config
         #region "KeyDown"
         private void txtUserName_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtUserName.Text != "")
+            if (e.KeyCode == Keys.Enter && txtUserName.Text != string.Empty)
             {                
                 txtPassword.Focus();
             }
@@ -258,7 +269,7 @@ namespace HitechTMS.Config
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtPassword.Text != "")
+            if (e.KeyCode == Keys.Enter && txtPassword.Text != string.Empty)
             {
                 cmbRoleType.Focus();
             }
@@ -279,7 +290,10 @@ namespace HitechTMS.Config
             UserRole objUserRole = new UserRole();
             if (gridUser.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("DELTE_POPUP"), _dbGetResourceCaption.GetStringValue("CONFIRMATION"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("DELTE_POPUP"), 
+                    _dbGetResourceCaption.GetStringValue("CONFIRMATION"), 
+                    MessageBoxButtons.YesNo, 
+                    MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     foreach (DataGridViewRow row in gridUser.SelectedRows)
                     {
@@ -297,7 +311,10 @@ namespace HitechTMS.Config
             }
             else
             {
-                MessageBox.Show("Please select records rows to delete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select records rows to delete!", 
+                    "Information", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
             }
         }
 
@@ -322,7 +339,9 @@ namespace HitechTMS.Config
             }
             else
             {
-                MessageBox.Show("No data!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No data!", "Information", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
             }
         }
 
@@ -340,7 +359,7 @@ namespace HitechTMS.Config
         {
             if(!_saveClick)
             {
-                if (txtUserName.Text != "")
+                if (txtUserName.Text != string.Empty)
                 {
                     var userRoleQuery = dbObj.UserRoleTypes
                             .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Id, s.Name, s.Password, x.RoleName })
@@ -357,7 +376,7 @@ namespace HitechTMS.Config
                     }
                     else
                     {
-                        //txtPassword.Text = "";
+                        //txtPassword.Text = string.Empty;
                         //cmbRoleType.SelectedIndex =0;
                         _userRoleID = Guid.Empty;
                     }

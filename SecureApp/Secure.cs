@@ -41,7 +41,7 @@ namespace HitechTMSActivation
 
             string Br = _encryptionAndDecryption.Decrypt((string)regkey.GetValue("Password"));
             Guid a = new Guid() ;
-            if (Br != null && Br !="")
+            if (Br != null && Br != string.Empty)
             {
                 a = new Guid(Br);
 

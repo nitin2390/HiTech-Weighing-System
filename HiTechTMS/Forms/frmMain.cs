@@ -101,7 +101,10 @@ namespace HitechTMS
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -127,7 +130,10 @@ namespace HitechTMS
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
         // if we have a MenuStrip named ts.
@@ -169,8 +175,10 @@ namespace HitechTMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "SetToolStripItems",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message,
+                                _dbGetResourceCaption.GetStringValue("ERROR"),
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Error);
             }
         }
 
@@ -197,7 +205,10 @@ namespace HitechTMS
             frmEmailConfig objEmailConfig = new frmEmailConfig(_nextFormPrincipal);
             if (objEmailConfig.UserCanOpenForm == false)
             {
-                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DENIED"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DENIED"), 
+                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
             }
             else
             {
@@ -237,7 +248,10 @@ namespace HitechTMS
 
             if (objfrmTransportFile.UserCanOpenForm == false)
             {
-                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DENIED"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DENIED"), 
+                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
             }
             else
             {
@@ -403,11 +417,15 @@ namespace HitechTMS
 
         private void CloseFormValidation()
         {
-            if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("CLOSE_APPLICATION"), _dbGetResourceCaption.GetStringValue("CONFIRMATION"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("CLOSE_APPLICATION"), 
+                _dbGetResourceCaption.GetStringValue("CONFIRMATION"), 
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
                 InputBox.SetLanguage(InputBox.Language.English);
-                DialogResult res = InputBox.ShowDialog("Enter password:", _dbGetResourceCaption.GetStringValue("CONFIRMATION"),
+                DialogResult res = InputBox.ShowDialog(_dbGetResourceCaption.GetStringValue("ENTER_PASS"), 
+                                    _dbGetResourceCaption.GetStringValue("CONFIRMATION"),
                     InputBox.Icon.Nothing,
                     InputBox.Buttons.OkCancel,
                     InputBox.Type.TextBox,
@@ -424,7 +442,10 @@ namespace HitechTMS
                     }
                     else
                     {
-                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("USER_NAME_PASSWORD_MISTMATCH"));
+                        MessageBox.Show(_dbGetResourceCaption.GetStringValue("USER_NAME_PASSWORD_MISTMATCH"),
+                                            _dbGetResourceCaption.GetStringValue("ERROR"),
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
                     }
                 }
             }
@@ -453,7 +474,10 @@ namespace HitechTMS
             frmAddUser objfrmTransportFile = new frmAddUser(FrmName.AddEditUser, _nextFormPrincipal);
             if (objfrmTransportFile.UserCanOpenForm == false)
             {
-                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DENIED"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DENIED"), 
+                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
             }
             else
             {

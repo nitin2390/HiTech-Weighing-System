@@ -111,7 +111,10 @@ namespace HitechTMS.File
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
         
@@ -130,7 +133,7 @@ namespace HitechTMS.File
 
                     if (control.Name == "txtSupplierCode")
                     {
-                        if (txtSupplierCode.Text == "")
+                        if (txtSupplierCode.Text == string.Empty)
                         {
                             DialogResult = DialogResult.None;
                             errProviderCode.SetError(txtSupplierCode, "Code required!");
@@ -144,7 +147,7 @@ namespace HitechTMS.File
 
                     if (control.Name == "txtPhone")
                     {
-                        if(control.Text != "")
+                        if(control.Text != string.Empty)
                         {
                             if (!Regex.IsMatch(txtPhone.Text, @"^[789]\d{9}$", RegexOptions.IgnoreCase))
                             {
@@ -162,7 +165,7 @@ namespace HitechTMS.File
 
                     if (control.Name == "txtFax" )
                     {
-                        if (control.Text != "")
+                        if (control.Text != string.Empty)
                         {
                             if (!Regex.IsMatch(txtFax.Text, @"^[789]\d{9}$", RegexOptions.IgnoreCase))
                             {
@@ -179,7 +182,7 @@ namespace HitechTMS.File
 
                     if (control.Name == "txtEmail")
                     {
-                        if (control.Text != "")
+                        if (control.Text != string.Empty)
                         {
                             if (!Regex.IsMatch(txtEmail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
                             {
@@ -199,7 +202,7 @@ namespace HitechTMS.File
 
 
 
-                if (txtSupplierCode.Text != "")
+                if (txtSupplierCode.Text != string.Empty)
                 {
 
                     var existSupplierTransporterCode = (from SupplierTransporter in dbObj.mstSupplierTransporter
@@ -226,7 +229,10 @@ namespace HitechTMS.File
                         {
                             ResetCntrl();
                             BindGrid();
-                            MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), 
+                                _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Information);
                         }
                     }
                     else
@@ -236,7 +242,10 @@ namespace HitechTMS.File
                         if (dbObj.SaveChanges() == 1)
                         {
                             ResetCntrl();
-                            MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), 
+                                _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Information);
                         }
 
                     }
@@ -257,14 +266,14 @@ namespace HitechTMS.File
         private void ResetCntrl()
         {
             _saveClick = false;
-            txtSupplierCode.Text = "";
-            txtSupplierName.Text = "";
-            txtAddressLine1.Text = "";
-            txtAddressLine2.Text = "";
-            txtAddressLine3.Text = "";
-            txtPhone.Text = "";
-            txtFax.Text = "";
-            txtEmail.Text = "";
+            txtSupplierCode.Text = string.Empty;
+            txtSupplierName.Text = string.Empty;
+            txtAddressLine1.Text = string.Empty;
+            txtAddressLine2.Text = string.Empty;
+            txtAddressLine3.Text = string.Empty;
+            txtPhone.Text = string.Empty;
+            txtFax.Text = string.Empty;
+            txtEmail.Text = string.Empty;
             BindGrid();
             txtSupplierCode.Focus();
         }
@@ -279,7 +288,10 @@ namespace HitechTMS.File
             mstSupplierTransporter SupplierTransporter = new mstSupplierTransporter();
             if (gridSupplierTransporter.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("DELTE_POPUP"), _dbGetResourceCaption.GetStringValue("CONFIRMATION"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("DELTE_POPUP"), 
+                    _dbGetResourceCaption.GetStringValue("CONFIRMATION"), 
+                    MessageBoxButtons.YesNo, 
+                    MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     foreach (DataGridViewRow row in gridSupplierTransporter.SelectedRows)
                     {
@@ -294,7 +306,10 @@ namespace HitechTMS.File
             }
             else
             {
-                MessageBox.Show("Please select records rows to delete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("SELECT_ROW_TO_DELETE"),
+                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
             }
         }
 
@@ -310,7 +325,10 @@ namespace HitechTMS.File
             }
             else
             {
-                MessageBox.Show("No data!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("NO_DATA"), 
+                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
             }
 
         }
@@ -326,7 +344,7 @@ namespace HitechTMS.File
 
         private void searchGridData()
         {
-            if (txtSupplierCode.Text != "")
+            if (txtSupplierCode.Text != string.Empty)
             {
                 var SupplierTransporterQuery = from SupplierTransporter in dbObj.mstSupplierTransporter
                                                where SupplierTransporter.SupplierCode == txtSupplierCode.Text && SupplierTransporter.IsSuplier == (_frmType == FrmName.Supplier ? "2" : "3")
@@ -346,13 +364,13 @@ namespace HitechTMS.File
                 }
                 else
                 {
-                    //txtSupplierName.Text = "";
-                    //txtAddressLine1.Text = "";
-                    //txtAddressLine2.Text = "";
-                    //txtAddressLine3.Text = "";
-                    //txtPhone.Text = "";
-                    //txtFax.Text = "";
-                    //txtEmail.Text = "";
+                    //txtSupplierName.Text = string.Empty;
+                    //txtAddressLine1.Text = string.Empty;
+                    //txtAddressLine2.Text = string.Empty;
+                    //txtAddressLine3.Text = string.Empty;
+                    //txtPhone.Text = string.Empty;
+                    //txtFax.Text = string.Empty;
+                    //txtEmail.Text = string.Empty;
                     _supplierTransporterID = Guid.Empty;
                     BindGrid();
                 }
@@ -373,14 +391,14 @@ namespace HitechTMS.File
             else
             {
                 _supplierTransporterID = Guid.Empty;
-                txtSupplierCode.Text = "";
-                txtSupplierName.Text = "";
-                txtAddressLine1.Text = "";
-                txtAddressLine2.Text = "";
-                txtAddressLine3.Text = "";
-                txtPhone.Text = "";
-                txtFax.Text = "";
-                txtEmail.Text = "";
+                txtSupplierCode.Text = string.Empty;
+                txtSupplierName.Text = string.Empty;
+                txtAddressLine1.Text = string.Empty;
+                txtAddressLine2.Text = string.Empty;
+                txtAddressLine3.Text = string.Empty;
+                txtPhone.Text = string.Empty;
+                txtFax.Text = string.Empty;
+                txtEmail.Text = string.Empty;
             }
         }
 
@@ -437,7 +455,7 @@ namespace HitechTMS.File
 
         private void txtEmail_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != string.Empty)
             {
                 btnSave_Click((object)sender, (EventArgs)e);
                 //txtSupplierCode.Focus();
@@ -446,7 +464,7 @@ namespace HitechTMS.File
 
         private void txtSupplierCode_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != string.Empty)
             {
                 txtSupplierName.Focus();
             }
@@ -454,7 +472,7 @@ namespace HitechTMS.File
 
         private void txtSupplierName_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != string.Empty)
             {
                 txtAddressLine1.Focus();
             }
@@ -462,7 +480,7 @@ namespace HitechTMS.File
 
         private void txtAddressLine1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != string.Empty)
             {
                 txtAddressLine2.Focus();
             }
@@ -470,7 +488,7 @@ namespace HitechTMS.File
 
         private void txtAddressLine2_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != string.Empty)
             {
                 txtAddressLine3.Focus();
             }
@@ -478,7 +496,7 @@ namespace HitechTMS.File
 
         private void txtAddressLine3_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != string.Empty)
             {
                 txtPhone.Focus();
             }
@@ -486,7 +504,7 @@ namespace HitechTMS.File
 
         private void txtPhone_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != string.Empty)
             {
                 txtFax.Focus();
             }
@@ -494,7 +512,7 @@ namespace HitechTMS.File
 
         private void txtFax_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != "")
+            if (e.KeyCode == Keys.Enter && txtSupplierCode.Text != string.Empty)
             {
                 txtEmail.Focus();
             }

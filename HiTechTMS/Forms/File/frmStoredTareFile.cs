@@ -49,7 +49,10 @@ namespace HitechTMS.File
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -74,7 +77,10 @@ namespace HitechTMS.File
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -85,7 +91,7 @@ namespace HitechTMS.File
                 var listTransportCode = dbObj.mstSupplierTransporter
                     .Where(x => x.IsSuplier == ((int)FrmName.Transport).ToString())
                     .Select(x => x).ToList();
-                listTransportCode.Insert(0, new mstSupplierTransporter() { SupplierCode = "Select", SupplierName = "" });
+                listTransportCode.Insert(0, new mstSupplierTransporter() { SupplierCode = "Select", SupplierName = string.Empty });
                 cmbTransportCode.DataSource = listTransportCode;
                 cmbTransportCode.DisplayMember = "SupplierCode";
                 cmbTransportCode.ValueMember = "SupplierCode";
@@ -93,7 +99,10 @@ namespace HitechTMS.File
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -114,7 +123,7 @@ namespace HitechTMS.File
 
                         if (control.Name == "txtTruck")
                         {
-                            if (txtTruck.Text.Trim() == "")
+                            if (txtTruck.Text.Trim() == string.Empty)
                             {
                                 DialogResult = DialogResult.None;
                                 errTruck.SetError(txtTruck, "Truck required!");
@@ -128,7 +137,7 @@ namespace HitechTMS.File
 
                         if (control.Name == "txtTareWeight")
                         {
-                            if (txtTareWeight.Text == "")
+                            if (txtTareWeight.Text == string.Empty)
                             {
                                 DialogResult = DialogResult.None;
                                 errTareWeight.SetError(txtTareWeight, "Tare Weight required!");
@@ -155,7 +164,7 @@ namespace HitechTMS.File
 
                     #endregion
                     
-                    if (txtTruck.Text != "" && txtTareWeight.Text != "" && cmbTransportCode.SelectedIndex != 0)
+                    if (txtTruck.Text != string.Empty && txtTareWeight.Text != string.Empty && cmbTransportCode.SelectedIndex != 0)
                     {
 
 
@@ -178,7 +187,10 @@ namespace HitechTMS.File
                             {
                                 ResetCntrl();
                                 BindGrid();
-                                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_SAVE"), 
+                                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                                    MessageBoxButtons.OK, 
+                                    MessageBoxIcon.Information);
                             }
                         }
                         else
@@ -193,7 +205,10 @@ namespace HitechTMS.File
                             {
                                 ResetCntrl();
                                 BindGrid();
-                                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), _dbGetResourceCaption.GetStringValue("INFORMATION"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"), 
+                                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                                    MessageBoxButtons.OK, 
+                                    MessageBoxIcon.Information);
                             }
                         }
                     }
@@ -201,7 +216,10 @@ namespace HitechTMS.File
                 catch (Exception err)
                 {
 
-                    MessageBox.Show(err.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(err.Message, 
+                        _dbGetResourceCaption.GetStringValue("ERROR"), 
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Error);
                 }
 
             
@@ -236,7 +254,10 @@ namespace HitechTMS.File
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -251,7 +272,7 @@ namespace HitechTMS.File
                 {
                     if(control.Name != "txtMode")
                     {
-                        control.Text = "";
+                        control.Text = string.Empty;
                     }
                     
                 }
@@ -262,7 +283,10 @@ namespace HitechTMS.File
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, _dbGetResourceCaption.GetStringValue("ERROR"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, 
+                    _dbGetResourceCaption.GetStringValue("ERROR"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -277,15 +301,15 @@ namespace HitechTMS.File
         {
             if(!_editGrid)
             {
-                if (txtTareWeight.Text.Trim() != "")
+                if (txtTareWeight.Text.Trim() != string.Empty)
                 {
                     txtDateIn.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
                     txtTimeIn.Text = DateTime.Now.ToString("HH:mm:ss");
                 }
                 else
                 {
-                    txtDateIn.Text = "";
-                    txtTimeIn.Text = "";
+                    txtDateIn.Text = string.Empty;
+                    txtTimeIn.Text = string.Empty;
                 }
             }
             else
@@ -340,7 +364,10 @@ namespace HitechTMS.File
             mstStoredTareRecords StoredTareRecords = new mstStoredTareRecords();
             if (gridStoredTare.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("DELTE_POPUP"), _dbGetResourceCaption.GetStringValue("CONFIRMATION"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(_dbGetResourceCaption.GetStringValue("DELTE_POPUP"), 
+                                    _dbGetResourceCaption.GetStringValue("CONFIRMATION"), 
+                                    MessageBoxButtons.YesNo, 
+                                    MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     foreach (DataGridViewRow row in gridStoredTare.SelectedRows)
                     {
@@ -356,7 +383,10 @@ namespace HitechTMS.File
             }
             else
             {
-                MessageBox.Show("Please select records rows to delete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("SELECT_ROW_TO_DELETE"),
+                                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                                    MessageBoxButtons.OK, 
+                                    MessageBoxIcon.Information);
             }
         }
 
@@ -383,7 +413,10 @@ namespace HitechTMS.File
             }
             else
             {
-                MessageBox.Show("No data!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(_dbGetResourceCaption.GetStringValue("NO_DATA"), 
+                    _dbGetResourceCaption.GetStringValue("INFORMATION"), 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
             }
         }
 
@@ -402,7 +435,7 @@ namespace HitechTMS.File
 
         private void txtTruck_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtTruck.Text != "")
+            if (e.KeyCode == Keys.Enter && txtTruck.Text != string.Empty)
             {
                 txtTruckType.Focus();
             }
@@ -410,7 +443,7 @@ namespace HitechTMS.File
 
         private void txtTruckType_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtTruckType.Text != "")
+            if (e.KeyCode == Keys.Enter && txtTruckType.Text != string.Empty)
             {
                 cmbTransportCode.Focus();
             }
@@ -426,7 +459,7 @@ namespace HitechTMS.File
 
         private void txtTareWeight_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtTareWeight.Text != "")
+            if (e.KeyCode == Keys.Enter && txtTareWeight.Text != string.Empty)
             {
                 btnSave_Click(null, null);
             }
@@ -448,7 +481,7 @@ namespace HitechTMS.File
         {
 
             {
-                if (txtTruck.Text != "")
+                if (txtTruck.Text != string.Empty)
                 {
                     var storedTareRecordsQuery = from storedTareRecords in dbObj.mstStoredTareRecords
                                                    where storedTareRecords.Truck == txtTruck.Text
@@ -467,11 +500,11 @@ namespace HitechTMS.File
                     }
                     else
                     {
-                        //txtTruckType.Text = "";
+                        //txtTruckType.Text = string.Empty;
                         //cmbTransportCode.SelectedIndex = 0;
-                        //txtTareWeight.Text = "";
-                        //txtDateIn.Text = "";
-                        //txtTimeIn.Text = "";
+                        //txtTareWeight.Text = string.Empty;
+                        //txtDateIn.Text = string.Empty;
+                        //txtTimeIn.Text = string.Empty;
                         _StoredTareRecordsID = Guid.Empty;
                         BindGrid();
                     }

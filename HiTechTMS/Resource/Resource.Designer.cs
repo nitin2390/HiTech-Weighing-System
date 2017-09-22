@@ -79,6 +79,24 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can not save data please check your port settings!.
+        /// </summary>
+        internal static string CANNOT_SAVE_DATA_CHK_PORT_ST {
+            get {
+                return ResourceManager.GetString("CANNOT_SAVE_DATA_CHK_PORT_ST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check you Serial port settings!.
+        /// </summary>
+        internal static string CHCK_SERL_PRT_SET {
+            get {
+                return ResourceManager.GetString("CHCK_SERL_PRT_SET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to close application ?.
         /// </summary>
         internal static string CLOSE_APPLICATION {
@@ -178,6 +196,15 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter password:.
+        /// </summary>
+        internal static string ENTER_PASS {
+            get {
+                return ResourceManager.GetString("ENTER_PASS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error in email sending. Please check email configuration settings!.
         /// </summary>
         internal static string ERR_EMAIL_CHK_CONFIG {
@@ -192,6 +219,15 @@ namespace HitechTMS.Resource {
         internal static string ERROR {
             get {
                 return ResourceManager.GetString("ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error in settings!.
+        /// </summary>
+        internal static string ERROR_SETTINGS {
+            get {
+                return ResourceManager.GetString("ERROR_SETTINGS", resourceCulture);
             }
         }
         
@@ -232,6 +268,15 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Max Weight is not set in General Settings!.
+        /// </summary>
+        internal static string MAX_WT_NOT_SET {
+            get {
+                return ResourceManager.GetString("MAX_WT_NOT_SET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Miscellaneous.
         /// </summary>
         internal static string MISCELLANEOUS {
@@ -259,11 +304,29 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No data!.
+        /// </summary>
+        internal static string NO_DATA {
+            get {
+                return ResourceManager.GetString("NO_DATA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Normal Weighing.
         /// </summary>
         internal static string NORMAL_WEIGHING {
             get {
                 return ResourceManager.GetString("NORMAL_WEIGHING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port is not openned!.
+        /// </summary>
+        internal static string PORT_NOT_OPEN {
+            get {
+                return ResourceManager.GetString("PORT_NOT_OPEN", resourceCulture);
             }
         }
         
@@ -327,6 +390,15 @@ namespace HitechTMS.Resource {
         internal static string SAME_GROSS_AND_TARE_WEIGHT {
             get {
                 return ResourceManager.GetString("SAME_GROSS_AND_TARE_WEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select records rows to delete!.
+        /// </summary>
+        internal static string SELECT_ROW_TO_DELETE {
+            get {
+                return ResourceManager.GetString("SELECT_ROW_TO_DELETE", resourceCulture);
             }
         }
         
@@ -399,6 +471,15 @@ namespace HitechTMS.Resource {
         internal static string USER_NAME_PASSWORD_MISTMATCH {
             get {
                 return ResourceManager.GetString("USER_NAME_PASSWORD_MISTMATCH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Want to print the Ticket.
+        /// </summary>
+        internal static string WANT_PRINT_TICKET {
+            get {
+                return ResourceManager.GetString("WANT_PRINT_TICKET", resourceCulture);
             }
         }
     }

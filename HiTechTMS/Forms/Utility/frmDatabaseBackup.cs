@@ -22,8 +22,8 @@ namespace HitechTMS
         {
 
             SaveFileDialog SaveFD = new SaveFileDialog();
-            string FileName = "";
-            SaveFD.FileName = "";
+            string FileName = string.Empty;
+            SaveFD.FileName = string.Empty;
             SaveFD.Title = "Backup ";
             SaveFD.Filter = "Database files (*.mdf)|*.mdf";
             SaveFD.FilterIndex = 1;

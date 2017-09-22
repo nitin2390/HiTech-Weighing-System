@@ -123,6 +123,12 @@
   <data name="ALERT" xml:space="preserve">
     <value>Alert!</value>
   </data>
+  <data name="CANNOT_SAVE_DATA_CHK_PORT_ST" xml:space="preserve">
+    <value>Can not save data please check your port settings!</value>
+  </data>
+  <data name="CHCK_SERL_PRT_SET" xml:space="preserve">
+    <value>Check you Serial port settings!</value>
+  </data>
   <data name="CLOSE_APPLICATION" xml:space="preserve">
     <value>Are you sure you want to close application ?</value>
   </data>
@@ -156,8 +162,14 @@
   <data name="EMAIL_SENT" xml:space="preserve">
     <value>Email sent successfully!</value>
   </data>
+  <data name="ENTER_PASS" xml:space="preserve">
+    <value>Enter password:</value>
+  </data>
   <data name="ERROR" xml:space="preserve">
     <value>Error!</value>
+  </data>
+  <data name="ERROR_SETTINGS" xml:space="preserve">
+    <value>Error in settings!</value>
   </data>
   <data name="ERR_EMAIL_CHK_CONFIG" xml:space="preserve">
     <value>Error in email sending. Please check email configuration settings!</value>
@@ -174,6 +186,9 @@
   <data name="MAX_WEIGHT" xml:space="preserve">
     <value>Weight can not be more than max weight {0} !</value>
   </data>
+  <data name="MAX_WT_NOT_SET" xml:space="preserve">
+    <value>Max Weight is not set in General Settings!</value>
+  </data>
   <data name="MISCELLANEOUS" xml:space="preserve">
     <value>Miscellaneous</value>
   </data>
@@ -185,6 +200,12 @@
   </data>
   <data name="NORMAL_WEIGHING" xml:space="preserve">
     <value>Normal Weighing</value>
+  </data>
+  <data name="NO_DATA" xml:space="preserve">
+    <value>No data!</value>
+  </data>
+  <data name="PORT_NOT_OPEN" xml:space="preserve">
+    <value>Port is not openned!</value>
   </data>
   <data name="PRD_CD_CAN_NOT_BLANK" xml:space="preserve">
     <value>Product code can't be blank</value>
@@ -206,6 +227,9 @@
   </data>
   <data name="SAME_GROSS_AND_TARE_WEIGHT" xml:space="preserve">
     <value>Gross weight and Tare weight can not be same!</value>
+  </data>
+  <data name="SELECT_ROW_TO_DELETE" xml:space="preserve">
+    <value>Please select records rows to delete!</value>
   </data>
   <data name="SYS_ERR" xml:space="preserve">
     <value>System error!</value>
@@ -230,5 +254,8 @@
   </data>
   <data name="USER_NAME_PASSWORD_MISTMATCH" xml:space="preserve">
     <value>User name and Password doesn't match!</value>
+  </data>
+  <data name="WANT_PRINT_TICKET" xml:space="preserve">
+    <value>Want to print the Ticket</value>
   </data>
 </root>

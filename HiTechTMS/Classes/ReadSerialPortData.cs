@@ -20,7 +20,7 @@ namespace HitechTMS.Classes
                  */
                 HyperTerminalAdapter ht = new HyperTerminalAdapter();
                 ht.Connect();
-                str = ht.ReadSerialPort().Replace("\u0002", "").Replace("\u0003", "").Replace("\r", "");
+                str = ht.ReadSerialPort().Replace("\u0002", string.Empty).Replace("\u0003", string.Empty).Replace("\r", string.Empty);
 
                 //Random rnd = new Random();
                 //str = rnd.Next(1, 150).ToString();

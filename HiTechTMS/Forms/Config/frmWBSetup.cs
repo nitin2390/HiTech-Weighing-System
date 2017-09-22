@@ -103,7 +103,12 @@ namespace HitechTMS.MasterForms
             {
                 if (dbObj.SaveChanges() == 1)
                 {
-                    MessageBox.Show(dbGetResourceCaption.GetStringValue("DATA_SAVE"));
+                    MessageBox.Show(
+                        dbGetResourceCaption.GetStringValue("DATA_SAVE"),
+                        dbGetResourceCaption.GetStringValue("INFORMATION"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                        );
                 }
             }
             catch (DbEntityValidationException ex)
