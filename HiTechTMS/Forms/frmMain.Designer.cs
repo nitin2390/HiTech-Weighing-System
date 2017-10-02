@@ -35,6 +35,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +65,9 @@
             this.multiWeighingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.normalWeighingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.publicWeighingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.multiWeighingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perifeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peripheralDiagnosticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,6 +83,11 @@
             this.applicationClosePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.generalTitlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productFileFieldsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierFileFieldsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transporterFileFieldsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weighingFormFieldsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mandatoryOptionalFieldsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genealSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.networkConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,12 +103,12 @@
             this.lblCopyright = new System.Windows.Forms.Label();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.tmrDateAndTime = new System.Windows.Forms.Timer(this.components);
-            this.chartNormalWeight = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartPublicWeight = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartNormalPendingWeight = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartNormalCompleteWeight = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1.SuspendLayout();
             this.pnlBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartNormalWeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartPublicWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNormalPendingWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNormalCompleteWeight)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -187,6 +196,7 @@
             this.transactionPendingFileToolStripMenuItem.Name = "transactionPendingFileToolStripMenuItem";
             this.transactionPendingFileToolStripMenuItem.Size = new System.Drawing.Size(331, 32);
             this.transactionPendingFileToolStripMenuItem.Text = "&5 Transaction / Pending File";
+            this.transactionPendingFileToolStripMenuItem.Click += new System.EventHandler(this.transactionPendingFileToolStripMenuItem_Click);
             // 
             // transactionFileToolStripMenuItem
             // 
@@ -194,12 +204,14 @@
             this.transactionFileToolStripMenuItem.Name = "transactionFileToolStripMenuItem";
             this.transactionFileToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
             this.transactionFileToolStripMenuItem.Text = "&1 Transaction File";
+            this.transactionFileToolStripMenuItem.Visible = false;
             // 
             // pendingFileToolStripMenuItem
             // 
             this.pendingFileToolStripMenuItem.Name = "pendingFileToolStripMenuItem";
             this.pendingFileToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
             this.pendingFileToolStripMenuItem.Text = "&2 Pending File";
+            this.pendingFileToolStripMenuItem.Visible = false;
             this.pendingFileToolStripMenuItem.Click += new System.EventHandler(this.pendingFileToolStripMenuItem_Click);
             // 
             // deletePendingToolStripMenuItem
@@ -207,12 +219,14 @@
             this.deletePendingToolStripMenuItem.Name = "deletePendingToolStripMenuItem";
             this.deletePendingToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
             this.deletePendingToolStripMenuItem.Text = "&3 Delete Pending";
+            this.deletePendingToolStripMenuItem.Visible = false;
             // 
             // deleteTransactionToolStripMenuItem
             // 
             this.deleteTransactionToolStripMenuItem.Name = "deleteTransactionToolStripMenuItem";
             this.deleteTransactionToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
             this.deleteTransactionToolStripMenuItem.Text = "&4 Delete Transaction";
+            this.deleteTransactionToolStripMenuItem.Visible = false;
             // 
             // toolStripMenuItem1
             // 
@@ -239,30 +253,35 @@
             this.supplierFileToolStripMenuItem1.Name = "supplierFileToolStripMenuItem1";
             this.supplierFileToolStripMenuItem1.Size = new System.Drawing.Size(242, 32);
             this.supplierFileToolStripMenuItem1.Text = "&2 Supplier File";
+            this.supplierFileToolStripMenuItem1.Click += new System.EventHandler(this.supplierFileToolStripMenuItem1_Click);
             // 
             // transporterFileToolStripMenuItem1
             // 
             this.transporterFileToolStripMenuItem1.Name = "transporterFileToolStripMenuItem1";
             this.transporterFileToolStripMenuItem1.Size = new System.Drawing.Size(242, 32);
             this.transporterFileToolStripMenuItem1.Text = "&3 Transporter File";
+            this.transporterFileToolStripMenuItem1.Click += new System.EventHandler(this.transporterFileToolStripMenuItem1_Click);
             // 
             // storedTareFileToolStripMenuItem
             // 
             this.storedTareFileToolStripMenuItem.Name = "storedTareFileToolStripMenuItem";
             this.storedTareFileToolStripMenuItem.Size = new System.Drawing.Size(242, 32);
             this.storedTareFileToolStripMenuItem.Text = "&4 Stored Tare File";
+            this.storedTareFileToolStripMenuItem.Click += new System.EventHandler(this.storedTareFileToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(242, 32);
             this.toolStripMenuItem3.Text = "&5 Pending File";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // transactionFileToolStripMenuItem1
             // 
             this.transactionFileToolStripMenuItem1.Name = "transactionFileToolStripMenuItem1";
             this.transactionFileToolStripMenuItem1.Size = new System.Drawing.Size(242, 32);
             this.transactionFileToolStripMenuItem1.Text = "&6 Transaction File";
+            this.transactionFileToolStripMenuItem1.Click += new System.EventHandler(this.transactionFileToolStripMenuItem1_Click);
             // 
             // switchUserToolStripMenuItem
             // 
@@ -327,10 +346,36 @@
             // 
             // reportsToolStripMenuItem
             // 
-            this.reportsToolStripMenuItem.Enabled = false;
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.normalWeighingToolStripMenuItem,
+            this.publicWeighingToolStripMenuItem,
+            this.multiWeighingToolStripMenuItem1});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(92, 32);
             this.reportsToolStripMenuItem.Text = "&Reports";
+            // 
+            // normalWeighingToolStripMenuItem
+            // 
+            this.normalWeighingToolStripMenuItem.Name = "normalWeighingToolStripMenuItem";
+            this.normalWeighingToolStripMenuItem.Size = new System.Drawing.Size(262, 32);
+            this.normalWeighingToolStripMenuItem.Text = "&1 Normal Weighing";
+            this.normalWeighingToolStripMenuItem.Click += new System.EventHandler(this.normalWeighingToolStripMenuItem_Click);
+            // 
+            // publicWeighingToolStripMenuItem
+            // 
+            this.publicWeighingToolStripMenuItem.Enabled = false;
+            this.publicWeighingToolStripMenuItem.Name = "publicWeighingToolStripMenuItem";
+            this.publicWeighingToolStripMenuItem.Size = new System.Drawing.Size(262, 32);
+            this.publicWeighingToolStripMenuItem.Text = "&2 Public Weighing";
+            this.publicWeighingToolStripMenuItem.Click += new System.EventHandler(this.publicWeighingToolStripMenuItem_Click);
+            // 
+            // multiWeighingToolStripMenuItem1
+            // 
+            this.multiWeighingToolStripMenuItem1.Enabled = false;
+            this.multiWeighingToolStripMenuItem1.Name = "multiWeighingToolStripMenuItem1";
+            this.multiWeighingToolStripMenuItem1.Size = new System.Drawing.Size(262, 32);
+            this.multiWeighingToolStripMenuItem1.Text = "&3 Multi Weighing";
+            this.multiWeighingToolStripMenuItem1.Click += new System.EventHandler(this.multiWeighingToolStripMenuItem1_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -443,10 +488,50 @@
             // 
             // generalTitlesToolStripMenuItem
             // 
-            this.generalTitlesToolStripMenuItem.Enabled = false;
+            this.generalTitlesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productFileFieldsToolStripMenuItem,
+            this.supplierFileFieldsToolStripMenuItem,
+            this.transporterFileFieldsToolStripMenuItem,
+            this.weighingFormFieldsToolStripMenuItem,
+            this.mandatoryOptionalFieldsToolStripMenuItem});
             this.generalTitlesToolStripMenuItem.Name = "generalTitlesToolStripMenuItem";
             this.generalTitlesToolStripMenuItem.Size = new System.Drawing.Size(307, 32);
             this.generalTitlesToolStripMenuItem.Text = "&4 General Titles";
+            // 
+            // productFileFieldsToolStripMenuItem
+            // 
+            this.productFileFieldsToolStripMenuItem.Name = "productFileFieldsToolStripMenuItem";
+            this.productFileFieldsToolStripMenuItem.Size = new System.Drawing.Size(343, 32);
+            this.productFileFieldsToolStripMenuItem.Text = "&1 Product File Fields";
+            this.productFileFieldsToolStripMenuItem.Click += new System.EventHandler(this.productFileFieldsToolStripMenuItem_Click);
+            // 
+            // supplierFileFieldsToolStripMenuItem
+            // 
+            this.supplierFileFieldsToolStripMenuItem.Name = "supplierFileFieldsToolStripMenuItem";
+            this.supplierFileFieldsToolStripMenuItem.Size = new System.Drawing.Size(343, 32);
+            this.supplierFileFieldsToolStripMenuItem.Text = "&2 Supplier File Fields";
+            this.supplierFileFieldsToolStripMenuItem.Click += new System.EventHandler(this.supplierFileFieldsToolStripMenuItem_Click);
+            // 
+            // transporterFileFieldsToolStripMenuItem
+            // 
+            this.transporterFileFieldsToolStripMenuItem.Name = "transporterFileFieldsToolStripMenuItem";
+            this.transporterFileFieldsToolStripMenuItem.Size = new System.Drawing.Size(343, 32);
+            this.transporterFileFieldsToolStripMenuItem.Text = "&3 Transporter File Fields";
+            this.transporterFileFieldsToolStripMenuItem.Click += new System.EventHandler(this.transporterFileFieldsToolStripMenuItem_Click);
+            // 
+            // weighingFormFieldsToolStripMenuItem
+            // 
+            this.weighingFormFieldsToolStripMenuItem.Name = "weighingFormFieldsToolStripMenuItem";
+            this.weighingFormFieldsToolStripMenuItem.Size = new System.Drawing.Size(343, 32);
+            this.weighingFormFieldsToolStripMenuItem.Text = "&4 Weighing Form Fields";
+            this.weighingFormFieldsToolStripMenuItem.Click += new System.EventHandler(this.weighingFormFieldsToolStripMenuItem_Click);
+            // 
+            // mandatoryOptionalFieldsToolStripMenuItem
+            // 
+            this.mandatoryOptionalFieldsToolStripMenuItem.Enabled = false;
+            this.mandatoryOptionalFieldsToolStripMenuItem.Name = "mandatoryOptionalFieldsToolStripMenuItem";
+            this.mandatoryOptionalFieldsToolStripMenuItem.Size = new System.Drawing.Size(343, 32);
+            this.mandatoryOptionalFieldsToolStripMenuItem.Text = "&5 Mandatory/Optional Fields";
             // 
             // genealSettingsToolStripMenuItem
             // 
@@ -506,7 +591,6 @@
             // 
             // toolStripMenuItem5
             // 
-            this.toolStripMenuItem5.Enabled = false;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(307, 32);
             this.toolStripMenuItem5.Text = "&10 Serial Port Setting";
@@ -514,7 +598,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(36, 523);
+            this.button1.Location = new System.Drawing.Point(36, 575);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 24;
@@ -570,51 +654,53 @@
             // 
             this.tmrDateAndTime.Tick += new System.EventHandler(this.tmrDateAndTime_Tick);
             // 
-            // chartNormalWeight
+            // chartNormalPendingWeight
             // 
-            this.chartNormalWeight.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            this.chartNormalWeight.BackSecondaryColor = System.Drawing.Color.White;
-            this.chartNormalWeight.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            this.chartNormalPendingWeight.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chartNormalPendingWeight.BackSecondaryColor = System.Drawing.Color.White;
+            this.chartNormalPendingWeight.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
             chartArea1.Name = "ChartArea1";
-            this.chartNormalWeight.ChartAreas.Add(chartArea1);
+            this.chartNormalPendingWeight.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chartNormalWeight.Legends.Add(legend1);
-            this.chartNormalWeight.Location = new System.Drawing.Point(36, 54);
-            this.chartNormalWeight.Name = "chartNormalWeight";
+            this.chartNormalPendingWeight.Legends.Add(legend1);
+            this.chartNormalPendingWeight.Location = new System.Drawing.Point(36, 54);
+            this.chartNormalPendingWeight.Name = "chartNormalPendingWeight";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chartNormalWeight.Series.Add(series1);
-            this.chartNormalWeight.Size = new System.Drawing.Size(576, 438);
-            this.chartNormalWeight.TabIndex = 27;
+            this.chartNormalPendingWeight.Series.Add(series1);
+            this.chartNormalPendingWeight.Size = new System.Drawing.Size(390, 329);
+            this.chartNormalPendingWeight.TabIndex = 27;
             // 
-            // chartPublicWeight
+            // chartNormalCompleteWeight
             // 
-            this.chartPublicWeight.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            this.chartPublicWeight.BackSecondaryColor = System.Drawing.Color.White;
-            this.chartPublicWeight.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            this.chartNormalCompleteWeight.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chartNormalCompleteWeight.BackSecondaryColor = System.Drawing.Color.White;
+            this.chartNormalCompleteWeight.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
             chartArea2.Name = "ChartArea1";
-            this.chartPublicWeight.ChartAreas.Add(chartArea2);
+            this.chartNormalCompleteWeight.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            this.chartPublicWeight.Legends.Add(legend2);
-            this.chartPublicWeight.Location = new System.Drawing.Point(673, 54);
-            this.chartPublicWeight.Name = "chartPublicWeight";
+            this.chartNormalCompleteWeight.Legends.Add(legend2);
+            this.chartNormalCompleteWeight.Location = new System.Drawing.Point(446, 54);
+            this.chartNormalCompleteWeight.Name = "chartNormalCompleteWeight";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
-            this.chartPublicWeight.Series.Add(series2);
-            this.chartPublicWeight.Size = new System.Drawing.Size(576, 438);
-            this.chartPublicWeight.TabIndex = 28;
+            this.chartNormalCompleteWeight.Series.Add(series2);
+            this.chartNormalCompleteWeight.Size = new System.Drawing.Size(390, 329);
+            this.chartNormalCompleteWeight.TabIndex = 28;
+            title1.Name = "Normal Weight";
+            this.chartNormalCompleteWeight.Titles.Add(title1);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 710);
-            this.Controls.Add(this.chartPublicWeight);
-            this.Controls.Add(this.chartNormalWeight);
+            this.Controls.Add(this.chartNormalCompleteWeight);
+            this.Controls.Add(this.chartNormalPendingWeight);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
@@ -633,8 +719,8 @@
             this.menuStrip1.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartNormalWeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartPublicWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNormalPendingWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNormalCompleteWeight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -699,8 +785,16 @@
         private System.Windows.Forms.Label lblDateAndTime;
         private System.Windows.Forms.Timer tmrDateAndTime;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartNormalWeight;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartPublicWeight;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartNormalPendingWeight;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartNormalCompleteWeight;
+        private System.Windows.Forms.ToolStripMenuItem productFileFieldsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supplierFileFieldsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transporterFileFieldsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weighingFormFieldsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mandatoryOptionalFieldsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem normalWeighingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem publicWeighingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem multiWeighingToolStripMenuItem1;
     }
 }
 

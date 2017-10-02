@@ -53,8 +53,21 @@ namespace HitechTMS
             EmailConfig = 31,
             HyperTerminalConfiguration = 32,
             GenralSetting = 33,
-            ShiftAllocation = 34,
-            WeighBridgeSetup=35
+
+            [Display(Name = "Change Product Fields")]
+            ProductField = 34,
+
+            [Display(Name = "Change Supplier Fields")]
+            SupplierField = 35,
+
+            [Display(Name = "Change Transpoter Fields")]
+            TranspoterField = 36,
+
+            [Display(Name = "Change Weighing Fields")]
+            WeighingField = 37,
+
+            ShiftAllocation = 38,
+            WeighBridgeSetup=39
         }
 
         public enum enumProduct

@@ -72,11 +72,9 @@
     </Compile>
     <Compile Include="Entity Model\EmailConfig.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\EmailMaster.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\HiTechTMSModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -98,7 +96,6 @@
     </Compile>
     <Compile Include="Entity Model\mstFormName.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\mstGeneralSettings.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
@@ -108,7 +105,6 @@
     </Compile>
     <Compile Include="Entity Model\mstPermission.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\mstShiftAllocationInfo.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
@@ -118,11 +114,9 @@
     </Compile>
     <Compile Include="Entity Model\mstStoredTareRecords.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\mstSupplierTransporter.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\mstWeighBridgeSetup.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
@@ -135,7 +129,6 @@
     </Compile>
     <Compile Include="Entity Model\Product.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\rptNormalTicket.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
@@ -145,19 +138,15 @@
     </Compile>
     <Compile Include="Entity Model\transNormalWeight.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\transPublicWeight.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\UserRole.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\UserRoleType.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\viewMultiPendingFile.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
@@ -167,7 +156,6 @@
     </Compile>
     <Compile Include="Entity Model\viewNormalPendingFile.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entity Model\V_Captions.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
@@ -175,7 +163,13 @@
     <Compile Include="Entity Model\V_mstGeneralSettings.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Model\V_NormalCompleteWeightDashBoard.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\V_NormalDashBoard.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Model\V_NormalPendingWeightDashBoard.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Model\V_PublicDashBoard.cs">

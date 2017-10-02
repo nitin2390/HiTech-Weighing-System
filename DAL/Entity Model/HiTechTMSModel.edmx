@@ -7,13 +7,14 @@
     <Schema Namespace="HitechTruckMngtSystmDataBaseFileModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Captions">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Identity" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="DefaultCaption" Type="varchar" MaxLength="500" Nullable="false" />
-          <Property Name="ModifiedCaptioin" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ModifiedCaptioin" Type="varchar" MaxLength="500" />
           <Property Name="FormType" Type="int" Nullable="false" />
           <Property Name="IsCaptionModified" Type="bit" Nullable="false" />
+          <Property Name="Identity" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="EmailConfigs">
           <Key>
@@ -349,8 +350,28 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_NormalCompleteWeightDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_NormalCompleteWeightDashBoard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DateIn" Type="varchar" MaxLength="30" />
+          <Property Name="TruckCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_NormalDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="V_NormalDashBoard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DateIn" Type="varchar" MaxLength="30" />
+          <Property Name="TruckCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_NormalPendingWeightDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_NormalPendingWeightDashBoard">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -603,12 +624,26 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     [V_mstGeneralSettings].[UpdatedDate] AS [UpdatedDate]
     FROM [dbo].[V_mstGeneralSettings] AS [V_mstGeneralSettings]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="V_NormalCompleteWeightDashBoard" EntityType="Self.V_NormalCompleteWeightDashBoard" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_NormalCompleteWeightDashBoard].[ID] AS [ID], 
+    [V_NormalCompleteWeightDashBoard].[DateIn] AS [DateIn], 
+    [V_NormalCompleteWeightDashBoard].[TruckCount] AS [TruckCount]
+    FROM [dbo].[V_NormalCompleteWeightDashBoard] AS [V_NormalCompleteWeightDashBoard]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="V_NormalDashBoard" EntityType="Self.V_NormalDashBoard" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [V_NormalDashBoard].[ID] AS [ID], 
     [V_NormalDashBoard].[DateIn] AS [DateIn], 
     [V_NormalDashBoard].[TruckCount] AS [TruckCount]
     FROM [dbo].[V_NormalDashBoard] AS [V_NormalDashBoard]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_NormalPendingWeightDashBoard" EntityType="Self.V_NormalPendingWeightDashBoard" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_NormalPendingWeightDashBoard].[ID] AS [ID], 
+    [V_NormalPendingWeightDashBoard].[DateIn] AS [DateIn], 
+    [V_NormalPendingWeightDashBoard].[TruckCount] AS [TruckCount]
+    FROM [dbo].[V_NormalPendingWeightDashBoard] AS [V_NormalPendingWeightDashBoard]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="V_PublicDashBoard" EntityType="Self.V_PublicDashBoard" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -742,12 +777,14 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="mstShiftAllocationInfo" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstShiftAllocationInfo" />
           <EntitySet Name="mstHyperTerminalData" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyperTerminalData" />
           <EntitySet Name="mstWeighBridgeSetup" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstWeighBridgeSetup" />
-          <EntitySet Name="Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.Captions" />
-          <EntitySet Name="V_Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_Captions" />
           <EntitySet Name="rptNormalTicket" EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" />
-          <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
           <EntitySet Name="V_NormalDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalDashBoard" />
           <EntitySet Name="V_PublicDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_PublicDashBoard" />
+          <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
+          <EntitySet Name="Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.Captions" />
+          <EntitySet Name="V_Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_Captions" />
+          <EntitySet Name="V_NormalCompleteWeightDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalCompleteWeightDashBoard" />
+          <EntitySet Name="V_NormalPendingWeightDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalPendingWeightDashBoard" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -1125,30 +1162,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="Unit" Type="Int32" Nullable="false" />
           <Property Name="WeighCapacity" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="Captions">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="DefaultCaption" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="ModifiedCaptioin" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="FormType" Type="Int32" Nullable="false" />
-          <Property Name="IsCaptionModified" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="V_Captions">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="DefaultCaption" />
-            <PropertyRef Name="ModifiedCaptioin" />
-            <PropertyRef Name="FormType" />
-            <PropertyRef Name="IsCaptionModified" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="DefaultCaption" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="ModifiedCaptioin" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="FormType" Type="Int32" Nullable="false" />
-          <Property Name="IsCaptionModified" Type="Boolean" Nullable="false" />
-        </EntityType>
         <EntityType Name="rptNormalTicket">
           <Key>
             <PropertyRef Name="ID" />
@@ -1197,6 +1210,22 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="GrossWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ProdInOut" Type="Byte" Nullable="false" />
         </EntityType>
+        <EntityType Name="V_NormalDashBoard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DateIn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TruckCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="V_PublicDashBoard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DateIn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TruckCount" Type="Int32" />
+        </EntityType>
         <EntityType Name="viewNormalPendingFile">
           <Key>
             <PropertyRef Name="ID" />
@@ -1243,7 +1272,32 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="NetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="ProdInOut" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="V_NormalDashBoard">
+        <EntityType Name="Captions">
+          <Key>
+            <PropertyRef Name="Identity" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="DefaultCaption" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedCaptioin" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FormType" Type="Int32" Nullable="false" />
+          <Property Name="IsCaptionModified" Type="Boolean" Nullable="false" />
+          <Property Name="Identity" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_Captions">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="DefaultCaption" />
+            <PropertyRef Name="ModifiedCaptioin" />
+            <PropertyRef Name="FormType" />
+            <PropertyRef Name="IsCaptionModified" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DefaultCaption" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedCaptioin" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FormType" Type="Int32" Nullable="false" />
+          <Property Name="IsCaptionModified" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_NormalCompleteWeightDashBoard">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -1251,7 +1305,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="DateIn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="TruckCount" Type="Int32" />
         </EntityType>
-        <EntityType Name="V_PublicDashBoard">
+        <EntityType Name="V_NormalPendingWeightDashBoard">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -1601,28 +1655,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Captions">
-            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.Captions">
-              <MappingFragment StoreEntitySet="Captions">
-                <ScalarProperty Name="IsCaptionModified" ColumnName="IsCaptionModified" />
-                <ScalarProperty Name="FormType" ColumnName="FormType" />
-                <ScalarProperty Name="ModifiedCaptioin" ColumnName="ModifiedCaptioin" />
-                <ScalarProperty Name="DefaultCaption" ColumnName="DefaultCaption" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="V_Captions">
-            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_Captions">
-              <MappingFragment StoreEntitySet="V_Captions">
-                <ScalarProperty Name="IsCaptionModified" ColumnName="IsCaptionModified" />
-                <ScalarProperty Name="FormType" ColumnName="FormType" />
-                <ScalarProperty Name="ModifiedCaptioin" ColumnName="ModifiedCaptioin" />
-                <ScalarProperty Name="DefaultCaption" ColumnName="DefaultCaption" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="rptNormalTicket">
             <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket">
               <MappingFragment StoreEntitySet="rptNormalTicket">
@@ -1647,6 +1679,24 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
                 <ScalarProperty Name="Truck" ColumnName="Truck" />
                 <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_NormalDashBoard">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_NormalDashBoard">
+              <MappingFragment StoreEntitySet="V_NormalDashBoard">
+                <ScalarProperty Name="TruckCount" ColumnName="TruckCount" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_PublicDashBoard">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_PublicDashBoard">
+              <MappingFragment StoreEntitySet="V_PublicDashBoard">
+                <ScalarProperty Name="TruckCount" ColumnName="TruckCount" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1679,18 +1729,41 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="V_NormalDashBoard">
-            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_NormalDashBoard">
-              <MappingFragment StoreEntitySet="V_NormalDashBoard">
+          <EntitySetMapping Name="Captions">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.Captions">
+              <MappingFragment StoreEntitySet="Captions">
+                <ScalarProperty Name="Identity" ColumnName="Identity" />
+                <ScalarProperty Name="IsCaptionModified" ColumnName="IsCaptionModified" />
+                <ScalarProperty Name="FormType" ColumnName="FormType" />
+                <ScalarProperty Name="ModifiedCaptioin" ColumnName="ModifiedCaptioin" />
+                <ScalarProperty Name="DefaultCaption" ColumnName="DefaultCaption" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Captions">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_Captions">
+              <MappingFragment StoreEntitySet="V_Captions">
+                <ScalarProperty Name="IsCaptionModified" ColumnName="IsCaptionModified" />
+                <ScalarProperty Name="FormType" ColumnName="FormType" />
+                <ScalarProperty Name="ModifiedCaptioin" ColumnName="ModifiedCaptioin" />
+                <ScalarProperty Name="DefaultCaption" ColumnName="DefaultCaption" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_NormalCompleteWeightDashBoard">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_NormalCompleteWeightDashBoard">
+              <MappingFragment StoreEntitySet="V_NormalCompleteWeightDashBoard">
                 <ScalarProperty Name="TruckCount" ColumnName="TruckCount" />
                 <ScalarProperty Name="DateIn" ColumnName="DateIn" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="V_PublicDashBoard">
-            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_PublicDashBoard">
-              <MappingFragment StoreEntitySet="V_PublicDashBoard">
+          <EntitySetMapping Name="V_NormalPendingWeightDashBoard">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_NormalPendingWeightDashBoard">
+              <MappingFragment StoreEntitySet="V_NormalPendingWeightDashBoard">
                 <ScalarProperty Name="TruckCount" ColumnName="TruckCount" />
                 <ScalarProperty Name="DateIn" ColumnName="DateIn" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

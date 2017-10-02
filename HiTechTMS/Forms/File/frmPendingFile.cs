@@ -3,6 +3,7 @@ using HitechTMS.Classes;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Security.Principal;
@@ -11,14 +12,15 @@ using static HitechTMS.HitechEnums;
 
 namespace HitechTMS.File
 {
-    public partial class frmPendingFile : HitechTMSSecurity.SecureBaseForm
+    
+    public partial class frmTransactionForm : HitechTMSSecurity.SecureBaseForm
     {
         #region "Public and Private Property"
         private GetResourceCaption _dbGetResourceCaption;
         public int _chkCompleteFile { get; set; }
         private HitechTruckMngtSystmDataBaseFileEntities _dbObj { get; }
         public FrmName _frmName { get; set; }
-        public frmPendingFile(FrmName FrmName,IPrincipal userPrincipal) : base(new string[] { AppRole.Admin.ToString(), AppRole.SuperAdmin.ToString(), AppRole.Supervisor.ToString(), AppRole.ApplicationUser.ToString() }, userPrincipal)
+        public frmTransactionForm(FrmName FrmName,IPrincipal userPrincipal) : base(new string[] { AppRole.Admin.ToString(), AppRole.SuperAdmin.ToString(), AppRole.Supervisor.ToString(), AppRole.ApplicationUser.ToString() }, userPrincipal)
         {
             InitializeComponent();
             MaximumSize = MinimumSize = Size;
@@ -26,6 +28,7 @@ namespace HitechTMS.File
             _frmName = FrmName;
             _dbGetResourceCaption = new GetResourceCaption();
             _dbObj = new HitechTruckMngtSystmDataBaseFileEntities();
+            rdbPendingFile.Checked = true;
             LoadCaption();
             LoadGridData();
             _chkCompleteFile = 0;
@@ -79,9 +82,13 @@ namespace HitechTMS.File
                                                 x.Mode,
                                                 x.GrossWeight,
                                                 x.TareWeight,
-                                                x.ProdInOut
+                                                x.ProdInOut,
+                                                x.DateIn,
+                                                x.DateOut
+
                                             })
-                                            .OrderBy(x=> x.ProdInOut).ThenBy(x=>x.Truck)
+                                            .Where(x=> x.DateIn >= dtPicketFromDate.Value.Date && x.DateIn <= dtPicketToDate.Value.Date)
+                                            .OrderBy(x=> x.DateIn).ThenBy(x=>x.Truck)
                                             .ToList();
 
                     lblRecordsCount.Text = QueryNormalWeight.Count().ToString();
@@ -102,8 +109,7 @@ namespace HitechTMS.File
                     ColPrintTicket.TrueValue = true;
                     ColPrintTicket.FalseValue = false;
                     ColPrintTicket.Width = 100;
-                    //ColPrintTicket.Text = FormNormalPendingCaptions.PrintTicket;
-                    //ColPrintTicket.UseColumnTextForButtonValue = true;
+                    ColPrintTicket.ReadOnly = false;
                     gridPendingFile.Columns.Add(ColPrintTicket);
                     
 
@@ -120,6 +126,7 @@ namespace HitechTMS.File
                     ColTruck.HeaderText = FormNormalPendingCaptions.Truck;
                     ColTruck.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                     ColTruck.Width = colWidth;
+                    ColTruck.ReadOnly = true;
                     gridPendingFile.Columns.Add(ColTruck);
 
                     DataGridViewColumn colProductName = new DataGridViewTextBoxColumn();
@@ -127,6 +134,7 @@ namespace HitechTMS.File
                     colProductName.HeaderText = FormNormalPendingCaptions.ProductName.ToString();
                     colProductName.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                     colProductName.Width = colWidth;
+                    colProductName.ReadOnly = true;
                     gridPendingFile.Columns.Add(colProductName);
 
                     DataGridViewColumn colSupplierName = new DataGridViewTextBoxColumn();
@@ -134,6 +142,7 @@ namespace HitechTMS.File
                     colSupplierName.DataPropertyName = "SupplierName";
                     colSupplierName.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                     colSupplierName.Width = colWidth;
+                    colSupplierName.ReadOnly = true;
                     gridPendingFile.Columns.Add(colSupplierName);
 
                     DataGridViewColumn colTransporterName = new DataGridViewTextBoxColumn();
@@ -141,13 +150,31 @@ namespace HitechTMS.File
                     colTransporterName.DataPropertyName = "TransporterName";
                     colTransporterName.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                     colTransporterName.Width = colWidth;
+                    colTransporterName.ReadOnly = true;
                     gridPendingFile.Columns.Add(colTransporterName);
+
+                    DataGridViewColumn colDateIn = new DataGridViewTextBoxColumn();
+                    colDateIn.HeaderText = FormNormalPendingCaptions.DateIn;
+                    colDateIn.DataPropertyName = "DateIn";
+                    colDateIn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    colDateIn.Width = colWidth;
+                    colDateIn.ReadOnly = true;
+                    gridPendingFile.Columns.Add(colDateIn);
+
+                    DataGridViewColumn colDateOut = new DataGridViewTextBoxColumn();
+                    colDateOut.HeaderText = FormNormalPendingCaptions.DateOut;
+                    colDateOut.DataPropertyName = "DateOut";
+                    colDateOut.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    colDateOut.Width = colWidth;
+                    colDateOut.ReadOnly = true;
+                    gridPendingFile.Columns.Add(colDateOut);
 
                     DataGridViewColumn colChallanNumber = new DataGridViewTextBoxColumn();
                     colChallanNumber.HeaderText = FormNormalPendingCaptions.ChallanNumber;
                     colChallanNumber.DataPropertyName = "ChallanNumber";
                     colChallanNumber.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                     colChallanNumber.Width = colWidth;
+                    colChallanNumber.ReadOnly = true;
                     gridPendingFile.Columns.Add(colChallanNumber);
 
                     DataGridViewColumn colChallanDate = new DataGridViewTextBoxColumn();
@@ -155,6 +182,7 @@ namespace HitechTMS.File
                     colChallanDate.DataPropertyName = "ChallanDate";
                     colChallanDate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                     colChallanDate.Width = colWidth;
+                    colChallanDate.ReadOnly = true;
                     gridPendingFile.Columns.Add(colChallanDate);
 
                     DataGridViewColumn colChallanWeight = new DataGridViewTextBoxColumn();
@@ -162,6 +190,7 @@ namespace HitechTMS.File
                     colChallanWeight.DataPropertyName = "ChallanWeight";
                     colChallanWeight.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                     colChallanWeight.Width = colWidth;
+                    colChallanWeight.ReadOnly = true;
                     gridPendingFile.Columns.Add(colChallanWeight);
 
                     DataGridViewColumn colChallanWeightUnit = new DataGridViewTextBoxColumn();
@@ -169,6 +198,7 @@ namespace HitechTMS.File
                     colChallanWeightUnit.DataPropertyName = "ChallanWeightUnit";
                     colChallanWeightUnit.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                     colChallanWeightUnit.Width = colWidth;
+                    colChallanWeightUnit.ReadOnly = true;
                     gridPendingFile.Columns.Add(colChallanWeightUnit);
 
                     DataGridViewColumn colGrossWeight = new DataGridViewTextBoxColumn();
@@ -176,6 +206,7 @@ namespace HitechTMS.File
                     colGrossWeight.DataPropertyName = "GrossWeight";
                     colGrossWeight.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                     colGrossWeight.Width = colWidth;
+                    colGrossWeight.ReadOnly = true;
                     gridPendingFile.Columns.Add(colGrossWeight);
 
                     DataGridViewColumn colTareWeight = new DataGridViewTextBoxColumn();
@@ -183,6 +214,7 @@ namespace HitechTMS.File
                     colTareWeight.DataPropertyName = "TareWeight";
                     colTareWeight.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                     colTareWeight.Width = colWidth;
+                    colTareWeight.ReadOnly = true;
                     gridPendingFile.Columns.Add(colTareWeight);
 
                     DataGridViewColumn ColMode = new DataGridViewTextBoxColumn();
@@ -190,6 +222,7 @@ namespace HitechTMS.File
                     ColMode.HeaderText = FormNormalPendingCaptions.Mode;
                     ColMode.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     ColMode.Width = colWidth;
+                    ColMode.ReadOnly = true;
                     gridPendingFile.Columns.Add(ColMode);
 
 
@@ -198,11 +231,33 @@ namespace HitechTMS.File
                     ColProdInOut.HeaderText = FormNormalPendingCaptions.ProdInOut;
                     ColProdInOut.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     ColProdInOut.Width = colWidth;
+                    ColProdInOut.ReadOnly = true;
                     gridPendingFile.Columns.Add(ColProdInOut);
 
                     #endregion
+                    List<PendingCompleteColumns> _result = new List<PendingCompleteColumns>();
+                    foreach (var item in QueryNormalWeight)
+                    {
+                        PendingCompleteColumns _PendingCompleteColumns = new PendingCompleteColumns();
+                        _PendingCompleteColumns.ID = item.ID;
+                        _PendingCompleteColumns.Truck = item.Truck;
+                        _PendingCompleteColumns.ProductName = item.ProductName;
+                        _PendingCompleteColumns.SupplierName = item.SupplierName;
+                        _PendingCompleteColumns.TransporterName = item.TransporterName;
+                        _PendingCompleteColumns.DateIn = item.DateIn;
+                        _PendingCompleteColumns.DateOut = item.DateOut.Year == 1900 ? (DateTime?)null : item.DateOut;
+                        _PendingCompleteColumns.ChallanNumber = item.ChallanNumber;
+                        _PendingCompleteColumns.ChallanDate = item.ChallanDate.Year == 1900 ? (DateTime?)null : item.ChallanDate;
+                        _PendingCompleteColumns.ChallanWeight = item.ChallanWeight;
+                        _PendingCompleteColumns.ChallanWeightUnit = item.ChallanWeightUnit;
+                        _PendingCompleteColumns.GrossWeight = item.GrossWeight;
+                        _PendingCompleteColumns.TareWeight = item.TareWeight;
+                        _PendingCompleteColumns.Mode = item.Mode;
+                        _PendingCompleteColumns.ProdInOut = item.ProdInOut;
+                        _result.Add(_PendingCompleteColumns);
+                    }
 
-                    gridPendingFile.DataSource = QueryNormalWeight;
+                    gridPendingFile.DataSource = _result;
 
                     #endregion
                 }
@@ -267,23 +322,23 @@ namespace HitechTMS.File
         #region CheckedChanged
         private void rdbNormalWeight_CheckedChanged(object sender, EventArgs e)
         {
-            _chkCompleteFile = Convert.ToInt16(chkCompleteFile.Checked);
+            _chkCompleteFile = Convert.ToInt16(rdbCompleteFile.Checked);
             LoadGridData();
         }
         private void rdbPublicWeight_CheckedChanged(object sender, EventArgs e)
         {
-            _chkCompleteFile = Convert.ToInt16(chkCompleteFile.Checked);
+            _chkCompleteFile = Convert.ToInt16(rdbCompleteFile.Checked);
             LoadGridData();
         }
         private void rdbMultiWeight_CheckedChanged(object sender, EventArgs e)
         {
-            _chkCompleteFile = Convert.ToInt16(chkCompleteFile.Checked);
+            _chkCompleteFile = Convert.ToInt16(rdbCompleteFile.Checked);
             LoadGridData();
         }
         private void chkCompleteFile_CheckedChanged(object sender, EventArgs e)
         {
-            _chkCompleteFile = Convert.ToInt16(chkCompleteFile.Checked);
-            LoadGridData();
+            //_chkCompleteFile = Convert.ToInt16(chkCompleteFile.Checked);
+            //LoadGridData();
         }
         #endregion
 
@@ -405,11 +460,18 @@ namespace HitechTMS.File
         private void btnPrint_Click(object sender, EventArgs e)
         {
             List<Guid> selectedCheckbox = GetListOfSelectCheckBox();
-            foreach (var item in selectedCheckbox)
+            if (selectedCheckbox.Count() <= 0)
             {
-                PrintTicket(item);
+                errProvider.SetError(btnPrint, _dbGetResourceCaption.GetStringValue("SELECT_PRINT"));
+            }else
+            {
+                foreach (var item in selectedCheckbox)
+                {
+                    PrintTicket(item);
+                }
+                LoadGridData();
             }
-            LoadGridData();
+
         }
 
         private List<Guid> GetListOfSelectCheckBox()
@@ -452,5 +514,56 @@ namespace HitechTMS.File
             }
             LoadGridData();
         }
+
+        private void btnSearchRecords_Click(object sender, EventArgs e)
+        {
+            if (dtPicketFromDate.Value.Date > dtPicketToDate.Value.Date)
+            {
+                errProvider.SetError(dtPicketFromDate, 
+                    _dbGetResourceCaption.GetStringValue("GREATER_DATE_ERR"));
+            }
+            else
+            {
+                errProvider.Clear();
+                LoadGridData();
+            }
+        }
+
+        private void rdbPendingFile_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbPendingFile.Checked)
+            {
+                _chkCompleteFile = Convert.ToInt16(!rdbPendingFile.Checked);
+                LoadGridData();
+            }
+        }
+
+        private void rdbCompleteFile_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbCompleteFile.Checked)
+            {
+                _chkCompleteFile = Convert.ToInt16(rdbCompleteFile.Checked);
+                LoadGridData();
+            }
+        }
+    }
+    class PendingCompleteColumns
+    {
+        public Guid ID { get; set; }
+        public string Truck { get; set; }
+        public string ProductName { get; set; }
+        public string SupplierName { get; set; }
+        public string TransporterName { get; set; }
+        public string ChallanNumber { get; set; }
+        public DateTime? ChallanDate { get; set; }
+        public decimal ChallanWeight { get; set; }
+        public byte ChallanWeightUnit { get; set; }
+        public string Miscellaneous { get; set; }
+        public string Mode { get; set; }
+        public decimal GrossWeight { get; set; }
+        public decimal TareWeight { get; set; }
+        public string ProdInOut { get; set; }
+        public DateTime? DateIn { get; set; }
+        public DateTime? DateOut { get; set; }
     }
 }

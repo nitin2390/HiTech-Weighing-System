@@ -897,14 +897,14 @@ namespace HitechTMS.Weighing
                     objtransNormalWeight.AddedDate = DateTime.ParseExact(DateTime.Now.Date.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     objtransNormalWeight.ID = _transNormalWeightID;
                     _dbObj.transNormalWeight.AddOrUpdate(objtransNormalWeight);
-                    if (_dbObj.SaveChanges() > 0 && !_isTareWeight)
+                    if (_dbObj.SaveChanges() > 0 )
                     {
                         transNormalWeightID = _transNormalWeightID;
                         DisableAllExceptTicket(true);
                         //ResetCntrl();
                         MessageBox.Show(_dbGetResourceCaption.GetStringValue("DATA_UPDATE"),
                             _dbGetResourceCaption.GetStringValue("INFORMATION"),
-                            MessageBoxButtons.OK, 
+                            MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
 

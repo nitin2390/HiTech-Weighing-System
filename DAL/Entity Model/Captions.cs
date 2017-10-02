@@ -19,5 +19,6 @@ namespace DAL.Entity_Model
         public string ModifiedCaptioin { get; set; }
         public int FormType { get; set; }
         public bool IsCaptionModified { get; set; }
+        public System.Guid Identity { get; set; }
     }
 }

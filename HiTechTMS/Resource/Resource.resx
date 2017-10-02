@@ -135,6 +135,12 @@
   <data name="CONFIRMATION" xml:space="preserve">
     <value>Confirmation</value>
   </data>
+  <data name="CONFIRMATION_DELETE" xml:space="preserve">
+    <value>Are you sure you want to permanently delete all the item ?</value>
+  </data>
+  <data name="DATA_DELETED" xml:space="preserve">
+    <value>Data Deleted successfully!</value>
+  </data>
   <data name="DATA_SAVE" xml:space="preserve">
     <value>Data saved successfully!</value>
   </data>
@@ -168,11 +174,17 @@
   <data name="ERROR" xml:space="preserve">
     <value>Error!</value>
   </data>
+  <data name="ERROR_DELETE" xml:space="preserve">
+    <value>An error occurred while processing your delete request</value>
+  </data>
   <data name="ERROR_SETTINGS" xml:space="preserve">
     <value>Error in settings!</value>
   </data>
   <data name="ERR_EMAIL_CHK_CONFIG" xml:space="preserve">
     <value>Error in email sending. Please check email configuration settings!</value>
+  </data>
+  <data name="GREATER_DATE_ERR" xml:space="preserve">
+    <value>Date from can't be greater than Date to</value>
   </data>
   <data name="GROSS_WEIGHT" xml:space="preserve">
     <value>Gross Weight</value>
@@ -197,6 +209,12 @@
   </data>
   <data name="NET_WEIGHT" xml:space="preserve">
     <value>Net Weight</value>
+  </data>
+  <data name="NORMAL_CHART_COMPLETE" xml:space="preserve">
+    <value>Normal Complete Weight</value>
+  </data>
+  <data name="NORMAL_CHART_PENDING" xml:space="preserve">
+    <value>Normal Pending Weight</value>
   </data>
   <data name="NORMAL_WEIGHING" xml:space="preserve">
     <value>Normal Weighing</value>
@@ -227,6 +245,9 @@
   </data>
   <data name="SAME_GROSS_AND_TARE_WEIGHT" xml:space="preserve">
     <value>Gross weight and Tare weight can not be same!</value>
+  </data>
+  <data name="SELECT_PRINT" xml:space="preserve">
+    <value>Select at least one record to print!</value>
   </data>
   <data name="SELECT_ROW_TO_DELETE" xml:space="preserve">
     <value>Please select records rows to delete!</value>

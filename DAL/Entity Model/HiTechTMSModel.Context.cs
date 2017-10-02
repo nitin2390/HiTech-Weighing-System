@@ -50,12 +50,14 @@ namespace DAL.Entity_Model
         public virtual DbSet<mstShiftAllocationInfo> mstShiftAllocationInfo { get; set; }
         public virtual DbSet<mstHyperTerminalData> mstHyperTerminalData { get; set; }
         public virtual DbSet<mstWeighBridgeSetup> mstWeighBridgeSetup { get; set; }
-        public virtual DbSet<Captions> Captions { get; set; }
-        public virtual DbSet<V_Captions> V_Captions { get; set; }
         public virtual DbSet<rptNormalTicket> rptNormalTicket { get; set; }
-        public virtual DbSet<viewNormalPendingFile> viewNormalPendingFile { get; set; }
         public virtual DbSet<V_NormalDashBoard> V_NormalDashBoard { get; set; }
         public virtual DbSet<V_PublicDashBoard> V_PublicDashBoard { get; set; }
+        public virtual DbSet<viewNormalPendingFile> viewNormalPendingFile { get; set; }
+        public virtual DbSet<Captions> Captions { get; set; }
+        public virtual DbSet<V_Captions> V_Captions { get; set; }
+        public virtual DbSet<V_NormalCompleteWeightDashBoard> V_NormalCompleteWeightDashBoard { get; set; }
+        public virtual DbSet<V_NormalPendingWeightDashBoard> V_NormalPendingWeightDashBoard { get; set; }
     
         public virtual ObjectResult<Procedure_Result> Procedure(Nullable<int> param1, Nullable<int> param2)
         {

@@ -20,7 +20,7 @@
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.MultiPrdWeight" Width="1.5" PointX="8.625" PointY="0.5" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.transMultiWeight" Width="1.5" PointX="8.625" PointY="2.625" />
         <AssociationConnector Association="HitechTruckMngtSystmDataBaseFileModel.FK__MultiPrdW__Truck__5FD33367" />
-        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.ViewMultiProduct" Width="1.5" PointX="11.875" PointY="8" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.ViewMultiProduct" Width="1.5" PointX="5.375" PointY="6.125" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.viewMultiPendingFile" Width="1.5" PointX="3.75" PointY="2" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstGeneralSettings" Width="1.5" PointX="10.25" PointY="0.5" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_mstGeneralSettings" Width="1.5" PointX="7" PointY="6.5" />
@@ -30,12 +30,14 @@
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstShiftAllocationInfo" Width="1.5" PointX="7" PointY="4.5" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyperTerminalData" Width="1.5" PointX="3.75" PointY="7.375" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstWeighBridgeSetup" Width="1.5" PointX="13.5" PointY="0.5" />
-        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.Captions" Width="1.5" PointX="5.375" PointY="6.125" />
-        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_Captions" Width="1.5" PointX="11.875" PointY="5.875" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" Width="1.5" PointX="10.25" PointY="4.125" />
-        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" Width="1.5" PointX="11.875" PointY="0.5" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalDashBoard" Width="1.5" PointX="2.125" PointY="6.5" />
-        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_PublicDashBoard" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_PublicDashBoard" Width="1.5" PointX="11.875" PointY="5.875" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" Width="1.5" PointX="11.875" PointY="0.5" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.Captions" Width="1.5" PointX="13.5" PointY="2.25" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_Captions" Width="1.5" PointX="13.5" PointY="4.625" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalCompleteWeightDashBoard" Width="1.5" PointX="11.875" PointY="7.625" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalPendingWeightDashBoard" Width="1.5" PointX="13.5" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

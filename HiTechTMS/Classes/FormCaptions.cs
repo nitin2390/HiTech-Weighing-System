@@ -16,6 +16,8 @@
         public static string GrossWeight { get; set; } = "Gross Weight";
         public static string TareWeight { get; set; } = "Tare Weight";
         public static string ProdInOut { get; set; } = "Prod In/Out";
+        public static string DateIn { get; set; } = "Date In";
+        public static string DateOut { get; set; } = "Date Out";
 
     }
 }

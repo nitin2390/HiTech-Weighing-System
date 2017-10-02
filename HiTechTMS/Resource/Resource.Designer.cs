@@ -115,6 +115,24 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to permanently delete all the item ?.
+        /// </summary>
+        internal static string CONFIRMATION_DELETE {
+            get {
+                return ResourceManager.GetString("CONFIRMATION_DELETE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Deleted successfully!.
+        /// </summary>
+        internal static string DATA_DELETED {
+            get {
+                return ResourceManager.GetString("DATA_DELETED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data saved successfully!.
         /// </summary>
         internal static string DATA_SAVE {
@@ -223,11 +241,29 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An error occurred while processing your delete request.
+        /// </summary>
+        internal static string ERROR_DELETE {
+            get {
+                return ResourceManager.GetString("ERROR_DELETE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error in settings!.
         /// </summary>
         internal static string ERROR_SETTINGS {
             get {
                 return ResourceManager.GetString("ERROR_SETTINGS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date from can&apos;t be greater than Date to.
+        /// </summary>
+        internal static string GREATER_DATE_ERR {
+            get {
+                return ResourceManager.GetString("GREATER_DATE_ERR", resourceCulture);
             }
         }
         
@@ -313,6 +349,24 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Normal Complete Weight.
+        /// </summary>
+        internal static string NORMAL_CHART_COMPLETE {
+            get {
+                return ResourceManager.GetString("NORMAL_CHART_COMPLETE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal Pending Weight.
+        /// </summary>
+        internal static string NORMAL_CHART_PENDING {
+            get {
+                return ResourceManager.GetString("NORMAL_CHART_PENDING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Normal Weighing.
         /// </summary>
         internal static string NORMAL_WEIGHING {
@@ -390,6 +444,15 @@ namespace HitechTMS.Resource {
         internal static string SAME_GROSS_AND_TARE_WEIGHT {
             get {
                 return ResourceManager.GetString("SAME_GROSS_AND_TARE_WEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select at least one record to print!.
+        /// </summary>
+        internal static string SELECT_PRINT {
+            get {
+                return ResourceManager.GetString("SELECT_PRINT", resourceCulture);
             }
         }
         

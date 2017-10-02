@@ -69,4 +69,10 @@
       <DependentUpon>SecureBaseForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj">
+      <Project>{E8D24DE5-5067-4CD4-8E23-57F3FDB5B162}</Project>
+      <Name>SharedLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

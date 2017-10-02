@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Security.Principal;
+using SharedLibrary;
+using System.Drawing;
 
 namespace HitechTMSSecurity
 {
@@ -16,7 +18,63 @@ namespace HitechTMSSecurity
 			ShowWithOwner
 		}
 
-		public event EventHandler UserIsAllowed;
+        protected override void OnControlAdded(ControlEventArgs e)
+        {
+            base.OnControlAdded(e);
+
+            var child = e.Control;
+            GetAllControlByType objGetAllControlByType = new GetAllControlByType();
+            var ButtonCtrl = objGetAllControlByType.GetAllControllType(this, typeof(Button));
+
+            foreach (Control control in ButtonCtrl)
+            {
+                control.MouseEnter += button_MouseEnter;
+                control.MouseLeave += button_MouseLeave;
+            }
+
+            if (e.Control.GetType() == typeof(Button))
+            {
+                e.Control.MouseEnter += button_MouseEnter;
+                e.Control.MouseLeave += button_MouseLeave;
+            }
+        }
+
+        protected override void OnControlRemoved(ControlEventArgs e)
+        {
+            base.OnControlRemoved(e);
+
+            var child = e.Control;
+            GetAllControlByType objGetAllControlByType = new GetAllControlByType();
+            var ButtonCtrl = objGetAllControlByType.GetAllControllType(this, typeof(Button));
+
+            foreach (Control control in ButtonCtrl)
+            {
+                control.MouseEnter += button_MouseEnter;
+                control.MouseLeave += button_MouseLeave;
+            }
+
+            if (e.Control.GetType() == typeof(Button))
+            {
+                e.Control.MouseEnter -= button_MouseEnter;
+                e.Control.MouseLeave -= button_MouseLeave;
+            }
+        }
+
+
+        private void button_MouseEnter(object sender, EventArgs e)
+        {
+            var c = (Button)sender;
+            c.UseVisualStyleBackColor = false;
+            c.BackColor = Color.Gray;
+        }
+
+        private void button_MouseLeave(object sender, EventArgs e)
+        {
+            var c = (Button)sender;
+            c.UseVisualStyleBackColor = true;
+        }
+
+        public event EventHandler UserIsAllowed;
 		public event EventHandler UserIsDenied;
 
 		// Variable to capture the roles allowed for this form
