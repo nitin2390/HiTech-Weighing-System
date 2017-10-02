@@ -36,9 +36,9 @@ namespace HitechTMS
             StoredTareFile = 4,
 
             //Weighing 
-            NormalWeighing = 21,
-            PublicWeighing = 22,
-            MultiWeghing = 23,
+            NormalWeighingTicket = 21,
+            PublicWeighingTicket = 22,
+            MultiWeghingTicket = 23,
 
             NormalPendingFile = 24,
             PublicPendingFile = 25,
@@ -67,7 +67,12 @@ namespace HitechTMS
             WeighingField = 37,
 
             ShiftAllocation = 38,
-            WeighBridgeSetup=39
+            WeighBridgeSetup=39,
+
+            //Report
+            NormalWeighingReport = 40,
+            PublicWeighingReport = 41,
+            MutliWeighingReport = 42
         }
 
         public enum enumProduct

@@ -343,6 +343,7 @@
             this.ticketsToolStripMenuItem.Name = "ticketsToolStripMenuItem";
             this.ticketsToolStripMenuItem.Size = new System.Drawing.Size(83, 32);
             this.ticketsToolStripMenuItem.Text = "&Tickets";
+            this.ticketsToolStripMenuItem.Visible = false;
             // 
             // reportsToolStripMenuItem
             // 

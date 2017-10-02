@@ -43,19 +43,63 @@ namespace HitechTMS
                 this.Text = "Stored Tare File";
             }
 
-            else if (_frmName == FrmName.NormalWeighing)
+            else if (_frmName == FrmName.NormalWeighingTicket)
             {
                 cryRpt.Load(Environment.CurrentDirectory + @"\Reports\normalTicket.rpt");
                 cryRpt.SummaryInfo.ReportTitle = "Normal Weighing";
                 this.Text = "Normal Weighing";
             }
 
+            else if (_frmName == FrmName.NormalWeighingReport)
+            {
+                cryRpt.Load(Environment.CurrentDirectory + @"\Reports\NormalWeightComplete.rpt");
+                cryRpt.SummaryInfo.ReportTitle = "Normal Weighing";
+                this.Text = "Normal Weighing";
+                SetHeaderForNormalWeighingReport(cryRpt);
+            }
+
             cryRepViewCommon.Refresh();
             cryRpt.SetDataSource(dataSrc);
             cryRepViewCommon.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            cryRpt.SetParameterValue(0, "HiTech Weighing System");
+            //cryRpt.SetParameterValue(0, "HiTech Weighing System");
             cryRepViewCommon.ReportSource = cryRpt;
 
+        }
+
+        private void SetHeaderForNormalWeighingReport(ReportDocument cryRpt)
+        {
+            try
+            {
+
+                cryRpt.DataDefinition.FormulaFields["H1"].Text = "'HiTech Weighing System'";
+                cryRpt.DataDefinition.FormulaFields["H2"].Text = "'Normal Weight Report'";
+                cryRpt.DataDefinition.FormulaFields["DateCaption"].Text = "'Date Time :'";
+                cryRpt.DataDefinition.FormulaFields["SupplierCodeCaption"].Text = "'Supplier Code'";
+                cryRpt.DataDefinition.FormulaFields["SupplierNameCaption"].Text = "'Supplier Name'";
+                cryRpt.DataDefinition.FormulaFields["TruckCaption"].Text = "'Truck'";
+                cryRpt.DataDefinition.FormulaFields["TransportNameCaption"].Text = "'Transport Name'";
+                cryRpt.DataDefinition.FormulaFields["TransportCodeCaption"].Text = "'Transport Code'";
+                cryRpt.DataDefinition.FormulaFields["TransportCodeCaption"].Text = "'Transport Code'";
+
+                cryRpt.DataDefinition.FormulaFields["ProductCodeCaption"].Text = "'Product Code'";
+                cryRpt.DataDefinition.FormulaFields["ProductNameCaption"].Text = "'Product Name'";
+                cryRpt.DataDefinition.FormulaFields["ChallanNumberCaption"].Text = "'Challan Number'";
+                cryRpt.DataDefinition.FormulaFields["ChallanDateCaption"].Text = "'Challan Date'";
+
+                cryRpt.DataDefinition.FormulaFields["DateInCaption"].Text = "'Date In'";
+                cryRpt.DataDefinition.FormulaFields["DateOutCaption"].Text = "'Date Out'";
+                cryRpt.DataDefinition.FormulaFields["FirstWeightCaption"].Text = "'Tare Weight'";
+                cryRpt.DataDefinition.FormulaFields["SecondWeightCaption"].Text = "'Gorss Weight'";
+                cryRpt.DataDefinition.FormulaFields["NetWeightCaption"].Text = "'Net Weight'";
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void rptCommon_FormClosing(object sender, FormClosingEventArgs e)

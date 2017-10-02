@@ -250,6 +250,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NormalWeightComplete.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Reports\old\challanreportproduct.cs">
       <AutoGen>True</AutoGen>
@@ -542,6 +543,7 @@
     <EmbeddedResource Include="Reports\NormalWeightComplete.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>NormalWeightComplete.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\old\challanreportproduct.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

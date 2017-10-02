@@ -608,7 +608,51 @@ namespace HitechTMS
         #region Report
         private void normalWeighingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            using (HitechTruckMngtSystmDataBaseFileEntities dbContext = new HitechTruckMngtSystmDataBaseFileEntities())
+            {
+                var RepData = dbContext.rptNormalTicket
+                        .Select(x => new
+                        {
+                            ID = x.ID ?? string.Empty,
+                            Truck = x.Truck ?? string.Empty,
+                            Mode = x.Mode,
+                            ProductCode = x.ProductCode ?? string.Empty,
+                            Name = x.Name,
+                            SupplierCode = x.SupplierCode,
+                            SupplierName = x.SupplierName,
+                            TransporterCode = x.TransporterCode ?? string.Empty,
+                            TarnsPorterName = x.TarnsPorterName ?? string.Empty,
+                            ChallanNumber = x.ChallanNumber ?? string.Empty,
+                            Miscellaneous = x.Miscellaneous ?? string.Empty,
+                            DeliveryNoteN = x.DeliveryNoteN ?? string.Empty,
+                            ChallanWeight = x.ChallanWeight ?? string.Empty,
+                            ChallanDate = x.ChallanDate ?? string.Empty,
+                            DateIn = x.DateIn ?? string.Empty,
+                            TimeIn = x.TimeIn ?? string.Empty,
+                            DateOut = x.DateOut ?? string.Empty,
+                            TimeOut = x.TimeOut ?? string.Empty,
+                            TareWeight = x.TareWeight ?? string.Empty,
+                            GrossWeight = x.GrossWeight ?? string.Empty,
+                            NetWeight = x.NetWeight ?? string.Empty,
+                            ProdInOut = x.ProdInOut
+                        });
 
+                if (RepData.Count() > 0)
+                {
+                    rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(),
+                                                        FrmName.NormalWeighingReport,
+                                                        enumProductInOut.Other);
+                    rptCmn.ShowDialog();
+                }
+                else
+                {
+                    string errorMessage = "No data to print";
+                    MessageBox.Show(errorMessage
+                                    , _dbGetResourceCaption.GetStringValue("ERROR")
+                                    , MessageBoxButtons.OK
+                                    , MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void publicWeighingToolStripMenuItem_Click(object sender, EventArgs e)

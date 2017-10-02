@@ -418,12 +418,13 @@ namespace HitechTMS.File
                             GrossWeight = x.GrossWeight ?? string.Empty,
                             NetWeight = x.NetWeight ?? string.Empty,
                             ProdInOut = x.ProdInOut
-
                         });
 
                     if (RepData.Count() > 0)
                     {
-                        rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), FrmName.NormalWeighing, enumProductInOut.Other);
+                        rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), 
+                                                            FrmName.NormalWeighingTicket, 
+                                                            enumProductInOut.Other);
                         rptCmn.ShowDialog();
                     }
                     else

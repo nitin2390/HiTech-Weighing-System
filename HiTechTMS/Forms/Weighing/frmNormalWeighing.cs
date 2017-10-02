@@ -838,7 +838,7 @@ namespace HitechTMS.Weighing
                                     ProdInOut =x.ProdInOut
                                     
                 });
-            rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), FrmName.NormalWeighing, _enumProductInOut);
+            rptCommon rptCmn = new rptCommon(RepData.ToList().AsEnumerable(), FrmName.NormalWeighingTicket, _enumProductInOut);
             rptCmn.ShowDialog();
         }
         private void btnSave_Click(object sender, EventArgs e)
