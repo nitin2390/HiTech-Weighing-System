@@ -419,6 +419,9 @@ namespace HitechTMS.Weighing
                         txtTareWeight.ReadOnly = true;
                         txtGrossWeight.ReadOnly = false;
                     }
+
+                    txtGrossWeight.BackColor = System.Drawing.Color.AliceBlue;
+                    txtTareWeight.BackColor =  Control.DefaultBackColor;
                 }
 
 
@@ -855,9 +858,43 @@ namespace HitechTMS.Weighing
                 }
                 if (txtTruck.Text.Trim().Length < 1)
                 {
-                    errProvWeight.SetError(txtTruck, _dbGetResourceCaption.GetStringValue("TRUCK_CAN_NOT_BLANK"));
+                    errProvWeight.SetError(txtTruck, _dbGetResourceCaption.GetStringValue("CAN_NOT_BLANK_TRUCK"));
                     return;
                 }
+                else
+                {
+                    errProvWeight.Clear();
+                }
+
+                if (txtTareWeight.Text.Trim().Length < 1)
+                {
+                    errProvWeight.SetError(txtTareWeight,
+                        _enumProductInOut == enumProductInOut.Out ?
+                        _dbGetResourceCaption.GetStringValue("CAN_NOT_BLANK_TARE_WEIGHT") :
+                        _dbGetResourceCaption.GetStringValue("CAN_NOT_BLANK_GROSS_WEIGHT")
+                        );
+                    return;
+                }
+                else
+                {
+                    errProvWeight.Clear();
+                }
+
+                if (!_isTareWeight && txtGrossWeight.Text.Trim().Length < 1)
+                {
+                    errProvWeight.SetError(txtGrossWeight,
+                        _enumProductInOut == enumProductInOut.Out ?
+                        _dbGetResourceCaption.GetStringValue("CAN_NOT_BLANK_GROSS_WEIGHT") :
+                        _dbGetResourceCaption.GetStringValue("CAN_NOT_BLANK_TARE_WEIGHT") 
+                        );
+                    return;
+                }
+                else
+                {
+                    errProvWeight.Clear();
+                }
+
+
                 List<transNormalWeight> existsQuery = new List<transNormalWeight>();
                 _saveClick = true;
                 existsQuery = _dbObj.transNormalWeight.Select(x => x).Where(x => x.ID == _transNormalWeightID && x.ProdInOut == (byte)_enumProductInOut && x.IsPending == 0).ToList();

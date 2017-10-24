@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSupplierTransportFile));
             this.grpboxSupplierFile = new System.Windows.Forms.GroupBox();
             this.lblRecCount = new System.Windows.Forms.Label();
@@ -83,9 +81,10 @@
             this.grpboxSupplierFile.Controls.Add(this.btnSave);
             this.grpboxSupplierFile.Controls.Add(this.grpboxSupplimantaryDetails);
             this.grpboxSupplierFile.Controls.Add(this.grpboxMainDetails);
+            this.grpboxSupplierFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpboxSupplierFile.Location = new System.Drawing.Point(12, 12);
             this.grpboxSupplierFile.Name = "grpboxSupplierFile";
-            this.grpboxSupplierFile.Size = new System.Drawing.Size(875, 582);
+            this.grpboxSupplierFile.Size = new System.Drawing.Size(922, 615);
             this.grpboxSupplierFile.TabIndex = 0;
             this.grpboxSupplierFile.TabStop = false;
             this.grpboxSupplierFile.Text = "Create/Modify records";
@@ -96,7 +95,7 @@
             this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecCount.Location = new System.Drawing.Point(637, 543);
+            this.lblRecCount.Location = new System.Drawing.Point(657, 582);
             this.lblRecCount.Name = "lblRecCount";
             this.lblRecCount.Size = new System.Drawing.Size(136, 22);
             this.lblRecCount.TabIndex = 19;
@@ -108,7 +107,7 @@
             this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsCount.Location = new System.Drawing.Point(793, 543);
+            this.lblRecordsCount.Location = new System.Drawing.Point(813, 582);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
             this.lblRecordsCount.TabIndex = 18;
@@ -116,24 +115,8 @@
             // 
             // gridSupplierTransporter
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSupplierTransporter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridSupplierTransporter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridSupplierTransporter.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridSupplierTransporter.Location = new System.Drawing.Point(20, 297);
+            this.gridSupplierTransporter.Location = new System.Drawing.Point(40, 330);
             this.gridSupplierTransporter.Name = "gridSupplierTransporter";
             this.gridSupplierTransporter.RowTemplate.Height = 24;
             this.gridSupplierTransporter.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -143,9 +126,9 @@
             // 
             // btnEmailExcel
             // 
-            this.btnEmailExcel.Location = new System.Drawing.Point(504, 258);
+            this.btnEmailExcel.Location = new System.Drawing.Point(554, 261);
             this.btnEmailExcel.Name = "btnEmailExcel";
-            this.btnEmailExcel.Size = new System.Drawing.Size(115, 27);
+            this.btnEmailExcel.Size = new System.Drawing.Size(134, 50);
             this.btnEmailExcel.TabIndex = 22;
             this.btnEmailExcel.Text = "E&mail As Excel";
             this.btnEmailExcel.UseVisualStyleBackColor = true;
@@ -153,9 +136,9 @@
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(386, 258);
+            this.btnReport.Location = new System.Drawing.Point(388, 261);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(100, 27);
+            this.btnReport.Size = new System.Drawing.Size(134, 50);
             this.btnReport.TabIndex = 21;
             this.btnReport.Text = "&Report";
             this.btnReport.UseVisualStyleBackColor = true;
@@ -163,9 +146,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(258, 258);
+            this.btnDelete.Location = new System.Drawing.Point(222, 261);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 27);
+            this.btnDelete.Size = new System.Drawing.Size(134, 50);
             this.btnDelete.TabIndex = 20;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -173,9 +156,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(637, 258);
+            this.btnExit.Location = new System.Drawing.Point(720, 261);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 27);
+            this.btnExit.Size = new System.Drawing.Size(134, 50);
             this.btnExit.TabIndex = 23;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -183,9 +166,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(124, 258);
+            this.btnSave.Location = new System.Drawing.Point(56, 261);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 27);
+            this.btnSave.Size = new System.Drawing.Size(134, 50);
             this.btnSave.TabIndex = 19;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -199,7 +182,7 @@
             this.grpboxSupplimantaryDetails.Controls.Add(this.lblbFax);
             this.grpboxSupplimantaryDetails.Controls.Add(this.txtPhone);
             this.grpboxSupplimantaryDetails.Controls.Add(this.lblEmail);
-            this.grpboxSupplimantaryDetails.Location = new System.Drawing.Point(457, 31);
+            this.grpboxSupplimantaryDetails.Location = new System.Drawing.Point(477, 31);
             this.grpboxSupplimantaryDetails.Name = "grpboxSupplimantaryDetails";
             this.grpboxSupplimantaryDetails.Size = new System.Drawing.Size(383, 216);
             this.grpboxSupplimantaryDetails.TabIndex = 7;
@@ -208,28 +191,28 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(180, 107);
+            this.txtEmail.Location = new System.Drawing.Point(180, 125);
             this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(146, 22);
+            this.txtEmail.Size = new System.Drawing.Size(146, 26);
             this.txtEmail.TabIndex = 18;
             this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmail_KeyDown);
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(40, 22);
+            this.lblPhone.Location = new System.Drawing.Point(40, 29);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(49, 17);
+            this.lblPhone.Size = new System.Drawing.Size(56, 20);
             this.lblPhone.TabIndex = 3;
             this.lblPhone.Text = "Phone";
             // 
             // txtFax
             // 
-            this.txtFax.Location = new System.Drawing.Point(180, 64);
+            this.txtFax.Location = new System.Drawing.Point(180, 78);
             this.txtFax.MaxLength = 20;
             this.txtFax.Name = "txtFax";
-            this.txtFax.Size = new System.Drawing.Size(146, 22);
+            this.txtFax.Size = new System.Drawing.Size(146, 26);
             this.txtFax.TabIndex = 17;
             this.txtFax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFax.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFax_KeyDown);
@@ -238,18 +221,18 @@
             // lblbFax
             // 
             this.lblbFax.AutoSize = true;
-            this.lblbFax.Location = new System.Drawing.Point(40, 64);
+            this.lblbFax.Location = new System.Drawing.Point(40, 78);
             this.lblbFax.Name = "lblbFax";
-            this.lblbFax.Size = new System.Drawing.Size(30, 17);
+            this.lblbFax.Size = new System.Drawing.Size(36, 20);
             this.lblbFax.TabIndex = 4;
             this.lblbFax.Text = "Fax";
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(180, 28);
+            this.txtPhone.Location = new System.Drawing.Point(180, 35);
             this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(146, 22);
+            this.txtPhone.Size = new System.Drawing.Size(146, 26);
             this.txtPhone.TabIndex = 16;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPhone_KeyDown);
@@ -258,9 +241,9 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(40, 107);
+            this.lblEmail.Location = new System.Drawing.Point(40, 125);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(42, 17);
+            this.lblEmail.Size = new System.Drawing.Size(51, 20);
             this.lblEmail.TabIndex = 5;
             this.lblEmail.Text = "Email";
             // 
@@ -274,7 +257,7 @@
             this.grpboxMainDetails.Controls.Add(this.lblAddress);
             this.grpboxMainDetails.Controls.Add(this.lblSupplierCode);
             this.grpboxMainDetails.Controls.Add(this.lblSupplierName);
-            this.grpboxMainDetails.Location = new System.Drawing.Point(23, 28);
+            this.grpboxMainDetails.Location = new System.Drawing.Point(43, 28);
             this.grpboxMainDetails.Name = "grpboxMainDetails";
             this.grpboxMainDetails.Size = new System.Drawing.Size(404, 219);
             this.grpboxMainDetails.TabIndex = 6;
@@ -286,7 +269,7 @@
             this.txtAddressLine3.Location = new System.Drawing.Point(189, 184);
             this.txtAddressLine3.MaxLength = 25;
             this.txtAddressLine3.Name = "txtAddressLine3";
-            this.txtAddressLine3.Size = new System.Drawing.Size(146, 22);
+            this.txtAddressLine3.Size = new System.Drawing.Size(146, 26);
             this.txtAddressLine3.TabIndex = 15;
             this.txtAddressLine3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAddressLine3_KeyDown);
             // 
@@ -295,7 +278,7 @@
             this.txtAddressLine2.Location = new System.Drawing.Point(189, 149);
             this.txtAddressLine2.MaxLength = 25;
             this.txtAddressLine2.Name = "txtAddressLine2";
-            this.txtAddressLine2.Size = new System.Drawing.Size(146, 22);
+            this.txtAddressLine2.Size = new System.Drawing.Size(146, 26);
             this.txtAddressLine2.TabIndex = 14;
             this.txtAddressLine2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAddressLine2_KeyDown);
             // 
@@ -304,7 +287,7 @@
             this.txtAddressLine1.Location = new System.Drawing.Point(189, 110);
             this.txtAddressLine1.MaxLength = 25;
             this.txtAddressLine1.Name = "txtAddressLine1";
-            this.txtAddressLine1.Size = new System.Drawing.Size(146, 22);
+            this.txtAddressLine1.Size = new System.Drawing.Size(146, 26);
             this.txtAddressLine1.TabIndex = 13;
             this.txtAddressLine1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAddressLine1_KeyDown);
             // 
@@ -313,7 +296,7 @@
             this.txtSupplierName.Location = new System.Drawing.Point(189, 67);
             this.txtSupplierName.MaxLength = 25;
             this.txtSupplierName.Name = "txtSupplierName";
-            this.txtSupplierName.Size = new System.Drawing.Size(146, 22);
+            this.txtSupplierName.Size = new System.Drawing.Size(146, 26);
             this.txtSupplierName.TabIndex = 12;
             this.txtSupplierName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSupplierName_KeyDown);
             this.txtSupplierName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSupplierName_KeyPress);
@@ -323,7 +306,7 @@
             this.txtSupplierCode.Location = new System.Drawing.Point(189, 31);
             this.txtSupplierCode.MaxLength = 5;
             this.txtSupplierCode.Name = "txtSupplierCode";
-            this.txtSupplierCode.Size = new System.Drawing.Size(146, 22);
+            this.txtSupplierCode.Size = new System.Drawing.Size(146, 26);
             this.txtSupplierCode.TabIndex = 11;
             this.txtSupplierCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSupplierCode_KeyDown);
             this.txtSupplierCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSupplierCode_KeyPress);
@@ -334,7 +317,7 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.Location = new System.Drawing.Point(49, 110);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(60, 17);
+            this.lblAddress.Size = new System.Drawing.Size(71, 20);
             this.lblAddress.TabIndex = 10;
             this.lblAddress.Text = "Address";
             // 
@@ -343,7 +326,7 @@
             this.lblSupplierCode.AutoSize = true;
             this.lblSupplierCode.Location = new System.Drawing.Point(49, 31);
             this.lblSupplierCode.Name = "lblSupplierCode";
-            this.lblSupplierCode.Size = new System.Drawing.Size(97, 17);
+            this.lblSupplierCode.Size = new System.Drawing.Size(114, 20);
             this.lblSupplierCode.TabIndex = 8;
             this.lblSupplierCode.Text = "Supplier Code";
             // 
@@ -352,7 +335,7 @@
             this.lblSupplierName.AutoSize = true;
             this.lblSupplierName.Location = new System.Drawing.Point(49, 67);
             this.lblSupplierName.Name = "lblSupplierName";
-            this.lblSupplierName.Size = new System.Drawing.Size(101, 17);
+            this.lblSupplierName.Size = new System.Drawing.Size(119, 20);
             this.lblSupplierName.TabIndex = 9;
             this.lblSupplierName.Text = "Supplier Name";
             // 
@@ -376,7 +359,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 606);
+            this.ClientSize = new System.Drawing.Size(946, 639);
             this.Controls.Add(this.grpboxSupplierFile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSupplierTransportFile";

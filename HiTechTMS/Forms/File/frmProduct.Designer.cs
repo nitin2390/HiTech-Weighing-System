@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduct));
             this.grpboxProduct = new System.Windows.Forms.GroupBox();
             this.lblRecCount = new System.Windows.Forms.Label();
@@ -72,9 +69,10 @@
             this.grpboxProduct.Controls.Add(this.lblProductCode);
             this.grpboxProduct.Controls.Add(this.txtProductName);
             this.grpboxProduct.Controls.Add(this.txtProductCode);
-            this.grpboxProduct.Location = new System.Drawing.Point(23, 21);
+            this.grpboxProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpboxProduct.Location = new System.Drawing.Point(12, 24);
             this.grpboxProduct.Name = "grpboxProduct";
-            this.grpboxProduct.Size = new System.Drawing.Size(759, 569);
+            this.grpboxProduct.Size = new System.Drawing.Size(794, 596);
             this.grpboxProduct.TabIndex = 0;
             this.grpboxProduct.TabStop = false;
             this.grpboxProduct.Text = "Add/Edit Product";
@@ -85,7 +83,7 @@
             this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecCount.Location = new System.Drawing.Point(522, 534);
+            this.lblRecCount.Location = new System.Drawing.Point(522, 555);
             this.lblRecCount.Name = "lblRecCount";
             this.lblRecCount.Size = new System.Drawing.Size(136, 22);
             this.lblRecCount.TabIndex = 21;
@@ -97,7 +95,7 @@
             this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsCount.Location = new System.Drawing.Point(678, 534);
+            this.lblRecordsCount.Location = new System.Drawing.Point(678, 555);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
             this.lblRecordsCount.TabIndex = 20;
@@ -105,9 +103,9 @@
             // 
             // btnEmailExcel
             // 
-            this.btnEmailExcel.Location = new System.Drawing.Point(461, 167);
+            this.btnEmailExcel.Location = new System.Drawing.Point(458, 164);
             this.btnEmailExcel.Name = "btnEmailExcel";
-            this.btnEmailExcel.Size = new System.Drawing.Size(115, 27);
+            this.btnEmailExcel.Size = new System.Drawing.Size(134, 50);
             this.btnEmailExcel.TabIndex = 10;
             this.btnEmailExcel.Text = "E&mail As Excel";
             this.btnEmailExcel.UseVisualStyleBackColor = true;
@@ -115,9 +113,9 @@
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(339, 167);
+            this.btnReport.Location = new System.Drawing.Point(318, 164);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(100, 27);
+            this.btnReport.Size = new System.Drawing.Size(134, 50);
             this.btnReport.TabIndex = 9;
             this.btnReport.Text = "&Report";
             this.btnReport.UseVisualStyleBackColor = true;
@@ -125,9 +123,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(210, 167);
+            this.btnDelete.Location = new System.Drawing.Point(175, 164);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 27);
+            this.btnDelete.Size = new System.Drawing.Size(134, 50);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -135,9 +133,9 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(552, 90);
+            this.btnRefresh.Location = new System.Drawing.Point(458, 90);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(100, 35);
+            this.btnRefresh.Size = new System.Drawing.Size(134, 50);
             this.btnRefresh.TabIndex = 4;
             this.btnRefresh.Text = "&Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -145,9 +143,9 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(552, 42);
+            this.btnSearch.Location = new System.Drawing.Point(458, 34);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 35);
+            this.btnSearch.Size = new System.Drawing.Size(134, 50);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "&Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -155,9 +153,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(598, 167);
+            this.btnExit.Location = new System.Drawing.Point(598, 164);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 27);
+            this.btnExit.Size = new System.Drawing.Size(134, 50);
             this.btnExit.TabIndex = 8;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -165,9 +163,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(85, 167);
+            this.btnSave.Location = new System.Drawing.Point(33, 164);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 27);
+            this.btnSave.Size = new System.Drawing.Size(134, 50);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -175,33 +173,9 @@
             // 
             // gridProduct
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridProduct.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridProduct.Location = new System.Drawing.Point(124, 219);
+            this.gridProduct.Location = new System.Drawing.Point(114, 229);
             this.gridProduct.Name = "gridProduct";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridProduct.RowTemplate.Height = 24;
             this.gridProduct.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gridProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -214,7 +188,7 @@
             this.lblProductName.AutoSize = true;
             this.lblProductName.Location = new System.Drawing.Point(121, 95);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(98, 17);
+            this.lblProductName.Size = new System.Drawing.Size(116, 20);
             this.lblProductName.TabIndex = 3;
             this.lblProductName.Text = "Product Name";
             // 
@@ -223,7 +197,7 @@
             this.lblProductCode.AutoSize = true;
             this.lblProductCode.Location = new System.Drawing.Point(121, 42);
             this.lblProductCode.Name = "lblProductCode";
-            this.lblProductCode.Size = new System.Drawing.Size(94, 17);
+            this.lblProductCode.Size = new System.Drawing.Size(111, 20);
             this.lblProductCode.TabIndex = 2;
             this.lblProductCode.Text = "Product Code";
             // 
@@ -232,7 +206,7 @@
             this.txtProductName.Location = new System.Drawing.Point(241, 90);
             this.txtProductName.MaxLength = 25;
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(162, 22);
+            this.txtProductName.Size = new System.Drawing.Size(162, 26);
             this.txtProductName.TabIndex = 2;
             this.txtProductName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtlblProductName_KeyDown);
             this.txtProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
@@ -243,7 +217,7 @@
             this.txtProductCode.Location = new System.Drawing.Point(241, 42);
             this.txtProductCode.MaxLength = 5;
             this.txtProductCode.Name = "txtProductCode";
-            this.txtProductCode.Size = new System.Drawing.Size(162, 22);
+            this.txtProductCode.Size = new System.Drawing.Size(162, 26);
             this.txtProductCode.TabIndex = 1;
             this.txtProductCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtlblProductCode_KeyDown);
             this.txtProductCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductCode_KeyPress);
@@ -262,7 +236,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 605);
+            this.ClientSize = new System.Drawing.Size(818, 632);
             this.Controls.Add(this.grpboxProduct);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

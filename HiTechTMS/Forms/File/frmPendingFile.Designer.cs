@@ -76,6 +76,7 @@
             this.grpboxTransactionForm.Controls.Add(this.rdbMultiWeight);
             this.grpboxTransactionForm.Controls.Add(this.rdbPublicWeight);
             this.grpboxTransactionForm.Controls.Add(this.rdbNormalWeight);
+            this.grpboxTransactionForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpboxTransactionForm.Location = new System.Drawing.Point(12, 12);
             this.grpboxTransactionForm.Name = "grpboxTransactionForm";
             this.grpboxTransactionForm.Size = new System.Drawing.Size(1283, 759);
@@ -121,9 +122,9 @@
             // 
             // btnSearchRecords
             // 
-            this.btnSearchRecords.Location = new System.Drawing.Point(684, 47);
+            this.btnSearchRecords.Location = new System.Drawing.Point(684, 37);
             this.btnSearchRecords.Name = "btnSearchRecords";
-            this.btnSearchRecords.Size = new System.Drawing.Size(129, 40);
+            this.btnSearchRecords.Size = new System.Drawing.Size(134, 50);
             this.btnSearchRecords.TabIndex = 37;
             this.btnSearchRecords.Text = "&Search Records";
             this.btnSearchRecords.UseVisualStyleBackColor = true;
@@ -155,7 +156,7 @@
             this.dtPicketToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtPicketToDate.Location = new System.Drawing.Point(120, 70);
             this.dtPicketToDate.Name = "dtPicketToDate";
-            this.dtPicketToDate.Size = new System.Drawing.Size(151, 22);
+            this.dtPicketToDate.Size = new System.Drawing.Size(151, 26);
             this.dtPicketToDate.TabIndex = 34;
             // 
             // dtPicketFromDate
@@ -163,14 +164,14 @@
             this.dtPicketFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtPicketFromDate.Location = new System.Drawing.Point(120, 29);
             this.dtPicketFromDate.Name = "dtPicketFromDate";
-            this.dtPicketFromDate.Size = new System.Drawing.Size(151, 22);
+            this.dtPicketFromDate.Size = new System.Drawing.Size(151, 26);
             this.dtPicketFromDate.TabIndex = 33;
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(962, 69);
+            this.btnPrint.Location = new System.Drawing.Point(962, 66);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(134, 40);
+            this.btnPrint.Size = new System.Drawing.Size(134, 50);
             this.btnPrint.TabIndex = 32;
             this.btnPrint.Text = "&Print";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -178,9 +179,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1115, 69);
+            this.btnDelete.Location = new System.Drawing.Point(1115, 66);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(134, 40);
+            this.btnDelete.Size = new System.Drawing.Size(134, 50);
             this.btnDelete.TabIndex = 31;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -188,9 +189,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1115, 21);
+            this.btnExit.Location = new System.Drawing.Point(1115, 13);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(134, 40);
+            this.btnExit.Size = new System.Drawing.Size(134, 50);
             this.btnExit.TabIndex = 30;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -198,9 +199,9 @@
             // 
             // btnEmailAsExcel
             // 
-            this.btnEmailAsExcel.Location = new System.Drawing.Point(962, 21);
+            this.btnEmailAsExcel.Location = new System.Drawing.Point(962, 13);
             this.btnEmailAsExcel.Name = "btnEmailAsExcel";
-            this.btnEmailAsExcel.Size = new System.Drawing.Size(129, 40);
+            this.btnEmailAsExcel.Size = new System.Drawing.Size(134, 50);
             this.btnEmailAsExcel.TabIndex = 29;
             this.btnEmailAsExcel.Text = "&Email as Excel";
             this.btnEmailAsExcel.UseVisualStyleBackColor = true;

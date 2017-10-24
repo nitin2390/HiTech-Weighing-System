@@ -443,6 +443,7 @@
             this.txtGrossWeight.Name = "txtGrossWeight";
             this.txtGrossWeight.Size = new System.Drawing.Size(148, 22);
             this.txtGrossWeight.TabIndex = 5;
+            this.txtGrossWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtGrossWeight.TextChanged += new System.EventHandler(this.txtGrossWeight_TextChanged);
             this.txtGrossWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txtGrossWeight_Validating);
             // 
@@ -452,6 +453,7 @@
             this.txtTareWeight.Name = "txtTareWeight";
             this.txtTareWeight.Size = new System.Drawing.Size(148, 22);
             this.txtTareWeight.TabIndex = 4;
+            this.txtTareWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTareWeight.TextChanged += new System.EventHandler(this.txtTareWeight_TextChanged);
             this.txtTareWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txtTareWeight_Validating);
             // 

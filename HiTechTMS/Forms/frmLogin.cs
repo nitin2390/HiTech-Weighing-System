@@ -28,7 +28,9 @@ namespace HitechTMS
         {
 
             txtPassword.Text = objEncryptionAndDecryption.Encrypt(txtPassword.Text);
-            var varUserRole = dbObj.UserRoleTypes.Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { x.RoleName, s.Name, s.Password })
+            var varUserRole = dbObj.UserRoleTypes
+                            .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, 
+                                    (x, s) => new { x.RoleName, s.Name, s.Password })
                 .Where(xs => xs.Name == txtUserName.Text && xs.Password == txtPassword.Text).Select(x => x.RoleName).ToList().SingleOrDefault();
 
             if (varUserRole != null && varUserRole != string.Empty)

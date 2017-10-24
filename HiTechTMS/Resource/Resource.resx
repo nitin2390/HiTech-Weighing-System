@@ -126,6 +126,21 @@
   <data name="CANNOT_SAVE_DATA_CHK_PORT_ST" xml:space="preserve">
     <value>Can not save data please check your port settings!</value>
   </data>
+  <data name="CAN_NOT_BLANK_GROSS_WEIGHT" xml:space="preserve">
+    <value>Gross weight can not be blank!</value>
+  </data>
+  <data name="CAN_NOT_BLANK_PRD_CD" xml:space="preserve">
+    <value>Product code can't be blank</value>
+  </data>
+  <data name="CAN_NOT_BLANK_PRD_NM" xml:space="preserve">
+    <value>Product name can't be blank</value>
+  </data>
+  <data name="CAN_NOT_BLANK_TARE_WEIGHT" xml:space="preserve">
+    <value>Tare weight can not be blank!</value>
+  </data>
+  <data name="CAN_NOT_BLANK_TRUCK" xml:space="preserve">
+    <value>Truck can not be blank!</value>
+  </data>
   <data name="CHCK_SERL_PRT_SET" xml:space="preserve">
     <value>Check you Serial port settings!</value>
   </data>
@@ -225,12 +240,6 @@
   <data name="PORT_NOT_OPEN" xml:space="preserve">
     <value>Port is not openned!</value>
   </data>
-  <data name="PRD_CD_CAN_NOT_BLANK" xml:space="preserve">
-    <value>Product code can't be blank</value>
-  </data>
-  <data name="PRD_NM_CAN_NOT_BLANK" xml:space="preserve">
-    <value>Product name can't be blank</value>
-  </data>
   <data name="PRODUCT_CODE" xml:space="preserve">
     <value>Product code</value>
   </data>
@@ -269,9 +278,6 @@
   </data>
   <data name="TRUCK" xml:space="preserve">
     <value>Truck</value>
-  </data>
-  <data name="TRUCK_CAN_NOT_BLANK" xml:space="preserve">
-    <value>Truck can not be blank!</value>
   </data>
   <data name="USER_NAME_PASSWORD_MISTMATCH" xml:space="preserve">
     <value>User name and Password doesn't match!</value>

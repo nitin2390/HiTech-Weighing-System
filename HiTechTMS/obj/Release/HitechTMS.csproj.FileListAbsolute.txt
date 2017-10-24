@@ -1,32 +1,25 @@
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\HiTechTMSModel.Context.tt
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\HiTechTMSModel.tt
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\EmailConfig.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\EmailMaster.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\HiTechTMSModel.Context.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\HiTechTMSModel.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\HiTechTMSModel.Designer.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\mstFormName.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\mstPermission.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\mstStoredTareRecords.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\mstSupplierTransporter.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\Product.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\transNormalWeight.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\transPublicWeight.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\UserRole.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\UserRoleType.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\viewNormalPendingFile.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Entity Model\HiTechTMSModel.edmx.diagram
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\db\HitechTruckMngtSystmDataBaseFile_log.ldf
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\db\HitechTruckMngtSystmDataBaseFile.mdf
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\NormalWeightComplete.rpt
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\SupplierTransport.rpt
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\User.rpt
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Licensee\Licensee.txt
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\NormalWeightComplete.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\SupplierTransport.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\User.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Properties\error.png
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Ico\Icon.ico
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\NormalWeightPending.rpt
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\normalTicket.rpt
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\StoredTareFile.rpt
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\Product.rpt
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\NormalWeightPending.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\normalTicket.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\StoredTareFile.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Release\Reports\Product.cs
@@ -89,15 +82,17 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Re
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.Classes.CreateExcelAndSendEmail.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.Config.frmAddUser.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.MasterForms.frmGeneralSetting.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.MasterForms.frmGenericChangeField.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\SerialPortListener.frmSerialPortSetting.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.Forms.Config.frmSetPermission.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.MasterForms.frmShiftAllocation.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.MasterForms.frmWBSetup.resources
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.File.frmPendingFile.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.File.frmTransactionForm.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.File.frmStoredTareFile.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.File.frmSupplierTransportFile.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.Forms.File.frmTransactionFile.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\ProcessingWindow.ProcessingForm.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.frmDateFiltersForReports.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.Resource.Resource.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.frmDatabaseBackup.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Release\HitechTMS.frmLogin.resources

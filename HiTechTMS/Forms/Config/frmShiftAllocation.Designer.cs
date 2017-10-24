@@ -185,10 +185,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(316, 285);
+            this.btnClose.Location = new System.Drawing.Point(256, 285);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 28);
+            this.btnClose.Size = new System.Drawing.Size(134, 50);
             this.btnClose.TabIndex = 9;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -196,10 +196,10 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(152, 285);
+            this.btnOK.Location = new System.Drawing.Point(92, 285);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(100, 28);
+            this.btnOK.Size = new System.Drawing.Size(134, 50);
             this.btnOK.TabIndex = 8;
             this.btnOK.Text = "&Save";
             this.btnOK.UseVisualStyleBackColor = true;

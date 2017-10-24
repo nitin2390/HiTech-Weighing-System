@@ -2,13 +2,14 @@
 <Schema Namespace="HitechTruckMngtSystmDataBaseFileModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Captions">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Identity" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="DefaultCaption" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="ModifiedCaptioin" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ModifiedCaptioin" Type="varchar" MaxLength="500" />
     <Property Name="FormType" Type="int" Nullable="false" />
     <Property Name="IsCaptionModified" Type="bit" Nullable="false" />
+    <Property Name="Identity" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
   <EntityType Name="EmailConfigs">
     <Key>
@@ -344,8 +345,28 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_NormalCompleteWeightDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_NormalCompleteWeightDashBoard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="DateIn" Type="varchar" MaxLength="30" />
+    <Property Name="TruckCount" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_NormalDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="V_NormalDashBoard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="DateIn" Type="varchar" MaxLength="30" />
+    <Property Name="TruckCount" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_NormalPendingWeightDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_NormalPendingWeightDashBoard">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
@@ -362,6 +383,53 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="DateIn" Type="varchar" MaxLength="30" />
     <Property Name="TruckCount" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_rptNormalReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_rptNormalReport">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Mode" />
+      <PropertyRef Name="Truck" />
+      <PropertyRef Name="ProductCode" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="SupplierCode" />
+      <PropertyRef Name="SupplierName" />
+      <PropertyRef Name="TransporterCode" />
+      <PropertyRef Name="TarnsPorterName" />
+      <PropertyRef Name="ChallanNumber" />
+      <PropertyRef Name="Miscellaneous" />
+      <PropertyRef Name="DeliveryNoteN" />
+      <PropertyRef Name="ChallanWeight" />
+      <PropertyRef Name="TimeIn" />
+      <PropertyRef Name="TimeOut" />
+      <PropertyRef Name="TareWeight" />
+      <PropertyRef Name="NetWeight" />
+      <PropertyRef Name="GrossWeight" />
+      <PropertyRef Name="ProdInOut" />
+    </Key>
+    <Property Name="ID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mode" Type="tinyint" Nullable="false" />
+    <Property Name="Truck" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="SupplierCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SupplierName" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="TransporterCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TarnsPorterName" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ChallanNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="ChallanWeight" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ChallanDate" Type="date" />
+    <Property Name="DateIn" Type="date" />
+    <Property Name="TimeIn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateOut" Type="date" />
+    <Property Name="TimeOut" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TareWeight" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NetWeight" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GrossWeight" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProdInOut" Type="tinyint" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_T_mstShiftAllocationInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -510,7 +578,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__UserRole__UserRo__1B9317B3">
+  <Association Name="FK_UserRole_ToUserRoleType">
     <End Role="UserRoleType" Type="Self.UserRoleType" Multiplicity="1" />
     <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
     <ReferentialConstraint>
@@ -598,6 +666,13 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     [V_mstGeneralSettings].[UpdatedDate] AS [UpdatedDate]
     FROM [dbo].[V_mstGeneralSettings] AS [V_mstGeneralSettings]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="V_NormalCompleteWeightDashBoard" EntityType="Self.V_NormalCompleteWeightDashBoard" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_NormalCompleteWeightDashBoard].[ID] AS [ID], 
+    [V_NormalCompleteWeightDashBoard].[DateIn] AS [DateIn], 
+    [V_NormalCompleteWeightDashBoard].[TruckCount] AS [TruckCount]
+    FROM [dbo].[V_NormalCompleteWeightDashBoard] AS [V_NormalCompleteWeightDashBoard]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="V_NormalDashBoard" EntityType="Self.V_NormalDashBoard" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [V_NormalDashBoard].[ID] AS [ID], 
@@ -605,12 +680,45 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     [V_NormalDashBoard].[TruckCount] AS [TruckCount]
     FROM [dbo].[V_NormalDashBoard] AS [V_NormalDashBoard]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="V_NormalPendingWeightDashBoard" EntityType="Self.V_NormalPendingWeightDashBoard" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_NormalPendingWeightDashBoard].[ID] AS [ID], 
+    [V_NormalPendingWeightDashBoard].[DateIn] AS [DateIn], 
+    [V_NormalPendingWeightDashBoard].[TruckCount] AS [TruckCount]
+    FROM [dbo].[V_NormalPendingWeightDashBoard] AS [V_NormalPendingWeightDashBoard]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="V_PublicDashBoard" EntityType="Self.V_PublicDashBoard" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [V_PublicDashBoard].[ID] AS [ID], 
     [V_PublicDashBoard].[DateIn] AS [DateIn], 
     [V_PublicDashBoard].[TruckCount] AS [TruckCount]
     FROM [dbo].[V_PublicDashBoard] AS [V_PublicDashBoard]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_rptNormalReport" EntityType="Self.V_rptNormalReport" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_rptNormalReport].[ID] AS [ID], 
+    [V_rptNormalReport].[Mode] AS [Mode], 
+    [V_rptNormalReport].[Truck] AS [Truck], 
+    [V_rptNormalReport].[ProductCode] AS [ProductCode], 
+    [V_rptNormalReport].[Name] AS [Name], 
+    [V_rptNormalReport].[SupplierCode] AS [SupplierCode], 
+    [V_rptNormalReport].[SupplierName] AS [SupplierName], 
+    [V_rptNormalReport].[TransporterCode] AS [TransporterCode], 
+    [V_rptNormalReport].[TarnsPorterName] AS [TarnsPorterName], 
+    [V_rptNormalReport].[ChallanNumber] AS [ChallanNumber], 
+    [V_rptNormalReport].[Miscellaneous] AS [Miscellaneous], 
+    [V_rptNormalReport].[DeliveryNoteN] AS [DeliveryNoteN], 
+    [V_rptNormalReport].[ChallanWeight] AS [ChallanWeight], 
+    [V_rptNormalReport].[ChallanDate] AS [ChallanDate], 
+    [V_rptNormalReport].[DateIn] AS [DateIn], 
+    [V_rptNormalReport].[TimeIn] AS [TimeIn], 
+    [V_rptNormalReport].[DateOut] AS [DateOut], 
+    [V_rptNormalReport].[TimeOut] AS [TimeOut], 
+    [V_rptNormalReport].[TareWeight] AS [TareWeight], 
+    [V_rptNormalReport].[NetWeight] AS [NetWeight], 
+    [V_rptNormalReport].[GrossWeight] AS [GrossWeight], 
+    [V_rptNormalReport].[ProdInOut] AS [ProdInOut]
+    FROM [dbo].[V_rptNormalReport] AS [V_rptNormalReport]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="V_T_mstShiftAllocationInfo" EntityType="Self.V_T_mstShiftAllocationInfo" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -692,7 +800,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
       <End Role="transMultiWeight" EntitySet="transMultiWeight" />
       <End Role="MultiPrdWeight" EntitySet="MultiPrdWeight" />
     </AssociationSet>
-    <AssociationSet Name="FK__UserRole__UserRo__1B9317B3" Association="Self.FK__UserRole__UserRo__1B9317B3">
+    <AssociationSet Name="FK_UserRole_ToUserRoleType" Association="Self.FK_UserRole_ToUserRoleType">
       <End Role="UserRoleType" EntitySet="UserRoleType" />
       <End Role="UserRole" EntitySet="UserRole" />
     </AssociationSet>

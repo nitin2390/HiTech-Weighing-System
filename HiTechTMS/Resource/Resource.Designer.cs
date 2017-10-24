@@ -79,6 +79,51 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gross weight can not be blank!.
+        /// </summary>
+        internal static string CAN_NOT_BLANK_GROSS_WEIGHT {
+            get {
+                return ResourceManager.GetString("CAN_NOT_BLANK_GROSS_WEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product code can&apos;t be blank.
+        /// </summary>
+        internal static string CAN_NOT_BLANK_PRD_CD {
+            get {
+                return ResourceManager.GetString("CAN_NOT_BLANK_PRD_CD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product name can&apos;t be blank.
+        /// </summary>
+        internal static string CAN_NOT_BLANK_PRD_NM {
+            get {
+                return ResourceManager.GetString("CAN_NOT_BLANK_PRD_NM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tare weight can not be blank!.
+        /// </summary>
+        internal static string CAN_NOT_BLANK_TARE_WEIGHT {
+            get {
+                return ResourceManager.GetString("CAN_NOT_BLANK_TARE_WEIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Truck can not be blank!.
+        /// </summary>
+        internal static string CAN_NOT_BLANK_TRUCK {
+            get {
+                return ResourceManager.GetString("CAN_NOT_BLANK_TRUCK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can not save data please check your port settings!.
         /// </summary>
         internal static string CANNOT_SAVE_DATA_CHK_PORT_ST {
@@ -385,24 +430,6 @@ namespace HitechTMS.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Product code can&apos;t be blank.
-        /// </summary>
-        internal static string PRD_CD_CAN_NOT_BLANK {
-            get {
-                return ResourceManager.GetString("PRD_CD_CAN_NOT_BLANK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Product name can&apos;t be blank.
-        /// </summary>
-        internal static string PRD_NM_CAN_NOT_BLANK {
-            get {
-                return ResourceManager.GetString("PRD_NM_CAN_NOT_BLANK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Product code.
         /// </summary>
         internal static string PRODUCT_CODE {
@@ -516,15 +543,6 @@ namespace HitechTMS.Resource {
         internal static string TRUCK {
             get {
                 return ResourceManager.GetString("TRUCK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Truck can not be blank!.
-        /// </summary>
-        internal static string TRUCK_CAN_NOT_BLANK {
-            get {
-                return ResourceManager.GetString("TRUCK_CAN_NOT_BLANK", resourceCulture);
             }
         }
         

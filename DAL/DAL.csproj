@@ -175,6 +175,9 @@
     <Compile Include="Entity Model\V_PublicDashBoard.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Model\V_rptNormalReport.cs">
+      <DependentUpon>HiTechTMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Model\V_T_mstShiftAllocationInfo.cs">
       <DependentUpon>HiTechTMSModel.tt</DependentUpon>
     </Compile>

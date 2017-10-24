@@ -1,6 +1,6 @@
 ﻿namespace SerialPortListener
 {
-    partial class frmSerialPortSettings
+    partial class frmSerialPortSetting
     {
         /// <summary>
         /// Required designer variable.
@@ -191,8 +191,8 @@
             // 
             // tbData
             // 
-            this.tbData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbData.Location = new System.Drawing.Point(16, 320);
             this.tbData.Margin = new System.Windows.Forms.Padding(4);

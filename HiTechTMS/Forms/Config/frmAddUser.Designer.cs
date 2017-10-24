@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUser));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblRecCount = new System.Windows.Forms.Label();
@@ -73,6 +71,7 @@
             this.groupBox1.Controls.Add(this.lblPassword);
             this.groupBox1.Controls.Add(this.lblUserName);
             this.groupBox1.Controls.Add(this.txtUserName);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(843, 595);
@@ -107,36 +106,21 @@
             // 
             // gridUser
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridUser.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridUser.Location = new System.Drawing.Point(74, 287);
             this.gridUser.Name = "gridUser";
             this.gridUser.RowTemplate.Height = 24;
             this.gridUser.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gridUser.Size = new System.Drawing.Size(706, 243);
+            this.gridUser.Size = new System.Drawing.Size(718, 243);
             this.gridUser.TabIndex = 31;
             this.gridUser.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridUser_CellMouseClick);
             // 
             // btnEmailExcel
             // 
-            this.btnEmailExcel.Location = new System.Drawing.Point(487, 228);
+            this.btnEmailExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmailExcel.Location = new System.Drawing.Point(512, 228);
             this.btnEmailExcel.Name = "btnEmailExcel";
-            this.btnEmailExcel.Size = new System.Drawing.Size(115, 27);
+            this.btnEmailExcel.Size = new System.Drawing.Size(134, 50);
             this.btnEmailExcel.TabIndex = 27;
             this.btnEmailExcel.Text = "E&mail As Excel";
             this.btnEmailExcel.UseVisualStyleBackColor = true;
@@ -144,9 +128,10 @@
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(369, 228);
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Location = new System.Drawing.Point(366, 228);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(100, 27);
+            this.btnReport.Size = new System.Drawing.Size(134, 50);
             this.btnReport.TabIndex = 26;
             this.btnReport.Text = "&Report";
             this.btnReport.UseVisualStyleBackColor = true;
@@ -154,9 +139,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(241, 228);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(220, 228);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 27);
+            this.btnDelete.Size = new System.Drawing.Size(134, 50);
             this.btnDelete.TabIndex = 25;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -164,9 +150,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(620, 228);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(658, 228);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 27);
+            this.btnExit.Size = new System.Drawing.Size(134, 50);
             this.btnExit.TabIndex = 28;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -174,9 +161,10 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(107, 228);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(74, 228);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 27);
+            this.btnSave.Size = new System.Drawing.Size(134, 50);
             this.btnSave.TabIndex = 24;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -187,7 +175,7 @@
             this.cmbRoleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRoleType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbRoleType.FormattingEnabled = true;
-            this.cmbRoleType.Location = new System.Drawing.Point(368, 161);
+            this.cmbRoleType.Location = new System.Drawing.Point(221, 161);
             this.cmbRoleType.Name = "cmbRoleType";
             this.cmbRoleType.Size = new System.Drawing.Size(121, 24);
             this.cmbRoleType.TabIndex = 5;
@@ -195,7 +183,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(368, 108);
+            this.txtPassword.Location = new System.Drawing.Point(221, 108);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(133, 22);
@@ -205,33 +193,36 @@
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(264, 164);
+            this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.Location = new System.Drawing.Point(71, 161);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(37, 17);
+            this.lblRole.Size = new System.Drawing.Size(51, 25);
             this.lblRole.TabIndex = 3;
             this.lblRole.Text = "Role";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(264, 111);
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(71, 108);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(69, 17);
+            this.lblPassword.Size = new System.Drawing.Size(98, 25);
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password";
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(264, 57);
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(71, 53);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(77, 17);
+            this.lblUserName.Size = new System.Drawing.Size(107, 25);
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "User name";
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(368, 57);
+            this.txtUserName.Location = new System.Drawing.Point(221, 56);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(133, 22);
             this.txtUserName.TabIndex = 0;

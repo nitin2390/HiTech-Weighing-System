@@ -106,9 +106,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(206, 378);
+            this.btnSave.Location = new System.Drawing.Point(206, 365);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(118, 30);
+            this.btnSave.Size = new System.Drawing.Size(118, 43);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -116,9 +116,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(359, 378);
+            this.btnExit.Location = new System.Drawing.Point(359, 365);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(109, 30);
+            this.btnExit.Size = new System.Drawing.Size(109, 43);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;

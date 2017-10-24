@@ -1,0 +1,3 @@
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x86\Release\SerialPortListener.frmSerialPortSetting.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x86\Release\SerialPortListener.Properties.Resources.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x86\Release\SerialPortListener.csproj.GenerateResource.Cache

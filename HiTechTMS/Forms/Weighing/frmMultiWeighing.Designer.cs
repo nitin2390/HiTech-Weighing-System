@@ -293,6 +293,7 @@
             this.txtProductWeight.Name = "txtProductWeight";
             this.txtProductWeight.Size = new System.Drawing.Size(148, 22);
             this.txtProductWeight.TabIndex = 42;
+            this.txtProductWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtProductWeight.TextChanged += new System.EventHandler(this.txtProductWeight_TextChanged);
             // 
             // txtUnloadedProductName
@@ -443,6 +444,7 @@
             this.txtGrossWeight.Name = "txtGrossWeight";
             this.txtGrossWeight.Size = new System.Drawing.Size(148, 22);
             this.txtGrossWeight.TabIndex = 14;
+            this.txtGrossWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtGrossWeight.TextChanged += new System.EventHandler(this.txtGrossWeight_TextChanged);
             // 
             // txtTareWeight
@@ -451,6 +453,7 @@
             this.txtTareWeight.Name = "txtTareWeight";
             this.txtTareWeight.Size = new System.Drawing.Size(148, 22);
             this.txtTareWeight.TabIndex = 13;
+            this.txtTareWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTareWeight.TextChanged += new System.EventHandler(this.txtTareWeight_TextChanged);
             // 
             // txtTimeOut
@@ -521,6 +524,7 @@
             this.txtChallanWeight.Name = "txtChallanWeight";
             this.txtChallanWeight.Size = new System.Drawing.Size(148, 22);
             this.txtChallanWeight.TabIndex = 7;
+            this.txtChallanWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtChallanWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChallanWeight_KeyPress);
             this.txtChallanWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txtChallanWeight_Validating);
             // 

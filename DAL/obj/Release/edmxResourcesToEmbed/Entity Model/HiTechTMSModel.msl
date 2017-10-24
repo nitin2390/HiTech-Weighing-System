@@ -337,28 +337,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Captions">
-      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.Captions">
-        <MappingFragment StoreEntitySet="Captions">
-          <ScalarProperty Name="IsCaptionModified" ColumnName="IsCaptionModified" />
-          <ScalarProperty Name="FormType" ColumnName="FormType" />
-          <ScalarProperty Name="ModifiedCaptioin" ColumnName="ModifiedCaptioin" />
-          <ScalarProperty Name="DefaultCaption" ColumnName="DefaultCaption" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="V_Captions">
-      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_Captions">
-        <MappingFragment StoreEntitySet="V_Captions">
-          <ScalarProperty Name="IsCaptionModified" ColumnName="IsCaptionModified" />
-          <ScalarProperty Name="FormType" ColumnName="FormType" />
-          <ScalarProperty Name="ModifiedCaptioin" ColumnName="ModifiedCaptioin" />
-          <ScalarProperty Name="DefaultCaption" ColumnName="DefaultCaption" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="rptNormalTicket">
       <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket">
         <MappingFragment StoreEntitySet="rptNormalTicket">
@@ -383,6 +361,24 @@
           <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
           <ScalarProperty Name="Truck" ColumnName="Truck" />
           <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_NormalDashBoard">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_NormalDashBoard">
+        <MappingFragment StoreEntitySet="V_NormalDashBoard">
+          <ScalarProperty Name="TruckCount" ColumnName="TruckCount" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_PublicDashBoard">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_PublicDashBoard">
+        <MappingFragment StoreEntitySet="V_PublicDashBoard">
+          <ScalarProperty Name="TruckCount" ColumnName="TruckCount" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -415,20 +411,71 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="V_NormalDashBoard">
-      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_NormalDashBoard">
-        <MappingFragment StoreEntitySet="V_NormalDashBoard">
+    <EntitySetMapping Name="Captions">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.Captions">
+        <MappingFragment StoreEntitySet="Captions">
+          <ScalarProperty Name="Identity" ColumnName="Identity" />
+          <ScalarProperty Name="IsCaptionModified" ColumnName="IsCaptionModified" />
+          <ScalarProperty Name="FormType" ColumnName="FormType" />
+          <ScalarProperty Name="ModifiedCaptioin" ColumnName="ModifiedCaptioin" />
+          <ScalarProperty Name="DefaultCaption" ColumnName="DefaultCaption" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_Captions">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_Captions">
+        <MappingFragment StoreEntitySet="V_Captions">
+          <ScalarProperty Name="IsCaptionModified" ColumnName="IsCaptionModified" />
+          <ScalarProperty Name="FormType" ColumnName="FormType" />
+          <ScalarProperty Name="ModifiedCaptioin" ColumnName="ModifiedCaptioin" />
+          <ScalarProperty Name="DefaultCaption" ColumnName="DefaultCaption" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_NormalCompleteWeightDashBoard">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_NormalCompleteWeightDashBoard">
+        <MappingFragment StoreEntitySet="V_NormalCompleteWeightDashBoard">
           <ScalarProperty Name="TruckCount" ColumnName="TruckCount" />
           <ScalarProperty Name="DateIn" ColumnName="DateIn" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="V_PublicDashBoard">
-      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_PublicDashBoard">
-        <MappingFragment StoreEntitySet="V_PublicDashBoard">
+    <EntitySetMapping Name="V_NormalPendingWeightDashBoard">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_NormalPendingWeightDashBoard">
+        <MappingFragment StoreEntitySet="V_NormalPendingWeightDashBoard">
           <ScalarProperty Name="TruckCount" ColumnName="TruckCount" />
           <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_rptNormalReport">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_rptNormalReport">
+        <MappingFragment StoreEntitySet="V_rptNormalReport">
+          <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+          <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
+          <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
+          <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
+          <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
+          <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
+          <ScalarProperty Name="TarnsPorterName" ColumnName="TarnsPorterName" />
+          <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Truck" ColumnName="Truck" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

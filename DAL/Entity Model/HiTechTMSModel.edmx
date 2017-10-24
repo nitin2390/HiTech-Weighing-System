@@ -199,8 +199,8 @@
           <Property Name="ChallanDate" Type="date" />
           <Property Name="ChallanWeight" Type="decimal" Precision="18" Scale="0" />
           <Property Name="ChallanWeightUnit" Type="tinyint" />
-          <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" />
-          <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" />
+          <Property Name="Miscellaneous" Type="nvarchar(max)" />
+          <Property Name="DeliveryNoteN" Type="nvarchar(max)" />
           <Property Name="DateIn" Type="date" />
           <Property Name="DateOut" Type="date" />
           <Property Name="TimeIn" Type="time" Precision="7" />
@@ -390,6 +390,53 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="TruckCount" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_rptNormalReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_rptNormalReport">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Mode" />
+            <PropertyRef Name="Truck" />
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="SupplierCode" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="TransporterCode" />
+            <PropertyRef Name="TarnsPorterName" />
+            <PropertyRef Name="ChallanNumber" />
+            <PropertyRef Name="Miscellaneous" />
+            <PropertyRef Name="DeliveryNoteN" />
+            <PropertyRef Name="ChallanWeight" />
+            <PropertyRef Name="TimeIn" />
+            <PropertyRef Name="TimeOut" />
+            <PropertyRef Name="TareWeight" />
+            <PropertyRef Name="NetWeight" />
+            <PropertyRef Name="GrossWeight" />
+            <PropertyRef Name="ProdInOut" />
+          </Key>
+          <Property Name="ID" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Mode" Type="tinyint" Nullable="false" />
+          <Property Name="Truck" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="SupplierCode" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SupplierName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="TransporterCode" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TarnsPorterName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ChallanNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="ChallanWeight" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ChallanDate" Type="date" />
+          <Property Name="DateIn" Type="date" />
+          <Property Name="TimeIn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateOut" Type="date" />
+          <Property Name="TimeOut" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TareWeight" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NetWeight" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GrossWeight" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProdInOut" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_T_mstShiftAllocationInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="V_T_mstShiftAllocationInfo">
           <Key>
@@ -536,7 +583,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UserRole__UserRo__1B9317B3">
+        <Association Name="FK_UserRole_ToUserRoleType">
           <End Role="UserRoleType" Type="Self.UserRoleType" Multiplicity="1" />
           <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
           <ReferentialConstraint>
@@ -652,6 +699,32 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     [V_PublicDashBoard].[TruckCount] AS [TruckCount]
     FROM [dbo].[V_PublicDashBoard] AS [V_PublicDashBoard]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="V_rptNormalReport" EntityType="Self.V_rptNormalReport" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_rptNormalReport].[ID] AS [ID], 
+    [V_rptNormalReport].[Mode] AS [Mode], 
+    [V_rptNormalReport].[Truck] AS [Truck], 
+    [V_rptNormalReport].[ProductCode] AS [ProductCode], 
+    [V_rptNormalReport].[Name] AS [Name], 
+    [V_rptNormalReport].[SupplierCode] AS [SupplierCode], 
+    [V_rptNormalReport].[SupplierName] AS [SupplierName], 
+    [V_rptNormalReport].[TransporterCode] AS [TransporterCode], 
+    [V_rptNormalReport].[TarnsPorterName] AS [TarnsPorterName], 
+    [V_rptNormalReport].[ChallanNumber] AS [ChallanNumber], 
+    [V_rptNormalReport].[Miscellaneous] AS [Miscellaneous], 
+    [V_rptNormalReport].[DeliveryNoteN] AS [DeliveryNoteN], 
+    [V_rptNormalReport].[ChallanWeight] AS [ChallanWeight], 
+    [V_rptNormalReport].[ChallanDate] AS [ChallanDate], 
+    [V_rptNormalReport].[DateIn] AS [DateIn], 
+    [V_rptNormalReport].[TimeIn] AS [TimeIn], 
+    [V_rptNormalReport].[DateOut] AS [DateOut], 
+    [V_rptNormalReport].[TimeOut] AS [TimeOut], 
+    [V_rptNormalReport].[TareWeight] AS [TareWeight], 
+    [V_rptNormalReport].[NetWeight] AS [NetWeight], 
+    [V_rptNormalReport].[GrossWeight] AS [GrossWeight], 
+    [V_rptNormalReport].[ProdInOut] AS [ProdInOut]
+    FROM [dbo].[V_rptNormalReport] AS [V_rptNormalReport]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="V_T_mstShiftAllocationInfo" EntityType="Self.V_T_mstShiftAllocationInfo" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [V_T_mstShiftAllocationInfo].[Id] AS [Id], 
@@ -732,7 +805,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
             <End Role="transMultiWeight" EntitySet="transMultiWeight" />
             <End Role="MultiPrdWeight" EntitySet="MultiPrdWeight" />
           </AssociationSet>
-          <AssociationSet Name="FK__UserRole__UserRo__1B9317B3" Association="Self.FK__UserRole__UserRo__1B9317B3">
+          <AssociationSet Name="FK_UserRole_ToUserRoleType" Association="Self.FK_UserRole_ToUserRoleType">
             <End Role="UserRoleType" EntitySet="UserRoleType" />
             <End Role="UserRole" EntitySet="UserRole" />
           </AssociationSet>
@@ -753,7 +826,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
             <End Role="UserRole" EntitySet="UserRole" />
           </AssociationSet>
           <EntitySet Name="mstStoredTareRecords" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords" />
-          <EntitySet Name="transNormalWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" />
           <EntitySet Name="transPublicWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transPublicWeight" />
           <EntitySet Name="mstFormName" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstFormName" />
           <EntitySet Name="mstPermission" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstPermission" />
@@ -785,6 +857,8 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <EntitySet Name="V_Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_Captions" />
           <EntitySet Name="V_NormalCompleteWeightDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalCompleteWeightDashBoard" />
           <EntitySet Name="V_NormalPendingWeightDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalPendingWeightDashBoard" />
+          <EntitySet Name="V_rptNormalReport" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_rptNormalReport" />
+          <EntitySet Name="transNormalWeight" EntityType="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" />
         </EntityContainer>
         <EntityType Name="UserRoleType">
           <Key>
@@ -875,34 +949,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="TareWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="TimeIn" Type="Time" Nullable="false" Precision="7" />
-        </EntityType>
-        <EntityType Name="transNormalWeight">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="Mode" Type="Byte" Nullable="false" />
-          <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
-          <Property Name="ProductCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="SupplierCode" Type="Guid" />
-          <Property Name="TransporterCode" Type="Guid" />
-          <Property Name="ChallanNumber" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="ChallanDate" Type="DateTime" Precision="0" />
-          <Property Name="ChallanWeight" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="ChallanWeightUnit" Type="Byte" />
-          <Property Name="Miscellaneous" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DeliveryNoteN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="DateIn" Type="DateTime" Precision="0" />
-          <Property Name="DateOut" Type="DateTime" Precision="0" />
-          <Property Name="TimeIn" Type="Time" Precision="7" />
-          <Property Name="TimeOut" Type="Time" Precision="7" />
-          <Property Name="TareWeight" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="GrossWeight" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="NetWeight" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="ProdInOut" Type="Byte" Nullable="false" />
-          <Property Name="IsPending" Type="Byte" Nullable="false" />
-          <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="transPublicWeight">
           <Key>
@@ -1313,6 +1359,79 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
           <Property Name="DateIn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="TruckCount" Type="Int32" />
         </EntityType>
+        <EntityType Name="V_rptNormalReport">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Mode" />
+            <PropertyRef Name="Truck" />
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="SupplierCode" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="TransporterCode" />
+            <PropertyRef Name="TarnsPorterName" />
+            <PropertyRef Name="ChallanNumber" />
+            <PropertyRef Name="Miscellaneous" />
+            <PropertyRef Name="DeliveryNoteN" />
+            <PropertyRef Name="ChallanWeight" />
+            <PropertyRef Name="TimeIn" />
+            <PropertyRef Name="TimeOut" />
+            <PropertyRef Name="TareWeight" />
+            <PropertyRef Name="NetWeight" />
+            <PropertyRef Name="GrossWeight" />
+            <PropertyRef Name="ProdInOut" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mode" Type="Byte" Nullable="false" />
+          <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierCode" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TransporterCode" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TarnsPorterName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ChallanNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Miscellaneous" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryNoteN" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ChallanWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChallanDate" Type="DateTime" Precision="0" />
+          <Property Name="DateIn" Type="DateTime" Precision="0" />
+          <Property Name="TimeIn" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateOut" Type="DateTime" Precision="0" />
+          <Property Name="TimeOut" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TareWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NetWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GrossWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProdInOut" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="transNormalWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Mode" Type="Byte" Nullable="false" />
+          <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierCode" Type="Guid" />
+          <Property Name="TransporterCode" Type="Guid" />
+          <Property Name="ChallanNumber" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ChallanDate" Type="DateTime" Precision="0" />
+          <Property Name="ChallanWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ChallanWeightUnit" Type="Byte" />
+          <Property Name="Miscellaneous" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryNoteN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateIn" Type="DateTime" Precision="0" />
+          <Property Name="DateOut" Type="DateTime" Precision="0" />
+          <Property Name="TimeIn" Type="Time" Precision="7" />
+          <Property Name="TimeOut" Type="Time" Precision="7" />
+          <Property Name="TareWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="GrossWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="NetWeight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ProdInOut" Type="Byte" Nullable="false" />
+          <Property Name="IsPending" Type="Byte" Nullable="false" />
+          <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1397,35 +1516,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
                 <ScalarProperty Name="Truck" ColumnName="Truck" />
                 <ScalarProperty Name="Mode" ColumnName="Mode" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="transNormalWeight">
-            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight">
-              <MappingFragment StoreEntitySet="transNormalWeight">
-                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
-                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
-                <ScalarProperty Name="IsPending" ColumnName="IsPending" />
-                <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
-                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
-                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
-                <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
-                <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
-                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
-                <ScalarProperty Name="DateOut" ColumnName="DateOut" />
-                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
-                <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
-                <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
-                <ScalarProperty Name="ChallanWeightUnit" ColumnName="ChallanWeightUnit" />
-                <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
-                <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
-                <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
-                <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
-                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
-                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
-                <ScalarProperty Name="Truck" ColumnName="Truck" />
-                <ScalarProperty Name="Mode" ColumnName="Mode" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1766,6 +1856,63 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
               <MappingFragment StoreEntitySet="V_NormalPendingWeightDashBoard">
                 <ScalarProperty Name="TruckCount" ColumnName="TruckCount" />
                 <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_rptNormalReport">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.V_rptNormalReport">
+              <MappingFragment StoreEntitySet="V_rptNormalReport">
+                <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+                <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+                <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
+                <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
+                <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
+                <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
+                <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
+                <ScalarProperty Name="TarnsPorterName" ColumnName="TarnsPorterName" />
+                <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="Truck" ColumnName="Truck" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transNormalWeight">
+            <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight">
+              <MappingFragment StoreEntitySet="transNormalWeight">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="IsPending" ColumnName="IsPending" />
+                <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+                <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+                <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
+                <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
+                <ScalarProperty Name="ChallanWeightUnit" ColumnName="ChallanWeightUnit" />
+                <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
+                <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
+                <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
+                <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="Truck" ColumnName="Truck" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

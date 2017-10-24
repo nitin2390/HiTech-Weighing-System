@@ -152,7 +152,7 @@ namespace HitechTMS.File
                             if (!Regex.IsMatch(txtPhone.Text, @"^[789]\d{9}$", RegexOptions.IgnoreCase))
                             {
                                 DialogResult = DialogResult.None;
-                                errProviderPhone.SetError(txtPhone, "Phone number invalid! {XXXXXXXXXX}");
+                                errProviderPhone.SetError(txtPhone, "Phone number invalid!");
                                 return;
                             }
                             else
@@ -170,7 +170,7 @@ namespace HitechTMS.File
                             if (!Regex.IsMatch(txtFax.Text, @"^[789]\d{9}$", RegexOptions.IgnoreCase))
                             {
                                 DialogResult = DialogResult.None;
-                                errProviderFax.SetError(txtFax, "Fax number invalid! {XXXXXXXXXX}");
+                                errProviderFax.SetError(txtFax, "Fax number invalid!");
                                 return;
                             }
                             else

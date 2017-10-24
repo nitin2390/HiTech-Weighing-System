@@ -162,7 +162,7 @@ namespace HitechTMS.File
             {
                 errProductCode.Clear();
                 var ProdQuery = from prod in dbObj.Products
-                                where prod.Code == txtProductCode.Text
+                                where prod.Code.Contains(txtProductCode.Text)
                                 select prod;
                 List<Product> objProd = ProdQuery.ToList();
                 if (objProd.Count > 0)
@@ -181,7 +181,7 @@ namespace HitechTMS.File
             }
             else
             {
-                errProductCode.SetError(txtProductCode, _dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
+                errProductCode.SetError(txtProductCode, _dbGetResourceCaption.GetStringValue("CAN_NOT_BLANK_PRD_CD"));
             }
 
             
@@ -243,7 +243,7 @@ namespace HitechTMS.File
 
             if (txtProductCode.Text == string.Empty)
             {
-                errProductCode.SetError(txtProductCode, _dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
+                errProductCode.SetError(txtProductCode, _dbGetResourceCaption.GetStringValue("CAN_NOT_BLANK_PRD_CD"));
             }
             else
             {
@@ -252,7 +252,7 @@ namespace HitechTMS.File
 
             if (txtProductName.Text == string.Empty)
             {
-                errProductName.SetError(txtProductName, _dbGetResourceCaption.GetStringValue("PRD_NM_CAN_NOT_BLANK"));
+                errProductName.SetError(txtProductName, _dbGetResourceCaption.GetStringValue("CAN_NOT_BLANK_PRD_NM"));
             }
             else
             {
@@ -263,7 +263,7 @@ namespace HitechTMS.File
         {
             if (txtProductCode.Text == string.Empty)
             {
-                errProductCode.SetError(txtProductCode, _dbGetResourceCaption.GetStringValue("PRD_CD_CAN_NOT_BLANK"));
+                errProductCode.SetError(txtProductCode, _dbGetResourceCaption.GetStringValue("CAN_NOT_BLANK_PRD_CD"));
             }
             else
             {
@@ -272,7 +272,7 @@ namespace HitechTMS.File
 
             if (txtProductName.Text == string.Empty)
             {
-                errProductName.SetError(txtProductName, _dbGetResourceCaption.GetStringValue("PRD_NM_CAN_NOT_BLANK"));
+                errProductName.SetError(txtProductName, _dbGetResourceCaption.GetStringValue("CAN_NOT_BLANK_PRD_NM"));
             }
             else
             {
@@ -318,7 +318,7 @@ namespace HitechTMS.File
             if (txtProductCode.Text != string.Empty)
             {
                 var ProdQuery = from prod in dbObj.Products
-                                where prod.Code == txtProductCode.Text
+                                where prod.Code.Contains(txtProductCode.Text)
                                 select prod;
                 List<Product> objProd = ProdQuery.ToList();
                 if (objProd.Count > 0)

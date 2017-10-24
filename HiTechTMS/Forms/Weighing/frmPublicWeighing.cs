@@ -113,7 +113,7 @@ namespace HitechTMS.Weighing
             {
                 if (txtTruck.Text.Trim().Length < 1)
                 {
-                    errProvWeight.SetError(txtTruck, _dbGetResourceCaption.GetStringValue("TRUCK_CAN_NOT_BLANK"));
+                    errProvWeight.SetError(txtTruck, _dbGetResourceCaption.GetStringValue("CAN_NOT_BLANK_TRUCK"));
                     return;
                 }
                 List<transPublicWeight> existsQuery = new List<transPublicWeight>();

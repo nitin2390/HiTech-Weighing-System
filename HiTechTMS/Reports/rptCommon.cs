@@ -14,7 +14,7 @@ namespace HitechTMS
         {
             InitializeComponent();
             this._frmName = enumfrmName;
-
+            Bounds = Screen.PrimaryScreen.Bounds;
             ReportDocument cryRpt = new ReportDocument();
             if (_frmName == FrmName.ProductDetail)
             {
@@ -61,7 +61,7 @@ namespace HitechTMS
             cryRepViewCommon.Refresh();
             cryRpt.SetDataSource(dataSrc);
             cryRepViewCommon.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            //cryRpt.SetParameterValue(0, "HiTech Weighing System");
+            cryRpt.SetParameterValue(0, "HiTech Weighing System");
             cryRepViewCommon.ReportSource = cryRpt;
 
         }
@@ -85,6 +85,7 @@ namespace HitechTMS
                 cryRpt.DataDefinition.FormulaFields["ProductNameCaption"].Text = "'Product Name'";
                 cryRpt.DataDefinition.FormulaFields["ChallanNumberCaption"].Text = "'Challan Number'";
                 cryRpt.DataDefinition.FormulaFields["ChallanDateCaption"].Text = "'Challan Date'";
+                cryRpt.DataDefinition.FormulaFields["ChallanWeightCaption"].Text = "'Challan Date'";
 
                 cryRpt.DataDefinition.FormulaFields["DateInCaption"].Text = "'Date In'";
                 cryRpt.DataDefinition.FormulaFields["DateOutCaption"].Text = "'Date Out'";

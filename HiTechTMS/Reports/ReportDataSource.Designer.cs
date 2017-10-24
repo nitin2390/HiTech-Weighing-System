@@ -30,6 +30,8 @@ namespace HitechTMS.Reports {
         
         private rptNormalTicketDataTable tablerptNormalTicket;
         
+        private V_rptNormalReportDataTable tableV_rptNormalReport;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -66,6 +68,9 @@ namespace HitechTMS.Reports {
                 }
                 if ((ds.Tables["rptNormalTicket"] != null)) {
                     base.Tables.Add(new rptNormalTicketDataTable(ds.Tables["rptNormalTicket"]));
+                }
+                if ((ds.Tables["V_rptNormalReport"] != null)) {
+                    base.Tables.Add(new V_rptNormalReportDataTable(ds.Tables["V_rptNormalReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -112,6 +117,16 @@ namespace HitechTMS.Reports {
         public rptNormalTicketDataTable rptNormalTicket {
             get {
                 return this.tablerptNormalTicket;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public V_rptNormalReportDataTable V_rptNormalReport {
+            get {
+                return this.tableV_rptNormalReport;
             }
         }
         
@@ -191,6 +206,9 @@ namespace HitechTMS.Reports {
                 if ((ds.Tables["rptNormalTicket"] != null)) {
                     base.Tables.Add(new rptNormalTicketDataTable(ds.Tables["rptNormalTicket"]));
                 }
+                if ((ds.Tables["V_rptNormalReport"] != null)) {
+                    base.Tables.Add(new V_rptNormalReportDataTable(ds.Tables["V_rptNormalReport"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -242,6 +260,12 @@ namespace HitechTMS.Reports {
                     this.tablerptNormalTicket.InitVars();
                 }
             }
+            this.tableV_rptNormalReport = ((V_rptNormalReportDataTable)(base.Tables["V_rptNormalReport"]));
+            if ((initTable == true)) {
+                if ((this.tableV_rptNormalReport != null)) {
+                    this.tableV_rptNormalReport.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -258,6 +282,8 @@ namespace HitechTMS.Reports {
             base.Tables.Add(this.tableProduct);
             this.tablerptNormalTicket = new rptNormalTicketDataTable();
             base.Tables.Add(this.tablerptNormalTicket);
+            this.tableV_rptNormalReport = new V_rptNormalReportDataTable();
+            base.Tables.Add(this.tableV_rptNormalReport);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -275,6 +301,12 @@ namespace HitechTMS.Reports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializerptNormalTicket() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeV_rptNormalReport() {
             return false;
         }
         
@@ -341,6 +373,9 @@ namespace HitechTMS.Reports {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void rptNormalTicketRowChangeEventHandler(object sender, rptNormalTicketRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void V_rptNormalReportRowChangeEventHandler(object sender, V_rptNormalReportRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1543,6 +1578,605 @@ namespace HitechTMS.Reports {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class V_rptNormalReportDataTable : global::System.Data.TypedTableBase<V_rptNormalReportRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnMode;
+            
+            private global::System.Data.DataColumn columnTruck;
+            
+            private global::System.Data.DataColumn columnProductCode;
+            
+            private global::System.Data.DataColumn columnName;
+            
+            private global::System.Data.DataColumn columnSupplierCode;
+            
+            private global::System.Data.DataColumn columnSupplierName;
+            
+            private global::System.Data.DataColumn columnTransporterCode;
+            
+            private global::System.Data.DataColumn columnTarnsPorterName;
+            
+            private global::System.Data.DataColumn columnChallanNumber;
+            
+            private global::System.Data.DataColumn columnMiscellaneous;
+            
+            private global::System.Data.DataColumn columnDeliveryNoteN;
+            
+            private global::System.Data.DataColumn columnChallanWeight;
+            
+            private global::System.Data.DataColumn columnChallanDate;
+            
+            private global::System.Data.DataColumn columnDateIn;
+            
+            private global::System.Data.DataColumn columnTimeIn;
+            
+            private global::System.Data.DataColumn columnDateOut;
+            
+            private global::System.Data.DataColumn columnTimeOut;
+            
+            private global::System.Data.DataColumn columnTareWeight;
+            
+            private global::System.Data.DataColumn columnNetWeight;
+            
+            private global::System.Data.DataColumn columnGrossWeight;
+            
+            private global::System.Data.DataColumn columnProdInOut;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public V_rptNormalReportDataTable() {
+                this.TableName = "V_rptNormalReport";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal V_rptNormalReportDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected V_rptNormalReportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ModeColumn {
+                get {
+                    return this.columnMode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TruckColumn {
+                get {
+                    return this.columnTruck;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProductCodeColumn {
+                get {
+                    return this.columnProductCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SupplierCodeColumn {
+                get {
+                    return this.columnSupplierCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SupplierNameColumn {
+                get {
+                    return this.columnSupplierName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TransporterCodeColumn {
+                get {
+                    return this.columnTransporterCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TarnsPorterNameColumn {
+                get {
+                    return this.columnTarnsPorterName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ChallanNumberColumn {
+                get {
+                    return this.columnChallanNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MiscellaneousColumn {
+                get {
+                    return this.columnMiscellaneous;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DeliveryNoteNColumn {
+                get {
+                    return this.columnDeliveryNoteN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ChallanWeightColumn {
+                get {
+                    return this.columnChallanWeight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ChallanDateColumn {
+                get {
+                    return this.columnChallanDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateInColumn {
+                get {
+                    return this.columnDateIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TimeInColumn {
+                get {
+                    return this.columnTimeIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateOutColumn {
+                get {
+                    return this.columnDateOut;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TimeOutColumn {
+                get {
+                    return this.columnTimeOut;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TareWeightColumn {
+                get {
+                    return this.columnTareWeight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NetWeightColumn {
+                get {
+                    return this.columnNetWeight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GrossWeightColumn {
+                get {
+                    return this.columnGrossWeight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProdInOutColumn {
+                get {
+                    return this.columnProdInOut;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public V_rptNormalReportRow this[int index] {
+                get {
+                    return ((V_rptNormalReportRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event V_rptNormalReportRowChangeEventHandler V_rptNormalReportRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event V_rptNormalReportRowChangeEventHandler V_rptNormalReportRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event V_rptNormalReportRowChangeEventHandler V_rptNormalReportRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event V_rptNormalReportRowChangeEventHandler V_rptNormalReportRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddV_rptNormalReportRow(V_rptNormalReportRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public V_rptNormalReportRow AddV_rptNormalReportRow(
+                        string ID, 
+                        byte Mode, 
+                        string Truck, 
+                        string ProductCode, 
+                        string Name, 
+                        string SupplierCode, 
+                        string SupplierName, 
+                        string TransporterCode, 
+                        string TarnsPorterName, 
+                        string ChallanNumber, 
+                        string Miscellaneous, 
+                        string DeliveryNoteN, 
+                        string ChallanWeight, 
+                        System.DateTime ChallanDate, 
+                        System.DateTime DateIn, 
+                        string TimeIn, 
+                        System.DateTime DateOut, 
+                        string TimeOut, 
+                        string TareWeight, 
+                        string NetWeight, 
+                        string GrossWeight, 
+                        byte ProdInOut) {
+                V_rptNormalReportRow rowV_rptNormalReportRow = ((V_rptNormalReportRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID,
+                        Mode,
+                        Truck,
+                        ProductCode,
+                        Name,
+                        SupplierCode,
+                        SupplierName,
+                        TransporterCode,
+                        TarnsPorterName,
+                        ChallanNumber,
+                        Miscellaneous,
+                        DeliveryNoteN,
+                        ChallanWeight,
+                        ChallanDate,
+                        DateIn,
+                        TimeIn,
+                        DateOut,
+                        TimeOut,
+                        TareWeight,
+                        NetWeight,
+                        GrossWeight,
+                        ProdInOut};
+                rowV_rptNormalReportRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowV_rptNormalReportRow);
+                return rowV_rptNormalReportRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                V_rptNormalReportDataTable cln = ((V_rptNormalReportDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new V_rptNormalReportDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnMode = base.Columns["Mode"];
+                this.columnTruck = base.Columns["Truck"];
+                this.columnProductCode = base.Columns["ProductCode"];
+                this.columnName = base.Columns["Name"];
+                this.columnSupplierCode = base.Columns["SupplierCode"];
+                this.columnSupplierName = base.Columns["SupplierName"];
+                this.columnTransporterCode = base.Columns["TransporterCode"];
+                this.columnTarnsPorterName = base.Columns["TarnsPorterName"];
+                this.columnChallanNumber = base.Columns["ChallanNumber"];
+                this.columnMiscellaneous = base.Columns["Miscellaneous"];
+                this.columnDeliveryNoteN = base.Columns["DeliveryNoteN"];
+                this.columnChallanWeight = base.Columns["ChallanWeight"];
+                this.columnChallanDate = base.Columns["ChallanDate"];
+                this.columnDateIn = base.Columns["DateIn"];
+                this.columnTimeIn = base.Columns["TimeIn"];
+                this.columnDateOut = base.Columns["DateOut"];
+                this.columnTimeOut = base.Columns["TimeOut"];
+                this.columnTareWeight = base.Columns["TareWeight"];
+                this.columnNetWeight = base.Columns["NetWeight"];
+                this.columnGrossWeight = base.Columns["GrossWeight"];
+                this.columnProdInOut = base.Columns["ProdInOut"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnMode = new global::System.Data.DataColumn("Mode", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMode);
+                this.columnTruck = new global::System.Data.DataColumn("Truck", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTruck);
+                this.columnProductCode = new global::System.Data.DataColumn("ProductCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductCode);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnSupplierCode = new global::System.Data.DataColumn("SupplierCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSupplierCode);
+                this.columnSupplierName = new global::System.Data.DataColumn("SupplierName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSupplierName);
+                this.columnTransporterCode = new global::System.Data.DataColumn("TransporterCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTransporterCode);
+                this.columnTarnsPorterName = new global::System.Data.DataColumn("TarnsPorterName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTarnsPorterName);
+                this.columnChallanNumber = new global::System.Data.DataColumn("ChallanNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnChallanNumber);
+                this.columnMiscellaneous = new global::System.Data.DataColumn("Miscellaneous", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMiscellaneous);
+                this.columnDeliveryNoteN = new global::System.Data.DataColumn("DeliveryNoteN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeliveryNoteN);
+                this.columnChallanWeight = new global::System.Data.DataColumn("ChallanWeight", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnChallanWeight);
+                this.columnChallanDate = new global::System.Data.DataColumn("ChallanDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnChallanDate);
+                this.columnDateIn = new global::System.Data.DataColumn("DateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateIn);
+                this.columnTimeIn = new global::System.Data.DataColumn("TimeIn", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTimeIn);
+                this.columnDateOut = new global::System.Data.DataColumn("DateOut", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateOut);
+                this.columnTimeOut = new global::System.Data.DataColumn("TimeOut", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTimeOut);
+                this.columnTareWeight = new global::System.Data.DataColumn("TareWeight", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTareWeight);
+                this.columnNetWeight = new global::System.Data.DataColumn("NetWeight", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNetWeight);
+                this.columnGrossWeight = new global::System.Data.DataColumn("GrossWeight", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrossWeight);
+                this.columnProdInOut = new global::System.Data.DataColumn("ProdInOut", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProdInOut);
+                this.columnID.ReadOnly = true;
+                this.columnID.MaxLength = 2147483647;
+                this.columnMode.AllowDBNull = false;
+                this.columnTruck.ReadOnly = true;
+                this.columnTruck.MaxLength = 12;
+                this.columnProductCode.ReadOnly = true;
+                this.columnProductCode.MaxLength = 5;
+                this.columnName.ReadOnly = true;
+                this.columnName.MaxLength = 25;
+                this.columnSupplierCode.ReadOnly = true;
+                this.columnSupplierCode.MaxLength = 2147483647;
+                this.columnSupplierName.ReadOnly = true;
+                this.columnSupplierName.MaxLength = 25;
+                this.columnTransporterCode.ReadOnly = true;
+                this.columnTransporterCode.MaxLength = 2147483647;
+                this.columnTarnsPorterName.ReadOnly = true;
+                this.columnTarnsPorterName.MaxLength = 25;
+                this.columnChallanNumber.ReadOnly = true;
+                this.columnChallanNumber.MaxLength = 25;
+                this.columnMiscellaneous.ReadOnly = true;
+                this.columnMiscellaneous.MaxLength = 50;
+                this.columnDeliveryNoteN.ReadOnly = true;
+                this.columnDeliveryNoteN.MaxLength = 25;
+                this.columnChallanWeight.ReadOnly = true;
+                this.columnChallanWeight.MaxLength = 2147483647;
+                this.columnTimeIn.ReadOnly = true;
+                this.columnTimeIn.MaxLength = 2147483647;
+                this.columnTimeOut.ReadOnly = true;
+                this.columnTimeOut.MaxLength = 2147483647;
+                this.columnTareWeight.ReadOnly = true;
+                this.columnTareWeight.MaxLength = 2147483647;
+                this.columnNetWeight.ReadOnly = true;
+                this.columnNetWeight.MaxLength = 2147483647;
+                this.columnGrossWeight.ReadOnly = true;
+                this.columnGrossWeight.MaxLength = 2147483647;
+                this.columnProdInOut.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public V_rptNormalReportRow NewV_rptNormalReportRow() {
+                return ((V_rptNormalReportRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new V_rptNormalReportRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(V_rptNormalReportRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.V_rptNormalReportRowChanged != null)) {
+                    this.V_rptNormalReportRowChanged(this, new V_rptNormalReportRowChangeEvent(((V_rptNormalReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.V_rptNormalReportRowChanging != null)) {
+                    this.V_rptNormalReportRowChanging(this, new V_rptNormalReportRowChangeEvent(((V_rptNormalReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.V_rptNormalReportRowDeleted != null)) {
+                    this.V_rptNormalReportRowDeleted(this, new V_rptNormalReportRowChangeEvent(((V_rptNormalReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.V_rptNormalReportRowDeleting != null)) {
+                    this.V_rptNormalReportRowDeleting(this, new V_rptNormalReportRowChangeEvent(((V_rptNormalReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveV_rptNormalReportRow(V_rptNormalReportRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ReportDataSource ds = new ReportDataSource();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "V_rptNormalReportDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CaptionsRow : global::System.Data.DataRow {
@@ -2264,6 +2898,620 @@ namespace HitechTMS.Reports {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class V_rptNormalReportRow : global::System.Data.DataRow {
+            
+            private V_rptNormalReportDataTable tableV_rptNormalReport;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal V_rptNormalReportRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableV_rptNormalReport = ((V_rptNormalReportDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte Mode {
+                get {
+                    return ((byte)(this[this.tableV_rptNormalReport.ModeColumn]));
+                }
+                set {
+                    this[this.tableV_rptNormalReport.ModeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Truck {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.TruckColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Truck\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.TruckColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ProductCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.ProductCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProductCode\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.ProductCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SupplierCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.SupplierCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SupplierCode\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.SupplierCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SupplierName {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.SupplierNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SupplierName\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.SupplierNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TransporterCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.TransporterCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TransporterCode\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.TransporterCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TarnsPorterName {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.TarnsPorterNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TarnsPorterName\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.TarnsPorterNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ChallanNumber {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.ChallanNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ChallanNumber\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.ChallanNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Miscellaneous {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.MiscellaneousColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Miscellaneous\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.MiscellaneousColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DeliveryNoteN {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.DeliveryNoteNColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DeliveryNoteN\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.DeliveryNoteNColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ChallanWeight {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.ChallanWeightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ChallanWeight\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.ChallanWeightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime ChallanDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_rptNormalReport.ChallanDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ChallanDate\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.ChallanDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateIn {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_rptNormalReport.DateInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateIn\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.DateInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TimeIn {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.TimeInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TimeIn\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.TimeInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateOut {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_rptNormalReport.DateOutColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateOut\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.DateOutColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TimeOut {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.TimeOutColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TimeOut\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.TimeOutColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TareWeight {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.TareWeightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TareWeight\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.TareWeightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NetWeight {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.NetWeightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NetWeight\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.NetWeightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GrossWeight {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_rptNormalReport.GrossWeightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GrossWeight\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.GrossWeightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte ProdInOut {
+                get {
+                    try {
+                        return ((byte)(this[this.tableV_rptNormalReport.ProdInOutColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProdInOut\' in table \'V_rptNormalReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_rptNormalReport.ProdInOutColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIDNull() {
+                return this.IsNull(this.tableV_rptNormalReport.IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIDNull() {
+                this[this.tableV_rptNormalReport.IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTruckNull() {
+                return this.IsNull(this.tableV_rptNormalReport.TruckColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTruckNull() {
+                this[this.tableV_rptNormalReport.TruckColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProductCodeNull() {
+                return this.IsNull(this.tableV_rptNormalReport.ProductCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProductCodeNull() {
+                this[this.tableV_rptNormalReport.ProductCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNameNull() {
+                return this.IsNull(this.tableV_rptNormalReport.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNameNull() {
+                this[this.tableV_rptNormalReport.NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSupplierCodeNull() {
+                return this.IsNull(this.tableV_rptNormalReport.SupplierCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSupplierCodeNull() {
+                this[this.tableV_rptNormalReport.SupplierCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSupplierNameNull() {
+                return this.IsNull(this.tableV_rptNormalReport.SupplierNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSupplierNameNull() {
+                this[this.tableV_rptNormalReport.SupplierNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTransporterCodeNull() {
+                return this.IsNull(this.tableV_rptNormalReport.TransporterCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTransporterCodeNull() {
+                this[this.tableV_rptNormalReport.TransporterCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTarnsPorterNameNull() {
+                return this.IsNull(this.tableV_rptNormalReport.TarnsPorterNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTarnsPorterNameNull() {
+                this[this.tableV_rptNormalReport.TarnsPorterNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsChallanNumberNull() {
+                return this.IsNull(this.tableV_rptNormalReport.ChallanNumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetChallanNumberNull() {
+                this[this.tableV_rptNormalReport.ChallanNumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMiscellaneousNull() {
+                return this.IsNull(this.tableV_rptNormalReport.MiscellaneousColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMiscellaneousNull() {
+                this[this.tableV_rptNormalReport.MiscellaneousColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDeliveryNoteNNull() {
+                return this.IsNull(this.tableV_rptNormalReport.DeliveryNoteNColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDeliveryNoteNNull() {
+                this[this.tableV_rptNormalReport.DeliveryNoteNColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsChallanWeightNull() {
+                return this.IsNull(this.tableV_rptNormalReport.ChallanWeightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetChallanWeightNull() {
+                this[this.tableV_rptNormalReport.ChallanWeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsChallanDateNull() {
+                return this.IsNull(this.tableV_rptNormalReport.ChallanDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetChallanDateNull() {
+                this[this.tableV_rptNormalReport.ChallanDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateInNull() {
+                return this.IsNull(this.tableV_rptNormalReport.DateInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateInNull() {
+                this[this.tableV_rptNormalReport.DateInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTimeInNull() {
+                return this.IsNull(this.tableV_rptNormalReport.TimeInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTimeInNull() {
+                this[this.tableV_rptNormalReport.TimeInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateOutNull() {
+                return this.IsNull(this.tableV_rptNormalReport.DateOutColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateOutNull() {
+                this[this.tableV_rptNormalReport.DateOutColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTimeOutNull() {
+                return this.IsNull(this.tableV_rptNormalReport.TimeOutColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTimeOutNull() {
+                this[this.tableV_rptNormalReport.TimeOutColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTareWeightNull() {
+                return this.IsNull(this.tableV_rptNormalReport.TareWeightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTareWeightNull() {
+                this[this.tableV_rptNormalReport.TareWeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNetWeightNull() {
+                return this.IsNull(this.tableV_rptNormalReport.NetWeightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNetWeightNull() {
+                this[this.tableV_rptNormalReport.NetWeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGrossWeightNull() {
+                return this.IsNull(this.tableV_rptNormalReport.GrossWeightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGrossWeightNull() {
+                this[this.tableV_rptNormalReport.GrossWeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProdInOutNull() {
+                return this.IsNull(this.tableV_rptNormalReport.ProdInOutColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProdInOutNull() {
+                this[this.tableV_rptNormalReport.ProdInOutColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2351,6 +3599,40 @@ namespace HitechTMS.Reports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public rptNormalTicketRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class V_rptNormalReportRowChangeEvent : global::System.EventArgs {
+            
+            private V_rptNormalReportRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public V_rptNormalReportRowChangeEvent(V_rptNormalReportRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public V_rptNormalReportRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3131,6 +4413,196 @@ FROM     rptNormalTicket";
         public virtual ReportDataSource.rptNormalTicketDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             ReportDataSource.rptNormalTicketDataTable dataTable = new ReportDataSource.rptNormalTicketDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class V_rptNormalReportTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public V_rptNormalReportTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "V_rptNormalReport";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("Mode", "Mode");
+            tableMapping.ColumnMappings.Add("Truck", "Truck");
+            tableMapping.ColumnMappings.Add("ProductCode", "ProductCode");
+            tableMapping.ColumnMappings.Add("Name", "Name");
+            tableMapping.ColumnMappings.Add("SupplierCode", "SupplierCode");
+            tableMapping.ColumnMappings.Add("SupplierName", "SupplierName");
+            tableMapping.ColumnMappings.Add("TransporterCode", "TransporterCode");
+            tableMapping.ColumnMappings.Add("TarnsPorterName", "TarnsPorterName");
+            tableMapping.ColumnMappings.Add("ChallanNumber", "ChallanNumber");
+            tableMapping.ColumnMappings.Add("Miscellaneous", "Miscellaneous");
+            tableMapping.ColumnMappings.Add("DeliveryNoteN", "DeliveryNoteN");
+            tableMapping.ColumnMappings.Add("ChallanWeight", "ChallanWeight");
+            tableMapping.ColumnMappings.Add("ChallanDate", "ChallanDate");
+            tableMapping.ColumnMappings.Add("DateIn", "DateIn");
+            tableMapping.ColumnMappings.Add("TimeIn", "TimeIn");
+            tableMapping.ColumnMappings.Add("DateOut", "DateOut");
+            tableMapping.ColumnMappings.Add("TimeOut", "TimeOut");
+            tableMapping.ColumnMappings.Add("TareWeight", "TareWeight");
+            tableMapping.ColumnMappings.Add("NetWeight", "NetWeight");
+            tableMapping.ColumnMappings.Add("GrossWeight", "GrossWeight");
+            tableMapping.ColumnMappings.Add("ProdInOut", "ProdInOut");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::HitechTMS.Properties.Settings.Default.HitechTruckMngtSystmDataBaseFileConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT ID, Mode, Truck, ProductCode, Name, SupplierCode, SupplierName, TransporterCode, TarnsPorterName, ChallanNumber, Miscellaneous, DeliveryNoteN, ChallanWeight, 
+                  ChallanDate, DateIn, TimeIn, DateOut, TimeOut, TareWeight, NetWeight, GrossWeight, ProdInOut
+FROM     V_rptNormalReport";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ReportDataSource.V_rptNormalReportDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ReportDataSource.V_rptNormalReportDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            ReportDataSource.V_rptNormalReportDataTable dataTable = new ReportDataSource.V_rptNormalReportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

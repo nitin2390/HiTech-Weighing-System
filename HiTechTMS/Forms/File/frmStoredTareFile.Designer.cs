@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStoredTareFile));
             this.grpboxCreateEditStoredTareRecords = new System.Windows.Forms.GroupBox();
             this.btnWeight = new System.Windows.Forms.Button();
@@ -95,6 +93,7 @@
             this.grpboxCreateEditStoredTareRecords.Controls.Add(this.lblTruckType);
             this.grpboxCreateEditStoredTareRecords.Controls.Add(this.lblTruck);
             this.grpboxCreateEditStoredTareRecords.Controls.Add(this.lblMode);
+            this.grpboxCreateEditStoredTareRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpboxCreateEditStoredTareRecords.Location = new System.Drawing.Point(12, 13);
             this.grpboxCreateEditStoredTareRecords.Name = "grpboxCreateEditStoredTareRecords";
             this.grpboxCreateEditStoredTareRecords.Size = new System.Drawing.Size(893, 636);
@@ -117,7 +116,7 @@
             this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecCount.Location = new System.Drawing.Point(649, 590);
+            this.lblRecCount.Location = new System.Drawing.Point(649, 602);
             this.lblRecCount.Name = "lblRecCount";
             this.lblRecCount.Size = new System.Drawing.Size(136, 22);
             this.lblRecCount.TabIndex = 26;
@@ -129,7 +128,7 @@
             this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsCount.Location = new System.Drawing.Point(805, 590);
+            this.lblRecordsCount.Location = new System.Drawing.Point(805, 602);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
             this.lblRecordsCount.TabIndex = 25;
@@ -137,24 +136,8 @@
             // 
             // gridStoredTare
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridStoredTare.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridStoredTare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridStoredTare.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridStoredTare.Location = new System.Drawing.Point(32, 344);
+            this.gridStoredTare.Location = new System.Drawing.Point(32, 356);
             this.gridStoredTare.Name = "gridStoredTare";
             this.gridStoredTare.RowTemplate.Height = 24;
             this.gridStoredTare.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -164,9 +147,9 @@
             // 
             // btnEmailExcel
             // 
-            this.btnEmailExcel.Location = new System.Drawing.Point(516, 305);
+            this.btnEmailExcel.Location = new System.Drawing.Point(533, 290);
             this.btnEmailExcel.Name = "btnEmailExcel";
-            this.btnEmailExcel.Size = new System.Drawing.Size(115, 27);
+            this.btnEmailExcel.Size = new System.Drawing.Size(134, 50);
             this.btnEmailExcel.TabIndex = 8;
             this.btnEmailExcel.Text = "E&mail As Excel";
             this.btnEmailExcel.UseVisualStyleBackColor = true;
@@ -174,9 +157,9 @@
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(398, 305);
+            this.btnReport.Location = new System.Drawing.Point(384, 290);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(100, 27);
+            this.btnReport.Size = new System.Drawing.Size(134, 50);
             this.btnReport.TabIndex = 7;
             this.btnReport.Text = "&Report";
             this.btnReport.UseVisualStyleBackColor = true;
@@ -184,9 +167,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(270, 305);
+            this.btnDelete.Location = new System.Drawing.Point(234, 290);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 27);
+            this.btnDelete.Size = new System.Drawing.Size(134, 50);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -194,9 +177,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(649, 305);
+            this.btnExit.Location = new System.Drawing.Point(682, 290);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 27);
+            this.btnExit.Size = new System.Drawing.Size(134, 50);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -204,9 +187,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(136, 305);
+            this.btnSave.Location = new System.Drawing.Point(83, 290);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 27);
+            this.btnSave.Size = new System.Drawing.Size(134, 50);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -217,8 +200,9 @@
             this.txtTareWeight.Location = new System.Drawing.Point(455, 239);
             this.txtTareWeight.MaxLength = 4;
             this.txtTareWeight.Name = "txtTareWeight";
-            this.txtTareWeight.Size = new System.Drawing.Size(135, 22);
+            this.txtTareWeight.Size = new System.Drawing.Size(135, 26);
             this.txtTareWeight.TabIndex = 4;
+            this.txtTareWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTareWeight.TextChanged += new System.EventHandler(this.txtTareWeight_TextChanged);
             this.txtTareWeight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTareWeight_KeyDown);
             this.txtTareWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTareWeight_KeyPress);
@@ -228,7 +212,7 @@
             this.lblTareWeight.AutoSize = true;
             this.lblTareWeight.Location = new System.Drawing.Point(478, 205);
             this.lblTareWeight.Name = "lblTareWeight";
-            this.lblTareWeight.Size = new System.Drawing.Size(86, 17);
+            this.lblTareWeight.Size = new System.Drawing.Size(100, 20);
             this.lblTareWeight.TabIndex = 16;
             this.lblTareWeight.Text = "Tare Weight";
             // 
@@ -237,7 +221,7 @@
             this.txtTimeIn.Location = new System.Drawing.Point(273, 239);
             this.txtTimeIn.Name = "txtTimeIn";
             this.txtTimeIn.ReadOnly = true;
-            this.txtTimeIn.Size = new System.Drawing.Size(135, 22);
+            this.txtTimeIn.Size = new System.Drawing.Size(135, 26);
             this.txtTimeIn.TabIndex = 15;
             this.txtTimeIn.TabStop = false;
             // 
@@ -246,7 +230,7 @@
             this.lblTimeIn.AutoSize = true;
             this.lblTimeIn.Location = new System.Drawing.Point(314, 205);
             this.lblTimeIn.Name = "lblTimeIn";
-            this.lblTimeIn.Size = new System.Drawing.Size(54, 17);
+            this.lblTimeIn.Size = new System.Drawing.Size(64, 20);
             this.lblTimeIn.TabIndex = 14;
             this.lblTimeIn.Text = "Time In";
             // 
@@ -255,7 +239,7 @@
             this.txtDateIn.Location = new System.Drawing.Point(105, 239);
             this.txtDateIn.Name = "txtDateIn";
             this.txtDateIn.ReadOnly = true;
-            this.txtDateIn.Size = new System.Drawing.Size(135, 22);
+            this.txtDateIn.Size = new System.Drawing.Size(135, 26);
             this.txtDateIn.TabIndex = 13;
             this.txtDateIn.TabStop = false;
             // 
@@ -264,7 +248,7 @@
             this.lblDateIn.AutoSize = true;
             this.lblDateIn.Location = new System.Drawing.Point(141, 205);
             this.lblDateIn.Name = "lblDateIn";
-            this.lblDateIn.Size = new System.Drawing.Size(53, 17);
+            this.lblDateIn.Size = new System.Drawing.Size(63, 20);
             this.lblDateIn.TabIndex = 12;
             this.lblDateIn.Text = "Date In";
             // 
@@ -273,7 +257,7 @@
             this.txtMode.Location = new System.Drawing.Point(432, 18);
             this.txtMode.Name = "txtMode";
             this.txtMode.ReadOnly = true;
-            this.txtMode.Size = new System.Drawing.Size(77, 22);
+            this.txtMode.Size = new System.Drawing.Size(77, 26);
             this.txtMode.TabIndex = 11;
             this.txtMode.TabStop = false;
             // 
@@ -282,7 +266,7 @@
             this.txtTransportName.Location = new System.Drawing.Point(659, 139);
             this.txtTransportName.Name = "txtTransportName";
             this.txtTransportName.ReadOnly = true;
-            this.txtTransportName.Size = new System.Drawing.Size(135, 22);
+            this.txtTransportName.Size = new System.Drawing.Size(135, 26);
             this.txtTransportName.TabIndex = 10;
             this.txtTransportName.TabStop = false;
             // 
@@ -291,7 +275,7 @@
             this.txtTruckType.Location = new System.Drawing.Point(238, 136);
             this.txtTruckType.MaxLength = 20;
             this.txtTruckType.Name = "txtTruckType";
-            this.txtTruckType.Size = new System.Drawing.Size(159, 22);
+            this.txtTruckType.Size = new System.Drawing.Size(159, 26);
             this.txtTruckType.TabIndex = 2;
             this.txtTruckType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTruckType_KeyDown);
             // 
@@ -300,7 +284,7 @@
             this.txtTruck.Location = new System.Drawing.Point(238, 77);
             this.txtTruck.MaxLength = 12;
             this.txtTruck.Name = "txtTruck";
-            this.txtTruck.Size = new System.Drawing.Size(159, 22);
+            this.txtTruck.Size = new System.Drawing.Size(159, 26);
             this.txtTruck.TabIndex = 1;
             this.txtTruck.TextChanged += new System.EventHandler(this.txtTruck_TextChanged);
             this.txtTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTruck_KeyDown);
@@ -313,7 +297,7 @@
             this.cmbTransportCode.FormattingEnabled = true;
             this.cmbTransportCode.Location = new System.Drawing.Point(659, 79);
             this.cmbTransportCode.Name = "cmbTransportCode";
-            this.cmbTransportCode.Size = new System.Drawing.Size(121, 24);
+            this.cmbTransportCode.Size = new System.Drawing.Size(121, 28);
             this.cmbTransportCode.TabIndex = 3;
             this.cmbTransportCode.SelectedIndexChanged += new System.EventHandler(this.cmbTransportCode_SelectedIndexChanged);
             this.cmbTransportCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbTransportCode_KeyDown);
@@ -323,7 +307,7 @@
             this.lblTransportName.AutoSize = true;
             this.lblTransportName.Location = new System.Drawing.Point(466, 136);
             this.lblTransportName.Name = "lblTransportName";
-            this.lblTransportName.Size = new System.Drawing.Size(111, 17);
+            this.lblTransportName.Size = new System.Drawing.Size(130, 20);
             this.lblTransportName.TabIndex = 5;
             this.lblTransportName.Text = "Transport Name";
             // 
@@ -332,7 +316,7 @@
             this.lblTransportCode.AutoSize = true;
             this.lblTransportCode.Location = new System.Drawing.Point(466, 79);
             this.lblTransportCode.Name = "lblTransportCode";
-            this.lblTransportCode.Size = new System.Drawing.Size(107, 17);
+            this.lblTransportCode.Size = new System.Drawing.Size(125, 20);
             this.lblTransportCode.TabIndex = 4;
             this.lblTransportCode.Text = "Transport Code";
             // 
@@ -341,7 +325,7 @@
             this.lblTruckType.AutoSize = true;
             this.lblTruckType.Location = new System.Drawing.Point(99, 139);
             this.lblTruckType.Name = "lblTruckType";
-            this.lblTruckType.Size = new System.Drawing.Size(80, 17);
+            this.lblTruckType.Size = new System.Drawing.Size(92, 20);
             this.lblTruckType.TabIndex = 3;
             this.lblTruckType.Text = "Truck Type";
             // 
@@ -350,7 +334,7 @@
             this.lblTruck.AutoSize = true;
             this.lblTruck.Location = new System.Drawing.Point(99, 82);
             this.lblTruck.Name = "lblTruck";
-            this.lblTruck.Size = new System.Drawing.Size(44, 17);
+            this.lblTruck.Size = new System.Drawing.Size(51, 20);
             this.lblTruck.TabIndex = 2;
             this.lblTruck.Text = "Truck";
             // 
@@ -359,7 +343,7 @@
             this.lblMode.AutoSize = true;
             this.lblMode.Location = new System.Drawing.Point(354, 18);
             this.lblMode.Name = "lblMode";
-            this.lblMode.Size = new System.Drawing.Size(43, 17);
+            this.lblMode.Size = new System.Drawing.Size(50, 20);
             this.lblMode.TabIndex = 0;
             this.lblMode.Text = "Mode";
             // 

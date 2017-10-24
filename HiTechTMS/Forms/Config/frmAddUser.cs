@@ -100,11 +100,11 @@ namespace HitechTMS.Config
             try
             {
 
-
                 var UserRoleQuery = dbObj.UserRoleTypes
                     .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Id, s.Name, s.Password, x.RoleName })
                     .Where(x => x.RoleName != HitechEnums.AppRole.SuperAdmin.ToString())
                     .Select(x => x);
+
                 gridUser.DataSource = UserRoleQuery.ToList();
                 if (gridUser.ColumnCount > 0)
                 {
@@ -329,7 +329,8 @@ namespace HitechTMS.Config
         private void btnReport_Click(object sender, EventArgs e)
         {
             var RepData = dbObj.UserRoleTypes
-                .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Id, s.Code, s.Name, s.Password, s.UserRoleType , x.RoleName })
+                .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, 
+                (x, s) => new { s.Id, s.Code, s.Name, s.Password, s.UserRoleType , x.RoleName })
                 .Where(x => x.RoleName != HitechEnums.AppRole.SuperAdmin.ToString())
                 .Select(x => x);
             if (RepData.ToList().Count > 0)
@@ -363,7 +364,7 @@ namespace HitechTMS.Config
                 {
                     var userRoleQuery = dbObj.UserRoleTypes
                             .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, (x, s) => new { s.Id, s.Name, s.Password, x.RoleName })
-                            .Where(x => x.Id == _userRoleID || x.Name == txtUserName.Text)
+                            .Where(x => (x.Id == _userRoleID || x.Name == txtUserName.Text) && x.Id.ToString() != "429a5b98-9d8e-4ad5-90dc-50e1efb62550" )
                             .Select(x => x);
 
                     var objUser = userRoleQuery.ToList();

@@ -25,12 +25,24 @@ namespace HitechTMSSecurity
             var child = e.Control;
             GetAllControlByType objGetAllControlByType = new GetAllControlByType();
             var ButtonCtrl = objGetAllControlByType.GetAllControllType(this, typeof(Button));
+            var TextBoxCtrl = objGetAllControlByType.GetAllControllType(this, typeof(TextBox));
 
             foreach (Control control in ButtonCtrl)
             {
                 control.MouseEnter += button_MouseEnter;
                 control.MouseLeave += button_MouseLeave;
             }
+
+            foreach (Control control in TextBoxCtrl)
+            {
+                control.KeyPress += textbox_KeyPress;
+            }
+
+            if (e.Control.GetType() == typeof(TextBox))
+            {
+                e.Control.KeyPress += textbox_KeyPress;
+            }
+
 
             if (e.Control.GetType() == typeof(Button))
             {
@@ -72,6 +84,12 @@ namespace HitechTMSSecurity
         {
             var c = (Button)sender;
             c.UseVisualStyleBackColor = true;
+        }
+
+        private void textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var c = (TextBox)sender;
+            e.KeyChar = Char.ToUpper(e.KeyChar);
         }
 
         public event EventHandler UserIsAllowed;
@@ -341,7 +359,8 @@ namespace HitechTMSSecurity
 
         private void SecureBaseForm_Load(object sender, EventArgs e)
         {
-
+            Icon icon = new Icon(@"Ico\Icon.ico", 200, 200);
+            this.Icon = icon;
         }
     }
 }

@@ -36,12 +36,15 @@
     <EntitySet Name="mstShiftAllocationInfo" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstShiftAllocationInfo" />
     <EntitySet Name="mstHyperTerminalData" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstHyperTerminalData" />
     <EntitySet Name="mstWeighBridgeSetup" EntityType="HitechTruckMngtSystmDataBaseFileModel.mstWeighBridgeSetup" />
-    <EntitySet Name="Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.Captions" />
-    <EntitySet Name="V_Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_Captions" />
     <EntitySet Name="rptNormalTicket" EntityType="HitechTruckMngtSystmDataBaseFileModel.rptNormalTicket" />
-    <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
     <EntitySet Name="V_NormalDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalDashBoard" />
     <EntitySet Name="V_PublicDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_PublicDashBoard" />
+    <EntitySet Name="viewNormalPendingFile" EntityType="HitechTruckMngtSystmDataBaseFileModel.viewNormalPendingFile" />
+    <EntitySet Name="Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.Captions" />
+    <EntitySet Name="V_Captions" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_Captions" />
+    <EntitySet Name="V_NormalCompleteWeightDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalCompleteWeightDashBoard" />
+    <EntitySet Name="V_NormalPendingWeightDashBoard" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalPendingWeightDashBoard" />
+    <EntitySet Name="V_rptNormalReport" EntityType="HitechTruckMngtSystmDataBaseFileModel.V_rptNormalReport" />
   </EntityContainer>
   <EntityType Name="UserRoleType">
     <Key>
@@ -419,30 +422,6 @@
     <Property Name="Unit" Type="Int32" Nullable="false" />
     <Property Name="WeighCapacity" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityType Name="Captions">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="DefaultCaption" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-    <Property Name="ModifiedCaptioin" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-    <Property Name="FormType" Type="Int32" Nullable="false" />
-    <Property Name="IsCaptionModified" Type="Boolean" Nullable="false" />
-  </EntityType>
-  <EntityType Name="V_Captions">
-    <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="DefaultCaption" />
-      <PropertyRef Name="ModifiedCaptioin" />
-      <PropertyRef Name="FormType" />
-      <PropertyRef Name="IsCaptionModified" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="DefaultCaption" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-    <Property Name="ModifiedCaptioin" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-    <Property Name="FormType" Type="Int32" Nullable="false" />
-    <Property Name="IsCaptionModified" Type="Boolean" Nullable="false" />
-  </EntityType>
   <EntityType Name="rptNormalTicket">
     <Key>
       <PropertyRef Name="ID" />
@@ -491,6 +470,22 @@
     <Property Name="GrossWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ProdInOut" Type="Byte" Nullable="false" />
   </EntityType>
+  <EntityType Name="V_NormalDashBoard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DateIn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TruckCount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="V_PublicDashBoard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DateIn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TruckCount" Type="Int32" />
+  </EntityType>
   <EntityType Name="viewNormalPendingFile">
     <Key>
       <PropertyRef Name="ID" />
@@ -537,7 +532,32 @@
     <Property Name="NetWeight" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ProdInOut" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="V_NormalDashBoard">
+  <EntityType Name="Captions">
+    <Key>
+      <PropertyRef Name="Identity" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="DefaultCaption" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedCaptioin" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FormType" Type="Int32" Nullable="false" />
+    <Property Name="IsCaptionModified" Type="Boolean" Nullable="false" />
+    <Property Name="Identity" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_Captions">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="DefaultCaption" />
+      <PropertyRef Name="ModifiedCaptioin" />
+      <PropertyRef Name="FormType" />
+      <PropertyRef Name="IsCaptionModified" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DefaultCaption" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedCaptioin" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FormType" Type="Int32" Nullable="false" />
+    <Property Name="IsCaptionModified" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_NormalCompleteWeightDashBoard">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
@@ -545,12 +565,57 @@
     <Property Name="DateIn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="TruckCount" Type="Int32" />
   </EntityType>
-  <EntityType Name="V_PublicDashBoard">
+  <EntityType Name="V_NormalPendingWeightDashBoard">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="DateIn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="TruckCount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="V_rptNormalReport">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Mode" />
+      <PropertyRef Name="Truck" />
+      <PropertyRef Name="ProductCode" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="SupplierCode" />
+      <PropertyRef Name="SupplierName" />
+      <PropertyRef Name="TransporterCode" />
+      <PropertyRef Name="TarnsPorterName" />
+      <PropertyRef Name="ChallanNumber" />
+      <PropertyRef Name="Miscellaneous" />
+      <PropertyRef Name="DeliveryNoteN" />
+      <PropertyRef Name="ChallanWeight" />
+      <PropertyRef Name="TimeIn" />
+      <PropertyRef Name="TimeOut" />
+      <PropertyRef Name="TareWeight" />
+      <PropertyRef Name="NetWeight" />
+      <PropertyRef Name="GrossWeight" />
+      <PropertyRef Name="ProdInOut" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Mode" Type="Byte" Nullable="false" />
+    <Property Name="Truck" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierCode" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="TransporterCode" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TarnsPorterName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ChallanNumber" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Miscellaneous" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryNoteN" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ChallanWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ChallanDate" Type="DateTime" Precision="0" />
+    <Property Name="DateIn" Type="DateTime" Precision="0" />
+    <Property Name="TimeIn" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateOut" Type="DateTime" Precision="0" />
+    <Property Name="TimeOut" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TareWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NetWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GrossWeight" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProdInOut" Type="Byte" Nullable="false" />
   </EntityType>
 </Schema>
