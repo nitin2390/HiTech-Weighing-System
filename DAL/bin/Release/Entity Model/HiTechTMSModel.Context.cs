@@ -34,7 +34,6 @@ namespace DAL.Entity_Model
         public virtual DbSet<mstSupplierTransporter> mstSupplierTransporter { get; set; }
         public virtual DbSet<UserRole> UserRole { get; set; }
         public virtual DbSet<mstStoredTareRecords> mstStoredTareRecords { get; set; }
-        public virtual DbSet<transNormalWeight> transNormalWeight { get; set; }
         public virtual DbSet<transPublicWeight> transPublicWeight { get; set; }
         public virtual DbSet<mstFormName> mstFormName { get; set; }
         public virtual DbSet<mstPermission> mstPermission { get; set; }
@@ -59,6 +58,7 @@ namespace DAL.Entity_Model
         public virtual DbSet<V_NormalCompleteWeightDashBoard> V_NormalCompleteWeightDashBoard { get; set; }
         public virtual DbSet<V_NormalPendingWeightDashBoard> V_NormalPendingWeightDashBoard { get; set; }
         public virtual DbSet<V_rptNormalReport> V_rptNormalReport { get; set; }
+        public virtual DbSet<transNormalWeight> transNormalWeight { get; set; }
     
         public virtual ObjectResult<Procedure_Result> Procedure(Nullable<int> param1, Nullable<int> param2)
         {

@@ -1,0 +1,7 @@
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\bin\x64\Release\SerialPortListener.exe.config
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\bin\x64\Release\SerialPortListener.exe
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x64\Release\SerialPortListener.csprojResolveAssemblyReference.cache
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x64\Release\SerialPortListener.frmSerialPortSetting.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x64\Release\SerialPortListener.Properties.Resources.resources
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x64\Release\SerialPortListener.csproj.GenerateResource.Cache
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x64\Release\SerialPortListener.exe

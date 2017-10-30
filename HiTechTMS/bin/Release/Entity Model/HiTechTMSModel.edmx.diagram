@@ -13,7 +13,6 @@
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.UserRole" Width="1.5" PointX="0.5" PointY="7" />
         <AssociationConnector Association="HitechTruckMngtSystmDataBaseFileModel.FK__UserRole__UserRo__1B9317B3" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstStoredTareRecords" Width="1.5" PointX="2.125" PointY="3.75" />
-        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" Width="1.5" PointX="5.375" PointY="0.5" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.transPublicWeight" Width="1.5" PointX="7" PointY="0.5" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstFormName" Width="1.5" PointX="2.125" PointY="2.25" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.mstPermission" Width="1.5" PointX="0.5" PointY="5.125" />
@@ -39,6 +38,7 @@
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalCompleteWeightDashBoard" Width="1.5" PointX="11.875" PointY="7.625" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_NormalPendingWeightDashBoard" Width="1.5" PointX="13.5" PointY="6.75" />
         <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.V_rptNormalReport" Width="1.5" PointX="9.375" PointY="10.75" />
+        <EntityTypeShape EntityType="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight" Width="1.5" PointX="1" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

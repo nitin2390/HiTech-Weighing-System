@@ -6,11 +6,3 @@ C:\Users\nitingupta\Desktop\software\Nitin\SerialPortListener_270410\SerialPortL
 C:\Users\nitingupta\Desktop\software\Nitin\SerialPortListener_270410\SerialPortListener\SerialPortListener\obj\x86\Debug\SerialPortListener.csproj.GenerateResource.Cache
 C:\Users\nitingupta\Desktop\software\Nitin\SerialPortListener_270410\SerialPortListener\SerialPortListener\obj\x86\Debug\SerialPortListener.exe
 C:\Users\nitingupta\Desktop\software\Nitin\SerialPortListener_270410\SerialPortListener\SerialPortListener\obj\x86\Debug\SerialPortListener.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\bin\Debug\SerialPortListener.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x86\Debug\SerialPortListener.Properties.Resources.resources
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x86\Debug\SerialPortListener.csproj.GenerateResource.Cache
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x86\Debug\SerialPortListener.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\bin\Debug\SerialPortListener.exe.config
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\bin\Debug\SerialPortListener.exe
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x86\Debug\SerialPortListener.exe
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SerialPortListener\obj\x86\Debug\SerialPortListener.frmSerialPortSetting.resources

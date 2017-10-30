@@ -10,9 +10,3 @@ C:\Users\nitingupta\Downloads\InputBox\InputBox\InputBox\bin\Debug\MsgBox.pdb
 C:\Users\nitingupta\Downloads\InputBox\InputBox\InputBox\obj\Debug\MsgBox.csprojResolveAssemblyReference.cache
 C:\Users\nitingupta\Downloads\InputBox\InputBox\InputBox\obj\Debug\MsgBox.dll
 C:\Users\nitingupta\Downloads\InputBox\InputBox\InputBox\obj\Debug\MsgBox.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\InputBox\bin\Debug\Properties\error.png
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\InputBox\bin\Debug\MsgBox.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\InputBox\bin\Debug\MsgBox.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\InputBox\obj\Debug\MsgBox.dll
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\InputBox\obj\Debug\MsgBox.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\InputBox\obj\Debug\MsgBox.csprojResolveAssemblyReference.cache

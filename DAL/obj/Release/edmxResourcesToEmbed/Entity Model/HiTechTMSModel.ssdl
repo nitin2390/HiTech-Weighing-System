@@ -194,8 +194,8 @@
     <Property Name="ChallanDate" Type="date" />
     <Property Name="ChallanWeight" Type="decimal" Precision="18" Scale="0" />
     <Property Name="ChallanWeightUnit" Type="tinyint" />
-    <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" />
-    <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" />
+    <Property Name="Miscellaneous" Type="nvarchar(max)" />
+    <Property Name="DeliveryNoteN" Type="nvarchar(max)" />
     <Property Name="DateIn" Type="date" />
     <Property Name="DateOut" Type="date" />
     <Property Name="TimeIn" Type="time" Precision="7" />

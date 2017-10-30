@@ -82,35 +82,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="transNormalWeight">
-      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight">
-        <MappingFragment StoreEntitySet="transNormalWeight">
-          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
-          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
-          <ScalarProperty Name="IsPending" ColumnName="IsPending" />
-          <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
-          <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
-          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
-          <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
-          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
-          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
-          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
-          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
-          <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
-          <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
-          <ScalarProperty Name="ChallanWeightUnit" ColumnName="ChallanWeightUnit" />
-          <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
-          <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
-          <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
-          <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
-          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
-          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
-          <ScalarProperty Name="Truck" ColumnName="Truck" />
-          <ScalarProperty Name="Mode" ColumnName="Mode" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="transPublicWeight">
       <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.transPublicWeight">
         <MappingFragment StoreEntitySet="transPublicWeight">
@@ -473,6 +444,35 @@
           <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
           <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Truck" ColumnName="Truck" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transNormalWeight">
+      <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.transNormalWeight">
+        <MappingFragment StoreEntitySet="transNormalWeight">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="IsPending" ColumnName="IsPending" />
+          <ScalarProperty Name="ProdInOut" ColumnName="ProdInOut" />
+          <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+          <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+          <ScalarProperty Name="TareWeight" ColumnName="TareWeight" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="DeliveryNoteN" ColumnName="DeliveryNoteN" />
+          <ScalarProperty Name="Miscellaneous" ColumnName="Miscellaneous" />
+          <ScalarProperty Name="ChallanWeightUnit" ColumnName="ChallanWeightUnit" />
+          <ScalarProperty Name="ChallanWeight" ColumnName="ChallanWeight" />
+          <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
+          <ScalarProperty Name="ChallanNumber" ColumnName="ChallanNumber" />
+          <ScalarProperty Name="TransporterCode" ColumnName="TransporterCode" />
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
           <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
           <ScalarProperty Name="Truck" ColumnName="Truck" />
           <ScalarProperty Name="Mode" ColumnName="Mode" />

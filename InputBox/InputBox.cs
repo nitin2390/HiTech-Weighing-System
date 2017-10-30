@@ -158,10 +158,9 @@ namespace MsgBox
             }
         }
 
-        private static void frm_FormClosing(object sender, System .Windows .Forms .FormClosingEventArgs  e)
+        private static void frm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (DialogRes != null) { }
-            else DialogRes = DialogResult.None;
+            DialogRes = DialogResult.None;
         }
 
         private static PictureBox Picture(Icon icon)
