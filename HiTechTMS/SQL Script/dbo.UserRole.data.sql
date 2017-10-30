@@ -1,0 +1,2 @@
+INSERT INTO [dbo].[UserRole] ([Id], [Code], [Name], [Password], [UserRoleType]) VALUES (N'429a5b98-9d8e-4ad5-90dc-50e1efb62550', 4046, N'nitingupta', N'fc0iUkg331qk3V8HY6MWvQ==', N'7d4a2f38-3bf3-4607-ac63-60273df5b53e')
+INSERT INTO [dbo].[UserRole] ([Id], [Code], [Name], [Password], [UserRoleType]) VALUES (N'72fc2fdc-248c-42e3-ab18-79ebd2b7e927', 1723, N'nitin2390', N'fc0iUkg331qk3V8HY6MWvQ==', N'6c468931-9f96-4631-94e7-9877b7bcd902')

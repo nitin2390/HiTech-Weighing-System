@@ -1,0 +1,570 @@
+CREATE TABLE [dbo].[Captions] (
+    [Id]                INT              NOT NULL,
+    [DefaultCaption]    VARCHAR (500)    NOT NULL,
+    [ModifiedCaptioin]  VARCHAR (500)    NULL,
+    [FormType]          INT              NOT NULL,
+    [IsCaptionModified] BIT              NOT NULL,
+    [Identity]          UNIQUEIDENTIFIER NOT NULL,
+    CONSTRAINT [PK_Captions] PRIMARY KEY CLUSTERED ([Identity] ASC)
+);
+
+
+
+go;
+
+CREATE TABLE [dbo].[EmailConfigs] (
+    [Id]              UNIQUEIDENTIFIER NOT NULL,
+    [EmailID]         NVARCHAR (400)   NOT NULL,
+    [Password]        NVARCHAR (50)    NOT NULL,
+    [EmailServerPort] INT              NOT NULL,
+    [EmailSmtpServer] NVARCHAR (50)    NOT NULL,
+    [IsActive]        CHAR (1)         NOT NULL,
+    [EmailSubject]    NVARCHAR (MAX)   NOT NULL,
+    [EmailBody]       NVARCHAR (MAX)   NOT NULL,
+    [EmailRecipient]  NVARCHAR (MAX)   NULL,
+    CONSTRAINT [PK_EmailConfigs] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+go;
+
+CREATE TABLE [dbo].[EmailMaster] (
+    [Id]       UNIQUEIDENTIFIER NOT NULL,
+    [EmailID]  NVARCHAR (400)   NOT NULL,
+    [IsActive] CHAR (1)         NOT NULL,
+    CONSTRAINT [PK_EmailMaster] PRIMARY KEY CLUSTERED ([EmailID] ASC)
+);
+
+
+
+go;
+
+CREATE TABLE [dbo].[mstFormName] (
+    [Id]       UNIQUEIDENTIFIER NOT NULL,
+    [FormName] NVARCHAR (MAX)   NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+go;
+
+
+CREATE TABLE [dbo].[mstGeneralSettings] (
+    [Id]                 UNIQUEIDENTIFIER NOT NULL,
+    [TransactionNo]      INT              NOT NULL,
+    [Mode]               NVARCHAR (3)     NOT NULL,
+    [MiniNetWeight]      DECIMAL (18)     NOT NULL,
+    [StoreTare]          NVARCHAR (3)     NOT NULL,
+    [FirstWeightTkt]     NVARCHAR (3)     NOT NULL,
+    [TicketFormat]       NVARCHAR (3)     NOT NULL,
+    [ReportFormat]       NVARCHAR (3)     NOT NULL,
+    [TktRepPrintingMode] NVARCHAR (3)     NOT NULL,
+    [HeaderBlankLine]    INT              NOT NULL,
+    [FooterBlankLine]    INT              NOT NULL,
+    [AddedDate]          DATETIME         NOT NULL,
+    [UpdatedDate]        DATETIME         NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+go;
+
+CREATE TABLE [dbo].[mstHyperTerminalData] (
+    [Id]           UNIQUEIDENTIFIER NOT NULL,
+    [BaudRate]     INT              NULL,
+    [DataBits]     INT              NULL,
+    [ReadTimeout]  INT              NULL,
+    [WriteTimeout] INT              NULL,
+    [PortName]     NVARCHAR (50)    NULL,
+    [Handshake]    NVARCHAR (50)    NULL,
+    [Name]         NVARCHAR (50)    NULL,
+    [DataReceived] NVARCHAR (50)    NULL,
+    [sParity]      NVARCHAR (50)    NULL,
+    [iStopBits]    DECIMAL (18)     NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+go;
+
+CREATE TABLE [dbo].[mstPermission] (
+    [Id]         UNIQUEIDENTIFIER NOT NULL,
+    [UserRoleID] UNIQUEIDENTIFIER NOT NULL,
+    [FormNameID] UNIQUEIDENTIFIER NOT NULL,
+    [IsGrant]    BIT              NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+go;
+
+CREATE TABLE [dbo].[mstShiftAllocationInfo] (
+    [Id]             UNIQUEIDENTIFIER NOT NULL,
+    [mstShiftsValue] INT              NOT NULL,
+    [StartTime]      TIME (7)         NOT NULL,
+    [EndTime]        TIME (7)         NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+go;
+
+
+CREATE TABLE [dbo].[mstShifts] (
+    [id]         UNIQUEIDENTIFIER NOT NULL,
+    [ShiftName]  NVARCHAR (200)   NULL,
+    [ShiftValue] INT              NULL,
+    CONSTRAINT [PK_MSTShifts] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+
+go;
+
+CREATE TABLE [dbo].[mstStoredTareRecords] (
+    [Id]                       UNIQUEIDENTIFIER NOT NULL,
+    [Mode]                     TINYINT          NOT NULL,
+    [Truck]                    VARCHAR (12)     NOT NULL,
+    [TruckType]                NVARCHAR (20)    NOT NULL,
+    [mstSupplierTransporterID] UNIQUEIDENTIFIER NOT NULL,
+    [TareWeight]               DECIMAL (18)     NOT NULL,
+    [DateIn]                   DATE             NOT NULL,
+    [TimeIn]                   TIME (7)         NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+go;
+
+CREATE TABLE [dbo].[mstSupplierTransporter] (
+    [Id]           UNIQUEIDENTIFIER NOT NULL,
+    [SupplierCode] VARCHAR (5)      NOT NULL,
+    [SupplierName] VARCHAR (25)     NULL,
+    [Address1]     VARCHAR (25)     NULL,
+    [Address2]     VARCHAR (25)     NULL,
+    [Address3]     VARCHAR (25)     NULL,
+    [Phone]        VARCHAR (20)     NULL,
+    [Fax]          VARCHAR (20)     NULL,
+    [Email]        VARCHAR (40)     NULL,
+    [IsSuplier]    CHAR (1)         NOT NULL,
+    CONSTRAINT [PK_mstSupplierTransporter] PRIMARY KEY CLUSTERED ([IsSuplier] ASC, [SupplierCode] ASC)
+);
+
+
+go;
+
+CREATE TABLE [dbo].[mstWeighBridgeSetup] (
+    [Id]            UNIQUEIDENTIFIER NOT NULL,
+    [Unit]          INT              NOT NULL,
+    [WeighCapacity] INT              NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+go;
+
+CREATE TABLE [dbo].[MultiPrdWeight] (
+    [Id]                UNIQUEIDENTIFIER NOT NULL,
+    [TruckID]           UNIQUEIDENTIFIER NOT NULL,
+    [UnloadedPrdCode]   NVARCHAR (5)     NULL,
+    [UnloadedPrdWeight] DECIMAL (18)     NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    FOREIGN KEY ([TruckID]) REFERENCES [dbo].[transMultiWeight] ([ID])
+);
+
+go;
+
+CREATE TABLE [dbo].[Product] (
+    [Code] NVARCHAR (5)  NOT NULL,
+    [Name] NVARCHAR (25) NOT NULL,
+    CONSTRAINT [PK_Table] PRIMARY KEY CLUSTERED ([Code] ASC)
+);
+
+go;
+
+CREATE TABLE [dbo].[transMultiWeight] (
+    [ID]                UNIQUEIDENTIFIER NOT NULL,
+    [Mode]              TINYINT          NOT NULL,
+    [Truck]             NVARCHAR (12)    NOT NULL,
+    [SupplierCode]      UNIQUEIDENTIFIER NULL,
+    [TransporterCode]   UNIQUEIDENTIFIER NULL,
+    [ChallanNumber]     NVARCHAR (25)    NULL,
+    [ChallanDate]       DATE             NULL,
+    [ChallanWeight]     DECIMAL (18)     NULL,
+    [ChallanWeightUnit] TINYINT          NULL,
+    [Miscellaneous]     NVARCHAR (50)    NULL,
+    [DeliveryNoteN]     NVARCHAR (25)    NULL,
+    [DateIn]            DATE             NULL,
+    [DateOut]           DATE             NULL,
+    [TimeIn]            TIME (7)         NULL,
+    [TimeOut]           TIME (7)         NULL,
+    [TareWeight]        DECIMAL (18)     NULL,
+    [GrossWeight]       DECIMAL (18)     NULL,
+    [NetWeight]         DECIMAL (18)     NULL,
+    [ProdInOut]         TINYINT          NOT NULL,
+    [IsPending]         TINYINT          NOT NULL,
+    [AddedDate]         DATETIME         NOT NULL,
+    [UpdatedDate]       DATETIME         NOT NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+go;
+
+CREATE TABLE [dbo].[transNormalWeight] (
+    [ID]                UNIQUEIDENTIFIER NOT NULL,
+    [Mode]              TINYINT          NOT NULL,
+    [Truck]             NVARCHAR (12)    NOT NULL,
+    [ProductCode]       NVARCHAR (5)     NULL,
+    [SupplierCode]      UNIQUEIDENTIFIER NULL,
+    [TransporterCode]   UNIQUEIDENTIFIER NULL,
+    [ChallanNumber]     NVARCHAR (25)    NULL,
+    [ChallanDate]       DATE             NULL,
+    [ChallanWeight]     DECIMAL (18)     NULL,
+    [ChallanWeightUnit] TINYINT          NULL,
+    [Miscellaneous]     NVARCHAR (MAX)   NULL,
+    [DeliveryNoteN]     NVARCHAR (MAX)   NULL,
+    [DateIn]            DATE             NULL,
+    [DateOut]           DATE             NULL,
+    [TimeIn]            TIME (7)         NULL,
+    [TimeOut]           TIME (7)         NULL,
+    [TareWeight]        DECIMAL (18)     NULL,
+    [GrossWeight]       DECIMAL (18)     NULL,
+    [NetWeight]         DECIMAL (18)     NULL,
+    [ProdInOut]         TINYINT          NOT NULL,
+    [IsPending]         TINYINT          NOT NULL,
+    [AddedDate]         DATETIME         NOT NULL,
+    [UpdatedDate]       DATETIME         NOT NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+
+go;
+
+CREATE TABLE [dbo].[transPublicWeight] (
+    [ID]            UNIQUEIDENTIFIER NOT NULL,
+    [Mode]          TINYINT          NOT NULL,
+    [Truck]         NVARCHAR (12)    NOT NULL,
+    [Miscellaneous] NVARCHAR (50)    NULL,
+    [DateIn]        DATE             NULL,
+    [DateOut]       DATE             NULL,
+    [TimeIn]        TIME (7)         NULL,
+    [TimeOut]       TIME (7)         NULL,
+    [TareWeight]    DECIMAL (18)     NULL,
+    [GrossWeight]   DECIMAL (18)     NULL,
+    [NetWeight]     DECIMAL (18)     NULL,
+    [ProdInOut]     TINYINT          NOT NULL,
+    [IsPending]     TINYINT          NOT NULL,
+    [AddedDate]     DATETIME         NOT NULL,
+    [UpdatedDate]   DATETIME         NOT NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+go;
+
+CREATE TABLE [dbo].[UserRole] (
+    [Id]           UNIQUEIDENTIFIER NOT NULL,
+    [Code]         INT              NOT NULL,
+    [Name]         NVARCHAR (100)   NOT NULL,
+    [Password]     NVARCHAR (100)   NOT NULL,
+    [UserRoleType] UNIQUEIDENTIFIER NOT NULL,
+    CONSTRAINT [PK_UserRole] PRIMARY KEY CLUSTERED ([Id] ASC, [Code] ASC),
+    CONSTRAINT [FK_UserRole_ToUserRoleType] FOREIGN KEY ([UserRoleType]) REFERENCES [dbo].[UserRoleType] ([Id])
+);
+
+go;
+
+CREATE TABLE [dbo].[UserRoleType] (
+    [Id]       UNIQUEIDENTIFIER NOT NULL,
+    [RoleName] NVARCHAR (100)   NOT NULL,
+    CONSTRAINT [PK_UserRoleType] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+go;
+
+CREATE VIEW [dbo].[rptNormalTicket]
+	AS 
+	SELECT 
+	isnull(cast(NM.ID as nvarchar(max)),'') ID,
+	NM.Mode Mode,
+	isnull(Nm.Truck,'') Truck,
+	isnull(Nm.ProductCode,'') ProductCode,
+	isnull(P.[Name],'') [Name],
+	isnull(cast(S.SupplierCode as nvarchar(max)),'') SupplierCode,
+	isnull(S.SupplierName,'') SupplierName,
+	isnull(cast(T.SupplierCode as nvarchar(max)),'') TransporterCode,
+	isnull(T.SupplierName,'') TarnsPorterName,
+	isnull(Nm.ChallanNumber,'') ChallanNumber,
+	isnull(Nm.Miscellaneous,'')Miscellaneous,
+	isnull(NM.DeliveryNoteN,'') DeliveryNoteN,
+	isnull(cast(NM.ChallanWeight as nvarchar(max)),'') ChallanWeight,
+	isnull(cast(NM.ChallanDate as nvarchar(max)),'') ChallanDate,
+	isnull(cast(Nm.DateIn as nvarchar(max)),'') DateIn,
+	isnull(substring(cast(NM.TimeIn as nvarchar(max)),1,5),'') TimeIn,
+	isnull(cast(Nm.DateOut as nvarchar(max)),'')DateOut,
+	isnull(substring(cast(Nm.[TimeOut] as nvarchar(max)),1,5),'') [TimeOut],
+	isnull(cast(Nm.TareWeight as nvarchar(max)),'') TareWeight,
+	isnull(cast(Nm.NetWeight as nvarchar(max)),'') NetWeight,
+	isnull(cast(Nm.GrossWeight as nvarchar(max)),'') GrossWeight,
+	isnull(NM.ProdInOut,'') ProdInOut
+	FROM dbo.transNormalWeight NM 
+		left join dbo.Product P
+		on P.Code = NM.ProductCode
+		left Join dbo.mstSupplierTransporter S
+		on S.Id = Nm.SupplierCode
+		left Join dbo.mstSupplierTransporter T
+		on T.Id = Nm.TransporterCode
+go;
+
+
+CREATE VIEW [dbo].[V_Captions]
+	AS SELECT 
+	ID,
+	DefaultCaption,
+	ModifiedCaptioin,
+	FormType,
+	IsCaptionModified
+	FROM [Captions]
+go;
+
+
+CREATE VIEW [dbo].[V_mstGeneralSettings]
+	AS SELECT
+	[Id],
+	[TransactionNo],
+	[Mode],
+	[MiniNetWeight],
+	[StoreTare],
+	[FirstWeightTkt],
+	[TicketFormat],
+	[ReportFormat],
+	[TktRepPrintingMode],
+	[HeaderBlankLine],
+	[FooterBlankLine],
+	[AddedDate],
+	[UpdatedDate]
+	FROM
+		mstGeneralSettings;
+
+go;
+
+CREATE VIEW [dbo].[V_NormalCompleteWeightDashBoard]
+AS 
+	SELECT
+		ISNULL(CAST((row_number() OVER (ORDER BY DateIn)) AS int), 0) as ID,
+		Convert(varchar,DateIn,106) as DateIn,
+		cast(COUNT(1) as int) as TruckCount
+	FROM 
+		transNormalWeight
+	Where 
+		DateIn is not null and 
+		cast(DateIn as date) >= DATEADD(DAY,-8,GETDATE()) and
+		IsPending = 1
+	Group by 
+		DateIn;
+
+go;
+
+
+CREATE VIEW [dbo].[V_NormalDashBoard]
+AS 
+	SELECT
+		ISNULL(CAST((row_number() OVER (ORDER BY DateIn)) AS int), 0) as ID,
+		Convert(varchar,DateIn,106) as DateIn,
+		cast(COUNT(1) as int) as TruckCount
+	FROM 
+		transNormalWeight
+	Where 
+		DateIn is not null and 
+		cast(DateIn as date) >= DATEADD(DAY,-8,GETDATE()) and
+		IsPending = 1
+	Group by 
+		DateIn;
+
+go;
+
+CREATE VIEW [dbo].[V_NormalPendingWeightDashBoard]
+AS 
+	SELECT
+		ISNULL(CAST((row_number() OVER (ORDER BY DateIn)) AS int), 0) as ID,
+		Convert(varchar,DateIn,106) as DateIn,
+		cast(COUNT(1) as int) as TruckCount
+	FROM 
+		transNormalWeight
+	Where 
+		DateIn is not null and 
+		cast(DateIn as date) >= DATEADD(DAY,-8,GETDATE()) and
+		IsPending = 0
+	Group by 
+		DateIn
+
+go;
+
+
+CREATE VIEW [dbo].[V_PublicDashBoard]
+AS 
+	SELECT
+		ISNULL(CAST((row_number() OVER (ORDER BY DateIn)) AS int), 0) as ID,
+		Convert(varchar,DateIn,106) as DateIn,
+		cast(COUNT(1) as int) as TruckCount
+	FROM 
+		transPublicWeight
+	Where 
+		DateIn is not null and cast(DateIn as date) >= DATEADD(DAY,-8,GETDATE())
+	Group by 
+		DateIn;
+
+go;
+
+CREATE VIEW [dbo].[V_rptNormalReport]
+	AS 
+SELECT 
+	isnull(cast(NM.ID as nvarchar(max)),'') ID,
+	NM.Mode Mode,
+	isnull(Nm.Truck,'') Truck,
+	isnull(Nm.ProductCode,'') ProductCode,
+	isnull(P.[Name],'') [Name],
+	isnull(cast(S.SupplierCode as nvarchar(max)),'') SupplierCode,
+	isnull(S.SupplierName,'') SupplierName,
+	isnull(cast(T.SupplierCode as nvarchar(max)),'') TransporterCode,
+	isnull(T.SupplierName,'') TarnsPorterName,
+	isnull(Nm.ChallanNumber,'') ChallanNumber,
+	isnull(Nm.Miscellaneous,'')Miscellaneous,
+	isnull(NM.DeliveryNoteN,'') DeliveryNoteN,
+	isnull(cast(NM.ChallanWeight as nvarchar(max)),'') ChallanWeight,
+	NM.ChallanDate as ChallanDate,
+	Nm.DateIn as DateIn,
+	isnull(substring(cast(NM.TimeIn as nvarchar(max)),1,5),'') TimeIn,
+	Nm.DateOut as DateOut,
+	isnull(substring(cast(Nm.[TimeOut] as nvarchar(max)),1,5),'') [TimeOut],
+	isnull(cast(Nm.TareWeight as nvarchar(max)),'') TareWeight,
+	isnull(cast(Nm.NetWeight as nvarchar(max)),'') NetWeight,
+	isnull(cast(Nm.GrossWeight as nvarchar(max)),'') GrossWeight,
+	isnull(NM.ProdInOut,'') ProdInOut
+	FROM dbo.transNormalWeight NM 
+		left join dbo.Product P
+		on P.Code = NM.ProductCode
+		left Join dbo.mstSupplierTransporter S
+		on S.Id = Nm.SupplierCode
+		left Join dbo.mstSupplierTransporter T
+		on T.Id = Nm.TransporterCode
+
+go;
+
+CREATE VIEW [dbo].[V_T_mstShiftAllocationInfo]
+	AS SELECT  [Id],         
+			   [mstShiftsValue], 
+			   [StartTime],  
+			   [EndTime]    
+			FROM [mstShiftAllocationInfo]
+go;
+
+CREATE VIEW [dbo].[V_T_MSTShifts]
+	AS SELECT ID,[ShiftName],[ShiftValue] FROM [MSTShifts]
+go;
+
+
+CREATE VIEW [dbo].[viewMultiPendingFile]
+	AS 
+	SELECT 
+		MW.[ID]                ,
+		isnull([Mode],0) as [Mode]          ,
+		isnull([Truck],'') as [Truck],
+		isnull(P.[Code],'')    as [ProductCode],
+		isnull(P.[Name],'')    as [ProductName],
+		isnull(S.[SupplierName],'')    as [SupplierName]  ,
+		isnull(T.SupplierName,'') as [TransporterCode]   ,
+		isnull([ChallanNumber],'')  as [ChallanNumber]   ,
+		isnull([ChallanDate],'')     as [ChallanDate]  ,
+		isnull([ChallanWeight],0)   as [ChallanWeight]  ,
+		isnull([ChallanWeightUnit],'') as [ChallanWeightUnit],
+		isnull([Miscellaneous],'')  as [Miscellaneous]   ,
+		isnull([DeliveryNoteN],'')   as [DeliveryNoteN]  ,
+		isnull([DateIn],'')  as [DateIn]  ,
+		isnull([DateOut],'')  as [DateOut]  ,
+		isnull([TimeIn],'')  as [TimeIn],
+		isnull([TimeOut],'') as [TimeOut],
+		isnull([TareWeight],0) as [TareWeight],
+		isnull([GrossWeight],0) as [GrossWeight],
+		MW.IsPending,
+		isnull([NetWeight],0) as [NetWeight],
+		case when [ProdInOut] = 0 then 'Product In' else 'Product Out' end  as ProdInOut      
+	FROM dbo.[transMultiWeight] MW
+		left join dbo.mstSupplierTransporter S
+		on S.Id = MW.SupplierCode
+		left join dbo.mstSupplierTransporter T
+		on T.Id = MW.TransporterCode
+		left join MultiPrdWeight MPW
+		on MPW.TruckID = MW.ID
+		left join dbo.Product P
+		on MPW.UnloadedPrdCode = P.Code
+go;
+
+CREATE VIEW [dbo].[ViewMultiProduct]
+	AS 
+	SELECT 
+		MPW.Id, 
+		MPW.TruckID ,
+		MPW.UnloadedPrdCode as [ProductCode],
+		P.Name as [ProductName],
+		MPW.UnloadedPrdWeight as [Weight]
+	FROM 
+		MultiPrdWeight MPW
+		left join Product P
+		on MPW.UnloadedPrdCode = P.Code
+go;
+
+CREATE VIEW [dbo].[viewNormalPendingFile]
+	AS 
+	SELECT 
+		NW.[ID],
+		case when (isnull([Mode],0) = 1) then 'Auto' else 'Manual' end as [Mode]          ,
+		isnull([Truck],'') as [Truck],
+		isnull([ProductCode],'')    as [ProductCode]   ,
+		isnull(P.Name,'')as [ProductName]   ,
+		isnull(S.[SupplierName],'')    as [SupplierName]  ,
+		isnull(T.SupplierName,'') as [TransporterName]   ,
+		isnull([ChallanNumber],'')  as [ChallanNumber]   ,
+		isnull([ChallanDate],'')    as [ChallanDate]  ,
+		isnull([ChallanWeight],0)   as [ChallanWeight]  ,
+		isnull([ChallanWeightUnit],'') as [ChallanWeightUnit],
+		isnull([Miscellaneous],'')  as [Miscellaneous]   ,
+		isnull([DeliveryNoteN],'')   as [DeliveryNoteN]  ,
+		isnull([DateIn],'') as [DateIn]  ,
+		isnull([DateOut],'') as [DateOut]  ,
+		case when [TimeIn] is not null 
+		then
+			CONVERT(varchar(15),[TimeIn],100)
+		else
+			''
+		end as [TimeIn],
+		case when [TimeOut] is not null 
+		then
+			CONVERT(varchar(15),[TimeOut],100)
+		else
+			''
+		end as [TimeOut]  ,
+
+
+
+		isnull([TareWeight],0) as [TareWeight],
+		isnull([GrossWeight],0) as [GrossWeight],
+		NW.IsPending,
+		isnull([NetWeight],0) as [NetWeight],
+		case when [ProdInOut] = 0 then 'Product In' else 'Product Out' end  as ProdInOut      
+	FROM dbo.[transNormalWeight] NW
+		left join dbo.Product P
+		on NW.ProductCode = P.Code
+		left join dbo.mstSupplierTransporter S
+		on S.Id = NW.SupplierCode
+		left join dbo.mstSupplierTransporter T
+		on T.Id = NW.TransporterCode;
+
+go;
+
+
+CREATE PROCEDURE [dbo].[Procedure]
+	@param1 int = 0,
+	@param2 int
+AS
+	SELECT 1,1
+RETURN 0;
+
+go;
+
