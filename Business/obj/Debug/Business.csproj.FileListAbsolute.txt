@@ -11,3 +11,13 @@ C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\Business
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\Business\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\Business\obj\Debug\Business.dll
 C:\Users\nitingupta\Desktop\software\Nitin\CodeProjectSerialComms-noexe\Business\obj\Debug\Business.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\bin\Debug\Business.dll.config
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\bin\Debug\Business.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\bin\Debug\Business.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\bin\Debug\EntityFramework.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\bin\Debug\EntityFramework.xml
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\obj\Debug\Business.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\obj\Debug\Business.pdb

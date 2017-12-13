@@ -803,29 +803,19 @@
     </Content>
     <Content Include="image\Login.jpg" />
     <Content Include="image\weigh-bridge-large.jpg" />
-    <Content Include="SQL Scripts\dbo.EmailConfigs.data.sql" />
-    <Content Include="SQL Scripts\dbo.EmailMaster.data.sql" />
-    <Content Include="SQL Scripts\dbo.mstFormName.data.sql" />
-    <Content Include="SQL Scripts\dbo.mstGeneralSettings.data.sql" />
-    <Content Include="SQL Scripts\dbo.mstHyoerTerminalData.data.sql" />
-    <Content Include="SQL Scripts\dbo.mstPermission.data.sql" />
-    <Content Include="SQL Scripts\dbo.mstStoredTareRecords.data.sql" />
-    <Content Include="SQL Scripts\dbo.mstSupplierTransporter.data.sql" />
-    <Content Include="SQL Scripts\dbo.MultiPrdWeight.data.sql" />
-    <Content Include="SQL Scripts\dbo.Product.data.sql" />
-    <Content Include="SQL Scripts\dbo.rptNormalTickert.sql" />
-    <Content Include="SQL Scripts\dbo.transMultiWeight.data.sql" />
-    <Content Include="SQL Scripts\dbo.transNormalWeight.data.sql" />
-    <Content Include="SQL Scripts\dbo.transPublicWeight.data.sql" />
-    <Content Include="SQL Scripts\dbo.UserRole.data.sql" />
-    <Content Include="SQL Scripts\dbo.UserRoleType.data.sql" />
-    <Content Include="SQL Scripts\dbo.viewMultiPendingFile.sql" />
-    <Content Include="SQL Scripts\dbo.ViewMultiProduct.sql" />
-    <Content Include="SQL Scripts\dbo.viewNormalPendingFile.sql" />
-    <Content Include="SQL Scripts\mstShiftAllocationInfo.sql" />
-    <Content Include="SQL Scripts\mstShifts.sql" />
-    <Content Include="SQL Scripts\V_T_mstShiftAllocationInfo.sql" />
-    <Content Include="SQL Scripts\V_T_MSTShifts.sql" />
+    <Content Include="SQL Script\dbo.Captions.data.sql" />
+    <Content Include="SQL Script\dbo.EmailConfigs.data.sql" />
+    <Content Include="SQL Script\dbo.EmailMaster.data.sql" />
+    <Content Include="SQL Script\dbo.mstFormName.data.sql" />
+    <Content Include="SQL Script\dbo.mstGeneralSettings.data.sql" />
+    <Content Include="SQL Script\dbo.mstShifts.data.sql" />
+    <Content Include="SQL Script\dbo.mstSupplierTransporter.data.sql" />
+    <Content Include="SQL Script\dbo.mstWeighBridgeSetup.data.sql" />
+    <Content Include="SQL Script\dbo.Product.data.sql" />
+    <Content Include="SQL Script\dbo.transNormalWeight.data.sql" />
+    <Content Include="SQL Script\dbo.UserRole.data.sql" />
+    <Content Include="SQL Script\dbo.UserRoleType.data.sql" />
+    <Content Include="SQL Script\Table and View Scripts.txt" />
     <EmbeddedResource Include="Licensee\Licensee.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

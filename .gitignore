@@ -3,3 +3,9 @@
 ################################################################################
 
 /HiTechTMS/bin/Debug/app.publish
+/HiTechTMS/bin/Debug/db
+/HiTechTMS/bin/Debug
+/HiTechTMS/obj/Debug
+/Business/bin/Debug
+/DAL/bin/Debug
+/DAL/obj/Debug/edmxResourcesToEmbed/Entity Model
