@@ -107,9 +107,7 @@ namespace HitechTMS.File
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
-
-            
+        {           
                 try
                 {
                     _saveClick = true;
@@ -243,13 +241,103 @@ namespace HitechTMS.File
                                                  StoredTareRecords.TimeIn,
                                                  StoredTareRecords.TareWeight
                                              };
-                gridStoredTare.DataSource = StoredTareRecordsQuery.ToList();
+                
+                #region "Bind Columns"
 
-                if (gridStoredTare.ColumnCount > 0)
+                gridStoredTare.AutoGenerateColumns = false;
+                gridStoredTare.Columns.Clear();
+
+                int colWidth = 150;
+
+                #region "Add Column"
+
+
+                DataGridViewColumn ColID = new DataGridViewTextBoxColumn();
+                ColID.DataPropertyName = "ID";
+                ColID.HeaderText = FormNormalPendingCaptions.ID;
+                ColID.Width = colWidth;
+                ColID.Name = FormStoredTareCaptions.ID;
+                ColID.Visible = false;
+                gridStoredTare.Columns.Add(ColID);
+
+                DataGridViewColumn ColTruck = new DataGridViewTextBoxColumn();
+                ColTruck.DataPropertyName = "Truck";
+                ColTruck.HeaderText = FormStoredTareCaptions.Truck;
+                ColTruck.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                ColTruck.Width = colWidth;
+                ColTruck.ReadOnly = true;
+                gridStoredTare.Columns.Add(ColTruck);
+
+                DataGridViewColumn colTruckType = new DataGridViewTextBoxColumn();
+                colTruckType.DataPropertyName = "TruckType";
+                colTruckType.HeaderText = FormStoredTareCaptions.TruckType;
+                colTruckType.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                colTruckType.Width = colWidth;
+                colTruckType.ReadOnly = true;
+                gridStoredTare.Columns.Add(colTruckType);
+
+                DataGridViewColumn colSupplierCode = new DataGridViewTextBoxColumn();
+                colSupplierCode.HeaderText = FormStoredTareCaptions.SupplierCode;
+                colSupplierCode.DataPropertyName = "SupplierCode";
+                colSupplierCode.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                colSupplierCode.Width = colWidth + 100;
+                colSupplierCode.ReadOnly = true;
+                gridStoredTare.Columns.Add(colSupplierCode);
+
+                DataGridViewColumn colSupplierName = new DataGridViewTextBoxColumn();
+                colSupplierName.HeaderText = FormStoredTareCaptions.SupplierName;
+                colSupplierName.DataPropertyName = "SupplierName";
+                colSupplierName.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                colSupplierName.Width = colWidth + 100;
+                colSupplierName.ReadOnly = true;
+                gridStoredTare.Columns.Add(colSupplierName);
+
+                DataGridViewColumn colDateIn = new DataGridViewTextBoxColumn();
+                colDateIn.HeaderText = FormStoredTareCaptions.DateIn;
+                colDateIn.DataPropertyName = "DateIn";
+                colDateIn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                colDateIn.Width = colWidth;
+                colDateIn.ReadOnly = true;
+                gridStoredTare.Columns.Add(colDateIn);
+
+                DataGridViewColumn colTimeIn = new DataGridViewTextBoxColumn();
+                colTimeIn.HeaderText = FormStoredTareCaptions.TimeIn;
+                colTimeIn.DataPropertyName = "TimeIn";
+                colTimeIn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                colTimeIn.Width = colWidth;
+                colTimeIn.ReadOnly = true;
+                gridStoredTare.Columns.Add(colTimeIn);
+
+                DataGridViewColumn colTareWeight = new DataGridViewTextBoxColumn();
+                colTareWeight.HeaderText = FormStoredTareCaptions.TareWeight;
+                colTareWeight.DataPropertyName = "TareWeight";
+                colTareWeight.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                colTareWeight.Width = colWidth;
+                colTareWeight.ReadOnly = true;
+                gridStoredTare.Columns.Add(colTareWeight);
+
+                #endregion
+
+                var result = StoredTareRecordsQuery.ToList();
+                List<StoredTareRecords> _result = new List<StoredTareRecords>();
+                foreach (var item in result)
                 {
-                    gridStoredTare.Columns["Id"].Visible = false;
+                    StoredTareRecords _storedtarerecords = new StoredTareRecords();
+                    _storedtarerecords.ID = item.Id;
+                    _storedtarerecords.Truck = item.Truck;
+                    _storedtarerecords.TruckType = item.TruckType;
+                    _storedtarerecords.SupplierCode = item.SupplierCode;
+                    _storedtarerecords.SupplierName = item.SupplierName;
+                    _storedtarerecords.DateIn = item.DateIn;
+                    _storedtarerecords.TimeIn = item.TimeIn;
+                    _storedtarerecords.TareWeight = item.TareWeight;
+                    _result.Add(_storedtarerecords);
                 }
+                gridStoredTare.DataSource = _result;
                 lblRecordsCount.Text = gridStoredTare.RowCount.ToString();
+                #endregion
+
+                DesignGrid();
             }
             catch (Exception ex)
             {
@@ -260,7 +348,39 @@ namespace HitechTMS.File
                     MessageBoxIcon.Error);
             }
         }
+        private void DesignGrid()
+        {
+            try
+            {
+                //gridProduct.DefaultCellStyle.Font.Style = 
+                //gridStoredTare.Columns[(int)enumStoredTareFilefrm.Truck].Width = 150;
+                //gridStoredTare.Columns[(int)enumStoredTareFilefrm.TruckType].Width = 150;
+                //gridStoredTare.Columns[(int)enumStoredTareFilefrm.TransportCode].Width =150;
+                //gridStoredTare.Columns[(int)enumStoredTareFilefrm.TransportName].Width =150;
+                //gridStoredTare.Columns[(int)enumStoredTareFilefrm.DateIn].Width =100;
+                //gridStoredTare.Columns[(int)enumStoredTareFilefrm.TimeIn].Width =100;
+                //gridStoredTare.Columns[(int)enumStoredTareFilefrm.TareWeight].Width =100;
 
+                gridStoredTare.ColumnHeadersHeight = 250;
+                gridStoredTare.AllowUserToResizeColumns = false;
+                gridStoredTare.AllowUserToResizeRows = false;
+                gridStoredTare.RowHeadersVisible = true;
+                gridStoredTare.RowHeadersWidth = 30;
+                gridStoredTare.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                gridStoredTare.ReadOnly = true;
+                gridStoredTare.ScrollBars = ScrollBars.Both;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message
+                , _dbGetResourceCaption.GetStringValue("ERROR")
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
+            }
+
+        }
         private void ResetCntrl()
         {
             try
@@ -534,5 +654,18 @@ namespace HitechTMS.File
         }
 
 
+    }
+
+    class StoredTareRecords
+    {
+        public System.Guid ID { get; set; }
+        public byte Mode { get; set; }
+        public string Truck { get; set; }
+        public string TruckType { get; set; }
+        public string SupplierCode { get; set; }
+        public string SupplierName { get; set; }
+        public decimal TareWeight { get; set; }
+        public System.DateTime DateIn { get; set; }
+        public System.TimeSpan TimeIn { get; set; }
     }
 }

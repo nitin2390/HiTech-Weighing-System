@@ -82,8 +82,8 @@
             this.lblRecCount.AutoSize = true;
             this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecCount.Location = new System.Drawing.Point(522, 555);
+            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblRecCount.Location = new System.Drawing.Point(421, 550);
             this.lblRecCount.Name = "lblRecCount";
             this.lblRecCount.Size = new System.Drawing.Size(136, 22);
             this.lblRecCount.TabIndex = 21;
@@ -94,8 +94,8 @@
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsCount.Location = new System.Drawing.Point(678, 555);
+            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblRecordsCount.Location = new System.Drawing.Point(577, 550);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
             this.lblRecordsCount.TabIndex = 20;
@@ -103,17 +103,19 @@
             // 
             // btnEmailExcel
             // 
-            this.btnEmailExcel.Location = new System.Drawing.Point(458, 164);
+            this.btnEmailExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnEmailExcel.Location = new System.Drawing.Point(659, 34);
             this.btnEmailExcel.Name = "btnEmailExcel";
-            this.btnEmailExcel.Size = new System.Drawing.Size(134, 50);
+            this.btnEmailExcel.Size = new System.Drawing.Size(115, 105);
             this.btnEmailExcel.TabIndex = 10;
-            this.btnEmailExcel.Text = "E&mail As Excel";
+            this.btnEmailExcel.Text = "e&mail As Excel";
             this.btnEmailExcel.UseVisualStyleBackColor = true;
             this.btnEmailExcel.Click += new System.EventHandler(this.btnEmailExcel_Click);
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(318, 164);
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnReport.Location = new System.Drawing.Point(392, 164);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(134, 50);
             this.btnReport.TabIndex = 9;
@@ -123,7 +125,8 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(175, 164);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnDelete.Location = new System.Drawing.Point(237, 164);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(134, 50);
             this.btnDelete.TabIndex = 7;
@@ -133,6 +136,7 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnRefresh.Location = new System.Drawing.Point(458, 90);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(134, 50);
@@ -143,6 +147,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSearch.Location = new System.Drawing.Point(458, 34);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(134, 50);
@@ -153,7 +158,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(598, 164);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnExit.Location = new System.Drawing.Point(545, 164);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(134, 50);
             this.btnExit.TabIndex = 8;
@@ -163,7 +169,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(33, 164);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSave.Location = new System.Drawing.Point(80, 164);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(134, 50);
             this.btnSave.TabIndex = 6;
@@ -174,35 +181,39 @@
             // gridProduct
             // 
             this.gridProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.gridProduct.Location = new System.Drawing.Point(114, 229);
             this.gridProduct.Name = "gridProduct";
             this.gridProduct.RowTemplate.Height = 24;
             this.gridProduct.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gridProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridProduct.Size = new System.Drawing.Size(531, 311);
+            this.gridProduct.Size = new System.Drawing.Size(520, 300);
             this.gridProduct.TabIndex = 5;
             this.gridProduct.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridProduct_CellMouseClick);
             // 
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(121, 95);
+            this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblProductName.Location = new System.Drawing.Point(76, 96);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(116, 20);
+            this.lblProductName.Size = new System.Drawing.Size(128, 20);
             this.lblProductName.TabIndex = 3;
             this.lblProductName.Text = "Product Name";
             // 
             // lblProductCode
             // 
             this.lblProductCode.AutoSize = true;
-            this.lblProductCode.Location = new System.Drawing.Point(121, 42);
+            this.lblProductCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblProductCode.Location = new System.Drawing.Point(76, 43);
             this.lblProductCode.Name = "lblProductCode";
-            this.lblProductCode.Size = new System.Drawing.Size(111, 20);
+            this.lblProductCode.Size = new System.Drawing.Size(123, 20);
             this.lblProductCode.TabIndex = 2;
             this.lblProductCode.Text = "Product Code";
             // 
             // txtProductName
             // 
+            this.txtProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtProductName.Location = new System.Drawing.Point(241, 90);
             this.txtProductName.MaxLength = 25;
             this.txtProductName.Name = "txtProductName";
@@ -214,6 +225,7 @@
             // 
             // txtProductCode
             // 
+            this.txtProductCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtProductCode.Location = new System.Drawing.Point(241, 42);
             this.txtProductCode.MaxLength = 5;
             this.txtProductCode.Name = "txtProductCode";

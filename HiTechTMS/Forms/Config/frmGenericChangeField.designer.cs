@@ -55,10 +55,11 @@
             // lblGen1
             // 
             this.lblGen1.AutoSize = true;
+            this.lblGen1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblGen1.Location = new System.Drawing.Point(8, 32);
             this.lblGen1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGen1.Name = "lblGen1";
-            this.lblGen1.Size = new System.Drawing.Size(57, 17);
+            this.lblGen1.Size = new System.Drawing.Size(73, 20);
             this.lblGen1.TabIndex = 0;
             this.lblGen1.Text = "lblGen1";
             this.lblGen1.Visible = false;
@@ -66,10 +67,11 @@
             // lblGen2
             // 
             this.lblGen2.AutoSize = true;
-            this.lblGen2.Location = new System.Drawing.Point(8, 79);
+            this.lblGen2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblGen2.Location = new System.Drawing.Point(8, 83);
             this.lblGen2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGen2.Name = "lblGen2";
-            this.lblGen2.Size = new System.Drawing.Size(57, 17);
+            this.lblGen2.Size = new System.Drawing.Size(73, 20);
             this.lblGen2.TabIndex = 1;
             this.lblGen2.Text = "lblGen2";
             this.lblGen2.Visible = false;
@@ -77,10 +79,11 @@
             // lblGen3
             // 
             this.lblGen3.AutoSize = true;
-            this.lblGen3.Location = new System.Drawing.Point(8, 132);
+            this.lblGen3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblGen3.Location = new System.Drawing.Point(8, 134);
             this.lblGen3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGen3.Name = "lblGen3";
-            this.lblGen3.Size = new System.Drawing.Size(57, 17);
+            this.lblGen3.Size = new System.Drawing.Size(73, 20);
             this.lblGen3.TabIndex = 2;
             this.lblGen3.Text = "lblGen3";
             this.lblGen3.Visible = false;
@@ -88,20 +91,22 @@
             // lblGen4
             // 
             this.lblGen4.AutoSize = true;
-            this.lblGen4.Location = new System.Drawing.Point(8, 186);
+            this.lblGen4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblGen4.Location = new System.Drawing.Point(8, 185);
             this.lblGen4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGen4.Name = "lblGen4";
-            this.lblGen4.Size = new System.Drawing.Size(57, 17);
+            this.lblGen4.Size = new System.Drawing.Size(73, 20);
             this.lblGen4.TabIndex = 3;
             this.lblGen4.Text = "lblGen4";
             this.lblGen4.Visible = false;
             // 
             // btnChange
             // 
+            this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnChange.Location = new System.Drawing.Point(101, 246);
-            this.btnChange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChange.Margin = new System.Windows.Forms.Padding(4);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(100, 28);
+            this.btnChange.Size = new System.Drawing.Size(134, 50);
             this.btnChange.TabIndex = 4;
             this.btnChange.Text = "&Change";
             this.btnChange.UseVisualStyleBackColor = true;
@@ -109,10 +114,11 @@
             // 
             // btnDefault
             // 
+            this.btnDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnDefault.Location = new System.Drawing.Point(285, 246);
-            this.btnDefault.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDefault.Margin = new System.Windows.Forms.Padding(4);
             this.btnDefault.Name = "btnDefault";
-            this.btnDefault.Size = new System.Drawing.Size(100, 28);
+            this.btnDefault.Size = new System.Drawing.Size(134, 50);
             this.btnDefault.TabIndex = 5;
             this.btnDefault.Text = "&Default";
             this.btnDefault.UseVisualStyleBackColor = true;
@@ -120,10 +126,11 @@
             // 
             // btnClose
             // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnClose.Location = new System.Drawing.Point(451, 246);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 28);
+            this.btnClose.Size = new System.Drawing.Size(134, 50);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "&Exit";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -131,8 +138,8 @@
             // 
             // txtGen1
             // 
-            this.txtGen1.Location = new System.Drawing.Point(131, 32);
-            this.txtGen1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGen1.Location = new System.Drawing.Point(139, 32);
+            this.txtGen1.Margin = new System.Windows.Forms.Padding(4);
             this.txtGen1.Name = "txtGen1";
             this.txtGen1.Size = new System.Drawing.Size(205, 22);
             this.txtGen1.TabIndex = 7;
@@ -140,8 +147,8 @@
             // 
             // txtGen2
             // 
-            this.txtGen2.Location = new System.Drawing.Point(131, 75);
-            this.txtGen2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGen2.Location = new System.Drawing.Point(139, 83);
+            this.txtGen2.Margin = new System.Windows.Forms.Padding(4);
             this.txtGen2.Name = "txtGen2";
             this.txtGen2.Size = new System.Drawing.Size(205, 22);
             this.txtGen2.TabIndex = 8;
@@ -149,8 +156,8 @@
             // 
             // txtGen3
             // 
-            this.txtGen3.Location = new System.Drawing.Point(131, 123);
-            this.txtGen3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGen3.Location = new System.Drawing.Point(139, 134);
+            this.txtGen3.Margin = new System.Windows.Forms.Padding(4);
             this.txtGen3.Name = "txtGen3";
             this.txtGen3.Size = new System.Drawing.Size(205, 22);
             this.txtGen3.TabIndex = 9;
@@ -158,8 +165,8 @@
             // 
             // txtGen4
             // 
-            this.txtGen4.Location = new System.Drawing.Point(131, 177);
-            this.txtGen4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGen4.Location = new System.Drawing.Point(139, 185);
+            this.txtGen4.Margin = new System.Windows.Forms.Padding(4);
             this.txtGen4.Name = "txtGen4";
             this.txtGen4.Size = new System.Drawing.Size(205, 22);
             this.txtGen4.TabIndex = 10;
@@ -168,10 +175,11 @@
             // lblGen5
             // 
             this.lblGen5.AutoSize = true;
+            this.lblGen5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblGen5.Location = new System.Drawing.Point(395, 37);
             this.lblGen5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGen5.Name = "lblGen5";
-            this.lblGen5.Size = new System.Drawing.Size(57, 17);
+            this.lblGen5.Size = new System.Drawing.Size(73, 20);
             this.lblGen5.TabIndex = 11;
             this.lblGen5.Text = "lblGen5";
             this.lblGen5.Visible = false;
@@ -179,10 +187,11 @@
             // lblGen6
             // 
             this.lblGen6.AutoSize = true;
-            this.lblGen6.Location = new System.Drawing.Point(395, 105);
+            this.lblGen6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblGen6.Location = new System.Drawing.Point(395, 98);
             this.lblGen6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGen6.Name = "lblGen6";
-            this.lblGen6.Size = new System.Drawing.Size(57, 17);
+            this.lblGen6.Size = new System.Drawing.Size(73, 20);
             this.lblGen6.TabIndex = 12;
             this.lblGen6.Text = "lblGen6";
             this.lblGen6.Visible = false;
@@ -190,10 +199,11 @@
             // lblGen7
             // 
             this.lblGen7.AutoSize = true;
-            this.lblGen7.Location = new System.Drawing.Point(395, 160);
+            this.lblGen7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblGen7.Location = new System.Drawing.Point(395, 159);
             this.lblGen7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGen7.Name = "lblGen7";
-            this.lblGen7.Size = new System.Drawing.Size(57, 17);
+            this.lblGen7.Size = new System.Drawing.Size(73, 20);
             this.lblGen7.TabIndex = 13;
             this.lblGen7.Text = "lblGen7";
             this.lblGen7.Visible = false;
@@ -201,7 +211,7 @@
             // txtGen5
             // 
             this.txtGen5.Location = new System.Drawing.Point(503, 37);
-            this.txtGen5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGen5.Margin = new System.Windows.Forms.Padding(4);
             this.txtGen5.Name = "txtGen5";
             this.txtGen5.Size = new System.Drawing.Size(205, 22);
             this.txtGen5.TabIndex = 14;
@@ -209,8 +219,8 @@
             // 
             // txtGen6
             // 
-            this.txtGen6.Location = new System.Drawing.Point(503, 101);
-            this.txtGen6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGen6.Location = new System.Drawing.Point(503, 96);
+            this.txtGen6.Margin = new System.Windows.Forms.Padding(4);
             this.txtGen6.Name = "txtGen6";
             this.txtGen6.Size = new System.Drawing.Size(205, 22);
             this.txtGen6.TabIndex = 15;
@@ -218,8 +228,8 @@
             // 
             // txtGen7
             // 
-            this.txtGen7.Location = new System.Drawing.Point(503, 156);
-            this.txtGen7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGen7.Location = new System.Drawing.Point(503, 155);
+            this.txtGen7.Margin = new System.Windows.Forms.Padding(4);
             this.txtGen7.Name = "txtGen7";
             this.txtGen7.Size = new System.Drawing.Size(205, 22);
             this.txtGen7.TabIndex = 16;
@@ -245,9 +255,9 @@
             this.groupBox1.Controls.Add(this.lblGen4);
             this.groupBox1.Controls.Add(this.lblGen3);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(736, 315);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
@@ -263,7 +273,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 348);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmGenericChangeField";
             this.Text = "frmChangeGenericForm";
             this.Load += new System.EventHandler(this.frmGenericChangeField_Load);

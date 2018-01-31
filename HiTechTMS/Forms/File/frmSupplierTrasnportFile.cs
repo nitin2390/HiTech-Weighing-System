@@ -40,7 +40,7 @@ namespace HitechTMS.File
         {
             try
             {
-                SetCaption();
+                SetCaptionAndWidth();
                 gridSupplierTransporter.ColumnHeadersHeight = 250;
                 gridSupplierTransporter.AllowUserToResizeColumns = false;
                 gridSupplierTransporter.AllowUserToResizeRows = false;
@@ -48,6 +48,7 @@ namespace HitechTMS.File
                 gridSupplierTransporter.RowHeadersWidth = 30;
                 gridSupplierTransporter.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
                 gridSupplierTransporter.ReadOnly = true;
+                gridSupplierTransporter.ScrollBars = ScrollBars.Both;
             }
             catch (Exception ex)
             {
@@ -61,20 +62,26 @@ namespace HitechTMS.File
 
         }
 
-        private void SetCaption()
+        private void SetCaptionAndWidth()
         {
             try
             {
                 lblSupplierCode.Text = "Code";
                 lblSupplierName.Text = "Name";
 
-                gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.SupplierTransportCode].Width = 75;
+                gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.SupplierTransportCode].Width = 150;
                 gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.SupplierTransportCode].HeaderText = "Code";
 
-                gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.SupplierTransportName].Width = 120;
+                gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.SupplierTransportName].Width = 150;
                 gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.SupplierTransportName].HeaderText = "Name";
+            
+                gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.Address1].Width = 150;
+                gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.Address2].Width = 150;
+                gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.Address3].Width = 150;
 
-                gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.Email].Width = 105;
+                gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.Phone].Width = 150;
+                gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.Fax].Width = 150;
+                gridSupplierTransporter.Columns[(int)enumSupplierTransportfrm.Email].Width = 300;
             }
             catch (Exception ex)
             {
@@ -531,5 +538,7 @@ namespace HitechTMS.File
             
             e = _comm.RestirctTextBoxAndUpperCase(e);
         }
+
+       
     }
 }

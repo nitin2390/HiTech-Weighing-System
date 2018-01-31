@@ -170,14 +170,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="Procedure" FunctionName="HitechTruckMngtSystmDataBaseFileModel.Store.Procedure">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.Procedure_Result">
-          <ScalarProperty Name="Column1" ColumnName="Column1" />
-          <ScalarProperty Name="Column2" ColumnName="Column2" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <EntitySetMapping Name="viewMultiPendingFile">
       <EntityTypeMapping TypeName="HitechTruckMngtSystmDataBaseFileModel.viewMultiPendingFile">
         <MappingFragment StoreEntitySet="viewMultiPendingFile">

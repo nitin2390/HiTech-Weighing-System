@@ -1,5 +1,17 @@
 ﻿namespace HitechTMS.Classes
 {
+    static class FormStoredTareCaptions
+    {
+        public static string ID { get; set; } = "ID";
+        public static string Truck { get; set; } = "Truck";
+        public static string TruckType { get; set; } = "Truck Type";
+        public static string SupplierCode { get; set; } = "Supplier Code";
+        public static string SupplierName { get; set; } = "Supplier Name";
+        public static string DateIn { get; set; } = "Date In";
+        public static string TimeIn { get; set; } = "Time In";
+        public static string TareWeight { get; set; } = "Tare Weight";
+
+    }
     static class FormNormalPendingCaptions
     {
         public static string PrintTicket { get; set; } = "Print Ticket";

@@ -1,5 +1,6 @@
 ﻿using DAL.Entity_Model;
 using HitechTMS.Classes;
+using HitechTMSSecurity;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,7 +14,7 @@ using static HitechTMS.HitechEnums;
 namespace HitechTMS.File
 {
     
-    public partial class frmTransactionForm : HitechTMSSecurity.SecureBaseForm
+    public partial class frmTransactionForm : SecureBaseForm
     {
         #region "Public and Private Property"
         private GetResourceCaption _dbGetResourceCaption;

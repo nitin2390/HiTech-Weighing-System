@@ -26,15 +26,30 @@ namespace HitechTMSSecurity
             GetAllControlByType objGetAllControlByType = new GetAllControlByType();
             var ButtonCtrl = objGetAllControlByType.GetAllControllType(this, typeof(Button));
             var TextBoxCtrl = objGetAllControlByType.GetAllControllType(this, typeof(TextBox));
+            var GridCtrl = objGetAllControlByType.GetAllControllType(this, typeof(DataGridView));
+            var LabelCtrl = objGetAllControlByType.GetAllControllType(this, typeof(Label));
+
+
+            foreach (Control control in LabelCtrl)
+            {
+                control.Font = new Font("Microsoft Sans Serif", 10,FontStyle.Bold);
+            }
+
+            foreach (Control control in GridCtrl)
+            {
+                control.Font = new Font("Microsoft Sans Serif", 11);
+            }
 
             foreach (Control control in ButtonCtrl)
             {
+                control.Font = new Font("Microsoft Sans Serif", 12);
                 control.MouseEnter += button_MouseEnter;
                 control.MouseLeave += button_MouseLeave;
             }
 
             foreach (Control control in TextBoxCtrl)
             {
+                control.Font = new Font("Microsoft Sans Serif", 10);
                 control.KeyPress += textbox_KeyPress;
             }
 

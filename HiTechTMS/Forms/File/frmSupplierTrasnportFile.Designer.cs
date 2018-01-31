@@ -84,7 +84,7 @@
             this.grpboxSupplierFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpboxSupplierFile.Location = new System.Drawing.Point(12, 12);
             this.grpboxSupplierFile.Name = "grpboxSupplierFile";
-            this.grpboxSupplierFile.Size = new System.Drawing.Size(922, 615);
+            this.grpboxSupplierFile.Size = new System.Drawing.Size(929, 652);
             this.grpboxSupplierFile.TabIndex = 0;
             this.grpboxSupplierFile.TabStop = false;
             this.grpboxSupplierFile.Text = "Create/Modify records";
@@ -94,8 +94,8 @@
             this.lblRecCount.AutoSize = true;
             this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecCount.Location = new System.Drawing.Point(657, 582);
+            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblRecCount.Location = new System.Drawing.Point(657, 618);
             this.lblRecCount.Name = "lblRecCount";
             this.lblRecCount.Size = new System.Drawing.Size(136, 22);
             this.lblRecCount.TabIndex = 19;
@@ -106,8 +106,8 @@
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsCount.Location = new System.Drawing.Point(813, 582);
+            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblRecordsCount.Location = new System.Drawing.Point(813, 618);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
             this.lblRecordsCount.TabIndex = 18;
@@ -116,17 +116,19 @@
             // gridSupplierTransporter
             // 
             this.gridSupplierTransporter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSupplierTransporter.Location = new System.Drawing.Point(40, 330);
+            this.gridSupplierTransporter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gridSupplierTransporter.Location = new System.Drawing.Point(40, 308);
             this.gridSupplierTransporter.Name = "gridSupplierTransporter";
             this.gridSupplierTransporter.RowTemplate.Height = 24;
             this.gridSupplierTransporter.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gridSupplierTransporter.Size = new System.Drawing.Size(833, 243);
+            this.gridSupplierTransporter.Size = new System.Drawing.Size(833, 295);
             this.gridSupplierTransporter.TabIndex = 24;
             this.gridSupplierTransporter.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridSupplierTransporter_CellMouseClick);
             // 
             // btnEmailExcel
             // 
-            this.btnEmailExcel.Location = new System.Drawing.Point(554, 261);
+            this.btnEmailExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnEmailExcel.Location = new System.Drawing.Point(554, 247);
             this.btnEmailExcel.Name = "btnEmailExcel";
             this.btnEmailExcel.Size = new System.Drawing.Size(134, 50);
             this.btnEmailExcel.TabIndex = 22;
@@ -136,7 +138,8 @@
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(388, 261);
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnReport.Location = new System.Drawing.Point(388, 247);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(134, 50);
             this.btnReport.TabIndex = 21;
@@ -146,7 +149,8 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(222, 261);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnDelete.Location = new System.Drawing.Point(222, 247);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(134, 50);
             this.btnDelete.TabIndex = 20;
@@ -156,7 +160,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(720, 261);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnExit.Location = new System.Drawing.Point(720, 247);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(134, 50);
             this.btnExit.TabIndex = 23;
@@ -166,7 +171,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(56, 261);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSave.Location = new System.Drawing.Point(56, 247);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(134, 50);
             this.btnSave.TabIndex = 19;
@@ -182,7 +188,7 @@
             this.grpboxSupplimantaryDetails.Controls.Add(this.lblbFax);
             this.grpboxSupplimantaryDetails.Controls.Add(this.txtPhone);
             this.grpboxSupplimantaryDetails.Controls.Add(this.lblEmail);
-            this.grpboxSupplimantaryDetails.Location = new System.Drawing.Point(477, 31);
+            this.grpboxSupplimantaryDetails.Location = new System.Drawing.Point(477, 24);
             this.grpboxSupplimantaryDetails.Name = "grpboxSupplimantaryDetails";
             this.grpboxSupplimantaryDetails.Size = new System.Drawing.Size(383, 216);
             this.grpboxSupplimantaryDetails.TabIndex = 7;
@@ -191,6 +197,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtEmail.Location = new System.Drawing.Point(180, 125);
             this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
@@ -201,15 +208,17 @@
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(40, 29);
+            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblPhone.Location = new System.Drawing.Point(19, 29);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(56, 20);
+            this.lblPhone.Size = new System.Drawing.Size(61, 20);
             this.lblPhone.TabIndex = 3;
             this.lblPhone.Text = "Phone";
             // 
             // txtFax
             // 
-            this.txtFax.Location = new System.Drawing.Point(180, 78);
+            this.txtFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtFax.Location = new System.Drawing.Point(180, 80);
             this.txtFax.MaxLength = 20;
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(146, 26);
@@ -221,14 +230,16 @@
             // lblbFax
             // 
             this.lblbFax.AutoSize = true;
-            this.lblbFax.Location = new System.Drawing.Point(40, 78);
+            this.lblbFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblbFax.Location = new System.Drawing.Point(19, 77);
             this.lblbFax.Name = "lblbFax";
-            this.lblbFax.Size = new System.Drawing.Size(36, 20);
+            this.lblbFax.Size = new System.Drawing.Size(39, 20);
             this.lblbFax.TabIndex = 4;
             this.lblbFax.Text = "Fax";
             // 
             // txtPhone
             // 
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtPhone.Location = new System.Drawing.Point(180, 35);
             this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
@@ -241,9 +252,10 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(40, 125);
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblEmail.Location = new System.Drawing.Point(19, 125);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(51, 20);
+            this.lblEmail.Size = new System.Drawing.Size(56, 20);
             this.lblEmail.TabIndex = 5;
             this.lblEmail.Text = "Email";
             // 
@@ -257,7 +269,7 @@
             this.grpboxMainDetails.Controls.Add(this.lblAddress);
             this.grpboxMainDetails.Controls.Add(this.lblSupplierCode);
             this.grpboxMainDetails.Controls.Add(this.lblSupplierName);
-            this.grpboxMainDetails.Location = new System.Drawing.Point(43, 28);
+            this.grpboxMainDetails.Location = new System.Drawing.Point(43, 21);
             this.grpboxMainDetails.Name = "grpboxMainDetails";
             this.grpboxMainDetails.Size = new System.Drawing.Size(404, 219);
             this.grpboxMainDetails.TabIndex = 6;
@@ -266,7 +278,8 @@
             // 
             // txtAddressLine3
             // 
-            this.txtAddressLine3.Location = new System.Drawing.Point(189, 184);
+            this.txtAddressLine3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtAddressLine3.Location = new System.Drawing.Point(189, 183);
             this.txtAddressLine3.MaxLength = 25;
             this.txtAddressLine3.Name = "txtAddressLine3";
             this.txtAddressLine3.Size = new System.Drawing.Size(146, 26);
@@ -275,7 +288,8 @@
             // 
             // txtAddressLine2
             // 
-            this.txtAddressLine2.Location = new System.Drawing.Point(189, 149);
+            this.txtAddressLine2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtAddressLine2.Location = new System.Drawing.Point(189, 145);
             this.txtAddressLine2.MaxLength = 25;
             this.txtAddressLine2.Name = "txtAddressLine2";
             this.txtAddressLine2.Size = new System.Drawing.Size(146, 26);
@@ -284,7 +298,8 @@
             // 
             // txtAddressLine1
             // 
-            this.txtAddressLine1.Location = new System.Drawing.Point(189, 110);
+            this.txtAddressLine1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtAddressLine1.Location = new System.Drawing.Point(189, 107);
             this.txtAddressLine1.MaxLength = 25;
             this.txtAddressLine1.Name = "txtAddressLine1";
             this.txtAddressLine1.Size = new System.Drawing.Size(146, 26);
@@ -293,7 +308,8 @@
             // 
             // txtSupplierName
             // 
-            this.txtSupplierName.Location = new System.Drawing.Point(189, 67);
+            this.txtSupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtSupplierName.Location = new System.Drawing.Point(189, 69);
             this.txtSupplierName.MaxLength = 25;
             this.txtSupplierName.Name = "txtSupplierName";
             this.txtSupplierName.Size = new System.Drawing.Size(146, 26);
@@ -303,6 +319,7 @@
             // 
             // txtSupplierCode
             // 
+            this.txtSupplierCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtSupplierCode.Location = new System.Drawing.Point(189, 31);
             this.txtSupplierCode.MaxLength = 5;
             this.txtSupplierCode.Name = "txtSupplierCode";
@@ -315,27 +332,30 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(49, 110);
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblAddress.Location = new System.Drawing.Point(18, 109);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(71, 20);
+            this.lblAddress.Size = new System.Drawing.Size(78, 20);
             this.lblAddress.TabIndex = 10;
             this.lblAddress.Text = "Address";
             // 
             // lblSupplierCode
             // 
             this.lblSupplierCode.AutoSize = true;
-            this.lblSupplierCode.Location = new System.Drawing.Point(49, 31);
+            this.lblSupplierCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblSupplierCode.Location = new System.Drawing.Point(18, 31);
             this.lblSupplierCode.Name = "lblSupplierCode";
-            this.lblSupplierCode.Size = new System.Drawing.Size(114, 20);
+            this.lblSupplierCode.Size = new System.Drawing.Size(127, 20);
             this.lblSupplierCode.TabIndex = 8;
             this.lblSupplierCode.Text = "Supplier Code";
             // 
             // lblSupplierName
             // 
             this.lblSupplierName.AutoSize = true;
-            this.lblSupplierName.Location = new System.Drawing.Point(49, 67);
+            this.lblSupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblSupplierName.Location = new System.Drawing.Point(18, 70);
             this.lblSupplierName.Name = "lblSupplierName";
-            this.lblSupplierName.Size = new System.Drawing.Size(119, 20);
+            this.lblSupplierName.Size = new System.Drawing.Size(132, 20);
             this.lblSupplierName.TabIndex = 9;
             this.lblSupplierName.Text = "Supplier Name";
             // 
@@ -359,7 +379,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 639);
+            this.ClientSize = new System.Drawing.Size(953, 676);
             this.Controls.Add(this.grpboxSupplierFile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSupplierTransportFile";

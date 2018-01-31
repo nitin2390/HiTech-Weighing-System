@@ -122,31 +122,32 @@
             // 
             // btnSearchRecords
             // 
-            this.btnSearchRecords.Location = new System.Drawing.Point(684, 37);
+            this.btnSearchRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSearchRecords.Location = new System.Drawing.Point(819, 17);
             this.btnSearchRecords.Name = "btnSearchRecords";
             this.btnSearchRecords.Size = new System.Drawing.Size(134, 50);
             this.btnSearchRecords.TabIndex = 37;
-            this.btnSearchRecords.Text = "&Search Records";
+            this.btnSearchRecords.Text = "&Search";
             this.btnSearchRecords.UseVisualStyleBackColor = true;
             this.btnSearchRecords.Click += new System.EventHandler(this.btnSearchRecords_Click);
             // 
             // lblDateTo
             // 
             this.lblDateTo.AutoSize = true;
-            this.lblDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateTo.Location = new System.Drawing.Point(23, 70);
+            this.lblDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblDateTo.Location = new System.Drawing.Point(13, 70);
             this.lblDateTo.Name = "lblDateTo";
-            this.lblDateTo.Size = new System.Drawing.Size(66, 17);
+            this.lblDateTo.Size = new System.Drawing.Size(76, 20);
             this.lblDateTo.TabIndex = 36;
             this.lblDateTo.Text = "Date To";
             // 
             // lblDateFrom
             // 
             this.lblDateFrom.AutoSize = true;
-            this.lblDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateFrom.Location = new System.Drawing.Point(25, 33);
+            this.lblDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblDateFrom.Location = new System.Drawing.Point(13, 33);
             this.lblDateFrom.Name = "lblDateFrom";
-            this.lblDateFrom.Size = new System.Drawing.Size(83, 17);
+            this.lblDateFrom.Size = new System.Drawing.Size(98, 20);
             this.lblDateFrom.TabIndex = 35;
             this.lblDateFrom.Text = "Date From";
             // 
@@ -169,7 +170,8 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(962, 66);
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnPrint.Location = new System.Drawing.Point(819, 72);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(134, 50);
             this.btnPrint.TabIndex = 32;
@@ -179,7 +181,8 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1115, 66);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnDelete.Location = new System.Drawing.Point(1115, 70);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(134, 50);
             this.btnDelete.TabIndex = 31;
@@ -189,7 +192,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1115, 13);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnExit.Location = new System.Drawing.Point(1115, 15);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(134, 50);
             this.btnExit.TabIndex = 30;
@@ -199,9 +203,10 @@
             // 
             // btnEmailAsExcel
             // 
-            this.btnEmailAsExcel.Location = new System.Drawing.Point(962, 13);
+            this.btnEmailAsExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnEmailAsExcel.Location = new System.Drawing.Point(979, 14);
             this.btnEmailAsExcel.Name = "btnEmailAsExcel";
-            this.btnEmailAsExcel.Size = new System.Drawing.Size(134, 50);
+            this.btnEmailAsExcel.Size = new System.Drawing.Size(115, 105);
             this.btnEmailAsExcel.TabIndex = 29;
             this.btnEmailAsExcel.Text = "&Email as Excel";
             this.btnEmailAsExcel.UseVisualStyleBackColor = true;
@@ -212,7 +217,7 @@
             this.lblRecCount.AutoSize = true;
             this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblRecCount.Location = new System.Drawing.Point(1033, 723);
             this.lblRecCount.Name = "lblRecCount";
             this.lblRecCount.Size = new System.Drawing.Size(136, 22);
@@ -224,7 +229,7 @@
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblRecordsCount.Location = new System.Drawing.Point(1189, 723);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
@@ -247,6 +252,7 @@
             // gridPendingFile
             // 
             this.gridPendingFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPendingFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.gridPendingFile.Location = new System.Drawing.Point(18, 127);
             this.gridPendingFile.MultiSelect = false;
             this.gridPendingFile.Name = "gridPendingFile";

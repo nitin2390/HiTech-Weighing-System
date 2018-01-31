@@ -92,6 +92,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnClose.Location = new System.Drawing.Point(292, 574);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
@@ -103,6 +104,7 @@
             // 
             // btnOk
             // 
+            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnOk.Location = new System.Drawing.Point(145, 574);
             this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOk.Name = "btnOk";
@@ -165,6 +167,7 @@
             // txtMinimumNetWtLimit
             // 
             this.txtMinimumNetWtLimit.AcceptsReturn = true;
+            this.txtMinimumNetWtLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtMinimumNetWtLimit.Location = new System.Drawing.Point(323, 128);
             this.txtMinimumNetWtLimit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMinimumNetWtLimit.MaxLength = 6;
@@ -185,6 +188,7 @@
             // 
             // txtTransactionNo
             // 
+            this.txtTransactionNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtTransactionNo.Location = new System.Drawing.Point(323, 34);
             this.txtTransactionNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTransactionNo.MaxLength = 5;
@@ -209,6 +213,7 @@
             // 
             // txtFooterBlankLine
             // 
+            this.txtFooterBlankLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtFooterBlankLine.Location = new System.Drawing.Point(253, 86);
             this.txtFooterBlankLine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFooterBlankLine.MaxLength = 2;
@@ -219,6 +224,7 @@
             // 
             // txtHeaderBlankLine
             // 
+            this.txtHeaderBlankLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtHeaderBlankLine.Location = new System.Drawing.Point(253, 43);
             this.txtHeaderBlankLine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHeaderBlankLine.MaxLength = 2;
@@ -230,100 +236,100 @@
             // lblFooterBlankLine
             // 
             this.lblFooterBlankLine.AutoSize = true;
-            this.lblFooterBlankLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooterBlankLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblFooterBlankLine.Location = new System.Drawing.Point(56, 83);
             this.lblFooterBlankLine.Name = "lblFooterBlankLine";
-            this.lblFooterBlankLine.Size = new System.Drawing.Size(158, 25);
+            this.lblFooterBlankLine.Size = new System.Drawing.Size(154, 20);
             this.lblFooterBlankLine.TabIndex = 12;
             this.lblFooterBlankLine.Text = "Fotter Blank Line";
             // 
             // lblHeaderBlankLine
             // 
             this.lblHeaderBlankLine.AutoSize = true;
-            this.lblHeaderBlankLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderBlankLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblHeaderBlankLine.Location = new System.Drawing.Point(56, 36);
             this.lblHeaderBlankLine.Name = "lblHeaderBlankLine";
-            this.lblHeaderBlankLine.Size = new System.Drawing.Size(172, 25);
+            this.lblHeaderBlankLine.Size = new System.Drawing.Size(165, 20);
             this.lblHeaderBlankLine.TabIndex = 11;
             this.lblHeaderBlankLine.Text = "Header Blank Line";
             // 
             // lblTicketReportPrintingMode
             // 
             this.lblTicketReportPrintingMode.AutoSize = true;
-            this.lblTicketReportPrintingMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTicketReportPrintingMode.Location = new System.Drawing.Point(64, 362);
+            this.lblTicketReportPrintingMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTicketReportPrintingMode.Location = new System.Drawing.Point(42, 362);
             this.lblTicketReportPrintingMode.Name = "lblTicketReportPrintingMode";
-            this.lblTicketReportPrintingMode.Size = new System.Drawing.Size(253, 25);
+            this.lblTicketReportPrintingMode.Size = new System.Drawing.Size(244, 20);
             this.lblTicketReportPrintingMode.TabIndex = 7;
             this.lblTicketReportPrintingMode.Text = "Ticket\\Report Printing Mode";
             // 
             // lblReportFormat
             // 
             this.lblReportFormat.AutoSize = true;
-            this.lblReportFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReportFormat.Location = new System.Drawing.Point(64, 314);
+            this.lblReportFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblReportFormat.Location = new System.Drawing.Point(42, 314);
             this.lblReportFormat.Name = "lblReportFormat";
-            this.lblReportFormat.Size = new System.Drawing.Size(135, 25);
+            this.lblReportFormat.Size = new System.Drawing.Size(130, 20);
             this.lblReportFormat.TabIndex = 6;
             this.lblReportFormat.Text = "Report Format";
             // 
             // lblTicketFormat
             // 
             this.lblTicketFormat.AutoSize = true;
-            this.lblTicketFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTicketFormat.Location = new System.Drawing.Point(64, 266);
+            this.lblTicketFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTicketFormat.Location = new System.Drawing.Point(42, 266);
             this.lblTicketFormat.Name = "lblTicketFormat";
-            this.lblTicketFormat.Size = new System.Drawing.Size(131, 25);
+            this.lblTicketFormat.Size = new System.Drawing.Size(125, 20);
             this.lblTicketFormat.TabIndex = 5;
             this.lblTicketFormat.Text = "Ticket Format";
             // 
             // lblFirstWeightTicket
             // 
             this.lblFirstWeightTicket.AutoSize = true;
-            this.lblFirstWeightTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstWeightTicket.Location = new System.Drawing.Point(64, 215);
+            this.lblFirstWeightTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblFirstWeightTicket.Location = new System.Drawing.Point(42, 215);
             this.lblFirstWeightTicket.Name = "lblFirstWeightTicket";
-            this.lblFirstWeightTicket.Size = new System.Drawing.Size(174, 25);
+            this.lblFirstWeightTicket.Size = new System.Drawing.Size(169, 20);
             this.lblFirstWeightTicket.TabIndex = 4;
             this.lblFirstWeightTicket.Text = "First Weight Ticket";
             // 
             // lblStoredTare
             // 
             this.lblStoredTare.AutoSize = true;
-            this.lblStoredTare.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStoredTare.Location = new System.Drawing.Point(64, 172);
+            this.lblStoredTare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblStoredTare.Location = new System.Drawing.Point(42, 172);
             this.lblStoredTare.Name = "lblStoredTare";
-            this.lblStoredTare.Size = new System.Drawing.Size(116, 25);
+            this.lblStoredTare.Size = new System.Drawing.Size(108, 20);
             this.lblStoredTare.TabIndex = 3;
             this.lblStoredTare.Text = "Stored Tare";
             // 
             // lblMinimumNetWtLimit
             // 
             this.lblMinimumNetWtLimit.AutoSize = true;
-            this.lblMinimumNetWtLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinimumNetWtLimit.Location = new System.Drawing.Point(64, 121);
+            this.lblMinimumNetWtLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblMinimumNetWtLimit.Location = new System.Drawing.Point(42, 121);
             this.lblMinimumNetWtLimit.Name = "lblMinimumNetWtLimit";
-            this.lblMinimumNetWtLimit.Size = new System.Drawing.Size(201, 25);
+            this.lblMinimumNetWtLimit.Size = new System.Drawing.Size(196, 20);
             this.lblMinimumNetWtLimit.TabIndex = 2;
             this.lblMinimumNetWtLimit.Text = "Minimum Net Wt Limit";
             // 
             // lblMode
             // 
             this.lblMode.AutoSize = true;
-            this.lblMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMode.Location = new System.Drawing.Point(64, 76);
+            this.lblMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblMode.Location = new System.Drawing.Point(42, 76);
             this.lblMode.Name = "lblMode";
-            this.lblMode.Size = new System.Drawing.Size(62, 25);
+            this.lblMode.Size = new System.Drawing.Size(54, 20);
             this.lblMode.TabIndex = 1;
             this.lblMode.Text = "Mode";
             // 
             // lblTransactionNo
             // 
             this.lblTransactionNo.AutoSize = true;
-            this.lblTransactionNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionNo.Location = new System.Drawing.Point(64, 32);
+            this.lblTransactionNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTransactionNo.Location = new System.Drawing.Point(42, 32);
             this.lblTransactionNo.Name = "lblTransactionNo";
-            this.lblTransactionNo.Size = new System.Drawing.Size(145, 25);
+            this.lblTransactionNo.Size = new System.Drawing.Size(137, 20);
             this.lblTransactionNo.TabIndex = 0;
             this.lblTransactionNo.Text = "Transaction No";
             // 

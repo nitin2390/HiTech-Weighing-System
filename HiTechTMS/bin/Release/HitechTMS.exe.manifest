@@ -63,11 +63,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="Microsoft.SqlServer.Types" version="12.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Business.dll" size="4096">
       <assemblyIdentity name="Business" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
@@ -75,7 +70,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FMVFww1Pua7MqptWeEEW/3ruZulw6rA+3qzyZL/0A7Y=</dsig:DigestValue>
+        <dsig:DigestValue>9VBfdBJ05rtp/hapcbyiQw65lTTKKAGh4wuqYe3WMwc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -272,14 +267,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL.dll" size="164352">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL.dll" size="162304">
       <assemblyIdentity name="DAL" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>W5X15jNSBrk5TAiPl8rh3le1XJNTC91b4A6wnsjvbfY=</dsig:DigestValue>
+        <dsig:DigestValue>4v+4xxPtkjJYd3ruROFoZ1b/Fc7bcOp4jdLOFfQEW+A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -327,7 +322,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>t24niUbUfZfbHrEUxL1y6dAradLoDOZwP5PNYlOYUy0=</dsig:DigestValue>
+        <dsig:DigestValue>t0EB9W28W7WSl7Dv+q7Yc9bUxrWyM5lu32v9BzmDiyc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -339,7 +334,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bQ9IM8kEVA+Rtn8hrq5dtzCD5EzSGUQY/5LCxrv5XgU=</dsig:DigestValue>
+        <dsig:DigestValue>tME4OVBbqgswAzr0KiqR2ETGfCFkamirosGq4/WjevA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -351,7 +346,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jFM+Y4TUtcf6dc2LF1liIW5lbAmW2Bmsc7H2papMjJI=</dsig:DigestValue>
+        <dsig:DigestValue>RDXv2YdvyqCbosDBiFNLdHWhKe+plUMGpntkFdfz+J0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -435,7 +430,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JJTPQ3iJEX/D0AjFtHapnTuouPHmp+b9ZzBnMZQpSgw=</dsig:DigestValue>
+        <dsig:DigestValue>Sx486klUi0wmK4xVUzqPifvz2UF+sjaMZHXNgC9Svpg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -459,7 +454,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>d2PFzbR9SpkkCGBvHm0Q/iw8CMJDptqHEN7r/LQoXEQ=</dsig:DigestValue>
+        <dsig:DigestValue>4hZvp2Z2QtmyGq99MrkrrvLeG/Ab3p4tDA35mMvGWII=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -517,16 +512,16 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>qqAOtPqPAy9vW9fcWznnxrlJzK0i9oq6OAOwa8Mpwh8=</dsig:DigestValue>
+      <dsig:DigestValue>QBgZDbgqBjyqqScWZqHO7wsqVzJtamZ0MnPyc+CQIqc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="HitechTMS.exe.config" size="2647">
+  <file name="HitechTMS.exe.config" size="2638">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>XbQg85Uon9LlR/4pj1zSUVUcx5bdnUeK7OKPQsPgQyw=</dsig:DigestValue>
+      <dsig:DigestValue>2bz9Rs/BgW9LArq1SlCl9WOSYGKiLx1p/OpbAWA2qsU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Ico\HiTech.ico" size="206462">
@@ -574,211 +569,121 @@
       <dsig:DigestValue>E2wM+LpFYGn1dpCc3Ec60eg2KaR+ypET2lI8f/Vjeoc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.EmailConfigs.data.sql" size="976">
+  <file name="SQL Script\dbo.Captions.data.sql" size="4776">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Cw/6rvJAbveadZj7zXiVOVVfXRy7W/T+EJ6jYpwV6ps=</dsig:DigestValue>
+      <dsig:DigestValue>lgjA5lNNZgN6WAArONU11RnBObwikd0/HtcxtlMzBKY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.EmailMaster.data.sql" size="684">
+  <file name="SQL Script\dbo.EmailConfigs.data.sql" size="405">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HmK24I4hpbk7NnWs+hshBfbFp08yJA5xOP/iHq2I9yI=</dsig:DigestValue>
+      <dsig:DigestValue>5J8bq1VazOEVb4AGloM4VNISmK6S4yV5W8j1R144laE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.mstFormName.data.sql" size="171">
+  <file name="SQL Script\dbo.EmailMaster.data.sql" size="433">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>iiY4w9jiKj/tEMBy3E/L8fLWsr3yNMRwwtQCOw8IcrM=</dsig:DigestValue>
+      <dsig:DigestValue>jODojKmX8noYM4kV8iH40w7v9upCtML0TFnMfDfJ3d0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.mstGeneralSettings.data.sql" size="1195">
+  <file name="SQL Script\dbo.mstFormName.data.sql" size="0">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Nl+iSvfUwtv4BRopAHb8MhyjoYyu0YZH+pnIV/+uWgQ=</dsig:DigestValue>
+      <dsig:DigestValue>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.mstHyoerTerminalData.data.sql" size="894">
+  <file name="SQL Script\dbo.mstGeneralSettings.data.sql" size="411">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>oKfOqDkgKyLMPyhvbJ5C1E/kic3IK3iCG5DZmDXfLz0=</dsig:DigestValue>
+      <dsig:DigestValue>WIBOkIg/bMfzFzGtNB9O9pGvE7hhrLpEDQVDtj38j5M=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.mstPermission.data.sql" size="267">
+  <file name="SQL Script\dbo.mstShifts.data.sql" size="377">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>iyPB3wJIG9eltBmf7kjGQNm9EQ9YgW8H6TqhQCW/8Oo=</dsig:DigestValue>
+      <dsig:DigestValue>wtJJMCSet8zqEa/I0fZhqlzWUprPqCQiusGPYRVNPUQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.mstStoredTareRecords.data.sql" size="566">
+  <file name="SQL Script\dbo.mstSupplierTransporter.data.sql" size="800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>o0Tj013Uv2qfOthK4XDe3EubdbGH2/M0XgRUlRzNaLg=</dsig:DigestValue>
+      <dsig:DigestValue>5CvGwqH5vvpSi3q9F5/X756si7XA9VO0Cx8y/qhxyXw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.mstSupplierTransporter.data.sql" size="1132">
+  <file name="SQL Script\dbo.mstWeighBridgeSetup.data.sql" size="130">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>lbdDZqaAc+MlOHzltYGLKEp/jSx23693svU9KkrKFGI=</dsig:DigestValue>
+      <dsig:DigestValue>mFboy0Y7MS+3n39xe265kBVykZpEoSY5c78D4t19TgQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.MultiPrdWeight.data.sql" size="363">
+  <file name="SQL Script\dbo.Product.data.sql" size="213">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>FeKDH0MXCYZqivshDB8glKDFpN+n5yt8C2C2rvhG7Zw=</dsig:DigestValue>
+      <dsig:DigestValue>E7gKjHgTBTR9uYI8NyaoKtWJvx1V8Bc+0QRIMMmJbUc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.Product.data.sql" size="394">
+  <file name="SQL Script\dbo.transNormalWeight.data.sql" size="13328">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>u8ncyYDIaqwbt7zwejWWLG960vB9Et/BAdDDqEvQU90=</dsig:DigestValue>
+      <dsig:DigestValue>sElmko5Um3cqVzc6Da4rreAkyZ4Oi4Ao2Kpruxs2b2g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.rptNormalTickert.sql" size="1393">
+  <file name="SQL Script\dbo.UserRole.data.sql" size="441">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>nS4COUvwzfTcgL0ckFXAXhZGjffLsyL9+vL+dysIYCs=</dsig:DigestValue>
+      <dsig:DigestValue>65rm79t22Q83OkvWrjqgexcY7gMtyg1I1P93S6Bt4hI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.transMultiWeight.data.sql" size="1176">
+  <file name="SQL Script\dbo.UserRoleType.data.sql" size="468">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>CKkAceLWfnfbP9UWek/haZVrWdPHfTfB0wmptdMrYyY=</dsig:DigestValue>
+      <dsig:DigestValue>0o6VHVibkJdP5sbrGeKgATlvU70efBC3YNMjqZJ7qL0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SQL Scripts\dbo.transNormalWeight.data.sql" size="3379">
+  <file name="SQL Script\Table and View Scripts.txt" size="17711">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>akKcPpoLVzn2uQYGHb3aQ1BjMXkMJxmN042LpMS6hM0=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="SQL Scripts\dbo.transPublicWeight.data.sql" size="779">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2y1iZKKwUx3gd5r3LjeS/sINPqOdNmcnsyBZBeW+sgc=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="SQL Scripts\dbo.UserRole.data.sql" size="873">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>792bumBBkCU+oZUwTf/jSnWgQhTgdRovQ5SCMwklyNw=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="SQL Scripts\dbo.UserRoleType.data.sql" size="673">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>IAxKVbuHSNtIQ3+2a3EK5p3G0Xl9F99GF/nW+6ZiLBU=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="SQL Scripts\dbo.viewMultiPendingFile.sql" size="1370">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>NOG3s9GrsonvvQhMA9o82rt7YyQ0HZz4iwRS0/Ig3ao=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="SQL Scripts\dbo.ViewMultiProduct.sql" size="275">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>S42sfOfDiw7psVakGz0US7030qMfrbeab5dFIBDoS4U=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="SQL Scripts\dbo.viewNormalPendingFile.sql" size="1273">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>OAap1rSVW1PAxWuwuZoheAYe0Ou0MoMmiPPOq4vkDh4=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="SQL Scripts\mstShiftAllocationInfo.sql" size="276">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>lcTviU9s5mAkNAztW2QaN0C5658zUZyY8G2BkFQukDI=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="SQL Scripts\mstShifts.sql" size="343">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>dvneylvyczQ38Cw69mpIRV6740PTAgg0jlO7NpArLFY=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="SQL Scripts\V_T_mstShiftAllocationInfo.sql" size="178">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>jxsDH2JSIes4RWxJBAd/4RnGzwxqVfiHnFMbIzai85Q=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="SQL Scripts\V_T_MSTShifts.sql" size="93">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cjWDxmX/jaifwdzUTPla0icfwyuilgbfAQdnodjyUC0=</dsig:DigestValue>
+      <dsig:DigestValue>FJKQiAxCA9TZfuLxkjhZLYT3hj5N5t0SfjD7ovC8wWI=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

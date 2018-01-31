@@ -107,6 +107,7 @@
             // gridUser
             // 
             this.gridUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.gridUser.Location = new System.Drawing.Point(74, 287);
             this.gridUser.Name = "gridUser";
             this.gridUser.RowTemplate.Height = 24;
@@ -117,19 +118,19 @@
             // 
             // btnEmailExcel
             // 
-            this.btnEmailExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmailExcel.Location = new System.Drawing.Point(512, 228);
+            this.btnEmailExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnEmailExcel.Location = new System.Drawing.Point(677, 53);
             this.btnEmailExcel.Name = "btnEmailExcel";
-            this.btnEmailExcel.Size = new System.Drawing.Size(134, 50);
+            this.btnEmailExcel.Size = new System.Drawing.Size(115, 105);
             this.btnEmailExcel.TabIndex = 27;
-            this.btnEmailExcel.Text = "E&mail As Excel";
+            this.btnEmailExcel.Text = "e&mail As Excel";
             this.btnEmailExcel.UseVisualStyleBackColor = true;
             this.btnEmailExcel.Click += new System.EventHandler(this.btnEmailExcel_Click);
             // 
             // btnReport
             // 
-            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReport.Location = new System.Drawing.Point(366, 228);
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnReport.Location = new System.Drawing.Point(453, 228);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(134, 50);
             this.btnReport.TabIndex = 26;
@@ -139,8 +140,8 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(220, 228);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnDelete.Location = new System.Drawing.Point(264, 228);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(134, 50);
             this.btnDelete.TabIndex = 25;
@@ -150,7 +151,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnExit.Location = new System.Drawing.Point(658, 228);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(134, 50);
@@ -161,7 +162,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSave.Location = new System.Drawing.Point(74, 228);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(134, 50);

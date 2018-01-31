@@ -3,4 +3,3 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\InputBox\bin\Rel
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\InputBox\bin\Release\MsgBox.pdb
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\InputBox\obj\Release\MsgBox.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\InputBox\obj\Release\MsgBox.pdb
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\InputBox\obj\Release\MsgBox.csprojResolveAssemblyReference.cache

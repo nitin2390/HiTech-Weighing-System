@@ -731,6 +731,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="db\HTWE0002.bak" />
     <None Include="HitechTMS_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

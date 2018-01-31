@@ -247,7 +247,7 @@
     <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.rptNormalTicket' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.rptNormalTicket' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="rptNormalTicket">
     <Key>
       <PropertyRef Name="ID" />
@@ -283,8 +283,8 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="TransporterCode" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TarnsPorterName" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="ChallanNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
-    <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Miscellaneous" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DeliveryNoteN" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ChallanWeight" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ChallanDate" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DateIn" Type="nvarchar(max)" Nullable="false" />
@@ -297,14 +297,14 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="ProdInOut" Type="tinyint" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_Captions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.V_Captions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="V_Captions">
     <Key>
       <PropertyRef Name="ID" />
       <PropertyRef Name="DefaultCaption" />
-      <PropertyRef Name="ModifiedCaptioin" />
       <PropertyRef Name="FormType" />
       <PropertyRef Name="IsCaptionModified" />
+      <PropertyRef Name="ModifiedCaptioin" />
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="DefaultCaption" Type="varchar" MaxLength="500" Nullable="false" />
@@ -313,7 +313,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="IsCaptionModified" Type="bit" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_mstGeneralSettings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.V_mstGeneralSettings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="V_mstGeneralSettings">
     <Key>
       <PropertyRef Name="Id" />
@@ -345,7 +345,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_NormalCompleteWeightDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.V_NormalCompleteWeightDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="V_NormalCompleteWeightDashBoard">
     <Key>
       <PropertyRef Name="ID" />
@@ -355,7 +355,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="TruckCount" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_NormalDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.V_NormalDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="V_NormalDashBoard">
     <Key>
       <PropertyRef Name="ID" />
@@ -365,7 +365,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="TruckCount" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_NormalPendingWeightDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.V_NormalPendingWeightDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="V_NormalPendingWeightDashBoard">
     <Key>
       <PropertyRef Name="ID" />
@@ -375,7 +375,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="TruckCount" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_PublicDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.V_PublicDashBoard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="V_PublicDashBoard">
     <Key>
       <PropertyRef Name="ID" />
@@ -385,7 +385,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="TruckCount" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_rptNormalReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.V_rptNormalReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="V_rptNormalReport">
     <Key>
       <PropertyRef Name="ID" />
@@ -418,8 +418,8 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="TransporterCode" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TarnsPorterName" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="ChallanNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
-    <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Miscellaneous" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DeliveryNoteN" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ChallanWeight" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ChallanDate" Type="date" />
     <Property Name="DateIn" Type="date" />
@@ -432,7 +432,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="ProdInOut" Type="tinyint" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_T_mstShiftAllocationInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.V_T_mstShiftAllocationInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="V_T_mstShiftAllocationInfo">
     <Key>
       <PropertyRef Name="Id" />
@@ -446,7 +446,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.V_T_MSTShifts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.V_T_MSTShifts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="V_T_MSTShifts">
     <Key>
       <PropertyRef Name="ID" />
@@ -456,7 +456,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="ShiftValue" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.viewMultiPendingFile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.viewMultiPendingFile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="viewMultiPendingFile">
     <Key>
       <PropertyRef Name="ID" />
@@ -506,7 +506,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="ProdInOut" Type="varchar" MaxLength="11" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.ViewMultiProduct' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.ViewMultiProduct' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="ViewMultiProduct">
     <Key>
       <PropertyRef Name="Id" />
@@ -519,7 +519,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="Weight" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHWEIGHINGSYSTEM\HITECHTMS\DB\HITECHTRUCKMNGTSYSTMDATABASEFILE.MDF.dbo.viewNormalPendingFile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'HTWE0002.dbo.viewNormalPendingFile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="viewNormalPendingFile">
     <Key>
       <PropertyRef Name="ID" />
@@ -554,8 +554,8 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="ChallanDate" Type="date" Nullable="false" />
     <Property Name="ChallanWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="ChallanWeightUnit" Type="tinyint" Nullable="false" />
-    <Property Name="Miscellaneous" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="DeliveryNoteN" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Miscellaneous" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DeliveryNoteN" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DateIn" Type="date" Nullable="false" />
     <Property Name="DateOut" Type="date" Nullable="false" />
     <Property Name="TimeIn" Type="varchar" MaxLength="15" />
@@ -566,7 +566,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     <Property Name="NetWeight" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="ProdInOut" Type="varchar" MaxLength="11" Nullable="false" />
   </EntityType>
-  <Association Name="FK__MultiPrdW__Truck__5FD33367">
+  <Association Name="FK__MultiPrdW__Truck__1B0907CE">
     <End Role="transMultiWeight" Type="Self.transMultiWeight" Multiplicity="1" />
     <End Role="MultiPrdWeight" Type="Self.MultiPrdWeight" Multiplicity="*" />
     <ReferentialConstraint>
@@ -590,10 +590,6 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="Procedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="param1" Type="int" Mode="In" />
-    <Parameter Name="param2" Type="int" Mode="In" />
-  </Function>
   <EntityContainer Name="HitechTruckMngtSystmDataBaseFileModelStoreContainer">
     <EntitySet Name="Captions" EntityType="Self.Captions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EmailConfigs" EntityType="Self.EmailConfigs" Schema="dbo" store:Type="Tables" />
@@ -796,7 +792,7 @@ warning 6002: The table/view 'C:\USERS\NITINGUPTA\DESKTOP\SOFTWARE\NITIN\HITECHW
     [viewNormalPendingFile].[ProdInOut] AS [ProdInOut]
     FROM [dbo].[viewNormalPendingFile] AS [viewNormalPendingFile]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK__MultiPrdW__Truck__5FD33367" Association="Self.FK__MultiPrdW__Truck__5FD33367">
+    <AssociationSet Name="FK__MultiPrdW__Truck__1B0907CE" Association="Self.FK__MultiPrdW__Truck__1B0907CE">
       <End Role="transMultiWeight" EntitySet="transMultiWeight" />
       <End Role="MultiPrdWeight" EntitySet="MultiPrdWeight" />
     </AssociationSet>

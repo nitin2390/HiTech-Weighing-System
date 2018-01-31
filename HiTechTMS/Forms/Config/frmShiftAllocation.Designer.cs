@@ -85,11 +85,11 @@
             this.lblStartTime.AutoSize = true;
             this.lblStartTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblStartTime.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartTime.Location = new System.Drawing.Point(152, 87);
+            this.lblStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblStartTime.Location = new System.Drawing.Point(169, 87);
             this.lblStartTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStartTime.Name = "lblStartTime";
-            this.lblStartTime.Size = new System.Drawing.Size(102, 19);
+            this.lblStartTime.Size = new System.Drawing.Size(119, 22);
             this.lblStartTime.TabIndex = 41;
             this.lblStartTime.Text = "START TIME";
             // 
@@ -98,11 +98,11 @@
             this.lblEndTime.AutoSize = true;
             this.lblEndTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEndTime.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblEndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndTime.Location = new System.Drawing.Point(316, 87);
+            this.lblEndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblEndTime.Location = new System.Drawing.Point(333, 87);
             this.lblEndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEndTime.Name = "lblEndTime";
-            this.lblEndTime.Size = new System.Drawing.Size(83, 19);
+            this.lblEndTime.Size = new System.Drawing.Size(99, 22);
             this.lblEndTime.TabIndex = 40;
             this.lblEndTime.Text = "END TIME";
             // 
@@ -110,7 +110,7 @@
             // 
             this.cmbShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbShift.FormattingEnabled = true;
-            this.cmbShift.Location = new System.Drawing.Point(152, 41);
+            this.cmbShift.Location = new System.Drawing.Point(169, 41);
             this.cmbShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbShift.Name = "cmbShift";
             this.cmbShift.Size = new System.Drawing.Size(179, 24);
@@ -121,7 +121,7 @@
             // 
             this.dtpEndC.CustomFormat = "hh:mm:ss";
             this.dtpEndC.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEndC.Location = new System.Drawing.Point(314, 236);
+            this.dtpEndC.Location = new System.Drawing.Point(331, 236);
             this.dtpEndC.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEndC.Name = "dtpEndC";
             this.dtpEndC.ShowUpDown = true;
@@ -132,7 +132,7 @@
             // 
             this.dtpStartC.CustomFormat = "hh:mm:ss";
             this.dtpStartC.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpStartC.Location = new System.Drawing.Point(152, 236);
+            this.dtpStartC.Location = new System.Drawing.Point(169, 236);
             this.dtpStartC.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStartC.Name = "dtpStartC";
             this.dtpStartC.ShowUpDown = true;
@@ -143,7 +143,7 @@
             // 
             this.dtpEndB.CustomFormat = "hh:mm:ss";
             this.dtpEndB.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEndB.Location = new System.Drawing.Point(316, 178);
+            this.dtpEndB.Location = new System.Drawing.Point(333, 178);
             this.dtpEndB.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEndB.Name = "dtpEndB";
             this.dtpEndB.ShowUpDown = true;
@@ -154,7 +154,7 @@
             // 
             this.dtpStartB.CustomFormat = "hh:mm:ss";
             this.dtpStartB.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpStartB.Location = new System.Drawing.Point(152, 178);
+            this.dtpStartB.Location = new System.Drawing.Point(169, 178);
             this.dtpStartB.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStartB.Name = "dtpStartB";
             this.dtpStartB.ShowUpDown = true;
@@ -165,7 +165,7 @@
             // 
             this.dtpEndA.CustomFormat = "hh:mm:ss";
             this.dtpEndA.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEndA.Location = new System.Drawing.Point(316, 125);
+            this.dtpEndA.Location = new System.Drawing.Point(333, 125);
             this.dtpEndA.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEndA.Name = "dtpEndA";
             this.dtpEndA.ShowUpDown = true;
@@ -176,7 +176,7 @@
             // 
             this.dtpStartA.CustomFormat = "hh:mm:ss";
             this.dtpStartA.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpStartA.Location = new System.Drawing.Point(152, 125);
+            this.dtpStartA.Location = new System.Drawing.Point(169, 125);
             this.dtpStartA.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStartA.Name = "dtpStartA";
             this.dtpStartA.ShowUpDown = true;
@@ -185,7 +185,8 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(256, 285);
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnClose.Location = new System.Drawing.Point(268, 285);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(134, 50);
@@ -196,7 +197,8 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(92, 285);
+            this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnOK.Location = new System.Drawing.Point(78, 285);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(134, 50);
@@ -208,30 +210,33 @@
             // lblC
             // 
             this.lblC.AutoSize = true;
-            this.lblC.Location = new System.Drawing.Point(54, 241);
+            this.lblC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblC.Location = new System.Drawing.Point(32, 241);
             this.lblC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblC.Name = "lblC";
-            this.lblC.Size = new System.Drawing.Size(17, 17);
+            this.lblC.Size = new System.Drawing.Size(22, 20);
             this.lblC.TabIndex = 30;
             this.lblC.Text = "C";
             // 
             // lblB
             // 
             this.lblB.AutoSize = true;
-            this.lblB.Location = new System.Drawing.Point(54, 181);
+            this.lblB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblB.Location = new System.Drawing.Point(32, 181);
             this.lblB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblB.Name = "lblB";
-            this.lblB.Size = new System.Drawing.Size(17, 17);
+            this.lblB.Size = new System.Drawing.Size(22, 20);
             this.lblB.TabIndex = 29;
             this.lblB.Text = "B";
             // 
             // LblA
             // 
             this.LblA.AutoSize = true;
-            this.LblA.Location = new System.Drawing.Point(54, 130);
+            this.LblA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.LblA.Location = new System.Drawing.Point(32, 130);
             this.LblA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblA.Name = "LblA";
-            this.LblA.Size = new System.Drawing.Size(17, 17);
+            this.LblA.Size = new System.Drawing.Size(21, 20);
             this.LblA.TabIndex = 28;
             this.LblA.Text = "A";
             // 
@@ -240,21 +245,22 @@
             this.lblShift.AutoSize = true;
             this.lblShift.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblShift.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShift.Location = new System.Drawing.Point(57, 87);
+            this.lblShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblShift.Location = new System.Drawing.Point(35, 87);
             this.lblShift.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShift.Name = "lblShift";
-            this.lblShift.Size = new System.Drawing.Size(54, 19);
+            this.lblShift.Size = new System.Drawing.Size(64, 22);
             this.lblShift.TabIndex = 27;
             this.lblShift.Text = "SHIFT";
             // 
             // lblNoofShifts
             // 
             this.lblNoofShifts.AutoSize = true;
-            this.lblNoofShifts.Location = new System.Drawing.Point(54, 41);
+            this.lblNoofShifts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNoofShifts.Location = new System.Drawing.Point(32, 41);
             this.lblNoofShifts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNoofShifts.Name = "lblNoofShifts";
-            this.lblNoofShifts.Size = new System.Drawing.Size(81, 17);
+            this.lblNoofShifts.Size = new System.Drawing.Size(109, 20);
             this.lblNoofShifts.TabIndex = 26;
             this.lblNoofShifts.Text = "No of Shifts";
             // 
