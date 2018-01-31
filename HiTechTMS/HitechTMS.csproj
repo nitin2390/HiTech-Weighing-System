@@ -728,7 +728,9 @@
     <EmbeddedResource Include="Forms\Weighing\frmPublicWeighing.resx">
       <DependentUpon>frmPublicWeighing.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="HitechTMS_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

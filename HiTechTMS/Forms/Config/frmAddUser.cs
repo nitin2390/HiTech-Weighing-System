@@ -127,6 +127,7 @@ namespace HitechTMS.Config
             try
             {
                 _saveClick = true;
+
                 #region "Validation"
                 GetAllControlByType objGetAllControlByType = new GetAllControlByType();
                 var TextControl = objGetAllControlByType.GetAllControllType(this, typeof(TextBox));

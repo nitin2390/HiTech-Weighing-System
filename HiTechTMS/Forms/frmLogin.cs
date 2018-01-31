@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using DAL.Entity_Model;
 using HitechTMS.Classes;
 using SharedLibrary;
+using HitechTMS.Config;
 
 namespace HitechTMS
 {
@@ -26,19 +27,21 @@ namespace HitechTMS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            txtPassword.Text = objEncryptionAndDecryption.Encrypt(txtPassword.Text);
+            
+            var password = objEncryptionAndDecryption.Encrypt(txtPassword.Text.ToUpper());
             var varUserRole = dbObj.UserRoleTypes
                             .Join(dbObj.UserRole, x => x.Id, s => s.UserRoleType, 
                                     (x, s) => new { x.RoleName, s.Name, s.Password })
-                .Where(xs => xs.Name == txtUserName.Text && xs.Password == txtPassword.Text).Select(x => x.RoleName).ToList().SingleOrDefault();
+                .Where(xs => xs.Name == txtUserName.Text && xs.Password == password).Select(x => x.RoleName).ToList().SingleOrDefault();
 
             if (varUserRole != null && varUserRole != string.Empty)
             {
+
                 // Initialize a test Principal 
                 IPrincipal userPrincipal = new GenericPrincipal(WindowsIdentity.GetCurrent(),
                     new string[] { varUserRole });
                 //new string[] { "Admin", "User" });
+
                 frmMain objHiTechWeighingSystem = new frmMain(txtUserName.Text, userPrincipal, varUserRole);
                 // Set form to be main window in order to Exit the application.
                 this.Hide();
@@ -52,8 +55,6 @@ namespace HitechTMS
                     _dbGetResourceCaption.GetStringValue("ERROR"),
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                txtUserName.Text = string.Empty;
-                txtPassword.Text = string.Empty;
             }
 
         }

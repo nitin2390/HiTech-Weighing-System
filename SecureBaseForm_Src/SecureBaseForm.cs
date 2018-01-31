@@ -359,8 +359,8 @@ namespace HitechTMSSecurity
 
         private void SecureBaseForm_Load(object sender, EventArgs e)
         {
-            Icon icon = new Icon(@"Ico\Icon.ico", 200, 200);
-            this.Icon = icon;
+            //Icon icon = new Icon(@"Ico\Icon.ico", 200, 200);
+            //this.Icon = icon;
         }
     }
 }
