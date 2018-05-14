@@ -7,15 +7,20 @@ using HitechTMS.Classes;
 using System.IO.Ports;
 using System.Linq;
 using System.Data.Entity.Migrations;
+using HitechTMSSecurity;
+using static HitechTMS.HitechEnums;
+using System.Security.Principal;
+using HitechTMS;
 
 namespace SerialPortListener
 {
-    public partial class frmSerialPortSetting : Form
+    public partial class frmSerialPortSetting : SecureBaseForm
     {
         SerialPortManager _spManager;
         private HitechTruckMngtSystmDataBaseFileEntities _dbObj { get; }
         private GetResourceCaption _dbGetResourceCaption;
-        public frmSerialPortSetting()
+        public frmSerialPortSetting(FrmName _FrmName, IPrincipal userPrincipal) 
+            : base(new string[] { HitechEnums.AppRole.Admin.ToString(), HitechEnums.AppRole.SuperAdmin.ToString() }, userPrincipal)
         {
             _dbGetResourceCaption = new GetResourceCaption();
             _dbObj = new HitechTruckMngtSystmDataBaseFileEntities();

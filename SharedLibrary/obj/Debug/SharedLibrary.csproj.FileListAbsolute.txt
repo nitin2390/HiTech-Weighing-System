@@ -22,8 +22,10 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\bi
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\bin\Debug\SharedLibrary.pdb
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\bin\Debug\EntityFramework.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\bin\Debug\EPPlus.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\bin\Debug\EntityFramework.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\bin\Debug\EPPlus.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\obj\Debug\SharedLibrary.csprojResolveAssemblyReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\obj\Debug\SharedLibrary.csproj.ResolveComReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SharedLibrary\obj\Debug\SharedLibrary.dll

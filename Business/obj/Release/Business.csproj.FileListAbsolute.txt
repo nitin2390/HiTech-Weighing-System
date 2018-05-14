@@ -5,5 +5,6 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\bin\Rel
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\bin\Release\EntityFramework.SqlServer.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\bin\Release\EntityFramework.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\obj\Release\Business.csprojResolveAssemblyReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\obj\Release\Business.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\Business\obj\Release\Business.pdb

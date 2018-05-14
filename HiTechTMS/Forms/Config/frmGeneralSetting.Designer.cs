@@ -93,10 +93,10 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnClose.Location = new System.Drawing.Point(292, 574);
+            this.btnClose.Location = new System.Drawing.Point(299, 572);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(134, 50);
+            this.btnClose.Size = new System.Drawing.Size(140, 60);
             this.btnClose.TabIndex = 20;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -105,12 +105,12 @@
             // btnOk
             // 
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnOk.Location = new System.Drawing.Point(145, 574);
+            this.btnOk.Location = new System.Drawing.Point(129, 572);
             this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(134, 50);
+            this.btnOk.Size = new System.Drawing.Size(140, 60);
             this.btnOk.TabIndex = 19;
-            this.btnOk.Text = "&Ok";
+            this.btnOk.Text = "&Save";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
@@ -167,12 +167,12 @@
             // txtMinimumNetWtLimit
             // 
             this.txtMinimumNetWtLimit.AcceptsReturn = true;
-            this.txtMinimumNetWtLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtMinimumNetWtLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtMinimumNetWtLimit.Location = new System.Drawing.Point(323, 128);
             this.txtMinimumNetWtLimit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMinimumNetWtLimit.MaxLength = 6;
             this.txtMinimumNetWtLimit.Name = "txtMinimumNetWtLimit";
-            this.txtMinimumNetWtLimit.Size = new System.Drawing.Size(179, 26);
+            this.txtMinimumNetWtLimit.Size = new System.Drawing.Size(179, 30);
             this.txtMinimumNetWtLimit.TabIndex = 3;
             this.txtMinimumNetWtLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -188,12 +188,12 @@
             // 
             // txtTransactionNo
             // 
-            this.txtTransactionNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtTransactionNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtTransactionNo.Location = new System.Drawing.Point(323, 34);
             this.txtTransactionNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTransactionNo.MaxLength = 5;
             this.txtTransactionNo.Name = "txtTransactionNo";
-            this.txtTransactionNo.Size = new System.Drawing.Size(179, 26);
+            this.txtTransactionNo.Size = new System.Drawing.Size(179, 30);
             this.txtTransactionNo.TabIndex = 1;
             // 
             // gpBoxDraftModeTicketPrintingSetting
@@ -213,23 +213,23 @@
             // 
             // txtFooterBlankLine
             // 
-            this.txtFooterBlankLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtFooterBlankLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtFooterBlankLine.Location = new System.Drawing.Point(253, 86);
             this.txtFooterBlankLine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFooterBlankLine.MaxLength = 2;
             this.txtFooterBlankLine.Name = "txtFooterBlankLine";
-            this.txtFooterBlankLine.Size = new System.Drawing.Size(89, 26);
+            this.txtFooterBlankLine.Size = new System.Drawing.Size(89, 30);
             this.txtFooterBlankLine.TabIndex = 10;
             this.txtFooterBlankLine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtHeaderBlankLine
             // 
-            this.txtHeaderBlankLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtHeaderBlankLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtHeaderBlankLine.Location = new System.Drawing.Point(253, 43);
             this.txtHeaderBlankLine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHeaderBlankLine.MaxLength = 2;
             this.txtHeaderBlankLine.Name = "txtHeaderBlankLine";
-            this.txtHeaderBlankLine.Size = new System.Drawing.Size(89, 26);
+            this.txtHeaderBlankLine.Size = new System.Drawing.Size(89, 30);
             this.txtHeaderBlankLine.TabIndex = 9;
             this.txtHeaderBlankLine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 

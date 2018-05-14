@@ -37,9 +37,11 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\DA
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\SharedLibrary.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EPPlus.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\SharedLibrary.pdb
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\bin\Debug\EPPlus.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\DAL\obj\Debug\DAL.pdb

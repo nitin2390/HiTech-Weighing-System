@@ -106,10 +106,10 @@ namespace SharedLibrary
                     {
                         File.Delete(ExcelFolderPath);
                     }
-                    obj.WriteDataTableToExcel(dt, "Product Details", ExcelFolderPath, WorkSheetName);
+                    obj.WriteDataTableToExcel(dt, "Product Details", ExcelFolderPath);
                     return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

@@ -538,7 +538,7 @@ namespace HitechTMS
             #region Serial port
             private void toolStripMenuItem5_Click(object sender, EventArgs e)
             {
-                frmSerialPortSetting objfrmSerialPortSetting = new frmSerialPortSetting();
+                frmSerialPortSetting objfrmSerialPortSetting = new frmSerialPortSetting(FrmName.GenralSetting, _nextFormPrincipal);
                 objfrmSerialPortSetting.StartPosition = FormStartPosition.CenterParent;
                 objfrmSerialPortSetting.ShowDialog();
             }

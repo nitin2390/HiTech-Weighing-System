@@ -74,7 +74,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(843, 595);
+            this.groupBox1.Size = new System.Drawing.Size(827, 595);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add/Edit User";
@@ -85,8 +85,8 @@
             this.lblRecCount.AutoSize = true;
             this.lblRecCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecCount.Location = new System.Drawing.Point(564, 546);
+            this.lblRecCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblRecCount.Location = new System.Drawing.Point(571, 546);
             this.lblRecCount.Name = "lblRecCount";
             this.lblRecCount.Size = new System.Drawing.Size(136, 22);
             this.lblRecCount.TabIndex = 30;
@@ -97,8 +97,8 @@
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblRecordsCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsCount.Location = new System.Drawing.Point(720, 546);
+            this.lblRecordsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblRecordsCount.Location = new System.Drawing.Point(727, 546);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(60, 22);
             this.lblRecordsCount.TabIndex = 29;
@@ -108,31 +108,31 @@
             // 
             this.gridUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.gridUser.Location = new System.Drawing.Point(74, 287);
+            this.gridUser.Location = new System.Drawing.Point(40, 251);
             this.gridUser.Name = "gridUser";
             this.gridUser.RowTemplate.Height = 24;
             this.gridUser.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gridUser.Size = new System.Drawing.Size(718, 243);
+            this.gridUser.Size = new System.Drawing.Size(752, 279);
             this.gridUser.TabIndex = 31;
             this.gridUser.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridUser_CellMouseClick);
             // 
             // btnEmailExcel
             // 
             this.btnEmailExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnEmailExcel.Location = new System.Drawing.Point(677, 53);
+            this.btnEmailExcel.Location = new System.Drawing.Point(496, 172);
             this.btnEmailExcel.Name = "btnEmailExcel";
-            this.btnEmailExcel.Size = new System.Drawing.Size(115, 105);
+            this.btnEmailExcel.Size = new System.Drawing.Size(140, 60);
             this.btnEmailExcel.TabIndex = 27;
-            this.btnEmailExcel.Text = "e&mail As Excel";
+            this.btnEmailExcel.Text = "E&mail";
             this.btnEmailExcel.UseVisualStyleBackColor = true;
             this.btnEmailExcel.Click += new System.EventHandler(this.btnEmailExcel_Click);
             // 
             // btnReport
             // 
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnReport.Location = new System.Drawing.Point(453, 228);
+            this.btnReport.Location = new System.Drawing.Point(344, 172);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(134, 50);
+            this.btnReport.Size = new System.Drawing.Size(140, 60);
             this.btnReport.TabIndex = 26;
             this.btnReport.Text = "&Report";
             this.btnReport.UseVisualStyleBackColor = true;
@@ -141,9 +141,9 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnDelete.Location = new System.Drawing.Point(264, 228);
+            this.btnDelete.Location = new System.Drawing.Point(192, 172);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(134, 50);
+            this.btnDelete.Size = new System.Drawing.Size(140, 60);
             this.btnDelete.TabIndex = 25;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -152,9 +152,9 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnExit.Location = new System.Drawing.Point(658, 228);
+            this.btnExit.Location = new System.Drawing.Point(648, 172);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(134, 50);
+            this.btnExit.Size = new System.Drawing.Size(140, 60);
             this.btnExit.TabIndex = 28;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -163,9 +163,9 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnSave.Location = new System.Drawing.Point(74, 228);
+            this.btnSave.Location = new System.Drawing.Point(40, 173);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(134, 50);
+            this.btnSave.Size = new System.Drawing.Size(140, 60);
             this.btnSave.TabIndex = 24;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -175,57 +175,60 @@
             // 
             this.cmbRoleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRoleType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbRoleType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRoleType.FormattingEnabled = true;
-            this.cmbRoleType.Location = new System.Drawing.Point(221, 161);
+            this.cmbRoleType.Location = new System.Drawing.Point(562, 58);
             this.cmbRoleType.Name = "cmbRoleType";
-            this.cmbRoleType.Size = new System.Drawing.Size(121, 24);
+            this.cmbRoleType.Size = new System.Drawing.Size(230, 33);
             this.cmbRoleType.TabIndex = 5;
             this.cmbRoleType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbRoleType_KeyDown);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(221, 108);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtPassword.Location = new System.Drawing.Point(192, 106);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(133, 22);
+            this.txtPassword.Size = new System.Drawing.Size(230, 30);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.Location = new System.Drawing.Point(71, 161);
+            this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblRole.Location = new System.Drawing.Point(470, 59);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(51, 25);
+            this.lblRole.Size = new System.Drawing.Size(47, 20);
             this.lblRole.TabIndex = 3;
             this.lblRole.Text = "Role";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(71, 108);
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblPassword.Location = new System.Drawing.Point(36, 106);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(98, 25);
+            this.lblPassword.Size = new System.Drawing.Size(91, 20);
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password";
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(71, 53);
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblUserName.Location = new System.Drawing.Point(36, 53);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(107, 25);
+            this.lblUserName.Size = new System.Drawing.Size(100, 20);
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "User name";
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(221, 56);
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtUserName.Location = new System.Drawing.Point(192, 56);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(133, 22);
+            this.txtUserName.Size = new System.Drawing.Size(230, 30);
             this.txtUserName.TabIndex = 0;
             this.txtUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserName_KeyDown);
             this.txtUserName.Leave += new System.EventHandler(this.txtUserName_Leave);
@@ -246,12 +249,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 623);
+            this.ClientSize = new System.Drawing.Size(855, 623);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAddUser";
             this.Tag = "AddUser";
-            this.Text = "frmAddUser";
+            this.Text = "Add/Edit User";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUser)).EndInit();

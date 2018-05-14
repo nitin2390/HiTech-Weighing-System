@@ -67,48 +67,54 @@
             // 
             // txtEmailId
             // 
-            this.txtEmailId.Location = new System.Drawing.Point(161, 37);
+            this.txtEmailId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtEmailId.Location = new System.Drawing.Point(281, 38);
             this.txtEmailId.Name = "txtEmailId";
-            this.txtEmailId.Size = new System.Drawing.Size(163, 22);
+            this.txtEmailId.Size = new System.Drawing.Size(333, 30);
             this.txtEmailId.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(161, 82);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtPassword.Location = new System.Drawing.Point(281, 83);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(163, 22);
+            this.txtPassword.Size = new System.Drawing.Size(333, 30);
             this.txtPassword.TabIndex = 1;
             // 
             // txtEmailServerPort
             // 
-            this.txtEmailServerPort.Location = new System.Drawing.Point(497, 37);
+            this.txtEmailServerPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtEmailServerPort.Location = new System.Drawing.Point(281, 325);
             this.txtEmailServerPort.Name = "txtEmailServerPort";
-            this.txtEmailServerPort.Size = new System.Drawing.Size(163, 22);
+            this.txtEmailServerPort.Size = new System.Drawing.Size(333, 30);
             this.txtEmailServerPort.TabIndex = 2;
             // 
             // txtEmailSmtpServer
             // 
-            this.txtEmailSmtpServer.Location = new System.Drawing.Point(497, 80);
+            this.txtEmailSmtpServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtEmailSmtpServer.Location = new System.Drawing.Point(281, 368);
             this.txtEmailSmtpServer.Name = "txtEmailSmtpServer";
-            this.txtEmailSmtpServer.Size = new System.Drawing.Size(163, 22);
+            this.txtEmailSmtpServer.Size = new System.Drawing.Size(333, 30);
             this.txtEmailSmtpServer.TabIndex = 3;
             // 
             // chkIsActive
             // 
             this.chkIsActive.AutoSize = true;
-            this.chkIsActive.Location = new System.Drawing.Point(161, 286);
+            this.chkIsActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIsActive.Location = new System.Drawing.Point(281, 417);
             this.chkIsActive.Name = "chkIsActive";
-            this.chkIsActive.Size = new System.Drawing.Size(68, 21);
+            this.chkIsActive.Size = new System.Drawing.Size(83, 28);
             this.chkIsActive.TabIndex = 7;
             this.chkIsActive.Text = "Active";
             this.chkIsActive.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(206, 365);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSave.Location = new System.Drawing.Point(146, 476);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(118, 43);
+            this.btnSave.Size = new System.Drawing.Size(140, 60);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -116,9 +122,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(359, 365);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnExit.Location = new System.Drawing.Point(346, 476);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(109, 43);
+            this.btnExit.Size = new System.Drawing.Size(140, 60);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -145,95 +152,105 @@
             this.groupBox1.Controls.Add(this.txtEmailSmtpServer);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(738, 434);
+            this.groupBox1.Size = new System.Drawing.Size(645, 569);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Email Configuration";
             // 
             // txtEmailRecipient
             // 
-            this.txtEmailRecipient.Location = new System.Drawing.Point(497, 130);
+            this.txtEmailRecipient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtEmailRecipient.Location = new System.Drawing.Point(281, 125);
             this.txtEmailRecipient.Name = "txtEmailRecipient";
-            this.txtEmailRecipient.Size = new System.Drawing.Size(163, 22);
+            this.txtEmailRecipient.Size = new System.Drawing.Size(333, 30);
             this.txtEmailRecipient.TabIndex = 5;
             // 
             // lblEmailRecipient
             // 
             this.lblEmailRecipient.AutoSize = true;
-            this.lblEmailRecipient.Location = new System.Drawing.Point(360, 130);
+            this.lblEmailRecipient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblEmailRecipient.Location = new System.Drawing.Point(40, 125);
             this.lblEmailRecipient.Name = "lblEmailRecipient";
-            this.lblEmailRecipient.Size = new System.Drawing.Size(105, 17);
+            this.lblEmailRecipient.Size = new System.Drawing.Size(141, 20);
             this.lblEmailRecipient.TabIndex = 24;
             this.lblEmailRecipient.Text = "Email Recipient";
             // 
             // lblEmailBody
             // 
             this.lblEmailBody.AutoSize = true;
-            this.lblEmailBody.Location = new System.Drawing.Point(24, 175);
+            this.lblEmailBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblEmailBody.Location = new System.Drawing.Point(40, 223);
             this.lblEmailBody.Name = "lblEmailBody";
-            this.lblEmailBody.Size = new System.Drawing.Size(78, 17);
+            this.lblEmailBody.Size = new System.Drawing.Size(104, 20);
             this.lblEmailBody.TabIndex = 17;
             this.lblEmailBody.Text = "Email Body";
             // 
             // lblEmailSubject
             // 
             this.lblEmailSubject.AutoSize = true;
-            this.lblEmailSubject.Location = new System.Drawing.Point(24, 130);
+            this.lblEmailSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblEmailSubject.Location = new System.Drawing.Point(40, 178);
             this.lblEmailSubject.Name = "lblEmailSubject";
-            this.lblEmailSubject.Size = new System.Drawing.Size(93, 17);
+            this.lblEmailSubject.Size = new System.Drawing.Size(125, 20);
             this.lblEmailSubject.TabIndex = 16;
             this.lblEmailSubject.Text = "Email Subject";
             // 
             // txtEmailSubject
             // 
-            this.txtEmailSubject.Location = new System.Drawing.Point(161, 127);
+            this.txtEmailSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtEmailSubject.Location = new System.Drawing.Point(281, 178);
             this.txtEmailSubject.Name = "txtEmailSubject";
-            this.txtEmailSubject.Size = new System.Drawing.Size(163, 22);
+            this.txtEmailSubject.Size = new System.Drawing.Size(333, 30);
             this.txtEmailSubject.TabIndex = 4;
             // 
             // txtEmailBody
             // 
-            this.txtEmailBody.Location = new System.Drawing.Point(161, 172);
+            this.txtEmailBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtEmailBody.Location = new System.Drawing.Point(281, 223);
             this.txtEmailBody.Multiline = true;
             this.txtEmailBody.Name = "txtEmailBody";
-            this.txtEmailBody.Size = new System.Drawing.Size(163, 87);
+            this.txtEmailBody.Size = new System.Drawing.Size(333, 87);
             this.txtEmailBody.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(360, 83);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(40, 368);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 17);
+            this.label4.Size = new System.Drawing.Size(113, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "Smtp Server";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(360, 40);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(40, 325);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 17);
+            this.label3.Size = new System.Drawing.Size(105, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Server Port";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 85);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(40, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Password";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 40);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(40, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 17);
+            this.label1.Size = new System.Drawing.Size(144, 20);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Email ID";
+            this.label1.Text = "Sender email ID";
             // 
             // errProviderEmailID
             // 
@@ -267,12 +284,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 471);
+            this.ClientSize = new System.Drawing.Size(673, 597);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEmailConfig";
             this.Tag = "EmailConfig";
-            this.Text = "frmEmailConfig";
+            this.Text = "Email Configuration";
             this.Load += new System.EventHandler(this.frmEmailConfig_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

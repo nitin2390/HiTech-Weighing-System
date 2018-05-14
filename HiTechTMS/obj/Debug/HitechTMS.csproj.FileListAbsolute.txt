@@ -109,6 +109,8 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\De
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.Designer.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Entity Model\HiTechTMSModel.edmx.diagram
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\db\HitechTruckMngtSystmDataBaseFile_log.ldf
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\db\HitechTruckMngtSystmDataBaseFile.mdf
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\NormalWeightComplete.rpt
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\SupplierTransport.rpt
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\User.rpt
@@ -116,8 +118,6 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\De
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\NormalWeightComplete.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\SupplierTransport.cs
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\User.cs
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\db\HitechTruckMngtSystmDataBaseFile_log.ldf
-C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\db\HitechTruckMngtSystmDataBaseFile.mdf
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Properties\error.png
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Ico\Icon.ico
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Reports\NormalWeightPending.rpt
@@ -154,6 +154,7 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\De
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\SharedLibrary.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\System.Net.Http.Extensions.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\EPPlus.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
@@ -182,6 +183,7 @@ C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\De
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\Newtonsoft.Json.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\EPPlus.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\bin\Debug\en\HtmlReportControl.resources.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.csprojResolveAssemblyReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\HiTechTMS\obj\Debug\HitechTMS.Classes.CreateExcelAndSendEmail.resources

@@ -28,7 +28,13 @@ namespace HitechTMSSecurity
             var TextBoxCtrl = objGetAllControlByType.GetAllControllType(this, typeof(TextBox));
             var GridCtrl = objGetAllControlByType.GetAllControllType(this, typeof(DataGridView));
             var LabelCtrl = objGetAllControlByType.GetAllControllType(this, typeof(Label));
+            var ComboCtrl = objGetAllControlByType.GetAllControllType(this, typeof(ComboBox));
 
+            foreach (Control control in ComboCtrl)
+            {
+                control.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Bold);
+                ((ComboBox)control).DropDownStyle = ComboBoxStyle.DropDownList;
+            }
 
             foreach (Control control in LabelCtrl)
             {
@@ -49,7 +55,7 @@ namespace HitechTMSSecurity
 
             foreach (Control control in TextBoxCtrl)
             {
-                control.Font = new Font("Microsoft Sans Serif", 10);
+                control.Font = new Font("Microsoft Sans Serif", 12);
                 control.KeyPress += textbox_KeyPress;
             }
 
@@ -104,7 +110,10 @@ namespace HitechTMSSecurity
         private void textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             var c = (TextBox)sender;
-            e.KeyChar = Char.ToUpper(e.KeyChar);
+            if (!c.Name.Contains("txtPassword"))
+            {
+                e.KeyChar = Char.ToUpper(e.KeyChar);
+            }
         }
 
         public event EventHandler UserIsAllowed;

@@ -166,7 +166,15 @@ namespace HitechTMS.Classes
                     x.IsActive
                 }).Where(x => x.IsActive == "1").ToList();
                 MailAddress mytoAddress = new MailAddress(objEmailConfig[0].EmailRecipient.ToString(), "HiTech Weighing");
-                SendEmail objSendEmail = new SendEmail(dt, objEmailConfig[0].EmailID.ToString(), mytoAddress, objEncryptionAndDecryption.Decrypt(objEmailConfig[0].Password).ToString(), objEmailConfig[0].EmailSubject.ToString(), objEmailConfig[0].EmailBody.ToString(), 587, objEmailConfig[0].EmailSmtpServer.ToString(), this.FileName, this.WorkSheetName);
+                SendEmail objSendEmail 
+                    = new SendEmail(dt, objEmailConfig[0].EmailID.ToString(), 
+                            mytoAddress, 
+                            objEncryptionAndDecryption.Decrypt(objEmailConfig[0].Password).ToString(), 
+                            objEmailConfig[0].EmailSubject.ToString(), 
+                            objEmailConfig[0].EmailBody.ToString(), 
+                            587, 
+                            objEmailConfig[0].EmailSmtpServer.ToString(), 
+                            this.FileName, this.WorkSheetName);
                 if (objSendEmail.SendEmailTo() )
                 {
                     return true;

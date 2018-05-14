@@ -1,7 +1,9 @@
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\bin\Debug\HitechTMSSecurity.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\bin\Debug\HitechTMSSecurity.pdb
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\bin\Debug\SharedLibrary.dll
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\bin\Debug\EPPlus.dll
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\bin\Debug\SharedLibrary.pdb
+C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\bin\Debug\EPPlus.xml
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\obj\Debug\HitechTMSSecurity.csprojResolveAssemblyReference.cache
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\obj\Debug\HitechTMSSecurity.SecureBaseForm.resources
 C:\Users\nitingupta\Desktop\software\Nitin\HitechWeighingSystem\SecureBaseForm_Src\obj\Debug\HitechTMSSecurity.csproj.GenerateResource.Cache

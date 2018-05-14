@@ -131,15 +131,21 @@ namespace HitechTMS.Weighing
                 lstTruck.Visible = false;
                 txtChallanDate.ReadOnly = true;
 
+                #region Product In/Out
                 if(_enumProductInOut == enumProductInOut.In)
                 {
                    
                     lblGrossWeight.Text = _dbGetResourceCaption.GetStringValue("TARE_WEIGHT");
                     lblTareWeight.Text = _dbGetResourceCaption.GetStringValue("GROSS_WEIGHT");
                     txtGrossWeight.ReadOnly = true;
-                }
+                }else
+                {
 
-                if(_weightMode == enumWeightMode.Auto)
+                }
+                #endregion
+
+                #region Auto/Manual Mode
+                if (_weightMode == enumWeightMode.Auto)
                 {
                     
                     grpboxAutoWeight.Visible = true;
@@ -167,8 +173,11 @@ namespace HitechTMS.Weighing
                     grpboxAutoWeight.Visible = false;
                     txtTareWeight.ReadOnly = false;
                     txtGrossWeight.ReadOnly = true;
+                    txtTareWeight.BackColor = System.Drawing.Color.AliceBlue;
+                    txtGrossWeight.BackColor = DefaultBackColor;
                 }
 
+                #endregion
                 txtNetWeight.ReadOnly = true;
             }
             catch (Exception ex)
@@ -247,7 +256,6 @@ namespace HitechTMS.Weighing
                 txtDateOut.Text = string.Empty;
                 txtTimeOut.Text = string.Empty;
                 txtTareWeight.Text = string.Empty;
-                txtGrossWeight.Text = string.Empty;
                 txtGrossWeight.Text = string.Empty;
                 txtNetWeight.Text = string.Empty;
                 _transNormalWeightID = Guid.Empty;
@@ -405,6 +413,7 @@ namespace HitechTMS.Weighing
                     txtNetWeight.Text = lsttransNormalWeight[0].NetWeight.ToString() != string.Empty ? lsttransNormalWeight[0].NetWeight.ToString() : string.Empty;
                     //_editGrid = false;
                 }
+
                 if(lsttransNormalWeight[0].GrossWeight > 0 || lsttransNormalWeight[0].TareWeight > 0)
                 {
                     _isTareWeight = false;
